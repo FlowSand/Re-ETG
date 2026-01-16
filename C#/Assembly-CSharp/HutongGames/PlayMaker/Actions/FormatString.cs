@@ -1,0 +1,65 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: HutongGames.PlayMaker.Actions.FormatString
+// Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: E27C5245-924B-4031-BFBB-14AA632E24E2
+// Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
+
+using System;
+
+#nullable disable
+namespace HutongGames.PlayMaker.Actions;
+
+[ActionCategory(ActionCategory.String)]
+[Tooltip("Replaces each format item in a specified string with the text equivalent of variable's value. Stores the result in a string variable.")]
+public class FormatString : FsmStateAction
+{
+  [RequiredField]
+  [Tooltip("E.g. Hello {0} and {1}\nWith 2 variables that replace {0} and {1}\nSee C# string.Format docs.")]
+  public FsmString format;
+  [Tooltip("Variables to use for each formatting item.")]
+  public FsmVar[] variables;
+  [Tooltip("Store the formatted result in a string variable.")]
+  [UIHint(UIHint.Variable)]
+  [RequiredField]
+  public FsmString storeResult;
+  [Tooltip("Repeat every frame. This is useful if the variables are changing.")]
+  public bool everyFrame;
+  private object[] objectArray;
+
+  public override void Reset()
+  {
+    this.format = (FsmString) null;
+    this.variables = (FsmVar[]) null;
+    this.storeResult = (FsmString) null;
+    this.everyFrame = false;
+  }
+
+  public override void OnEnter()
+  {
+    this.objectArray = new object[this.variables.Length];
+    this.DoFormatString();
+    if (this.everyFrame)
+      return;
+    this.Finish();
+  }
+
+  public override void OnUpdate() => this.DoFormatString();
+
+  private void DoFormatString()
+  {
+    for (int index = 0; index < this.variables.Length; ++index)
+    {
+      this.variables[index].UpdateValue();
+      this.objectArray[index] = this.variables[index].GetValue();
+    }
+    try
+    {
+      this.storeResult.Value = string.Format(this.format.Value, this.objectArray);
+    }
+    catch (FormatException ex)
+    {
+      this.LogError(ex.Message);
+      this.Finish();
+    }
+  }
+}

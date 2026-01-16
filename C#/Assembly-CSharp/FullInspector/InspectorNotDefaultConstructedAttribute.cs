@@ -1,0 +1,16 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: FullInspector.InspectorNotDefaultConstructedAttribute
+// Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: E27C5245-924B-4031-BFBB-14AA632E24E2
+// Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
+
+using System;
+
+#nullable disable
+namespace FullInspector;
+
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+[Obsolete("Please use [InspectorNullable] instead of [InspectorNotDefaultConstructed]")]
+public sealed class InspectorNotDefaultConstructedAttribute : Attribute
+{
+}
