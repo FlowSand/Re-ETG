@@ -434,8 +434,13 @@ namespace ETG.Core.Actors.Enemy
         }
       }
 
-      public class PlayerDodgeState(bool isLeft) : PunchoutGameActor.DodgeState(isLeft)
+      public class PlayerDodgeState : PunchoutGameActor.DodgeState
       {
+        public PlayerDodgeState(bool isLeft)
+          : base(isLeft)
+        {
+        }
+
         public override void Start()
         {
           base.Start();
@@ -457,9 +462,14 @@ namespace ETG.Core.Actors.Enemy
         }
       }
 
-      public class PlayerPunchState(bool isLeft) : PunchoutGameActor.BasicAttackState(isLeft)
+      public class PlayerPunchState : PunchoutGameActor.BasicAttackState
       {
         private bool m_missed;
+
+        public PlayerPunchState(bool isLeft)
+          : base(isLeft)
+        {
+        }
 
         public override string AnimName => "punch";
 
@@ -676,9 +686,14 @@ namespace ETG.Core.Actors.Enemy
         }
       }
 
-      public class DeathState(bool isLeft) : PunchoutGameActor.State(isLeft)
+      public class DeathState : PunchoutGameActor.State
       {
         private float m_timer;
+
+        public DeathState(bool isLeft)
+          : base(isLeft)
+        {
+        }
 
         public override void Start()
         {
