@@ -41,7 +41,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new InfinilichNegativeSpacePie1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -64,7 +64,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new InfinilichNegativeSpacePie1.<HandleGaps>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -112,7 +112,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new InfinilichNegativeSpacePie1.RayBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }

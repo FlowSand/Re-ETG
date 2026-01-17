@@ -38,7 +38,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new TankTreaderScatterShot1.ScatterBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }
@@ -56,7 +56,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new TankTreaderScatterShot1.LittleScatterBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }

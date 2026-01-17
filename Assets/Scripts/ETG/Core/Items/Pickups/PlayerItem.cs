@@ -308,7 +308,7 @@ namespace ETG.Core.Items.Pickups
         return (IEnumerator) new PlayerItem.<HandleAnimationReset>c__Iterator0()
         {
           delay = delay,
-          $this = this
+          _this = this
         };
       }
 

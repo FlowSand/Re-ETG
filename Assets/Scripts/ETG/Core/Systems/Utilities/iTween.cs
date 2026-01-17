@@ -739,10 +739,10 @@ namespace ETG.Core.Systems.Utilities
         if (type == null)
           return;
         // ISSUE: reference to a compiler-generated field
-        if (iTween.<>f__switch$map0 == null)
+        if (iTween.<>f__switch_map0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          iTween.<>f__switch$map0 = new Dictionary<string, int>(10)
+          iTween.<>f__switch_map0 = new Dictionary<string, int>(10)
           {
             {
               "value",
@@ -788,7 +788,7 @@ namespace ETG.Core.Systems.Utilities
         }
         int num;
         // ISSUE: reference to a compiler-generated field
-        if (!iTween.<>f__switch$map0.TryGetValue(type, out num))
+        if (!iTween.<>f__switch_map0.TryGetValue(type, out num))
           return;
         switch (num)
         {
@@ -1939,7 +1939,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new iTween.<TweenDelay>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -1964,7 +1964,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new iTween.<TweenRestart>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -2940,7 +2940,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new iTween.<Start>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 

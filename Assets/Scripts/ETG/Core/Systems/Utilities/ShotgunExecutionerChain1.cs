@@ -26,7 +26,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ShotgunExecutionerChain1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -67,7 +67,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new ShotgunExecutionerChain1.ArmBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }
@@ -90,7 +90,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new ShotgunExecutionerChain1.HandBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
 

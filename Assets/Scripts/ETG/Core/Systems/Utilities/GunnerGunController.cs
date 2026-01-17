@@ -66,7 +66,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new GunnerGunController.<HandleLifespan>c__Iterator0()
         {
           source = source,
-          $this = this
+          _this = this
         };
       }
 

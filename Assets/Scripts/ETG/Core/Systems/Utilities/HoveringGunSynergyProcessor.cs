@@ -164,7 +164,7 @@ namespace ETG.Core.Systems.Utilities
         {
           player = player,
           index = index,
-          $this = this
+          _this = this
         };
       }
 
@@ -176,7 +176,7 @@ namespace ETG.Core.Systems.Utilities
         {
           duration = duration,
           index = index,
-          $this = this
+          _this = this
         };
       }
 

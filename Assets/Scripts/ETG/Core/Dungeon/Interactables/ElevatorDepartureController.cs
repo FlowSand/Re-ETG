@@ -118,7 +118,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ElevatorDepartureController.<CryoWaitForPreviousElevatorDeparture>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -165,7 +165,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new ElevatorDepartureController.<HandleCryoDeparture>c__Iterator1()
         {
           playerless = playerless,
-          $this = this
+          _this = this
         };
       }
 
@@ -255,7 +255,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ElevatorDepartureController.<HandleDepartMotion>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -380,7 +380,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new ElevatorDepartureController.<HandleArrival>c__Iterator3()
         {
           initialDelay = initialDelay,
-          $this = this
+          _this = this
         };
       }
 

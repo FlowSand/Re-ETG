@@ -26,7 +26,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new NightclubCrowdController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -61,7 +61,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new NightclubCrowdController.<HandleDanceFloors>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -71,7 +71,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new NightclubCrowdController.<HandlePanic>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
     }

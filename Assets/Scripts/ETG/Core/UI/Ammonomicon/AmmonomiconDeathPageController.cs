@@ -539,7 +539,7 @@ namespace ETG.Core.UI.Ammonomicon
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AmmonomiconDeathPageController.<HandleMainMenu>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -609,7 +609,7 @@ namespace ETG.Core.UI.Ammonomicon
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AmmonomiconDeathPageController.<HandleQuickRestart>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
     }

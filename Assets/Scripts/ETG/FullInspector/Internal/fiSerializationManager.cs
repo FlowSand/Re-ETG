@@ -26,13 +26,13 @@ public static class fiSerializationManager
     if (!fiUtility.IsEditor)
       return;
     // ISSUE: reference to a compiler-generated field
-    if (fiSerializationManager.<>f__mg$cache0 == null)
+    if (fiSerializationManager.<>f__mg_cache0 == null)
     {
       // ISSUE: reference to a compiler-generated field
-      fiSerializationManager.<>f__mg$cache0 = new System.Action(fiSerializationManager.OnEditorUpdate);
+      fiSerializationManager.<>f__mg_cache0 = new System.Action(fiSerializationManager.OnEditorUpdate);
     }
     // ISSUE: reference to a compiler-generated field
-    fiLateBindings.EditorApplication.AddUpdateFunc(fiSerializationManager.<>f__mg$cache0);
+    fiLateBindings.EditorApplication.AddUpdateFunc(fiSerializationManager.<>f__mg_cache0);
   }
 
   private static bool SupportsMultithreading<TSerializer>() where TSerializer : BaseSerializer

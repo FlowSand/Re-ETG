@@ -330,7 +330,7 @@ namespace ETG.Core.Systems.Utilities
           distortionRadius = distortionRadius,
           duration = duration,
           maxRadius = maxRadius,
-          $this = this
+          _this = this
         };
       }
 
@@ -432,7 +432,7 @@ namespace ETG.Core.Systems.Utilities
           position = position,
           sourceNormal = sourceNormal,
           ignoreDamageCaps = ignoreDamageCaps,
-          $this = this
+          _this = this
         };
       }
     }

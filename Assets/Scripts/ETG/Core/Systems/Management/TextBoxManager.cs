@@ -266,7 +266,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new TextBoxManager.<HandleScaleUp>c__Iterator0()
         {
           prevBoxSize = prevBoxSize,
-          $this = this
+          _this = this
         };
       }
 
@@ -276,7 +276,7 @@ namespace ETG.Core.Systems.Management
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TextBoxManager.<HandleScaleDown>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -331,7 +331,7 @@ namespace ETG.Core.Systems.Management
           lifespan = lifespan,
           parent = parent,
           target = target,
-          $this = this
+          _this = this
         };
       }
 
@@ -341,7 +341,7 @@ namespace ETG.Core.Systems.Management
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TextBoxManager.<ShowContinueTextCR>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -352,7 +352,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new TextBoxManager.<RevealTextCharacters>c__Iterator4()
         {
           strippedString = strippedString,
-          $this = this
+          _this = this
         };
       }
 

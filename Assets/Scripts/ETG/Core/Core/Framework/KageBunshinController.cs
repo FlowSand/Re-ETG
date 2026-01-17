@@ -64,7 +64,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new KageBunshinController.<HandleFiringBeam>c__Iterator0()
         {
           beam = beam,
-          $this = this
+          _this = this
         };
       }
 

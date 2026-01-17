@@ -64,7 +64,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new CharacterSelectIdleDoer.<HandleCoreIdle>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -97,7 +97,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new CharacterSelectIdleDoer.<HandlePhase>c__Iterator1()
         {
           phase = phase,
-          $this = this
+          _this = this
         };
       }
 

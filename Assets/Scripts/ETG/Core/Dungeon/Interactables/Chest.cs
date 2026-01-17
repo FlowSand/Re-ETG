@@ -255,7 +255,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Chest.<SpawnBehavior_CR>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -518,7 +518,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new Chest.<HandleExplosionCountdown>c__Iterator1()
         {
           fuse = fuse,
-          $this = this
+          _this = this
         };
       }
 
@@ -690,7 +690,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new Chest.<GiveCoopPartnerBack>c__Iterator2()
         {
           doDelay = doDelay,
-          $this = this
+          _this = this
         };
       }
 
@@ -744,7 +744,7 @@ namespace ETG.Core.Dungeon.Interactables
           key = key,
           vfxPrefab = vfxPrefab,
           optionalPlayer = optionalPlayer,
-          $this = this
+          _this = this
         };
       }
 
@@ -860,7 +860,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new Chest.<HandleSynergyGambleChest>c__Iterator4()
         {
           player = player,
-          $this = this
+          _this = this
         };
       }
 
@@ -1072,7 +1072,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new Chest.<HandleRainbowRunLootProcessing>c__Iterator5()
         {
           items = items,
-          $this = this
+          _this = this
         };
       }
 
@@ -1109,7 +1109,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Chest.<PresentItem>c__Iterator6()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -1268,7 +1268,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new Chest.<HandleCoopChestTransform>c__Iterator7()
         {
           unbecome = unbecome,
-          $this = this
+          _this = this
         };
       }
 
@@ -1313,7 +1313,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Chest.<MimicIdleAnimCR>c__Iterator8()
         {
-          $this = this
+          _this = this
         };
       }
 

@@ -81,7 +81,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new MimicGunController.<HandleDeferredAnimationOverride>c__Iterator0()
         {
           t = t,
-          $this = this
+          _this = this
         };
       }
 
@@ -129,7 +129,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MimicGunController.<HandleClearMimic>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 

@@ -181,7 +181,7 @@ namespace ETG.Core.Items.Active
         return (IEnumerator) new EmptyBottleItem.<HandleSuck>c__Iterator0()
         {
           targetSprite = targetSprite,
-          $this = this
+          _this = this
         };
       }
 

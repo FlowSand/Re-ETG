@@ -48,10 +48,10 @@ public class SendMessage : FsmStateAction
     if (parameterType != null)
     {
       // ISSUE: reference to a compiler-generated field
-      if (SendMessage.<>f__switch$map1 == null)
+      if (SendMessage.<>f__switch_map1 == null)
       {
         // ISSUE: reference to a compiler-generated field
-        SendMessage.<>f__switch$map1 = new Dictionary<string, int>(16 /*0x10*/)
+        SendMessage.<>f__switch_map1 = new Dictionary<string, int>(16 /*0x10*/)
         {
           {
             "None",
@@ -121,7 +121,7 @@ public class SendMessage : FsmStateAction
       }
       int num;
       // ISSUE: reference to a compiler-generated field
-      if (SendMessage.<>f__switch$map1.TryGetValue(parameterType, out num))
+      if (SendMessage.<>f__switch_map1.TryGetValue(parameterType, out num))
       {
         switch (num)
         {

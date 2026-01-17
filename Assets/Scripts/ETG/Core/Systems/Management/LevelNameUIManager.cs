@@ -38,7 +38,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new LevelNameUIManager.<ShowLevelName_CR>c__Iterator0()
         {
           d = d,
-          $this = this
+          _this = this
         };
       }
 
@@ -67,7 +67,7 @@ namespace ETG.Core.Systems.Management
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new LevelNameUIManager.<HandleLevelName>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
     }

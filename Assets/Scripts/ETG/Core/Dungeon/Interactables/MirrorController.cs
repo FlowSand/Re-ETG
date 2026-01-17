@@ -113,7 +113,7 @@ namespace ETG.Core.Dungeon.Interactables
         {
           skipInitialWait = skipInitialWait,
           interactor = interactor,
-          $this = this
+          _this = this
         };
       }
 

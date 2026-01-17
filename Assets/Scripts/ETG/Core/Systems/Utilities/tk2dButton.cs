@@ -94,7 +94,7 @@ namespace ETG.Core.Systems.Utilities
           defaultScale = defaultScale,
           startScale = startScale,
           endScale = endScale,
-          $this = this
+          _this = this
         };
       }
 
@@ -115,7 +115,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new tk2dButton.<coHandleButtonPress>c__Iterator2()
         {
           fingerId = fingerId,
-          $this = this
+          _this = this
         };
       }
 

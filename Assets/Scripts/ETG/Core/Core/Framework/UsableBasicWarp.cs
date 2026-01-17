@@ -58,7 +58,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new UsableBasicWarp.<HandleWarpCooldown>c__Iterator0()
         {
           player = player,
-          $this = this
+          _this = this
         };
       }
 

@@ -138,7 +138,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new KnockbackDoer.<HandleKnockbackInvulnerabilityPeriod>c__Iterator0()
         {
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 

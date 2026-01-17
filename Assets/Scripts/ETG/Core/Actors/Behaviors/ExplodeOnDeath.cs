@@ -43,7 +43,7 @@ namespace ETG.Core.Actors.Behaviors
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ExplodeOnDeath.<HandleChainExplosion>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 

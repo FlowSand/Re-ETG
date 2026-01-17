@@ -32,7 +32,7 @@ namespace ETG.Core.Items.Active
         return (IEnumerator) new ReflectShieldPlayerItem.<HandleShield>c__Iterator0()
         {
           user = user,
-          $this = this
+          _this = this
         };
       }
 

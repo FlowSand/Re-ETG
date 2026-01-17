@@ -142,7 +142,7 @@ namespace ETG.Core.Items.Passive
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new RatBootsItem.<HandleInvulnerability>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 

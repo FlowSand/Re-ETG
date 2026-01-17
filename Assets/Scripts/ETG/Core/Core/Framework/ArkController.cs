@@ -45,7 +45,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ArkController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -120,7 +120,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ArkController.<HandleLightSprite>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -131,7 +131,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new ArkController.<Open>c__Iterator2()
         {
           interactor = interactor,
-          $this = this
+          _this = this
         };
       }
 
@@ -203,7 +203,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new ArkController.<HandleClockhair>c__Iterator3()
         {
           interactor = interactor,
-          $this = this
+          _this = this
         };
       }
 
@@ -251,7 +251,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new ArkController.<HandleGun>c__Iterator4()
         {
           interactor = interactor,
-          $this = this
+          _this = this
         };
       }
 

@@ -36,7 +36,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ConvictPastController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -54,7 +54,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new ConvictPastController.<HandleBossStart>c__Iterator1()
         {
           initialDelay = initialDelay,
-          $this = this
+          _this = this
         };
       }
 
@@ -80,7 +80,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ConvictPastController.<EnableHeadlights>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -91,7 +91,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new ConvictPastController.<HandleBossKilled>c__Iterator4()
         {
           bossTransform = bossTransform,
-          $this = this
+          _this = this
         };
       }
 

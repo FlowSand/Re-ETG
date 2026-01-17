@@ -70,7 +70,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DEMO_PictureManipulation.<resetZoom>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -81,7 +81,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new DEMO_PictureManipulation.<handleMomentum>c__Iterator1()
         {
           gesture = gesture,
-          $this = this
+          _this = this
         };
       }
 

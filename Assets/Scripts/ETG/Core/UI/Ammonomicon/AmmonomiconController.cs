@@ -317,7 +317,7 @@ namespace ETG.Core.UI.Ammonomicon
           isShortAnimation = isShortAnimation,
           isDeath = isDeath,
           targetTrackable = targetTrackable,
-          $this = this
+          _this = this
         };
       }
 
@@ -337,7 +337,7 @@ namespace ETG.Core.UI.Ammonomicon
         return (IEnumerator) new AmmonomiconController.<HandleQueuedUnlocks_CR>c__Iterator1()
         {
           trackableData = trackableData,
-          $this = this
+          _this = this
         };
       }
 
@@ -410,7 +410,7 @@ namespace ETG.Core.UI.Ammonomicon
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AmmonomiconController.<HandleCloseMotion>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -420,7 +420,7 @@ namespace ETG.Core.UI.Ammonomicon
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AmmonomiconController.<HandleCloseAmmonomicon>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -525,7 +525,7 @@ namespace ETG.Core.UI.Ammonomicon
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AmmonomiconController.<HandleTurnToPreviousPage>c__Iterator4()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -584,7 +584,7 @@ namespace ETG.Core.UI.Ammonomicon
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AmmonomiconController.<HandleTurnToNextPage>c__Iterator5()
         {
-          $this = this
+          _this = this
         };
       }
     }

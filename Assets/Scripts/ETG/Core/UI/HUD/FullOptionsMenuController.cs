@@ -142,7 +142,7 @@ namespace ETG.Core.UI.HUD
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new FullOptionsMenuController.<HandleTimedKeyBindingClear>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -496,7 +496,7 @@ namespace ETG.Core.UI.HUD
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new FullOptionsMenuController.<Start>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -644,7 +644,7 @@ namespace ETG.Core.UI.HUD
         return (IEnumerator) new FullOptionsMenuController.<HandleShwoop>c__Iterator3()
         {
           reverse = reverse,
-          $this = this
+          _this = this
         };
       }
 

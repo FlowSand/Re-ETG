@@ -22,7 +22,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new R2G2Burst1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
     }

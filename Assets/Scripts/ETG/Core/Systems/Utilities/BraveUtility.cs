@@ -620,7 +620,7 @@ namespace ETG.Core.Systems.Utilities
           func = func
         };
         // ISSUE: reference to a compiler-generated field
-        zipCIterator0.$PC = -2;
+        zipCIterator0._PC = -2;
         return (IEnumerable<T>) zipCIterator0;
       }
 

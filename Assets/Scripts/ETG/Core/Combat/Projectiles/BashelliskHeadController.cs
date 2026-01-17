@@ -230,7 +230,7 @@ namespace ETG.Core.Combat.Projectiles
         return (IEnumerator) new BashelliskHeadController.<PickupCR>c__Iterator0()
         {
           pickup = pickup,
-          $this = this
+          _this = this
         };
       }
 

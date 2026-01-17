@@ -339,7 +339,7 @@ namespace ETG.Core.Core.Framework
         {
           duration = duration,
           playingClip = playingClip,
-          $this = this
+          _this = this
         };
       }
 
@@ -390,7 +390,7 @@ namespace ETG.Core.Core.Framework
           playingClip = playingClip,
           revertToClip = revertToClip,
           returnToLoopSection = returnToLoopSection,
-          $this = this
+          _this = this
         };
       }
 
@@ -800,7 +800,7 @@ namespace ETG.Core.Core.Framework
         {
           duration = duration,
           targetPower = targetPower,
-          $this = this
+          _this = this
         };
       }
 

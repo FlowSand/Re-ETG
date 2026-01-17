@@ -424,7 +424,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new DeadlyDeadlyGoopManager.<HandleRecursiveElectrification>c__Iterator0()
         {
           cellIndex = cellIndex,
-          $this = this
+          _this = this
         };
       }
 
@@ -1571,7 +1571,7 @@ namespace ETG.Core.Systems.Management
           arcDegrees = arcDegrees,
           origin = origin,
           direction = direction,
-          $this = this
+          _this = this
         };
       }
 
@@ -1598,7 +1598,7 @@ namespace ETG.Core.Systems.Management
           radius = radius,
           center = center,
           suppressSplashes = suppressSplashes,
-          $this = this
+          _this = this
         };
       }
 
@@ -1683,7 +1683,7 @@ namespace ETG.Core.Systems.Management
           duration = duration,
           p2 = p2,
           radius = radius,
-          $this = this
+          _this = this
         };
       }
 
@@ -1758,7 +1758,7 @@ namespace ETG.Core.Systems.Management
           duration = duration,
           min = min,
           max = max,
-          $this = this
+          _this = this
         };
       }
 
@@ -1807,13 +1807,13 @@ namespace ETG.Core.Systems.Management
           int y = DeadlyDeadlyGoopManager.s_goopPointCenter.y;
           int radius1 = num5;
           // ISSUE: reference to a compiler-generated field
-          if (DeadlyDeadlyGoopManager.<>f__mg$cache0 == null)
+          if (DeadlyDeadlyGoopManager.<>f__mg_cache0 == null)
           {
             // ISSUE: reference to a compiler-generated field
-            DeadlyDeadlyGoopManager.<>f__mg$cache0 = new SetBackingFloatFunc(DeadlyDeadlyGoopManager.GetRadiusFraction);
+            DeadlyDeadlyGoopManager.<>f__mg_cache0 = new SetBackingFloatFunc(DeadlyDeadlyGoopManager.GetRadiusFraction);
           }
           // ISSUE: reference to a compiler-generated field
-          SetBackingFloatFunc fMgCache0 = DeadlyDeadlyGoopManager.<>f__mg$cache0;
+          SetBackingFloatFunc fMgCache0 = DeadlyDeadlyGoopManager.<>f__mg_cache0;
           pointsArray.SetCircle(x, y, radius1, true, fMgCache0);
         }
         int num6 = (int) ((double) excludeCenter.x / (double) DeadlyDeadlyGoopManager.GOOP_GRID_SIZE) - num1;
@@ -1824,13 +1824,13 @@ namespace ETG.Core.Systems.Management
         int y0 = num7;
         int radius2 = num8;
         // ISSUE: reference to a compiler-generated field
-        if (DeadlyDeadlyGoopManager.<>f__mg$cache1 == null)
+        if (DeadlyDeadlyGoopManager.<>f__mg_cache1 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          DeadlyDeadlyGoopManager.<>f__mg$cache1 = new SetBackingFloatFunc(DeadlyDeadlyGoopManager.GetRadiusFraction);
+          DeadlyDeadlyGoopManager.<>f__mg_cache1 = new SetBackingFloatFunc(DeadlyDeadlyGoopManager.GetRadiusFraction);
         }
         // ISSUE: reference to a compiler-generated field
-        SetBackingFloatFunc fMgCache1 = DeadlyDeadlyGoopManager.<>f__mg$cache1;
+        SetBackingFloatFunc fMgCache1 = DeadlyDeadlyGoopManager.<>f__mg_cache1;
         pointsArray1.SetCircle(x0, y0, radius2, false, fMgCache1);
         for (int x = 0; x < width; ++x)
         {

@@ -144,7 +144,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new ChallengeShrineController.<HandleShrineConversation>c__Iterator0()
         {
           interactor = interactor,
-          $this = this
+          _this = this
         };
       }
 

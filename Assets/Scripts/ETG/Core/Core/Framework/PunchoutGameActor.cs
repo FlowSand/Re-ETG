@@ -120,7 +120,7 @@ namespace ETG.Core.Core.Framework
           overrideColor = overrideColor,
           flashTime = flashTime,
           roundtrip = roundtrip,
-          $this = this
+          _this = this
         };
       }
 

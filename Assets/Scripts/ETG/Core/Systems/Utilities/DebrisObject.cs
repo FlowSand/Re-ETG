@@ -917,7 +917,7 @@ namespace ETG.Core.Systems.Utilities
           targetColor = targetColor,
           startAlpha = startAlpha,
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 
@@ -975,7 +975,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DebrisObject.<HandleSplashDeath>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -1006,7 +1006,7 @@ namespace ETG.Core.Systems.Utilities
         {
           dir = dir,
           debrisVelocity = debrisVelocity,
-          $this = this
+          _this = this
         };
       }
 

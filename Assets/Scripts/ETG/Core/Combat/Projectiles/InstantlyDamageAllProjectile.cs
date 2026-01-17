@@ -104,7 +104,7 @@ namespace ETG.Core.Combat.Projectiles
         {
           remainingTime = remainingTime,
           centerPoint = centerPoint,
-          $this = this
+          _this = this
         };
       }
 
@@ -137,7 +137,7 @@ namespace ETG.Core.Combat.Projectiles
         return (IEnumerator) new InstantlyDamageAllProjectile.<ProcessSlow>c__Iterator1()
         {
           target = target,
-          $this = this
+          _this = this
         };
       }
     }

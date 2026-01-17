@@ -354,7 +354,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new AdvancedShrineController.<HandleShrineConversation>c__Iterator0()
         {
           interactor = interactor,
-          $this = this
+          _this = this
         };
       }
 
@@ -365,7 +365,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new AdvancedShrineController.<HandleSpentText>c__Iterator1()
         {
           interactor = interactor,
-          $this = this
+          _this = this
         };
       }
 

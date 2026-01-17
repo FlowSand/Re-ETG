@@ -202,7 +202,7 @@ public class TweenTimeline : TweenBase, IEnumerable<TweenBase>, IEnumerable
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator<TweenBase>) new TweenTimeline.<enumerateTweens>c__Iterator0()
     {
-      $this = this
+      _this = this
     };
   }
 

@@ -93,7 +93,7 @@ public abstract class TweenBase : ITweenUpdatable
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator) new TweenBase.<WaitForCompletion>c__Iterator0()
     {
-      $this = this
+      _this = this
     };
   }
 
@@ -136,13 +136,13 @@ public abstract class TweenBase : ITweenUpdatable
   protected virtual void Reset()
   {
     // ISSUE: reference to a compiler-generated field
-    if (TweenBase.<>f__mg$cache0 == null)
+    if (TweenBase.<>f__mg_cache0 == null)
     {
       // ISSUE: reference to a compiler-generated field
-      TweenBase.<>f__mg$cache0 = new TweenEasingCallback(TweenEasingFunctions.Linear);
+      TweenBase.<>f__mg_cache0 = new TweenEasingCallback(TweenEasingFunctions.Linear);
     }
     // ISSUE: reference to a compiler-generated field
-    this.Easing = TweenBase.<>f__mg$cache0;
+    this.Easing = TweenBase.<>f__mg_cache0;
     this.LoopType = TweenLoopType.None;
     this.CurrentTime = 0.0f;
     this.Delay = 0.0f;

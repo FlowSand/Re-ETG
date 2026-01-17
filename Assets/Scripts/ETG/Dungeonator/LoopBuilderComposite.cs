@@ -499,10 +499,10 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
     {
       layout = layout,
       startPosition = startPosition,
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    compositeCIterator0.$PC = -2;
+    compositeCIterator0._PC = -2;
     return (IEnumerable) compositeCIterator0;
   }
 
@@ -714,10 +714,10 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
     {
       layout = layout,
       startPosition = startPosition,
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    depthFirstCIterator1.$PC = -2;
+    depthFirstCIterator1._PC = -2;
     return (IEnumerable) depthFirstCIterator1;
   }
 
@@ -860,10 +860,10 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
     {
       currentBuildData = currentBuildData,
       layout = layout,
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    depthFirstCIterator2.$PC = -2;
+    depthFirstCIterator2._PC = -2;
     return (IEnumerable<ProcessStatus>) depthFirstCIterator2;
   }
 
@@ -939,10 +939,10 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
     LoopBuilderComposite.<Build>c__Iterator3 buildCIterator3 = new LoopBuilderComposite.<Build>c__Iterator3()
     {
       startPosition = startPosition,
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    buildCIterator3.$PC = -2;
+    buildCIterator3._PC = -2;
     return (IEnumerable) buildCIterator3;
   }
 

@@ -26,7 +26,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new HologramFoyerController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -36,7 +36,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new HologramFoyerController.<Core>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -47,7 +47,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new HologramFoyerController.<CoreCycle>c__Iterator2()
         {
           targetAnimation = targetAnimation,
-          $this = this
+          _this = this
         };
       }
 
@@ -58,7 +58,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new HologramFoyerController.<ToggleAdditionalLight>c__Iterator3()
         {
           lightEnabled = lightEnabled,
-          $this = this
+          _this = this
         };
       }
 
@@ -69,7 +69,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new HologramFoyerController.<HandleArcLerp>c__Iterator4()
         {
           invert = invert,
-          $this = this
+          _this = this
         };
       }
 

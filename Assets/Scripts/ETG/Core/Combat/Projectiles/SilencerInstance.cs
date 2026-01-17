@@ -194,7 +194,7 @@ namespace ETG.Core.Combat.Projectiles
           user = user,
           shouldReflectInstead = shouldReflectInstead,
           additionalTimeAtMaxRadius = additionalTimeAtMaxRadius,
-          $this = this
+          _this = this
         };
       }
 
@@ -215,7 +215,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new SilencerInstance.<BackupDistortionCleanup>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 

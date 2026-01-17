@@ -106,7 +106,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new GrappleModule.<HandleGrappleEffect>c__Iterator0()
         {
           user = user,
-          $this = this
+          _this = this
         };
       }
 

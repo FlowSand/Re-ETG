@@ -87,7 +87,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MineCartController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -124,7 +124,7 @@ namespace ETG.Core.Dungeon.Interactables
         {
           targetRigidbody = targetRigidbody,
           dir = dir,
-          $this = this
+          _this = this
         };
       }
 
@@ -575,7 +575,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MineCartController.<DelayedWarpToStart>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 

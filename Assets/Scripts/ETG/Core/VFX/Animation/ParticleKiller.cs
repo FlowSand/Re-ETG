@@ -127,7 +127,7 @@ namespace ETG.Core.VFX.Animation
         return (IEnumerator) new ParticleKiller.<TimedDespawn>c__Iterator0()
         {
           t = t,
-          $this = this
+          _this = this
         };
       }
 
@@ -143,7 +143,7 @@ namespace ETG.Core.VFX.Animation
         return (IEnumerator) new ParticleKiller.<TimedTransferToSubEmitter>c__Iterator1()
         {
           t = t,
-          $this = this
+          _this = this
         };
       }
 

@@ -211,13 +211,13 @@ namespace ETG.Core.VFX.Animation
         if (spawnMethod == null)
         {
           // ISSUE: reference to a compiler-generated field
-          if (VFXComplex.<>f__mg$cache0 == null)
+          if (VFXComplex.<>f__mg_cache0 == null)
           {
             // ISSUE: reference to a compiler-generated field
-            VFXComplex.<>f__mg$cache0 = new VFXComplex.SpawnMethod(SpawnManager.SpawnVFX);
+            VFXComplex.<>f__mg_cache0 = new VFXComplex.SpawnMethod(SpawnManager.SpawnVFX);
           }
           // ISSUE: reference to a compiler-generated field
-          spawnMethod = VFXComplex.<>f__mg$cache0;
+          spawnMethod = VFXComplex.<>f__mg_cache0;
         }
         this.m_spawnedObjects.RemoveAll((Predicate<GameObject>) (go => !(bool) (UnityEngine.Object) go));
         for (int index = 0; index < this.effects.Length; ++index)

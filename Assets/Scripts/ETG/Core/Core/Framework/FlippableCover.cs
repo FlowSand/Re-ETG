@@ -397,7 +397,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new FlippableCover.<DelayedMakePerpendicular>c__Iterator0()
         {
           time = time,
-          $this = this
+          _this = this
         };
       }
 
@@ -408,7 +408,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new FlippableCover.<DelayedBreakBreakables>c__Iterator1()
         {
           time = time,
-          $this = this
+          _this = this
         };
       }
 
@@ -490,7 +490,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new FlippableCover.<HandleDelayedMoveability>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -501,7 +501,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new FlippableCover.<HandleDelayedVibration>c__Iterator3()
         {
           player = player,
-          $this = this
+          _this = this
         };
       }
 
@@ -515,7 +515,7 @@ namespace ETG.Core.Core.Framework
         {
           element = element,
           flipDirection = flipDirection,
-          $this = this
+          _this = this
         };
       }
 
@@ -760,7 +760,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new FlippableCover.<StartFallAnimation>c__Iterator5()
         {
           dir = dir,
-          $this = this
+          _this = this
         };
       }
 

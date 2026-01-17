@@ -179,7 +179,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new ShaderProjModifier.<ApplyEffect>c__Iterator0()
         {
           hh = hh,
-          $this = this
+          _this = this
         };
       }
 

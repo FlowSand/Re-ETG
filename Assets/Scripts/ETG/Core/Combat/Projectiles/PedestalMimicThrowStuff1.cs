@@ -28,7 +28,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PedestalMimicThrowStuff1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -45,7 +45,7 @@ namespace ETG.Core.Combat.Projectiles
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new PedestalMimicThrowStuff1.AcceleratingBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }
@@ -58,7 +58,7 @@ namespace ETG.Core.Combat.Projectiles
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new PedestalMimicThrowStuff1.HomingShot.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
 

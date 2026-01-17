@@ -490,7 +490,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Pixelator.<BackgroundCoroutineProcessor>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -2105,7 +2105,7 @@ namespace ETG.Core.Systems.Utilities
           duration = duration,
           endColor = endColor,
           endScreenBrightness = endScreenBrightness,
-          $this = this
+          _this = this
         };
       }
 
@@ -2117,7 +2117,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Pixelator.<HandlePastFadeIn>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -2136,7 +2136,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Pixelator.<HandleFreezeFrame>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -2148,7 +2148,7 @@ namespace ETG.Core.Systems.Utilities
         {
           holdDuration = holdDuration,
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 
@@ -2208,7 +2208,7 @@ namespace ETG.Core.Systems.Utilities
           hold = hold,
           reverse = reverse,
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 
@@ -2223,7 +2223,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Pixelator.<HandleDamagedVignette_CR>c__Iterator6()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -2248,7 +2248,7 @@ namespace ETG.Core.Systems.Utilities
         {
           duration = duration,
           targetFraction = targetFraction,
-          $this = this
+          _this = this
         };
       }
 

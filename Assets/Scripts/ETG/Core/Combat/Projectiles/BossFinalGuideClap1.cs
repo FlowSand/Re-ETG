@@ -30,7 +30,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new BossFinalGuideClap1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -40,7 +40,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new BossFinalGuideClap1.<FireBolt>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -57,7 +57,7 @@ namespace ETG.Core.Combat.Projectiles
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new BossFinalGuideClap1.LightningBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
 

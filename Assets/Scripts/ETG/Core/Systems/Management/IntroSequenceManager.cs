@@ -26,7 +26,7 @@ namespace ETG.Core.Systems.Management
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new IntroSequenceManager.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -39,7 +39,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new IntroSequenceManager.<HandleElement>c__Iterator1()
         {
           index = index,
-          $this = this
+          _this = this
         };
       }
     }

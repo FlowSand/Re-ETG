@@ -117,7 +117,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ThunderstormController.<HandleLightningAmbientBoost>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -128,7 +128,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new ThunderstormController.<ProcessLightningRenderer>c__Iterator2()
         {
           target = target,
-          $this = this
+          _this = this
         };
       }
 
@@ -138,7 +138,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ThunderstormController.<DoLightningStrike>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
     }

@@ -42,7 +42,7 @@ namespace ETG.Core.Actors.Behaviors
         return (IEnumerator) new DogItemFindBehavior.<DelayedSpawnItem>c__Iterator0()
         {
           spawnPoint = spawnPoint,
-          $this = this
+          _this = this
         };
       }
 

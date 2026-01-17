@@ -121,7 +121,7 @@ public class Teleport : FsmStateAction
     return (IEnumerator) new Teleport.<HandleAnimAndVfx>c__Iterator0()
     {
       teleportSettings = teleportSettings,
-      $this = this
+      _this = this
     };
   }
 

@@ -39,7 +39,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TitleDioramaController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -98,7 +98,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new TitleDioramaController.<Core>c__Iterator1()
         {
           isFoyer = isFoyer,
-          $this = this
+          _this = this
         };
       }
 
@@ -126,7 +126,7 @@ namespace ETG.Core.Systems.Utilities
           startValue = startValue,
           endValue = endValue,
           linearStep = linearStep,
-          $this = this
+          _this = this
         };
       }
 
@@ -136,7 +136,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TitleDioramaController.<HandleFinalEyeholeEmission>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -154,7 +154,7 @@ namespace ETG.Core.Systems.Utilities
           startValue = startValue,
           endValue = endValue,
           really = really,
-          $this = this
+          _this = this
         };
       }
 
@@ -172,7 +172,7 @@ namespace ETG.Core.Systems.Utilities
           startValue = startValue,
           endValue = endValue,
           really = really,
-          $this = this
+          _this = this
         };
       }
 
@@ -190,7 +190,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TitleDioramaController.<HandleReveal>c__Iterator6()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -200,7 +200,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TitleDioramaController.<HandleLichIdlePhase>c__Iterator7()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -210,7 +210,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TitleDioramaController.<HandleLichFiddlePhase>c__Iterator8()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -220,7 +220,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TitleDioramaController.<HandleLichCapePhase>c__Iterator9()
         {
-          $this = this
+          _this = this
         };
       }
     }

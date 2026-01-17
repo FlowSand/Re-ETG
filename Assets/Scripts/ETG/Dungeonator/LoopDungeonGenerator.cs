@@ -75,10 +75,10 @@ public class LoopDungeonGenerator : IDungeonGenerator
     // ISSUE: variable of a compiler-generated type
     LoopDungeonGenerator.<GenerateDungeonLayoutDeferred>c__Iterator0 dungeonLayoutDeferred = new LoopDungeonGenerator.<GenerateDungeonLayoutDeferred>c__Iterator0()
     {
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    dungeonLayoutDeferred.$PC = -2;
+    dungeonLayoutDeferred._PC = -2;
     return (IEnumerable) dungeonLayoutDeferred;
   }
 
@@ -89,10 +89,10 @@ public class LoopDungeonGenerator : IDungeonGenerator
     // ISSUE: variable of a compiler-generated type
     LoopDungeonGenerator.<GenerateDungeonLayoutDeferred_Internal>c__Iterator1 deferredInternal = new LoopDungeonGenerator.<GenerateDungeonLayoutDeferred_Internal>c__Iterator1()
     {
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    deferredInternal.$PC = -2;
+    deferredInternal._PC = -2;
     return (IEnumerable<ProcessStatus>) deferredInternal;
   }
 

@@ -821,7 +821,7 @@ namespace ETG.Core.Core.Framework
         {
           sourceDamageCategory = sourceDamageCategory,
           hitPixelCollider = hitPixelCollider,
-          $this = this
+          _this = this
         };
       }
 
@@ -859,7 +859,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new HealthHaver.<IncorporealityOnHit>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -922,7 +922,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new HealthHaver.<HandleInvulnerablePeriod>c__Iterator2()
         {
           overrideTime = overrideTime,
-          $this = this
+          _this = this
         };
       }
 

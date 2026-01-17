@@ -1335,10 +1335,10 @@ label_30:
       internalNode = internalNode,
       layout = layout,
       canvas = canvas,
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    layout1.$PC = -2;
+    layout1._PC = -2;
     return (IEnumerable) layout1;
   }
 
@@ -1368,10 +1368,10 @@ label_30:
       internalNode = internalNode,
       layout = layout,
       canvas = canvas,
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    layout1.$PC = -2;
+    layout1._PC = -2;
     return (IEnumerable) layout1;
   }
 
@@ -1419,10 +1419,10 @@ label_30:
     // ISSUE: variable of a compiler-generated type
     LoopFlowBuilder.<DeferredBuild>c__Iterator2 deferredBuildCIterator2 = new LoopFlowBuilder.<DeferredBuild>c__Iterator2()
     {
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    deferredBuildCIterator2.$PC = -2;
+    deferredBuildCIterator2._PC = -2;
     return (IEnumerable) deferredBuildCIterator2;
   }
 

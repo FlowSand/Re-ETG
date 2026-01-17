@@ -853,7 +853,7 @@ namespace ETG.Core.Items.Pickups
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Gun.<HandleFrameDelayedTransformation>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -1750,7 +1750,7 @@ namespace ETG.Core.Items.Pickups
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Gun.<HandleSlash>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -2574,7 +2574,7 @@ namespace ETG.Core.Items.Pickups
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Gun.<HandleShellCasingFireDelay>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -3612,7 +3612,7 @@ namespace ETG.Core.Items.Pickups
         return (IEnumerator) new Gun.<HandleModuleCooldown>c__Iterator3()
         {
           mod = mod,
-          $this = this
+          _this = this
         };
       }
 
@@ -3871,7 +3871,7 @@ namespace ETG.Core.Items.Pickups
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Gun.<HandleReload>c__Iterator4()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -4291,7 +4291,7 @@ namespace ETG.Core.Items.Pickups
           damageMultiplier = damageMultiplier,
           duration = duration,
           oneShot = oneShot,
-          $this = this
+          _this = this
         };
       }
 

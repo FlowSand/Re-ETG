@@ -950,13 +950,13 @@ namespace ETG.Core.Systems.Utilities
         {
           ObjectPool<BraveInput.PressAction>.Factory factory = (ObjectPool<BraveInput.PressAction>.Factory) (() => new BraveInput.PressAction());
           // ISSUE: reference to a compiler-generated field
-          if (BraveInput.PressAction.<>f__mg$cache0 == null)
+          if (BraveInput.PressAction.<>f__mg_cache0 == null)
           {
             // ISSUE: reference to a compiler-generated field
-            BraveInput.PressAction.<>f__mg$cache0 = new ObjectPool<BraveInput.PressAction>.Cleanup(BraveInput.PressAction.Cleanup);
+            BraveInput.PressAction.<>f__mg_cache0 = new ObjectPool<BraveInput.PressAction>.Cleanup(BraveInput.PressAction.Cleanup);
           }
           // ISSUE: reference to a compiler-generated field
-          ObjectPool<BraveInput.PressAction>.Cleanup fMgCache0 = BraveInput.PressAction.<>f__mg$cache0;
+          ObjectPool<BraveInput.PressAction>.Cleanup fMgCache0 = BraveInput.PressAction.<>f__mg_cache0;
           BraveInput.PressAction.Pool = new ObjectPool<BraveInput.PressAction>(factory, 10, fMgCache0);
         }
       }
@@ -998,13 +998,13 @@ namespace ETG.Core.Systems.Utilities
         {
           ObjectPool<BraveInput.HoldAction>.Factory factory = (ObjectPool<BraveInput.HoldAction>.Factory) (() => new BraveInput.HoldAction());
           // ISSUE: reference to a compiler-generated field
-          if (BraveInput.HoldAction.<>f__mg$cache0 == null)
+          if (BraveInput.HoldAction.<>f__mg_cache0 == null)
           {
             // ISSUE: reference to a compiler-generated field
-            BraveInput.HoldAction.<>f__mg$cache0 = new ObjectPool<BraveInput.HoldAction>.Cleanup(BraveInput.HoldAction.Cleanup);
+            BraveInput.HoldAction.<>f__mg_cache0 = new ObjectPool<BraveInput.HoldAction>.Cleanup(BraveInput.HoldAction.Cleanup);
           }
           // ISSUE: reference to a compiler-generated field
-          ObjectPool<BraveInput.HoldAction>.Cleanup fMgCache0 = BraveInput.HoldAction.<>f__mg$cache0;
+          ObjectPool<BraveInput.HoldAction>.Cleanup fMgCache0 = BraveInput.HoldAction.<>f__mg_cache0;
           BraveInput.HoldAction.Pool = new ObjectPool<BraveInput.HoldAction>(factory, 10, fMgCache0);
         }
       }

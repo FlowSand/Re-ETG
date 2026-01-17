@@ -78,7 +78,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TimeTubeCreditsController.<HandleTimeTubeLightFX>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -98,7 +98,7 @@ namespace ETG.Core.Systems.Utilities
           skipCredits = skipCredits,
           optionalAnimatorToDisable = optionalAnimatorToDisable,
           quickEndShatter = quickEndShatter,
-          $this = this
+          _this = this
         };
       }
 
@@ -116,7 +116,7 @@ namespace ETG.Core.Systems.Utilities
           isShotPlayer = isShotPlayer,
           TunnelCamera = TunnelCamera,
           TunnelTransform = TunnelTransform,
-          $this = this
+          _this = this
         };
       }
     }

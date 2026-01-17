@@ -346,10 +346,10 @@ public class SemioticLayoutManager
       staticExit = staticExit,
       newExit = newExit,
       canvas = canvas,
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    locationForLayout2.$PC = -2;
+    locationForLayout2._PC = -2;
     return (IEnumerable) locationForLayout2;
   }
 
@@ -660,10 +660,10 @@ label_9:
       newAreaBasePosition = newAreaBasePosition,
       newExit = newExit,
       otherLayout = otherLayout,
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    layoutsCIterator1.$PC = -2;
+    layoutsCIterator1._PC = -2;
     return (IEnumerable<ProcessStatus>) layoutsCIterator1;
   }
 
@@ -741,10 +741,10 @@ label_9:
       staticAreaBasePosition = staticAreaBasePosition,
       newAreaBasePosition = newAreaBasePosition,
       layout = layout,
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    atPointCIterator2.$PC = -2;
+    atPointCIterator2._PC = -2;
     return (IEnumerable) atPointCIterator2;
   }
 
@@ -853,10 +853,10 @@ label_9:
       previousExit = previousExit,
       basePositionOfPreviousRoom = basePositionOfPreviousRoom,
       newRoom = newRoom,
-      $this = this
+      _this = this
     };
     // ISSUE: reference to a compiler-generated field
-    byExitCIterator3.$PC = -2;
+    byExitCIterator3._PC = -2;
     return (IEnumerable<ProcessStatus>) byExitCIterator3;
   }
 

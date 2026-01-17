@@ -191,7 +191,7 @@ namespace ETG.Core.UI.HUD
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PauseMenuController.<HandleQuickRestart>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -201,7 +201,7 @@ namespace ETG.Core.UI.HUD
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PauseMenuController.<HandleCloseGameEntirely>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -278,7 +278,7 @@ namespace ETG.Core.UI.HUD
         return (IEnumerator) new PauseMenuController.<DelayTriggerAnimators>c__Iterator2()
         {
           timeMultiplier = timeMultiplier,
-          $this = this
+          _this = this
         };
       }
 
@@ -290,7 +290,7 @@ namespace ETG.Core.UI.HUD
         {
           reverse = reverse,
           timeMultiplier = timeMultiplier,
-          $this = this
+          _this = this
         };
       }
 
@@ -302,7 +302,7 @@ namespace ETG.Core.UI.HUD
         {
           reverse = reverse,
           timeMultlier = timeMultlier,
-          $this = this
+          _this = this
         };
       }
 
@@ -388,7 +388,7 @@ namespace ETG.Core.UI.HUD
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PauseMenuController.<HandleExitToMainMenu>c__Iterator5()
         {
-          $this = this
+          _this = this
         };
       }
 

@@ -57,7 +57,7 @@ namespace ETG.Core.Items.Active
         return (IEnumerator) new GaseousFormPlayerItem.<HandleDuration>c__Iterator0()
         {
           user = user,
-          $this = this
+          _this = this
         };
       }
 

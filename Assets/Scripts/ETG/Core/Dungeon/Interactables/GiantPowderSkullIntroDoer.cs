@@ -78,7 +78,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GiantPowderSkullIntroDoer.<RunParticleSystems>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -88,7 +88,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GiantPowderSkullIntroDoer.<DoIntro>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
     }

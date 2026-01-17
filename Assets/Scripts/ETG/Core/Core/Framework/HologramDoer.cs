@@ -41,7 +41,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new HologramDoer.<HandleAutomaticTrigger>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -56,7 +56,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new HologramDoer.<ToggleAdditionalLight>c__Iterator1()
         {
           lightEnabled = lightEnabled,
-          $this = this
+          _this = this
         };
       }
 
@@ -88,7 +88,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new HologramDoer.<HandleArcLerp>c__Iterator2()
         {
           invert = invert,
-          $this = this
+          _this = this
         };
       }
 

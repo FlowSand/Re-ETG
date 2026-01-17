@@ -321,7 +321,7 @@ namespace ETG.Core.Core.Framework
         {
           change = change,
           newGun = newGun,
-          $this = this
+          _this = this
         };
       }
 
@@ -332,7 +332,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new GameUIAmmoController.<HandleGunCardFlipReverse>c__Iterator1()
         {
           newGun = newGun,
-          $this = this
+          _this = this
         };
       }
 
@@ -393,7 +393,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new GameUIAmmoController.<HandleGunCardFlip>c__Iterator2()
         {
           newGun = newGun,
-          $this = this
+          _this = this
         };
       }
 

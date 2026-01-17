@@ -136,7 +136,7 @@ public static class fsPortableReflection
       <$>type = type
     };
     // ISSUE: reference to a compiler-generated field
-    flattenedMethods.$PC = -2;
+    flattenedMethods._PC = -2;
     return (IEnumerable<MethodInfo>) flattenedMethods;
   }
 

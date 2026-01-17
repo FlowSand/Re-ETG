@@ -118,7 +118,7 @@ namespace ETG.Core.Combat.Projectiles
         return (IEnumerator) new TalkingGunModifier.<HandleDelayedTalk>c__Iterator0()
         {
           obj = obj,
-          $this = this
+          _this = this
         };
       }
 

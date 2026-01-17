@@ -246,7 +246,7 @@ namespace ETG.Core.UI.HUD
         return (IEnumerator) new GameUIBossHealthController.<TriggerBossPortraitCR>c__Iterator0()
         {
           pss = pss,
-          $this = this
+          _this = this
         };
       }
 
@@ -335,7 +335,7 @@ namespace ETG.Core.UI.HUD
         return (IEnumerator) new GameUIBossHealthController.<FillBossBar>c__Iterator1()
         {
           barSprite = barSprite,
-          $this = this
+          _this = this
         };
       }
 

@@ -37,7 +37,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ResourcefulRatIntroDoer.<DoIntro>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -82,7 +82,7 @@ namespace ETG.Core.Dungeon.Interactables
         {
           multiline = multiline,
           stringKey = stringKey,
-          $this = this
+          _this = this
         };
       }
 
@@ -93,7 +93,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new ResourcefulRatIntroDoer.<TalkRaw>c__Iterator2()
         {
           plaintext = plaintext,
-          $this = this
+          _this = this
         };
       }
     }

@@ -36,7 +36,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new FoyerAlternateGunShrineController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -63,7 +63,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new FoyerAlternateGunShrineController.<HandleShrineConversation>c__Iterator1()
         {
           interactor = interactor,
-          $this = this
+          _this = this
         };
       }
 

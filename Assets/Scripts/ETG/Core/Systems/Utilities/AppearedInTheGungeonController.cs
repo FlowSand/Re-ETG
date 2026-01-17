@@ -78,7 +78,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new AppearedInTheGungeonController.<HandleShwoop>c__Iterator0()
         {
           reverse = reverse,
-          $this = this
+          _this = this
         };
       }
 

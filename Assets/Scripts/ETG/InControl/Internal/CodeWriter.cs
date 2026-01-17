@@ -41,13 +41,13 @@ internal class CodeWriter
       string str = strArray[index];
       string source = str;
       // ISSUE: reference to a compiler-generated field
-      if (CodeWriter.<>f__mg$cache0 == null)
+      if (CodeWriter.<>f__mg_cache0 == null)
       {
         // ISSUE: reference to a compiler-generated field
-        CodeWriter.<>f__mg$cache0 = new Func<char, bool>(char.IsWhiteSpace);
+        CodeWriter.<>f__mg_cache0 = new Func<char, bool>(char.IsWhiteSpace);
       }
       // ISSUE: reference to a compiler-generated field
-      Func<char, bool> fMgCache0 = CodeWriter.<>f__mg$cache0;
+      Func<char, bool> fMgCache0 = CodeWriter.<>f__mg_cache0;
       if (!source.All<char>(fMgCache0))
       {
         this.stringBuilder.Append('\t', this.indent);

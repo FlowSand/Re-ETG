@@ -51,7 +51,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AdditionalBraveLight.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -114,7 +114,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AdditionalBraveLight.<HandleBulletBankFade>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -139,7 +139,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new AdditionalBraveLight.<FadeLight>c__Iterator2()
         {
           fadeTime = fadeTime,
-          $this = this
+          _this = this
         };
       }
     }

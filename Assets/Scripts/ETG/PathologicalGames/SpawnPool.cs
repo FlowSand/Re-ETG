@@ -325,7 +325,7 @@ public sealed class SpawnPool :
       seconds = seconds,
       useParent = useParent,
       parent = parent,
-      $this = this
+      _this = this
     };
   }
 
@@ -389,7 +389,7 @@ public sealed class SpawnPool :
     return (IEnumerator) new SpawnPool.<ListForAudioStop>c__Iterator2()
     {
       src = src,
-      $this = this
+      _this = this
     };
   }
 
@@ -400,7 +400,7 @@ public sealed class SpawnPool :
     return (IEnumerator) new SpawnPool.<ListenForEmitDespawn>c__Iterator3()
     {
       emitter = emitter,
-      $this = this
+      _this = this
     };
   }
 
@@ -433,7 +433,7 @@ public sealed class SpawnPool :
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator<Transform>) new SpawnPool.<GetEnumerator>c__Iterator4()
     {
-      $this = this
+      _this = this
     };
   }
 
@@ -443,7 +443,7 @@ public sealed class SpawnPool :
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator) new SpawnPool.<System_Collections_IEnumerable_GetEnumerator>c__Iterator0()
     {
-      $this = this
+      _this = this
     };
   }
 

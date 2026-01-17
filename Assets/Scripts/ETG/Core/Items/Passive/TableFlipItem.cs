@@ -293,7 +293,7 @@ namespace ETG.Core.Items.Passive
         return (IEnumerator) new TableFlipItem.<DelayedBlankEffect>c__Iterator1()
         {
           table = table,
-          $this = this
+          _this = this
         };
       }
 
@@ -394,7 +394,7 @@ namespace ETG.Core.Items.Passive
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TableFlipItem.<HandleTimeSlowDuration>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -421,7 +421,7 @@ namespace ETG.Core.Items.Passive
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TableFlipItem.<HandleRageCooldown>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -441,7 +441,7 @@ namespace ETG.Core.Items.Passive
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TableFlipItem.<HandleVolleyCooldown>c__Iterator4()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -459,7 +459,7 @@ namespace ETG.Core.Items.Passive
         return (IEnumerator) new TableFlipItem.<HandleHeatEffectsCR>c__Iterator5()
         {
           table = table,
-          $this = this
+          _this = this
         };
       }
 

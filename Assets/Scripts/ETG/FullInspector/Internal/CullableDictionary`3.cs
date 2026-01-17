@@ -47,9 +47,9 @@ public class CullableDictionary<TKey, TValue, TDictionary> : ICullableDictionary
     {
       CullableDictionary<TKey, TValue, TDictionary>.<>c__Iterator0 items = new CullableDictionary<TKey, TValue, TDictionary>.<>c__Iterator0()
       {
-        $this = this
+        _this = this
       };
-      items.$PC = -2;
+      items._PC = -2;
       return (IEnumerable<KeyValuePair<TKey, TValue>>) items;
     }
   }

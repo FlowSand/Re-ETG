@@ -145,7 +145,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator<KeyValuePair<K, V>>) new KeyValueList<K, V>.<GetEnumerator>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -155,7 +155,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new KeyValueList<K, V>.<System_Collections_IEnumerable_GetEnumerator>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 

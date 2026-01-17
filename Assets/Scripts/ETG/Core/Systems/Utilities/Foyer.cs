@@ -78,7 +78,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Foyer.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -107,7 +107,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Foyer.<HandleIntroSequence>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -207,7 +207,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Foyer.<HandleCharacterSelect>c__Iterator4()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -219,7 +219,7 @@ namespace ETG.Core.Systems.Utilities
         {
           delayTime = delayTime,
           flag = flag,
-          $this = this
+          _this = this
         };
       }
 

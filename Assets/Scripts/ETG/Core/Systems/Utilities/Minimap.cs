@@ -263,7 +263,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new Minimap.<HandleAutoPan>c__Iterator0()
         {
           targetPan = targetPan,
-          $this = this
+          _this = this
         };
       }
 
@@ -392,7 +392,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Minimap.<DelayedMarkDirty>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -493,7 +493,7 @@ namespace ETG.Core.Systems.Utilities
           isCurrentRoom = isCurrentRoom,
           force = force,
           doBuild = doBuild,
-          $this = this
+          _this = this
         };
       }
 
@@ -586,7 +586,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new Minimap.<TransitionToNewFadeState>c__Iterator3()
         {
           newFadeState = newFadeState,
-          $this = this
+          _this = this
         };
       }
 

@@ -114,7 +114,7 @@ namespace ETG.Core.Combat.Effects
           vfx = vfx,
           source = source,
           finalVfx = finalVfx,
-          $this = this
+          _this = this
         };
       }
 

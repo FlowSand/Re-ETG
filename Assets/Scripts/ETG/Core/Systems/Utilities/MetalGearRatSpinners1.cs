@@ -33,7 +33,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MetalGearRatSpinners1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -43,7 +43,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MetalGearRatSpinners1.<SpawnInnerRing>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -53,7 +53,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MetalGearRatSpinners1.<SpawnOuterRing>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -128,7 +128,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new MetalGearRatSpinners1.CircleDummy.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }
@@ -162,7 +162,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new MetalGearRatSpinners1.CircleBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }
@@ -197,7 +197,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new MetalGearRatSpinners1.OrbitBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }

@@ -38,7 +38,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new CrestDoorController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -109,7 +109,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new CrestDoorController.<Open>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -153,7 +153,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new CrestDoorController.<HandleShrineConversation>c__Iterator2()
         {
           interactor = interactor,
-          $this = this
+          _this = this
         };
       }
 

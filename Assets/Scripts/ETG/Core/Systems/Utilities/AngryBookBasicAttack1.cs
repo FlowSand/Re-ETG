@@ -27,7 +27,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AngryBookBasicAttack1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -47,7 +47,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new AngryBookBasicAttack1.DefaultBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }

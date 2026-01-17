@@ -100,7 +100,7 @@ namespace ETG.Core.Items.Active
         {
           anim = anim,
           isPrimary = isPrimary,
-          $this = this
+          _this = this
         };
       }
 
@@ -129,7 +129,7 @@ namespace ETG.Core.Items.Active
         {
           owner = owner,
           targetCompanion = targetCompanion,
-          $this = this
+          _this = this
         };
       }
 

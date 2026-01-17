@@ -115,7 +115,7 @@ namespace ETG.Core.UI.HUD
         return (IEnumerator) new PreOptionsMenuController.<HandleShwoop>c__Iterator0()
         {
           reverse = reverse,
-          $this = this
+          _this = this
         };
       }
 

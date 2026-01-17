@@ -309,7 +309,7 @@ namespace ETG.Core.Core.Framework
           startWorldPosition = startWorldPosition,
           worldFloorHeight = worldFloorHeight,
           damageLabel = damageLabel,
-          $this = this
+          _this = this
         };
       }
 
@@ -391,7 +391,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GameUIRoot.<HandleDemoModeTutorialScreens>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -461,7 +461,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GameUIRoot.<Start>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -648,7 +648,7 @@ namespace ETG.Core.Core.Framework
         {
           reversed = reversed,
           control = control,
-          $this = this
+          _this = this
         };
       }
 
@@ -690,7 +690,7 @@ namespace ETG.Core.Core.Framework
           instant = instant,
           targetVisibility = targetVisibility,
           targetLockState = targetLockState,
-          $this = this
+          _this = this
         };
       }
 
@@ -700,7 +700,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GameUIRoot.<CoreUITransition>c__Iterator5()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -991,7 +991,7 @@ namespace ETG.Core.Core.Framework
         {
           targetPlayer = targetPlayer,
           numToL = numToL,
-          $this = this
+          _this = this
         };
       }
 
@@ -1013,7 +1013,7 @@ namespace ETG.Core.Core.Framework
           doGuns = doGuns,
           doItems = doItems,
           numToL = numToL,
-          $this = this
+          _this = this
         };
       }
 
@@ -1505,7 +1505,7 @@ namespace ETG.Core.Core.Framework
           target = target,
           customStringKey = customStringKey,
           customDuration = customDuration,
-          $this = this
+          _this = this
         };
       }
 
@@ -1683,7 +1683,7 @@ namespace ETG.Core.Core.Framework
         {
           interactingPlayer = interactingPlayer,
           responses = responses,
-          $this = this
+          _this = this
         };
       }
 

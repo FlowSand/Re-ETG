@@ -93,7 +93,7 @@ namespace ETG.Core.Items.Active
         {
           targetRigidbody = targetRigidbody,
           direction = direction,
-          $this = this
+          _this = this
         };
       }
 

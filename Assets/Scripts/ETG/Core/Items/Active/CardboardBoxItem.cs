@@ -120,7 +120,7 @@ namespace ETG.Core.Items.Active
         {
           user = user,
           instanceBoxSprite = instanceBoxSprite,
-          $this = this
+          _this = this
         };
       }
 

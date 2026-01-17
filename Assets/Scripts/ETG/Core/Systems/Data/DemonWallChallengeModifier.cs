@@ -26,7 +26,7 @@ namespace ETG.Core.Systems.Data
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DemonWallChallengeModifier.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 

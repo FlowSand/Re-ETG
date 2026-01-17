@@ -42,7 +42,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new AnimatePopup.<animateOpen>c__Iterator0()
         {
           popup = popup,
-          $this = this
+          _this = this
         };
       }
 
@@ -53,7 +53,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new AnimatePopup.<animateClose>c__Iterator1()
         {
           popup = popup,
-          $this = this
+          _this = this
         };
       }
     }

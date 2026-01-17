@@ -116,7 +116,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new OnGunDamagedModifier.<FrameDelayedProcessing>c__Iterator0()
         {
           p = p,
-          $this = this
+          _this = this
         };
       }
 

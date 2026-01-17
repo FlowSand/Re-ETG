@@ -233,7 +233,7 @@ namespace ETG.Core.UI.HUD
         return (IEnumerator) new MainMenuFoyerController.<ToggleFade>c__Iterator0()
         {
           targetFade = targetFade,
-          $this = this
+          _this = this
         };
       }
 

@@ -62,7 +62,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MegalichIntroDoer.<DoIntro>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 

@@ -302,7 +302,7 @@ public class DungeonData
       tilemapRef = tilemapRef,
       indices = indices,
       decoSettings = decoSettings,
-      $this = this
+      _this = this
     };
   }
 
@@ -887,7 +887,7 @@ label_27:
     return (IEnumerator) new DungeonData.<GenerateLights>c__Iterator1()
     {
       decoSettings = decoSettings,
-      $this = this
+      _this = this
     };
   }
 

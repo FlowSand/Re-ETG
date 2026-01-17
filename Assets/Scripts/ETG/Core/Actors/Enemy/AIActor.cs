@@ -964,7 +964,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AIActor.<WanderHackCR>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -1733,7 +1733,7 @@ namespace ETG.Core.Actors.Enemy
         return (IEnumerator) new AIActor.<HandleReinforcementFall_CR>c__Iterator1()
         {
           delay = delay,
-          $this = this
+          _this = this
         };
       }
 
@@ -1787,7 +1787,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AIActor.<DoCustomEngage>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -2069,7 +2069,7 @@ namespace ETG.Core.Actors.Enemy
         return (IEnumerator) new AIActor.<FadeShadowCR>c__Iterator3()
         {
           scaleTime = scaleTime,
-          $this = this
+          _this = this
         };
       }
 
@@ -2080,7 +2080,7 @@ namespace ETG.Core.Actors.Enemy
         return (IEnumerator) new AIActor.<ScaleShadowCR>c__Iterator4()
         {
           scaleTime = scaleTime,
-          $this = this
+          _this = this
         };
       }
 
@@ -2119,7 +2119,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AIActor.<BurnBlackPhantomCorpse>c__Iterator5()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -2360,7 +2360,7 @@ namespace ETG.Core.Actors.Enemy
         return (IEnumerator) new AIActor.<HandleJumpToPoint>c__Iterator6()
         {
           jumpTime = jumpTime,
-          $this = this
+          _this = this
         };
       }
 
@@ -2373,7 +2373,7 @@ namespace ETG.Core.Actors.Enemy
         return (IEnumerator) new AIActor.<DashInDirection>c__Iterator7()
         {
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 
@@ -2386,7 +2386,7 @@ namespace ETG.Core.Actors.Enemy
           direction = direction,
           speedMultiplier = speedMultiplier,
           distance = distance,
-          $this = this
+          _this = this
         };
       }
 
@@ -2478,7 +2478,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AIActor.<FallDownCR>c__Iterator9()
         {
-          $this = this
+          _this = this
         };
       }
 

@@ -185,7 +185,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new ObjectVisibilityManager.<DeactivateLight>c__Iterator0()
         {
           l = l,
-          $this = this
+          _this = this
         };
       }
 
@@ -196,7 +196,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new ObjectVisibilityManager.<ActivateLight>c__Iterator1()
         {
           l = l,
-          $this = this
+          _this = this
         };
       }
 
@@ -214,7 +214,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new ObjectVisibilityManager.<DelayedBecameVisible>c__Iterator2()
         {
           delay = delay,
-          $this = this
+          _this = this
         };
       }
 

@@ -30,7 +30,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new FuturegeonGroundLightDoer.<HandleAllLightTrails>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -40,7 +40,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new FuturegeonGroundLightDoer.<HandleLightningTrails>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -56,7 +56,7 @@ namespace ETG.Core.Systems.Utilities
           startPos = startPos,
           startDir = startDir,
           isBranch = isBranch,
-          $this = this
+          _this = this
         };
       }
 
@@ -87,7 +87,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new FuturegeonGroundLightDoer.<HandleSingleLightTrail>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
     }

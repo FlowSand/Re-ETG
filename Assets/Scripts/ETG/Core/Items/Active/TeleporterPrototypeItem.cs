@@ -177,7 +177,7 @@ namespace ETG.Core.Items.Active
         {
           targetRoom = targetRoom,
           allEnemies = allEnemies,
-          $this = this
+          _this = this
         };
       }
 

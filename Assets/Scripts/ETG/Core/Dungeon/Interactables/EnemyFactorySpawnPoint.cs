@@ -39,7 +39,7 @@ namespace ETG.Core.Dungeon.Interactables
           spawnPosition = spawnPosition,
           actorToSpawn = actorToSpawn,
           room = room,
-          $this = this
+          _this = this
         };
       }
 

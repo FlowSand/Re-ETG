@@ -34,7 +34,7 @@ namespace ETG.Core.Items.Active
         return (IEnumerator) new FortuneFavorItem.<HandleShield>c__Iterator0()
         {
           user = user,
-          $this = this
+          _this = this
         };
       }
 

@@ -138,7 +138,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new BossCardUIController.<InvariantWaitForSeconds>c__Iterator0()
         {
           seconds = seconds,
-          $this = this
+          _this = this
         };
       }
 
@@ -283,7 +283,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new BossCardUIController.<CoreSequence>c__Iterator1()
         {
           pss = pss,
-          $this = this
+          _this = this
         };
       }
 
@@ -301,7 +301,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new BossCardUIController.<HandleLightStreaks>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -312,7 +312,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new BossCardUIController.<WomboCombo>c__Iterator3()
         {
           pss = pss,
-          $this = this
+          _this = this
         };
       }
 
@@ -322,7 +322,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new BossCardUIController.<HandleDelayedCoopCharacterSlide>c__Iterator4()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -332,7 +332,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new BossCardUIController.<HandleCharacterSlides>c__Iterator5()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -342,7 +342,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new BossCardUIController.<LerpTextsToTargets>c__Iterator6()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -370,7 +370,7 @@ namespace ETG.Core.Core.Framework
           startColor = startColor,
           targetColor = targetColor,
           targetMaterial = targetMaterial,
-          $this = this
+          _this = this
         };
       }
 
@@ -382,7 +382,7 @@ namespace ETG.Core.Core.Framework
         {
           targetMaterial = targetMaterial,
           backToClear = backToClear,
-          $this = this
+          _this = this
         };
       }
 

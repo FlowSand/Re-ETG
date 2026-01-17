@@ -83,7 +83,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new OnDeathBehavior.<DelayedOnTriggerCR>c__Iterator0()
         {
           delay = delay,
-          $this = this
+          _this = this
         };
       }
 

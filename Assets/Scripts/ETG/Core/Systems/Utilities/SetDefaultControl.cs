@@ -35,7 +35,7 @@ namespace ETG.Core.Systems.Utilities
         {
           control = control,
           value = value,
-          $this = this
+          _this = this
         };
       }
     }

@@ -153,7 +153,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new GatlingGullIntroDoer.<FrameDelayedTriggerSequence>c__Iterator0()
         {
           enterer = enterer,
-          $this = this
+          _this = this
         };
       }
 
@@ -229,7 +229,7 @@ namespace ETG.Core.Core.Framework
           delay = delay,
           anim = anim,
           animName = animName,
-          $this = this
+          _this = this
         };
       }
 
@@ -239,7 +239,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GatlingGullIntroDoer.<WaitForBossCard>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 

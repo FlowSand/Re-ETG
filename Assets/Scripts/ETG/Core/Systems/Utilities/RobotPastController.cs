@@ -117,7 +117,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new RobotPastController.<HandlePastIntro>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -129,7 +129,7 @@ namespace ETG.Core.Systems.Utilities
         {
           boss = boss,
           m_robot = m_robot,
-          $this = this
+          _this = this
         };
       }
 
@@ -154,7 +154,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new RobotPastController.<OnBossKilled_CR>c__Iterator4()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -227,7 +227,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new RobotPastController.<TurnRobotsOffCR>c__Iterator5()
         {
-          $this = this
+          _this = this
         };
       }
 

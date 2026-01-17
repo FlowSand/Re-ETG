@@ -37,7 +37,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PilotPastController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -65,7 +65,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new PilotPastController.<HandleFriendAndJunkToggle>c__Iterator1()
         {
           state = state,
-          $this = this
+          _this = this
         };
       }
 
@@ -75,7 +75,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PilotPastController.<EndPastSuccess>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -89,7 +89,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PilotPastController.<BossCutscene_CR>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -101,7 +101,7 @@ namespace ETG.Core.Systems.Utilities
         {
           targetSprite = targetSprite,
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 
@@ -120,7 +120,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PilotPastController.<HandleBossKilled>c__Iterator5()
         {
-          $this = this
+          _this = this
         };
       }
 

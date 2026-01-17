@@ -83,7 +83,7 @@ namespace ETG.Core.Items.Active
           remainingTime = remainingTime,
           centerPoint = centerPoint,
           maxEffectRadius = maxEffectRadius,
-          $this = this
+          _this = this
         };
       }
 
@@ -95,7 +95,7 @@ namespace ETG.Core.Items.Active
         {
           enemiesInRoom = enemiesInRoom,
           centerPoint = centerPoint,
-          $this = this
+          _this = this
         };
       }
 

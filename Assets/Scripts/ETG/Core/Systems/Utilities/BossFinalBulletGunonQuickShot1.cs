@@ -22,7 +22,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new BossFinalBulletGunonQuickShot1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -39,7 +39,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new BossFinalBulletGunonQuickShot1.BatBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }
@@ -57,7 +57,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new BossFinalBulletGunonQuickShot1.FireBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }

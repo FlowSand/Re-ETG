@@ -98,7 +98,7 @@ namespace ETG.Core.Systems.Management
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new StickyFrictionManager.<HandleAdditionalFrictReduction>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 

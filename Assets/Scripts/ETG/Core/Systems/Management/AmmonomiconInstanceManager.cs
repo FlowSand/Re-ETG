@@ -88,7 +88,7 @@ namespace ETG.Core.Systems.Management
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AmmonomiconInstanceManager.<HandleOpenAmmonomiconDeath>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -98,7 +98,7 @@ namespace ETG.Core.Systems.Management
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AmmonomiconInstanceManager.<HandleOpenAmmonomicon>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
     }

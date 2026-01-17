@@ -49,7 +49,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new CoopPastController.<HandleOutro>c__Iterator0()
         {
           coopPlayerWon = coopPlayerWon,
-          $this = this
+          _this = this
         };
       }
 
@@ -59,7 +59,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new CoopPastController.<HandleIntro>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 

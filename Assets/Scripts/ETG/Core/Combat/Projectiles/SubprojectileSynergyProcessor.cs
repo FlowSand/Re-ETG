@@ -36,7 +36,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new SubprojectileSynergyProcessor.<CreateSubprojectile>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
     }

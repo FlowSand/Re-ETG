@@ -31,7 +31,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new HelicoperMissiles1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -61,7 +61,7 @@ namespace ETG.Core.Combat.Projectiles
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new HelicoperMissiles1.ArcBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }

@@ -153,7 +153,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new SecretFloorInteractableController.<FrameDelayedTriggerRemainCheck>c__Iterator0()
         {
           targetPlayer = targetPlayer,
-          $this = this
+          _this = this
         };
       }
 

@@ -126,7 +126,7 @@ public class PrefabPool
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator) new PrefabPool.<CullDespawned>c__Iterator0()
     {
-      $this = this
+      _this = this
     };
   }
 
@@ -261,7 +261,7 @@ public class PrefabPool
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator) new PrefabPool.<PreloadOverTime>c__Iterator1()
     {
-      $this = this
+      _this = this
     };
   }
 

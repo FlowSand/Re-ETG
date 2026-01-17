@@ -158,7 +158,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new CharacterSelectController.<HandleSkyWinds>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -168,7 +168,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new CharacterSelectController.<HandleGroundWinds>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -178,7 +178,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new CharacterSelectController.<HandlePterodactyl>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -214,7 +214,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new CharacterSelectController.<OnSelectedCharacter>c__Iterator3()
         {
           delayTime = delayTime,
-          $this = this
+          _this = this
         };
       }
 
@@ -226,7 +226,7 @@ namespace ETG.Core.Systems.Utilities
         {
           arrowToSlide = arrowToSlide,
           targetArrow = targetArrow,
-          $this = this
+          _this = this
         };
       }
 
@@ -296,7 +296,7 @@ namespace ETG.Core.Systems.Utilities
           startAlpha = startAlpha,
           targetAlpha = targetAlpha,
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 

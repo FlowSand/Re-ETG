@@ -35,7 +35,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new LichQuickDrawHomingShot1.FastHomingShot.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }

@@ -24,7 +24,7 @@ namespace ETG.Core.Dungeon.Rooms
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MetalGearRatRoomController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 

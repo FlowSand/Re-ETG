@@ -32,7 +32,7 @@ namespace ETG.Core.Systems.Data
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new FloorShockwaveChallengeModifier.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -55,7 +55,7 @@ namespace ETG.Core.Systems.Data
         return (IEnumerator) new FloorShockwaveChallengeModifier.<LaunchWave>c__Iterator1()
         {
           startPoint = startPoint,
-          $this = this
+          _this = this
         };
       }
     }

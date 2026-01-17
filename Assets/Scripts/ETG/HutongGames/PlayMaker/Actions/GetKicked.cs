@@ -112,7 +112,7 @@ public class GetKicked : FsmStateAction
     return (IEnumerator) new GetKicked.<HandlePitfall>c__Iterator0()
     {
       srb = srb,
-      $this = this
+      _this = this
     };
   }
 

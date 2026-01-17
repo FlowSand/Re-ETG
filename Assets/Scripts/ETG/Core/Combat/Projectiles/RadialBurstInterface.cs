@@ -100,7 +100,7 @@ namespace ETG.Core.Combat.Projectiles
           source = source,
           overrideSpawnPoint = overrideSpawnPoint,
           spawnPointOffset = spawnPointOffset,
-          $this = this
+          _this = this
         };
       }
 
@@ -122,7 +122,7 @@ namespace ETG.Core.Combat.Projectiles
           overrideSpawnPoint = overrideSpawnPoint,
           spawnPointOffset = spawnPointOffset,
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 

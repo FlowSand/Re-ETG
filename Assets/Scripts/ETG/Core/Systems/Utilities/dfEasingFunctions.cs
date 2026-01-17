@@ -19,247 +19,247 @@ namespace ETG.Core.Systems.Utilities
         {
           case dfEasingType.Linear:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cacheD == null)
+            if (dfEasingFunctions.<>f__mg_cacheD == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cacheD = new dfEasingFunctions.EasingFunction(dfEasingFunctions.linear);
+              dfEasingFunctions.<>f__mg_cacheD = new dfEasingFunctions.EasingFunction(dfEasingFunctions.linear);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cacheD;
+            return dfEasingFunctions.<>f__mg_cacheD;
           case dfEasingType.Bounce:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache3 == null)
+            if (dfEasingFunctions.<>f__mg_cache3 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache3 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.bounce);
+              dfEasingFunctions.<>f__mg_cache3 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.bounce);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache3;
+            return dfEasingFunctions.<>f__mg_cache3;
           case dfEasingType.BackEaseIn:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache0 == null)
+            if (dfEasingFunctions.<>f__mg_cache0 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache0 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInBack);
+              dfEasingFunctions.<>f__mg_cache0 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInBack);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache0;
+            return dfEasingFunctions.<>f__mg_cache0;
           case dfEasingType.BackEaseOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache2 == null)
+            if (dfEasingFunctions.<>f__mg_cache2 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache2 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutBack);
+              dfEasingFunctions.<>f__mg_cache2 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutBack);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache2;
+            return dfEasingFunctions.<>f__mg_cache2;
           case dfEasingType.BackEaseInOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache1 == null)
+            if (dfEasingFunctions.<>f__mg_cache1 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache1 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutBack);
+              dfEasingFunctions.<>f__mg_cache1 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutBack);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache1;
+            return dfEasingFunctions.<>f__mg_cache1;
           case dfEasingType.CircEaseIn:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache4 == null)
+            if (dfEasingFunctions.<>f__mg_cache4 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache4 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInCirc);
+              dfEasingFunctions.<>f__mg_cache4 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInCirc);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache4;
+            return dfEasingFunctions.<>f__mg_cache4;
           case dfEasingType.CircEaseOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache6 == null)
+            if (dfEasingFunctions.<>f__mg_cache6 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache6 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutCirc);
+              dfEasingFunctions.<>f__mg_cache6 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutCirc);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache6;
+            return dfEasingFunctions.<>f__mg_cache6;
           case dfEasingType.CircEaseInOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache5 == null)
+            if (dfEasingFunctions.<>f__mg_cache5 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache5 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutCirc);
+              dfEasingFunctions.<>f__mg_cache5 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutCirc);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache5;
+            return dfEasingFunctions.<>f__mg_cache5;
           case dfEasingType.CubicEaseIn:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache7 == null)
+            if (dfEasingFunctions.<>f__mg_cache7 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache7 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInCubic);
+              dfEasingFunctions.<>f__mg_cache7 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInCubic);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache7;
+            return dfEasingFunctions.<>f__mg_cache7;
           case dfEasingType.CubicEaseOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache9 == null)
+            if (dfEasingFunctions.<>f__mg_cache9 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache9 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutCubic);
+              dfEasingFunctions.<>f__mg_cache9 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutCubic);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache9;
+            return dfEasingFunctions.<>f__mg_cache9;
           case dfEasingType.CubicEaseInOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache8 == null)
+            if (dfEasingFunctions.<>f__mg_cache8 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache8 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutCubic);
+              dfEasingFunctions.<>f__mg_cache8 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutCubic);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache8;
+            return dfEasingFunctions.<>f__mg_cache8;
           case dfEasingType.ExpoEaseIn:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cacheA == null)
+            if (dfEasingFunctions.<>f__mg_cacheA == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cacheA = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInExpo);
+              dfEasingFunctions.<>f__mg_cacheA = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInExpo);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cacheA;
+            return dfEasingFunctions.<>f__mg_cacheA;
           case dfEasingType.ExpoEaseOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cacheC == null)
+            if (dfEasingFunctions.<>f__mg_cacheC == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cacheC = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutExpo);
+              dfEasingFunctions.<>f__mg_cacheC = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutExpo);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cacheC;
+            return dfEasingFunctions.<>f__mg_cacheC;
           case dfEasingType.ExpoEaseInOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cacheB == null)
+            if (dfEasingFunctions.<>f__mg_cacheB == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cacheB = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutExpo);
+              dfEasingFunctions.<>f__mg_cacheB = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutExpo);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cacheB;
+            return dfEasingFunctions.<>f__mg_cacheB;
           case dfEasingType.QuadEaseIn:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cacheE == null)
+            if (dfEasingFunctions.<>f__mg_cacheE == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cacheE = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInQuad);
+              dfEasingFunctions.<>f__mg_cacheE = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInQuad);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cacheE;
+            return dfEasingFunctions.<>f__mg_cacheE;
           case dfEasingType.QuadEaseOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache10 == null)
+            if (dfEasingFunctions.<>f__mg_cache10 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache10 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutQuad);
+              dfEasingFunctions.<>f__mg_cache10 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutQuad);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache10;
+            return dfEasingFunctions.<>f__mg_cache10;
           case dfEasingType.QuadEaseInOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cacheF == null)
+            if (dfEasingFunctions.<>f__mg_cacheF == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cacheF = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutQuad);
+              dfEasingFunctions.<>f__mg_cacheF = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutQuad);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cacheF;
+            return dfEasingFunctions.<>f__mg_cacheF;
           case dfEasingType.QuartEaseIn:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache11 == null)
+            if (dfEasingFunctions.<>f__mg_cache11 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache11 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInQuart);
+              dfEasingFunctions.<>f__mg_cache11 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInQuart);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache11;
+            return dfEasingFunctions.<>f__mg_cache11;
           case dfEasingType.QuartEaseOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache13 == null)
+            if (dfEasingFunctions.<>f__mg_cache13 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache13 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutQuart);
+              dfEasingFunctions.<>f__mg_cache13 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutQuart);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache13;
+            return dfEasingFunctions.<>f__mg_cache13;
           case dfEasingType.QuartEaseInOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache12 == null)
+            if (dfEasingFunctions.<>f__mg_cache12 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache12 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutQuart);
+              dfEasingFunctions.<>f__mg_cache12 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutQuart);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache12;
+            return dfEasingFunctions.<>f__mg_cache12;
           case dfEasingType.QuintEaseIn:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache14 == null)
+            if (dfEasingFunctions.<>f__mg_cache14 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache14 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInQuint);
+              dfEasingFunctions.<>f__mg_cache14 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInQuint);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache14;
+            return dfEasingFunctions.<>f__mg_cache14;
           case dfEasingType.QuintEaseOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache16 == null)
+            if (dfEasingFunctions.<>f__mg_cache16 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache16 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutQuint);
+              dfEasingFunctions.<>f__mg_cache16 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutQuint);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache16;
+            return dfEasingFunctions.<>f__mg_cache16;
           case dfEasingType.QuintEaseInOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache15 == null)
+            if (dfEasingFunctions.<>f__mg_cache15 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache15 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutQuint);
+              dfEasingFunctions.<>f__mg_cache15 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutQuint);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache15;
+            return dfEasingFunctions.<>f__mg_cache15;
           case dfEasingType.SineEaseIn:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache17 == null)
+            if (dfEasingFunctions.<>f__mg_cache17 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache17 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInSine);
+              dfEasingFunctions.<>f__mg_cache17 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInSine);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache17;
+            return dfEasingFunctions.<>f__mg_cache17;
           case dfEasingType.SineEaseOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache19 == null)
+            if (dfEasingFunctions.<>f__mg_cache19 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache19 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutSine);
+              dfEasingFunctions.<>f__mg_cache19 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeOutSine);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache19;
+            return dfEasingFunctions.<>f__mg_cache19;
           case dfEasingType.SineEaseInOut:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache18 == null)
+            if (dfEasingFunctions.<>f__mg_cache18 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache18 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutSine);
+              dfEasingFunctions.<>f__mg_cache18 = new dfEasingFunctions.EasingFunction(dfEasingFunctions.easeInOutSine);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache18;
+            return dfEasingFunctions.<>f__mg_cache18;
           case dfEasingType.Spring:
             // ISSUE: reference to a compiler-generated field
-            if (dfEasingFunctions.<>f__mg$cache1A == null)
+            if (dfEasingFunctions.<>f__mg_cache1A == null)
             {
               // ISSUE: reference to a compiler-generated field
-              dfEasingFunctions.<>f__mg$cache1A = new dfEasingFunctions.EasingFunction(dfEasingFunctions.spring);
+              dfEasingFunctions.<>f__mg_cache1A = new dfEasingFunctions.EasingFunction(dfEasingFunctions.spring);
             }
             // ISSUE: reference to a compiler-generated field
-            return dfEasingFunctions.<>f__mg$cache1A;
+            return dfEasingFunctions.<>f__mg_cache1A;
           default:
             throw new NotImplementedException();
         }

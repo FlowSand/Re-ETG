@@ -44,7 +44,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new WarpPointHandler.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -90,7 +90,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new WarpPointHandler.<HandleWarpCooldown>c__Iterator1()
         {
           player = player,
-          $this = this
+          _this = this
         };
       }
 

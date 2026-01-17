@@ -114,7 +114,7 @@ namespace ETG.Core.Core.Framework
           targetPlayer = targetPlayer,
           startSize = startSize,
           endSize = endSize,
-          $this = this
+          _this = this
         };
       }
 
@@ -125,7 +125,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new HellDragZoneController.<HandleGrabbyGrab>c__Iterator1()
         {
           grabbedPlayer = grabbedPlayer,
-          $this = this
+          _this = this
         };
       }
 

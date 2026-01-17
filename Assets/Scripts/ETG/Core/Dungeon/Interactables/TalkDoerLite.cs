@@ -761,7 +761,7 @@ namespace ETG.Core.Dungeon.Interactables
           words = words,
           slideOrientation = slideOrientation,
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 

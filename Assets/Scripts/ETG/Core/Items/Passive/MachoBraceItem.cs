@@ -130,7 +130,7 @@ namespace ETG.Core.Items.Passive
         return (IEnumerator) new MachoBraceItem.<HandleDamageBoost>c__Iterator0()
         {
           target = target,
-          $this = this
+          _this = this
         };
       }
     }

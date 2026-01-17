@@ -123,7 +123,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new EmergencyCrateController.<DestroyCrateDelayed>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -134,7 +134,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new EmergencyCrateController.<DestroyCrateWhenPickedUp>c__Iterator1()
         {
           spawned = spawned,
-          $this = this
+          _this = this
         };
       }
 
@@ -145,7 +145,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new EmergencyCrateController.<DestroyCrateWhenPickedUp>c__Iterator2()
         {
           spawnedAmmo = spawnedAmmo,
-          $this = this
+          _this = this
         };
       }
 
@@ -156,7 +156,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new EmergencyCrateController.<DestroyCrateWhenPickedUp>c__Iterator3()
         {
           spawnedGun = spawnedGun,
-          $this = this
+          _this = this
         };
       }
 

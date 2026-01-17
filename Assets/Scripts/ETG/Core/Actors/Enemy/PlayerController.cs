@@ -1014,7 +1014,7 @@ namespace ETG.Core.Actors.Enemy
         return (IEnumerator) new PlayerController.<FrameDelayedInitialDeath>c__Iterator0()
         {
           delayTilPostGeneration = delayTilPostGeneration,
-          $this = this
+          _this = this
         };
       }
 
@@ -1836,7 +1836,7 @@ namespace ETG.Core.Actors.Enemy
           targetPosition = targetPosition,
           isChest = isChest,
           clipToWaitFor = clipToWaitFor,
-          $this = this
+          _this = this
         };
       }
 
@@ -1956,7 +1956,7 @@ namespace ETG.Core.Actors.Enemy
           obj = obj,
           additionalDelay = additionalDelay,
           shadowColoration = shadowColoration,
-          $this = this
+          _this = this
         };
       }
 
@@ -2274,7 +2274,7 @@ namespace ETG.Core.Actors.Enemy
           targetPoint = targetPoint,
           arrivalVFX1Prefab = arrivalVFX1Prefab,
           arrivalVFX2Prefab = arrivalVFX2Prefab,
-          $this = this
+          _this = this
         };
       }
 
@@ -2356,13 +2356,13 @@ namespace ETG.Core.Actors.Enemy
             IntVector2? footprint = new IntVector2?(this.companions[index].Clearance * 3);
             CellTypes? passableCellTypes = new CellTypes?(CellTypes.FLOOR);
             // ISSUE: reference to a compiler-generated field
-            if (PlayerController.<>f__mg$cache0 == null)
+            if (PlayerController.<>f__mg_cache0 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              PlayerController.<>f__mg$cache0 = new CellValidator(Pathfinder.CellValidator_NoTopWalls);
+              PlayerController.<>f__mg_cache0 = new CellValidator(Pathfinder.CellValidator_NoTopWalls);
             }
             // ISSUE: reference to a compiler-generated field
-            CellValidator fMgCache0 = PlayerController.<>f__mg$cache0;
+            CellValidator fMgCache0 = PlayerController.<>f__mg_cache0;
             IntVector2? randomAvailableCell = currentRoom.GetRandomAvailableCell(footprint, passableCellTypes, cellValidator: fMgCache0);
             if (randomAvailableCell.HasValue)
               targetPosition = (randomAvailableCell.Value + IntVector2.One).ToVector3();
@@ -2471,7 +2471,7 @@ namespace ETG.Core.Actors.Enemy
           teleporter = teleporter,
           targetSpot = targetSpot,
           isReturnTeleport = isReturnTeleport,
-          $this = this
+          _this = this
         };
       }
 
@@ -2844,7 +2844,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PlayerController.<HandleCloneEffect>c__Iterator6()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -2934,7 +2934,7 @@ namespace ETG.Core.Actors.Enemy
         return (IEnumerator) new PlayerController.<DelayedRoomReset>c__Iterator7()
         {
           targetRoom = targetRoom,
-          $this = this
+          _this = this
         };
       }
 
@@ -2952,7 +2952,7 @@ namespace ETG.Core.Actors.Enemy
           escapeStyle = escapeStyle,
           roomToSpawnIn = roomToSpawnIn,
           roomToReset = roomToReset,
-          $this = this
+          _this = this
         };
       }
 
@@ -3045,7 +3045,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PlayerController.<HandleFueledByRevenge>c__Iterator9()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -3263,7 +3263,7 @@ namespace ETG.Core.Actors.Enemy
         return (IEnumerator) new PlayerController.<HandleCoopDeath>c__IteratorA()
         {
           ignoreCorpse = ignoreCorpse,
-          $this = this
+          _this = this
         };
       }
 
@@ -3301,7 +3301,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PlayerController.<HandleThreatArrow>c__IteratorB()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -3311,7 +3311,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PlayerController.<HandleCoopArrow>c__IteratorC()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -3335,7 +3335,7 @@ namespace ETG.Core.Actors.Enemy
         return (IEnumerator) new PlayerController.<InvariantWait>c__IteratorD()
         {
           delay = delay,
-          $this = this
+          _this = this
         };
       }
 
@@ -3353,7 +3353,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PlayerController.<HandleDeath_CR>c__IteratorE()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -3715,7 +3715,7 @@ namespace ETG.Core.Actors.Enemy
         {
           delay = delay,
           indexToRemove = indexToRemove,
-          $this = this
+          _this = this
         };
       }
 
@@ -3919,7 +3919,7 @@ namespace ETG.Core.Actors.Enemy
         return (IEnumerator) new PlayerController.<HandleSpinfallSpawn>c__Iterator10()
         {
           invisibleDelay = invisibleDelay,
-          $this = this
+          _this = this
         };
       }
 
@@ -3930,7 +3930,7 @@ namespace ETG.Core.Actors.Enemy
         return (IEnumerator) new PlayerController.<HandleFallSpawn>c__Iterator11()
         {
           invisibleDelay = invisibleDelay,
-          $this = this
+          _this = this
         };
       }
 
@@ -3942,7 +3942,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PlayerController.<HandleSpitOut>c__Iterator12()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -3977,7 +3977,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PlayerController.<PitRespawn>c__Iterator13()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -3987,7 +3987,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PlayerController.<FallDownCR>c__Iterator14()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -4058,7 +4058,7 @@ namespace ETG.Core.Actors.Enemy
         {
           direction = direction,
           thresholdValue = thresholdValue,
-          $this = this
+          _this = this
         };
       }
 
@@ -4423,7 +4423,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PlayerController.<HandleBlinkDodgeRoll>c__Iterator16()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -5165,7 +5165,7 @@ namespace ETG.Core.Actors.Enemy
           axialX = axialX,
           axialY = axialY,
           maximumTime = maximumTime,
-          $this = this
+          _this = this
         };
       }
 

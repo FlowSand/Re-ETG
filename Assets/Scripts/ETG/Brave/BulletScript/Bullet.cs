@@ -394,7 +394,7 @@ public class Bullet
     {
       speed = speed,
       term = term,
-      $this = this
+      _this = this
     };
   }
 
@@ -406,7 +406,7 @@ public class Bullet
     {
       direction = direction,
       term = term,
-      $this = this
+      _this = this
     };
   }
 

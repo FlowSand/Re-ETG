@@ -40,13 +40,13 @@ namespace ETG.Core.Systems.Utilities
       {
         ObjectPool<RaycastResult>.Factory factory = (ObjectPool<RaycastResult>.Factory) (() => new RaycastResult());
         // ISSUE: reference to a compiler-generated field
-        if (RaycastResult.<>f__mg$cache0 == null)
+        if (RaycastResult.<>f__mg_cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          RaycastResult.<>f__mg$cache0 = new ObjectPool<RaycastResult>.Cleanup(RaycastResult.Cleanup);
+          RaycastResult.<>f__mg_cache0 = new ObjectPool<RaycastResult>.Cleanup(RaycastResult.Cleanup);
         }
         // ISSUE: reference to a compiler-generated field
-        ObjectPool<RaycastResult>.Cleanup fMgCache0 = RaycastResult.<>f__mg$cache0;
+        ObjectPool<RaycastResult>.Cleanup fMgCache0 = RaycastResult.<>f__mg_cache0;
         RaycastResult.Pool = new ObjectPool<RaycastResult>(factory, 10, fMgCache0);
       }
     }

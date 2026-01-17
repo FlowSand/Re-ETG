@@ -76,7 +76,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new ShovelGunModifier.<HandleDig>c__Iterator0()
         {
           sourceGun = sourceGun,
-          $this = this
+          _this = this
         };
       }
 

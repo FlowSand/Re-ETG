@@ -181,7 +181,7 @@ namespace ETG.Core.Systems.Management
         {
           newWidth = newWidth,
           newHeight = newHeight,
-          $this = this
+          _this = this
         };
       }
 
@@ -901,7 +901,7 @@ namespace ETG.Core.Systems.Management
         {
           duration = duration,
           options = options,
-          $this = this
+          _this = this
         };
       }
 
@@ -978,7 +978,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new GameManager.<PostQuickStartCR>c__Iterator2()
         {
           options = options,
-          $this = this
+          _this = this
         };
       }
 
@@ -1012,7 +1012,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new GameManager.<DelayedLoadMainMenu_CR>c__Iterator3()
         {
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 
@@ -1062,7 +1062,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new GameManager.<DelayedReturnToFoyer_CR>c__Iterator5()
         {
           delay = delay,
-          $this = this
+          _this = this
         };
       }
 
@@ -1396,7 +1396,7 @@ namespace ETG.Core.Systems.Management
           delay = delay,
           unloadGameData = unloadGameData,
           doMainMenu = doMainMenu,
-          $this = this
+          _this = this
         };
       }
 
@@ -1484,7 +1484,7 @@ namespace ETG.Core.Systems.Management
         {
           delay = delay,
           bossrushTargetFloor = bossrushTargetFloor,
-          $this = this
+          _this = this
         };
       }
 
@@ -1563,7 +1563,7 @@ namespace ETG.Core.Systems.Management
         {
           delay = delay,
           customLevel = customLevel,
-          $this = this
+          _this = this
         };
       }
 
@@ -1579,7 +1579,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new GameManager.<DelayedLoadNextLevel_CR>c__Iterator9()
         {
           delay = delay,
-          $this = this
+          _this = this
         };
       }
 
@@ -1590,7 +1590,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new GameManager.<LoadLevelByIndex>c__IteratorA()
         {
           nextIndex = nextIndex,
-          $this = this
+          _this = this
         };
       }
 
@@ -1651,7 +1651,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new GameManager.<LoadGameOver_CR>c__IteratorB()
         {
           gameOverSource = gameOverSource,
-          $this = this
+          _this = this
         };
       }
 
@@ -1686,7 +1686,7 @@ namespace ETG.Core.Systems.Management
         {
           async = async,
           loadingSceneHierarchy = loadingSceneHierarchy,
-          $this = this
+          _this = this
         };
       }
 
@@ -1697,7 +1697,7 @@ namespace ETG.Core.Systems.Management
         return (IEnumerator) new GameManager.<LoadNextLevelAsync_CR>c__IteratorD()
         {
           gld = gld,
-          $this = this
+          _this = this
         };
       }
 
@@ -1801,7 +1801,7 @@ namespace ETG.Core.Systems.Management
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GameManager.<PixelateCR>c__IteratorE()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -1811,7 +1811,7 @@ namespace ETG.Core.Systems.Management
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GameManager.<DepixelateCR>c__IteratorF()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -1835,14 +1835,14 @@ namespace ETG.Core.Systems.Management
         GameManager.c_asyncSoundStartTime = UnityEngine.Time.realtimeSinceStartup;
         GameManager.c_asyncSoundStartFrame = UnityEngine.Time.frameCount;
         // ISSUE: reference to a compiler-generated field
-        if (GameManager.<>f__mg$cache0 == null)
+        if (GameManager.<>f__mg_cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          GameManager.<>f__mg$cache0 = new AkCallbackManager.BankCallback(GameManager.BankCallback);
+          GameManager.<>f__mg_cache0 = new AkCallbackManager.BankCallback(GameManager.BankCallback);
         }
         uint out_bankID;
         // ISSUE: reference to a compiler-generated field
-        int num = (int) AkSoundEngine.LoadBank("SFX.bnk", GameManager.<>f__mg$cache0, (object) null, -1, out out_bankID);
+        int num = (int) AkSoundEngine.LoadBank("SFX.bnk", GameManager.<>f__mg_cache0, (object) null, -1, out out_bankID);
         UnityEngine.Debug.LogError((object) ("async loading bank id: " + (object) out_bankID));
       }
 
@@ -2025,7 +2025,7 @@ namespace ETG.Core.Systems.Management
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GameManager.<Start>c__Iterator10()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -2380,7 +2380,7 @@ namespace ETG.Core.Systems.Management
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GameManager.<EncounterableUnlockedChecks>c__Iterator11()
         {
-          $this = this
+          _this = this
         };
       }
 

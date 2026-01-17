@@ -45,7 +45,7 @@ namespace ETG.Core.Systems.Utilities
           sprite = sprite,
           HeatEffect = HeatEffect,
           Duration = Duration,
-          $this = this
+          _this = this
         };
       }
 

@@ -27,13 +27,13 @@ public static class TypeCache
     TypeCache._cachedTypes = new Dictionary<string, Type>();
     AppDomain currentDomain = AppDomain.CurrentDomain;
     // ISSUE: reference to a compiler-generated field
-    if (TypeCache.<>f__mg$cache0 == null)
+    if (TypeCache.<>f__mg_cache0 == null)
     {
       // ISSUE: reference to a compiler-generated field
-      TypeCache.<>f__mg$cache0 = new AssemblyLoadEventHandler(TypeCache.OnAssemblyLoaded);
+      TypeCache.<>f__mg_cache0 = new AssemblyLoadEventHandler(TypeCache.OnAssemblyLoaded);
     }
     // ISSUE: reference to a compiler-generated field
-    AssemblyLoadEventHandler fMgCache0 = TypeCache.<>f__mg$cache0;
+    AssemblyLoadEventHandler fMgCache0 = TypeCache.<>f__mg_cache0;
     currentDomain.AssemblyLoad += fMgCache0;
   }
 

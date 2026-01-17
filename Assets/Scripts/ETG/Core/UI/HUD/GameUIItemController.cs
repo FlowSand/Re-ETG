@@ -147,7 +147,7 @@ namespace ETG.Core.UI.HUD
         {
           change = change,
           newItem = newItem,
-          $this = this
+          _this = this
         };
       }
 
@@ -158,7 +158,7 @@ namespace ETG.Core.UI.HUD
         return (IEnumerator) new GameUIItemController.<HandleItemCardFlipReverse>c__Iterator1()
         {
           newGun = newGun,
-          $this = this
+          _this = this
         };
       }
 
@@ -168,7 +168,7 @@ namespace ETG.Core.UI.HUD
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GameUIItemController.<HandleItemCardFlip>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 

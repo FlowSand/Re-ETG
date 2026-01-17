@@ -55,7 +55,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new BossStatuesDirectionalWaveAll.EggBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }

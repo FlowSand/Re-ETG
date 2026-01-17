@@ -47,7 +47,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AdvancedDraGunDeathController.<OnDeathExplosionsCR>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -59,7 +59,7 @@ namespace ETG.Core.Core.Framework
         {
           headDirection = headDirection,
           hand = hand,
-          $this = this
+          _this = this
         };
       }
 
@@ -77,7 +77,7 @@ namespace ETG.Core.Core.Framework
           ballName = ballName,
           headDirection = headDirection,
           postDelay = postDelay,
-          $this = this
+          _this = this
         };
       }
 
@@ -95,7 +95,7 @@ namespace ETG.Core.Core.Framework
           ballName = ballName,
           headDirection = headDirection,
           postDelay = postDelay,
-          $this = this
+          _this = this
         };
       }
 
@@ -106,7 +106,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new AdvancedDraGunDeathController.<FadeBodyCR>c__Iterator4()
         {
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 

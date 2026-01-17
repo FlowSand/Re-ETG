@@ -117,7 +117,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new BossFinalRogueLaserGun.<DoGunMotionCR>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -128,7 +128,7 @@ namespace ETG.Core.Combat.Projectiles
         return (IEnumerator) new BossFinalRogueLaserGun.<FireBeam>c__Iterator1()
         {
           projectile = projectile,
-          $this = this
+          _this = this
         };
       }
     }

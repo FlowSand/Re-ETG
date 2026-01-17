@@ -91,7 +91,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MetalGearRatIconStomp1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -102,7 +102,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new MetalGearRatIconStomp1.<FireBullets>c__Iterator1()
         {
           lineDummies = lineDummies,
-          $this = this
+          _this = this
         };
       }
 
@@ -119,7 +119,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new MetalGearRatIconStomp1.LineDummy.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }
@@ -142,7 +142,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new MetalGearRatIconStomp1.IconBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }

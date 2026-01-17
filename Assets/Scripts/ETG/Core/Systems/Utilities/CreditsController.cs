@@ -34,7 +34,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new CreditsController.<ScrollToNextThreshold>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -44,7 +44,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new CreditsController.<WaitForNextThreshold>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 

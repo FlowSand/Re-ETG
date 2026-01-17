@@ -360,7 +360,7 @@ namespace ETG.Core.UI.HUD
           delayTime = delayTime,
           targetAnimator = targetAnimator,
           animationName = animationName,
-          $this = this
+          _this = this
         };
       }
 
@@ -1015,7 +1015,7 @@ namespace ETG.Core.UI.HUD
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MinimapUIController.<MoveAllThings>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 

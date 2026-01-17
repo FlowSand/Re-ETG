@@ -146,7 +146,7 @@ namespace ETG.Core.Combat.Projectiles
         return (IEnumerator) new KthuliberProjectileController.<SlowDownOverTime>c__Iterator0()
         {
           p = p,
-          $this = this
+          _this = this
         };
       }
 

@@ -78,7 +78,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new SellCellController.<HandleSellPitOpening>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -105,7 +105,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new SellCellController.<HandleSoldItem>c__Iterator1()
         {
           targetItem = targetItem,
-          $this = this
+          _this = this
         };
       }
 

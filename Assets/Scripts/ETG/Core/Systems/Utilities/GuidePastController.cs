@@ -41,7 +41,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GuidePastController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -68,7 +68,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GuidePastController.<BossCutscene_CR>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -78,7 +78,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GuidePastController.<HandleDogGoingNuts>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -88,7 +88,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GuidePastController.<HandleBulletTrap>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -144,7 +144,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GuidePastController.<HandleBossKilled>c__Iterator4()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -181,7 +181,7 @@ namespace ETG.Core.Systems.Utilities
         {
           duration = duration,
           source = source,
-          $this = this
+          _this = this
         };
       }
 
@@ -191,7 +191,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GuidePastController.<HandleIntroConversation>c__Iterator6()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -201,7 +201,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GuidePastController.<HandleAntechamberConversation>c__Iterator7()
         {
-          $this = this
+          _this = this
         };
       }
 

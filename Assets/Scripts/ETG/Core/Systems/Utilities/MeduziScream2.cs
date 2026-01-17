@@ -33,7 +33,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MeduziScream2.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -84,7 +84,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new MeduziScream2.TimedBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }

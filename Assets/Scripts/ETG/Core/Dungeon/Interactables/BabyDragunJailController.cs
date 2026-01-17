@@ -78,7 +78,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new BabyDragunJailController.<EatCorpse>c__Iterator0()
         {
           targetCorpse = targetCorpse,
-          $this = this
+          _this = this
         };
       }
 
@@ -109,7 +109,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new BabyDragunJailController.<HandleSoldItem>c__Iterator1()
         {
           targetItem = targetItem,
-          $this = this
+          _this = this
         };
       }
 

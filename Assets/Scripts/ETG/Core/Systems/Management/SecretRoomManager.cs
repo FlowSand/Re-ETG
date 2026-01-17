@@ -299,7 +299,7 @@ namespace ETG.Core.Systems.Management
         {
           openState = openState,
           doorObject = doorObject,
-          $this = this
+          _this = this
         };
       }
 

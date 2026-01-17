@@ -223,7 +223,7 @@ namespace ETG.Core.UI.Ammonomicon
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AmmonomiconPageRenderer.<DelayedBuildPage>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -724,7 +724,7 @@ namespace ETG.Core.UI.Ammonomicon
           journalEntries = journalEntries,
           elementPaddingPx = elementPaddingPx,
           activeSynergies = activeSynergies,
-          $this = this
+          _this = this
         };
       }
 
@@ -1020,7 +1020,7 @@ namespace ETG.Core.UI.Ammonomicon
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new AmmonomiconPageRenderer.<HandleFrameDelayedInactivation>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 

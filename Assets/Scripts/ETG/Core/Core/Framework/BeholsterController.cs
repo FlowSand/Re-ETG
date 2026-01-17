@@ -259,7 +259,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new BeholsterController.<FireBeam>c__Iterator0()
         {
           mod = mod,
-          $this = this
+          _this = this
         };
       }
 

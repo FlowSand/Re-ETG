@@ -54,7 +54,7 @@ namespace ETG.Core.Items.Active
         return (IEnumerator) new IronCoinItem.<SlaughterRoom>c__Iterator0()
         {
           targetRoom = targetRoom,
-          $this = this
+          _this = this
         };
       }
 

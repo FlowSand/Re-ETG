@@ -63,7 +63,7 @@ namespace ETG.Core.Items.Passive
         {
           sourcePlayer = sourcePlayer,
           sourceGun = sourceGun,
-          $this = this
+          _this = this
         };
       }
 

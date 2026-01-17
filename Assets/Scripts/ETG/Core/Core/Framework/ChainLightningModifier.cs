@@ -135,7 +135,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new ChainLightningModifier.<HandleDamageCooldown>c__Iterator0()
         {
           damagedTarget = damagedTarget,
-          $this = this
+          _this = this
         };
       }
 

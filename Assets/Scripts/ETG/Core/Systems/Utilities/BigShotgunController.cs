@@ -52,7 +52,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new BigShotgunController.<HandleEnemySuck>c__Iterator0()
         {
           target = target,
-          $this = this
+          _this = this
         };
       }
 

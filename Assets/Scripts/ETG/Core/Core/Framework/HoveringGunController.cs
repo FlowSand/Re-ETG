@@ -258,7 +258,7 @@ namespace ETG.Core.Core.Framework
           projectileToSpawn = projectileToSpawn,
           source = source,
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 
@@ -274,7 +274,7 @@ namespace ETG.Core.Core.Framework
           duration = duration,
           volley = volley,
           source = source,
-          $this = this
+          _this = this
         };
       }
 

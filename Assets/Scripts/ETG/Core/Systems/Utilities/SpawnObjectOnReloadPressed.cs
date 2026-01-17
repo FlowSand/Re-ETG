@@ -78,7 +78,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new SpawnObjectOnReloadPressed.<HandleReloadDelay>c__Iterator0()
         {
           sourceGun = sourceGun,
-          $this = this
+          _this = this
         };
       }
 
@@ -90,7 +90,7 @@ namespace ETG.Core.Systems.Utilities
         {
           user = user,
           angleFromAim = angleFromAim,
-          $this = this
+          _this = this
         };
       }
 

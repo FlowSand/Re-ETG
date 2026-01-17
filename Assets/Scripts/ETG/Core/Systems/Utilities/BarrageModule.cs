@@ -60,7 +60,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new BarrageModule.<HandleBarrage>c__Iterator0()
         {
           targets = targets,
-          $this = this
+          _this = this
         };
       }
     }

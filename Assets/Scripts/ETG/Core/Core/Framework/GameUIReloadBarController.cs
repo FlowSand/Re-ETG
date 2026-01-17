@@ -145,7 +145,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new GameUIReloadBarController.<HandlePlayerReloadBar>c__Iterator0()
         {
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 

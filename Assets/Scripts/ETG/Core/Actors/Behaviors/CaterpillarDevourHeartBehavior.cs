@@ -88,7 +88,7 @@ namespace ETG.Core.Actors.Behaviors
         return (IEnumerator) new CaterpillarDevourHeartBehavior.<DelayedGiveItem>c__Iterator0()
         {
           targetPlayer = targetPlayer,
-          $this = this
+          _this = this
         };
       }
 

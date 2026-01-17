@@ -31,7 +31,7 @@ namespace ETG.Core.Items.Active
         return (IEnumerator) new CheeseWheelItem.<HandleDuration>c__Iterator0()
         {
           user = user,
-          $this = this
+          _this = this
         };
       }
 
@@ -102,7 +102,7 @@ namespace ETG.Core.Items.Active
         {
           target = target,
           ownerRigidbody = ownerRigidbody,
-          $this = this
+          _this = this
         };
       }
 

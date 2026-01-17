@@ -45,7 +45,7 @@ namespace ETG.Core.Combat.Projectiles
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new ShotgrubManAttack1.GrossBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
 
@@ -77,7 +77,7 @@ namespace ETG.Core.Combat.Projectiles
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new ShotgrubManAttack1.GrubBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }

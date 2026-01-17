@@ -42,7 +42,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new ShowSpellWindow.<hideWindow>c__Iterator0()
         {
           window = window,
-          $this = this
+          _this = this
         };
       }
 
@@ -53,7 +53,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new ShowSpellWindow.<showWindow>c__Iterator1()
         {
           window = window,
-          $this = this
+          _this = this
         };
       }
     }

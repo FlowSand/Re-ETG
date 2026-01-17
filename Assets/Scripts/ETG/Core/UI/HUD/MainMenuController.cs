@@ -104,7 +104,7 @@ namespace ETG.Core.UI.HUD
           startAlpha = startAlpha,
           targetAlpha = targetAlpha,
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 

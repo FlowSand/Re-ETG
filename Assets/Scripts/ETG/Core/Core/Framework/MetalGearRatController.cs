@@ -74,7 +74,7 @@ namespace ETG.Core.Core.Framework
         {
           destroyAnim = destroyAnim,
           part = part,
-          $this = this
+          _this = this
         };
       }
 

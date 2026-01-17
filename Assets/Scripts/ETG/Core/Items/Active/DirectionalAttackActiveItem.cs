@@ -138,7 +138,7 @@ namespace ETG.Core.Items.Active
         return (IEnumerator) new DirectionalAttackActiveItem.<HandleBarrage>c__Iterator0()
         {
           targets = targets,
-          $this = this
+          _this = this
         };
       }
 

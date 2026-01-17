@@ -687,7 +687,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new AIShooter.<HandleFireRate>c__Iterator0()
         {
           t = t,
-          $this = this
+          _this = this
         };
       }
     }

@@ -41,7 +41,7 @@ namespace ETG.Core.Combat.Projectiles
         {
           target = target,
           motionDirection = motionDirection,
-          $this = this
+          _this = this
         };
       }
 

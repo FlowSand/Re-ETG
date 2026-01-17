@@ -36,7 +36,7 @@ namespace ETG.Core.Combat.Projectiles
         return (IEnumerator) new RadialSlowItem.<HandleStealEffect>c__Iterator0()
         {
           user = user,
-          $this = this
+          _this = this
         };
       }
 
@@ -84,7 +84,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new RadialSlowItem.<HandleActive>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -95,7 +95,7 @@ namespace ETG.Core.Combat.Projectiles
         return (IEnumerator) new RadialSlowItem.<ProcessSlow>c__Iterator2()
         {
           target = target,
-          $this = this
+          _this = this
         };
       }
 
@@ -106,7 +106,7 @@ namespace ETG.Core.Combat.Projectiles
         return (IEnumerator) new RadialSlowItem.<ProcessHammerSlow>c__Iterator3()
         {
           target = target,
-          $this = this
+          _this = this
         };
       }
 
@@ -117,7 +117,7 @@ namespace ETG.Core.Combat.Projectiles
         return (IEnumerator) new RadialSlowItem.<ProcessTrapSlow>c__Iterator4()
         {
           target = target,
-          $this = this
+          _this = this
         };
       }
 
@@ -129,7 +129,7 @@ namespace ETG.Core.Combat.Projectiles
         {
           target = target,
           shopkeep = shopkeep,
-          $this = this
+          _this = this
         };
       }
 
@@ -140,7 +140,7 @@ namespace ETG.Core.Combat.Projectiles
         return (IEnumerator) new RadialSlowItem.<ProcessBehaviorSpeculatorSlow>c__Iterator6()
         {
           target = target,
-          $this = this
+          _this = this
         };
       }
 

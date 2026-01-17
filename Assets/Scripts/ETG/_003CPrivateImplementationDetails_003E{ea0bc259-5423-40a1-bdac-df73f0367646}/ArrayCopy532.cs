@@ -12,10 +12,10 @@ namespace <PrivateImplementationDetails>{ea0bc259-5423-40a1-bdac-df73f0367646};
 [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
 internal class ArrayCopy532
 {
-  internal static ArrayCopy532.$ArrayType$535 $$field-0;
+  internal static ArrayCopy532._ArrayType$535 $_field-0;
 
   [StructLayout(LayoutKind.Explicit, Size = 535, Pack = 1)]
-  private struct $ArrayType$535
+  private struct _ArrayType$535
   {
   }
 }

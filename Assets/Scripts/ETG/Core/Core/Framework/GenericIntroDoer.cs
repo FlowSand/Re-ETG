@@ -398,7 +398,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new GenericIntroDoer.<FrameDelayedTriggerSequence>c__Iterator0()
         {
           enterer = enterer,
-          $this = this
+          _this = this
         };
       }
 
@@ -588,7 +588,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new GenericIntroDoer.<WaitForBossCard>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 

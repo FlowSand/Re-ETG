@@ -55,7 +55,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new FoyerInfoPanelController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -65,7 +65,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new FoyerInfoPanelController.<HandleTransition>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -100,7 +100,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new FoyerInfoPanelController.<HandleOpen>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 

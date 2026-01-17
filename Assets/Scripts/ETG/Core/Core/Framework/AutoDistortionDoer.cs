@@ -38,7 +38,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new AutoDistortionDoer.<Distort>c__Iterator0()
         {
           centerPoint = centerPoint,
-          $this = this
+          _this = this
         };
       }
 

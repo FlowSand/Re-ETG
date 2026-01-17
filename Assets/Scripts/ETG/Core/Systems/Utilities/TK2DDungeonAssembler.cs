@@ -2021,7 +2021,7 @@ namespace ETG.Core.Systems.Utilities
         {
           d = d,
           map = map,
-          $this = this
+          _this = this
         };
       }
 

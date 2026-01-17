@@ -201,7 +201,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new RailgunChargeEffectController.<HandleLine_ScalingParallel>c__Iterator0()
         {
           modTraversalTime = modTraversalTime,
-          $this = this
+          _this = this
         };
       }
 
@@ -212,7 +212,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new RailgunChargeEffectController.<HandleLine_SequentialParallel>c__Iterator1()
         {
           modTraversalTime = modTraversalTime,
-          $this = this
+          _this = this
         };
       }
 
@@ -223,7 +223,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new RailgunChargeEffectController.<HandleLine_PyramidalConverge>c__Iterator2()
         {
           modTraversalTime = modTraversalTime,
-          $this = this
+          _this = this
         };
       }
 
@@ -234,7 +234,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new RailgunChargeEffectController.<HandleLine_VerticalConverge>c__Iterator3()
         {
           modTraversalTime = modTraversalTime,
-          $this = this
+          _this = this
         };
       }
 
@@ -245,7 +245,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new RailgunChargeEffectController.<HandleLine_TriangularConverge>c__Iterator4()
         {
           modTraversalTime = modTraversalTime,
-          $this = this
+          _this = this
         };
       }
 

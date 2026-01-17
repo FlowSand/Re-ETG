@@ -820,7 +820,7 @@ namespace ETG.Core.UI.HUD
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new BraveOptionsMenuItem.<Start>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 

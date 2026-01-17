@@ -54,7 +54,7 @@ public class ThievingRatGrabby : FsmStateAction
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator) new ThievingRatGrabby.<HandleGrabby>c__Iterator0()
     {
-      $this = this
+      _this = this
     };
   }
 

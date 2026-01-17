@@ -56,7 +56,7 @@ namespace ETG.Core.Core.Framework
           duration = duration,
           startVal = startVal,
           targetVal = targetVal,
-          $this = this
+          _this = this
         };
       }
 
@@ -68,7 +68,7 @@ namespace ETG.Core.Core.Framework
         {
           duration = duration,
           targetVal = targetVal,
-          $this = this
+          _this = this
         };
       }
 
@@ -78,7 +78,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DraGunDeathController.<OnDeathExplosionsCR>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 

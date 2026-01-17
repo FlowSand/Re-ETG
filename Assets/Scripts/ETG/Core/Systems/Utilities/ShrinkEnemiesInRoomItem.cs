@@ -33,7 +33,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new ShrinkEnemiesInRoomItem.<HandleShrink>c__Iterator0()
         {
           target = target,
-          $this = this
+          _this = this
         };
       }
 

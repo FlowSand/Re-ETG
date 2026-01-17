@@ -69,7 +69,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new AshManEngageDoer.<DoIntro>c__Iterator0()
         {
           breakable = breakable,
-          $this = this
+          _this = this
         };
       }
 

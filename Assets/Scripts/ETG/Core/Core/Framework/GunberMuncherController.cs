@@ -49,7 +49,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new GunberMuncherController.<DoReward>c__Iterator0()
         {
           player = player,
-          $this = this
+          _this = this
         };
       }
 
@@ -248,7 +248,7 @@ namespace ETG.Core.Core.Framework
           spriteSource = spriteSource,
           startPosition = startPosition,
           player = player,
-          $this = this
+          _this = this
         };
       }
     }

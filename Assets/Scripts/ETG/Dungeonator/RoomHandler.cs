@@ -324,7 +324,7 @@ public class RoomHandler
     return (IEnumerator) new RoomHandler.<DeferredMarkVisibleRoomsActive>c__Iterator0()
     {
       p = p,
-      $this = this
+      _this = this
     };
   }
 
@@ -343,7 +343,7 @@ public class RoomHandler
     return (IEnumerator) new RoomHandler.<HandleTimedReinforcementLayer>c__Iterator1()
     {
       layer = layer,
-      $this = this
+      _this = this
     };
   }
 
@@ -424,7 +424,7 @@ public class RoomHandler
       duration = duration,
       goalIntensity = goalIntensity,
       lightIntensity = lightIntensity,
-      $this = this
+      _this = this
     };
   }
 
@@ -727,7 +727,7 @@ public class RoomHandler
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator) new RoomHandler.<HandleReinforcementPreloading>c__Iterator3()
     {
-      $this = this
+      _this = this
     };
   }
 

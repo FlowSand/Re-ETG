@@ -153,7 +153,7 @@ public class Spline : IPathIterator, IEnumerable<Spline.ControlPoint>, IEnumerab
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator<Spline.ControlPoint>) new Spline.<GetCustomEnumerator>c__Iterator0()
     {
-      $this = this
+      _this = this
     };
   }
 

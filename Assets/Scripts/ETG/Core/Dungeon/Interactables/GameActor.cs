@@ -730,7 +730,7 @@ namespace ETG.Core.Dungeon.Interactables
           explosionCount = explosionCount,
           vfxPrefab = vfxPrefab,
           explosionMidDelay = explosionMidDelay,
-          $this = this
+          _this = this
         };
       }
 
@@ -799,7 +799,7 @@ namespace ETG.Core.Dungeon.Interactables
           instantiated = instantiated,
           duration = duration,
           offset = offset,
-          $this = this
+          _this = this
         };
       }
 

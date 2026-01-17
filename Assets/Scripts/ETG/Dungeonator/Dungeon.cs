@@ -180,7 +180,7 @@ public class Dungeon : MonoBehaviour
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator) new Dungeon.<Start>c__Iterator0()
     {
-      $this = this
+      _this = this
     };
   }
 
@@ -229,7 +229,7 @@ public class Dungeon : MonoBehaviour
     return (IEnumerator) new Dungeon.<Regenerate>c__Iterator1()
     {
       cleanup = cleanup,
-      $this = this
+      _this = this
     };
   }
 
@@ -323,7 +323,7 @@ public class Dungeon : MonoBehaviour
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator) new Dungeon.<PostDungeonGenerationCleanup>c__Iterator4()
     {
-      $this = this
+      _this = this
     };
   }
 
@@ -1213,7 +1213,7 @@ public class Dungeon : MonoBehaviour
       dropItems = dropItems,
       p = p,
       cursedHealthMaximum = cursedHealthMaximum,
-      $this = this
+      _this = this
     };
   }
 
@@ -1890,7 +1890,7 @@ public class Dungeon : MonoBehaviour
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator) new Dungeon.<HandleAmbientChannelVFX>c__Iterator6()
     {
-      $this = this
+      _this = this
     };
   }
 
@@ -1912,7 +1912,7 @@ public class Dungeon : MonoBehaviour
     // ISSUE: object of a compiler-generated type is created
     return (IEnumerator) new Dungeon.<HandleAmbientPitVFX>c__Iterator7()
     {
-      $this = this
+      _this = this
     };
   }
 }

@@ -107,7 +107,7 @@ namespace ETG.Core.Combat.Effects
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TetrisBuff.<ApplyModification>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 

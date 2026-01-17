@@ -76,7 +76,7 @@ namespace ETG.Core.Items.Active
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new KiPulseItem.<Activate>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 

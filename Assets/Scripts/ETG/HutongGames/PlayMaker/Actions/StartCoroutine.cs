@@ -59,10 +59,10 @@ public class StartCoroutine : FsmStateAction
       if (parameterType == null)
         return;
       // ISSUE: reference to a compiler-generated field
-      if (HutongGames.PlayMaker.Actions.StartCoroutine.<>f__switch$map2 == null)
+      if (HutongGames.PlayMaker.Actions.StartCoroutine.<>f__switch_map2 == null)
       {
         // ISSUE: reference to a compiler-generated field
-        HutongGames.PlayMaker.Actions.StartCoroutine.<>f__switch$map2 = new Dictionary<string, int>(13)
+        HutongGames.PlayMaker.Actions.StartCoroutine.<>f__switch_map2 = new Dictionary<string, int>(13)
         {
           {
             "None",
@@ -120,7 +120,7 @@ public class StartCoroutine : FsmStateAction
       }
       int num;
       // ISSUE: reference to a compiler-generated field
-      if (!HutongGames.PlayMaker.Actions.StartCoroutine.<>f__switch$map2.TryGetValue(parameterType, out num))
+      if (!HutongGames.PlayMaker.Actions.StartCoroutine.<>f__switch_map2.TryGetValue(parameterType, out num))
         return;
       switch (num)
       {

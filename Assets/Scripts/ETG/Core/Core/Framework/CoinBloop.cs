@@ -100,7 +100,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new CoinBloop.<Bloop>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 

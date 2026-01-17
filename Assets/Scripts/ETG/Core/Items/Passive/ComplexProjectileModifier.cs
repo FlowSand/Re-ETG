@@ -144,7 +144,7 @@ namespace ETG.Core.Items.Passive
           startPosition = startPosition,
           direction = direction,
           enemySRB = enemySRB,
-          $this = this
+          _this = this
         };
       }
 
@@ -344,7 +344,7 @@ namespace ETG.Core.Items.Passive
         return (IEnumerator) new ComplexProjectileModifier.<HandleTrailedSpawn>c__Iterator1()
         {
           p = p,
-          $this = this
+          _this = this
         };
       }
 

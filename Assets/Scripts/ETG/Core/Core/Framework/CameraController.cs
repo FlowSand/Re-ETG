@@ -492,7 +492,7 @@ namespace ETG.Core.Core.Framework
         {
           duration = duration,
           newOverridePosition = newOverridePosition,
-          $this = this
+          _this = this
         };
       }
 
@@ -698,7 +698,7 @@ namespace ETG.Core.Core.Framework
           magnitude = magnitude,
           shakeSpeed = shakeSpeed,
           useCameraVibration = useCameraVibration,
-          $this = this
+          _this = this
         };
       }
 
@@ -714,7 +714,7 @@ namespace ETG.Core.Core.Framework
           delay = delay,
           sss = sss,
           origin = origin,
-          $this = this
+          _this = this
         };
       }
 
@@ -738,7 +738,7 @@ namespace ETG.Core.Core.Framework
           time = time,
           falloffTime = falloffTime,
           useCameraVibration = useCameraVibration,
-          $this = this
+          _this = this
         };
       }
 

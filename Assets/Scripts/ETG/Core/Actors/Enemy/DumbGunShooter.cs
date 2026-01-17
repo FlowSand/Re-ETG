@@ -36,7 +36,7 @@ namespace ETG.Core.Actors.Enemy
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DumbGunShooter.<HandleGunShoot>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 

@@ -159,7 +159,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new AIBeamShooter.<FireBeam>c__Iterator0()
         {
           projectile = projectile,
-          $this = this
+          _this = this
         };
       }
 

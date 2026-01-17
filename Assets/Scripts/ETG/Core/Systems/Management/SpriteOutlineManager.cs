@@ -318,13 +318,13 @@ namespace ETG.Core.Systems.Management
           sharedMaterialToUse = SpriteOutlineManager.HandleSingleScaledOutlineAddition<T>(targetSprite, sharedMaterialToUse, cardinals[outlineIndex], outlineIndex, outlineColor, zOffset, luminanceCutoff);
         tk2dBaseSprite tk2dBaseSprite = targetSprite;
         // ISSUE: reference to a compiler-generated field
-        if (SpriteOutlineManager.<>f__mg$cache0 == null)
+        if (SpriteOutlineManager.<>f__mg_cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          SpriteOutlineManager.<>f__mg$cache0 = new Action<tk2dBaseSprite>(SpriteOutlineManager.HandleSpriteChanged);
+          SpriteOutlineManager.<>f__mg_cache0 = new Action<tk2dBaseSprite>(SpriteOutlineManager.HandleSpriteChanged);
         }
         // ISSUE: reference to a compiler-generated field
-        Action<tk2dBaseSprite> fMgCache0 = SpriteOutlineManager.<>f__mg$cache0;
+        Action<tk2dBaseSprite> fMgCache0 = SpriteOutlineManager.<>f__mg_cache0;
         tk2dBaseSprite.SpriteChanged += fMgCache0;
         targetSprite.UpdateZDepth();
         SpriteOutlineManager.HandleSpriteChanged(targetSprite);
@@ -357,13 +357,13 @@ namespace ETG.Core.Systems.Management
         }
         tk2dBaseSprite tk2dBaseSprite = targetSprite;
         // ISSUE: reference to a compiler-generated field
-        if (SpriteOutlineManager.<>f__mg$cache1 == null)
+        if (SpriteOutlineManager.<>f__mg_cache1 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          SpriteOutlineManager.<>f__mg$cache1 = new Action<tk2dBaseSprite>(SpriteOutlineManager.HandleSpriteChanged);
+          SpriteOutlineManager.<>f__mg_cache1 = new Action<tk2dBaseSprite>(SpriteOutlineManager.HandleSpriteChanged);
         }
         // ISSUE: reference to a compiler-generated field
-        Action<tk2dBaseSprite> fMgCache1 = SpriteOutlineManager.<>f__mg$cache1;
+        Action<tk2dBaseSprite> fMgCache1 = SpriteOutlineManager.<>f__mg_cache1;
         tk2dBaseSprite.SpriteChanged += fMgCache1;
         targetSprite.UpdateZDepth();
         SpriteOutlineManager.HandleSpriteChanged(targetSprite);
@@ -390,13 +390,13 @@ namespace ETG.Core.Systems.Management
           sharedMaterialToUse = SpriteOutlineManager.HandleSingleOutlineAddition<T>(targetSprite, sharedMaterialToUse, cardinals[outlineIndex], outlineIndex, outlineColor, zOffset, luminanceCutoff);
         tk2dBaseSprite tk2dBaseSprite = targetSprite;
         // ISSUE: reference to a compiler-generated field
-        if (SpriteOutlineManager.<>f__mg$cache2 == null)
+        if (SpriteOutlineManager.<>f__mg_cache2 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          SpriteOutlineManager.<>f__mg$cache2 = new Action<tk2dBaseSprite>(SpriteOutlineManager.HandleSpriteChanged);
+          SpriteOutlineManager.<>f__mg_cache2 = new Action<tk2dBaseSprite>(SpriteOutlineManager.HandleSpriteChanged);
         }
         // ISSUE: reference to a compiler-generated field
-        Action<tk2dBaseSprite> fMgCache2 = SpriteOutlineManager.<>f__mg$cache2;
+        Action<tk2dBaseSprite> fMgCache2 = SpriteOutlineManager.<>f__mg_cache2;
         tk2dBaseSprite.SpriteChanged += fMgCache2;
         targetSprite.UpdateZDepth();
         SpriteOutlineManager.HandleSpriteChanged(targetSprite);
@@ -456,13 +456,13 @@ namespace ETG.Core.Systems.Management
         Transform transform1 = targetSprite.transform;
         tk2dBaseSprite tk2dBaseSprite = targetSprite;
         // ISSUE: reference to a compiler-generated field
-        if (SpriteOutlineManager.<>f__mg$cache3 == null)
+        if (SpriteOutlineManager.<>f__mg_cache3 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          SpriteOutlineManager.<>f__mg$cache3 = new Action<tk2dBaseSprite>(SpriteOutlineManager.HandleSpriteChanged);
+          SpriteOutlineManager.<>f__mg_cache3 = new Action<tk2dBaseSprite>(SpriteOutlineManager.HandleSpriteChanged);
         }
         // ISSUE: reference to a compiler-generated field
-        Action<tk2dBaseSprite> fMgCache3 = SpriteOutlineManager.<>f__mg$cache3;
+        Action<tk2dBaseSprite> fMgCache3 = SpriteOutlineManager.<>f__mg_cache3;
         tk2dBaseSprite.SpriteChanged -= fMgCache3;
         bool flag = false;
         for (int index = 0; index < transform1.childCount; ++index)

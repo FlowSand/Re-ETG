@@ -79,7 +79,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new MenuCrosshairSelectionDoer.<HandleLerpyDerpy>c__Iterator0()
         {
           targetCrosshairDoer = targetCrosshairDoer,
-          $this = this
+          _this = this
         };
       }
 

@@ -53,7 +53,7 @@ namespace ETG.Core.Items.Active
           aimVec = aimVec,
           rayLength = rayLength,
           rayDamage = rayDamage,
-          $this = this
+          _this = this
         };
       }
 

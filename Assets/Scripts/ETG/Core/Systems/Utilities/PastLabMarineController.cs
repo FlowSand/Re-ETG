@@ -58,7 +58,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PastLabMarineController.<HandlePortal>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -68,7 +68,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PastLabMarineController.<Start>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -78,7 +78,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PastLabMarineController.<HandleInitialRoomLockdown>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -109,7 +109,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PastLabMarineController.<HandleHide>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -119,7 +119,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PastLabMarineController.<HandleShoot>c__Iterator4()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -155,7 +155,7 @@ namespace ETG.Core.Systems.Utilities
         {
           duration = duration,
           source = source,
-          $this = this
+          _this = this
         };
       }
 
@@ -166,7 +166,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new PastLabMarineController.<HandleDialogue>c__Iterator6()
         {
           stringKey = stringKey,
-          $this = this
+          _this = this
         };
       }
 
@@ -185,7 +185,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new PastLabMarineController.<HandleBossKilled>c__Iterator7()
         {
-          $this = this
+          _this = this
         };
       }
     }

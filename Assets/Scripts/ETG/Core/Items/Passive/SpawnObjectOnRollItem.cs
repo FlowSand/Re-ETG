@@ -55,7 +55,7 @@ namespace ETG.Core.Items.Passive
         return (IEnumerator) new SpawnObjectOnRollItem.<HandleObjectBounce>c__Iterator0()
         {
           target = target,
-          $this = this
+          _this = this
         };
       }
 

@@ -27,7 +27,7 @@ namespace ETG.Core.Systems.Utilities
         {
           startPosition = startPosition,
           duration = duration,
-          $this = this
+          _this = this
         };
       }
     }

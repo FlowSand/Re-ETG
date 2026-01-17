@@ -427,7 +427,7 @@ namespace ETG.Core.Dungeon.Rooms
           duration = duration,
           targetDepth = targetDepth,
           isSpecialHorizontalTopCase = isSpecialHorizontalTopCase,
-          $this = this
+          _this = this
         };
       }
 
@@ -474,7 +474,7 @@ namespace ETG.Core.Dungeon.Rooms
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DungeonDoorController.<DelayedReclose>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -558,7 +558,7 @@ namespace ETG.Core.Dungeon.Rooms
         return (IEnumerator) new DungeonDoorController.<DoCoopArrowWhilePlayerIsNear>c__Iterator2()
         {
           nearPlayer = nearPlayer,
-          $this = this
+          _this = this
         };
       }
 
@@ -790,7 +790,7 @@ namespace ETG.Core.Dungeon.Rooms
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DungeonDoorController.<HandleFrameDelayedUnsealedVFXOverride>c__Iterator5()
         {
-          $this = this
+          _this = this
         };
       }
 

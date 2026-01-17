@@ -61,7 +61,7 @@ namespace ETG.Core.Systems.Utilities
         {
           centerPoint = centerPoint,
           targetRoom = targetRoom,
-          $this = this
+          _this = this
         };
       }
 
@@ -72,7 +72,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new RadialSlowInterface.<ProcessCirclePass>c__Iterator1()
         {
           centerPoint = centerPoint,
-          $this = this
+          _this = this
         };
       }
 
@@ -82,7 +82,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new RadialSlowInterface.<ProcessEnsepia>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -95,7 +95,7 @@ namespace ETG.Core.Systems.Utilities
           startTime = startTime,
           target = target,
           centerPoint = centerPoint,
-          $this = this
+          _this = this
         };
       }
     }

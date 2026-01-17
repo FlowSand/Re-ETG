@@ -45,7 +45,7 @@ namespace ETG.Core.Systems.Data
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new CircleBurstChallengeModifier.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -123,7 +123,7 @@ namespace ETG.Core.Systems.Data
           bank = bank,
           bulletScript = bulletScript,
           ownerName = ownerName,
-          $this = this
+          _this = this
         };
       }
 

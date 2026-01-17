@@ -42,7 +42,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new RoomMotionHandler.<HandleMove>c__Iterator0()
         {
           targetPosition = targetPosition,
-          $this = this
+          _this = this
         };
       }
     }

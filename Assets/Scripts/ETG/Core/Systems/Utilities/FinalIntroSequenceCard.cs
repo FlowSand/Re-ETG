@@ -90,7 +90,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new FinalIntroSequenceCard.<ToggleLightingCR>c__Iterator0()
         {
           togglon = togglon,
-          $this = this
+          _this = this
         };
       }
 
@@ -100,7 +100,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new FinalIntroSequenceCard.<HandleGunBurn>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 

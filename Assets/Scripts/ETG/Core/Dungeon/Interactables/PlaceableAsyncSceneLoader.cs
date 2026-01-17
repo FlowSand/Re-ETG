@@ -40,7 +40,7 @@ namespace ETG.Core.Dungeon.Interactables
         return (IEnumerator) new PlaceableAsyncSceneLoader.<WaitForChunkLoaded>c__Iterator0()
         {
           loader = loader,
-          $this = this
+          _this = this
         };
       }
 

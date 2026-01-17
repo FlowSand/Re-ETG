@@ -84,7 +84,7 @@ namespace ETG.Core.Items.Passive
         return (IEnumerator) new BlinkPassiveItem.<HandleAfterImageStop>c__Iterator0()
         {
           player = player,
-          $this = this
+          _this = this
         };
       }
 

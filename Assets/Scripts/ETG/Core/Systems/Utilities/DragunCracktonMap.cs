@@ -52,7 +52,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DragunCracktonMap.<HandleAmbient>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -62,7 +62,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DragunCracktonMap.<HandleConversion>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -90,7 +90,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DragunCracktonMap.<HandleGoldAmbient>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -100,7 +100,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DragunCracktonMap.<HandleGoldConversion>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 

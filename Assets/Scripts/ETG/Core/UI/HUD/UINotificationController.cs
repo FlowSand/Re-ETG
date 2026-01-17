@@ -112,7 +112,7 @@ namespace ETG.Core.UI.HUD
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new UINotificationController.<BG_CoroutineProcessor>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -272,7 +272,7 @@ namespace ETG.Core.UI.HUD
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new UINotificationController.<PruneQueuedNotifications>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -475,7 +475,7 @@ namespace ETG.Core.UI.HUD
         return (IEnumerator) new UINotificationController.<HandleNotification>c__Iterator2()
         {
           notifyParams = notifyParams,
-          $this = this
+          _this = this
         };
       }
 

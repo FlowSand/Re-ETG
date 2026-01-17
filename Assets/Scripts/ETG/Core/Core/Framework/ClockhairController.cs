@@ -77,7 +77,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ClockhairController.<HandleDesat>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -88,7 +88,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new ClockhairController.<WipeoutDistortionAndFade>c__Iterator1()
         {
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 
@@ -120,7 +120,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ClockhairController.<HandleDistortion>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -142,7 +142,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ClockhairController.<HandleSpinningWildly>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -152,7 +152,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new ClockhairController.<HandleSimpleMotion>c__Iterator4()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -186,7 +186,7 @@ namespace ETG.Core.Core.Framework
         {
           targetTime = targetTime,
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 

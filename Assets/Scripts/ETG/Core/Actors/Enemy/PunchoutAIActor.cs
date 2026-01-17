@@ -312,7 +312,7 @@ namespace ETG.Core.Actors.Enemy
         return (IEnumerator) new PunchoutAIActor.<DropKeyCR>c__Iterator0()
         {
           isLeft = isLeft,
-          $this = this
+          _this = this
         };
       }
 
@@ -329,7 +329,7 @@ namespace ETG.Core.Actors.Enemy
         {
           targetQualities = targetQualities,
           isLeft = isLeft,
-          $this = this
+          _this = this
         };
       }
 

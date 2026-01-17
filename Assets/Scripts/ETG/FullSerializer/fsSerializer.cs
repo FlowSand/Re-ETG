@@ -16,17 +16,17 @@ public class fsSerializer
 {
   private static HashSet<string> _reservedKeywords = new HashSet<string>()
   {
-    "$ref",
-    "$id",
-    "$type",
-    "$version",
-    "$content"
+    "_ref",
+    "_id",
+    "_type",
+    "_version",
+    "_content"
   };
-  private const string Key_ObjectReference = "$ref";
-  private const string Key_ObjectDefinition = "$id";
-  private const string Key_InstanceType = "$type";
-  private const string Key_Version = "$version";
-  private const string Key_Content = "$content";
+  private const string Key_ObjectReference = "_ref";
+  private const string Key_ObjectDefinition = "_id";
+  private const string Key_InstanceType = "_type";
+  private const string Key_Version = "_version";
+  private const string Key_Content = "_content";
   private Dictionary<Type, fsBaseConverter> _cachedConverters;
   private Dictionary<Type, List<fsObjectProcessor>> _cachedProcessors;
   private readonly List<fsConverter> _availableConverters;
@@ -118,40 +118,40 @@ public class fsSerializer
 
   private static bool IsObjectReference(fsData data)
   {
-    return data.IsDictionary && data.AsDictionary.ContainsKey("$ref");
+    return data.IsDictionary && data.AsDictionary.ContainsKey("_ref");
   }
 
   private static bool IsObjectDefinition(fsData data)
   {
-    return data.IsDictionary && data.AsDictionary.ContainsKey("$id");
+    return data.IsDictionary && data.AsDictionary.ContainsKey("_id");
   }
 
   private static bool IsVersioned(fsData data)
   {
-    return data.IsDictionary && data.AsDictionary.ContainsKey("$version");
+    return data.IsDictionary && data.AsDictionary.ContainsKey("_version");
   }
 
   private static bool IsTypeSpecified(fsData data)
   {
-    return data.IsDictionary && data.AsDictionary.ContainsKey("$type");
+    return data.IsDictionary && data.AsDictionary.ContainsKey("_type");
   }
 
   private static bool IsWrappedData(fsData data)
   {
-    return data.IsDictionary && data.AsDictionary.ContainsKey("$content");
+    return data.IsDictionary && data.AsDictionary.ContainsKey("_content");
   }
 
   public static void StripDeserializationMetadata(ref fsData data)
   {
-    if (data.IsDictionary && data.AsDictionary.ContainsKey("$content"))
-      data = data.AsDictionary["$content"];
+    if (data.IsDictionary && data.AsDictionary.ContainsKey("_content"))
+      data = data.AsDictionary["_content"];
     if (!data.IsDictionary)
       return;
     Dictionary<string, fsData> asDictionary = data.AsDictionary;
-    asDictionary.Remove("$ref");
-    asDictionary.Remove("$id");
-    asDictionary.Remove("$type");
-    asDictionary.Remove("$version");
+    asDictionary.Remove("_ref");
+    asDictionary.Remove("_id");
+    asDictionary.Remove("_type");
+    asDictionary.Remove("_version");
   }
 
   private static void ConvertLegacyData(ref fsData data)
@@ -171,21 +171,21 @@ public class fsSerializer
       data = asDictionary[key5];
       fsSerializer.EnsureDictionary(data);
       fsSerializer.ConvertLegacyData(ref data);
-      data.AsDictionary["$type"] = asDictionary[key4];
+      data.AsDictionary["_type"] = asDictionary[key4];
     }
     else if (asDictionary.Count == 2 && asDictionary.ContainsKey(key2) && asDictionary.ContainsKey(key3))
     {
       data = asDictionary[key3];
       fsSerializer.EnsureDictionary(data);
       fsSerializer.ConvertLegacyData(ref data);
-      data.AsDictionary["$id"] = asDictionary[key2];
+      data.AsDictionary["_id"] = asDictionary[key2];
     }
     else
     {
       if (asDictionary.Count != 1 || !asDictionary.ContainsKey(key1))
         return;
       data = fsData.CreateDictionary();
-      data.AsDictionary["$ref"] = asDictionary[key1];
+      data.AsDictionary["_ref"] = asDictionary[key1];
     }
   }
 
@@ -242,7 +242,7 @@ public class fsSerializer
       return;
     fsData fsData = data.Clone();
     data.BecomeDictionary();
-    data.AsDictionary["$content"] = fsData;
+    data.AsDictionary["_content"] = fsData;
   }
 
   public void AddProcessor(fsObjectProcessor processor)
@@ -397,7 +397,7 @@ public class fsSerializer
     if (fsResult.Failed || storageType == instance.GetType() || !this.GetConverter(storageType).RequestInheritanceSupport(storageType))
       return fsResult;
     fsSerializer.EnsureDictionary(data);
-    data.AsDictionary["$type"] = new fsData(instance.GetType().FullName);
+    data.AsDictionary["_type"] = new fsData(instance.GetType().FullName);
     return fsResult;
   }
 
@@ -411,7 +411,7 @@ public class fsSerializer
     if (fsResult.Failed)
       return fsResult;
     fsSerializer.EnsureDictionary(data);
-    data.AsDictionary["$version"] = new fsData(fsVersionedType.VersionString);
+    data.AsDictionary["_version"] = new fsData(fsVersionedType.VersionString);
     return fsResult;
   }
 
@@ -455,7 +455,7 @@ public class fsSerializer
   {
     if (!fsSerializer.IsObjectReference(data))
       return this.InternalDeserialize_2_Version(data, storageType, ref result, out processors);
-    int id = int.Parse(data.AsDictionary["$ref"].AsString);
+    int id = int.Parse(data.AsDictionary["_ref"].AsString);
     result = this._references.GetReferenceObject(id);
     processors = this.GetProcessors(result.GetType());
     return fsResult.Success;
@@ -469,7 +469,7 @@ public class fsSerializer
   {
     if (fsSerializer.IsVersioned(data))
     {
-      string asString = data.AsDictionary["$version"].AsString;
+      string asString = data.AsDictionary["_version"].AsString;
       fsOption<fsVersionedType> versionedType = fsVersionManager.GetVersionedType(storageType);
       if (versionedType.HasValue && versionedType.Value.VersionString != asString)
       {
@@ -504,10 +504,10 @@ public class fsSerializer
     Type type1 = storageType;
     if (fsSerializer.IsTypeSpecified(data))
     {
-      fsData fsData = data.AsDictionary["$type"];
+      fsData fsData = data.AsDictionary["_type"];
       if (!fsData.IsString)
       {
-        success.AddMessage($"$type value must be a string (in {(object) data})");
+        success.AddMessage($"_type value must be a string (in {(object) data})");
       }
       else
       {
@@ -531,14 +531,14 @@ public class fsSerializer
   private fsResult InternalDeserialize_4_Cycles(fsData data, Type resultType, ref object result)
   {
     if (fsSerializer.IsObjectDefinition(data))
-      this._references.AddReferenceWithId(int.Parse(data.AsDictionary["$id"].AsString), result);
+      this._references.AddReferenceWithId(int.Parse(data.AsDictionary["_id"].AsString), result);
     return this.InternalDeserialize_5_Converter(data, resultType, ref result);
   }
 
   private fsResult InternalDeserialize_5_Converter(fsData data, Type resultType, ref object result)
   {
     if (fsSerializer.IsWrappedData(data))
-      data = data.AsDictionary["$content"];
+      data = data.AsDictionary["_content"];
     return this.GetConverter(resultType).TryDeserialize(data, ref result, resultType);
   }
 
@@ -552,7 +552,7 @@ public class fsSerializer
       if (this._references.Contains(id))
       {
         fsSerializer.EnsureDictionary(data);
-        data.AsDictionary["$id"] = new fsData(id.ToString());
+        data.AsDictionary["_id"] = new fsData(id.ToString());
       }
       else
         this._pendingDefinitions[id] = data;
@@ -564,12 +564,12 @@ public class fsSerializer
       {
         fsData pendingDefinition = this._pendingDefinitions[id];
         fsSerializer.EnsureDictionary(pendingDefinition);
-        pendingDefinition.AsDictionary["$id"] = new fsData(id.ToString());
+        pendingDefinition.AsDictionary["_id"] = new fsData(id.ToString());
         this._pendingDefinitions.Remove(id);
       }
       else
         this._references.Add(id);
-      dict["$ref"] = new fsData(id.ToString());
+      dict["_ref"] = new fsData(id.ToString());
     }
 
     public void Clear() => this._pendingDefinitions.Clear();

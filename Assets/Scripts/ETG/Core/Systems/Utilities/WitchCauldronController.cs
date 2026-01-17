@@ -33,7 +33,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new WitchCauldronController.<HandleBackgroundBubblin>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -65,7 +65,7 @@ namespace ETG.Core.Systems.Utilities
         {
           delay = delay,
           item = item,
-          $this = this
+          _this = this
         };
       }
 
@@ -82,7 +82,7 @@ namespace ETG.Core.Systems.Utilities
         {
           spriteSource = spriteSource,
           startPosition = startPosition,
-          $this = this
+          _this = this
         };
       }
 

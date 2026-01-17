@@ -45,7 +45,7 @@ namespace ETG.Core.Dungeon.Rooms
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new BulletPastRoomController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -117,7 +117,7 @@ namespace ETG.Core.Dungeon.Rooms
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new BulletPastRoomController.<MoveThroneRoomDoor>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -136,7 +136,7 @@ namespace ETG.Core.Dungeon.Rooms
         return (IEnumerator) new BulletPastRoomController.<HandleAgunimIntro>c__Iterator3()
         {
           bossTransform = bossTransform,
-          $this = this
+          _this = this
         };
       }
 
@@ -161,7 +161,7 @@ namespace ETG.Core.Dungeon.Rooms
         return (IEnumerator) new BulletPastRoomController.<HandleAgunimDeath>c__Iterator5()
         {
           bossTransform = bossTransform,
-          $this = this
+          _this = this
         };
       }
 
@@ -192,7 +192,7 @@ namespace ETG.Core.Dungeon.Rooms
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new BulletPastRoomController.<TriggerBulletmanEnding_CR>c__Iterator6()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -203,7 +203,7 @@ namespace ETG.Core.Dungeon.Rooms
         return (IEnumerator) new BulletPastRoomController.<AnimateBulletmanEnding>c__Iterator7()
         {
           sft = sft,
-          $this = this
+          _this = this
         };
       }
 

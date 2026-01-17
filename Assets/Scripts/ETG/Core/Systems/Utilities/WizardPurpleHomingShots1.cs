@@ -26,7 +26,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new WizardPurpleHomingShots1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -74,7 +74,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new WizardPurpleHomingShots1.KnightBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }
@@ -95,7 +95,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new WizardPurpleHomingShots1.MageBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }
@@ -117,7 +117,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new WizardPurpleHomingShots1.BardBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
 
@@ -151,7 +151,7 @@ namespace ETG.Core.Systems.Utilities
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new WizardPurpleHomingShots1.RogueBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
 

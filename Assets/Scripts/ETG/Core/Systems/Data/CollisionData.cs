@@ -128,13 +128,13 @@ namespace ETG.Core.Systems.Data
       {
         ObjectPool<CollisionData>.Factory factory = (ObjectPool<CollisionData>.Factory) (() => new CollisionData());
         // ISSUE: reference to a compiler-generated field
-        if (CollisionData.<>f__mg$cache0 == null)
+        if (CollisionData.<>f__mg_cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          CollisionData.<>f__mg$cache0 = new ObjectPool<CollisionData>.Cleanup(CollisionData.Cleanup);
+          CollisionData.<>f__mg_cache0 = new ObjectPool<CollisionData>.Cleanup(CollisionData.Cleanup);
         }
         // ISSUE: reference to a compiler-generated field
-        ObjectPool<CollisionData>.Cleanup fMgCache0 = CollisionData.<>f__mg$cache0;
+        ObjectPool<CollisionData>.Cleanup fMgCache0 = CollisionData.<>f__mg_cache0;
         CollisionData.Pool = new ObjectPool<CollisionData>(factory, 10, fMgCache0);
       }
 

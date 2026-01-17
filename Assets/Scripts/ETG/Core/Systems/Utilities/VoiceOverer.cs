@@ -86,7 +86,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new VoiceOverer.<HandleIntroVO>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -96,7 +96,7 @@ namespace ETG.Core.Systems.Utilities
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new VoiceOverer.<HandlePlayerLostVO>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -107,7 +107,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new VoiceOverer.<HandlePlayerWonVO>c__Iterator2()
         {
           maxDuration = maxDuration,
-          $this = this
+          _this = this
         };
       }
 
@@ -140,7 +140,7 @@ namespace ETG.Core.Systems.Utilities
         {
           stringKey = stringKey,
           maxDuration = maxDuration,
-          $this = this
+          _this = this
         };
       }
 
@@ -152,7 +152,7 @@ namespace ETG.Core.Systems.Utilities
         {
           plaintext = plaintext,
           maxDuration = maxDuration,
-          $this = this
+          _this = this
         };
       }
     }

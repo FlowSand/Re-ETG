@@ -28,7 +28,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MegalichDeathController.<Start>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -38,7 +38,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MegalichDeathController.<LateStart>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -68,7 +68,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MegalichDeathController.<OnDeathExplosionsCR>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -88,7 +88,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MegalichDeathController.<OnDeathCR>c__Iterator3()
         {
-          $this = this
+          _this = this
         };
       }
 

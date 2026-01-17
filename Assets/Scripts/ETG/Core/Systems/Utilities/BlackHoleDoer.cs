@@ -88,7 +88,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new BlackHoleDoer.<HoldPortalOpen>c__Iterator0()
         {
           portal = portal,
-          $this = this
+          _this = this
         };
       }
 

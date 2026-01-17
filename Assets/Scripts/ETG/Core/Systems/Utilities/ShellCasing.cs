@@ -104,7 +104,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new ShellCasing.<HandlePush>c__Iterator0()
         {
           vel = vel,
-          $this = this
+          _this = this
         };
       }
     }

@@ -42,7 +42,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new HelicopterDeathController.<HandleBossDeath>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -52,7 +52,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new HelicopterDeathController.<HandleLittleExplosionsCR>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -62,7 +62,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new HelicopterDeathController.<HandleBigExplosionsCR>c__Iterator2()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -81,7 +81,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new HelicopterDeathController.<SinkCR>c__Iterator4()
         {
-          $this = this
+          _this = this
         };
       }
 

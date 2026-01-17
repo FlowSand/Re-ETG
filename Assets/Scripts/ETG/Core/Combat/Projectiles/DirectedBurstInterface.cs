@@ -67,7 +67,7 @@ namespace ETG.Core.Combat.Projectiles
           projectileToSpawn = projectileToSpawn,
           aimAngle = aimAngle,
           source = source,
-          $this = this
+          _this = this
         };
       }
 
@@ -85,7 +85,7 @@ namespace ETG.Core.Combat.Projectiles
           source = source,
           targetAngle = targetAngle,
           duration = duration,
-          $this = this
+          _this = this
         };
       }
 

@@ -42,7 +42,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new SmashTentController.<WaitForPlayerPosition>c__Iterator0()
         {
           targetPlayer = targetPlayer,
-          $this = this
+          _this = this
         };
       }
 
@@ -53,7 +53,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new SmashTentController.<HandleSmash>c__Iterator1()
         {
           targetPlayer = targetPlayer,
-          $this = this
+          _this = this
         };
       }
 

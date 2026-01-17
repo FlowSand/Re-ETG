@@ -30,7 +30,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new InfiniteRunnerController.<HandleDelayedInitialization>c__Iterator0()
         {
           room = room,
-          $this = this
+          _this = this
         };
       }
 

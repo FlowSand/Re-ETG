@@ -278,7 +278,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new KickableObject.<HandleBounceback>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -295,7 +295,7 @@ namespace ETG.Core.Dungeon.Interactables
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new KickableObject.<HandleBreakTimer>c__Iterator1()
         {
-          $this = this
+          _this = this
         };
       }
 

@@ -94,7 +94,7 @@ namespace ETG.Core.Combat.Projectiles
         {
           remainingTime = remainingTime,
           centerPoint = centerPoint,
-          $this = this
+          _this = this
         };
       }
 

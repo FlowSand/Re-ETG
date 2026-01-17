@@ -90,7 +90,7 @@ namespace ETG.Core.Combat.Effects
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DelayedExplosiveBuff.<ApplyModification>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
     }

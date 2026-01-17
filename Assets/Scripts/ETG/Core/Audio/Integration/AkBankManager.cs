@@ -167,13 +167,13 @@ namespace ETG.Core.Audio.Integration
         {
           string bankName = this.bankName;
           // ISSUE: reference to a compiler-generated field
-          if (AkBankManager.AsyncBankHandle.<>f__mg$cache0 == null)
+          if (AkBankManager.AsyncBankHandle.<>f__mg_cache0 == null)
           {
             // ISSUE: reference to a compiler-generated field
-            AkBankManager.AsyncBankHandle.<>f__mg$cache0 = new AkCallbackManager.BankCallback(AkBankManager.AsyncBankHandle.GlobalBankCallback);
+            AkBankManager.AsyncBankHandle.<>f__mg_cache0 = new AkCallbackManager.BankCallback(AkBankManager.AsyncBankHandle.GlobalBankCallback);
           }
           // ISSUE: reference to a compiler-generated field
-          AkCallbackManager.BankCallback fMgCache0 = AkBankManager.AsyncBankHandle.<>f__mg$cache0;
+          AkCallbackManager.BankCallback fMgCache0 = AkBankManager.AsyncBankHandle.<>f__mg_cache0;
           ref uint local = ref this.m_BankID;
           return AkSoundEngine.LoadBank(bankName, fMgCache0, (object) this, -1, out local);
         }

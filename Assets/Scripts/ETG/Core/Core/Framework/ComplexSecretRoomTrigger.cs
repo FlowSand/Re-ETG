@@ -76,7 +76,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new ComplexSecretRoomTrigger.<HandleDialog>c__Iterator0()
         {
           player = player,
-          $this = this
+          _this = this
         };
       }
 
@@ -89,7 +89,7 @@ namespace ETG.Core.Core.Framework
           player = player,
           i = i,
           j = j,
-          $this = this
+          _this = this
         };
       }
 

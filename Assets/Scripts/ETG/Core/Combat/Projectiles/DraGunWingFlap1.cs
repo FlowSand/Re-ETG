@@ -24,7 +24,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new DraGunWingFlap1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -44,7 +44,7 @@ namespace ETG.Core.Combat.Projectiles
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new DraGunWingFlap1.WindProjectile.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
       }

@@ -46,7 +46,7 @@ namespace ETG.Core.Combat.Projectiles
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new MetalGearRatMissiles1.<Top>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -73,7 +73,7 @@ namespace ETG.Core.Combat.Projectiles
           // ISSUE: object of a compiler-generated type is created
           return (IEnumerator) new MetalGearRatMissiles1.HomingBullet.<Top>c__Iterator0()
           {
-            $this = this
+            _this = this
           };
         }
 

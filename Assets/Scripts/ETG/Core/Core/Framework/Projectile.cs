@@ -901,7 +901,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new Projectile.<CheckIfBossKillShot>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -1140,7 +1140,7 @@ namespace ETG.Core.Core.Framework
         {
           time = time,
           color = color,
-          $this = this
+          _this = this
         };
       }
 
@@ -1183,7 +1183,7 @@ namespace ETG.Core.Core.Framework
         {
           time = time,
           color = color,
-          $this = this
+          _this = this
         };
       }
 
@@ -1222,13 +1222,13 @@ namespace ETG.Core.Core.Framework
         Vector2? sourceVelocity = new Vector2?(this.specRigidbody.Velocity);
         float? heightOffGround = new float?(0.75f + num);
         // ISSUE: reference to a compiler-generated field
-        if (Projectile.<>f__mg$cache0 == null)
+        if (Projectile.<>f__mg_cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          Projectile.<>f__mg$cache0 = new VFXComplex.SpawnMethod(SpawnManager.SpawnDecal);
+          Projectile.<>f__mg_cache0 = new VFXComplex.SpawnMethod(SpawnManager.SpawnDecal);
         }
         // ISSUE: reference to a compiler-generated field
-        VFXComplex.SpawnMethod fMgCache0 = Projectile.<>f__mg$cache0;
+        VFXComplex.SpawnMethod fMgCache0 = Projectile.<>f__mg_cache0;
         vfxPool2.SpawnAtPosition(position, parent: parent1, sourceNormal: sourceNormal, sourceVelocity: sourceVelocity, heightOffGround: heightOffGround, spawnMethod: fMgCache0);
       }
 
@@ -1727,7 +1727,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new Projectile.<HandlePostInvulnerabilityFrameExceptions>c__Iterator3()
         {
           otherRigidbody = otherRigidbody,
-          $this = this
+          _this = this
         };
       }
 
@@ -1739,7 +1739,7 @@ namespace ETG.Core.Core.Framework
         {
           lcr = lcr,
           player = player,
-          $this = this
+          _this = this
         };
       }
 
@@ -1875,7 +1875,7 @@ namespace ETG.Core.Core.Framework
           damage = damage,
           damageVec = damageVec,
           hitPixelCollider = hitPixelCollider,
-          $this = this
+          _this = this
         };
       }
 
@@ -2051,7 +2051,7 @@ namespace ETG.Core.Core.Framework
           targetMaterial = targetMaterial,
           startGlow = startGlow,
           targetGlow = targetGlow,
-          $this = this
+          _this = this
         };
       }
 

@@ -64,7 +64,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new FoyerGungeonDoor.<HandleCoopAnimation>c__Iterator0()
         {
           p = p,
-          $this = this
+          _this = this
         };
       }
 
@@ -75,7 +75,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new FoyerGungeonDoor.<HandleLoading>c__Iterator1()
         {
           p = p,
-          $this = this
+          _this = this
         };
       }
 

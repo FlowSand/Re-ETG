@@ -157,7 +157,7 @@ namespace ETG.Core.Systems.Utilities
         return (IEnumerator) new tk2dTileMap.<DeferredBuild>c__Iterator0()
         {
           buildFlags = buildFlags,
-          $this = this
+          _this = this
         };
       }
 

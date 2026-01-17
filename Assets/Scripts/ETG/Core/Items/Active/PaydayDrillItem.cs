@@ -190,7 +190,7 @@ namespace ETG.Core.Items.Active
           sourceChest = sourceChest,
           d = d,
           newRoom = newRoom,
-          $this = this
+          _this = this
         };
       }
 
@@ -204,7 +204,7 @@ namespace ETG.Core.Items.Active
         {
           sourceChest = sourceChest,
           sourceRoom = sourceRoom,
-          $this = this
+          _this = this
         };
       }
 
@@ -218,7 +218,7 @@ namespace ETG.Core.Items.Active
         {
           sourceChest = sourceChest,
           sourceRoom = sourceRoom,
-          $this = this
+          _this = this
         };
       }
 
@@ -248,7 +248,7 @@ namespace ETG.Core.Items.Active
         return (IEnumerator) new PaydayDrillItem.<HandleCombatRoomShrinking>c__Iterator3()
         {
           targetRoom = targetRoom,
-          $this = this
+          _this = this
         };
       }
 
@@ -263,7 +263,7 @@ namespace ETG.Core.Items.Active
         {
           targetRoom = targetRoom,
           sourceChest = sourceChest,
-          $this = this
+          _this = this
         };
       }
 

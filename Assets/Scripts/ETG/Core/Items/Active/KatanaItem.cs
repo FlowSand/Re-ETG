@@ -58,7 +58,7 @@ namespace ETG.Core.Items.Active
         return (IEnumerator) new KatanaItem.<HandleDash>c__Iterator0()
         {
           user = user,
-          $this = this
+          _this = this
         };
       }
 
@@ -79,7 +79,7 @@ namespace ETG.Core.Items.Active
           actors = actors,
           dashDirection = dashDirection,
           breakables = breakables,
-          $this = this
+          _this = this
         };
       }
 

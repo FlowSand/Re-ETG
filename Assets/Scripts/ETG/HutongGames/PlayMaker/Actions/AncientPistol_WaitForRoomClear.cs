@@ -54,7 +54,7 @@ public class AncientPistol_WaitForRoomClear : FsmStateAction
     return (IEnumerator) new AncientPistol_WaitForRoomClear.<HandleDelayedPathing>c__Iterator0()
     {
       targetPosition = targetPosition,
-      $this = this
+      _this = this
     };
   }
 

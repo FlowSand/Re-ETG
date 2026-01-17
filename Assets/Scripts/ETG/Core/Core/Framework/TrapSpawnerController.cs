@@ -64,7 +64,7 @@ namespace ETG.Core.Core.Framework
         // ISSUE: object of a compiler-generated type is created
         return (IEnumerator) new TrapSpawnerController.<SpawnTraps>c__Iterator0()
         {
-          $this = this
+          _this = this
         };
       }
 
@@ -75,7 +75,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new TrapSpawnerController.<SpawnTrap>c__Iterator1()
         {
           pos = pos,
-          $this = this
+          _this = this
         };
       }
 
@@ -94,7 +94,7 @@ namespace ETG.Core.Core.Framework
         return (IEnumerator) new TrapSpawnerController.<DestroyTrap>c__Iterator2()
         {
           trap = trap,
-          $this = this
+          _this = this
         };
       }
     }
