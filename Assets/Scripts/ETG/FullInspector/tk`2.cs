@@ -443,7 +443,7 @@ public class tk<T, TContext>
     {
       get
       {
-        tk<T, TContext>.HorizontalGroup.<>c__Iterator0 memberChildControls = new tk<T, TContext>.HorizontalGroup.<>c__Iterator0()
+        tk_T_TContext__HorizontalGroup___c__Iterator0 memberChildControls = new tk_T_TContext__HorizontalGroup___c__Iterator0()
         {
           _this = this
         };
@@ -1183,7 +1183,7 @@ label_3:
     {
       get
       {
-        tk<T, TContext>.VerticalGroup.<>c__Iterator0 memberChildControls = new tk<T, TContext>.VerticalGroup.<>c__Iterator0()
+        tk_T_TContext__VerticalGroup___c__Iterator0 memberChildControls = new tk_T_TContext__VerticalGroup___c__Iterator0()
         {
           _this = this
         };

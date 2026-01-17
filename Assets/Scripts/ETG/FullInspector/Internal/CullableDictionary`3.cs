@@ -45,7 +45,7 @@ public class CullableDictionary<TKey, TValue, TDictionary> : ICullableDictionary
   {
     get
     {
-      CullableDictionary<TKey, TValue, TDictionary>.<>c__Iterator0 items = new CullableDictionary<TKey, TValue, TDictionary>.<>c__Iterator0()
+      CullableDictionary_TKey_TValue_TDictionary___c__Iterator0 items = new CullableDictionary_TKey_TValue_TDictionary___c__Iterator0()
       {
         _this = this
       };
