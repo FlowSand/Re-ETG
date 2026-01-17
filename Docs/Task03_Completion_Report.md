@@ -1,9 +1,9 @@
 # Task-03 完成报告
 
-**任务名称：** 依赖补齐策略
+**任务名称：** 依赖补齐策略 + DLL清理
 **执行日期：** 2026-01-17
 **状态：** ✅ 完成
-**Git提交：** 5ab30210
+**Git提交：** 5ab30210 (Shims), 441fed1c (Report), cd8c77ba (DLL Cleanup)
 
 ---
 
@@ -303,3 +303,83 @@ Deletions: 1
 **验证状态：** ✅ 文件已创建并提交
 **下一任务：** Task-04 - 编译错误迭代修复
 **创建日期：** 2026-01-17
+
+---
+
+## 附录：DLL清理（2026-01-17 补充）
+
+### 问题发现
+在Unity Console中发现两个关键错误：
+
+1. **DLL文件名冲突：**
+   ```
+   Plugin 'Assets/Scripts/ETG/lib/UnityEngine.UI.dll' has the same filename as Assembly Definition File 'Packages/com.unity.ugui/Runtime/UnityEngine.UI.asmdef'
+   ```
+
+2. **API Updater类型转换错误：**
+   ```
+   System.InvalidCastException: Unable to cast object of type 'System.Boolean' to type 'System.String'
+   at ApiUpdater.MovedFromOptimizer.Program.ShouldUpdate
+   ```
+
+### 根本原因
+`Assets/Scripts/ETG/lib/`目录包含17个旧Unity引擎模块DLL（来自Unity 5.x时代），与Unity 2022.3的内置模块系统冲突。这些DLL中的`[MovedFrom]`属性格式不兼容，导致API Updater解析失败。
+
+### 解决方案
+**移除冗余DLL（17个）：**
+- 14个UnityEngine模块DLL（CoreModule、UI、Physics等）
+- Unity.Analytics.DataPrivacy.dll（内置包）
+- Mono.Security.dll（内置Mono）
+- Assembly-CSharp-firstpass.dll（无源码，原游戏编译产物）
+
+**保留合法第三方DLL（3个）：**
+- GalaxyCSharp.dll（GOG SDK，已有shims）
+- PlayMaker.dll（第三方可视化脚本工具）
+- dfScriptLite.dll（第三方UI框架）
+
+### 执行细节
+
+**工具：** Python脚本 `cleanup_dlls.py`
+
+**移动文件：** 17个DLL + 对应.meta文件 → `Removed_Legacy_DLLs/`
+
+**Git提交：** cd8c77ba
+
+**验证：**
+```bash
+# lib/目录仅剩3个DLL
+$ ls -lh Assets/Scripts/ETG/lib/*.dll
+dfScriptLite.dll       (55K)
+GalaxyCSharp.dll       (238K)
+PlayMaker.dll          (197K)
+
+# 备份目录包含17个DLL
+$ ls Removed_Legacy_DLLs/*.dll | wc -l
+17
+```
+
+### 文档产物
+- `Docs/DLL_Cleanup_Strategy.md` - 详细策略与分析（283行）
+- `cleanup_dlls.py` - 自动化清理脚本
+
+### 预期效果
+- ✅ Unity UI.dll文件名冲突错误消失
+- ✅ API Updater类型转换错误消失
+- ✅ 程序集依赖图简化
+- ✅ 为Task-04编译测试做好准备
+
+### 回滚方案（如需）
+```bash
+# 从备份恢复
+mv Removed_Legacy_DLLs/*.dll Assets/Scripts/ETG/lib/
+mv Removed_Legacy_DLLs/*.meta Assets/Scripts/ETG/lib/
+
+# Git回滚
+git revert cd8c77ba
+```
+
+---
+
+**最终状态：** Task-03完全完成（Shims + DLL清理）
+**下一步：** 重新打开Unity，验证Console无DLL/API错误，开始Task-04编译错误修复
+
