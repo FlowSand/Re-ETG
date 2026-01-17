@@ -1,0 +1,121 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: InControl.AppleTVWirelessControllerProfile
+// Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: E27C5245-924B-4031-BFBB-14AA632E24E2
+// Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
+
+#nullable disable
+namespace InControl;
+
+[AutoDiscover]
+public class AppleTVWirelessControllerProfile : UnityInputDeviceProfile
+{
+  public AppleTVWirelessControllerProfile()
+  {
+    this.Name = "Apple TV Controller";
+    this.Meta = "Apple TV Controller on tvOS";
+    this.DeviceClass = InputDeviceClass.Controller;
+    this.DeviceStyle = InputDeviceStyle.AppleMFi;
+    this.IncludePlatforms = new string[1]{ "AppleTV" };
+    this.JoystickRegex = new string[3]
+    {
+      "controller",
+      "basic",
+      "extended"
+    };
+    this.LowerDeadZone = 0.05f;
+    this.UpperDeadZone = 0.95f;
+    this.ButtonMappings = new InputControlMapping[11]
+    {
+      new InputControlMapping()
+      {
+        Handle = "A",
+        Target = InputControlType.Action1,
+        Source = UnityInputDeviceProfile.Button14
+      },
+      new InputControlMapping()
+      {
+        Handle = "B",
+        Target = InputControlType.Action2,
+        Source = UnityInputDeviceProfile.Button13
+      },
+      new InputControlMapping()
+      {
+        Handle = "X",
+        Target = InputControlType.Action3,
+        Source = UnityInputDeviceProfile.Button15
+      },
+      new InputControlMapping()
+      {
+        Handle = "Y",
+        Target = InputControlType.Action4,
+        Source = UnityInputDeviceProfile.Button12
+      },
+      new InputControlMapping()
+      {
+        Handle = "DPad Up",
+        Target = InputControlType.DPadUp,
+        Source = UnityInputDeviceProfile.Button4
+      },
+      new InputControlMapping()
+      {
+        Handle = "DPad Down",
+        Target = InputControlType.DPadDown,
+        Source = UnityInputDeviceProfile.Button6
+      },
+      new InputControlMapping()
+      {
+        Handle = "DPad Left",
+        Target = InputControlType.DPadLeft,
+        Source = UnityInputDeviceProfile.Button7
+      },
+      new InputControlMapping()
+      {
+        Handle = "DPad Right",
+        Target = InputControlType.DPadRight,
+        Source = UnityInputDeviceProfile.Button5
+      },
+      new InputControlMapping()
+      {
+        Handle = "Left Bumper",
+        Target = InputControlType.LeftBumper,
+        Source = UnityInputDeviceProfile.Button8
+      },
+      new InputControlMapping()
+      {
+        Handle = "Right Bumper",
+        Target = InputControlType.RightBumper,
+        Source = UnityInputDeviceProfile.Button9
+      },
+      new InputControlMapping()
+      {
+        Handle = "Menu",
+        Target = InputControlType.Menu,
+        Source = UnityInputDeviceProfile.Button0
+      }
+    };
+    this.AnalogMappings = new InputControlMapping[10]
+    {
+      UnityInputDeviceProfile.LeftStickLeftMapping(UnityInputDeviceProfile.Analog0),
+      UnityInputDeviceProfile.LeftStickRightMapping(UnityInputDeviceProfile.Analog0),
+      UnityInputDeviceProfile.LeftStickUpMapping(UnityInputDeviceProfile.Analog1),
+      UnityInputDeviceProfile.LeftStickDownMapping(UnityInputDeviceProfile.Analog1),
+      UnityInputDeviceProfile.RightStickLeftMapping(UnityInputDeviceProfile.Analog2),
+      UnityInputDeviceProfile.RightStickRightMapping(UnityInputDeviceProfile.Analog2),
+      UnityInputDeviceProfile.RightStickUpMapping(UnityInputDeviceProfile.Analog3),
+      UnityInputDeviceProfile.RightStickDownMapping(UnityInputDeviceProfile.Analog3),
+      new InputControlMapping()
+      {
+        Handle = "Left Trigger",
+        Target = InputControlType.LeftTrigger,
+        Source = UnityInputDeviceProfile.Analog10
+      },
+      new InputControlMapping()
+      {
+        Handle = "Right Trigger",
+        Target = InputControlType.RightTrigger,
+        Source = UnityInputDeviceProfile.Analog11
+      }
+    };
+  }
+}

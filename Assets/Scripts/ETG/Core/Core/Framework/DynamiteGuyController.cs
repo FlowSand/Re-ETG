@@ -1,0 +1,26 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: DynamiteGuyController
+// Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: E27C5245-924B-4031-BFBB-14AA632E24E2
+// Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
+
+#nullable disable
+
+namespace ETG.Core.Core.Framework
+{
+    public class DynamiteGuyController : BraveBehaviour
+    {
+      public SimpleSparksDoer SparksDoer;
+
+      public void Update()
+      {
+        if (!this.aiActor.HasBeenAwoken || this.aiAnimator.IsPlaying("spawn"))
+          return;
+        this.SparksDoer.enabled = true;
+        this.enabled = false;
+      }
+
+      protected override void OnDestroy() => base.OnDestroy();
+    }
+
+}

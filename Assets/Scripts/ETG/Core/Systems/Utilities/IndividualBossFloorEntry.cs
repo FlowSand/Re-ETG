@@ -1,0 +1,49 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: IndividualBossFloorEntry
+// Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: E27C5245-924B-4031-BFBB-14AA632E24E2
+// Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
+
+using System;
+
+#nullable disable
+
+namespace ETG.Core.Systems.Utilities
+{
+    [Serializable]
+    public class IndividualBossFloorEntry
+    {
+      public DungeonPrerequisite[] GlobalBossPrerequisites;
+      public float BossWeight = 1f;
+      public GenericRoomTable TargetRoomTable;
+
+      public float GetWeightModifier()
+      {
+        int num1 = 0;
+        for (int index = 0; index < this.TargetRoomTable.includedRooms.elements.Count; ++index)
+        {
+          if (!((UnityEngine.Object) this.TargetRoomTable.includedRooms.elements[index].room == (UnityEngine.Object) null))
+          {
+            int num2 = GameStatsManager.Instance.QueryRoomDifferentiator(this.TargetRoomTable.includedRooms.elements[index].room);
+            num1 += num2;
+          }
+        }
+        if (num1 <= 0)
+          return GameStatsManager.Instance.LastBossEncounteredMap.ContainsKey(GameManager.Instance.BestGenerationDungeonPrefab.tileIndices.tilesetId) && !BraveRandom.IgnoreGenerationDifferentiator && GameStatsManager.Instance.LastBossEncounteredMap[GameManager.Instance.BestGenerationDungeonPrefab.tileIndices.tilesetId] == this.TargetRoomTable.name ? 0.5f : 1f;
+        if (num1 == 1)
+          return 0.5f;
+        return num1 >= 2 ? 0.01f : 0.01f;
+      }
+
+      public bool GlobalPrereqsValid()
+      {
+        for (int index = 0; index < this.GlobalBossPrerequisites.Length; ++index)
+        {
+          if (!this.GlobalBossPrerequisites[index].CheckConditionsFulfilled())
+            return false;
+        }
+        return true;
+      }
+    }
+
+}

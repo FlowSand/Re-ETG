@@ -1,0 +1,14 @@
+{
+  "name": "ETG.PrivateImpl.DE5600AD",
+  "rootNamespace": "",
+  "references": ["ETG.Runtime"],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": true,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

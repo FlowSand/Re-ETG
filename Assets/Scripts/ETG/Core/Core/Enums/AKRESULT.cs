@@ -1,0 +1,99 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: AKRESULT
+// Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: E27C5245-924B-4031-BFBB-14AA632E24E2
+// Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
+
+#nullable disable
+
+namespace ETG.Core.Core.Enums
+{
+    public enum AKRESULT
+    {
+      AK_NotImplemented = 0,
+      AK_Success = 1,
+      AK_Fail = 2,
+      AK_PartialSuccess = 3,
+      AK_NotCompatible = 4,
+      AK_AlreadyConnected = 5,
+      AK_NameNotSet = 6,
+      AK_InvalidFile = 7,
+      AK_AudioFileHeaderTooLarge = 8,
+      AK_MaxReached = 9,
+      AK_InputsInUsed = 10, // 0x0000000A
+      AK_OutputsInUsed = 11, // 0x0000000B
+      AK_InvalidName = 12, // 0x0000000C
+      AK_NameAlreadyInUse = 13, // 0x0000000D
+      AK_InvalidID = 14, // 0x0000000E
+      AK_IDNotFound = 15, // 0x0000000F
+      AK_InvalidInstanceID = 16, // 0x00000010
+      AK_NoMoreData = 17, // 0x00000011
+      AK_NoSourceAvailable = 18, // 0x00000012
+      AK_StateGroupAlreadyExists = 19, // 0x00000013
+      AK_InvalidStateGroup = 20, // 0x00000014
+      AK_ChildAlreadyHasAParent = 21, // 0x00000015
+      AK_InvalidLanguage = 22, // 0x00000016
+      AK_CannotAddItseflAsAChild = 23, // 0x00000017
+      AK_UserNotInList = 29, // 0x0000001D
+      AK_NoTransitionPoint = 30, // 0x0000001E
+      AK_InvalidParameter = 31, // 0x0000001F
+      AK_ParameterAdjusted = 32, // 0x00000020
+      AK_IsA3DSound = 33, // 0x00000021
+      AK_NotA3DSound = 34, // 0x00000022
+      AK_ElementAlreadyInList = 35, // 0x00000023
+      AK_PathNotFound = 36, // 0x00000024
+      AK_PathNoVertices = 37, // 0x00000025
+      AK_PathNotRunning = 38, // 0x00000026
+      AK_PathNotPaused = 39, // 0x00000027
+      AK_PathNodeAlreadyInList = 40, // 0x00000028
+      AK_PathNodeNotInList = 41, // 0x00000029
+      AK_VoiceNotFound = 42, // 0x0000002A
+      AK_DataNeeded = 43, // 0x0000002B
+      AK_NoDataNeeded = 44, // 0x0000002C
+      AK_DataReady = 45, // 0x0000002D
+      AK_NoDataReady = 46, // 0x0000002E
+      AK_NoMoreSlotAvailable = 47, // 0x0000002F
+      AK_SlotNotFound = 48, // 0x00000030
+      AK_ProcessingOnly = 49, // 0x00000031
+      AK_MemoryLeak = 50, // 0x00000032
+      AK_CorruptedBlockList = 51, // 0x00000033
+      AK_InsufficientMemory = 52, // 0x00000034
+      AK_Cancelled = 53, // 0x00000035
+      AK_UnknownBankID = 54, // 0x00000036
+      AK_IsProcessing = 55, // 0x00000037
+      AK_BankReadError = 56, // 0x00000038
+      AK_InvalidSwitchType = 57, // 0x00000039
+      AK_VoiceDone = 58, // 0x0000003A
+      AK_UnknownEnvironment = 59, // 0x0000003B
+      AK_EnvironmentInUse = 60, // 0x0000003C
+      AK_UnknownObject = 61, // 0x0000003D
+      AK_NoConversionNeeded = 62, // 0x0000003E
+      AK_FormatNotReady = 63, // 0x0000003F
+      AK_WrongBankVersion = 64, // 0x00000040
+      AK_DataReadyNoProcess = 65, // 0x00000041
+      AK_FileNotFound = 66, // 0x00000042
+      AK_DeviceNotReady = 67, // 0x00000043
+      AK_CouldNotCreateSecBuffer = 68, // 0x00000044
+      AK_BankAlreadyLoaded = 69, // 0x00000045
+      AK_RenderedFX = 71, // 0x00000047
+      AK_ProcessNeeded = 72, // 0x00000048
+      AK_ProcessDone = 73, // 0x00000049
+      AK_MemManagerNotInitialized = 74, // 0x0000004A
+      AK_StreamMgrNotInitialized = 75, // 0x0000004B
+      AK_SSEInstructionsNotSupported = 76, // 0x0000004C
+      AK_Busy = 77, // 0x0000004D
+      AK_UnsupportedChannelConfig = 78, // 0x0000004E
+      AK_PluginMediaNotAvailable = 79, // 0x0000004F
+      AK_MustBeVirtualized = 80, // 0x00000050
+      AK_CommandTooLarge = 81, // 0x00000051
+      AK_RejectedByFilter = 82, // 0x00000052
+      AK_InvalidCustomPlatformName = 83, // 0x00000053
+      AK_DLLCannotLoad = 84, // 0x00000054
+      AK_DLLPathNotFound = 85, // 0x00000055
+      AK_NoJavaVM = 86, // 0x00000056
+      AK_OpenSLError = 87, // 0x00000057
+      AK_PluginNotRegistered = 88, // 0x00000058
+      AK_DataAlignmentError = 89, // 0x00000059
+    }
+
+}

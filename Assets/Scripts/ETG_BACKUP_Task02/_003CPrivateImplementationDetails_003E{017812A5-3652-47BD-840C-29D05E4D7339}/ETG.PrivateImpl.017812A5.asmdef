@@ -1,0 +1,14 @@
+{
+  "name": "ETG.PrivateImpl.017812A5",
+  "rootNamespace": "",
+  "references": ["ETG.Runtime"],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": true,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

@@ -14,7 +14,10 @@
       "Bash(for dir in */)",
       "Bash(python -c:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(python ClassifyAndMoveFiles.py:*)",
+      "Bash(python:*)"
     ]
   }
 }

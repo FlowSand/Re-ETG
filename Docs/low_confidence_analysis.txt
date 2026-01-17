@@ -1,0 +1,29 @@
+=== Low Confidence Analysis ===
+Total low confidence: 869
+
+Distribution by Namespace:
+  ETG.Core.Systems.Utilities: 866
+  ETG.Core.Items.Passive: 3
+
+Utilities Low Confidence: 866
+Top Inheritance Patterns:
+  MonoBehaviour: 281
+  None: 230
+  Script: 218
+  MonoBehaviour, IDataBindingComponent: 6
+  BulletKingDirectedFire: 4
+  MonoBehaviour, IPlaceConfigurable: 4
+  dfInteractiveBase, IDFMultiRender, IRendersText: 4
+  IDisposable: 4
+  DraGunGlockDirected1: 4
+  DraGunGlockDirected2: 4
+  MonoBehaviour, IGunInheritable: 4
+  BeamController: 3
+  HighPriestSweepAttacks1: 3
+  MeduziUziFire1: 3
+  PlatformInterface: 3
+  CustomEngageDoer: 2
+  BossFinalConvictGrenades1: 2
+  BossFinalRogueLaunchShips1: 2
+  CompanionController: 2
+  EphemeralObject: 2

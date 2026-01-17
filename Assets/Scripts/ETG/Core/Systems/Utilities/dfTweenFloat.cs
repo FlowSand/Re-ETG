@@ -1,0 +1,24 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: dfTweenFloat
+// Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: E27C5245-924B-4031-BFBB-14AA632E24E2
+// Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
+
+using UnityEngine;
+
+#nullable disable
+
+namespace ETG.Core.Systems.Utilities
+{
+    [AddComponentMenu("Daikon Forge/Tweens/Float")]
+    public class dfTweenFloat : dfTweenComponent<float>
+    {
+      public override float offset(float lhs, float rhs) => lhs + rhs;
+
+      public override float evaluate(float startValue, float endValue, float time)
+      {
+        return startValue + (endValue - startValue) * time;
+      }
+    }
+
+}

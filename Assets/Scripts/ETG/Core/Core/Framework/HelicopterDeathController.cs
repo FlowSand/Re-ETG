@@ -1,0 +1,103 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: HelicopterDeathController
+// Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: E27C5245-924B-4031-BFBB-14AA632E24E2
+// Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
+
+using System;
+using System.Collections;
+using System.Diagnostics;
+using UnityEngine;
+
+#nullable disable
+
+namespace ETG.Core.Core.Framework
+{
+    public class HelicopterDeathController : BraveBehaviour
+    {
+      public ScreenShakeSettings screenShake;
+      public GameObject explosionVfx;
+      private float explosionMidDelay = 0.1f;
+      private int explosionCount = 35;
+      public GameObject bigExplosionVfx;
+      private float bigExplosionMidDelay = 0.2f;
+      private int bigExplosionCount = 10;
+      private bool m_isDestroyed;
+
+      public void Start()
+      {
+        this.healthHaver.ManualDeathHandling = true;
+        this.healthHaver.OnPreDeath += new Action<Vector2>(this.OnBossDeath);
+      }
+
+      private void OnBossDeath(Vector2 dir)
+      {
+        this.StartCoroutine(this.HandleBossDeath());
+        int num = (int) AkSoundEngine.PostEvent("Play_State_Volume_Lower_01", this.gameObject);
+      }
+
+      [DebuggerHidden]
+      private IEnumerator HandleBossDeath()
+      {
+        // ISSUE: object of a compiler-generated type is created
+        return (IEnumerator) new HelicopterDeathController.\u003CHandleBossDeath\u003Ec__Iterator0()
+        {
+          \u0024this = this
+        };
+      }
+
+      [DebuggerHidden]
+      private IEnumerator HandleLittleExplosionsCR()
+      {
+        // ISSUE: object of a compiler-generated type is created
+        return (IEnumerator) new HelicopterDeathController.\u003CHandleLittleExplosionsCR\u003Ec__Iterator1()
+        {
+          \u0024this = this
+        };
+      }
+
+      [DebuggerHidden]
+      private IEnumerator HandleBigExplosionsCR()
+      {
+        // ISSUE: object of a compiler-generated type is created
+        return (IEnumerator) new HelicopterDeathController.\u003CHandleBigExplosionsCR\u003Ec__Iterator2()
+        {
+          \u0024this = this
+        };
+      }
+
+      [DebuggerHidden]
+      private IEnumerator HandleFlightPitfall()
+      {
+        // ISSUE: object of a compiler-generated type is created
+        // ISSUE: variable of a compiler-generated type
+        HelicopterDeathController.\u003CHandleFlightPitfall\u003Ec__Iterator3 pitfallCIterator3 = new HelicopterDeathController.\u003CHandleFlightPitfall\u003Ec__Iterator3();
+        return (IEnumerator) pitfallCIterator3;
+      }
+
+      [DebuggerHidden]
+      private IEnumerator SinkCR()
+      {
+        // ISSUE: object of a compiler-generated type is created
+        return (IEnumerator) new HelicopterDeathController.\u003CSinkCR\u003Ec__Iterator4()
+        {
+          \u0024this = this
+        };
+      }
+
+      private Vector2 RandomExplosionPos()
+      {
+        Vector2 position = (Vector2) this.transform.position;
+        switch (UnityEngine.Random.Range(0, 8))
+        {
+          case 0:
+            return position + BraveUtility.RandomVector2(new Vector2(0.75f, 4.625f), new Vector2(3.875f, 5.25f));
+          case 1:
+            return position + BraveUtility.RandomVector2(new Vector2(5.625f, 4.625f), new Vector2(8.75f, 5.25f));
+          default:
+            return position + BraveUtility.RandomVector2(new Vector2(3.875f, 2f), new Vector2(5.625f, 8.375f));
+        }
+      }
+    }
+
+}
