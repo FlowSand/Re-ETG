@@ -46,7 +46,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GunNutSpin1.<Top>c__Iterator0()
+        return (IEnumerator) new GunNutSpin1__Topc__Iterator0()
         {
           _this = this
         };
@@ -115,7 +115,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new GunNutSpin1.SpinBullet.<Top>c__Iterator0()
+          return (IEnumerator) new GunNutSpin1.SpinBullet__Topc__Iterator0()
           {
             _this = this
           };
@@ -138,7 +138,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new GunNutSpin1.BolasBullet.<Top>c__Iterator0()
+          return (IEnumerator) new GunNutSpin1.BolasBullet__Topc__Iterator0()
           {
             _this = this
           };

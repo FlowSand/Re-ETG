@@ -339,7 +339,7 @@ public class SemioticLayoutManager
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    SemioticLayoutManager.<FindNearestValidLocationForLayout2>c__Iterator0 locationForLayout2 = new SemioticLayoutManager.<FindNearestValidLocationForLayout2>c__Iterator0()
+    SemioticLayoutManager__FindNearestValidLocationForLayout2c__Iterator0 locationForLayout2 = new SemioticLayoutManager__FindNearestValidLocationForLayout2c__Iterator0()
     {
       newAreaBasePosition = newAreaBasePosition,
       staticAreaBasePosition = staticAreaBasePosition,
@@ -653,7 +653,7 @@ label_9:
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    SemioticLayoutManager.<CheckExitsAgainstDisparateLayouts>c__Iterator1 layoutsCIterator1 = new SemioticLayoutManager.<CheckExitsAgainstDisparateLayouts>c__Iterator1()
+    SemioticLayoutManager__CheckExitsAgainstDisparateLayoutsc__Iterator1 layoutsCIterator1 = new SemioticLayoutManager__CheckExitsAgainstDisparateLayoutsc__Iterator1()
     {
       staticAreaBasePosition = staticAreaBasePosition,
       staticExit = staticExit,
@@ -734,7 +734,7 @@ label_9:
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    SemioticLayoutManager.<CanPlaceLayoutAtPoint>c__Iterator2 atPointCIterator2 = new SemioticLayoutManager.<CanPlaceLayoutAtPoint>c__Iterator2()
+    SemioticLayoutManager__CanPlaceLayoutAtPointc__Iterator2 atPointCIterator2 = new SemioticLayoutManager__CanPlaceLayoutAtPointc__Iterator2()
     {
       staticExit = staticExit,
       newExit = newExit,
@@ -847,7 +847,7 @@ label_9:
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    SemioticLayoutManager.<CanPlaceRoomAtAttachPointByExit>c__Iterator3 byExitCIterator3 = new SemioticLayoutManager.<CanPlaceRoomAtAttachPointByExit>c__Iterator3()
+    SemioticLayoutManager__CanPlaceRoomAtAttachPointByExitc__Iterator3 byExitCIterator3 = new SemioticLayoutManager__CanPlaceRoomAtAttachPointByExitc__Iterator3()
     {
       exitToTest = exitToTest,
       previousExit = previousExit,

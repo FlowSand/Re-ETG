@@ -51,7 +51,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleDelayedTextureCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LichIntroDoer.<HandleDelayedTextureCR>c__Iterator0()
+        return (IEnumerator) new LichIntroDoer__HandleDelayedTextureCRc__Iterator0()
         {
           _this = this
         };

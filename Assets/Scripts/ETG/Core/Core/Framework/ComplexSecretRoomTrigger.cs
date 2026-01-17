@@ -73,7 +73,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDialog(PlayerController player)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ComplexSecretRoomTrigger.<HandleDialog>c__Iterator0()
+        return (IEnumerator) new ComplexSecretRoomTrigger__HandleDialogc__Iterator0()
         {
           player = player,
           _this = this
@@ -84,7 +84,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator WaitForPlayerYesNo(PlayerController player, int i, int j)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ComplexSecretRoomTrigger.<WaitForPlayerYesNo>c__Iterator1()
+        return (IEnumerator) new ComplexSecretRoomTrigger__WaitForPlayerYesNoc__Iterator1()
         {
           player = player,
           i = i,
@@ -98,7 +98,7 @@ namespace ETG.Core.Core.Framework
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        ComplexSecretRoomTrigger.<WaitForPlayer>c__Iterator2 playerCIterator2 = new ComplexSecretRoomTrigger.<WaitForPlayer>c__Iterator2();
+        ComplexSecretRoomTrigger__WaitForPlayerc__Iterator2 playerCIterator2 = new ComplexSecretRoomTrigger__WaitForPlayerc__Iterator2();
         return (IEnumerator) playerCIterator2;
       }
 

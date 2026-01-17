@@ -31,7 +31,7 @@ namespace ETG.Core.Dungeon.Interactables
       public IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ResourcefulRatMazeSystemController.<Start>c__Iterator0()
+        return (IEnumerator) new ResourcefulRatMazeSystemController__Startc__Iterator0()
         {
           _this = this
         };

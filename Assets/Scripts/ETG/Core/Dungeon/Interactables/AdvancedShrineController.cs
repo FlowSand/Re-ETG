@@ -351,7 +351,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleShrineConversation(PlayerController interactor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedShrineController.<HandleShrineConversation>c__Iterator0()
+        return (IEnumerator) new AdvancedShrineController__HandleShrineConversationc__Iterator0()
         {
           interactor = interactor,
           _this = this
@@ -362,7 +362,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleSpentText(PlayerController interactor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedShrineController.<HandleSpentText>c__Iterator1()
+        return (IEnumerator) new AdvancedShrineController__HandleSpentTextc__Iterator1()
         {
           interactor = interactor,
           _this = this

@@ -33,7 +33,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatTailgun1.<Top>c__Iterator0()
+        return (IEnumerator) new MetalGearRatTailgun1__Topc__Iterator0()
         {
           _this = this
         };
@@ -50,7 +50,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MetalGearRatTailgun1.TargetDummy.<Top>c__Iterator0()
+          return (IEnumerator) new MetalGearRatTailgun1.TargetDummy__Topc__Iterator0()
           {
             _this = this
           };
@@ -73,7 +73,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MetalGearRatTailgun1.TargetBullet.<Top>c__Iterator0()
+          return (IEnumerator) new MetalGearRatTailgun1.TargetBullet__Topc__Iterator0()
           {
             _this = this
           };
@@ -97,7 +97,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MetalGearRatTailgun1.BigBullet.<Top>c__Iterator0()
+          return (IEnumerator) new MetalGearRatTailgun1.BigBullet__Topc__Iterator0()
           {
             _this = this
           };

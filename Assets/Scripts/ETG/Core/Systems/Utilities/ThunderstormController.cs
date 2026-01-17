@@ -105,7 +105,7 @@ namespace ETG.Core.Systems.Utilities
       protected IEnumerator InvariantWait(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ThunderstormController.<InvariantWait>c__Iterator0()
+        return (IEnumerator) new ThunderstormController__InvariantWaitc__Iterator0()
         {
           duration = duration
         };
@@ -115,7 +115,7 @@ namespace ETG.Core.Systems.Utilities
       protected IEnumerator HandleLightningAmbientBoost()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ThunderstormController.<HandleLightningAmbientBoost>c__Iterator1()
+        return (IEnumerator) new ThunderstormController__HandleLightningAmbientBoostc__Iterator1()
         {
           _this = this
         };
@@ -125,7 +125,7 @@ namespace ETG.Core.Systems.Utilities
       protected IEnumerator ProcessLightningRenderer(Renderer target)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ThunderstormController.<ProcessLightningRenderer>c__Iterator2()
+        return (IEnumerator) new ThunderstormController__ProcessLightningRendererc__Iterator2()
         {
           target = target,
           _this = this
@@ -136,7 +136,7 @@ namespace ETG.Core.Systems.Utilities
       protected IEnumerator DoLightningStrike()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ThunderstormController.<DoLightningStrike>c__Iterator3()
+        return (IEnumerator) new ThunderstormController__DoLightningStrikec__Iterator3()
         {
           _this = this
         };

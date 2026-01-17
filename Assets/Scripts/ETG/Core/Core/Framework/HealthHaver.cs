@@ -817,7 +817,7 @@ namespace ETG.Core.Core.Framework
         PixelCollider hitPixelCollider)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HealthHaver.<FlashOnHit>c__Iterator0()
+        return (IEnumerator) new HealthHaver__FlashOnHitc__Iterator0()
         {
           sourceDamageCategory = sourceDamageCategory,
           hitPixelCollider = hitPixelCollider,
@@ -857,7 +857,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator IncorporealityOnHit()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HealthHaver.<IncorporealityOnHit>c__Iterator1()
+        return (IEnumerator) new HealthHaver__IncorporealityOnHitc__Iterator1()
         {
           _this = this
         };
@@ -919,7 +919,7 @@ namespace ETG.Core.Core.Framework
       protected IEnumerator HandleInvulnerablePeriod(float overrideTime = -1f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HealthHaver.<HandleInvulnerablePeriod>c__Iterator2()
+        return (IEnumerator) new HealthHaver__HandleInvulnerablePeriodc__Iterator2()
         {
           overrideTime = overrideTime,
           _this = this

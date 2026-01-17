@@ -54,7 +54,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator coSuperLateUpdate()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dUpdateManager.<coSuperLateUpdate>c__Iterator0()
+        return (IEnumerator) new tk2dUpdateManager__coSuperLateUpdatec__Iterator0()
         {
           _this = this
         };

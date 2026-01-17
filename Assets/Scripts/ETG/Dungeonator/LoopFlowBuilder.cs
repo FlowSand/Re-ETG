@@ -1329,7 +1329,7 @@ label_30:
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopFlowBuilder.<AttachWarpCanvasToLayout>c__Iterator0 layout1 = new LoopFlowBuilder.<AttachWarpCanvasToLayout>c__Iterator0()
+    LoopFlowBuilder__AttachWarpCanvasToLayoutc__Iterator0 layout1 = new LoopFlowBuilder__AttachWarpCanvasToLayoutc__Iterator0()
     {
       externalNode = externalNode,
       internalNode = internalNode,
@@ -1362,7 +1362,7 @@ label_30:
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopFlowBuilder.<AttachNewCanvasToLayout>c__Iterator1 layout1 = new LoopFlowBuilder.<AttachNewCanvasToLayout>c__Iterator1()
+    LoopFlowBuilder__AttachNewCanvasToLayoutc__Iterator1 layout1 = new LoopFlowBuilder__AttachNewCanvasToLayoutc__Iterator1()
     {
       externalNode = externalNode,
       internalNode = internalNode,
@@ -1417,7 +1417,7 @@ label_30:
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopFlowBuilder.<DeferredBuild>c__Iterator2 deferredBuildCIterator2 = new LoopFlowBuilder.<DeferredBuild>c__Iterator2()
+    LoopFlowBuilder__DeferredBuildc__Iterator2 deferredBuildCIterator2 = new LoopFlowBuilder__DeferredBuildc__Iterator2()
     {
       _this = this
     };

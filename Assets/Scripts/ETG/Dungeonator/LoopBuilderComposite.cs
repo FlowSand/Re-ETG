@@ -495,7 +495,7 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopBuilderComposite.<BuildLoopComposite>c__Iterator0 compositeCIterator0 = new LoopBuilderComposite.<BuildLoopComposite>c__Iterator0()
+    LoopBuilderComposite__BuildLoopCompositec__Iterator0 compositeCIterator0 = new LoopBuilderComposite__BuildLoopCompositec__Iterator0()
     {
       layout = layout,
       startPosition = startPosition,
@@ -710,7 +710,7 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopBuilderComposite.<BuildCompositeDepthFirst>c__Iterator1 depthFirstCIterator1 = new LoopBuilderComposite.<BuildCompositeDepthFirst>c__Iterator1()
+    LoopBuilderComposite__BuildCompositeDepthFirstc__Iterator1 depthFirstCIterator1 = new LoopBuilderComposite__BuildCompositeDepthFirstc__Iterator1()
     {
       layout = layout,
       startPosition = startPosition,
@@ -856,7 +856,7 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopBuilderComposite.<BuildCompositeNodeDepthFirst>c__Iterator2 depthFirstCIterator2 = new LoopBuilderComposite.<BuildCompositeNodeDepthFirst>c__Iterator2()
+    LoopBuilderComposite__BuildCompositeNodeDepthFirstc__Iterator2 depthFirstCIterator2 = new LoopBuilderComposite__BuildCompositeNodeDepthFirstc__Iterator2()
     {
       currentBuildData = currentBuildData,
       layout = layout,
@@ -936,7 +936,7 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopBuilderComposite.<Build>c__Iterator3 buildCIterator3 = new LoopBuilderComposite.<Build>c__Iterator3()
+    LoopBuilderComposite__Buildc__Iterator3 buildCIterator3 = new LoopBuilderComposite__Buildc__Iterator3()
     {
       startPosition = startPosition,
       _this = this

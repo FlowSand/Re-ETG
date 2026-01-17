@@ -253,7 +253,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator SpawnBehavior_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.<SpawnBehavior_CR>c__Iterator0()
+        return (IEnumerator) new Chest__SpawnBehavior_CRc__Iterator0()
         {
           _this = this
         };
@@ -515,7 +515,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleExplosionCountdown(ChestFuseController fuse)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.<HandleExplosionCountdown>c__Iterator1()
+        return (IEnumerator) new Chest__HandleExplosionCountdownc__Iterator1()
         {
           fuse = fuse,
           _this = this
@@ -687,7 +687,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator GiveCoopPartnerBack(bool doDelay = true)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.<GiveCoopPartnerBack>c__Iterator2()
+        return (IEnumerator) new Chest__GiveCoopPartnerBackc__Iterator2()
         {
           doDelay = doDelay,
           _this = this
@@ -739,7 +739,7 @@ namespace ETG.Core.Dungeon.Interactables
         PlayerController optionalPlayer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.<HandleKeyEncounter_CR>c__Iterator3()
+        return (IEnumerator) new Chest__HandleKeyEncounter_CRc__Iterator3()
         {
           key = key,
           vfxPrefab = vfxPrefab,
@@ -857,7 +857,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleSynergyGambleChest(PlayerController player)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.<HandleSynergyGambleChest>c__Iterator4()
+        return (IEnumerator) new Chest__HandleSynergyGambleChestc__Iterator4()
         {
           player = player,
           _this = this
@@ -1069,7 +1069,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleRainbowRunLootProcessing(List<DebrisObject> items)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.<HandleRainbowRunLootProcessing>c__Iterator5()
+        return (IEnumerator) new Chest__HandleRainbowRunLootProcessingc__Iterator5()
         {
           items = items,
           _this = this
@@ -1107,7 +1107,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator PresentItem()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.<PresentItem>c__Iterator6()
+        return (IEnumerator) new Chest__PresentItemc__Iterator6()
         {
           _this = this
         };
@@ -1265,7 +1265,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleCoopChestTransform(bool unbecome = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.<HandleCoopChestTransform>c__Iterator7()
+        return (IEnumerator) new Chest__HandleCoopChestTransformc__Iterator7()
         {
           unbecome = unbecome,
           _this = this
@@ -1311,7 +1311,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator MimicIdleAnimCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.<MimicIdleAnimCR>c__Iterator8()
+        return (IEnumerator) new Chest__MimicIdleAnimCRc__Iterator8()
         {
           _this = this
         };

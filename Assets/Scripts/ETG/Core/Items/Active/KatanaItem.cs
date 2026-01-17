@@ -55,7 +55,7 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleDash(PlayerController user)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new KatanaItem.<HandleDash>c__Iterator0()
+        return (IEnumerator) new KatanaItem__HandleDashc__Iterator0()
         {
           user = user,
           _this = this
@@ -72,7 +72,7 @@ namespace ETG.Core.Items.Active
         Vector2 endPosition)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new KatanaItem.<EndAndDamage>c__Iterator1()
+        return (IEnumerator) new KatanaItem__EndAndDamagec__Iterator1()
         {
           user = user,
           startPosition = startPosition,

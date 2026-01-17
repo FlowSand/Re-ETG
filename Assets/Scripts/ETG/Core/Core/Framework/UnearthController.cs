@@ -48,7 +48,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DirtCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new UnearthController.<DirtCR>c__Iterator0()
+        return (IEnumerator) new UnearthController__DirtCRc__Iterator0()
         {
           _this = this
         };
@@ -58,7 +58,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator PuffCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new UnearthController.<PuffCR>c__Iterator1()
+        return (IEnumerator) new UnearthController__PuffCRc__Iterator1()
         {
           _this = this
         };

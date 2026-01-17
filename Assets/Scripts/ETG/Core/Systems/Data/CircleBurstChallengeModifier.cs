@@ -43,7 +43,7 @@ namespace ETG.Core.Systems.Data
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CircleBurstChallengeModifier.<Start>c__Iterator0()
+        return (IEnumerator) new CircleBurstChallengeModifier__Startc__Iterator0()
         {
           _this = this
         };
@@ -116,7 +116,7 @@ namespace ETG.Core.Systems.Data
         string ownerName)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CircleBurstChallengeModifier.<HandleSpawnBulletScript>c__Iterator1()
+        return (IEnumerator) new CircleBurstChallengeModifier__HandleSpawnBulletScriptc__Iterator1()
         {
           position = position,
           aiActor = aiActor,

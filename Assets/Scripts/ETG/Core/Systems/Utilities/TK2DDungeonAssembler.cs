@@ -2017,7 +2017,7 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator ConstructTK2DDungeon(Dungeon d, tk2dTileMap map)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TK2DDungeonAssembler.<ConstructTK2DDungeon>c__Iterator0()
+        return (IEnumerator) new TK2DDungeonAssembler__ConstructTK2DDungeonc__Iterator0()
         {
           d = d,
           map = map,

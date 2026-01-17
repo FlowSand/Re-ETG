@@ -24,7 +24,7 @@ namespace ETG.Core.Combat.Projectiles
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunGrenade1.<Top>c__Iterator0()
+        return (IEnumerator) new DraGunGrenade1__Topc__Iterator0()
         {
           _this = this
         };
@@ -34,7 +34,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FireWave(bool reverse, bool offset, float sinOffset)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunGrenade1.<FireWave>c__Iterator1()
+        return (IEnumerator) new DraGunGrenade1__FireWavec__Iterator1()
         {
           offset = offset,
           sinOffset = sinOffset,

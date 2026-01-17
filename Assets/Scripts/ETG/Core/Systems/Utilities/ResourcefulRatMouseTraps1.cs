@@ -26,7 +26,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ResourcefulRatMouseTraps1.<Top>c__Iterator0()
+        return (IEnumerator) new ResourcefulRatMouseTraps1__Topc__Iterator0()
         {
           _this = this
         };
@@ -55,7 +55,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new ResourcefulRatMouseTraps1.MouseTrapBullet.<Top>c__Iterator0()
+          return (IEnumerator) new ResourcefulRatMouseTraps1.MouseTrapBullet__Topc__Iterator0()
           {
             _this = this
           };

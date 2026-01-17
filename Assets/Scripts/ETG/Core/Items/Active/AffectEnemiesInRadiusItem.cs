@@ -135,7 +135,7 @@ namespace ETG.Core.Items.Active
       protected IEnumerator HandleAmbientSpawnTime(Vector2 centerPoint, float remainingTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AffectEnemiesInRadiusItem.<HandleAmbientSpawnTime>c__Iterator0()
+        return (IEnumerator) new AffectEnemiesInRadiusItem__HandleAmbientSpawnTimec__Iterator0()
         {
           remainingTime = remainingTime,
           centerPoint = centerPoint,
@@ -147,7 +147,7 @@ namespace ETG.Core.Items.Active
       protected IEnumerator ProcessEffectOverTime(Vector2 centerPoint, List<AIActor> enemiesInRoom)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AffectEnemiesInRadiusItem.<ProcessEffectOverTime>c__Iterator1()
+        return (IEnumerator) new AffectEnemiesInRadiusItem__ProcessEffectOverTimec__Iterator1()
         {
           enemiesInRoom = enemiesInRoom,
           centerPoint = centerPoint,

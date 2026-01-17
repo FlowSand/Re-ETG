@@ -24,7 +24,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new NightclubCrowdController.<Start>c__Iterator0()
+        return (IEnumerator) new NightclubCrowdController__Startc__Iterator0()
         {
           _this = this
         };
@@ -59,7 +59,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleDanceFloors()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new NightclubCrowdController.<HandleDanceFloors>c__Iterator1()
+        return (IEnumerator) new NightclubCrowdController__HandleDanceFloorsc__Iterator1()
         {
           _this = this
         };
@@ -69,7 +69,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandlePanic()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new NightclubCrowdController.<HandlePanic>c__Iterator2()
+        return (IEnumerator) new NightclubCrowdController__HandlePanicc__Iterator2()
         {
           _this = this
         };

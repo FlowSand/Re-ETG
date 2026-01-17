@@ -75,7 +75,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleShwoop(bool reverse)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AppearedInTheGungeonController.<HandleShwoop>c__Iterator0()
+        return (IEnumerator) new AppearedInTheGungeonController__HandleShwoopc__Iterator0()
         {
           reverse = reverse,
           _this = this

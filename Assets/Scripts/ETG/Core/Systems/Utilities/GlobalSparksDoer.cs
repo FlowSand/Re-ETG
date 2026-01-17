@@ -184,7 +184,7 @@ namespace ETG.Core.Systems.Utilities
         GlobalSparksDoer.SparksType systemType = GlobalSparksDoer.SparksType.SPARKS_ADDITIVE_DEFAULT)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GlobalSparksDoer.<HandleEmitFromRegion>c__Iterator0()
+        return (IEnumerator) new GlobalSparksDoer__HandleEmitFromRegionc__Iterator0()
         {
           duration = duration,
           numPerSecond = numPerSecond,

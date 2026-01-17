@@ -44,7 +44,7 @@ namespace ETG.Core.Combat.Projectiles
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatMissiles1.<Top>c__Iterator0()
+        return (IEnumerator) new MetalGearRatMissiles1__Topc__Iterator0()
         {
           _this = this
         };
@@ -71,7 +71,7 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MetalGearRatMissiles1.HomingBullet.<Top>c__Iterator0()
+          return (IEnumerator) new MetalGearRatMissiles1.HomingBullet__Topc__Iterator0()
           {
             _this = this
           };

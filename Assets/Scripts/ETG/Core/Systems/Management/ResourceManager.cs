@@ -42,7 +42,7 @@ namespace ETG.Core.Systems.Management
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        ResourceManager.<InitAsync>c__Iterator0 initAsyncCIterator0 = new ResourceManager.<InitAsync>c__Iterator0();
+        ResourceManager__InitAsyncc__Iterator0 initAsyncCIterator0 = new ResourceManager__InitAsyncc__Iterator0();
         return (IEnumerator) initAsyncCIterator0;
       }
 

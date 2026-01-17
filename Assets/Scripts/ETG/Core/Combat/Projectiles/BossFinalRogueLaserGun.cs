@@ -115,7 +115,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator DoGunMotionCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalRogueLaserGun.<DoGunMotionCR>c__Iterator0()
+        return (IEnumerator) new BossFinalRogueLaserGun__DoGunMotionCRc__Iterator0()
         {
           _this = this
         };
@@ -125,7 +125,7 @@ namespace ETG.Core.Combat.Projectiles
       protected IEnumerator FireBeam(Projectile projectile)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalRogueLaserGun.<FireBeam>c__Iterator1()
+        return (IEnumerator) new BossFinalRogueLaserGun__FireBeamc__Iterator1()
         {
           projectile = projectile,
           _this = this

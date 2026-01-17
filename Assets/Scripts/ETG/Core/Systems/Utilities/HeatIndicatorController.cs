@@ -62,7 +62,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleDeathDelay()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HeatIndicatorController.<HandleDeathDelay>c__Iterator0()
+        return (IEnumerator) new HeatIndicatorController__HandleDeathDelayc__Iterator0()
         {
           _this = this
         };
@@ -76,7 +76,7 @@ namespace ETG.Core.Systems.Utilities
         float lerpTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HeatIndicatorController.<LerpColor>c__Iterator1()
+        return (IEnumerator) new HeatIndicatorController__LerpColorc__Iterator1()
         {
           lerpTime = lerpTime,
           startColor = startColor,

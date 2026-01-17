@@ -198,7 +198,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLine_ScalingParallel(float modTraversalTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RailgunChargeEffectController.<HandleLine_ScalingParallel>c__Iterator0()
+        return (IEnumerator) new RailgunChargeEffectController__HandleLine_ScalingParallelc__Iterator0()
         {
           modTraversalTime = modTraversalTime,
           _this = this
@@ -209,7 +209,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLine_SequentialParallel(float modTraversalTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RailgunChargeEffectController.<HandleLine_SequentialParallel>c__Iterator1()
+        return (IEnumerator) new RailgunChargeEffectController__HandleLine_SequentialParallelc__Iterator1()
         {
           modTraversalTime = modTraversalTime,
           _this = this
@@ -220,7 +220,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLine_PyramidalConverge(float modTraversalTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RailgunChargeEffectController.<HandleLine_PyramidalConverge>c__Iterator2()
+        return (IEnumerator) new RailgunChargeEffectController__HandleLine_PyramidalConvergec__Iterator2()
         {
           modTraversalTime = modTraversalTime,
           _this = this
@@ -231,7 +231,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLine_VerticalConverge(float modTraversalTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RailgunChargeEffectController.<HandleLine_VerticalConverge>c__Iterator3()
+        return (IEnumerator) new RailgunChargeEffectController__HandleLine_VerticalConvergec__Iterator3()
         {
           modTraversalTime = modTraversalTime,
           _this = this
@@ -242,7 +242,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLine_TriangularConverge(float modTraversalTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RailgunChargeEffectController.<HandleLine_TriangularConverge>c__Iterator4()
+        return (IEnumerator) new RailgunChargeEffectController__HandleLine_TriangularConvergec__Iterator4()
         {
           modTraversalTime = modTraversalTime,
           _this = this

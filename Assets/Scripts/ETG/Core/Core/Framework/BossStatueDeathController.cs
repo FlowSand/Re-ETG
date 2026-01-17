@@ -50,7 +50,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathAnimationCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossStatueDeathController.<OnDeathAnimationCR>c__Iterator0()
+        return (IEnumerator) new BossStatueDeathController__OnDeathAnimationCRc__Iterator0()
         {
           _this = this
         };
@@ -60,7 +60,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DeathFlashCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossStatueDeathController.<DeathFlashCR>c__Iterator1()
+        return (IEnumerator) new BossStatueDeathController__DeathFlashCRc__Iterator1()
         {
           _this = this
         };

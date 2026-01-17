@@ -145,7 +145,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator showCooldown()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SpellSlot.<showCooldown>c__Iterator0()
+        return (IEnumerator) new SpellSlot__showCooldownc__Iterator0()
         {
           _this = this
         };

@@ -28,7 +28,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HighPriestSweepAttacks1.<Top>c__Iterator0()
+        return (IEnumerator) new HighPriestSweepAttacks1__Topc__Iterator0()
         {
           _this = this
         };
@@ -48,7 +48,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new HighPriestSweepAttacks1.SweepBullet.<Top>c__Iterator0()
+          return (IEnumerator) new HighPriestSweepAttacks1.SweepBullet__Topc__Iterator0()
           {
             _this = this
           };

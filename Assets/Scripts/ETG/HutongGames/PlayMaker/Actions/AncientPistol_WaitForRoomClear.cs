@@ -51,7 +51,7 @@ public class AncientPistol_WaitForRoomClear : FsmStateAction
   private IEnumerator HandleDelayedPathing(Vector2 targetPosition)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new AncientPistol_WaitForRoomClear.<HandleDelayedPathing>c__Iterator0()
+    return (IEnumerator) new AncientPistol_WaitForRoomClear__HandleDelayedPathingc__Iterator0()
     {
       targetPosition = targetPosition,
       _this = this

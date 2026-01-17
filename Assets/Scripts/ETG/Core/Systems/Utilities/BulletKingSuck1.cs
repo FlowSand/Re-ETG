@@ -28,7 +28,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletKingSuck1.<Top>c__Iterator0()
+        return (IEnumerator) new BulletKingSuck1__Topc__Iterator0()
         {
           _this = this
         };
@@ -52,7 +52,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BulletKingSuck1.SuckBullet.<Top>c__Iterator0()
+          return (IEnumerator) new BulletKingSuck1.SuckBullet__Topc__Iterator0()
           {
             _this = this
           };

@@ -139,7 +139,7 @@ namespace ETG.Core.Items.Passive
         Vector2 direction)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ComplexProjectileModifier.<HandleChainExplosion>c__Iterator0()
+        return (IEnumerator) new ComplexProjectileModifier__HandleChainExplosionc__Iterator0()
         {
           startPosition = startPosition,
           direction = direction,
@@ -341,7 +341,7 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleTrailedSpawn(Projectile p)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ComplexProjectileModifier.<HandleTrailedSpawn>c__Iterator1()
+        return (IEnumerator) new ComplexProjectileModifier__HandleTrailedSpawnc__Iterator1()
         {
           p = p,
           _this = this

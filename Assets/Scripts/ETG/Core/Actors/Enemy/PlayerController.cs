@@ -1011,7 +1011,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator FrameDelayedInitialDeath(bool delayTilPostGeneration = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<FrameDelayedInitialDeath>c__Iterator0()
+        return (IEnumerator) new PlayerController__FrameDelayedInitialDeathc__Iterator0()
         {
           delayTilPostGeneration = delayTilPostGeneration,
           _this = this
@@ -1036,7 +1036,7 @@ namespace ETG.Core.Actors.Enemy
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<DestroyEnemyBulletsInCircleForDuration>c__Iterator1()
+        return (IEnumerator) new PlayerController__DestroyEnemyBulletsInCircleForDurationc__Iterator1()
         {
           duration = duration,
           center = center,
@@ -1831,7 +1831,7 @@ namespace ETG.Core.Actors.Enemy
         bool isChest = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<CoopResurrectInternal>c__Iterator2()
+        return (IEnumerator) new PlayerController__CoopResurrectInternalc__Iterator2()
         {
           targetPosition = targetPosition,
           isChest = isChest,
@@ -1951,7 +1951,7 @@ namespace ETG.Core.Actors.Enemy
         bool shadowColoration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<SpawnShadowBullet>c__Iterator3()
+        return (IEnumerator) new PlayerController__SpawnShadowBulletc__Iterator3()
         {
           obj = obj,
           additionalDelay = additionalDelay,
@@ -2268,7 +2268,7 @@ namespace ETG.Core.Actors.Enemy
         GameObject arrivalVFX2Prefab)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleTeleportToPoint>c__Iterator4()
+        return (IEnumerator) new PlayerController__HandleTeleportToPointc__Iterator4()
         {
           departureVFXPrefab = departureVFXPrefab,
           targetPoint = targetPoint,
@@ -2465,7 +2465,7 @@ namespace ETG.Core.Actors.Enemy
         bool noFX = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleTeleport>c__Iterator5()
+        return (IEnumerator) new PlayerController__HandleTeleportc__Iterator5()
         {
           noFX = noFX,
           teleporter = teleporter,
@@ -2842,7 +2842,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleCloneEffect()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleCloneEffect>c__Iterator6()
+        return (IEnumerator) new PlayerController__HandleCloneEffectc__Iterator6()
         {
           _this = this
         };
@@ -2931,7 +2931,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator DelayedRoomReset(RoomHandler targetRoom)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<DelayedRoomReset>c__Iterator7()
+        return (IEnumerator) new PlayerController__DelayedRoomResetc__Iterator7()
         {
           targetRoom = targetRoom,
           _this = this
@@ -2946,7 +2946,7 @@ namespace ETG.Core.Actors.Enemy
         PlayerController.EscapeSealedRoomStyle escapeStyle)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleResetAndRespawn_CR>c__Iterator8()
+        return (IEnumerator) new PlayerController__HandleResetAndRespawn_CRc__Iterator8()
         {
           doFullHeal = doFullHeal,
           escapeStyle = escapeStyle,
@@ -3043,7 +3043,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleFueledByRevenge()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleFueledByRevenge>c__Iterator9()
+        return (IEnumerator) new PlayerController__HandleFueledByRevengec__Iterator9()
         {
           _this = this
         };
@@ -3260,7 +3260,7 @@ namespace ETG.Core.Actors.Enemy
       public IEnumerator HandleCoopDeath(bool ignoreCorpse = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleCoopDeath>c__IteratorA()
+        return (IEnumerator) new PlayerController__HandleCoopDeathc__IteratorA()
         {
           ignoreCorpse = ignoreCorpse,
           _this = this
@@ -3299,7 +3299,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleThreatArrow()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleThreatArrow>c__IteratorB()
+        return (IEnumerator) new PlayerController__HandleThreatArrowc__IteratorB()
         {
           _this = this
         };
@@ -3309,7 +3309,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleCoopArrow()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleCoopArrow>c__IteratorC()
+        return (IEnumerator) new PlayerController__HandleCoopArrowc__IteratorC()
         {
           _this = this
         };
@@ -3332,7 +3332,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator InvariantWait(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<InvariantWait>c__IteratorD()
+        return (IEnumerator) new PlayerController__InvariantWaitc__IteratorD()
         {
           delay = delay,
           _this = this
@@ -3351,7 +3351,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleDeath_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleDeath_CR>c__IteratorE()
+        return (IEnumerator) new PlayerController__HandleDeath_CRc__IteratorE()
         {
           _this = this
         };
@@ -3711,7 +3711,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator TimedRemoveActiveItem(int indexToRemove, float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<TimedRemoveActiveItem>c__IteratorF()
+        return (IEnumerator) new PlayerController__TimedRemoveActiveItemc__IteratorF()
         {
           delay = delay,
           indexToRemove = indexToRemove,
@@ -3916,7 +3916,7 @@ namespace ETG.Core.Actors.Enemy
       protected IEnumerator HandleSpinfallSpawn(float invisibleDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleSpinfallSpawn>c__Iterator10()
+        return (IEnumerator) new PlayerController__HandleSpinfallSpawnc__Iterator10()
         {
           invisibleDelay = invisibleDelay,
           _this = this
@@ -3927,7 +3927,7 @@ namespace ETG.Core.Actors.Enemy
       protected IEnumerator HandleFallSpawn(float invisibleDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleFallSpawn>c__Iterator11()
+        return (IEnumerator) new PlayerController__HandleFallSpawnc__Iterator11()
         {
           invisibleDelay = invisibleDelay,
           _this = this
@@ -3940,7 +3940,7 @@ namespace ETG.Core.Actors.Enemy
       protected IEnumerator HandleSpitOut()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleSpitOut>c__Iterator12()
+        return (IEnumerator) new PlayerController__HandleSpitOutc__Iterator12()
         {
           _this = this
         };
@@ -3975,7 +3975,7 @@ namespace ETG.Core.Actors.Enemy
       protected IEnumerator PitRespawn(Vector2 splashPoint)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<PitRespawn>c__Iterator13()
+        return (IEnumerator) new PlayerController__PitRespawnc__Iterator13()
         {
           _this = this
         };
@@ -3985,7 +3985,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator FallDownCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<FallDownCR>c__Iterator14()
+        return (IEnumerator) new PlayerController__FallDownCRc__Iterator14()
         {
           _this = this
         };
@@ -4054,7 +4054,7 @@ namespace ETG.Core.Actors.Enemy
         float thresholdValue)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleForceWalkInDirectionWhilePaused>c__Iterator15()
+        return (IEnumerator) new PlayerController__HandleForceWalkInDirectionWhilePausedc__Iterator15()
         {
           direction = direction,
           thresholdValue = thresholdValue,
@@ -4421,7 +4421,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleBlinkDodgeRoll()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleBlinkDodgeRoll>c__Iterator16()
+        return (IEnumerator) new PlayerController__HandleBlinkDodgeRollc__Iterator16()
         {
           _this = this
         };
@@ -5157,7 +5157,7 @@ namespace ETG.Core.Actors.Enemy
         List<SpeculativeRigidbody> passThroughRigidbodies = null)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.<HandleForcedMove>c__Iterator17()
+        return (IEnumerator) new PlayerController__HandleForcedMovec__Iterator17()
         {
           initialDelay = initialDelay,
           passThroughRigidbodies = passThroughRigidbodies,

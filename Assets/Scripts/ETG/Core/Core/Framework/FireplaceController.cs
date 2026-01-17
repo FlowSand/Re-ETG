@@ -29,7 +29,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FireplaceController.<Start>c__Iterator0()
+        return (IEnumerator) new FireplaceController__Startc__Iterator0()
         {
           _this = this
         };

@@ -36,7 +36,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CrestDoorController.<Start>c__Iterator0()
+        return (IEnumerator) new CrestDoorController__Startc__Iterator0()
         {
           _this = this
         };
@@ -107,7 +107,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Open()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CrestDoorController.<Open>c__Iterator1()
+        return (IEnumerator) new CrestDoorController__Openc__Iterator1()
         {
           _this = this
         };
@@ -150,7 +150,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleShrineConversation(PlayerController interactor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CrestDoorController.<HandleShrineConversation>c__Iterator2()
+        return (IEnumerator) new CrestDoorController__HandleShrineConversationc__Iterator2()
         {
           interactor = interactor,
           _this = this

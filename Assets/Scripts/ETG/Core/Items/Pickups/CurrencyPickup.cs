@@ -98,7 +98,7 @@ namespace ETG.Core.Items.Pickups
       private IEnumerator InitialBounce()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CurrencyPickup.<InitialBounce>c__Iterator0()
+        return (IEnumerator) new CurrencyPickup__InitialBouncec__Iterator0()
         {
           _this = this
         };

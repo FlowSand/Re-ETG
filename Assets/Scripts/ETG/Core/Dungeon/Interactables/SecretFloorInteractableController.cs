@@ -150,7 +150,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator FrameDelayedTriggerRemainCheck(PlayerController targetPlayer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SecretFloorInteractableController.<FrameDelayedTriggerRemainCheck>c__Iterator0()
+        return (IEnumerator) new SecretFloorInteractableController__FrameDelayedTriggerRemainCheckc__Iterator0()
         {
           targetPlayer = targetPlayer,
           _this = this

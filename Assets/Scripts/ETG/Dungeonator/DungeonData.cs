@@ -297,7 +297,7 @@ public class DungeonData
     tk2dTileMap tilemapRef)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new DungeonData.<Apply>c__Iterator0()
+    return (IEnumerator) new DungeonData__Applyc__Iterator0()
     {
       tilemapRef = tilemapRef,
       indices = indices,
@@ -884,7 +884,7 @@ label_27:
   private IEnumerator GenerateLights(TilemapDecoSettings decoSettings)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new DungeonData.<GenerateLights>c__Iterator1()
+    return (IEnumerator) new DungeonData__GenerateLightsc__Iterator1()
     {
       decoSettings = decoSettings,
       _this = this

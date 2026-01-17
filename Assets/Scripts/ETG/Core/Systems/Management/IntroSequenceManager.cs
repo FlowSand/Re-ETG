@@ -24,7 +24,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new IntroSequenceManager.<Start>c__Iterator0()
+        return (IEnumerator) new IntroSequenceManager__Startc__Iterator0()
         {
           _this = this
         };
@@ -36,7 +36,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleElement(int index)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new IntroSequenceManager.<HandleElement>c__Iterator1()
+        return (IEnumerator) new IntroSequenceManager__HandleElementc__Iterator1()
         {
           index = index,
           _this = this

@@ -21,7 +21,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PoopulonSpinFire1.<Top>c__Iterator0()
+        return (IEnumerator) new PoopulonSpinFire1__Topc__Iterator0()
         {
           _this = this
         };
@@ -41,7 +41,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new PoopulonSpinFire1.RotatingBullet.<Top>c__Iterator0()
+          return (IEnumerator) new PoopulonSpinFire1.RotatingBullet__Topc__Iterator0()
           {
             _this = this
           };

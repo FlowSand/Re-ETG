@@ -54,7 +54,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator AsyncLoadFoyer()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FoyerPreloader.<AsyncLoadFoyer>c__Iterator0()
+        return (IEnumerator) new FoyerPreloader__AsyncLoadFoyerc__Iterator0()
         {
           _this = this
         };

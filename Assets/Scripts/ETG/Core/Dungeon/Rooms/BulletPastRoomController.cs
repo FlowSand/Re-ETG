@@ -43,7 +43,7 @@ namespace ETG.Core.Dungeon.Rooms
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletPastRoomController.<Start>c__Iterator0()
+        return (IEnumerator) new BulletPastRoomController__Startc__Iterator0()
         {
           _this = this
         };
@@ -72,7 +72,7 @@ namespace ETG.Core.Dungeon.Rooms
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        BulletPastRoomController.<DoGunonPitfall>c__Iterator1 pitfallCIterator1 = new BulletPastRoomController.<DoGunonPitfall>c__Iterator1();
+        BulletPastRoomController__DoGunonPitfallc__Iterator1 pitfallCIterator1 = new BulletPastRoomController__DoGunonPitfallc__Iterator1();
         return (IEnumerator) pitfallCIterator1;
       }
 
@@ -115,7 +115,7 @@ namespace ETG.Core.Dungeon.Rooms
       private IEnumerator MoveThroneRoomDoor()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletPastRoomController.<MoveThroneRoomDoor>c__Iterator2()
+        return (IEnumerator) new BulletPastRoomController__MoveThroneRoomDoorc__Iterator2()
         {
           _this = this
         };
@@ -133,7 +133,7 @@ namespace ETG.Core.Dungeon.Rooms
       public IEnumerator HandleAgunimIntro(Transform bossTransform)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletPastRoomController.<HandleAgunimIntro>c__Iterator3()
+        return (IEnumerator) new BulletPastRoomController__HandleAgunimIntroc__Iterator3()
         {
           bossTransform = bossTransform,
           _this = this
@@ -150,7 +150,7 @@ namespace ETG.Core.Dungeon.Rooms
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        BulletPastRoomController.<HandleGanonDeath>c__Iterator4 ganonDeathCIterator4 = new BulletPastRoomController.<HandleGanonDeath>c__Iterator4();
+        BulletPastRoomController__HandleGanonDeathc__Iterator4 ganonDeathCIterator4 = new BulletPastRoomController__HandleGanonDeathc__Iterator4();
         return (IEnumerator) ganonDeathCIterator4;
       }
 
@@ -158,7 +158,7 @@ namespace ETG.Core.Dungeon.Rooms
       public IEnumerator HandleAgunimDeath(Transform bossTransform)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletPastRoomController.<HandleAgunimDeath>c__Iterator5()
+        return (IEnumerator) new BulletPastRoomController__HandleAgunimDeathc__Iterator5()
         {
           bossTransform = bossTransform,
           _this = this
@@ -190,7 +190,7 @@ namespace ETG.Core.Dungeon.Rooms
       public IEnumerator TriggerBulletmanEnding_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletPastRoomController.<TriggerBulletmanEnding_CR>c__Iterator6()
+        return (IEnumerator) new BulletPastRoomController__TriggerBulletmanEnding_CRc__Iterator6()
         {
           _this = this
         };
@@ -200,7 +200,7 @@ namespace ETG.Core.Dungeon.Rooms
       private IEnumerator AnimateBulletmanEnding(tk2dSpriteFromTexture sft)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletPastRoomController.<AnimateBulletmanEnding>c__Iterator7()
+        return (IEnumerator) new BulletPastRoomController__AnimateBulletmanEndingc__Iterator7()
         {
           sft = sft,
           _this = this

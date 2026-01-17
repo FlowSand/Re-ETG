@@ -59,7 +59,7 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleWallVFX(PlayerController sourcePlayer, Gun sourceGun)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CrisisStoneItem.<HandleWallVFX>c__Iterator0()
+        return (IEnumerator) new CrisisStoneItem__HandleWallVFXc__Iterator0()
         {
           sourcePlayer = sourcePlayer,
           sourceGun = sourceGun,

@@ -108,7 +108,7 @@ namespace ETG.Core.Core.Framework
         PlayerController targetPlayer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HellDragZoneController.<LerpHoleSize>c__Iterator0()
+        return (IEnumerator) new HellDragZoneController__LerpHoleSizec__Iterator0()
         {
           duration = duration,
           targetPlayer = targetPlayer,
@@ -122,7 +122,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleGrabbyGrab(PlayerController grabbedPlayer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HellDragZoneController.<HandleGrabbyGrab>c__Iterator1()
+        return (IEnumerator) new HellDragZoneController__HandleGrabbyGrabc__Iterator1()
         {
           grabbedPlayer = grabbedPlayer,
           _this = this

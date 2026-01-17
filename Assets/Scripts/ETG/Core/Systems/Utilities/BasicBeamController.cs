@@ -1701,7 +1701,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ChangeTintColorCR(tk2dBaseSprite baseSprite, float time, Color color)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BasicBeamController.<ChangeTintColorCR>c__Iterator0()
+        return (IEnumerator) new BasicBeamController__ChangeTintColorCRc__Iterator0()
         {
           baseSprite = baseSprite,
           time = time,

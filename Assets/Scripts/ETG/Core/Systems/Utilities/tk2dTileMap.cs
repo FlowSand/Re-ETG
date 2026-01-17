@@ -154,7 +154,7 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator DeferredBuild(tk2dTileMap.BuildFlags buildFlags)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dTileMap.<DeferredBuild>c__Iterator0()
+        return (IEnumerator) new tk2dTileMap__DeferredBuildc__Iterator0()
         {
           buildFlags = buildFlags,
           _this = this

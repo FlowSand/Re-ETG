@@ -39,7 +39,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator Trigger()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AlarmMushroom.<Trigger>c__Iterator0()
+        return (IEnumerator) new AlarmMushroom__Triggerc__Iterator0()
         {
           _this = this
         };

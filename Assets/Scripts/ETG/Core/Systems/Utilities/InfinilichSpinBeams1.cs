@@ -26,7 +26,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichSpinBeams1.<Top>c__Iterator0()
+        return (IEnumerator) new InfinilichSpinBeams1__Topc__Iterator0()
         {
           _this = this
         };
@@ -36,7 +36,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator FireBeam(Vector2 pos, float direction)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichSpinBeams1.<FireBeam>c__Iterator1()
+        return (IEnumerator) new InfinilichSpinBeams1__FireBeamc__Iterator1()
         {
           direction = direction,
           pos = pos,
@@ -58,7 +58,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new InfinilichSpinBeams1.BeamBullet.<Top>c__Iterator0()
+          return (IEnumerator) new InfinilichSpinBeams1.BeamBullet__Topc__Iterator0()
           {
             _this = this
           };

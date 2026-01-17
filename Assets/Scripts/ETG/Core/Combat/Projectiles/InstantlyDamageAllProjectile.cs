@@ -100,7 +100,7 @@ namespace ETG.Core.Combat.Projectiles
       protected IEnumerator HandleAmbientSpawnTime(Vector2 centerPoint, float remainingTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InstantlyDamageAllProjectile.<HandleAmbientSpawnTime>c__Iterator0()
+        return (IEnumerator) new InstantlyDamageAllProjectile__HandleAmbientSpawnTimec__Iterator0()
         {
           remainingTime = remainingTime,
           centerPoint = centerPoint,
@@ -134,7 +134,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator ProcessSlow(AIActor target)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InstantlyDamageAllProjectile.<ProcessSlow>c__Iterator1()
+        return (IEnumerator) new InstantlyDamageAllProjectile__ProcessSlowc__Iterator1()
         {
           target = target,
           _this = this

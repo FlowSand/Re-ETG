@@ -142,7 +142,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandlePlayerReloadBar(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIReloadBarController.<HandlePlayerReloadBar>c__Iterator0()
+        return (IEnumerator) new GameUIReloadBarController__HandlePlayerReloadBarc__Iterator0()
         {
           duration = duration,
           _this = this

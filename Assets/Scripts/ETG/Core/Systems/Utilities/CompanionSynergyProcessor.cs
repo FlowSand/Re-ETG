@@ -104,7 +104,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleDisabledChecks()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CompanionSynergyProcessor.<HandleDisabledChecks>c__Iterator0()
+        return (IEnumerator) new CompanionSynergyProcessor__HandleDisabledChecksc__Iterator0()
         {
           _this = this
         };

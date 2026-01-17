@@ -58,7 +58,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator StopGracefully()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ProjectileTrailRendererController.<StopGracefully>c__Iterator0()
+        return (IEnumerator) new ProjectileTrailRendererController__StopGracefullyc__Iterator0()
         {
           _this = this
         };

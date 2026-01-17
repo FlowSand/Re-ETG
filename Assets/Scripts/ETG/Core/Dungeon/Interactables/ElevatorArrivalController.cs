@@ -168,7 +168,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleDepartBumbly()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ElevatorArrivalController.<HandleDepartBumbly>c__Iterator0()
+        return (IEnumerator) new ElevatorArrivalController__HandleDepartBumblyc__Iterator0()
         {
           _this = this
         };
@@ -248,7 +248,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleArrival(float initialDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ElevatorArrivalController.<HandleArrival>c__Iterator1()
+        return (IEnumerator) new ElevatorArrivalController__HandleArrivalc__Iterator1()
         {
           initialDelay = initialDelay,
           _this = this

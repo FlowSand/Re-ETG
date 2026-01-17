@@ -121,7 +121,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DestroyCrateDelayed()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EmergencyCrateController.<DestroyCrateDelayed>c__Iterator0()
+        return (IEnumerator) new EmergencyCrateController__DestroyCrateDelayedc__Iterator0()
         {
           _this = this
         };
@@ -131,7 +131,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DestroyCrateWhenPickedUp(DebrisObject spawned)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EmergencyCrateController.<DestroyCrateWhenPickedUp>c__Iterator1()
+        return (IEnumerator) new EmergencyCrateController__DestroyCrateWhenPickedUpc__Iterator1()
         {
           spawned = spawned,
           _this = this
@@ -142,7 +142,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DestroyCrateWhenPickedUp(AmmoPickup spawnedAmmo)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EmergencyCrateController.<DestroyCrateWhenPickedUp>c__Iterator2()
+        return (IEnumerator) new EmergencyCrateController__DestroyCrateWhenPickedUpc__Iterator2()
         {
           spawnedAmmo = spawnedAmmo,
           _this = this
@@ -153,7 +153,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DestroyCrateWhenPickedUp(Gun spawnedGun)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EmergencyCrateController.<DestroyCrateWhenPickedUp>c__Iterator3()
+        return (IEnumerator) new EmergencyCrateController__DestroyCrateWhenPickedUpc__Iterator3()
         {
           spawnedGun = spawnedGun,
           _this = this

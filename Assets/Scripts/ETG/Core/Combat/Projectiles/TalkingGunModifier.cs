@@ -115,7 +115,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleDelayedTalk(PlayerController obj)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkingGunModifier.<HandleDelayedTalk>c__Iterator0()
+        return (IEnumerator) new TalkingGunModifier__HandleDelayedTalkc__Iterator0()
         {
           obj = obj,
           _this = this

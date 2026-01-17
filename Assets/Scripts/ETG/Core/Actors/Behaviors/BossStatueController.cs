@@ -232,7 +232,7 @@ namespace ETG.Core.Actors.Behaviors
       private IEnumerator LevelUpCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossStatueController.<LevelUpCR>c__Iterator0()
+        return (IEnumerator) new BossStatueController__LevelUpCRc__Iterator0()
         {
           _this = this
         };

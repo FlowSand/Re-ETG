@@ -45,7 +45,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunDeathController.<OnDeathExplosionsCR>c__Iterator0()
+        return (IEnumerator) new AdvancedDraGunDeathController__OnDeathExplosionsCRc__Iterator0()
         {
           _this = this
         };
@@ -55,7 +55,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator ExplodeHand(AIAnimator hand, float headDirection)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunDeathController.<ExplodeHand>c__Iterator1()
+        return (IEnumerator) new AdvancedDraGunDeathController__ExplodeHandc__Iterator1()
         {
           headDirection = headDirection,
           hand = hand,
@@ -71,7 +71,7 @@ namespace ETG.Core.Core.Framework
         float postDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunDeathController.<ExplodeBall>c__Iterator2()
+        return (IEnumerator) new AdvancedDraGunDeathController__ExplodeBallc__Iterator2()
         {
           arm = arm,
           ballName = ballName,
@@ -89,7 +89,7 @@ namespace ETG.Core.Core.Framework
         float postDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunDeathController.<ExplodeShoulder>c__Iterator3()
+        return (IEnumerator) new AdvancedDraGunDeathController__ExplodeShoulderc__Iterator3()
         {
           arm = arm,
           ballName = ballName,
@@ -103,7 +103,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator FadeBodyCR(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunDeathController.<FadeBodyCR>c__Iterator4()
+        return (IEnumerator) new AdvancedDraGunDeathController__FadeBodyCRc__Iterator4()
         {
           duration = duration,
           _this = this
@@ -149,7 +149,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DelayedSpriteFixer(tk2dBaseSprite sprite)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunDeathController.<DelayedSpriteFixer>c__Iterator5()
+        return (IEnumerator) new AdvancedDraGunDeathController__DelayedSpriteFixerc__Iterator5()
         {
           sprite = sprite
         };

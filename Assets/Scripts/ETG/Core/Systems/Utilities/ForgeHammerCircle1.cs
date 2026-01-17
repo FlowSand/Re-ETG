@@ -20,7 +20,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ForgeHammerCircle1.<Top>c__Iterator0()
+        return (IEnumerator) new ForgeHammerCircle1__Topc__Iterator0()
         {
           _this = this
         };
@@ -40,7 +40,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new ForgeHammerCircle1.DefaultBullet.<Top>c__Iterator0()
+          return (IEnumerator) new ForgeHammerCircle1.DefaultBullet__Topc__Iterator0()
           {
             _this = this
           };

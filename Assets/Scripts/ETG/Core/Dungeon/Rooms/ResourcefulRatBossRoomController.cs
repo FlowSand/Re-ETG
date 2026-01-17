@@ -23,7 +23,7 @@ namespace ETG.Core.Dungeon.Rooms
       public IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ResourcefulRatBossRoomController.<Start>c__Iterator0()
+        return (IEnumerator) new ResourcefulRatBossRoomController__Startc__Iterator0()
         {
           _this = this
         };
@@ -33,7 +33,7 @@ namespace ETG.Core.Dungeon.Rooms
       public IEnumerator LateStart()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ResourcefulRatBossRoomController.<LateStart>c__Iterator1()
+        return (IEnumerator) new ResourcefulRatBossRoomController__LateStartc__Iterator1()
         {
           _this = this
         };
@@ -101,7 +101,7 @@ namespace ETG.Core.Dungeon.Rooms
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        ResourcefulRatBossRoomController.<DoMetalGearPitfall>c__Iterator2 pitfallCIterator2 = new ResourcefulRatBossRoomController.<DoMetalGearPitfall>c__Iterator2();
+        ResourcefulRatBossRoomController__DoMetalGearPitfallc__Iterator2 pitfallCIterator2 = new ResourcefulRatBossRoomController__DoMetalGearPitfallc__Iterator2();
         return (IEnumerator) pitfallCIterator2;
       }
     }

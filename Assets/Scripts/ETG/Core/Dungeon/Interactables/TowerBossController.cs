@@ -84,7 +84,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleBeamCycle()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TowerBossController.<HandleBeamCycle>c__Iterator0()
+        return (IEnumerator) new TowerBossController__HandleBeamCyclec__Iterator0()
         {
           _this = this
         };
@@ -94,7 +94,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleBatteryCycle()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TowerBossController.<HandleBatteryCycle>c__Iterator1()
+        return (IEnumerator) new TowerBossController__HandleBatteryCyclec__Iterator1()
         {
           _this = this
         };

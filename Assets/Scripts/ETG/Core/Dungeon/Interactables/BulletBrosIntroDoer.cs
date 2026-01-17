@@ -84,7 +84,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator FuckOutlines()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletBrosIntroDoer.<FuckOutlines>c__Iterator0()
+        return (IEnumerator) new BulletBrosIntroDoer__FuckOutlinesc__Iterator0()
         {
           _this = this
         };
@@ -138,7 +138,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator DoIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletBrosIntroDoer.<DoIntro>c__Iterator1()
+        return (IEnumerator) new BulletBrosIntroDoer__DoIntroc__Iterator1()
         {
           _this = this
         };

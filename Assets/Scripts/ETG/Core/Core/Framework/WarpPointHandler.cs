@@ -42,7 +42,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WarpPointHandler.<Start>c__Iterator0()
+        return (IEnumerator) new WarpPointHandler__Startc__Iterator0()
         {
           _this = this
         };
@@ -87,7 +87,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleWarpCooldown(PlayerController player)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WarpPointHandler.<HandleWarpCooldown>c__Iterator1()
+        return (IEnumerator) new WarpPointHandler__HandleWarpCooldownc__Iterator1()
         {
           player = player,
           _this = this

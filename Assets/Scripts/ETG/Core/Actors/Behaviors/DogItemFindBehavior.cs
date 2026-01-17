@@ -39,7 +39,7 @@ namespace ETG.Core.Actors.Behaviors
       private IEnumerator DelayedSpawnItem(Vector2 spawnPoint)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DogItemFindBehavior.<DelayedSpawnItem>c__Iterator0()
+        return (IEnumerator) new DogItemFindBehavior__DelayedSpawnItemc__Iterator0()
         {
           spawnPoint = spawnPoint,
           _this = this

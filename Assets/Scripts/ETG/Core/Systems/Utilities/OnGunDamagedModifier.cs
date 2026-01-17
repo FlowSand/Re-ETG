@@ -113,7 +113,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator FrameDelayedProcessing(PlayerController p)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new OnGunDamagedModifier.<FrameDelayedProcessing>c__Iterator0()
+        return (IEnumerator) new OnGunDamagedModifier__FrameDelayedProcessingc__Iterator0()
         {
           p = p,
           _this = this

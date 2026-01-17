@@ -49,7 +49,7 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleRage()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RagePassiveItem.<HandleRage>c__Iterator0()
+        return (IEnumerator) new RagePassiveItem__HandleRagec__Iterator0()
         {
           _this = this
         };

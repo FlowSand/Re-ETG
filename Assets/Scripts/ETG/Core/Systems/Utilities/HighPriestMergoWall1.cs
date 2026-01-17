@@ -36,7 +36,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new HighPriestMergoWall1.BigBullet.<Top>c__Iterator0()
+          return (IEnumerator) new HighPriestMergoWall1.BigBullet__Topc__Iterator0()
           {
             _this = this
           };

@@ -62,7 +62,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleCoreIdle()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CharacterSelectIdleDoer.<HandleCoreIdle>c__Iterator0()
+        return (IEnumerator) new CharacterSelectIdleDoer__HandleCoreIdlec__Iterator0()
         {
           _this = this
         };
@@ -94,7 +94,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandlePhase(CharacterSelectIdlePhase phase)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CharacterSelectIdleDoer.<HandlePhase>c__Iterator1()
+        return (IEnumerator) new CharacterSelectIdleDoer__HandlePhasec__Iterator1()
         {
           phase = phase,
           _this = this

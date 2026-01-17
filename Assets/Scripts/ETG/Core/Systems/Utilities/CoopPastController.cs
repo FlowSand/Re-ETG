@@ -46,7 +46,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleOutro(bool coopPlayerWon)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CoopPastController.<HandleOutro>c__Iterator0()
+        return (IEnumerator) new CoopPastController__HandleOutroc__Iterator0()
         {
           coopPlayerWon = coopPlayerWon,
           _this = this
@@ -57,7 +57,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CoopPastController.<HandleIntro>c__Iterator1()
+        return (IEnumerator) new CoopPastController__HandleIntroc__Iterator1()
         {
           _this = this
         };
@@ -73,7 +73,7 @@ namespace ETG.Core.Systems.Utilities
         int OnlyThisPlayerInput = -1)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CoopPastController.<DoAmbientTalk>c__Iterator2()
+        return (IEnumerator) new CoopPastController__DoAmbientTalkc__Iterator2()
         {
           baseTransform = baseTransform,
           offset = offset,

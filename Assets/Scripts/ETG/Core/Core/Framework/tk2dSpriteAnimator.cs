@@ -335,7 +335,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator RevertToClipForceLoop(tk2dSpriteAnimationClip playingClip, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dSpriteAnimator.<RevertToClipForceLoop>c__Iterator0()
+        return (IEnumerator) new tk2dSpriteAnimator__RevertToClipForceLoopc__Iterator0()
         {
           duration = duration,
           playingClip = playingClip,
@@ -384,7 +384,7 @@ namespace ETG.Core.Core.Framework
         bool returnToLoopSection = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dSpriteAnimator.<RevertToClip>c__Iterator1()
+        return (IEnumerator) new tk2dSpriteAnimator__RevertToClipc__Iterator1()
         {
           duration = duration,
           playingClip = playingClip,
@@ -796,7 +796,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleEmissivePowerLerp(float duration, float targetPower)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dSpriteAnimator.<HandleEmissivePowerLerp>c__Iterator2()
+        return (IEnumerator) new tk2dSpriteAnimator__HandleEmissivePowerLerpc__Iterator2()
         {
           duration = duration,
           targetPower = targetPower,

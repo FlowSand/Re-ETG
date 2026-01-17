@@ -37,7 +37,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleWander()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmbientChatter.<HandleWander>c__Iterator0()
+        return (IEnumerator) new AmbientChatter__HandleWanderc__Iterator0()
         {
           _this = this
         };
@@ -47,7 +47,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleAmbientChatter()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmbientChatter.<HandleAmbientChatter>c__Iterator1()
+        return (IEnumerator) new AmbientChatter__HandleAmbientChatterc__Iterator1()
         {
           _this = this
         };

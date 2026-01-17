@@ -49,7 +49,7 @@ namespace ETG.Core.Core.Framework
       public IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdditionalBraveLight.<Start>c__Iterator0()
+        return (IEnumerator) new AdditionalBraveLight__Startc__Iterator0()
         {
           _this = this
         };
@@ -112,7 +112,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleBulletBankFade()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdditionalBraveLight.<HandleBulletBankFade>c__Iterator1()
+        return (IEnumerator) new AdditionalBraveLight__HandleBulletBankFadec__Iterator1()
         {
           _this = this
         };
@@ -136,7 +136,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator FadeLight(float fadeTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdditionalBraveLight.<FadeLight>c__Iterator2()
+        return (IEnumerator) new AdditionalBraveLight__FadeLightc__Iterator2()
         {
           fadeTime = fadeTime,
           _this = this

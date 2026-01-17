@@ -139,7 +139,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator runSequence()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new dfTweenGroup.<runSequence>c__Iterator0()
+        return (IEnumerator) new dfTweenGroup__runSequencec__Iterator0()
         {
           _this = this
         };
@@ -150,7 +150,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator runConcurrent()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new dfTweenGroup.<runConcurrent>c__Iterator1()
+        return (IEnumerator) new dfTweenGroup__runConcurrentc__Iterator1()
         {
           _this = this
         };

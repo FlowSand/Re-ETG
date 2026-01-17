@@ -30,7 +30,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleShrink(AIActor target)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ShrinkEnemiesInRoomItem.<HandleShrink>c__Iterator0()
+        return (IEnumerator) new ShrinkEnemiesInRoomItem__HandleShrinkc__Iterator0()
         {
           target = target,
           _this = this

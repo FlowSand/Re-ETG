@@ -99,7 +99,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator LerpFadeAlpha(float startAlpha, float targetAlpha, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MainMenuController.<LerpFadeAlpha>c__Iterator0()
+        return (IEnumerator) new MainMenuController__LerpFadeAlphac__Iterator0()
         {
           startAlpha = startAlpha,
           targetAlpha = targetAlpha,

@@ -52,7 +52,7 @@ public class ThievingRatGrabby : FsmStateAction
   private IEnumerator HandleGrabby()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new ThievingRatGrabby.<HandleGrabby>c__Iterator0()
+    return (IEnumerator) new ThievingRatGrabby__HandleGrabbyc__Iterator0()
     {
       _this = this
     };

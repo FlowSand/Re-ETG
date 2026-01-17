@@ -96,7 +96,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator EnrageCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BroController.<EnrageCR>c__Iterator0()
+        return (IEnumerator) new BroController__EnrageCRc__Iterator0()
         {
           _this = this
         };

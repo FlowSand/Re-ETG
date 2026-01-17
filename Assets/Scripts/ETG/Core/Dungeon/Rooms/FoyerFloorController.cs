@@ -26,7 +26,7 @@ namespace ETG.Core.Dungeon.Rooms
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FoyerFloorController.<Start>c__Iterator0()
+        return (IEnumerator) new FoyerFloorController__Startc__Iterator0()
         {
           _this = this
         };

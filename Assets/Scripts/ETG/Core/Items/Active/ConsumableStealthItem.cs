@@ -29,7 +29,7 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleStealth(PlayerController user)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConsumableStealthItem.<HandleStealth>c__Iterator0()
+        return (IEnumerator) new ConsumableStealthItem__HandleStealthc__Iterator0()
         {
           user = user,
           _this = this

@@ -178,7 +178,7 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleSuck(tk2dSprite targetSprite)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EmptyBottleItem.<HandleSuck>c__Iterator0()
+        return (IEnumerator) new EmptyBottleItem__HandleSuckc__Iterator0()
         {
           targetSprite = targetSprite,
           _this = this
@@ -463,7 +463,7 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleHearts(PlayerController targetPlayer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EmptyBottleItem.<HandleHearts>c__Iterator1()
+        return (IEnumerator) new EmptyBottleItem__HandleHeartsc__Iterator1()
         {
           targetPlayer = targetPlayer
         };

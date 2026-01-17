@@ -21,7 +21,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BabyDragunBurst1.<Top>c__Iterator0()
+        return (IEnumerator) new BabyDragunBurst1__Topc__Iterator0()
         {
           _this = this
         };

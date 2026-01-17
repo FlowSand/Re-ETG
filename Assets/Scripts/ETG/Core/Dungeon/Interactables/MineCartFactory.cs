@@ -66,7 +66,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator DelayedApplyVelocity(MineCartController mcc)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MineCartFactory.<DelayedApplyVelocity>c__Iterator0()
+        return (IEnumerator) new MineCartFactory__DelayedApplyVelocityc__Iterator0()
         {
           mcc = mcc
         };

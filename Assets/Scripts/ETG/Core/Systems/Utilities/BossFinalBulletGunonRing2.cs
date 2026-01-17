@@ -24,7 +24,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalBulletGunonRing2.<Top>c__Iterator0()
+        return (IEnumerator) new BossFinalBulletGunonRing2__Topc__Iterator0()
         {
           _this = this
         };
@@ -45,7 +45,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BossFinalBulletGunonRing2.BatBullet.<Top>c__Iterator0()
+          return (IEnumerator) new BossFinalBulletGunonRing2.BatBullet__Topc__Iterator0()
           {
             _this = this
           };
@@ -63,7 +63,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BossFinalBulletGunonRing2.FireBullet.<Top>c__Iterator0()
+          return (IEnumerator) new BossFinalBulletGunonRing2.FireBullet__Topc__Iterator0()
           {
             _this = this
           };

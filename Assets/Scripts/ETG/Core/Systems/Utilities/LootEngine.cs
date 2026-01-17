@@ -131,7 +131,7 @@ namespace ETG.Core.Systems.Utilities
       private static IEnumerator HandleManualCoinSpawnLifespan(List<CurrencyPickup> coins)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LootEngine.<HandleManualCoinSpawnLifespan>c__Iterator0()
+        return (IEnumerator) new LootEngine__HandleManualCoinSpawnLifespanc__Iterator0()
         {
           coins = coins
         };
@@ -405,7 +405,7 @@ namespace ETG.Core.Systems.Utilities
         bool disableHeightBoost = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LootEngine.<DelayedSpawnItem_CR>c__Iterator1()
+        return (IEnumerator) new LootEngine__DelayedSpawnItem_CRc__Iterator1()
         {
           delay = delay,
           item = item,

@@ -200,7 +200,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DeathFade()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DisplacedImageController.<DeathFade>c__Iterator0()
+        return (IEnumerator) new DisplacedImageController__DeathFadec__Iterator0()
         {
           _this = this
         };

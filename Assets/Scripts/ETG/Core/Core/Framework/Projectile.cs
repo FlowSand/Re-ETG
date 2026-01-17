@@ -899,7 +899,7 @@ namespace ETG.Core.Core.Framework
       public IEnumerator CheckIfBossKillShot()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.<CheckIfBossKillShot>c__Iterator0()
+        return (IEnumerator) new Projectile__CheckIfBossKillShotc__Iterator0()
         {
           _this = this
         };
@@ -1136,7 +1136,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator ChangeColorCR(float time, Color color)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.<ChangeColorCR>c__Iterator1()
+        return (IEnumerator) new Projectile__ChangeColorCRc__Iterator1()
         {
           time = time,
           color = color,
@@ -1179,7 +1179,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator ChangeTintColorCR(float time, Color color)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.<ChangeTintColorCR>c__Iterator2()
+        return (IEnumerator) new Projectile__ChangeTintColorCRc__Iterator2()
         {
           time = time,
           color = color,
@@ -1724,7 +1724,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandlePostInvulnerabilityFrameExceptions(SpeculativeRigidbody otherRigidbody)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.<HandlePostInvulnerabilityFrameExceptions>c__Iterator3()
+        return (IEnumerator) new Projectile__HandlePostInvulnerabilityFrameExceptionsc__Iterator3()
         {
           otherRigidbody = otherRigidbody,
           _this = this
@@ -1735,7 +1735,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandlePostCollisionPersistence(CollisionData lcr, PlayerController player)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.<HandlePostCollisionPersistence>c__Iterator4()
+        return (IEnumerator) new Projectile__HandlePostCollisionPersistencec__Iterator4()
         {
           lcr = lcr,
           player = player,
@@ -1869,7 +1869,7 @@ namespace ETG.Core.Core.Framework
         PixelCollider hitPixelCollider)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.<HandleDelayedDamage>c__Iterator5()
+        return (IEnumerator) new Projectile__HandleDelayedDamagec__Iterator5()
         {
           targetRigidbody = targetRigidbody,
           damage = damage,
@@ -2045,7 +2045,7 @@ namespace ETG.Core.Core.Framework
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.<LerpMaterialGlowCR>c__Iterator6()
+        return (IEnumerator) new Projectile__LerpMaterialGlowCRc__Iterator6()
         {
           duration = duration,
           targetMaterial = targetMaterial,

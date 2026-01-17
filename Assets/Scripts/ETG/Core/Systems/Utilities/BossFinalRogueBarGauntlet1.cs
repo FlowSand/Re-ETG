@@ -20,7 +20,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalRogueBarGauntlet1.<Top>c__Iterator0()
+        return (IEnumerator) new BossFinalRogueBarGauntlet1__Topc__Iterator0()
         {
           _this = this
         };
@@ -56,7 +56,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BossFinalRogueBarGauntlet1.BarBullet.<Top>c__Iterator0()
+          return (IEnumerator) new BossFinalRogueBarGauntlet1.BarBullet__Topc__Iterator0()
           {
             _this = this
           };

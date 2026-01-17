@@ -22,7 +22,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GunNutCone.<Top>c__Iterator0()
+        return (IEnumerator) new GunNutCone__Topc__Iterator0()
         {
           _this = this
         };

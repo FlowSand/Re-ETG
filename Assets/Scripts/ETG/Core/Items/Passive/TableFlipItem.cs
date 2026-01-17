@@ -142,7 +142,7 @@ namespace ETG.Core.Items.Passive
         FlippableCover table)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TableFlipItem.<HandleDelayedEffect>c__Iterator0()
+        return (IEnumerator) new TableFlipItem__HandleDelayedEffectc__Iterator0()
         {
           delayTime = delayTime,
           effect = effect,
@@ -290,7 +290,7 @@ namespace ETG.Core.Items.Passive
       private IEnumerator DelayedBlankEffect(FlippableCover table)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TableFlipItem.<DelayedBlankEffect>c__Iterator1()
+        return (IEnumerator) new TableFlipItem__DelayedBlankEffectc__Iterator1()
         {
           table = table,
           _this = this
@@ -392,7 +392,7 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleTimeSlowDuration()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TableFlipItem.<HandleTimeSlowDuration>c__Iterator2()
+        return (IEnumerator) new TableFlipItem__HandleTimeSlowDurationc__Iterator2()
         {
           _this = this
         };
@@ -419,7 +419,7 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleRageCooldown()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TableFlipItem.<HandleRageCooldown>c__Iterator3()
+        return (IEnumerator) new TableFlipItem__HandleRageCooldownc__Iterator3()
         {
           _this = this
         };
@@ -439,7 +439,7 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleVolleyCooldown()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TableFlipItem.<HandleVolleyCooldown>c__Iterator4()
+        return (IEnumerator) new TableFlipItem__HandleVolleyCooldownc__Iterator4()
         {
           _this = this
         };
@@ -456,7 +456,7 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleHeatEffectsCR(FlippableCover table)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TableFlipItem.<HandleHeatEffectsCR>c__Iterator5()
+        return (IEnumerator) new TableFlipItem__HandleHeatEffectsCRc__Iterator5()
         {
           table = table,
           _this = this

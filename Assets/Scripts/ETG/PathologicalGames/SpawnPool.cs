@@ -319,7 +319,7 @@ public sealed class SpawnPool :
     Transform parent)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new SpawnPool.<DoDespawnAfterSeconds>c__Iterator1()
+    return (IEnumerator) new SpawnPool__DoDespawnAfterSecondsc__Iterator1()
     {
       instance = instance,
       seconds = seconds,
@@ -386,7 +386,7 @@ public sealed class SpawnPool :
   private IEnumerator ListForAudioStop(AudioSource src)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new SpawnPool.<ListForAudioStop>c__Iterator2()
+    return (IEnumerator) new SpawnPool__ListForAudioStopc__Iterator2()
     {
       src = src,
       _this = this
@@ -397,7 +397,7 @@ public sealed class SpawnPool :
   private IEnumerator ListenForEmitDespawn(ParticleSystem emitter)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new SpawnPool.<ListenForEmitDespawn>c__Iterator3()
+    return (IEnumerator) new SpawnPool__ListenForEmitDespawnc__Iterator3()
     {
       emitter = emitter,
       _this = this
@@ -431,7 +431,7 @@ public sealed class SpawnPool :
   public IEnumerator<Transform> GetEnumerator()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator<Transform>) new SpawnPool.<GetEnumerator>c__Iterator4()
+    return (IEnumerator<Transform>) new SpawnPool__GetEnumeratorc__Iterator4()
     {
       _this = this
     };
@@ -441,7 +441,7 @@ public sealed class SpawnPool :
   IEnumerator IEnumerable.GetEnumerator()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new SpawnPool.<System_Collections_IEnumerable_GetEnumerator>c__Iterator0()
+    return (IEnumerator) new SpawnPool__System_Collections_IEnumerable_GetEnumeratorc__Iterator0()
     {
       _this = this
     };

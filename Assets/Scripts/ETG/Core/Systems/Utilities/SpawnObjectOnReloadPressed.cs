@@ -75,7 +75,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleReloadDelay(Gun sourceGun)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SpawnObjectOnReloadPressed.<HandleReloadDelay>c__Iterator0()
+        return (IEnumerator) new SpawnObjectOnReloadPressed__HandleReloadDelayc__Iterator0()
         {
           sourceGun = sourceGun,
           _this = this
@@ -86,7 +86,7 @@ namespace ETG.Core.Systems.Utilities
       protected IEnumerator DoSpawn(PlayerController user, float angleFromAim)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SpawnObjectOnReloadPressed.<DoSpawn>c__Iterator1()
+        return (IEnumerator) new SpawnObjectOnReloadPressed__DoSpawnc__Iterator1()
         {
           user = user,
           angleFromAim = angleFromAim,

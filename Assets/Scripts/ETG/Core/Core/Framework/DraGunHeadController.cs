@@ -41,7 +41,7 @@ namespace ETG.Core.Core.Framework
       public IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunHeadController.<Start>c__Iterator0()
+        return (IEnumerator) new DraGunHeadController__Startc__Iterator0()
         {
           _this = this
         };

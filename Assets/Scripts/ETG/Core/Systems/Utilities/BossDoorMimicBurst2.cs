@@ -24,7 +24,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossDoorMimicBurst2.<Top>c__Iterator0()
+        return (IEnumerator) new BossDoorMimicBurst2__Topc__Iterator0()
         {
           _this = this
         };
@@ -44,7 +44,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BossDoorMimicBurst2.BurstBullet.<Top>c__Iterator0()
+          return (IEnumerator) new BossDoorMimicBurst2.BurstBullet__Topc__Iterator0()
           {
             _this = this
           };

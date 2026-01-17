@@ -30,7 +30,7 @@ public class DelayedBullet : Bullet
   protected override IEnumerator Top()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new DelayedBullet.<Top>c__Iterator0()
+    return (IEnumerator) new DelayedBullet__Topc__Iterator0()
     {
       _this = this
     };

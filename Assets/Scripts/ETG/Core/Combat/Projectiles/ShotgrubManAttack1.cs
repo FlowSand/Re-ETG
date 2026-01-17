@@ -43,7 +43,7 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new ShotgrubManAttack1.GrossBullet.<Top>c__Iterator0()
+          return (IEnumerator) new ShotgrubManAttack1.GrossBullet__Topc__Iterator0()
           {
             _this = this
           };
@@ -75,7 +75,7 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new ShotgrubManAttack1.GrubBullet.<Top>c__Iterator0()
+          return (IEnumerator) new ShotgrubManAttack1.GrubBullet__Topc__Iterator0()
           {
             _this = this
           };

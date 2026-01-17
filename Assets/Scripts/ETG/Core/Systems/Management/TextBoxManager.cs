@@ -263,7 +263,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleScaleUp(Vector2 prevBoxSize)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TextBoxManager.<HandleScaleUp>c__Iterator0()
+        return (IEnumerator) new TextBoxManager__HandleScaleUpc__Iterator0()
         {
           prevBoxSize = prevBoxSize,
           _this = this
@@ -274,7 +274,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleScaleDown()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TextBoxManager.<HandleScaleDown>c__Iterator1()
+        return (IEnumerator) new TextBoxManager__HandleScaleDownc__Iterator1()
         {
           _this = this
         };
@@ -326,7 +326,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator TextBoxLifespanCR(GameObject target, Transform parent, float lifespan)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TextBoxManager.<TextBoxLifespanCR>c__Iterator2()
+        return (IEnumerator) new TextBoxManager__TextBoxLifespanCRc__Iterator2()
         {
           lifespan = lifespan,
           parent = parent,
@@ -339,7 +339,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator ShowContinueTextCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TextBoxManager.<ShowContinueTextCR>c__Iterator3()
+        return (IEnumerator) new TextBoxManager__ShowContinueTextCRc__Iterator3()
         {
           _this = this
         };
@@ -349,7 +349,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator RevealTextCharacters(string strippedString)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TextBoxManager.<RevealTextCharacters>c__Iterator4()
+        return (IEnumerator) new TextBoxManager__RevealTextCharactersc__Iterator4()
         {
           strippedString = strippedString,
           _this = this

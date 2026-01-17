@@ -29,7 +29,7 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleShield(PlayerController user)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ReflectShieldPlayerItem.<HandleShield>c__Iterator0()
+        return (IEnumerator) new ReflectShieldPlayerItem__HandleShieldc__Iterator0()
         {
           user = user,
           _this = this

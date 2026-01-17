@@ -395,7 +395,7 @@ namespace ETG.Core.Core.Framework
       public IEnumerator FrameDelayedTriggerSequence(PlayerController enterer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GenericIntroDoer.<FrameDelayedTriggerSequence>c__Iterator0()
+        return (IEnumerator) new GenericIntroDoer__FrameDelayedTriggerSequencec__Iterator0()
         {
           enterer = enterer,
           _this = this
@@ -586,7 +586,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator WaitForBossCard()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GenericIntroDoer.<WaitForBossCard>c__Iterator1()
+        return (IEnumerator) new GenericIntroDoer__WaitForBossCardc__Iterator1()
         {
           _this = this
         };

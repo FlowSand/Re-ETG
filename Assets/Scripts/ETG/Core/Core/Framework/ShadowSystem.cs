@@ -188,7 +188,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleTemporalUpdate(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ShadowSystem.<HandleTemporalUpdate>c__Iterator0()
+        return (IEnumerator) new ShadowSystem__HandleTemporalUpdatec__Iterator0()
         {
           duration = duration,
           _this = this

@@ -35,7 +35,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PilotPastController.<Start>c__Iterator0()
+        return (IEnumerator) new PilotPastController__Startc__Iterator0()
         {
           _this = this
         };
@@ -62,7 +62,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleFriendAndJunkToggle(bool state)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PilotPastController.<HandleFriendAndJunkToggle>c__Iterator1()
+        return (IEnumerator) new PilotPastController__HandleFriendAndJunkTogglec__Iterator1()
         {
           state = state,
           _this = this
@@ -73,7 +73,7 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator EndPastSuccess()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PilotPastController.<EndPastSuccess>c__Iterator2()
+        return (IEnumerator) new PilotPastController__EndPastSuccessc__Iterator2()
         {
           _this = this
         };
@@ -87,7 +87,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator BossCutscene_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PilotPastController.<BossCutscene_CR>c__Iterator3()
+        return (IEnumerator) new PilotPastController__BossCutscene_CRc__Iterator3()
         {
           _this = this
         };
@@ -97,7 +97,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ArriveFromWarp(tk2dBaseSprite targetSprite, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PilotPastController.<ArriveFromWarp>c__Iterator4()
+        return (IEnumerator) new PilotPastController__ArriveFromWarpc__Iterator4()
         {
           targetSprite = targetSprite,
           duration = duration,
@@ -118,7 +118,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBossKilled()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PilotPastController.<HandleBossKilled>c__Iterator5()
+        return (IEnumerator) new PilotPastController__HandleBossKilledc__Iterator5()
         {
           _this = this
         };

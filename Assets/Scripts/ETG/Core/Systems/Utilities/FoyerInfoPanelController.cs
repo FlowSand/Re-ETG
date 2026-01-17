@@ -53,7 +53,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FoyerInfoPanelController.<Start>c__Iterator0()
+        return (IEnumerator) new FoyerInfoPanelController__Startc__Iterator0()
         {
           _this = this
         };
@@ -63,7 +63,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleTransition()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FoyerInfoPanelController.<HandleTransition>c__Iterator1()
+        return (IEnumerator) new FoyerInfoPanelController__HandleTransitionc__Iterator1()
         {
           _this = this
         };
@@ -98,7 +98,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleOpen()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FoyerInfoPanelController.<HandleOpen>c__Iterator2()
+        return (IEnumerator) new FoyerInfoPanelController__HandleOpenc__Iterator2()
         {
           _this = this
         };

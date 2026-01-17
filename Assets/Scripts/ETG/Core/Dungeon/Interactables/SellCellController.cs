@@ -76,7 +76,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleSellPitOpening()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SellCellController.<HandleSellPitOpening>c__Iterator0()
+        return (IEnumerator) new SellCellController__HandleSellPitOpeningc__Iterator0()
         {
           _this = this
         };
@@ -102,7 +102,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleSoldItem(PickupObject targetItem)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SellCellController.<HandleSoldItem>c__Iterator1()
+        return (IEnumerator) new SellCellController__HandleSoldItemc__Iterator1()
         {
           targetItem = targetItem,
           _this = this

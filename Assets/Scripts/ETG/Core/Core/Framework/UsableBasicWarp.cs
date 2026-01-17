@@ -55,7 +55,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleWarpCooldown(PlayerController player)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new UsableBasicWarp.<HandleWarpCooldown>c__Iterator0()
+        return (IEnumerator) new UsableBasicWarp__HandleWarpCooldownc__Iterator0()
         {
           player = player,
           _this = this

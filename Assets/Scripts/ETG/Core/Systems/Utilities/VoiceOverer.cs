@@ -84,7 +84,7 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator HandleIntroVO()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new VoiceOverer.<HandleIntroVO>c__Iterator0()
+        return (IEnumerator) new VoiceOverer__HandleIntroVOc__Iterator0()
         {
           _this = this
         };
@@ -94,7 +94,7 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator HandlePlayerLostVO()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new VoiceOverer.<HandlePlayerLostVO>c__Iterator1()
+        return (IEnumerator) new VoiceOverer__HandlePlayerLostVOc__Iterator1()
         {
           _this = this
         };
@@ -104,7 +104,7 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator HandlePlayerWonVO(float maxDuration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new VoiceOverer.<HandlePlayerWonVO>c__Iterator2()
+        return (IEnumerator) new VoiceOverer__HandlePlayerWonVOc__Iterator2()
         {
           maxDuration = maxDuration,
           _this = this
@@ -136,7 +136,7 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator HandleTalk(string stringKey, float maxDuration = -1f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new VoiceOverer.<HandleTalk>c__Iterator3()
+        return (IEnumerator) new VoiceOverer__HandleTalkc__Iterator3()
         {
           stringKey = stringKey,
           maxDuration = maxDuration,
@@ -148,7 +148,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator TalkRaw(string plaintext, float maxDuration = -1f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new VoiceOverer.<TalkRaw>c__Iterator4()
+        return (IEnumerator) new VoiceOverer__TalkRawc__Iterator4()
         {
           plaintext = plaintext,
           maxDuration = maxDuration,

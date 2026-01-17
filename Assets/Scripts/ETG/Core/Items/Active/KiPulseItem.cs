@@ -74,7 +74,7 @@ namespace ETG.Core.Items.Active
       private IEnumerator Activate()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new KiPulseItem.<Activate>c__Iterator0()
+        return (IEnumerator) new KiPulseItem__Activatec__Iterator0()
         {
           _this = this
         };

@@ -34,7 +34,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new NightclubLightController.<Start>c__Iterator0()
+        return (IEnumerator) new NightclubLightController__Startc__Iterator0()
         {
           _this = this
         };
@@ -73,7 +73,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleMotion()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new NightclubLightController.<HandleMotion>c__Iterator1()
+        return (IEnumerator) new NightclubLightController__HandleMotionc__Iterator1()
         {
           _this = this
         };

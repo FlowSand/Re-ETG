@@ -190,7 +190,7 @@ namespace ETG.Core.Core.Framework
       protected IEnumerator HandleRatTheft()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PickupObject.<HandleRatTheft>c__Iterator0()
+        return (IEnumerator) new PickupObject__HandleRatTheftc__Iterator0()
         {
           _this = this
         };

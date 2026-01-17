@@ -23,7 +23,7 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator OnDoubleTapGesture()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DEMO_PictureSelector.<OnDoubleTapGesture>c__Iterator0()
+        return (IEnumerator) new DEMO_PictureSelector__OnDoubleTapGesturec__Iterator0()
         {
           _this = this
         };

@@ -35,7 +35,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator BossDeathCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ResourcefulRatDeathController.<BossDeathCR>c__Iterator0()
+        return (IEnumerator) new ResourcefulRatDeathController__BossDeathCRc__Iterator0()
         {
           _this = this
         };

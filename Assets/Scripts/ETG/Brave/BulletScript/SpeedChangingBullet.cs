@@ -41,7 +41,7 @@ public class SpeedChangingBullet : Bullet
   protected override IEnumerator Top()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new SpeedChangingBullet.<Top>c__Iterator0()
+    return (IEnumerator) new SpeedChangingBullet__Topc__Iterator0()
     {
       _this = this
     };

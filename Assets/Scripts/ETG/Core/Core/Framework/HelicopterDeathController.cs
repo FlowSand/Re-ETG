@@ -40,7 +40,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleBossDeath()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HelicopterDeathController.<HandleBossDeath>c__Iterator0()
+        return (IEnumerator) new HelicopterDeathController__HandleBossDeathc__Iterator0()
         {
           _this = this
         };
@@ -50,7 +50,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLittleExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HelicopterDeathController.<HandleLittleExplosionsCR>c__Iterator1()
+        return (IEnumerator) new HelicopterDeathController__HandleLittleExplosionsCRc__Iterator1()
         {
           _this = this
         };
@@ -60,7 +60,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleBigExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HelicopterDeathController.<HandleBigExplosionsCR>c__Iterator2()
+        return (IEnumerator) new HelicopterDeathController__HandleBigExplosionsCRc__Iterator2()
         {
           _this = this
         };
@@ -71,7 +71,7 @@ namespace ETG.Core.Core.Framework
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        HelicopterDeathController.<HandleFlightPitfall>c__Iterator3 pitfallCIterator3 = new HelicopterDeathController.<HandleFlightPitfall>c__Iterator3();
+        HelicopterDeathController__HandleFlightPitfallc__Iterator3 pitfallCIterator3 = new HelicopterDeathController__HandleFlightPitfallc__Iterator3();
         return (IEnumerator) pitfallCIterator3;
       }
 
@@ -79,7 +79,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator SinkCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HelicopterDeathController.<SinkCR>c__Iterator4()
+        return (IEnumerator) new HelicopterDeathController__SinkCRc__Iterator4()
         {
           _this = this
         };

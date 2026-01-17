@@ -28,7 +28,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ChancebulonDice1.<Top>c__Iterator0()
+        return (IEnumerator) new ChancebulonDice1__Topc__Iterator0()
         {
           _this = this
         };
@@ -78,7 +78,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new ChancebulonDice1.ExpandingBullet.<Top>c__Iterator0()
+          return (IEnumerator) new ChancebulonDice1.ExpandingBullet__Topc__Iterator0()
           {
             _this = this
           };

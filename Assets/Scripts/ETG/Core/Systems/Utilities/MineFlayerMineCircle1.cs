@@ -34,7 +34,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MineFlayerMineCircle1.<Top>c__Iterator0()
+        return (IEnumerator) new MineFlayerMineCircle1__Topc__Iterator0()
         {
           _this = this
         };
@@ -58,7 +58,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MineFlayerMineCircle1.MineBullet.<Top>c__Iterator0()
+          return (IEnumerator) new MineFlayerMineCircle1.MineBullet__Topc__Iterator0()
           {
             _this = this
           };

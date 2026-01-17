@@ -1111,7 +1111,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator doCursorBlink()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new dfTextbox.<doCursorBlink>c__Iterator0()
+        return (IEnumerator) new dfTextbox__doCursorBlinkc__Iterator0()
         {
           _this = this
         };

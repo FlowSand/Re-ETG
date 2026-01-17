@@ -488,7 +488,7 @@ namespace ETG.Core.Core.Framework
       public IEnumerator UpdateOverridePosition_CR(Vector3 newOverridePosition, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CameraController.<UpdateOverridePosition_CR>c__Iterator0()
+        return (IEnumerator) new CameraController__UpdateOverridePosition_CRc__Iterator0()
         {
           duration = duration,
           newOverridePosition = newOverridePosition,
@@ -692,7 +692,7 @@ namespace ETG.Core.Core.Framework
         bool useCameraVibration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CameraController.<HandleContinuousScreenShake>c__Iterator1()
+        return (IEnumerator) new CameraController__HandleContinuousScreenShakec__Iterator1()
         {
           direction = direction,
           magnitude = magnitude,
@@ -709,7 +709,7 @@ namespace ETG.Core.Core.Framework
         Vector2? origin)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CameraController.<HandleDelayedScreenShake>c__Iterator2()
+        return (IEnumerator) new CameraController__HandleDelayedScreenShakec__Iterator2()
         {
           delay = delay,
           sss = sss,
@@ -729,7 +729,7 @@ namespace ETG.Core.Core.Framework
         bool useCameraVibration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CameraController.<HandleScreenShake>c__Iterator3()
+        return (IEnumerator) new CameraController__HandleScreenShakec__Iterator3()
         {
           origin = origin,
           magnitude = magnitude,

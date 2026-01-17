@@ -305,7 +305,7 @@ namespace ETG.Core.Items.Pickups
       private IEnumerator HandleAnimationReset(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerItem.<HandleAnimationReset>c__Iterator0()
+        return (IEnumerator) new PlayerItem__HandleAnimationResetc__Iterator0()
         {
           delay = delay,
           _this = this

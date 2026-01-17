@@ -98,7 +98,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Bloop()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CoinBloop.<Bloop>c__Iterator0()
+        return (IEnumerator) new CoinBloop__Bloopc__Iterator0()
         {
           _this = this
         };

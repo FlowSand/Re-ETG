@@ -62,7 +62,7 @@ namespace ETG.Core.Combat.Projectiles
         float aimAngle)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DirectedBurstInterface.<HandleBurst>c__Iterator0()
+        return (IEnumerator) new DirectedBurstInterface__HandleBurstc__Iterator0()
         {
           projectileToSpawn = projectileToSpawn,
           aimAngle = aimAngle,
@@ -79,7 +79,7 @@ namespace ETG.Core.Combat.Projectiles
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DirectedBurstInterface.<HandleFireShortBeam>c__Iterator1()
+        return (IEnumerator) new DirectedBurstInterface__HandleFireShortBeamc__Iterator1()
         {
           projectileToSpawn = projectileToSpawn,
           source = source,

@@ -94,7 +94,7 @@ namespace ETG.Core.Combat.Projectiles
         Vector2? spawnPointOffset = null)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialBurstInterface.<HandleBurst>c__Iterator0()
+        return (IEnumerator) new RadialBurstInterface__HandleBurstc__Iterator0()
         {
           projectileToSpawn = projectileToSpawn,
           source = source,
@@ -114,7 +114,7 @@ namespace ETG.Core.Combat.Projectiles
         Vector2? spawnPointOffset = null)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialBurstInterface.<HandleFireShortBeam>c__Iterator1()
+        return (IEnumerator) new RadialBurstInterface__HandleFireShortBeamc__Iterator1()
         {
           projectileToSpawn = projectileToSpawn,
           source = source,

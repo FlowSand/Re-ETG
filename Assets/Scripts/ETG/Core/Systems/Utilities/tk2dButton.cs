@@ -89,7 +89,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator coScale(Vector3 defaultScale, float startScale, float endScale)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dButton.<coScale>c__Iterator0()
+        return (IEnumerator) new tk2dButton__coScalec__Iterator0()
         {
           defaultScale = defaultScale,
           startScale = startScale,
@@ -102,7 +102,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator LocalWaitForSeconds(float seconds)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dButton.<LocalWaitForSeconds>c__Iterator1()
+        return (IEnumerator) new tk2dButton__LocalWaitForSecondsc__Iterator1()
         {
           seconds = seconds
         };
@@ -112,7 +112,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator coHandleButtonPress(int fingerId)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dButton.<coHandleButtonPress>c__Iterator2()
+        return (IEnumerator) new tk2dButton__coHandleButtonPressc__Iterator2()
         {
           fingerId = fingerId,
           _this = this

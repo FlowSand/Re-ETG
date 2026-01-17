@@ -51,7 +51,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatDeathController.<OnDeathExplosionsCR>c__Iterator0()
+        return (IEnumerator) new MetalGearRatDeathController__OnDeathExplosionsCRc__Iterator0()
         {
           _this = this
         };
@@ -61,7 +61,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatDeathController.<OnDeathCR>c__Iterator1()
+        return (IEnumerator) new MetalGearRatDeathController__OnDeathCRc__Iterator1()
         {
           _this = this
         };

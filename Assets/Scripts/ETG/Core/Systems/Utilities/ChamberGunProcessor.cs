@@ -201,7 +201,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator DelayedRegainAmmo()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ChamberGunProcessor.<DelayedRegainAmmo>c__Iterator0()
+        return (IEnumerator) new ChamberGunProcessor__DelayedRegainAmmoc__Iterator0()
         {
           _this = this
         };

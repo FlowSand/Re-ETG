@@ -78,7 +78,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleDeferredAnimationOverride(float t)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MimicGunController.<HandleDeferredAnimationOverride>c__Iterator0()
+        return (IEnumerator) new MimicGunController__HandleDeferredAnimationOverridec__Iterator0()
         {
           t = t,
           _this = this
@@ -127,7 +127,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleClearMimic()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MimicGunController.<HandleClearMimic>c__Iterator1()
+        return (IEnumerator) new MimicGunController__HandleClearMimicc__Iterator1()
         {
           _this = this
         };

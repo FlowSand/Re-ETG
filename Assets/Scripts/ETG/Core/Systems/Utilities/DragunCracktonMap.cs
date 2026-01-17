@@ -50,7 +50,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleAmbient()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DragunCracktonMap.<HandleAmbient>c__Iterator0()
+        return (IEnumerator) new DragunCracktonMap__HandleAmbientc__Iterator0()
         {
           _this = this
         };
@@ -60,7 +60,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleConversion()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DragunCracktonMap.<HandleConversion>c__Iterator1()
+        return (IEnumerator) new DragunCracktonMap__HandleConversionc__Iterator1()
         {
           _this = this
         };
@@ -88,7 +88,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleGoldAmbient()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DragunCracktonMap.<HandleGoldAmbient>c__Iterator2()
+        return (IEnumerator) new DragunCracktonMap__HandleGoldAmbientc__Iterator2()
         {
           _this = this
         };
@@ -98,7 +98,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleGoldConversion()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DragunCracktonMap.<HandleGoldConversion>c__Iterator3()
+        return (IEnumerator) new DragunCracktonMap__HandleGoldConversionc__Iterator3()
         {
           _this = this
         };

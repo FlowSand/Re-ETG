@@ -230,7 +230,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator ToggleFade(bool targetFade)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MainMenuFoyerController.<ToggleFade>c__Iterator0()
+        return (IEnumerator) new MainMenuFoyerController__ToggleFadec__Iterator0()
         {
           targetFade = targetFade,
           _this = this

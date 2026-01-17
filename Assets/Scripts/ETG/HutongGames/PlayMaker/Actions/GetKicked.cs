@@ -109,7 +109,7 @@ public class GetKicked : FsmStateAction
   private IEnumerator HandlePitfall(SpeculativeRigidbody srb)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new GetKicked.<HandlePitfall>c__Iterator0()
+    return (IEnumerator) new GetKicked__HandlePitfallc__Iterator0()
     {
       srb = srb,
       _this = this

@@ -129,7 +129,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator SpawnBehavior_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RewardPedestal.<SpawnBehavior_CR>c__Iterator0()
+        return (IEnumerator) new RewardPedestal__SpawnBehavior_CRc__Iterator0()
         {
           _this = this
         };
@@ -298,7 +298,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator MimicIdleAnimCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RewardPedestal.<MimicIdleAnimCR>c__Iterator1()
+        return (IEnumerator) new RewardPedestal__MimicIdleAnimCRc__Iterator1()
         {
           _this = this
         };

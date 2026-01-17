@@ -202,7 +202,7 @@ namespace ETG.Core.Core.Framework
         int specificAvailableToUse = -1)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ShortcutElevatorController.<RotateRight>c__Iterator0()
+        return (IEnumerator) new ShortcutElevatorController__RotateRightc__Iterator0()
         {
           change = change,
           specificAvailableToUse = specificAvailableToUse,
@@ -216,7 +216,7 @@ namespace ETG.Core.Core.Framework
       public IEnumerator TriggerShortcut()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ShortcutElevatorController.<TriggerShortcut>c__Iterator1()
+        return (IEnumerator) new ShortcutElevatorController__TriggerShortcutc__Iterator1()
         {
           _this = this
         };

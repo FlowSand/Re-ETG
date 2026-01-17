@@ -99,7 +99,7 @@ namespace ETG.Core.Systems.Utilities
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        BraveInput.<AssignPlayerTwoToNextActiveDevice>c__Iterator0 nextActiveDevice = new BraveInput.<AssignPlayerTwoToNextActiveDevice>c__Iterator0();
+        BraveInput__AssignPlayerTwoToNextActiveDevicec__Iterator0 nextActiveDevice = new BraveInput__AssignPlayerTwoToNextActiveDevicec__Iterator0();
         return (IEnumerator) nextActiveDevice;
       }
 

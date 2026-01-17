@@ -30,7 +30,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator FrameDelayedConfiguration()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ResizableCollider.<FrameDelayedConfiguration>c__Iterator0()
+        return (IEnumerator) new ResizableCollider__FrameDelayedConfigurationc__Iterator0()
         {
           _this = this
         };

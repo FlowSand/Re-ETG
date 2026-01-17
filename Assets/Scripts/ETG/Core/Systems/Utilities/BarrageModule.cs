@@ -57,7 +57,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBarrage(List<Vector2> targets)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BarrageModule.<HandleBarrage>c__Iterator0()
+        return (IEnumerator) new BarrageModule__HandleBarragec__Iterator0()
         {
           targets = targets,
           _this = this

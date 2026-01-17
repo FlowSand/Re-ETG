@@ -42,7 +42,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new TankTreaderAreaDenial1.HugeBullet.<Top>c__Iterator0()
+          return (IEnumerator) new TankTreaderAreaDenial1.HugeBullet__Topc__Iterator0()
           {
             _this = this
           };
@@ -52,7 +52,7 @@ namespace ETG.Core.Systems.Utilities
         private IEnumerator FireSemicircles()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new TankTreaderAreaDenial1.HugeBullet.<FireSemicircles>c__Iterator1()
+          return (IEnumerator) new TankTreaderAreaDenial1.HugeBullet__FireSemicirclesc__Iterator1()
           {
             _this = this
           };

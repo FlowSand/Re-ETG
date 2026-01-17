@@ -70,7 +70,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DestroyPartCR(MetalGearRatController.MetalGearPart part, string destroyAnim)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatController.<DestroyPartCR>c__Iterator0()
+        return (IEnumerator) new MetalGearRatController__DestroyPartCRc__Iterator0()
         {
           destroyAnim = destroyAnim,
           part = part,

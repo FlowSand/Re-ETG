@@ -57,7 +57,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleNewEnemies(Vector2 centerPoint, RoomHandler targetRoom)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowInterface.<HandleNewEnemies>c__Iterator0()
+        return (IEnumerator) new RadialSlowInterface__HandleNewEnemiesc__Iterator0()
         {
           centerPoint = centerPoint,
           targetRoom = targetRoom,
@@ -69,7 +69,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ProcessCirclePass(Vector2 centerPoint)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowInterface.<ProcessCirclePass>c__Iterator1()
+        return (IEnumerator) new RadialSlowInterface__ProcessCirclePassc__Iterator1()
         {
           centerPoint = centerPoint,
           _this = this
@@ -80,7 +80,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ProcessEnsepia()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowInterface.<ProcessEnsepia>c__Iterator2()
+        return (IEnumerator) new RadialSlowInterface__ProcessEnsepiac__Iterator2()
         {
           _this = this
         };
@@ -90,7 +90,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ProcessSlow(Vector2 centerPoint, AIActor target, float startTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowInterface.<ProcessSlow>c__Iterator3()
+        return (IEnumerator) new RadialSlowInterface__ProcessSlowc__Iterator3()
         {
           startTime = startTime,
           target = target,

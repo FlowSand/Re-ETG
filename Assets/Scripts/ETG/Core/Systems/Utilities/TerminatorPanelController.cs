@@ -62,7 +62,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleTrigger()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TerminatorPanelController.<HandleTrigger>c__Iterator0()
+        return (IEnumerator) new TerminatorPanelController__HandleTriggerc__Iterator0()
         {
           _this = this
         };

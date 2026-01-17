@@ -39,7 +39,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichNegativeSpacePie1.<Top>c__Iterator0()
+        return (IEnumerator) new InfinilichNegativeSpacePie1__Topc__Iterator0()
         {
           _this = this
         };
@@ -62,7 +62,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleGaps()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichNegativeSpacePie1.<HandleGaps>c__Iterator1()
+        return (IEnumerator) new InfinilichNegativeSpacePie1__HandleGapsc__Iterator1()
         {
           _this = this
         };
@@ -110,7 +110,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new InfinilichNegativeSpacePie1.RayBullet.<Top>c__Iterator0()
+          return (IEnumerator) new InfinilichNegativeSpacePie1.RayBullet__Topc__Iterator0()
           {
             _this = this
           };

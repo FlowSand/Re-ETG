@@ -33,7 +33,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossStatuesCrosshair.<Top>c__Iterator0()
+        return (IEnumerator) new BossStatuesCrosshair__Topc__Iterator0()
         {
           _this = this
         };
@@ -74,7 +74,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BossStatuesCrosshair.LineBullet.<Top>c__Iterator0()
+          return (IEnumerator) new BossStatuesCrosshair.LineBullet__Topc__Iterator0()
           {
             _this = this
           };
@@ -95,7 +95,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BossStatuesCrosshair.CircleBullet.<Top>c__Iterator0()
+          return (IEnumerator) new BossStatuesCrosshair.CircleBullet__Topc__Iterator0()
           {
             _this = this
           };
@@ -116,7 +116,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BossStatuesCrosshair.CircleExtraBullet.<Top>c__Iterator0()
+          return (IEnumerator) new BossStatuesCrosshair.CircleExtraBullet__Topc__Iterator0()
           {
             _this = this
           };

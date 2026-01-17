@@ -31,7 +31,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BashelliskDeathController.<OnDeathCR>c__Iterator0()
+        return (IEnumerator) new BashelliskDeathController__OnDeathCRc__Iterator0()
         {
           _this = this
         };

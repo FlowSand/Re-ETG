@@ -85,7 +85,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HoldPortalOpen(MeshRenderer portal)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BlackHoleDoer.<HoldPortalOpen>c__Iterator0()
+        return (IEnumerator) new BlackHoleDoer__HoldPortalOpenc__Iterator0()
         {
           portal = portal,
           _this = this

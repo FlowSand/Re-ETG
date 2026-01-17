@@ -28,7 +28,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleAllLightTrails()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FuturegeonGroundLightDoer.<HandleAllLightTrails>c__Iterator0()
+        return (IEnumerator) new FuturegeonGroundLightDoer__HandleAllLightTrailsc__Iterator0()
         {
           _this = this
         };
@@ -38,7 +38,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleLightningTrails()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FuturegeonGroundLightDoer.<HandleLightningTrails>c__Iterator1()
+        return (IEnumerator) new FuturegeonGroundLightDoer__HandleLightningTrailsc__Iterator1()
         {
           _this = this
         };
@@ -51,7 +51,7 @@ namespace ETG.Core.Systems.Utilities
         bool isBranch = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FuturegeonGroundLightDoer.<HandleLightingLightTrail>c__Iterator2()
+        return (IEnumerator) new FuturegeonGroundLightDoer__HandleLightingLightTrailc__Iterator2()
         {
           startPos = startPos,
           startDir = startDir,
@@ -85,7 +85,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleSingleLightTrail()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FuturegeonGroundLightDoer.<HandleSingleLightTrail>c__Iterator3()
+        return (IEnumerator) new FuturegeonGroundLightDoer__HandleSingleLightTrailc__Iterator3()
         {
           _this = this
         };

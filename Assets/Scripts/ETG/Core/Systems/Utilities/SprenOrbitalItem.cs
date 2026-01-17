@@ -180,7 +180,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleTransformationDuration()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SprenOrbitalItem.<HandleTransformationDuration>c__Iterator0()
+        return (IEnumerator) new SprenOrbitalItem__HandleTransformationDurationc__Iterator0()
         {
           _this = this
         };

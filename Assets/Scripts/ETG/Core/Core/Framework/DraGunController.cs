@@ -309,7 +309,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator ConvertToNearDeath()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunController.<ConvertToNearDeath>c__Iterator0()
+        return (IEnumerator) new DraGunController__ConvertToNearDeathc__Iterator0()
         {
           _this = this
         };
@@ -319,7 +319,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator ConvertToGold()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunController.<ConvertToGold>c__Iterator1()
+        return (IEnumerator) new DraGunController__ConvertToGoldc__Iterator1()
         {
           _this = this
         };
@@ -334,7 +334,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDarkRoomEffectsCR(bool enabling, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunController.<HandleDarkRoomEffectsCR>c__Iterator2()
+        return (IEnumerator) new DraGunController__HandleDarkRoomEffectsCRc__Iterator2()
         {
           duration = duration,
           enabling = enabling,

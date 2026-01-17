@@ -87,7 +87,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ToggleLightingCR(bool togglon)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceCard.<ToggleLightingCR>c__Iterator0()
+        return (IEnumerator) new FinalIntroSequenceCard__ToggleLightingCRc__Iterator0()
         {
           togglon = togglon,
           _this = this
@@ -98,7 +98,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleGunBurn()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceCard.<HandleGunBurn>c__Iterator1()
+        return (IEnumerator) new FinalIntroSequenceCard__HandleGunBurnc__Iterator1()
         {
           _this = this
         };

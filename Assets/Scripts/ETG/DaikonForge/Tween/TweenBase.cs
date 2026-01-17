@@ -91,7 +91,7 @@ public abstract class TweenBase : ITweenUpdatable
   public virtual IEnumerator WaitForCompletion()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new TweenBase.<WaitForCompletion>c__Iterator0()
+    return (IEnumerator) new TweenBase__WaitForCompletionc__Iterator0()
     {
       _this = this
     };

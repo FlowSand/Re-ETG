@@ -177,7 +177,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator SetResolutionPostFullscreenChange(int newWidth, int newHeight)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<SetResolutionPostFullscreenChange>c__Iterator0()
+        return (IEnumerator) new GameManager__SetResolutionPostFullscreenChangec__Iterator0()
         {
           newWidth = newWidth,
           newHeight = newHeight,
@@ -897,7 +897,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedQuickRestart_CR(float duration, QuickRestartOptions options)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<DelayedQuickRestart_CR>c__Iterator1()
+        return (IEnumerator) new GameManager__DelayedQuickRestart_CRc__Iterator1()
         {
           duration = duration,
           options = options,
@@ -975,7 +975,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator PostQuickStartCR(QuickRestartOptions options)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<PostQuickStartCR>c__Iterator2()
+        return (IEnumerator) new GameManager__PostQuickStartCRc__Iterator2()
         {
           options = options,
           _this = this
@@ -1009,7 +1009,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedLoadMainMenu_CR(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<DelayedLoadMainMenu_CR>c__Iterator3()
+        return (IEnumerator) new GameManager__DelayedLoadMainMenu_CRc__Iterator3()
         {
           duration = duration,
           _this = this
@@ -1043,7 +1043,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleFrameDelayedEnteredFoyer(PlayerController p)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<HandleFrameDelayedEnteredFoyer>c__Iterator4()
+        return (IEnumerator) new GameManager__HandleFrameDelayedEnteredFoyerc__Iterator4()
         {
           p = p
         };
@@ -1059,7 +1059,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedReturnToFoyer_CR(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<DelayedReturnToFoyer_CR>c__Iterator5()
+        return (IEnumerator) new GameManager__DelayedReturnToFoyer_CRc__Iterator5()
         {
           delay = delay,
           _this = this
@@ -1391,7 +1391,7 @@ namespace ETG.Core.Systems.Management
         bool doMainMenu)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<DelayedLoadCharacterSelect_CR>c__Iterator6()
+        return (IEnumerator) new GameManager__DelayedLoadCharacterSelect_CRc__Iterator6()
         {
           delay = delay,
           unloadGameData = unloadGameData,
@@ -1480,7 +1480,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedLoadBossrushFloor_CR(float delay, int bossrushTargetFloor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<DelayedLoadBossrushFloor_CR>c__Iterator7()
+        return (IEnumerator) new GameManager__DelayedLoadBossrushFloor_CRc__Iterator7()
         {
           delay = delay,
           bossrushTargetFloor = bossrushTargetFloor,
@@ -1559,7 +1559,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedLoadCustomLevel_CR(float delay, string customLevel)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<DelayedLoadCustomLevel_CR>c__Iterator8()
+        return (IEnumerator) new GameManager__DelayedLoadCustomLevel_CRc__Iterator8()
         {
           delay = delay,
           customLevel = customLevel,
@@ -1576,7 +1576,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedLoadNextLevel_CR(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<DelayedLoadNextLevel_CR>c__Iterator9()
+        return (IEnumerator) new GameManager__DelayedLoadNextLevel_CRc__Iterator9()
         {
           delay = delay,
           _this = this
@@ -1587,7 +1587,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator LoadLevelByIndex(int nextIndex)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<LoadLevelByIndex>c__IteratorA()
+        return (IEnumerator) new GameManager__LoadLevelByIndexc__IteratorA()
         {
           nextIndex = nextIndex,
           _this = this
@@ -1648,7 +1648,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator LoadGameOver_CR(string gameOverSource)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<LoadGameOver_CR>c__IteratorB()
+        return (IEnumerator) new GameManager__LoadGameOver_CRc__IteratorB()
         {
           gameOverSource = gameOverSource,
           _this = this
@@ -1682,7 +1682,7 @@ namespace ETG.Core.Systems.Management
         bool isHandoff = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<EndLoadNextLevelAsync_CR>c__IteratorC()
+        return (IEnumerator) new GameManager__EndLoadNextLevelAsync_CRc__IteratorC()
         {
           async = async,
           loadingSceneHierarchy = loadingSceneHierarchy,
@@ -1694,7 +1694,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator LoadNextLevelAsync_CR(GameLevelDefinition gld)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<LoadNextLevelAsync_CR>c__IteratorD()
+        return (IEnumerator) new GameManager__LoadNextLevelAsync_CRc__IteratorD()
         {
           gld = gld,
           _this = this
@@ -1799,7 +1799,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator PixelateCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<PixelateCR>c__IteratorE()
+        return (IEnumerator) new GameManager__PixelateCRc__IteratorE()
         {
           _this = this
         };
@@ -1809,7 +1809,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DepixelateCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<DepixelateCR>c__IteratorF()
+        return (IEnumerator) new GameManager__DepixelateCRc__IteratorF()
         {
           _this = this
         };
@@ -2023,7 +2023,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<Start>c__Iterator10()
+        return (IEnumerator) new GameManager__Startc__Iterator10()
         {
           _this = this
         };
@@ -2378,7 +2378,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator EncounterableUnlockedChecks()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<EncounterableUnlockedChecks>c__Iterator11()
+        return (IEnumerator) new GameManager__EncounterableUnlockedChecksc__Iterator11()
         {
           _this = this
         };
@@ -2393,7 +2393,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleCustomTimer(float allowedTime, Action<bool> valueSetter)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.<HandleCustomTimer>c__Iterator12()
+        return (IEnumerator) new GameManager__HandleCustomTimerc__Iterator12()
         {
           valueSetter = valueSetter,
           allowedTime = allowedTime

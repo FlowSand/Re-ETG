@@ -56,7 +56,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleDeath()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TimedObjectKiller.<HandleDeath>c__Iterator0()
+        return (IEnumerator) new TimedObjectKiller__HandleDeathc__Iterator0()
         {
           _this = this
         };

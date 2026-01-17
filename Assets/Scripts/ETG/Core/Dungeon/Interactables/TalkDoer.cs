@@ -132,7 +132,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator DelayedVanish(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.<DelayedVanish>c__Iterator0()
+        return (IEnumerator) new TalkDoer__DelayedVanishc__Iterator0()
         {
           delay = delay,
           _this = this
@@ -158,7 +158,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleBetrayal()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.<HandleBetrayal>c__Iterator1()
+        return (IEnumerator) new TalkDoer__HandleBetrayalc__Iterator1()
         {
           _this = this
         };
@@ -218,7 +218,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator MakeUninteractable(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.<MakeUninteractable>c__Iterator2()
+        return (IEnumerator) new TalkDoer__MakeUninteractablec__Iterator2()
         {
           duration = duration,
           _this = this
@@ -248,7 +248,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator DelayedChestOpen(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.<DelayedChestOpen>c__Iterator3()
+        return (IEnumerator) new TalkDoer__DelayedChestOpenc__Iterator3()
         {
           delay = delay,
           _this = this
@@ -259,7 +259,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator PlayDelayedTruthChestLockOpen(tk2dSpriteAnimator lockAnimator, float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.<PlayDelayedTruthChestLockOpen>c__Iterator4()
+        return (IEnumerator) new TalkDoer__PlayDelayedTruthChestLockOpenc__Iterator4()
         {
           delay = delay,
           lockAnimator = lockAnimator
@@ -323,7 +323,7 @@ namespace ETG.Core.Dungeon.Interactables
         TextBoxManager.BoxSlideOrientation slideOrientation)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.<HandleForcedTimedSpeech>c__Iterator5()
+        return (IEnumerator) new TalkDoer__HandleForcedTimedSpeechc__Iterator5()
         {
           initialDelay = initialDelay,
           words = words,
@@ -337,7 +337,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleConversationModule(TalkModule module)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.<HandleConversationModule>c__Iterator6()
+        return (IEnumerator) new TalkDoer__HandleConversationModulec__Iterator6()
         {
           module = module,
           _this = this
@@ -353,7 +353,7 @@ namespace ETG.Core.Dungeon.Interactables
         string overrideFollowupModule2)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.<HandleResponses>c__Iterator7()
+        return (IEnumerator) new TalkDoer__HandleResponsesc__Iterator7()
         {
           module = module,
           overrideResponse1 = overrideResponse1,
@@ -368,7 +368,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator WaitForTextRevealed()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.<WaitForTextRevealed>c__Iterator8()
+        return (IEnumerator) new TalkDoer__WaitForTextRevealedc__Iterator8()
         {
           _this = this
         };
@@ -378,7 +378,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator WaitForPlayer()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.<WaitForPlayer>c__Iterator9()
+        return (IEnumerator) new TalkDoer__WaitForPlayerc__Iterator9()
         {
           _this = this
         };

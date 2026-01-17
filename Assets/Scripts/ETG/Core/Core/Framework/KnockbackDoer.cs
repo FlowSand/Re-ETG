@@ -135,7 +135,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleKnockbackInvulnerabilityPeriod(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new KnockbackDoer.<HandleKnockbackInvulnerabilityPeriod>c__Iterator0()
+        return (IEnumerator) new KnockbackDoer__HandleKnockbackInvulnerabilityPeriodc__Iterator0()
         {
           duration = duration,
           _this = this

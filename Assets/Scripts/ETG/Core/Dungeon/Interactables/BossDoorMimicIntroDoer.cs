@@ -107,7 +107,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator DoIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossDoorMimicIntroDoer.<DoIntro>c__Iterator0()
+        return (IEnumerator) new BossDoorMimicIntroDoer__DoIntroc__Iterator0()
         {
           _this = this
         };

@@ -1937,7 +1937,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator TweenDelay()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new iTween.<TweenDelay>c__Iterator0()
+        return (IEnumerator) new iTween__TweenDelayc__Iterator0()
         {
           _this = this
         };
@@ -1962,7 +1962,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator TweenRestart()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new iTween.<TweenRestart>c__Iterator1()
+        return (IEnumerator) new iTween__TweenRestartc__Iterator1()
         {
           _this = this
         };
@@ -2938,7 +2938,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new iTween.<Start>c__Iterator2()
+        return (IEnumerator) new iTween__Startc__Iterator2()
         {
           _this = this
         };

@@ -66,7 +66,7 @@ namespace ETG.Core.Systems.Data
       private IEnumerator DelayedSpawnIcon()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BestForLastChallengeModifier.<DelayedSpawnIcon>c__Iterator0()
+        return (IEnumerator) new BestForLastChallengeModifier__DelayedSpawnIconc__Iterator0()
         {
           _this = this
         };

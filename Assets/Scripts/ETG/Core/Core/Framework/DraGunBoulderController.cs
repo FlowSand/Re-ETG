@@ -56,7 +56,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleBreakCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunBoulderController.<HandleBreakCR>c__Iterator0()
+        return (IEnumerator) new DraGunBoulderController__HandleBreakCRc__Iterator0()
         {
           _this = this
         };

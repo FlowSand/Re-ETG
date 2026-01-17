@@ -66,7 +66,7 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleDrinkEstus(PlayerController user)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EstusFlaskItem.<HandleDrinkEstus>c__Iterator0()
+        return (IEnumerator) new EstusFlaskItem__HandleDrinkEstusc__Iterator0()
         {
           user = user,
           _this = this

@@ -94,7 +94,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleSilence(Vector2 centerPoint, float expandSpeed, float maxRadius)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossStatuesController.<HandleSilence>c__Iterator0()
+        return (IEnumerator) new BossStatuesController__HandleSilencec__Iterator0()
         {
           maxRadius = maxRadius,
           expandSpeed = expandSpeed,

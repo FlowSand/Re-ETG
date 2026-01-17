@@ -43,7 +43,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ElectricMushroom.<Start>c__Iterator0()
+        return (IEnumerator) new ElectricMushroom__Startc__Iterator0()
         {
           _this = this
         };
@@ -91,7 +91,7 @@ namespace ETG.Core.Dungeon.Interactables
       public IEnumerator Trigger_CR(bool IsPrimaryTarget = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ElectricMushroom.<Trigger_CR>c__Iterator1()
+        return (IEnumerator) new ElectricMushroom__Trigger_CRc__Iterator1()
         {
           IsPrimaryTarget = IsPrimaryTarget,
           _this = this
@@ -102,7 +102,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator FrameDelayedBreak()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ElectricMushroom.<FrameDelayedBreak>c__Iterator2()
+        return (IEnumerator) new ElectricMushroom__FrameDelayedBreakc__Iterator2()
         {
           _this = this
         };
@@ -112,7 +112,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleFiring()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ElectricMushroom.<HandleFiring>c__Iterator3()
+        return (IEnumerator) new ElectricMushroom__HandleFiringc__Iterator3()
         {
           _this = this
         };

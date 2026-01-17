@@ -56,7 +56,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandlePortal()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PastLabMarineController.<HandlePortal>c__Iterator0()
+        return (IEnumerator) new PastLabMarineController__HandlePortalc__Iterator0()
         {
           _this = this
         };
@@ -66,7 +66,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PastLabMarineController.<Start>c__Iterator1()
+        return (IEnumerator) new PastLabMarineController__Startc__Iterator1()
         {
           _this = this
         };
@@ -76,7 +76,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleInitialRoomLockdown()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PastLabMarineController.<HandleInitialRoomLockdown>c__Iterator2()
+        return (IEnumerator) new PastLabMarineController__HandleInitialRoomLockdownc__Iterator2()
         {
           _this = this
         };
@@ -107,7 +107,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleHide()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PastLabMarineController.<HandleHide>c__Iterator3()
+        return (IEnumerator) new PastLabMarineController__HandleHidec__Iterator3()
         {
           _this = this
         };
@@ -117,7 +117,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleShoot()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PastLabMarineController.<HandleShoot>c__Iterator4()
+        return (IEnumerator) new PastLabMarineController__HandleShootc__Iterator4()
         {
           _this = this
         };
@@ -151,7 +151,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleManualTalkDuration(Transform source, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PastLabMarineController.<HandleManualTalkDuration>c__Iterator5()
+        return (IEnumerator) new PastLabMarineController__HandleManualTalkDurationc__Iterator5()
         {
           duration = duration,
           source = source,
@@ -163,7 +163,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleDialogue(string stringKey)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PastLabMarineController.<HandleDialogue>c__Iterator6()
+        return (IEnumerator) new PastLabMarineController__HandleDialoguec__Iterator6()
         {
           stringKey = stringKey,
           _this = this
@@ -183,7 +183,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBossKilled()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PastLabMarineController.<HandleBossKilled>c__Iterator7()
+        return (IEnumerator) new PastLabMarineController__HandleBossKilledc__Iterator7()
         {
           _this = this
         };

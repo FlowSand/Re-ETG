@@ -178,7 +178,7 @@ public class Dungeon : MonoBehaviour
   private IEnumerator Start()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.<Start>c__Iterator0()
+    return (IEnumerator) new Dungeon__Startc__Iterator0()
     {
       _this = this
     };
@@ -226,7 +226,7 @@ public class Dungeon : MonoBehaviour
   public IEnumerator Regenerate(bool cleanup)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.<Regenerate>c__Iterator1()
+    return (IEnumerator) new Dungeon__Regeneratec__Iterator1()
     {
       cleanup = cleanup,
       _this = this
@@ -237,7 +237,7 @@ public class Dungeon : MonoBehaviour
   private IEnumerator FrameDelayedMidgameInitialization(MidGameSaveData midgameSave)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.<FrameDelayedMidgameInitialization>c__Iterator2()
+    return (IEnumerator) new Dungeon__FrameDelayedMidgameInitializationc__Iterator2()
     {
       midgameSave = midgameSave
     };
@@ -313,7 +313,7 @@ public class Dungeon : MonoBehaviour
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    Dungeon.<ForceRegenerateDelayed>c__Iterator3 delayedCIterator3 = new Dungeon.<ForceRegenerateDelayed>c__Iterator3();
+    Dungeon__ForceRegenerateDelayedc__Iterator3 delayedCIterator3 = new Dungeon__ForceRegenerateDelayedc__Iterator3();
     return (IEnumerator) delayedCIterator3;
   }
 
@@ -321,7 +321,7 @@ public class Dungeon : MonoBehaviour
   private IEnumerator PostDungeonGenerationCleanup()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.<PostDungeonGenerationCleanup>c__Iterator4()
+    return (IEnumerator) new Dungeon__PostDungeonGenerationCleanupc__Iterator4()
     {
       _this = this
     };
@@ -1208,7 +1208,7 @@ public class Dungeon : MonoBehaviour
     int cursedHealthMaximum)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.<HandleDarkSoulsReset_CR>c__Iterator5()
+    return (IEnumerator) new Dungeon__HandleDarkSoulsReset_CRc__Iterator5()
     {
       dropItems = dropItems,
       p = p,
@@ -1888,7 +1888,7 @@ public class Dungeon : MonoBehaviour
   private IEnumerator HandleAmbientChannelVFX()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.<HandleAmbientChannelVFX>c__Iterator6()
+    return (IEnumerator) new Dungeon__HandleAmbientChannelVFXc__Iterator6()
     {
       _this = this
     };
@@ -1910,7 +1910,7 @@ public class Dungeon : MonoBehaviour
   private IEnumerator HandleAmbientPitVFX()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.<HandleAmbientPitVFX>c__Iterator7()
+    return (IEnumerator) new Dungeon__HandleAmbientPitVFXc__Iterator7()
     {
       _this = this
     };

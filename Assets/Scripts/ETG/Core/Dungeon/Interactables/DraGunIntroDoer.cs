@@ -70,7 +70,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator RunEmbers()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunIntroDoer.<RunEmbers>c__Iterator0()
+        return (IEnumerator) new DraGunIntroDoer__RunEmbersc__Iterator0()
         {
           _this = this
         };
@@ -87,7 +87,7 @@ namespace ETG.Core.Dungeon.Interactables
       public IEnumerator DoIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunIntroDoer.<DoIntro>c__Iterator1()
+        return (IEnumerator) new DraGunIntroDoer__DoIntroc__Iterator1()
         {
           _this = this
         };

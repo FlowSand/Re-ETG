@@ -49,7 +49,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleEnemySuck(AIActor target)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BigShotgunController.<HandleEnemySuck>c__Iterator0()
+        return (IEnumerator) new BigShotgunController__HandleEnemySuckc__Iterator0()
         {
           target = target,
           _this = this

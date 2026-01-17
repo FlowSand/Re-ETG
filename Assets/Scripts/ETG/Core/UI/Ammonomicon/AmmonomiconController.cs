@@ -312,7 +312,7 @@ namespace ETG.Core.UI.Ammonomicon
         EncounterTrackable targetTrackable = null)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconController.<HandleOpenAmmonomicon>c__Iterator0()
+        return (IEnumerator) new AmmonomiconController__HandleOpenAmmonomiconc__Iterator0()
         {
           isShortAnimation = isShortAnimation,
           isDeath = isDeath,
@@ -334,7 +334,7 @@ namespace ETG.Core.UI.Ammonomicon
       private IEnumerator HandleQueuedUnlocks_CR(List<EncounterDatabaseEntry> trackableData)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconController.<HandleQueuedUnlocks_CR>c__Iterator1()
+        return (IEnumerator) new AmmonomiconController__HandleQueuedUnlocks_CRc__Iterator1()
         {
           trackableData = trackableData,
           _this = this
@@ -408,7 +408,7 @@ namespace ETG.Core.UI.Ammonomicon
       private IEnumerator HandleCloseMotion()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconController.<HandleCloseMotion>c__Iterator2()
+        return (IEnumerator) new AmmonomiconController__HandleCloseMotionc__Iterator2()
         {
           _this = this
         };
@@ -418,7 +418,7 @@ namespace ETG.Core.UI.Ammonomicon
       private IEnumerator HandleCloseAmmonomicon(bool doDestroy = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconController.<HandleCloseAmmonomicon>c__Iterator3()
+        return (IEnumerator) new AmmonomiconController__HandleCloseAmmonomiconc__Iterator3()
         {
           _this = this
         };
@@ -523,7 +523,7 @@ namespace ETG.Core.UI.Ammonomicon
       private IEnumerator HandleTurnToPreviousPage()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconController.<HandleTurnToPreviousPage>c__Iterator4()
+        return (IEnumerator) new AmmonomiconController__HandleTurnToPreviousPagec__Iterator4()
         {
           _this = this
         };
@@ -582,7 +582,7 @@ namespace ETG.Core.UI.Ammonomicon
       private IEnumerator HandleTurnToNextPage()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconController.<HandleTurnToNextPage>c__Iterator5()
+        return (IEnumerator) new AmmonomiconController__HandleTurnToNextPagec__Iterator5()
         {
           _this = this
         };

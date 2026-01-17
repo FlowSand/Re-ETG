@@ -236,7 +236,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator SubtractNewPlatformVelocity()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new dfCharacterMotorCS.<SubtractNewPlatformVelocity>c__Iterator0()
+        return (IEnumerator) new dfCharacterMotorCS__SubtractNewPlatformVelocityc__Iterator0()
         {
           _this = this
         };

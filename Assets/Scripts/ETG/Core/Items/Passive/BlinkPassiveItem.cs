@@ -81,7 +81,7 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleAfterImageStop(PlayerController player)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BlinkPassiveItem.<HandleAfterImageStop>c__Iterator0()
+        return (IEnumerator) new BlinkPassiveItem__HandleAfterImageStopc__Iterator0()
         {
           player = player,
           _this = this

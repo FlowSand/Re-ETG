@@ -24,7 +24,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WizardPurpleHomingShots1.<Top>c__Iterator0()
+        return (IEnumerator) new WizardPurpleHomingShots1__Topc__Iterator0()
         {
           _this = this
         };
@@ -72,7 +72,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new WizardPurpleHomingShots1.KnightBullet.<Top>c__Iterator0()
+          return (IEnumerator) new WizardPurpleHomingShots1.KnightBullet__Topc__Iterator0()
           {
             _this = this
           };
@@ -93,7 +93,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new WizardPurpleHomingShots1.MageBullet.<Top>c__Iterator0()
+          return (IEnumerator) new WizardPurpleHomingShots1.MageBullet__Topc__Iterator0()
           {
             _this = this
           };
@@ -115,7 +115,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new WizardPurpleHomingShots1.BardBullet.<Top>c__Iterator0()
+          return (IEnumerator) new WizardPurpleHomingShots1.BardBullet__Topc__Iterator0()
           {
             _this = this
           };
@@ -149,7 +149,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new WizardPurpleHomingShots1.RogueBullet.<Top>c__Iterator0()
+          return (IEnumerator) new WizardPurpleHomingShots1.RogueBullet__Topc__Iterator0()
           {
             _this = this
           };

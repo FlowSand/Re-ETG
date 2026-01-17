@@ -156,7 +156,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleSkyWinds()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CharacterSelectController.<HandleSkyWinds>c__Iterator0()
+        return (IEnumerator) new CharacterSelectController__HandleSkyWindsc__Iterator0()
         {
           _this = this
         };
@@ -166,7 +166,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleGroundWinds()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CharacterSelectController.<HandleGroundWinds>c__Iterator1()
+        return (IEnumerator) new CharacterSelectController__HandleGroundWindsc__Iterator1()
         {
           _this = this
         };
@@ -176,7 +176,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandlePterodactyl()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CharacterSelectController.<HandlePterodactyl>c__Iterator2()
+        return (IEnumerator) new CharacterSelectController__HandlePterodactylc__Iterator2()
         {
           _this = this
         };
@@ -211,7 +211,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator OnSelectedCharacter(float delayTime, string playerPrefabPath)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CharacterSelectController.<OnSelectedCharacter>c__Iterator3()
+        return (IEnumerator) new CharacterSelectController__OnSelectedCharacterc__Iterator3()
         {
           delayTime = delayTime,
           _this = this
@@ -222,7 +222,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleTransition(GameObject arrowToSlide, GameObject targetArrow)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CharacterSelectController.<HandleTransition>c__Iterator4()
+        return (IEnumerator) new CharacterSelectController__HandleTransitionc__Iterator4()
         {
           arrowToSlide = arrowToSlide,
           targetArrow = targetArrow,
@@ -291,7 +291,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator LerpFadeAlpha(float startAlpha, float targetAlpha, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CharacterSelectController.<LerpFadeAlpha>c__Iterator5()
+        return (IEnumerator) new CharacterSelectController__LerpFadeAlphac__Iterator5()
         {
           startAlpha = startAlpha,
           targetAlpha = targetAlpha,

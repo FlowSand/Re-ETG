@@ -53,7 +53,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator FindTarget()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MicroCuccoController.<FindTarget>c__Iterator0()
+        return (IEnumerator) new MicroCuccoController__FindTargetc__Iterator0()
         {
           _this = this
         };

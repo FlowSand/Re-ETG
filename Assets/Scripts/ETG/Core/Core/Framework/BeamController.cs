@@ -145,7 +145,7 @@ namespace ETG.Core.Core.Framework
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BeamController.<HandleFiringBeam>c__Iterator0()
+        return (IEnumerator) new BeamController__HandleFiringBeamc__Iterator0()
         {
           duration = duration,
           source = source,

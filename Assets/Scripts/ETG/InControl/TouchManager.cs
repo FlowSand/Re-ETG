@@ -108,7 +108,7 @@ public class TouchManager : SingletonMonoBehavior<TouchManager, InControlManager
   private IEnumerator UpdateScreenSizeAtEndOfFrame()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new TouchManager.<UpdateScreenSizeAtEndOfFrame>c__Iterator0()
+    return (IEnumerator) new TouchManager__UpdateScreenSizeAtEndOfFramec__Iterator0()
     {
       _this = this
     };

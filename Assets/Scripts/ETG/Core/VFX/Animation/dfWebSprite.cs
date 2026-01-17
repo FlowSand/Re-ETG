@@ -84,7 +84,7 @@ namespace ETG.Core.VFX.Animation
       private IEnumerator downloadTexture()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new dfWebSprite.<downloadTexture>c__Iterator0()
+        return (IEnumerator) new dfWebSprite__downloadTexturec__Iterator0()
         {
           _this = this
         };

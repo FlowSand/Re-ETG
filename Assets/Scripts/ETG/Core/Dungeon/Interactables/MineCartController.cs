@@ -85,7 +85,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MineCartController.<Start>c__Iterator0()
+        return (IEnumerator) new MineCartController__Startc__Iterator0()
         {
           _this = this
         };
@@ -120,7 +120,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator StartFallAnimation(IntVector2 dir, SpeculativeRigidbody targetRigidbody)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MineCartController.<StartFallAnimation>c__Iterator1()
+        return (IEnumerator) new MineCartController__StartFallAnimationc__Iterator1()
         {
           targetRigidbody = targetRigidbody,
           dir = dir,
@@ -573,7 +573,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator DelayedWarpToStart()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MineCartController.<DelayedWarpToStart>c__Iterator2()
+        return (IEnumerator) new MineCartController__DelayedWarpToStartc__Iterator2()
         {
           _this = this
         };
@@ -803,7 +803,7 @@ namespace ETG.Core.Dungeon.Interactables
         Vector2 sourceOffset)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MineCartController.<HandleLerpCameraPlayerPosition>c__Iterator3()
+        return (IEnumerator) new MineCartController__HandleLerpCameraPlayerPositionc__Iterator3()
         {
           targetPlayer = targetPlayer,
           sourceOffset = sourceOffset

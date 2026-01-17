@@ -43,7 +43,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FindTarget()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BeeProjectile.<FindTarget>c__Iterator0()
+        return (IEnumerator) new BeeProjectile__FindTargetc__Iterator0()
         {
           _this = this
         };

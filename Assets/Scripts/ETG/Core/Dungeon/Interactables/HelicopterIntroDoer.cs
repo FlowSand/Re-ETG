@@ -38,7 +38,7 @@ namespace ETG.Core.Dungeon.Interactables
       public IEnumerator DoIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HelicopterIntroDoer.<DoIntro>c__Iterator0()
+        return (IEnumerator) new HelicopterIntroDoer__DoIntroc__Iterator0()
         {
           _this = this
         };

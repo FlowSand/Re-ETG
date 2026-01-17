@@ -64,7 +64,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleAggro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CuccoController.<HandleAggro>c__Iterator0()
+        return (IEnumerator) new CuccoController__HandleAggroc__Iterator0()
         {
           _this = this
         };

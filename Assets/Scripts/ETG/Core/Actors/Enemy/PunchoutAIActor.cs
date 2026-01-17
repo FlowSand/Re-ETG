@@ -309,7 +309,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator DropKeyCR(bool isLeft)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PunchoutAIActor.<DropKeyCR>c__Iterator0()
+        return (IEnumerator) new PunchoutAIActor__DropKeyCRc__Iterator0()
         {
           isLeft = isLeft,
           _this = this
@@ -325,7 +325,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator DropRewardCR(bool isLeft, params PickupObject.ItemQuality[] targetQualities)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PunchoutAIActor.<DropRewardCR>c__Iterator1()
+        return (IEnumerator) new PunchoutAIActor__DropRewardCRc__Iterator1()
         {
           targetQualities = targetQualities,
           isLeft = isLeft,

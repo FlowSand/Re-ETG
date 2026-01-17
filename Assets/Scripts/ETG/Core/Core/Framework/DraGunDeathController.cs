@@ -51,7 +51,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator LerpCrackEmission(float startVal, float targetVal, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunDeathController.<LerpCrackEmission>c__Iterator0()
+        return (IEnumerator) new DraGunDeathController__LerpCrackEmissionc__Iterator0()
         {
           duration = duration,
           startVal = startVal,
@@ -64,7 +64,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator LerpCrackColor(Color targetVal, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunDeathController.<LerpCrackColor>c__Iterator1()
+        return (IEnumerator) new DraGunDeathController__LerpCrackColorc__Iterator1()
         {
           duration = duration,
           targetVal = targetVal,
@@ -76,7 +76,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunDeathController.<OnDeathExplosionsCR>c__Iterator2()
+        return (IEnumerator) new DraGunDeathController__OnDeathExplosionsCRc__Iterator2()
         {
           _this = this
         };
@@ -121,7 +121,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DelayedSpriteFixer(tk2dBaseSprite sprite)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunDeathController.<DelayedSpriteFixer>c__Iterator3()
+        return (IEnumerator) new DraGunDeathController__DelayedSpriteFixerc__Iterator3()
         {
           sprite = sprite
         };

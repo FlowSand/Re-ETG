@@ -186,7 +186,7 @@ namespace ETG.Core.Combat.Projectiles
         bool shouldReflectInstead)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SilencerInstance.<HandleSilence>c__Iterator0()
+        return (IEnumerator) new SilencerInstance__HandleSilencec__Iterator0()
         {
           maxRadius = maxRadius,
           expandSpeed = expandSpeed,
@@ -213,7 +213,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator BackupDistortionCleanup()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SilencerInstance.<BackupDistortionCleanup>c__Iterator1()
+        return (IEnumerator) new SilencerInstance__BackupDistortionCleanupc__Iterator1()
         {
           _this = this
         };

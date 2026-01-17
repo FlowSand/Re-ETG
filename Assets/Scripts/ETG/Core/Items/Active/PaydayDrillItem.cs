@@ -185,7 +185,7 @@ namespace ETG.Core.Items.Active
       protected IEnumerator HandleCombatWaves(Dungeon d, RoomHandler newRoom, Chest sourceChest)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PaydayDrillItem.<HandleCombatWaves>c__Iterator0()
+        return (IEnumerator) new PaydayDrillItem__HandleCombatWavesc__Iterator0()
         {
           sourceChest = sourceChest,
           d = d,
@@ -200,7 +200,7 @@ namespace ETG.Core.Items.Active
         Chest sourceChest)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PaydayDrillItem.<HandleTransitionToFallbackCombatRoom>c__Iterator1()
+        return (IEnumerator) new PaydayDrillItem__HandleTransitionToFallbackCombatRoomc__Iterator1()
         {
           sourceChest = sourceChest,
           sourceRoom = sourceRoom,
@@ -214,7 +214,7 @@ namespace ETG.Core.Items.Active
         Chest sourceChest)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PaydayDrillItem.<HandleSeamlessTransitionToCombatRoom>c__Iterator2()
+        return (IEnumerator) new PaydayDrillItem__HandleSeamlessTransitionToCombatRoomc__Iterator2()
         {
           sourceChest = sourceChest,
           sourceRoom = sourceRoom,
@@ -245,7 +245,7 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleCombatRoomShrinking(RoomHandler targetRoom)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PaydayDrillItem.<HandleCombatRoomShrinking>c__Iterator3()
+        return (IEnumerator) new PaydayDrillItem__HandleCombatRoomShrinkingc__Iterator3()
         {
           targetRoom = targetRoom,
           _this = this
@@ -259,7 +259,7 @@ namespace ETG.Core.Items.Active
         Chest sourceChest)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PaydayDrillItem.<HandleCombatRoomExpansion>c__Iterator4()
+        return (IEnumerator) new PaydayDrillItem__HandleCombatRoomExpansionc__Iterator4()
         {
           targetRoom = targetRoom,
           sourceChest = sourceChest,

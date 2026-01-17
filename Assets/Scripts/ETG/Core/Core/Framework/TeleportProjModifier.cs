@@ -118,7 +118,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DoTeleport()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TeleportProjModifier.<DoTeleport>c__Iterator0()
+        return (IEnumerator) new TeleportProjModifier__DoTeleportc__Iterator0()
         {
           _this = this
         };

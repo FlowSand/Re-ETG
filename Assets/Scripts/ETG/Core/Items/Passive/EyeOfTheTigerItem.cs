@@ -67,7 +67,7 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleTimedKillStatBoost(PlayerController target)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EyeOfTheTigerItem.<HandleTimedKillStatBoost>c__Iterator0()
+        return (IEnumerator) new EyeOfTheTigerItem__HandleTimedKillStatBoostc__Iterator0()
         {
           target = target,
           _this = this

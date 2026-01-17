@@ -323,7 +323,7 @@ namespace ETG.Core.Systems.Utilities
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Exploder.<DoDistortionWaveLocal>c__Iterator0()
+        return (IEnumerator) new Exploder__DoDistortionWaveLocalc__Iterator0()
         {
           center = center,
           distortionIntensity = distortionIntensity,
@@ -379,7 +379,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleCurrentExplosionNotification(float t)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Exploder.<HandleCurrentExplosionNotification>c__Iterator1()
+        return (IEnumerator) new Exploder__HandleCurrentExplosionNotificationc__Iterator1()
         {
           t = t
         };
@@ -392,7 +392,7 @@ namespace ETG.Core.Systems.Utilities
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Exploder.<HandleBulletDeletionFrames>c__Iterator2()
+        return (IEnumerator) new Exploder__HandleBulletDeletionFramesc__Iterator2()
         {
           bulletDeletionSqrRadius = bulletDeletionSqrRadius,
           duration = duration,
@@ -404,7 +404,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleCirc(tk2dSprite AdditiveCircSprite, float targetScale, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Exploder.<HandleCirc>c__Iterator3()
+        return (IEnumerator) new Exploder__HandleCircc__Iterator3()
         {
           AdditiveCircSprite = AdditiveCircSprite,
           targetScale = targetScale,
@@ -423,7 +423,7 @@ namespace ETG.Core.Systems.Utilities
         bool ignoreDamageCaps)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Exploder.<HandleExplosion>c__Iterator4()
+        return (IEnumerator) new Exploder__HandleExplosionc__Iterator4()
         {
           data = data,
           damageTypes = damageTypes,

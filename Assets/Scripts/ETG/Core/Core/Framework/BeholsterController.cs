@@ -256,7 +256,7 @@ namespace ETG.Core.Core.Framework
       protected IEnumerator FireBeam(ProjectileModule mod)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BeholsterController.<FireBeam>c__Iterator0()
+        return (IEnumerator) new BeholsterController__FireBeamc__Iterator0()
         {
           mod = mod,
           _this = this

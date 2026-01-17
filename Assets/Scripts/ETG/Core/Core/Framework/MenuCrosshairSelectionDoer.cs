@@ -76,7 +76,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLerpyDerpy(MenuCrosshairSelectionDoer targetCrosshairDoer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MenuCrosshairSelectionDoer.<HandleLerpyDerpy>c__Iterator0()
+        return (IEnumerator) new MenuCrosshairSelectionDoer__HandleLerpyDerpyc__Iterator0()
         {
           targetCrosshairDoer = targetCrosshairDoer,
           _this = this

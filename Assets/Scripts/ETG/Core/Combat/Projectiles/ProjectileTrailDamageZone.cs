@@ -26,7 +26,7 @@ namespace ETG.Core.Combat.Projectiles
       public IEnumerator HandleSpawnBehavior()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ProjectileTrailDamageZone.<HandleSpawnBehavior>c__Iterator0()
+        return (IEnumerator) new ProjectileTrailDamageZone__HandleSpawnBehaviorc__Iterator0()
         {
           _this = this
         };

@@ -321,7 +321,7 @@ public class RoomHandler
   public IEnumerator DeferredMarkVisibleRoomsActive(PlayerController p)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new RoomHandler.<DeferredMarkVisibleRoomsActive>c__Iterator0()
+    return (IEnumerator) new RoomHandler__DeferredMarkVisibleRoomsActivec__Iterator0()
     {
       p = p,
       _this = this
@@ -340,7 +340,7 @@ public class RoomHandler
   private IEnumerator HandleTimedReinforcementLayer(PrototypeRoomObjectLayer layer)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new RoomHandler.<HandleTimedReinforcementLayer>c__Iterator1()
+    return (IEnumerator) new RoomHandler__HandleTimedReinforcementLayerc__Iterator1()
     {
       layer = layer,
       _this = this
@@ -418,7 +418,7 @@ public class RoomHandler
     bool reverse = false)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new RoomHandler.<HandleBecomeTerrifyingDarkRoom>c__Iterator2()
+    return (IEnumerator) new RoomHandler__HandleBecomeTerrifyingDarkRoomc__Iterator2()
     {
       reverse = reverse,
       duration = duration,
@@ -725,7 +725,7 @@ public class RoomHandler
   protected IEnumerator HandleReinforcementPreloading()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new RoomHandler.<HandleReinforcementPreloading>c__Iterator3()
+    return (IEnumerator) new RoomHandler__HandleReinforcementPreloadingc__Iterator3()
     {
       _this = this
     };

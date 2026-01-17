@@ -421,7 +421,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleRecursiveElectrification(IntVector2 cellIndex)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DeadlyDeadlyGoopManager.<HandleRecursiveElectrification>c__Iterator0()
+        return (IEnumerator) new DeadlyDeadlyGoopManager__HandleRecursiveElectrificationc__Iterator0()
         {
           cellIndex = cellIndex,
           _this = this
@@ -1563,7 +1563,7 @@ namespace ETG.Core.Systems.Management
         AnimationCurve goopCurve)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DeadlyDeadlyGoopManager.<TimedAddGoopArc_CR>c__Iterator1()
+        return (IEnumerator) new DeadlyDeadlyGoopManager__TimedAddGoopArc_CRc__Iterator1()
         {
           duration = duration,
           goopCurve = goopCurve,
@@ -1592,7 +1592,7 @@ namespace ETG.Core.Systems.Management
         bool suppressSplashes = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DeadlyDeadlyGoopManager.<TimedAddGoopCircle_CR>c__Iterator2()
+        return (IEnumerator) new DeadlyDeadlyGoopManager__TimedAddGoopCircle_CRc__Iterator2()
         {
           duration = duration,
           radius = radius,
@@ -1677,7 +1677,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator TimedAddGoopLine_CR(Vector2 p1, Vector2 p2, float radius, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DeadlyDeadlyGoopManager.<TimedAddGoopLine_CR>c__Iterator3()
+        return (IEnumerator) new DeadlyDeadlyGoopManager__TimedAddGoopLine_CRc__Iterator3()
         {
           p1 = p1,
           duration = duration,
@@ -1753,7 +1753,7 @@ namespace ETG.Core.Systems.Management
       public IEnumerator TimedAddGoopRect_CR(Vector2 min, Vector2 max, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DeadlyDeadlyGoopManager.<TimedAddGoopRect_CR>c__Iterator4()
+        return (IEnumerator) new DeadlyDeadlyGoopManager__TimedAddGoopRect_CRc__Iterator4()
         {
           duration = duration,
           min = min,

@@ -160,7 +160,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ActiveItemDisable(int index, PlayerController player)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HoveringGunSynergyProcessor.<ActiveItemDisable>c__Iterator0()
+        return (IEnumerator) new HoveringGunSynergyProcessor__ActiveItemDisablec__Iterator0()
         {
           player = player,
           index = index,
@@ -172,7 +172,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator TimedDisable(int index, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HoveringGunSynergyProcessor.<TimedDisable>c__Iterator1()
+        return (IEnumerator) new HoveringGunSynergyProcessor__TimedDisablec__Iterator1()
         {
           duration = duration,
           index = index,

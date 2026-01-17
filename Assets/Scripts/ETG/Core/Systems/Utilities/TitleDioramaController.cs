@@ -37,7 +37,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.<Start>c__Iterator0()
+        return (IEnumerator) new TitleDioramaController__Startc__Iterator0()
         {
           _this = this
         };
@@ -95,7 +95,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Core(bool isFoyer = true)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.<Core>c__Iterator1()
+        return (IEnumerator) new TitleDioramaController__Corec__Iterator1()
         {
           isFoyer = isFoyer,
           _this = this
@@ -120,7 +120,7 @@ namespace ETG.Core.Systems.Utilities
         bool linearStep = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.<LerpFadeValue>c__Iterator2()
+        return (IEnumerator) new TitleDioramaController__LerpFadeValuec__Iterator2()
         {
           duration = duration,
           startValue = startValue,
@@ -134,7 +134,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleFinalEyeholeEmission()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.<HandleFinalEyeholeEmission>c__Iterator3()
+        return (IEnumerator) new TitleDioramaController__HandleFinalEyeholeEmissionc__Iterator3()
         {
           _this = this
         };
@@ -148,7 +148,7 @@ namespace ETG.Core.Systems.Utilities
         bool really = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.<LerpEyeholeEmissionColorPower>c__Iterator4()
+        return (IEnumerator) new TitleDioramaController__LerpEyeholeEmissionColorPowerc__Iterator4()
         {
           duration = duration,
           startValue = startValue,
@@ -166,7 +166,7 @@ namespace ETG.Core.Systems.Utilities
         bool really = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.<LerpEyeholeEmission>c__Iterator5()
+        return (IEnumerator) new TitleDioramaController__LerpEyeholeEmissionc__Iterator5()
         {
           duration = duration,
           startValue = startValue,
@@ -188,7 +188,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleReveal()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.<HandleReveal>c__Iterator6()
+        return (IEnumerator) new TitleDioramaController__HandleRevealc__Iterator6()
         {
           _this = this
         };
@@ -198,7 +198,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleLichIdlePhase()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.<HandleLichIdlePhase>c__Iterator7()
+        return (IEnumerator) new TitleDioramaController__HandleLichIdlePhasec__Iterator7()
         {
           _this = this
         };
@@ -208,7 +208,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleLichFiddlePhase()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.<HandleLichFiddlePhase>c__Iterator8()
+        return (IEnumerator) new TitleDioramaController__HandleLichFiddlePhasec__Iterator8()
         {
           _this = this
         };
@@ -218,7 +218,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleLichCapePhase()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.<HandleLichCapePhase>c__Iterator9()
+        return (IEnumerator) new TitleDioramaController__HandleLichCapePhasec__Iterator9()
         {
           _this = this
         };

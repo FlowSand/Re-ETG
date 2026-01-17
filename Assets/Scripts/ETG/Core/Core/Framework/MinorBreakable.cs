@@ -138,7 +138,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MinorBreakable.<Start>c__Iterator0()
+        return (IEnumerator) new MinorBreakable__Startc__Iterator0()
         {
           _this = this
         };

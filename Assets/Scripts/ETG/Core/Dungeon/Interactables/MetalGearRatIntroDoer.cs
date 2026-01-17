@@ -58,7 +58,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator MusicStopperCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatIntroDoer.<MusicStopperCR>c__Iterator0()
+        return (IEnumerator) new MetalGearRatIntroDoer__MusicStopperCRc__Iterator0()
         {
           _this = this
         };
@@ -90,7 +90,7 @@ namespace ETG.Core.Dungeon.Interactables
       public IEnumerator DoIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatIntroDoer.<DoIntro>c__Iterator1()
+        return (IEnumerator) new MetalGearRatIntroDoer__DoIntroc__Iterator1()
         {
           _this = this
         };

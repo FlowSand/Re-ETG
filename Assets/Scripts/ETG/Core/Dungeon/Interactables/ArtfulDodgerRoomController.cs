@@ -79,7 +79,7 @@ namespace ETG.Core.Dungeon.Interactables
       public IEnumerator HandleReward()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ArtfulDodgerRoomController.<HandleReward>c__Iterator0()
+        return (IEnumerator) new ArtfulDodgerRoomController__HandleRewardc__Iterator0()
         {
           _this = this
         };

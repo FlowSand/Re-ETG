@@ -24,7 +24,7 @@ namespace ETG.Core.Systems.Data
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DemonWallChallengeModifier.<Start>c__Iterator0()
+        return (IEnumerator) new DemonWallChallengeModifier__Startc__Iterator0()
         {
           _this = this
         };

@@ -68,7 +68,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator AddLowObstacleCollider()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SharkProjectile.<AddLowObstacleCollider>c__Iterator0()
+        return (IEnumerator) new SharkProjectile__AddLowObstacleColliderc__Iterator0()
         {
           _this = this
         };
@@ -85,7 +85,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FrameDelayedDestruction()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SharkProjectile.<FrameDelayedDestruction>c__Iterator1()
+        return (IEnumerator) new SharkProjectile__FrameDelayedDestructionc__Iterator1()
         {
           _this = this
         };
@@ -179,7 +179,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleEat(AIActor targetEat)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SharkProjectile.<HandleEat>c__Iterator2()
+        return (IEnumerator) new SharkProjectile__HandleEatc__Iterator2()
         {
           targetEat = targetEat
         };
@@ -189,7 +189,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FindTarget()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SharkProjectile.<FindTarget>c__Iterator3()
+        return (IEnumerator) new SharkProjectile__FindTargetc__Iterator3()
         {
           _this = this
         };

@@ -91,7 +91,7 @@ namespace ETG.Core.Actors.Behaviors
       private IEnumerator HandleDelayedSpawnStunVFX(Vector2 targetPoint)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new StunEnemiesBehavior.<HandleDelayedSpawnStunVFX>c__Iterator0()
+        return (IEnumerator) new StunEnemiesBehavior__HandleDelayedSpawnStunVFXc__Iterator0()
         {
           _this = this
         };

@@ -37,7 +37,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleEnemyDeath(AIActor target, Vector2 motionDirection)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CombineEvaporateEffect.<HandleEnemyDeath>c__Iterator0()
+        return (IEnumerator) new CombineEvaporateEffect__HandleEnemyDeathc__Iterator0()
         {
           target = target,
           motionDirection = motionDirection,

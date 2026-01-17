@@ -135,7 +135,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator InvariantWaitForSeconds(float seconds)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.<InvariantWaitForSeconds>c__Iterator0()
+        return (IEnumerator) new BossCardUIController__InvariantWaitForSecondsc__Iterator0()
         {
           seconds = seconds,
           _this = this
@@ -280,7 +280,7 @@ namespace ETG.Core.Core.Framework
       public IEnumerator CoreSequence(PortraitSlideSettings pss)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.<CoreSequence>c__Iterator1()
+        return (IEnumerator) new BossCardUIController__CoreSequencec__Iterator1()
         {
           pss = pss,
           _this = this
@@ -299,7 +299,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLightStreaks()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.<HandleLightStreaks>c__Iterator2()
+        return (IEnumerator) new BossCardUIController__HandleLightStreaksc__Iterator2()
         {
           _this = this
         };
@@ -309,7 +309,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator WomboCombo(PortraitSlideSettings pss)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.<WomboCombo>c__Iterator3()
+        return (IEnumerator) new BossCardUIController__WomboComboc__Iterator3()
         {
           pss = pss,
           _this = this
@@ -320,7 +320,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDelayedCoopCharacterSlide()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.<HandleDelayedCoopCharacterSlide>c__Iterator4()
+        return (IEnumerator) new BossCardUIController__HandleDelayedCoopCharacterSlidec__Iterator4()
         {
           _this = this
         };
@@ -330,7 +330,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleCharacterSlides()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.<HandleCharacterSlides>c__Iterator5()
+        return (IEnumerator) new BossCardUIController__HandleCharacterSlidesc__Iterator5()
         {
           _this = this
         };
@@ -340,7 +340,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator LerpTextsToTargets()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.<LerpTextsToTargets>c__Iterator6()
+        return (IEnumerator) new BossCardUIController__LerpTextsToTargetsc__Iterator6()
         {
           _this = this
         };
@@ -364,7 +364,7 @@ namespace ETG.Core.Core.Framework
         Material targetMaterial)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.<FlashColorToColor>c__Iterator7()
+        return (IEnumerator) new BossCardUIController__FlashColorToColorc__Iterator7()
         {
           fadeDuration = fadeDuration,
           startColor = startColor,
@@ -378,7 +378,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator FlashWhiteToBlack(Material targetMaterial, bool backToClear)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.<FlashWhiteToBlack>c__Iterator8()
+        return (IEnumerator) new BossCardUIController__FlashWhiteToBlackc__Iterator8()
         {
           targetMaterial = targetMaterial,
           backToClear = backToClear,

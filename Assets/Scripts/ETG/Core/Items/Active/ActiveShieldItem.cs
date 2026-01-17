@@ -46,7 +46,7 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleDuration(PlayerController user)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ActiveShieldItem.<HandleDuration>c__Iterator0()
+        return (IEnumerator) new ActiveShieldItem__HandleDurationc__Iterator0()
         {
           user = user,
           _this = this

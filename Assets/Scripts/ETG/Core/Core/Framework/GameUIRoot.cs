@@ -304,7 +304,7 @@ namespace ETG.Core.Core.Framework
         dfLabel damageLabel)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.<HandleDamageNumberCR>c__Iterator0()
+        return (IEnumerator) new GameUIRoot__HandleDamageNumberCRc__Iterator0()
         {
           startWorldPosition = startWorldPosition,
           worldFloorHeight = worldFloorHeight,
@@ -389,7 +389,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDemoModeTutorialScreens()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.<HandleDemoModeTutorialScreens>c__Iterator1()
+        return (IEnumerator) new GameUIRoot__HandleDemoModeTutorialScreensc__Iterator1()
         {
           _this = this
         };
@@ -459,7 +459,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.<Start>c__Iterator2()
+        return (IEnumerator) new GameUIRoot__Startc__Iterator2()
         {
           _this = this
         };
@@ -644,7 +644,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator NonCoreControlTransition(dfControl control, bool reversed = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.<NonCoreControlTransition>c__Iterator3()
+        return (IEnumerator) new GameUIRoot__NonCoreControlTransitionc__Iterator3()
         {
           reversed = reversed,
           control = control,
@@ -684,7 +684,7 @@ namespace ETG.Core.Core.Framework
         bool instant)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.<TransitionTargetMotionGroup_CR>c__Iterator4()
+        return (IEnumerator) new GameUIRoot__TransitionTargetMotionGroup_CRc__Iterator4()
         {
           motionGroup = motionGroup,
           instant = instant,
@@ -698,7 +698,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator CoreUITransition()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.<CoreUITransition>c__Iterator5()
+        return (IEnumerator) new GameUIRoot__CoreUITransitionc__Iterator5()
         {
           _this = this
         };
@@ -987,7 +987,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleMetalGearGunSelect(PlayerController targetPlayer, int numToL)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.<HandleMetalGearGunSelect>c__Iterator6()
+        return (IEnumerator) new GameUIRoot__HandleMetalGearGunSelectc__Iterator6()
         {
           targetPlayer = targetPlayer,
           numToL = numToL,
@@ -1005,7 +1005,7 @@ namespace ETG.Core.Core.Framework
         bool forceUseExistingList = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.<HandlePauseInventoryFolding>c__Iterator7()
+        return (IEnumerator) new GameUIRoot__HandlePauseInventoryFoldingc__Iterator7()
         {
           targetPlayer = targetPlayer,
           overrideTransitionTime = overrideTransitionTime,
@@ -1093,7 +1093,7 @@ namespace ETG.Core.Core.Framework
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.<HandleGenericPositionLerp>c__Iterator8()
+        return (IEnumerator) new GameUIRoot__HandleGenericPositionLerpc__Iterator8()
         {
           targetControl = targetControl,
           duration = duration,
@@ -1499,7 +1499,7 @@ namespace ETG.Core.Core.Framework
         string customStringKey = "")
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.<FlashReloadLabel>c__Iterator9()
+        return (IEnumerator) new GameUIRoot__FlashReloadLabelc__Iterator9()
         {
           attachPlayer = attachPlayer,
           target = target,
@@ -1679,7 +1679,7 @@ namespace ETG.Core.Core.Framework
         string[] responses)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.<HandlePlayerConversationResponse>c__IteratorA()
+        return (IEnumerator) new GameUIRoot__HandlePlayerConversationResponsec__IteratorA()
         {
           interactingPlayer = interactingPlayer,
           responses = responses,
@@ -1787,7 +1787,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DelayedCenterControl(dfControl panel)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.<DelayedCenterControl>c__IteratorB()
+        return (IEnumerator) new GameUIRoot__DelayedCenterControlc__IteratorB()
         {
           panel = panel
         };

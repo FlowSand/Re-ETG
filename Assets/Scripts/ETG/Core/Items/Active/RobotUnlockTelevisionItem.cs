@@ -89,7 +89,7 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleDodgeRoll(SpeculativeRigidbody targetRigidbody, Vector2 direction)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RobotUnlockTelevisionItem.<HandleDodgeRoll>c__Iterator0()
+        return (IEnumerator) new RobotUnlockTelevisionItem__HandleDodgeRollc__Iterator0()
         {
           targetRigidbody = targetRigidbody,
           direction = direction,

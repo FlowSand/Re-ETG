@@ -39,7 +39,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.<Start>c__Iterator0()
+        return (IEnumerator) new GuidePastController__Startc__Iterator0()
         {
           _this = this
         };
@@ -66,7 +66,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator BossCutscene_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.<BossCutscene_CR>c__Iterator1()
+        return (IEnumerator) new GuidePastController__BossCutscene_CRc__Iterator1()
         {
           _this = this
         };
@@ -76,7 +76,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleDogGoingNuts()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.<HandleDogGoingNuts>c__Iterator2()
+        return (IEnumerator) new GuidePastController__HandleDogGoingNutsc__Iterator2()
         {
           _this = this
         };
@@ -86,7 +86,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBulletTrap()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.<HandleBulletTrap>c__Iterator3()
+        return (IEnumerator) new GuidePastController__HandleBulletTrapc__Iterator3()
         {
           _this = this
         };
@@ -142,7 +142,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBossKilled()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.<HandleBossKilled>c__Iterator4()
+        return (IEnumerator) new GuidePastController__HandleBossKilledc__Iterator4()
         {
           _this = this
         };
@@ -177,7 +177,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleManualTalkDuration(Transform source, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.<HandleManualTalkDuration>c__Iterator5()
+        return (IEnumerator) new GuidePastController__HandleManualTalkDurationc__Iterator5()
         {
           duration = duration,
           source = source,
@@ -189,7 +189,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleIntroConversation()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.<HandleIntroConversation>c__Iterator6()
+        return (IEnumerator) new GuidePastController__HandleIntroConversationc__Iterator6()
         {
           _this = this
         };
@@ -199,7 +199,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleAntechamberConversation()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.<HandleAntechamberConversation>c__Iterator7()
+        return (IEnumerator) new GuidePastController__HandleAntechamberConversationc__Iterator7()
         {
           _this = this
         };

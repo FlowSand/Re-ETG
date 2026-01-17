@@ -73,7 +73,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleDig(Gun sourceGun)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ShovelGunModifier.<HandleDig>c__Iterator0()
+        return (IEnumerator) new ShovelGunModifier__HandleDigc__Iterator0()
         {
           sourceGun = sourceGun,
           _this = this

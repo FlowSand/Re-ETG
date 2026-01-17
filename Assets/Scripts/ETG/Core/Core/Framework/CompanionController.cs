@@ -52,7 +52,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDelayedInitialization()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CompanionController.<HandleDelayedInitialization>c__Iterator0()
+        return (IEnumerator) new CompanionController__HandleDelayedInitializationc__Iterator0()
         {
           _this = this
         };
@@ -164,7 +164,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDelayedBlank(PlayerController arg1)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CompanionController.<HandleDelayedBlank>c__Iterator1()
+        return (IEnumerator) new CompanionController__HandleDelayedBlankc__Iterator1()
         {
           arg1 = arg1,
           _this = this
@@ -376,7 +376,7 @@ namespace ETG.Core.Core.Framework
         PlayerOrbitalItem orbitalItemTarget = null)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CompanionController.<HandleBabyMimicTransform>c__Iterator2()
+        return (IEnumerator) new CompanionController__HandleBabyMimicTransformc__Iterator2()
         {
           sourceItem = sourceItem,
           targetGuid = targetGuid,
@@ -397,7 +397,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleCopDeath_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CompanionController.<HandleCopDeath_CR>c__Iterator3()
+        return (IEnumerator) new CompanionController__HandleCopDeath_CRc__Iterator3()
         {
           _this = this
         };
@@ -439,7 +439,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DelayedPitReturn()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CompanionController.<DelayedPitReturn>c__Iterator4()
+        return (IEnumerator) new CompanionController__DelayedPitReturnc__Iterator4()
         {
           _this = this
         };
@@ -449,7 +449,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator ScoopPlayerToSafety()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CompanionController.<ScoopPlayerToSafety>c__Iterator5()
+        return (IEnumerator) new CompanionController__ScoopPlayerToSafetyc__Iterator5()
         {
           _this = this
         };

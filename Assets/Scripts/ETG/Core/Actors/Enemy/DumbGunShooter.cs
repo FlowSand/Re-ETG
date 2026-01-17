@@ -34,7 +34,7 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleGunShoot()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DumbGunShooter.<HandleGunShoot>c__Iterator0()
+        return (IEnumerator) new DumbGunShooter__HandleGunShootc__Iterator0()
         {
           _this = this
         };

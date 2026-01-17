@@ -76,7 +76,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator RunParticleSystems()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GiantPowderSkullIntroDoer.<RunParticleSystems>c__Iterator0()
+        return (IEnumerator) new GiantPowderSkullIntroDoer__RunParticleSystemsc__Iterator0()
         {
           _this = this
         };
@@ -86,7 +86,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator DoIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GiantPowderSkullIntroDoer.<DoIntro>c__Iterator1()
+        return (IEnumerator) new GiantPowderSkullIntroDoer__DoIntroc__Iterator1()
         {
           _this = this
         };

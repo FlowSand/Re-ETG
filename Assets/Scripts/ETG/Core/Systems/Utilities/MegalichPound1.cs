@@ -24,7 +24,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MegalichPound1.<Top>c__Iterator0()
+        return (IEnumerator) new MegalichPound1__Topc__Iterator0()
         {
           _this = this
         };
@@ -44,7 +44,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MegalichPound1.DyingBullet.<Top>c__Iterator0()
+          return (IEnumerator) new MegalichPound1.DyingBullet__Topc__Iterator0()
           {
             _this = this
           };

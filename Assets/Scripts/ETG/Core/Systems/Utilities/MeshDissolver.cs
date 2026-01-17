@@ -23,7 +23,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Dissolve(Vector2 startPosition, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MeshDissolver.<Dissolve>c__Iterator0()
+        return (IEnumerator) new MeshDissolver__Dissolvec__Iterator0()
         {
           startPosition = startPosition,
           duration = duration,

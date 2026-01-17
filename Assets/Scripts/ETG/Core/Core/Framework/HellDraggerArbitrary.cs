@@ -20,7 +20,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleGrabbyGrab(PlayerController grabbedPlayer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HellDraggerArbitrary.<HandleGrabbyGrab>c__Iterator0()
+        return (IEnumerator) new HellDraggerArbitrary__HandleGrabbyGrabc__Iterator0()
         {
           grabbedPlayer = grabbedPlayer
         };

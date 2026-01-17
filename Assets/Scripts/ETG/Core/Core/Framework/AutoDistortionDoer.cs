@@ -35,7 +35,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Distort(Vector2 centerPoint)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AutoDistortionDoer.<Distort>c__Iterator0()
+        return (IEnumerator) new AutoDistortionDoer__Distortc__Iterator0()
         {
           centerPoint = centerPoint,
           _this = this

@@ -143,7 +143,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator WaitForCurrentItemFlipToEnd(PlayerItem newItem, int change)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIItemController.<WaitForCurrentItemFlipToEnd>c__Iterator0()
+        return (IEnumerator) new GameUIItemController__WaitForCurrentItemFlipToEndc__Iterator0()
         {
           change = change,
           newItem = newItem,
@@ -155,7 +155,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator HandleItemCardFlipReverse(PlayerItem newGun)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIItemController.<HandleItemCardFlipReverse>c__Iterator1()
+        return (IEnumerator) new GameUIItemController__HandleItemCardFlipReversec__Iterator1()
         {
           newGun = newGun,
           _this = this
@@ -166,7 +166,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator HandleItemCardFlip(PlayerItem newItem)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIItemController.<HandleItemCardFlip>c__Iterator2()
+        return (IEnumerator) new GameUIItemController__HandleItemCardFlipc__Iterator2()
         {
           _this = this
         };

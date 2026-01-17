@@ -21,7 +21,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ColorSquadHelper.<Start>c__Iterator0()
+        return (IEnumerator) new ColorSquadHelper__Startc__Iterator0()
         {
           _this = this
         };

@@ -45,7 +45,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleCoreIdle()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CharacterSelectFacecardIdleDoer.<HandleCoreIdle>c__Iterator0()
+        return (IEnumerator) new CharacterSelectFacecardIdleDoer__HandleCoreIdlec__Iterator0()
         {
           _this = this
         };

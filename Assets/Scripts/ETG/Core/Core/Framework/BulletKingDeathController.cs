@@ -41,7 +41,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletKingDeathController.<OnDeathExplosionsCR>c__Iterator0()
+        return (IEnumerator) new BulletKingDeathController__OnDeathExplosionsCRc__Iterator0()
         {
           _this = this
         };

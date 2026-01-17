@@ -28,7 +28,7 @@ namespace ETG.Core.Combat.Projectiles
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalGuideClap1.<Top>c__Iterator0()
+        return (IEnumerator) new BossFinalGuideClap1__Topc__Iterator0()
         {
           _this = this
         };
@@ -38,7 +38,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FireBolt()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalGuideClap1.<FireBolt>c__Iterator1()
+        return (IEnumerator) new BossFinalGuideClap1__FireBoltc__Iterator1()
         {
           _this = this
         };
@@ -55,7 +55,7 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BossFinalGuideClap1.LightningBullet.<Top>c__Iterator0()
+          return (IEnumerator) new BossFinalGuideClap1.LightningBullet__Topc__Iterator0()
           {
             _this = this
           };

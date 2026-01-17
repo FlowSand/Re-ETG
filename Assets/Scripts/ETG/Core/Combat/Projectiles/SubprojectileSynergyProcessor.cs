@@ -34,7 +34,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator CreateSubprojectile()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SubprojectileSynergyProcessor.<CreateSubprojectile>c__Iterator0()
+        return (IEnumerator) new SubprojectileSynergyProcessor__CreateSubprojectilec__Iterator0()
         {
           _this = this
         };

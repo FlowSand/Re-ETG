@@ -47,7 +47,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Drift()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalRogueDeathController.<Drift>c__Iterator0()
+        return (IEnumerator) new BossFinalRogueDeathController__Driftc__Iterator0()
         {
           _this = this
         };
@@ -57,7 +57,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalRogueDeathController.<OnDeathExplosionsCR>c__Iterator1()
+        return (IEnumerator) new BossFinalRogueDeathController__OnDeathExplosionsCRc__Iterator1()
         {
           _this = this
         };

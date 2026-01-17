@@ -725,7 +725,7 @@ namespace ETG.Core.Dungeon.Interactables
         float explosionMidDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameActor.<HandleSmallExplosionsStyleEffect>c__Iterator0()
+        return (IEnumerator) new GameActor__HandleSmallExplosionsStyleEffectc__Iterator0()
         {
           explosionCount = explosionCount,
           vfxPrefab = vfxPrefab,
@@ -794,7 +794,7 @@ namespace ETG.Core.Dungeon.Interactables
         bool alreadyMiddleCenter)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameActor.<HandleFairyFlyEffect>c__Iterator1()
+        return (IEnumerator) new GameActor__HandleFairyFlyEffectc__Iterator1()
         {
           instantiated = instantiated,
           duration = duration,

@@ -34,7 +34,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConvictPastController.<Start>c__Iterator0()
+        return (IEnumerator) new ConvictPastController__Startc__Iterator0()
         {
           _this = this
         };
@@ -51,7 +51,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBossStart(float initialDelay = 0.0f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConvictPastController.<HandleBossStart>c__Iterator1()
+        return (IEnumerator) new ConvictPastController__HandleBossStartc__Iterator1()
         {
           initialDelay = initialDelay,
           _this = this
@@ -62,7 +62,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator DoPath(TalkDoerLite source, bool doDestroy)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConvictPastController.<DoPath>c__Iterator2()
+        return (IEnumerator) new ConvictPastController__DoPathc__Iterator2()
         {
           source = source,
           doDestroy = doDestroy
@@ -78,7 +78,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator EnableHeadlights()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConvictPastController.<EnableHeadlights>c__Iterator3()
+        return (IEnumerator) new ConvictPastController__EnableHeadlightsc__Iterator3()
         {
           _this = this
         };
@@ -88,7 +88,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBossKilled(Transform bossTransform)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConvictPastController.<HandleBossKilled>c__Iterator4()
+        return (IEnumerator) new ConvictPastController__HandleBossKilledc__Iterator4()
         {
           bossTransform = bossTransform,
           _this = this
@@ -104,7 +104,7 @@ namespace ETG.Core.Systems.Utilities
         bool isThoughtBubble)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConvictPastController.<DoAmbientTalk>c__Iterator5()
+        return (IEnumerator) new ConvictPastController__DoAmbientTalkc__Iterator5()
         {
           isThoughtBubble = isThoughtBubble,
           baseTransform = baseTransform,

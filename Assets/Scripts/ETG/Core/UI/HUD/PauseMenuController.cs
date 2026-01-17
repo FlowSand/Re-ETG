@@ -189,7 +189,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator HandleQuickRestart()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PauseMenuController.<HandleQuickRestart>c__Iterator0()
+        return (IEnumerator) new PauseMenuController__HandleQuickRestartc__Iterator0()
         {
           _this = this
         };
@@ -199,7 +199,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator HandleCloseGameEntirely()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PauseMenuController.<HandleCloseGameEntirely>c__Iterator1()
+        return (IEnumerator) new PauseMenuController__HandleCloseGameEntirelyc__Iterator1()
         {
           _this = this
         };
@@ -275,7 +275,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator DelayTriggerAnimators(float timeMultiplier = 1f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PauseMenuController.<DelayTriggerAnimators>c__Iterator2()
+        return (IEnumerator) new PauseMenuController__DelayTriggerAnimatorsc__Iterator2()
         {
           timeMultiplier = timeMultiplier,
           _this = this
@@ -286,7 +286,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator HandleBlockReveal(bool reverse, float timeMultiplier = 1f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PauseMenuController.<HandleBlockReveal>c__Iterator3()
+        return (IEnumerator) new PauseMenuController__HandleBlockRevealc__Iterator3()
         {
           reverse = reverse,
           timeMultiplier = timeMultiplier,
@@ -298,7 +298,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator HandleShwoop(bool reverse, float timeMultlier = 1f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PauseMenuController.<HandleShwoop>c__Iterator4()
+        return (IEnumerator) new PauseMenuController__HandleShwoopc__Iterator4()
         {
           reverse = reverse,
           timeMultlier = timeMultlier,
@@ -386,7 +386,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator HandleExitToMainMenu()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PauseMenuController.<HandleExitToMainMenu>c__Iterator5()
+        return (IEnumerator) new PauseMenuController__HandleExitToMainMenuc__Iterator5()
         {
           _this = this
         };

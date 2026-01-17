@@ -211,7 +211,7 @@ namespace ETG.Core.Actors.Behaviors
       private IEnumerator ForceAnimateCR(PlayerController player)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GripMasterBehavior.<ForceAnimateCR>c__Iterator0()
+        return (IEnumerator) new GripMasterBehavior__ForceAnimateCRc__Iterator0()
         {
           _this = this
         };

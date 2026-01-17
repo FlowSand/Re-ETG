@@ -24,7 +24,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AngryBookBasicAttack2.<Top>c__Iterator0()
+        return (IEnumerator) new AngryBookBasicAttack2__Topc__Iterator0()
         {
           _this = this
         };
@@ -44,7 +44,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new AngryBookBasicAttack2.DefaultBullet.<Top>c__Iterator0()
+          return (IEnumerator) new AngryBookBasicAttack2.DefaultBullet__Topc__Iterator0()
           {
             _this = this
           };

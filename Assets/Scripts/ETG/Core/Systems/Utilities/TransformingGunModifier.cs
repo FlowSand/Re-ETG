@@ -33,7 +33,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TransformingGunModifier.<Start>c__Iterator0()
+        return (IEnumerator) new TransformingGunModifier__Startc__Iterator0()
         {
           _this = this
         };

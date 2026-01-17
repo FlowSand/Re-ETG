@@ -21,7 +21,7 @@ namespace ETG.Core.VFX.Animation
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SpriteAnimatorStopper.<Start>c__Iterator0()
+        return (IEnumerator) new SpriteAnimatorStopper__Startc__Iterator0()
         {
           _this = this
         };

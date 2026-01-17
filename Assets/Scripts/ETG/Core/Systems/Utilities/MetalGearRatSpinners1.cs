@@ -31,7 +31,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatSpinners1.<Top>c__Iterator0()
+        return (IEnumerator) new MetalGearRatSpinners1__Topc__Iterator0()
         {
           _this = this
         };
@@ -41,7 +41,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator SpawnInnerRing()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatSpinners1.<SpawnInnerRing>c__Iterator1()
+        return (IEnumerator) new MetalGearRatSpinners1__SpawnInnerRingc__Iterator1()
         {
           _this = this
         };
@@ -51,7 +51,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator SpawnOuterRing()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatSpinners1.<SpawnOuterRing>c__Iterator2()
+        return (IEnumerator) new MetalGearRatSpinners1__SpawnOuterRingc__Iterator2()
         {
           _this = this
         };
@@ -126,7 +126,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MetalGearRatSpinners1.CircleDummy.<Top>c__Iterator0()
+          return (IEnumerator) new MetalGearRatSpinners1.CircleDummy__Topc__Iterator0()
           {
             _this = this
           };
@@ -160,7 +160,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MetalGearRatSpinners1.CircleBullet.<Top>c__Iterator0()
+          return (IEnumerator) new MetalGearRatSpinners1.CircleBullet__Topc__Iterator0()
           {
             _this = this
           };
@@ -195,7 +195,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MetalGearRatSpinners1.OrbitBullet.<Top>c__Iterator0()
+          return (IEnumerator) new MetalGearRatSpinners1.OrbitBullet__Topc__Iterator0()
           {
             _this = this
           };

@@ -50,7 +50,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FrameDelayedDestruction()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TigerProjectile.<FrameDelayedDestruction>c__Iterator0()
+        return (IEnumerator) new TigerProjectile__FrameDelayedDestructionc__Iterator0()
         {
           _this = this
         };
@@ -81,7 +81,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleEat(AIActor targetEat)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TigerProjectile.<HandleEat>c__Iterator1()
+        return (IEnumerator) new TigerProjectile__HandleEatc__Iterator1()
         {
           targetEat = targetEat
         };
@@ -91,7 +91,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FindTarget()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TigerProjectile.<FindTarget>c__Iterator2()
+        return (IEnumerator) new TigerProjectile__FindTargetc__Iterator2()
         {
           _this = this
         };

@@ -124,7 +124,7 @@ namespace ETG.Core.VFX.Animation
       private IEnumerator TimedDespawn(float t)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ParticleKiller.<TimedDespawn>c__Iterator0()
+        return (IEnumerator) new ParticleKiller__TimedDespawnc__Iterator0()
         {
           t = t,
           _this = this
@@ -140,7 +140,7 @@ namespace ETG.Core.VFX.Animation
       private IEnumerator TimedTransferToSubEmitter(float t)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ParticleKiller.<TimedTransferToSubEmitter>c__Iterator1()
+        return (IEnumerator) new ParticleKiller__TimedTransferToSubEmitterc__Iterator1()
         {
           t = t,
           _this = this

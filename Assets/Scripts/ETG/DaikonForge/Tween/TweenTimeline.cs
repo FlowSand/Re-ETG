@@ -200,7 +200,7 @@ public class TweenTimeline : TweenBase, IEnumerable<TweenBase>, IEnumerable
   private IEnumerator<TweenBase> enumerateTweens()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator<TweenBase>) new TweenTimeline.<enumerateTweens>c__Iterator0()
+    return (IEnumerator<TweenBase>) new TweenTimeline__enumerateTweensc__Iterator0()
     {
       _this = this
     };

@@ -235,7 +235,7 @@ public static class RenderMeshBuilder
   public static IEnumerator Build(tk2dTileMap tileMap, bool editMode, bool forceBuild)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new RenderMeshBuilder.<Build>c__Iterator0()
+    return (IEnumerator) new RenderMeshBuilder__Buildc__Iterator0()
     {
       editMode = editMode,
       forceBuild = forceBuild,

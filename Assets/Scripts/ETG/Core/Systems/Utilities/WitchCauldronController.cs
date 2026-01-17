@@ -31,7 +31,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBackgroundBubblin()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WitchCauldronController.<HandleBackgroundBubblin>c__Iterator0()
+        return (IEnumerator) new WitchCauldronController__HandleBackgroundBubblinc__Iterator0()
         {
           _this = this
         };
@@ -61,7 +61,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator DelayedItemSpawn(GameObject item, float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WitchCauldronController.<DelayedItemSpawn>c__Iterator1()
+        return (IEnumerator) new WitchCauldronController__DelayedItemSpawnc__Iterator1()
         {
           delay = delay,
           item = item,
@@ -78,7 +78,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleObjectPotToss(tk2dBaseSprite spriteSource, Vector3 startPosition)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WitchCauldronController.<HandleObjectPotToss>c__Iterator2()
+        return (IEnumerator) new WitchCauldronController__HandleObjectPotTossc__Iterator2()
         {
           spriteSource = spriteSource,
           startPosition = startPosition,

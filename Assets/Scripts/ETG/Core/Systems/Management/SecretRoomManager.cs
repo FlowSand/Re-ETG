@@ -295,7 +295,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleDoorOpening(bool openState, SecretRoomDoorBeer doorObject)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SecretRoomManager.<HandleDoorOpening>c__Iterator0()
+        return (IEnumerator) new SecretRoomManager__HandleDoorOpeningc__Iterator0()
         {
           openState = openState,
           doorObject = doorObject,

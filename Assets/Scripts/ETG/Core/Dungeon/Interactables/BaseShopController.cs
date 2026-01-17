@@ -118,7 +118,7 @@ namespace ETG.Core.Dungeon.Interactables
       protected IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BaseShopController.<Start>c__Iterator0()
+        return (IEnumerator) new BaseShopController__Startc__Iterator0()
         {
           _this = this
         };
@@ -128,7 +128,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleDelayedFoyerInitialization()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BaseShopController.<HandleDelayedFoyerInitialization>c__Iterator1()
+        return (IEnumerator) new BaseShopController__HandleDelayedFoyerInitializationc__Iterator1()
         {
           _this = this
         };

@@ -23,7 +23,7 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MegalichSmokeRings1.<Top>c__Iterator0()
+        return (IEnumerator) new MegalichSmokeRings1__Topc__Iterator0()
         {
           _this = this
         };
@@ -48,7 +48,7 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MegalichSmokeRings1.SmokeBullet.<Top>c__Iterator0()
+          return (IEnumerator) new MegalichSmokeRings1.SmokeBullet__Topc__Iterator0()
           {
             _this = this
           };
@@ -58,7 +58,7 @@ namespace ETG.Core.Systems.Utilities
         private IEnumerator ChangeSpinSpeedTask(float newSpinSpeed, int term)
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MegalichSmokeRings1.SmokeBullet.<ChangeSpinSpeedTask>c__Iterator1()
+          return (IEnumerator) new MegalichSmokeRings1.SmokeBullet__ChangeSpinSpeedTaskc__Iterator1()
           {
             newSpinSpeed = newSpinSpeed,
             term = term,

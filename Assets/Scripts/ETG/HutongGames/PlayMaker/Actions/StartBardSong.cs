@@ -71,7 +71,7 @@ public class StartBardSong : FsmStateAction
     List<StatModifier> activeModifiers)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new StartBardSong.<HandleSongLifetime>c__Iterator0()
+    return (IEnumerator) new StartBardSong__HandleSongLifetimec__Iterator0()
     {
       _this = this
     };

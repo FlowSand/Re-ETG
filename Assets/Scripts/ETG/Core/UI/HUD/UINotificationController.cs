@@ -110,7 +110,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator BG_CoroutineProcessor()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new UINotificationController.<BG_CoroutineProcessor>c__Iterator0()
+        return (IEnumerator) new UINotificationController__BG_CoroutineProcessorc__Iterator0()
         {
           _this = this
         };
@@ -270,7 +270,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator PruneQueuedNotifications()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new UINotificationController.<PruneQueuedNotifications>c__Iterator1()
+        return (IEnumerator) new UINotificationController__PruneQueuedNotificationsc__Iterator1()
         {
           _this = this
         };
@@ -472,7 +472,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator HandleNotification(NotificationParams notifyParams)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new UINotificationController.<HandleNotification>c__Iterator2()
+        return (IEnumerator) new UINotificationController__HandleNotificationc__Iterator2()
         {
           notifyParams = notifyParams,
           _this = this

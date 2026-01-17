@@ -355,7 +355,7 @@ namespace ETG.Core.UI.HUD
         float delayTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MinimapUIController.<HandleDelayedAnimation>c__Iterator0()
+        return (IEnumerator) new MinimapUIController__HandleDelayedAnimationc__Iterator0()
         {
           delayTime = delayTime,
           targetAnimator = targetAnimator,
@@ -1013,7 +1013,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator MoveAllThings()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MinimapUIController.<MoveAllThings>c__Iterator1()
+        return (IEnumerator) new MinimapUIController__MoveAllThingsc__Iterator1()
         {
           _this = this
         };

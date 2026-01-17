@@ -26,7 +26,7 @@ namespace ETG.Core.Core.Framework
       public IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MegalichDeathController.<Start>c__Iterator0()
+        return (IEnumerator) new MegalichDeathController__Startc__Iterator0()
         {
           _this = this
         };
@@ -36,7 +36,7 @@ namespace ETG.Core.Core.Framework
       public IEnumerator LateStart()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MegalichDeathController.<LateStart>c__Iterator1()
+        return (IEnumerator) new MegalichDeathController__LateStartc__Iterator1()
         {
           _this = this
         };
@@ -66,7 +66,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MegalichDeathController.<OnDeathExplosionsCR>c__Iterator2()
+        return (IEnumerator) new MegalichDeathController__OnDeathExplosionsCRc__Iterator2()
         {
           _this = this
         };
@@ -86,7 +86,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MegalichDeathController.<OnDeathCR>c__Iterator3()
+        return (IEnumerator) new MegalichDeathController__OnDeathCRc__Iterator3()
         {
           _this = this
         };

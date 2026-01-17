@@ -93,7 +93,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator PopHatchCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TankTreaderController.<PopHatchCR>c__Iterator0()
+        return (IEnumerator) new TankTreaderController__PopHatchCRc__Iterator0()
         {
           _this = this
         };

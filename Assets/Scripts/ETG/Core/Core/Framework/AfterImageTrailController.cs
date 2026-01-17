@@ -91,7 +91,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDeathShadowCleanup()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AfterImageTrailController.<HandleDeathShadowCleanup>c__Iterator0()
+        return (IEnumerator) new AfterImageTrailController__HandleDeathShadowCleanupc__Iterator0()
         {
           _this = this
         };

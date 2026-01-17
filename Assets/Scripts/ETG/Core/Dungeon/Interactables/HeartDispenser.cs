@@ -119,7 +119,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator DelayedSpawnHalfHeart()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HeartDispenser.<DelayedSpawnHalfHeart>c__Iterator0()
+        return (IEnumerator) new HeartDispenser__DelayedSpawnHalfHeartc__Iterator0()
         {
           _this = this
         };

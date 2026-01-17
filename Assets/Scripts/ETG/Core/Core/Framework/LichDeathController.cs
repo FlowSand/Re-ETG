@@ -34,7 +34,7 @@ namespace ETG.Core.Core.Framework
       public IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LichDeathController.<Start>c__Iterator0()
+        return (IEnumerator) new LichDeathController__Startc__Iterator0()
         {
           _this = this
         };
@@ -44,7 +44,7 @@ namespace ETG.Core.Core.Framework
       public IEnumerator LateStart()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LichDeathController.<LateStart>c__Iterator1()
+        return (IEnumerator) new LichDeathController__LateStartc__Iterator1()
         {
           _this = this
         };
@@ -96,7 +96,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandlePostDeathCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LichDeathController.<HandlePostDeathCR>c__Iterator2()
+        return (IEnumerator) new LichDeathController__HandlePostDeathCRc__Iterator2()
         {
           _this = this
         };
@@ -106,7 +106,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDoubleLichExtraExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LichDeathController.<HandleDoubleLichExtraExplosionsCR>c__Iterator3()
+        return (IEnumerator) new LichDeathController__HandleDoubleLichExtraExplosionsCRc__Iterator3()
         {
           _this = this
         };
@@ -116,7 +116,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDoubleLichPostDeathCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LichDeathController.<HandleDoubleLichPostDeathCR>c__Iterator4()
+        return (IEnumerator) new LichDeathController__HandleDoubleLichPostDeathCRc__Iterator4()
         {
           _this = this
         };
@@ -127,7 +127,7 @@ namespace ETG.Core.Core.Framework
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        LichDeathController.<HandlePastBeingShot>c__Iterator5 beingShotCIterator5 = new LichDeathController.<HandlePastBeingShot>c__Iterator5();
+        LichDeathController__HandlePastBeingShotc__Iterator5 beingShotCIterator5 = new LichDeathController__HandlePastBeingShotc__Iterator5();
         return (IEnumerator) beingShotCIterator5;
       }
 
@@ -138,7 +138,7 @@ namespace ETG.Core.Core.Framework
         TitleDioramaController diorama)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LichDeathController.<HandleSplashBody>c__Iterator6()
+        return (IEnumerator) new LichDeathController__HandleSplashBodyc__Iterator6()
         {
           sourcePlayer = sourcePlayer,
           diorama = diorama

@@ -41,7 +41,7 @@ namespace ETG.Core.Actors.Behaviors
       public IEnumerator HandleChainExplosion()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ExplodeOnDeath.<HandleChainExplosion>c__Iterator0()
+        return (IEnumerator) new ExplodeOnDeath__HandleChainExplosionc__Iterator0()
         {
           _this = this
         };

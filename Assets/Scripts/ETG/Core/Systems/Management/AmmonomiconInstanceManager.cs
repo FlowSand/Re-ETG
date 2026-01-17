@@ -76,7 +76,7 @@ namespace ETG.Core.Systems.Management
       public IEnumerator InvariantWait(float t)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconInstanceManager.<InvariantWait>c__Iterator0()
+        return (IEnumerator) new AmmonomiconInstanceManager__InvariantWaitc__Iterator0()
         {
           t = t
         };
@@ -86,7 +86,7 @@ namespace ETG.Core.Systems.Management
       public IEnumerator HandleOpenAmmonomiconDeath()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconInstanceManager.<HandleOpenAmmonomiconDeath>c__Iterator1()
+        return (IEnumerator) new AmmonomiconInstanceManager__HandleOpenAmmonomiconDeathc__Iterator1()
         {
           _this = this
         };
@@ -96,7 +96,7 @@ namespace ETG.Core.Systems.Management
       public IEnumerator HandleOpenAmmonomicon()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconInstanceManager.<HandleOpenAmmonomicon>c__Iterator2()
+        return (IEnumerator) new AmmonomiconInstanceManager__HandleOpenAmmonomiconc__Iterator2()
         {
           _this = this
         };

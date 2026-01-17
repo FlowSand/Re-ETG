@@ -73,7 +73,7 @@ public class LoopDungeonGenerator : IDungeonGenerator
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopDungeonGenerator.<GenerateDungeonLayoutDeferred>c__Iterator0 dungeonLayoutDeferred = new LoopDungeonGenerator.<GenerateDungeonLayoutDeferred>c__Iterator0()
+    LoopDungeonGenerator__GenerateDungeonLayoutDeferredc__Iterator0 dungeonLayoutDeferred = new LoopDungeonGenerator__GenerateDungeonLayoutDeferredc__Iterator0()
     {
       _this = this
     };
@@ -87,7 +87,7 @@ public class LoopDungeonGenerator : IDungeonGenerator
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopDungeonGenerator.<GenerateDungeonLayoutDeferred_Internal>c__Iterator1 deferredInternal = new LoopDungeonGenerator.<GenerateDungeonLayoutDeferred_Internal>c__Iterator1()
+    LoopDungeonGenerator__GenerateDungeonLayoutDeferred_Internalc__Iterator1 deferredInternal = new LoopDungeonGenerator__GenerateDungeonLayoutDeferred_Internalc__Iterator1()
     {
       _this = this
     };

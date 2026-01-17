@@ -115,7 +115,7 @@ namespace ETG.Core.Core.Framework
       protected IEnumerator FlashColor(Color overrideColor, float flashTime, bool roundtrip = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PunchoutGameActor.<FlashColor>c__Iterator0()
+        return (IEnumerator) new PunchoutGameActor__FlashColorc__Iterator0()
         {
           overrideColor = overrideColor,
           flashTime = flashTime,

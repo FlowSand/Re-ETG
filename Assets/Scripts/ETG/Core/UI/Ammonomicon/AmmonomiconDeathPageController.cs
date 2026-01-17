@@ -537,7 +537,7 @@ namespace ETG.Core.UI.Ammonomicon
       private IEnumerator HandleMainMenu()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconDeathPageController.<HandleMainMenu>c__Iterator0()
+        return (IEnumerator) new AmmonomiconDeathPageController__HandleMainMenuc__Iterator0()
         {
           _this = this
         };
@@ -607,7 +607,7 @@ namespace ETG.Core.UI.Ammonomicon
       private IEnumerator HandleQuickRestart()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconDeathPageController.<HandleQuickRestart>c__Iterator1()
+        return (IEnumerator) new AmmonomiconDeathPageController__HandleQuickRestartc__Iterator1()
         {
           _this = this
         };

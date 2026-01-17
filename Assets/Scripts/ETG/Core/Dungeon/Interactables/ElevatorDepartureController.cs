@@ -116,7 +116,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator CryoWaitForPreviousElevatorDeparture()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ElevatorDepartureController.<CryoWaitForPreviousElevatorDeparture>c__Iterator0()
+        return (IEnumerator) new ElevatorDepartureController__CryoWaitForPreviousElevatorDeparturec__Iterator0()
         {
           _this = this
         };
@@ -162,7 +162,7 @@ namespace ETG.Core.Dungeon.Interactables
       public IEnumerator HandleCryoDeparture(bool playerless)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ElevatorDepartureController.<HandleCryoDeparture>c__Iterator1()
+        return (IEnumerator) new ElevatorDepartureController__HandleCryoDeparturec__Iterator1()
         {
           playerless = playerless,
           _this = this
@@ -253,7 +253,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleDepartMotion()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ElevatorDepartureController.<HandleDepartMotion>c__Iterator2()
+        return (IEnumerator) new ElevatorDepartureController__HandleDepartMotionc__Iterator2()
         {
           _this = this
         };
@@ -377,7 +377,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleArrival(float initialDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ElevatorDepartureController.<HandleArrival>c__Iterator3()
+        return (IEnumerator) new ElevatorDepartureController__HandleArrivalc__Iterator3()
         {
           initialDelay = initialDelay,
           _this = this

@@ -58,7 +58,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleBreakCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CursePotController.<HandleBreakCR>c__Iterator0()
+        return (IEnumerator) new CursePotController__HandleBreakCRc__Iterator0()
         {
           _this = this
         };

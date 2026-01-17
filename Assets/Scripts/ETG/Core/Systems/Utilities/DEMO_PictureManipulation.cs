@@ -68,7 +68,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator resetZoom()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DEMO_PictureManipulation.<resetZoom>c__Iterator0()
+        return (IEnumerator) new DEMO_PictureManipulation__resetZoomc__Iterator0()
         {
           _this = this
         };
@@ -78,7 +78,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator handleMomentum(dfGestureBase gesture)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DEMO_PictureManipulation.<handleMomentum>c__Iterator1()
+        return (IEnumerator) new DEMO_PictureManipulation__handleMomentumc__Iterator1()
         {
           gesture = gesture,
           _this = this
