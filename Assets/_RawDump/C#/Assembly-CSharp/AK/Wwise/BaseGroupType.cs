@@ -1,0 +1,20 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: AK.Wwise.BaseGroupType
+// Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: E27C5245-924B-4031-BFBB-14AA632E24E2
+// Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
+
+using System;
+
+#nullable disable
+namespace AK.Wwise;
+
+[Serializable]
+public class BaseGroupType : BaseType
+{
+  public int groupID;
+
+  protected uint GetGroupID() => (uint) this.groupID;
+
+  public override bool IsValid() => base.IsValid() && this.groupID != 0;
+}

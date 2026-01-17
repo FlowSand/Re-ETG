@@ -1,0 +1,66 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: MetalGearRatDeathController
+// Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: E27C5245-924B-4031-BFBB-14AA632E24E2
+// Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using UnityEngine;
+
+#nullable disable
+public class MetalGearRatDeathController : BraveBehaviour
+{
+  public GameObject PunchoutMinigamePrefab;
+  public List<GameObject> explosionVfx;
+  public float explosionMidDelay = 0.3f;
+  public int explosionCount = 10;
+  private bool m_challengesSuppressed;
+
+  public void Start()
+  {
+    this.healthHaver.ManualDeathHandling = true;
+    this.healthHaver.OnPreDeath += new Action<Vector2>(this.OnBossDeath);
+    this.healthHaver.OverrideKillCamTime = new float?(3.5f);
+  }
+
+  protected override void OnDestroy()
+  {
+    if (ChallengeManager.CHALLENGE_MODE_ACTIVE && this.m_challengesSuppressed)
+    {
+      ChallengeManager.Instance.SuppressChallengeStart = false;
+      this.m_challengesSuppressed = false;
+    }
+    base.OnDestroy();
+  }
+
+  private void OnBossDeath(Vector2 dir)
+  {
+    this.aiAnimator.PlayUntilCancelled("death");
+    this.aiAnimator.PlayVfx("death");
+    GameManager.Instance.StartCoroutine(this.OnDeathExplosionsCR());
+    GameManager.Instance.StartCoroutine(this.OnDeathCR());
+  }
+
+  [DebuggerHidden]
+  private IEnumerator OnDeathExplosionsCR()
+  {
+    // ISSUE: object of a compiler-generated type is created
+    return (IEnumerator) new MetalGearRatDeathController.\u003COnDeathExplosionsCR\u003Ec__Iterator0()
+    {
+      \u0024this = this
+    };
+  }
+
+  [DebuggerHidden]
+  private IEnumerator OnDeathCR()
+  {
+    // ISSUE: object of a compiler-generated type is created
+    return (IEnumerator) new MetalGearRatDeathController.\u003COnDeathCR\u003Ec__Iterator1()
+    {
+      \u0024this = this
+    };
+  }
+}

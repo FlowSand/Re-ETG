@@ -1,0 +1,115 @@
+========================================
+Managed DLL 清单
+========================================
+扫描时间: 2026-01-17
+源目录: D:\Github\Re-ETG\Managed\
+总计: 72个DLL文件
+Unity目标版本: 2022.3 LTS
+
+========================================
+分类1: 游戏程序集 (2个) - 源代码已反编译
+========================================
+Assembly-CSharp.dll           [★ 主程序集 - 已反编译至Assets/Scripts/ETG/]
+Assembly-CSharp-firstpass.dll [★ 预编译插件代码]
+
+========================================
+分类2: 第三方框架 (6个) - 需制定策略
+========================================
+PlayMaker.dll                 [Visual Scripting - Asset Store]
+GalaxyCSharp.dll              [GOG Galaxy SDK]
+SonyNP.dll                    [PlayStation Network SDK]
+SonyPS4SavedGames.dll         [PS4存档系统]
+dfScriptLite.dll              [Daikon Forge脚本]
+ConditionalExpression.dll     [表达式工具]
+
+========================================
+分类3: 废弃运行时 (3个) - Unity 2022不支持
+========================================
+Assembly-UnityScript.dll      [UnityScript - 已废弃]
+UnityScript.Lang.dll          [UnityScript运行时 - 已废弃]
+Boo.Lang.dll                  [Boo语言 - 已废弃]
+
+========================================
+分类4: .NET Framework (8个)
+========================================
+mscorlib.dll
+System.dll
+System.Core.dll
+System.Xml.dll
+System.Configuration.dll
+System.Security.dll
+Mono.Security.dll
+Mono.Posix.dll
+
+========================================
+分类5: Unity引擎模块 (52个)
+========================================
+UnityEngine.CoreModule.dll
+UnityEngine.UI.dll
+UnityEngine.Networking.dll
+UnityEngine.Timeline.dll
+UnityEngine.AnimationModule.dll
+UnityEngine.Physics2DModule.dll
+UnityEngine.AudioModule.dll
+UnityEngine.ParticleSystemModule.dll
+UnityEngine.IMGUIModule.dll
+UnityEngine.UIElementsModule.dll
+UnityEngine.PhysicsModule.dll
+UnityEngine.dll
+UnityEngine.UNETModule.dll
+UnityEngine.StandardEvents.dll
+UnityEngine.AIModule.dll
+UnityEngine.TerrainModule.dll
+UnityEngine.WebModule.dll
+UnityEngine.GameCenterModule.dll
+UnityEngine.TextRenderingModule.dll
+UnityEngine.VRModule.dll
+UnityEngine.ARModule.dll
+UnityEngine.TilemapModule.dll
+UnityEngine.VideoModule.dll
+UnityEngine.UIModule.dll
+UnityEngine.SharedInternalsModule.dll
+UnityEngine.UnityWebRequestModule.dll
+UnityEngine.UnityWebRequestWWWModule.dll
+Unity.Analytics.DataPrivacy.dll
+UnityEngine.ParticlesLegacyModule.dll
+UnityEngine.UnityAnalyticsModule.dll
+UnityEngine.InputModule.dll
+UnityEngine.StyleSheetsModule.dll
+UnityEngine.ClothModule.dll
+UnityEngine.SpatialTracking.dll
+UnityEngine.UnityConnectModule.dll
+UnityEngine.GridModule.dll
+UnityEngine.VehiclesModule.dll
+UnityEngine.DirectorModule.dll
+UnityEngine.AccessibilityModule.dll
+UnityEngine.UnityWebRequestAudioModule.dll
+UnityEngine.ClusterInputModule.dll
+UnityEngine.SpriteMaskModule.dll
+UnityEngine.SpriteShapeModule.dll
+UnityEngine.UnityWebRequestTextureModule.dll
+UnityEngine.ImageConversionModule.dll
+UnityEngine.WindModule.dll
+UnityEngine.AssetBundleModule.dll
+UnityEngine.ClusterRendererModule.dll
+UnityEngine.CrashReportingModule.dll
+UnityEngine.JSONSerializeModule.dll
+UnityEngine.PerformanceReportingModule.dll
+UnityEngine.ScreenCaptureModule.dll
+UnityEngine.TerrainPhysicsModule.dll
+
+========================================
+风险标注
+========================================
+⚠️ 废弃脚本运行时: Unity 2022.3不支持UnityScript/Boo，需确认无.js/.boo文件
+⚠️ 平台SDK: Sony/GOG DLL需条件编译或生成Shims
+⚠️ 第三方框架: 需决定保留反编译源码 vs 引用原始DLL
+
+========================================
+详细说明
+========================================
+1. 游戏程序集: Assembly-CSharp.dll是主要反编译源，已导出到ETG/目录
+2. 第三方框架: PlayMaker等Asset Store资源，源码已在反编译输出中
+3. 废弃运行时: Unity 2022.3完全移除了UnityScript/Boo支持，这些DLL无法使用
+4. 平台SDK: GOG和Sony SDK仅在对应平台需要，其他平台需条件编译
+5. Unity模块: 标准Unity引擎模块，Unity 2022.3自带

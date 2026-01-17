@@ -1,0 +1,28 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: RewardManagerResetAttribute
+// Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: E27C5245-924B-4031-BFBB-14AA632E24E2
+// Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
+
+using UnityEngine;
+
+#nullable disable
+public class RewardManagerResetAttribute : PropertyAttribute
+{
+  public string header;
+  public string content;
+  public string callback;
+  public int targetElement;
+
+  public RewardManagerResetAttribute(
+    string headerMessage,
+    string contentMessage,
+    string callbackFunc,
+    int targetType)
+  {
+    this.header = headerMessage;
+    this.content = contentMessage;
+    this.callback = callbackFunc;
+    this.targetElement = targetType;
+  }
+}
