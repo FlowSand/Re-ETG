@@ -496,8 +496,12 @@ namespace ETG.Core.Actors.Enemy
         }
       }
 
-      public class UppercutState(bool isLeft) : PunchoutGameActor.BasicAttackState(isLeft)
+      public class UppercutState : PunchoutGameActor.BasicAttackState
       {
+        public UppercutState(bool isLeft) : base(isLeft)
+        {
+        }
+
         public override string AnimName => "uppercut";
 
         public override int DamageFrame => 8;
@@ -611,8 +615,12 @@ namespace ETG.Core.Actors.Enemy
         public override bool ShouldInstantKO(int starsUsed) => starsUsed >= 1;
       }
 
-      public class ThrowAmmoState(bool isLeft) : PunchoutGameActor.State(isLeft)
+      public class ThrowAmmoState : PunchoutGameActor.State
       {
+        public ThrowAmmoState(bool isLeft) : base(isLeft)
+        {
+        }
+
         public float SwitchChance = 0.33f;
         public float Damage = 20f;
         public float ReturnDamage = 20f;
@@ -860,19 +868,27 @@ namespace ETG.Core.Actors.Enemy
         }
       }
 
-      public class PunchBasicComboState(bool firstIsLeft) : PunchoutGameActor.BasicComboState(new PunchoutGameActor.State[4]
+      public class PunchBasicComboState : PunchoutGameActor.BasicComboState
       {
-        (PunchoutGameActor.State) new PunchoutAIActor.PunchState(firstIsLeft, false),
-        (PunchoutGameActor.State) new PunchoutAIActor.PunchState(!firstIsLeft, false),
-        (PunchoutGameActor.State) new PunchoutAIActor.PunchState(firstIsLeft, false),
-        (PunchoutGameActor.State) new PunchoutAIActor.UppercutState(!firstIsLeft)
-      })
-      {
+        public PunchBasicComboState(bool firstIsLeft) : base(new PunchoutGameActor.State[4]
+        {
+          (PunchoutGameActor.State) new PunchoutAIActor.PunchState(firstIsLeft, false),
+          (PunchoutGameActor.State) new PunchoutAIActor.PunchState(!firstIsLeft, false),
+          (PunchoutGameActor.State) new PunchoutAIActor.PunchState(firstIsLeft, false),
+          (PunchoutGameActor.State) new PunchoutAIActor.UppercutState(!firstIsLeft)
+        })
+        {
+        }
+
         public override float PunishTime => 0.3f;
       }
 
-      public class BrassKnucklesPunchState(bool isLeft) : PunchoutGameActor.BasicAttackState(isLeft)
+      public class BrassKnucklesPunchState : PunchoutGameActor.BasicAttackState
       {
+        public BrassKnucklesPunchState(bool isLeft) : base(isLeft)
+        {
+        }
+
         public override string AnimName => "brass_punch";
 
         public override int DamageFrame => 26;
@@ -1191,8 +1207,12 @@ namespace ETG.Core.Actors.Enemy
         }
       }
 
-      public class InstantKnockdownState(bool isLeft) : PunchoutGameActor.State(isLeft)
+      public class InstantKnockdownState : PunchoutGameActor.State
       {
+        public InstantKnockdownState(bool isLeft) : base(isLeft)
+        {
+        }
+
         public int DamageFrame = 11;
         public float Damage = 10f;
         private PunchoutAIActor.InstantKnockdownState.KnockdownState m_state;
