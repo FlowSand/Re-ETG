@@ -45,11 +45,11 @@ public class CullableDictionary<TKey, TValue, TDictionary> : ICullableDictionary
   {
     get
     {
-      CullableDictionary<TKey, TValue, TDictionary>.\u003C\u003Ec__Iterator0 items = new CullableDictionary<TKey, TValue, TDictionary>.\u003C\u003Ec__Iterator0()
+      CullableDictionary<TKey, TValue, TDictionary>.<>c__Iterator0 items = new CullableDictionary<TKey, TValue, TDictionary>.<>c__Iterator0()
       {
-        \u0024this = this
+        $this = this
       };
-      items.\u0024PC = -2;
+      items.$PC = -2;
       return (IEnumerable<KeyValuePair<TKey, TValue>>) items;
     }
   }

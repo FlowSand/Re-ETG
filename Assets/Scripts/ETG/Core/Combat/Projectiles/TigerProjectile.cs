@@ -50,9 +50,9 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FrameDelayedDestruction()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TigerProjectile.\u003CFrameDelayedDestruction\u003Ec__Iterator0()
+        return (IEnumerator) new TigerProjectile.<FrameDelayedDestruction>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -81,7 +81,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleEat(AIActor targetEat)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TigerProjectile.\u003CHandleEat\u003Ec__Iterator1()
+        return (IEnumerator) new TigerProjectile.<HandleEat>c__Iterator1()
         {
           targetEat = targetEat
         };
@@ -91,9 +91,9 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FindTarget()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TigerProjectile.\u003CFindTarget\u003Ec__Iterator2()
+        return (IEnumerator) new TigerProjectile.<FindTarget>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -175,13 +175,13 @@ namespace ETG.Core.Combat.Projectiles
           Vector2? sourceVelocity = new Vector2?(this.specRigidbody.Velocity);
           float? heightOffGround = new float?(-3f);
           // ISSUE: reference to a compiler-generated field
-          if (TigerProjectile.\u003C\u003Ef__mg\u0024cache0 == null)
+          if (TigerProjectile.<>f__mg$cache0 == null)
           {
             // ISSUE: reference to a compiler-generated field
-            TigerProjectile.\u003C\u003Ef__mg\u0024cache0 = new VFXComplex.SpawnMethod(TigerProjectile.SpawnVFXBehind);
+            TigerProjectile.<>f__mg$cache0 = new VFXComplex.SpawnMethod(TigerProjectile.SpawnVFXBehind);
           }
           // ISSUE: reference to a compiler-generated field
-          VFXComplex.SpawnMethod fMgCache0 = TigerProjectile.\u003C\u003Ef__mg\u0024cache0;
+          VFXComplex.SpawnMethod fMgCache0 = TigerProjectile.<>f__mg$cache0;
           effect.SpawnAtPosition(position, (float) zRotation, sourceNormal: sourceNormal, sourceVelocity: sourceVelocity, heightOffGround: heightOffGround, spawnMethod: fMgCache0);
         }
         else
@@ -194,13 +194,13 @@ namespace ETG.Core.Combat.Projectiles
           Vector2? sourceVelocity = new Vector2?(this.specRigidbody.Velocity);
           float? heightOffGround = new float?(-3f);
           // ISSUE: reference to a compiler-generated field
-          if (TigerProjectile.\u003C\u003Ef__mg\u0024cache1 == null)
+          if (TigerProjectile.<>f__mg$cache1 == null)
           {
             // ISSUE: reference to a compiler-generated field
-            TigerProjectile.\u003C\u003Ef__mg\u0024cache1 = new VFXComplex.SpawnMethod(TigerProjectile.SpawnVFXBehind);
+            TigerProjectile.<>f__mg$cache1 = new VFXComplex.SpawnMethod(TigerProjectile.SpawnVFXBehind);
           }
           // ISSUE: reference to a compiler-generated field
-          VFXComplex.SpawnMethod fMgCache1 = TigerProjectile.\u003C\u003Ef__mg\u0024cache1;
+          VFXComplex.SpawnMethod fMgCache1 = TigerProjectile.<>f__mg$cache1;
           effect.SpawnAtPosition(position, (float) zRotation, sourceNormal: sourceNormal, sourceVelocity: sourceVelocity, heightOffGround: heightOffGround, spawnMethod: fMgCache1);
         }
       }

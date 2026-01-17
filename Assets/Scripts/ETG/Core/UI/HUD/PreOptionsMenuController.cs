@@ -112,10 +112,10 @@ namespace ETG.Core.UI.HUD
       private IEnumerator HandleShwoop(bool reverse)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PreOptionsMenuController.\u003CHandleShwoop\u003Ec__Iterator0()
+        return (IEnumerator) new PreOptionsMenuController.<HandleShwoop>c__Iterator0()
         {
           reverse = reverse,
-          \u0024this = this
+          $this = this
         };
       }
 

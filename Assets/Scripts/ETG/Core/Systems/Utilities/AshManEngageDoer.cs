@@ -66,10 +66,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator DoIntro(MinorBreakable breakable)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AshManEngageDoer.\u003CDoIntro\u003Ec__Iterator0()
+        return (IEnumerator) new AshManEngageDoer.<DoIntro>c__Iterator0()
         {
           breakable = breakable,
-          \u0024this = this
+          $this = this
         };
       }
 

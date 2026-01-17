@@ -24,9 +24,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HologramFoyerController.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new HologramFoyerController.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -34,9 +34,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Core()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HologramFoyerController.\u003CCore\u003Ec__Iterator1()
+        return (IEnumerator) new HologramFoyerController.<Core>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -44,10 +44,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator CoreCycle(string targetAnimation)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HologramFoyerController.\u003CCoreCycle\u003Ec__Iterator2()
+        return (IEnumerator) new HologramFoyerController.<CoreCycle>c__Iterator2()
         {
           targetAnimation = targetAnimation,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -55,10 +55,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator ToggleAdditionalLight(bool lightEnabled)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HologramFoyerController.\u003CToggleAdditionalLight\u003Ec__Iterator3()
+        return (IEnumerator) new HologramFoyerController.<ToggleAdditionalLight>c__Iterator3()
         {
           lightEnabled = lightEnabled,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -66,10 +66,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleArcLerp(bool invert)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HologramFoyerController.\u003CHandleArcLerp\u003Ec__Iterator4()
+        return (IEnumerator) new HologramFoyerController.<HandleArcLerp>c__Iterator4()
         {
           invert = invert,
-          \u0024this = this
+          $this = this
         };
       }
 

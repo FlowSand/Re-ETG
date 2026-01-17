@@ -137,9 +137,9 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator<T> GetEnumerator()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator<T>) new BinaryHeap<T>.\u003CGetEnumerator\u003Ec__Iterator0()
+        return (IEnumerator<T>) new BinaryHeap<T>.<GetEnumerator>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

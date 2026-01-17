@@ -39,10 +39,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator WaitForPlayerPosition(PlayerController targetPlayer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SmashTentController.\u003CWaitForPlayerPosition\u003Ec__Iterator0()
+        return (IEnumerator) new SmashTentController.<WaitForPlayerPosition>c__Iterator0()
         {
           targetPlayer = targetPlayer,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -50,10 +50,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleSmash(PlayerController targetPlayer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SmashTentController.\u003CHandleSmash\u003Ec__Iterator1()
+        return (IEnumerator) new SmashTentController.<HandleSmash>c__Iterator1()
         {
           targetPlayer = targetPlayer,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -61,7 +61,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleHearts(PlayerController targetPlayer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SmashTentController.\u003CHandleHearts\u003Ec__Iterator2()
+        return (IEnumerator) new SmashTentController.<HandleHearts>c__Iterator2()
         {
           targetPlayer = targetPlayer
         };

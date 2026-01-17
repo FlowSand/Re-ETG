@@ -63,9 +63,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator DoIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BlobulordIntroDoer.\u003CDoIntro\u003Ec__Iterator0()
+        return (IEnumerator) new BlobulordIntroDoer.<DoIntro>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

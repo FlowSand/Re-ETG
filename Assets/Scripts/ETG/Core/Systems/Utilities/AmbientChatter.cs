@@ -37,9 +37,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleWander()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmbientChatter.\u003CHandleWander\u003Ec__Iterator0()
+        return (IEnumerator) new AmbientChatter.<HandleWander>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -47,9 +47,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleAmbientChatter()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmbientChatter.\u003CHandleAmbientChatter\u003Ec__Iterator1()
+        return (IEnumerator) new AmbientChatter.<HandleAmbientChatter>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

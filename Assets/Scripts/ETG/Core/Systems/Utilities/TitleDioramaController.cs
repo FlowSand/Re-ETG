@@ -37,9 +37,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new TitleDioramaController.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -95,10 +95,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Core(bool isFoyer = true)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.\u003CCore\u003Ec__Iterator1()
+        return (IEnumerator) new TitleDioramaController.<Core>c__Iterator1()
         {
           isFoyer = isFoyer,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -120,13 +120,13 @@ namespace ETG.Core.Systems.Utilities
         bool linearStep = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.\u003CLerpFadeValue\u003Ec__Iterator2()
+        return (IEnumerator) new TitleDioramaController.<LerpFadeValue>c__Iterator2()
         {
           duration = duration,
           startValue = startValue,
           endValue = endValue,
           linearStep = linearStep,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -134,9 +134,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleFinalEyeholeEmission()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.\u003CHandleFinalEyeholeEmission\u003Ec__Iterator3()
+        return (IEnumerator) new TitleDioramaController.<HandleFinalEyeholeEmission>c__Iterator3()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -148,13 +148,13 @@ namespace ETG.Core.Systems.Utilities
         bool really = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.\u003CLerpEyeholeEmissionColorPower\u003Ec__Iterator4()
+        return (IEnumerator) new TitleDioramaController.<LerpEyeholeEmissionColorPower>c__Iterator4()
         {
           duration = duration,
           startValue = startValue,
           endValue = endValue,
           really = really,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -166,13 +166,13 @@ namespace ETG.Core.Systems.Utilities
         bool really = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.\u003CLerpEyeholeEmission\u003Ec__Iterator5()
+        return (IEnumerator) new TitleDioramaController.<LerpEyeholeEmission>c__Iterator5()
         {
           duration = duration,
           startValue = startValue,
           endValue = endValue,
           really = really,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -188,9 +188,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleReveal()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.\u003CHandleReveal\u003Ec__Iterator6()
+        return (IEnumerator) new TitleDioramaController.<HandleReveal>c__Iterator6()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -198,9 +198,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleLichIdlePhase()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.\u003CHandleLichIdlePhase\u003Ec__Iterator7()
+        return (IEnumerator) new TitleDioramaController.<HandleLichIdlePhase>c__Iterator7()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -208,9 +208,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleLichFiddlePhase()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.\u003CHandleLichFiddlePhase\u003Ec__Iterator8()
+        return (IEnumerator) new TitleDioramaController.<HandleLichFiddlePhase>c__Iterator8()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -218,9 +218,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleLichCapePhase()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TitleDioramaController.\u003CHandleLichCapePhase\u003Ec__Iterator9()
+        return (IEnumerator) new TitleDioramaController.<HandleLichCapePhase>c__Iterator9()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

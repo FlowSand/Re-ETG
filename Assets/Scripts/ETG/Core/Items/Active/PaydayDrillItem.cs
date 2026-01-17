@@ -185,12 +185,12 @@ namespace ETG.Core.Items.Active
       protected IEnumerator HandleCombatWaves(Dungeon d, RoomHandler newRoom, Chest sourceChest)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PaydayDrillItem.\u003CHandleCombatWaves\u003Ec__Iterator0()
+        return (IEnumerator) new PaydayDrillItem.<HandleCombatWaves>c__Iterator0()
         {
           sourceChest = sourceChest,
           d = d,
           newRoom = newRoom,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -200,11 +200,11 @@ namespace ETG.Core.Items.Active
         Chest sourceChest)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PaydayDrillItem.\u003CHandleTransitionToFallbackCombatRoom\u003Ec__Iterator1()
+        return (IEnumerator) new PaydayDrillItem.<HandleTransitionToFallbackCombatRoom>c__Iterator1()
         {
           sourceChest = sourceChest,
           sourceRoom = sourceRoom,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -214,11 +214,11 @@ namespace ETG.Core.Items.Active
         Chest sourceChest)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PaydayDrillItem.\u003CHandleSeamlessTransitionToCombatRoom\u003Ec__Iterator2()
+        return (IEnumerator) new PaydayDrillItem.<HandleSeamlessTransitionToCombatRoom>c__Iterator2()
         {
           sourceChest = sourceChest,
           sourceRoom = sourceRoom,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -245,10 +245,10 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleCombatRoomShrinking(RoomHandler targetRoom)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PaydayDrillItem.\u003CHandleCombatRoomShrinking\u003Ec__Iterator3()
+        return (IEnumerator) new PaydayDrillItem.<HandleCombatRoomShrinking>c__Iterator3()
         {
           targetRoom = targetRoom,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -259,11 +259,11 @@ namespace ETG.Core.Items.Active
         Chest sourceChest)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PaydayDrillItem.\u003CHandleCombatRoomExpansion\u003Ec__Iterator4()
+        return (IEnumerator) new PaydayDrillItem.<HandleCombatRoomExpansion>c__Iterator4()
         {
           targetRoom = targetRoom,
           sourceChest = sourceChest,
-          \u0024this = this
+          $this = this
         };
       }
 

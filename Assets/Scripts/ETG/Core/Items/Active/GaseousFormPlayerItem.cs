@@ -54,10 +54,10 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleDuration(PlayerController user)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GaseousFormPlayerItem.\u003CHandleDuration\u003Ec__Iterator0()
+        return (IEnumerator) new GaseousFormPlayerItem.<HandleDuration>c__Iterator0()
         {
           user = user,
-          \u0024this = this
+          $this = this
         };
       }
 

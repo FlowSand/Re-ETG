@@ -39,9 +39,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleAutomaticTrigger()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HologramDoer.\u003CHandleAutomaticTrigger\u003Ec__Iterator0()
+        return (IEnumerator) new HologramDoer.<HandleAutomaticTrigger>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -53,10 +53,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator ToggleAdditionalLight(bool lightEnabled)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HologramDoer.\u003CToggleAdditionalLight\u003Ec__Iterator1()
+        return (IEnumerator) new HologramDoer.<ToggleAdditionalLight>c__Iterator1()
         {
           lightEnabled = lightEnabled,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -85,10 +85,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleArcLerp(bool invert)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HologramDoer.\u003CHandleArcLerp\u003Ec__Iterator2()
+        return (IEnumerator) new HologramDoer.<HandleArcLerp>c__Iterator2()
         {
           invert = invert,
-          \u0024this = this
+          $this = this
         };
       }
 

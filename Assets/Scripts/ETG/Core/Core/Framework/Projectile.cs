@@ -899,9 +899,9 @@ namespace ETG.Core.Core.Framework
       public IEnumerator CheckIfBossKillShot()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.\u003CCheckIfBossKillShot\u003Ec__Iterator0()
+        return (IEnumerator) new Projectile.<CheckIfBossKillShot>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1136,11 +1136,11 @@ namespace ETG.Core.Core.Framework
       private IEnumerator ChangeColorCR(float time, Color color)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.\u003CChangeColorCR\u003Ec__Iterator1()
+        return (IEnumerator) new Projectile.<ChangeColorCR>c__Iterator1()
         {
           time = time,
           color = color,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1179,11 +1179,11 @@ namespace ETG.Core.Core.Framework
       private IEnumerator ChangeTintColorCR(float time, Color color)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.\u003CChangeTintColorCR\u003Ec__Iterator2()
+        return (IEnumerator) new Projectile.<ChangeTintColorCR>c__Iterator2()
         {
           time = time,
           color = color,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1222,13 +1222,13 @@ namespace ETG.Core.Core.Framework
         Vector2? sourceVelocity = new Vector2?(this.specRigidbody.Velocity);
         float? heightOffGround = new float?(0.75f + num);
         // ISSUE: reference to a compiler-generated field
-        if (Projectile.\u003C\u003Ef__mg\u0024cache0 == null)
+        if (Projectile.<>f__mg$cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          Projectile.\u003C\u003Ef__mg\u0024cache0 = new VFXComplex.SpawnMethod(SpawnManager.SpawnDecal);
+          Projectile.<>f__mg$cache0 = new VFXComplex.SpawnMethod(SpawnManager.SpawnDecal);
         }
         // ISSUE: reference to a compiler-generated field
-        VFXComplex.SpawnMethod fMgCache0 = Projectile.\u003C\u003Ef__mg\u0024cache0;
+        VFXComplex.SpawnMethod fMgCache0 = Projectile.<>f__mg$cache0;
         vfxPool2.SpawnAtPosition(position, parent: parent1, sourceNormal: sourceNormal, sourceVelocity: sourceVelocity, heightOffGround: heightOffGround, spawnMethod: fMgCache0);
       }
 
@@ -1724,10 +1724,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandlePostInvulnerabilityFrameExceptions(SpeculativeRigidbody otherRigidbody)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.\u003CHandlePostInvulnerabilityFrameExceptions\u003Ec__Iterator3()
+        return (IEnumerator) new Projectile.<HandlePostInvulnerabilityFrameExceptions>c__Iterator3()
         {
           otherRigidbody = otherRigidbody,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1735,11 +1735,11 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandlePostCollisionPersistence(CollisionData lcr, PlayerController player)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.\u003CHandlePostCollisionPersistence\u003Ec__Iterator4()
+        return (IEnumerator) new Projectile.<HandlePostCollisionPersistence>c__Iterator4()
         {
           lcr = lcr,
           player = player,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1869,13 +1869,13 @@ namespace ETG.Core.Core.Framework
         PixelCollider hitPixelCollider)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.\u003CHandleDelayedDamage\u003Ec__Iterator5()
+        return (IEnumerator) new Projectile.<HandleDelayedDamage>c__Iterator5()
         {
           targetRigidbody = targetRigidbody,
           damage = damage,
           damageVec = damageVec,
           hitPixelCollider = hitPixelCollider,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2045,13 +2045,13 @@ namespace ETG.Core.Core.Framework
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Projectile.\u003CLerpMaterialGlowCR\u003Ec__Iterator6()
+        return (IEnumerator) new Projectile.<LerpMaterialGlowCR>c__Iterator6()
         {
           duration = duration,
           targetMaterial = targetMaterial,
           startGlow = startGlow,
           targetGlow = targetGlow,
-          \u0024this = this
+          $this = this
         };
       }
 

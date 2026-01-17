@@ -22,9 +22,9 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichSweep1.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new InfinilichSweep1.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -32,9 +32,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator VerticalAttacks()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichSweep1.\u003CVerticalAttacks\u003Ec__Iterator1()
+        return (IEnumerator) new InfinilichSweep1.<VerticalAttacks>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

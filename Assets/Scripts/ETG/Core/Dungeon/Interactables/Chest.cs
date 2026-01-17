@@ -253,9 +253,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator SpawnBehavior_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.\u003CSpawnBehavior_CR\u003Ec__Iterator0()
+        return (IEnumerator) new Chest.<SpawnBehavior_CR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -515,10 +515,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleExplosionCountdown(ChestFuseController fuse)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.\u003CHandleExplosionCountdown\u003Ec__Iterator1()
+        return (IEnumerator) new Chest.<HandleExplosionCountdown>c__Iterator1()
         {
           fuse = fuse,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -687,10 +687,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator GiveCoopPartnerBack(bool doDelay = true)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.\u003CGiveCoopPartnerBack\u003Ec__Iterator2()
+        return (IEnumerator) new Chest.<GiveCoopPartnerBack>c__Iterator2()
         {
           doDelay = doDelay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -739,12 +739,12 @@ namespace ETG.Core.Dungeon.Interactables
         PlayerController optionalPlayer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.\u003CHandleKeyEncounter_CR\u003Ec__Iterator3()
+        return (IEnumerator) new Chest.<HandleKeyEncounter_CR>c__Iterator3()
         {
           key = key,
           vfxPrefab = vfxPrefab,
           optionalPlayer = optionalPlayer,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -857,10 +857,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleSynergyGambleChest(PlayerController player)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.\u003CHandleSynergyGambleChest\u003Ec__Iterator4()
+        return (IEnumerator) new Chest.<HandleSynergyGambleChest>c__Iterator4()
         {
           player = player,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1069,10 +1069,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleRainbowRunLootProcessing(List<DebrisObject> items)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.\u003CHandleRainbowRunLootProcessing\u003Ec__Iterator5()
+        return (IEnumerator) new Chest.<HandleRainbowRunLootProcessing>c__Iterator5()
         {
           items = items,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1107,9 +1107,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator PresentItem()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.\u003CPresentItem\u003Ec__Iterator6()
+        return (IEnumerator) new Chest.<PresentItem>c__Iterator6()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1265,10 +1265,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleCoopChestTransform(bool unbecome = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.\u003CHandleCoopChestTransform\u003Ec__Iterator7()
+        return (IEnumerator) new Chest.<HandleCoopChestTransform>c__Iterator7()
         {
           unbecome = unbecome,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1311,9 +1311,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator MimicIdleAnimCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Chest.\u003CMimicIdleAnimCR\u003Ec__Iterator8()
+        return (IEnumerator) new Chest.<MimicIdleAnimCR>c__Iterator8()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

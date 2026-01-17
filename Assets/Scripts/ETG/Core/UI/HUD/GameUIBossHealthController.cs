@@ -243,10 +243,10 @@ namespace ETG.Core.UI.HUD
       public IEnumerator TriggerBossPortraitCR(PortraitSlideSettings pss)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIBossHealthController.\u003CTriggerBossPortraitCR\u003Ec__Iterator0()
+        return (IEnumerator) new GameUIBossHealthController.<TriggerBossPortraitCR>c__Iterator0()
         {
           pss = pss,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -332,10 +332,10 @@ namespace ETG.Core.UI.HUD
       private IEnumerator FillBossBar(dfSlicedSprite barSprite)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIBossHealthController.\u003CFillBossBar\u003Ec__Iterator1()
+        return (IEnumerator) new GameUIBossHealthController.<FillBossBar>c__Iterator1()
         {
           barSprite = barSprite,
-          \u0024this = this
+          $this = this
         };
       }
 

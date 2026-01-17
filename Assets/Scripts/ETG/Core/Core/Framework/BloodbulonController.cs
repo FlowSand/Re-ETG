@@ -60,9 +60,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator GetBigger()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BloodbulonController.\u003CGetBigger\u003Ec__Iterator0()
+        return (IEnumerator) new BloodbulonController.<GetBigger>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

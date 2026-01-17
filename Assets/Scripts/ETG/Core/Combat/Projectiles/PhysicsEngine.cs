@@ -1450,26 +1450,26 @@ namespace ETG.Core.Combat.Projectiles
         b2DynamicTree rigidbodyTree = this.m_rigidbodyTree;
         b2AABB aabb1 = b2Aabb;
         // ISSUE: reference to a compiler-generated field
-        if (PhysicsEngine.\u003C\u003Ef__mg\u0024cache0 == null)
+        if (PhysicsEngine.<>f__mg$cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          PhysicsEngine.\u003C\u003Ef__mg\u0024cache0 = new Func<SpeculativeRigidbody, bool>(PhysicsEngine.CollideWithRigidbodiesQuery);
+          PhysicsEngine.<>f__mg$cache0 = new Func<SpeculativeRigidbody, bool>(PhysicsEngine.CollideWithRigidbodiesQuery);
         }
         // ISSUE: reference to a compiler-generated field
-        Func<SpeculativeRigidbody, bool> fMgCache0 = PhysicsEngine.\u003C\u003Ef__mg\u0024cache0;
+        Func<SpeculativeRigidbody, bool> fMgCache0 = PhysicsEngine.<>f__mg$cache0;
         rigidbodyTree.Query(aabb1, fMgCache0);
         if (this.CollidesWithProjectiles(rigidbody))
         {
           b2DynamicTree projectileTree = this.m_projectileTree;
           b2AABB aabb2 = b2Aabb;
           // ISSUE: reference to a compiler-generated field
-          if (PhysicsEngine.\u003C\u003Ef__mg\u0024cache1 == null)
+          if (PhysicsEngine.<>f__mg$cache1 == null)
           {
             // ISSUE: reference to a compiler-generated field
-            PhysicsEngine.\u003C\u003Ef__mg\u0024cache1 = new Func<SpeculativeRigidbody, bool>(PhysicsEngine.CollideWithRigidbodiesQuery);
+            PhysicsEngine.<>f__mg$cache1 = new Func<SpeculativeRigidbody, bool>(PhysicsEngine.CollideWithRigidbodiesQuery);
           }
           // ISSUE: reference to a compiler-generated field
-          Func<SpeculativeRigidbody, bool> fMgCache1 = PhysicsEngine.\u003C\u003Ef__mg\u0024cache1;
+          Func<SpeculativeRigidbody, bool> fMgCache1 = PhysicsEngine.<>f__mg$cache1;
           projectileTree.Query(aabb2, fMgCache1);
         }
         nearestCollision = PhysicsEngine.m_cwrqCollisionData;

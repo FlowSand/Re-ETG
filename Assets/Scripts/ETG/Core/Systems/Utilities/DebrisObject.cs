@@ -912,12 +912,12 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleOverrideColorFade(Color targetColor, float duration, float startAlpha = 0.0f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DebrisObject.\u003CHandleOverrideColorFade\u003Ec__Iterator0()
+        return (IEnumerator) new DebrisObject.<HandleOverrideColorFade>c__Iterator0()
         {
           targetColor = targetColor,
           startAlpha = startAlpha,
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -973,9 +973,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleSplashDeath()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DebrisObject.\u003CHandleSplashDeath\u003Ec__Iterator1()
+        return (IEnumerator) new DebrisObject.<HandleSplashDeath>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1002,11 +1002,11 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator StartFallAnimation(IntVector2 dir, Vector2 debrisVelocity)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DebrisObject.\u003CStartFallAnimation\u003Ec__Iterator2()
+        return (IEnumerator) new DebrisObject.<StartFallAnimation>c__Iterator2()
         {
           dir = dir,
           debrisVelocity = debrisVelocity,
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -43,7 +43,7 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator FadeAndDestroy(DecalObject decal)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DecalObject.\u003CFadeAndDestroy\u003Ec__Iterator0()
+        return (IEnumerator) new DecalObject.<FadeAndDestroy>c__Iterator0()
         {
           decal = decal
         };

@@ -263,10 +263,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleScaleUp(Vector2 prevBoxSize)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TextBoxManager.\u003CHandleScaleUp\u003Ec__Iterator0()
+        return (IEnumerator) new TextBoxManager.<HandleScaleUp>c__Iterator0()
         {
           prevBoxSize = prevBoxSize,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -274,9 +274,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleScaleDown()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TextBoxManager.\u003CHandleScaleDown\u003Ec__Iterator1()
+        return (IEnumerator) new TextBoxManager.<HandleScaleDown>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -326,12 +326,12 @@ namespace ETG.Core.Systems.Management
       private IEnumerator TextBoxLifespanCR(GameObject target, Transform parent, float lifespan)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TextBoxManager.\u003CTextBoxLifespanCR\u003Ec__Iterator2()
+        return (IEnumerator) new TextBoxManager.<TextBoxLifespanCR>c__Iterator2()
         {
           lifespan = lifespan,
           parent = parent,
           target = target,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -339,9 +339,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator ShowContinueTextCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TextBoxManager.\u003CShowContinueTextCR\u003Ec__Iterator3()
+        return (IEnumerator) new TextBoxManager.<ShowContinueTextCR>c__Iterator3()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -349,10 +349,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator RevealTextCharacters(string strippedString)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TextBoxManager.\u003CRevealTextCharacters\u003Ec__Iterator4()
+        return (IEnumerator) new TextBoxManager.<RevealTextCharacters>c__Iterator4()
         {
           strippedString = strippedString,
-          \u0024this = this
+          $this = this
         };
       }
 

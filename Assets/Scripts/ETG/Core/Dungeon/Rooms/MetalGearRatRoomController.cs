@@ -22,9 +22,9 @@ namespace ETG.Core.Dungeon.Rooms
       public IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatRoomController.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new MetalGearRatRoomController.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -38,7 +38,7 @@ namespace ETG.Core.Dungeon.Rooms
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        MetalGearRatRoomController.\u003CHandlePitfallIntoRewardCR\u003Ec__Iterator1 rewardCrCIterator1 = new MetalGearRatRoomController.\u003CHandlePitfallIntoRewardCR\u003Ec__Iterator1();
+        MetalGearRatRoomController.<HandlePitfallIntoRewardCR>c__Iterator1 rewardCrCIterator1 = new MetalGearRatRoomController.<HandlePitfallIntoRewardCR>c__Iterator1();
         return (IEnumerator) rewardCrCIterator1;
       }
 

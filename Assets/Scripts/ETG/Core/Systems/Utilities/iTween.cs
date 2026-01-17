@@ -739,10 +739,10 @@ namespace ETG.Core.Systems.Utilities
         if (type == null)
           return;
         // ISSUE: reference to a compiler-generated field
-        if (iTween.\u003C\u003Ef__switch\u0024map0 == null)
+        if (iTween.<>f__switch$map0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          iTween.\u003C\u003Ef__switch\u0024map0 = new Dictionary<string, int>(10)
+          iTween.<>f__switch$map0 = new Dictionary<string, int>(10)
           {
             {
               "value",
@@ -788,7 +788,7 @@ namespace ETG.Core.Systems.Utilities
         }
         int num;
         // ISSUE: reference to a compiler-generated field
-        if (!iTween.\u003C\u003Ef__switch\u0024map0.TryGetValue(type, out num))
+        if (!iTween.<>f__switch$map0.TryGetValue(type, out num))
           return;
         switch (num)
         {
@@ -1937,9 +1937,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator TweenDelay()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new iTween.\u003CTweenDelay\u003Ec__Iterator0()
+        return (IEnumerator) new iTween.<TweenDelay>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1962,9 +1962,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator TweenRestart()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new iTween.\u003CTweenRestart\u003Ec__Iterator1()
+        return (IEnumerator) new iTween.<TweenRestart>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2938,9 +2938,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new iTween.\u003CStart\u003Ec__Iterator2()
+        return (IEnumerator) new iTween.<Start>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -101,9 +101,9 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleDelayedShards()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GungeonEggItem.\u003CHandleDelayedShards\u003Ec__Iterator0()
+        return (IEnumerator) new GungeonEggItem.<HandleDelayedShards>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -196,9 +196,9 @@ namespace ETG.Core.Items.Active
       private IEnumerator DelayedProcessing()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GungeonEggItem.\u003CDelayedProcessing\u003Ec__Iterator1()
+        return (IEnumerator) new GungeonEggItem.<DelayedProcessing>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

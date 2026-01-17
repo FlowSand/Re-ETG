@@ -34,12 +34,12 @@ namespace ETG.Core.Dungeon.Interactables
         RoomHandler room)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EnemyFactorySpawnPoint.\u003CHandleSpawnAnimations\u003Ec__Iterator0()
+        return (IEnumerator) new EnemyFactorySpawnPoint.<HandleSpawnAnimations>c__Iterator0()
         {
           spawnPosition = spawnPosition,
           actorToSpawn = actorToSpawn,
           room = room,
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -613,14 +613,14 @@ namespace ETG.Core.Systems.Utilities
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        BraveUtility.\u003CZip\u003Ec__Iterator0<A, B, T> zipCIterator0 = new BraveUtility.\u003CZip\u003Ec__Iterator0<A, B, T>()
+        BraveUtility.<Zip>c__Iterator0<A, B, T> zipCIterator0 = new BraveUtility.<Zip>c__Iterator0<A, B, T>()
         {
           seqA = seqA,
           seqB = seqB,
           func = func
         };
         // ISSUE: reference to a compiler-generated field
-        zipCIterator0.\u0024PC = -2;
+        zipCIterator0.$PC = -2;
         return (IEnumerable<T>) zipCIterator0;
       }
 

@@ -27,9 +27,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator DoVfx()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GunNutSlamVfx.\u003CDoVfx\u003Ec__Iterator0()
+        return (IEnumerator) new GunNutSlamVfx.<DoVfx>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

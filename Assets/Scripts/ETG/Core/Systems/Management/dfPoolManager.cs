@@ -87,9 +87,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator preloadPools()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new dfPoolManager.\u003CpreloadPools\u003Ec__Iterator0()
+        return (IEnumerator) new dfPoolManager.<preloadPools>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -78,9 +78,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new InfinilichMorphMissile1.MissileBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new InfinilichMorphMissile1.MissileBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }

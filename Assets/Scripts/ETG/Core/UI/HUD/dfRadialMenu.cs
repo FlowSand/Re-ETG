@@ -134,9 +134,9 @@ namespace ETG.Core.UI.HUD
       private IEnumerator openMenu()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new dfRadialMenu.\u003CopenMenu\u003Ec__Iterator0()
+        return (IEnumerator) new dfRadialMenu.<openMenu>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -144,9 +144,9 @@ namespace ETG.Core.UI.HUD
       private IEnumerator closeMenu()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new dfRadialMenu.\u003CcloseMenu\u003Ec__Iterator1()
+        return (IEnumerator) new dfRadialMenu.<closeMenu>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

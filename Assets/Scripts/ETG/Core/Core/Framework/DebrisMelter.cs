@@ -32,9 +32,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DoMeltCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DebrisMelter.\u003CDoMeltCR\u003Ec__Iterator0()
+        return (IEnumerator) new DebrisMelter.<DoMeltCR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

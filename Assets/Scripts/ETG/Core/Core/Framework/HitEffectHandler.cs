@@ -73,9 +73,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator TrackDelaysCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HitEffectHandler.\u003CTrackDelaysCR\u003Ec__Iterator0()
+        return (IEnumerator) new HitEffectHandler.<TrackDelaysCR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

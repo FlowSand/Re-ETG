@@ -44,9 +44,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ResourcefulRatMinesHiddenTrapdoor.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new ResourcefulRatMinesHiddenTrapdoor.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -188,9 +188,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator GraduallyReveal()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ResourcefulRatMinesHiddenTrapdoor.\u003CGraduallyReveal\u003Ec__Iterator1()
+        return (IEnumerator) new ResourcefulRatMinesHiddenTrapdoor.<GraduallyReveal>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -265,9 +265,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleFlaggingCells()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ResourcefulRatMinesHiddenTrapdoor.\u003CHandleFlaggingCells\u003Ec__Iterator2()
+        return (IEnumerator) new ResourcefulRatMinesHiddenTrapdoor.<HandleFlaggingCells>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

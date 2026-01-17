@@ -31,11 +31,11 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator OnIsVisibleChanged(dfControl control, bool value)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SetDefaultControl.\u003COnIsVisibleChanged\u003Ec__Iterator0()
+        return (IEnumerator) new SetDefaultControl.<OnIsVisibleChanged>c__Iterator0()
         {
           control = control,
           value = value,
-          \u0024this = this
+          $this = this
         };
       }
     }

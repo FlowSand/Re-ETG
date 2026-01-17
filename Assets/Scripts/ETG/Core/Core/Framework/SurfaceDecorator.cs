@@ -368,9 +368,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DetachRenderersMomentarily()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SurfaceDecorator.\u003CDetachRenderersMomentarily\u003Ec__Iterator0()
+        return (IEnumerator) new SurfaceDecorator.<DetachRenderersMomentarily>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

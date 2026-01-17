@@ -39,13 +39,13 @@ namespace ETG.Core.Systems.Utilities
         tk2dBaseSprite sprite)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HeatRingModule.\u003CHandleHeatEffectsCR\u003Ec__Iterator0()
+        return (IEnumerator) new HeatRingModule.<HandleHeatEffectsCR>c__Iterator0()
         {
           Radius = Radius,
           sprite = sprite,
           HeatEffect = HeatEffect,
           Duration = Duration,
-          \u0024this = this
+          $this = this
         };
       }
 

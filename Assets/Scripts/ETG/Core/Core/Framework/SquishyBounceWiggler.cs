@@ -83,9 +83,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DoSquishyBounceWiggle()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SquishyBounceWiggler.\u003CDoSquishyBounceWiggle\u003Ec__Iterator0()
+        return (IEnumerator) new SquishyBounceWiggler.<DoSquishyBounceWiggle>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

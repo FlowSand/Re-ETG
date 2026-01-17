@@ -75,9 +75,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDesat()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ClockhairController.\u003CHandleDesat\u003Ec__Iterator0()
+        return (IEnumerator) new ClockhairController.<HandleDesat>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -85,10 +85,10 @@ namespace ETG.Core.Core.Framework
       public IEnumerator WipeoutDistortionAndFade(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ClockhairController.\u003CWipeoutDistortionAndFade\u003Ec__Iterator1()
+        return (IEnumerator) new ClockhairController.<WipeoutDistortionAndFade>c__Iterator1()
         {
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -118,9 +118,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDistortion()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ClockhairController.\u003CHandleDistortion\u003Ec__Iterator2()
+        return (IEnumerator) new ClockhairController.<HandleDistortion>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -140,9 +140,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleSpinningWildly()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ClockhairController.\u003CHandleSpinningWildly\u003Ec__Iterator3()
+        return (IEnumerator) new ClockhairController.<HandleSpinningWildly>c__Iterator3()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -150,9 +150,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleSimpleMotion()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ClockhairController.\u003CHandleSimpleMotion\u003Ec__Iterator4()
+        return (IEnumerator) new ClockhairController.<HandleSimpleMotion>c__Iterator4()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -182,11 +182,11 @@ namespace ETG.Core.Core.Framework
       private IEnumerator SpinToTime(TimeSpan targetTime, float duration = 5f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ClockhairController.\u003CSpinToTime\u003Ec__Iterator5()
+        return (IEnumerator) new ClockhairController.<SpinToTime>c__Iterator5()
         {
           targetTime = targetTime,
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 

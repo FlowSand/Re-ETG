@@ -33,9 +33,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Expand_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DefaultLabelController.\u003CExpand_CR\u003Ec__Iterator0()
+        return (IEnumerator) new DefaultLabelController.<Expand_CR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

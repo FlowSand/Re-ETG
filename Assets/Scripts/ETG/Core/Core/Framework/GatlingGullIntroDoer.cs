@@ -150,10 +150,10 @@ namespace ETG.Core.Core.Framework
       public IEnumerator FrameDelayedTriggerSequence(PlayerController enterer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GatlingGullIntroDoer.\u003CFrameDelayedTriggerSequence\u003Ec__Iterator0()
+        return (IEnumerator) new GatlingGullIntroDoer.<FrameDelayedTriggerSequence>c__Iterator0()
         {
           enterer = enterer,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -224,12 +224,12 @@ namespace ETG.Core.Core.Framework
         float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GatlingGullIntroDoer.\u003CDelayedTriggerAnimation\u003Ec__Iterator1()
+        return (IEnumerator) new GatlingGullIntroDoer.<DelayedTriggerAnimation>c__Iterator1()
         {
           delay = delay,
           anim = anim,
           animName = animName,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -237,9 +237,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator WaitForBossCard()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GatlingGullIntroDoer.\u003CWaitForBossCard\u003Ec__Iterator2()
+        return (IEnumerator) new GatlingGullIntroDoer.<WaitForBossCard>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

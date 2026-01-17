@@ -32,9 +32,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ScrollToNextThreshold()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CreditsController.\u003CScrollToNextThreshold\u003Ec__Iterator0()
+        return (IEnumerator) new CreditsController.<ScrollToNextThreshold>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -42,9 +42,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator WaitForNextThreshold()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CreditsController.\u003CWaitForNextThreshold\u003Ec__Iterator1()
+        return (IEnumerator) new CreditsController.<WaitForNextThreshold>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

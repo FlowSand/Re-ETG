@@ -132,10 +132,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator DelayedVanish(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.\u003CDelayedVanish\u003Ec__Iterator0()
+        return (IEnumerator) new TalkDoer.<DelayedVanish>c__Iterator0()
         {
           delay = delay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -158,9 +158,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleBetrayal()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.\u003CHandleBetrayal\u003Ec__Iterator1()
+        return (IEnumerator) new TalkDoer.<HandleBetrayal>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -218,10 +218,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator MakeUninteractable(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.\u003CMakeUninteractable\u003Ec__Iterator2()
+        return (IEnumerator) new TalkDoer.<MakeUninteractable>c__Iterator2()
         {
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -248,10 +248,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator DelayedChestOpen(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.\u003CDelayedChestOpen\u003Ec__Iterator3()
+        return (IEnumerator) new TalkDoer.<DelayedChestOpen>c__Iterator3()
         {
           delay = delay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -259,7 +259,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator PlayDelayedTruthChestLockOpen(tk2dSpriteAnimator lockAnimator, float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.\u003CPlayDelayedTruthChestLockOpen\u003Ec__Iterator4()
+        return (IEnumerator) new TalkDoer.<PlayDelayedTruthChestLockOpen>c__Iterator4()
         {
           delay = delay,
           lockAnimator = lockAnimator
@@ -323,13 +323,13 @@ namespace ETG.Core.Dungeon.Interactables
         TextBoxManager.BoxSlideOrientation slideOrientation)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.\u003CHandleForcedTimedSpeech\u003Ec__Iterator5()
+        return (IEnumerator) new TalkDoer.<HandleForcedTimedSpeech>c__Iterator5()
         {
           initialDelay = initialDelay,
           words = words,
           slideOrientation = slideOrientation,
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -337,10 +337,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleConversationModule(TalkModule module)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.\u003CHandleConversationModule\u003Ec__Iterator6()
+        return (IEnumerator) new TalkDoer.<HandleConversationModule>c__Iterator6()
         {
           module = module,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -353,14 +353,14 @@ namespace ETG.Core.Dungeon.Interactables
         string overrideFollowupModule2)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.\u003CHandleResponses\u003Ec__Iterator7()
+        return (IEnumerator) new TalkDoer.<HandleResponses>c__Iterator7()
         {
           module = module,
           overrideResponse1 = overrideResponse1,
           overrideResponse2 = overrideResponse2,
           overrideFollowupModule1 = overrideFollowupModule1,
           overrideFollowupModule2 = overrideFollowupModule2,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -368,9 +368,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator WaitForTextRevealed()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.\u003CWaitForTextRevealed\u003Ec__Iterator8()
+        return (IEnumerator) new TalkDoer.<WaitForTextRevealed>c__Iterator8()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -378,9 +378,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator WaitForPlayer()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoer.\u003CWaitForPlayer\u003Ec__Iterator9()
+        return (IEnumerator) new TalkDoer.<WaitForPlayer>c__Iterator9()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

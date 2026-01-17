@@ -26,9 +26,9 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WizardYellowSlam1.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new WizardYellowSlam1.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -92,9 +92,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new WizardYellowSlam1.ExpandingBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new WizardYellowSlam1.ExpandingBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }

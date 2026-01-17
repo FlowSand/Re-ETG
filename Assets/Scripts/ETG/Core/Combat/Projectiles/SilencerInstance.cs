@@ -186,7 +186,7 @@ namespace ETG.Core.Combat.Projectiles
         bool shouldReflectInstead)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SilencerInstance.\u003CHandleSilence\u003Ec__Iterator0()
+        return (IEnumerator) new SilencerInstance.<HandleSilence>c__Iterator0()
         {
           maxRadius = maxRadius,
           expandSpeed = expandSpeed,
@@ -194,7 +194,7 @@ namespace ETG.Core.Combat.Projectiles
           user = user,
           shouldReflectInstead = shouldReflectInstead,
           additionalTimeAtMaxRadius = additionalTimeAtMaxRadius,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -213,9 +213,9 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator BackupDistortionCleanup()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SilencerInstance.\u003CBackupDistortionCleanup\u003Ec__Iterator1()
+        return (IEnumerator) new SilencerInstance.<BackupDistortionCleanup>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

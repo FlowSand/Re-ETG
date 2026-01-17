@@ -52,10 +52,10 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleObjectBounce(Transform target)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SpawnObjectOnRollItem.\u003CHandleObjectBounce\u003Ec__Iterator0()
+        return (IEnumerator) new SpawnObjectOnRollItem.<HandleObjectBounce>c__Iterator0()
         {
           target = target,
-          \u0024this = this
+          $this = this
         };
       }
 

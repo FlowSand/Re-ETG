@@ -37,9 +37,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator SpawnAllEnemies()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EveryEnemySpawner.\u003CSpawnAllEnemies\u003Ec__Iterator0()
+        return (IEnumerator) new EveryEnemySpawner.<SpawnAllEnemies>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

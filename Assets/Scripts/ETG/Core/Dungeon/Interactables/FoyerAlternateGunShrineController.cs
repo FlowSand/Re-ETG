@@ -34,9 +34,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FoyerAlternateGunShrineController.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new FoyerAlternateGunShrineController.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -60,10 +60,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleShrineConversation(PlayerController interactor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FoyerAlternateGunShrineController.\u003CHandleShrineConversation\u003Ec__Iterator1()
+        return (IEnumerator) new FoyerAlternateGunShrineController.<HandleShrineConversation>c__Iterator1()
         {
           interactor = interactor,
-          \u0024this = this
+          $this = this
         };
       }
 

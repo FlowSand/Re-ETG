@@ -41,9 +41,9 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BulletKingBigBulletUp1.BigBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new BulletKingBigBulletUp1.BigBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
 
@@ -71,9 +71,9 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BulletKingBigBulletUp1.MediumBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new BulletKingBigBulletUp1.MediumBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
 

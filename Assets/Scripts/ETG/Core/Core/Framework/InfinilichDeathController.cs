@@ -51,9 +51,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleClockhair(PlayerController interactor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichDeathController.\u003CHandleClockhair\u003Ec__Iterator0()
+        return (IEnumerator) new InfinilichDeathController.<HandleClockhair>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -104,9 +104,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichDeathController.\u003COnDeathExplosionsCR\u003Ec__Iterator1()
+        return (IEnumerator) new InfinilichDeathController.<OnDeathExplosionsCR>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -114,9 +114,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandlePastBeingShot()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichDeathController.\u003CHandlePastBeingShot\u003Ec__Iterator2()
+        return (IEnumerator) new InfinilichDeathController.<HandlePastBeingShot>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -127,7 +127,7 @@ namespace ETG.Core.Core.Framework
         TitleDioramaController diorama)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichDeathController.\u003CHandleSplashBody\u003Ec__Iterator3()
+        return (IEnumerator) new InfinilichDeathController.<HandleSplashBody>c__Iterator3()
         {
           sourcePlayer = sourcePlayer,
           diorama = diorama

@@ -295,11 +295,11 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleDoorOpening(bool openState, SecretRoomDoorBeer doorObject)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SecretRoomManager.\u003CHandleDoorOpening\u003Ec__Iterator0()
+        return (IEnumerator) new SecretRoomManager.<HandleDoorOpening>c__Iterator0()
         {
           openState = openState,
           doorObject = doorObject,
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -32,9 +32,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ArtfulDodgerCameraManipulator.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new ArtfulDodgerCameraManipulator.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

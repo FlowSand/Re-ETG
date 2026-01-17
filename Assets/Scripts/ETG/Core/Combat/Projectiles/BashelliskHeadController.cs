@@ -227,10 +227,10 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator PickupCR(BashelliskBodyPickupController pickup)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BashelliskHeadController.\u003CPickupCR\u003Ec__Iterator0()
+        return (IEnumerator) new BashelliskHeadController.<PickupCR>c__Iterator0()
         {
           pickup = pickup,
-          \u0024this = this
+          $this = this
         };
       }
 

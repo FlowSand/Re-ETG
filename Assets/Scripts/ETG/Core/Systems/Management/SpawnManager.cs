@@ -432,9 +432,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DeferredRemovalOfObjectsAboveLimit()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SpawnManager.\u003CDeferredRemovalOfObjectsAboveLimit\u003Ec__Iterator0()
+        return (IEnumerator) new SpawnManager.<DeferredRemovalOfObjectsAboveLimit>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

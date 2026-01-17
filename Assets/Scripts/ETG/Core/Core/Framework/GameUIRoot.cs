@@ -304,12 +304,12 @@ namespace ETG.Core.Core.Framework
         dfLabel damageLabel)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.\u003CHandleDamageNumberCR\u003Ec__Iterator0()
+        return (IEnumerator) new GameUIRoot.<HandleDamageNumberCR>c__Iterator0()
         {
           startWorldPosition = startWorldPosition,
           worldFloorHeight = worldFloorHeight,
           damageLabel = damageLabel,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -389,9 +389,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDemoModeTutorialScreens()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.\u003CHandleDemoModeTutorialScreens\u003Ec__Iterator1()
+        return (IEnumerator) new GameUIRoot.<HandleDemoModeTutorialScreens>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -459,9 +459,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.\u003CStart\u003Ec__Iterator2()
+        return (IEnumerator) new GameUIRoot.<Start>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -644,11 +644,11 @@ namespace ETG.Core.Core.Framework
       private IEnumerator NonCoreControlTransition(dfControl control, bool reversed = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.\u003CNonCoreControlTransition\u003Ec__Iterator3()
+        return (IEnumerator) new GameUIRoot.<NonCoreControlTransition>c__Iterator3()
         {
           reversed = reversed,
           control = control,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -684,13 +684,13 @@ namespace ETG.Core.Core.Framework
         bool instant)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.\u003CTransitionTargetMotionGroup_CR\u003Ec__Iterator4()
+        return (IEnumerator) new GameUIRoot.<TransitionTargetMotionGroup_CR>c__Iterator4()
         {
           motionGroup = motionGroup,
           instant = instant,
           targetVisibility = targetVisibility,
           targetLockState = targetLockState,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -698,9 +698,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator CoreUITransition()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.\u003CCoreUITransition\u003Ec__Iterator5()
+        return (IEnumerator) new GameUIRoot.<CoreUITransition>c__Iterator5()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -987,11 +987,11 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleMetalGearGunSelect(PlayerController targetPlayer, int numToL)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.\u003CHandleMetalGearGunSelect\u003Ec__Iterator6()
+        return (IEnumerator) new GameUIRoot.<HandleMetalGearGunSelect>c__Iterator6()
         {
           targetPlayer = targetPlayer,
           numToL = numToL,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1005,7 +1005,7 @@ namespace ETG.Core.Core.Framework
         bool forceUseExistingList = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.\u003CHandlePauseInventoryFolding\u003Ec__Iterator7()
+        return (IEnumerator) new GameUIRoot.<HandlePauseInventoryFolding>c__Iterator7()
         {
           targetPlayer = targetPlayer,
           overrideTransitionTime = overrideTransitionTime,
@@ -1013,7 +1013,7 @@ namespace ETG.Core.Core.Framework
           doGuns = doGuns,
           doItems = doItems,
           numToL = numToL,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1093,7 +1093,7 @@ namespace ETG.Core.Core.Framework
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.\u003CHandleGenericPositionLerp\u003Ec__Iterator8()
+        return (IEnumerator) new GameUIRoot.<HandleGenericPositionLerp>c__Iterator8()
         {
           targetControl = targetControl,
           duration = duration,
@@ -1499,13 +1499,13 @@ namespace ETG.Core.Core.Framework
         string customStringKey = "")
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.\u003CFlashReloadLabel\u003Ec__Iterator9()
+        return (IEnumerator) new GameUIRoot.<FlashReloadLabel>c__Iterator9()
         {
           attachPlayer = attachPlayer,
           target = target,
           customStringKey = customStringKey,
           customDuration = customDuration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1679,11 +1679,11 @@ namespace ETG.Core.Core.Framework
         string[] responses)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.\u003CHandlePlayerConversationResponse\u003Ec__IteratorA()
+        return (IEnumerator) new GameUIRoot.<HandlePlayerConversationResponse>c__IteratorA()
         {
           interactingPlayer = interactingPlayer,
           responses = responses,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1787,7 +1787,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DelayedCenterControl(dfControl panel)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIRoot.\u003CDelayedCenterControl\u003Ec__IteratorB()
+        return (IEnumerator) new GameUIRoot.<DelayedCenterControl>c__IteratorB()
         {
           panel = panel
         };

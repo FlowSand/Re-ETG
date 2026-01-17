@@ -105,7 +105,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleTerminatorUIOverlay_CR(TerminatorPanelController tpc)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RobotPastController.\u003CHandleTerminatorUIOverlay_CR\u003Ec__Iterator0()
+        return (IEnumerator) new RobotPastController.<HandleTerminatorUIOverlay_CR>c__Iterator0()
         {
           tpc = tpc
         };
@@ -115,9 +115,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandlePastIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RobotPastController.\u003CHandlePastIntro\u003Ec__Iterator1()
+        return (IEnumerator) new RobotPastController.<HandlePastIntro>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -125,11 +125,11 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator StartBossFight(HealthHaver boss, PlayerController m_robot)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RobotPastController.\u003CStartBossFight\u003Ec__Iterator2()
+        return (IEnumerator) new RobotPastController.<StartBossFight>c__Iterator2()
         {
           boss = boss,
           m_robot = m_robot,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -137,7 +137,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator LaunchRecenter(Vector2 targetPosition)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RobotPastController.\u003CLaunchRecenter\u003Ec__Iterator3()
+        return (IEnumerator) new RobotPastController.<LaunchRecenter>c__Iterator3()
         {
           targetPosition = targetPosition
         };
@@ -152,9 +152,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator OnBossKilled_CR(Transform bossTransform)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RobotPastController.\u003COnBossKilled_CR\u003Ec__Iterator4()
+        return (IEnumerator) new RobotPastController.<OnBossKilled_CR>c__Iterator4()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -225,9 +225,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator TurnRobotsOffCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RobotPastController.\u003CTurnRobotsOffCR\u003Ec__Iterator5()
+        return (IEnumerator) new RobotPastController.<TurnRobotsOffCR>c__Iterator5()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

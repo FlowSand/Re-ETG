@@ -130,7 +130,7 @@ namespace ETG.Core.Systems.Data
       private IEnumerator HandleBoxPop(FlippableCover box)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ZoneControlChallengeModifier.\u003CHandleBoxPop\u003Ec__Iterator0()
+        return (IEnumerator) new ZoneControlChallengeModifier.<HandleBoxPop>c__Iterator0()
         {
           box = box
         };

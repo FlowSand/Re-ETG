@@ -39,10 +39,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator animateOpen(dfListbox popup)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AnimatePopup.\u003CanimateOpen\u003Ec__Iterator0()
+        return (IEnumerator) new AnimatePopup.<animateOpen>c__Iterator0()
         {
           popup = popup,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -50,10 +50,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator animateClose(dfListbox popup)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AnimatePopup.\u003CanimateClose\u003Ec__Iterator1()
+        return (IEnumerator) new AnimatePopup.<animateClose>c__Iterator1()
         {
           popup = popup,
-          \u0024this = this
+          $this = this
         };
       }
     }

@@ -163,9 +163,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator DoIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WallMimicController.\u003CDoIntro\u003Ec__Iterator0()
+        return (IEnumerator) new WallMimicController.<DoIntro>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -235,9 +235,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator BecomeMimic()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WallMimicController.\u003CBecomeMimic\u003Ec__Iterator1()
+        return (IEnumerator) new WallMimicController.<BecomeMimic>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

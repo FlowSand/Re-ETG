@@ -181,7 +181,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator FlashSprite(tk2dBaseSprite targetSprite, float flashTime = 1f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerOrbital.\u003CFlashSprite\u003Ec__Iterator0()
+        return (IEnumerator) new PlayerOrbital.<FlashSprite>c__Iterator0()
         {
           targetSprite = targetSprite,
           flashTime = flashTime

@@ -488,9 +488,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator BackgroundCoroutineProcessor()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Pixelator.\u003CBackgroundCoroutineProcessor\u003Ec__Iterator0()
+        return (IEnumerator) new Pixelator.<BackgroundCoroutineProcessor>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2097,7 +2097,7 @@ namespace ETG.Core.Systems.Utilities
         float endScreenBrightness)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Pixelator.\u003CCustomFade_CR\u003Ec__Iterator1()
+        return (IEnumerator) new Pixelator.<CustomFade_CR>c__Iterator1()
         {
           holdTime = holdTime,
           startColor = startColor,
@@ -2105,7 +2105,7 @@ namespace ETG.Core.Systems.Utilities
           duration = duration,
           endColor = endColor,
           endScreenBrightness = endScreenBrightness,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2115,9 +2115,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandlePastFadeIn()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Pixelator.\u003CHandlePastFadeIn\u003Ec__Iterator2()
+        return (IEnumerator) new Pixelator.<HandlePastFadeIn>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2134,9 +2134,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleFreezeFrame()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Pixelator.\u003CHandleFreezeFrame\u003Ec__Iterator3()
+        return (IEnumerator) new Pixelator.<HandleFreezeFrame>c__Iterator3()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2144,11 +2144,11 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleTimedFreezeFrame(float duration, float holdDuration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Pixelator.\u003CHandleTimedFreezeFrame\u003Ec__Iterator4()
+        return (IEnumerator) new Pixelator.<HandleTimedFreezeFrame>c__Iterator4()
         {
           holdDuration = holdDuration,
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2202,13 +2202,13 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator FadeToColor_CR(float duration, Color targetColor, bool reverse = false, float hold = 0.0f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Pixelator.\u003CFadeToColor_CR\u003Ec__Iterator5()
+        return (IEnumerator) new Pixelator.<FadeToColor_CR>c__Iterator5()
         {
           targetColor = targetColor,
           hold = hold,
           reverse = reverse,
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2221,9 +2221,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleDamagedVignette_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Pixelator.\u003CHandleDamagedVignette_CR\u003Ec__Iterator6()
+        return (IEnumerator) new Pixelator.<HandleDamagedVignette_CR>c__Iterator6()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2244,11 +2244,11 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator LerpToLetterbox_CR(float targetFraction, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Pixelator.\u003CLerpToLetterbox_CR\u003Ec__Iterator7()
+        return (IEnumerator) new Pixelator.<LerpToLetterbox_CR>c__Iterator7()
         {
           duration = duration,
           targetFraction = targetFraction,
-          \u0024this = this
+          $this = this
         };
       }
 

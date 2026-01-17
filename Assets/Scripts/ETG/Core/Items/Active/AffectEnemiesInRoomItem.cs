@@ -78,12 +78,12 @@ namespace ETG.Core.Items.Active
         float maxEffectRadius)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AffectEnemiesInRoomItem.\u003CHandleAmbientSpawnTime\u003Ec__Iterator0()
+        return (IEnumerator) new AffectEnemiesInRoomItem.<HandleAmbientSpawnTime>c__Iterator0()
         {
           remainingTime = remainingTime,
           centerPoint = centerPoint,
           maxEffectRadius = maxEffectRadius,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -91,11 +91,11 @@ namespace ETG.Core.Items.Active
       protected IEnumerator ProcessEffectOverTime(Vector2 centerPoint, List<AIActor> enemiesInRoom)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AffectEnemiesInRoomItem.\u003CProcessEffectOverTime\u003Ec__Iterator1()
+        return (IEnumerator) new AffectEnemiesInRoomItem.<ProcessEffectOverTime>c__Iterator1()
         {
           enemiesInRoom = enemiesInRoom,
           centerPoint = centerPoint,
-          \u0024this = this
+          $this = this
         };
       }
 

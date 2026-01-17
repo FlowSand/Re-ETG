@@ -118,10 +118,10 @@ public class Teleport : FsmStateAction
   private IEnumerator HandleAnimAndVfx(TalkDoerLite.TeleportSettings teleportSettings)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Teleport.\u003CHandleAnimAndVfx\u003Ec__Iterator0()
+    return (IEnumerator) new Teleport.<HandleAnimAndVfx>c__Iterator0()
     {
       teleportSettings = teleportSettings,
-      \u0024this = this
+      $this = this
     };
   }
 

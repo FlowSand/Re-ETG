@@ -198,10 +198,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLine_ScalingParallel(float modTraversalTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RailgunChargeEffectController.\u003CHandleLine_ScalingParallel\u003Ec__Iterator0()
+        return (IEnumerator) new RailgunChargeEffectController.<HandleLine_ScalingParallel>c__Iterator0()
         {
           modTraversalTime = modTraversalTime,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -209,10 +209,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLine_SequentialParallel(float modTraversalTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RailgunChargeEffectController.\u003CHandleLine_SequentialParallel\u003Ec__Iterator1()
+        return (IEnumerator) new RailgunChargeEffectController.<HandleLine_SequentialParallel>c__Iterator1()
         {
           modTraversalTime = modTraversalTime,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -220,10 +220,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLine_PyramidalConverge(float modTraversalTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RailgunChargeEffectController.\u003CHandleLine_PyramidalConverge\u003Ec__Iterator2()
+        return (IEnumerator) new RailgunChargeEffectController.<HandleLine_PyramidalConverge>c__Iterator2()
         {
           modTraversalTime = modTraversalTime,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -231,10 +231,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLine_VerticalConverge(float modTraversalTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RailgunChargeEffectController.\u003CHandleLine_VerticalConverge\u003Ec__Iterator3()
+        return (IEnumerator) new RailgunChargeEffectController.<HandleLine_VerticalConverge>c__Iterator3()
         {
           modTraversalTime = modTraversalTime,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -242,10 +242,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLine_TriangularConverge(float modTraversalTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RailgunChargeEffectController.\u003CHandleLine_TriangularConverge\u003Ec__Iterator4()
+        return (IEnumerator) new RailgunChargeEffectController.<HandleLine_TriangularConverge>c__Iterator4()
         {
           modTraversalTime = modTraversalTime,
-          \u0024this = this
+          $this = this
         };
       }
 

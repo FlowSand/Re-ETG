@@ -34,9 +34,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Flicker()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LightPulser.\u003CFlicker\u003Ec__Iterator0()
+        return (IEnumerator) new LightPulser.<Flicker>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

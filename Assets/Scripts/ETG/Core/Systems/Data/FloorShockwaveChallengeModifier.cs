@@ -30,9 +30,9 @@ namespace ETG.Core.Systems.Data
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FloorShockwaveChallengeModifier.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new FloorShockwaveChallengeModifier.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -52,10 +52,10 @@ namespace ETG.Core.Systems.Data
       private IEnumerator LaunchWave(Vector2 startPoint)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FloorShockwaveChallengeModifier.\u003CLaunchWave\u003Ec__Iterator1()
+        return (IEnumerator) new FloorShockwaveChallengeModifier.<LaunchWave>c__Iterator1()
         {
           startPoint = startPoint,
-          \u0024this = this
+          $this = this
         };
       }
     }

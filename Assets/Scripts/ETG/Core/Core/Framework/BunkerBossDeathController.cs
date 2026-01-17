@@ -54,9 +54,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BunkerBossDeathController.\u003COnDeathExplosionsCR\u003Ec__Iterator0()
+        return (IEnumerator) new BunkerBossDeathController.<OnDeathExplosionsCR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -64,9 +64,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathDebrisCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BunkerBossDeathController.\u003COnDeathDebrisCR\u003Ec__Iterator1()
+        return (IEnumerator) new BunkerBossDeathController.<OnDeathDebrisCR>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -74,9 +74,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathAnimationCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BunkerBossDeathController.\u003COnDeathAnimationCR\u003Ec__Iterator2()
+        return (IEnumerator) new BunkerBossDeathController.<OnDeathAnimationCR>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

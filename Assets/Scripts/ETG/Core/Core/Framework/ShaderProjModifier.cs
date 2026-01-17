@@ -176,10 +176,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator ApplyEffect(HealthHaver hh, bool killed)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ShaderProjModifier.\u003CApplyEffect\u003Ec__Iterator0()
+        return (IEnumerator) new ShaderProjModifier.<ApplyEffect>c__Iterator0()
         {
           hh = hh,
-          \u0024this = this
+          $this = this
         };
       }
 

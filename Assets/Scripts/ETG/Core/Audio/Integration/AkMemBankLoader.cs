@@ -51,9 +51,9 @@ namespace ETG.Core.Audio.Integration
       private IEnumerator LoadFile()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AkMemBankLoader.\u003CLoadFile\u003Ec__Iterator0()
+        return (IEnumerator) new AkMemBankLoader.<LoadFile>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

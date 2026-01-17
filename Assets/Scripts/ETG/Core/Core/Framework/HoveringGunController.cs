@@ -253,12 +253,12 @@ namespace ETG.Core.Core.Framework
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HoveringGunController.\u003CHandleFireShortBeam\u003Ec__Iterator0()
+        return (IEnumerator) new HoveringGunController.<HandleFireShortBeam>c__Iterator0()
         {
           projectileToSpawn = projectileToSpawn,
           source = source,
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -269,12 +269,12 @@ namespace ETG.Core.Core.Framework
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HoveringGunController.\u003CFireVolleyForDuration\u003Ec__Iterator1()
+        return (IEnumerator) new HoveringGunController.<FireVolleyForDuration>c__Iterator1()
         {
           duration = duration,
           volley = volley,
           source = source,
-          \u0024this = this
+          $this = this
         };
       }
 

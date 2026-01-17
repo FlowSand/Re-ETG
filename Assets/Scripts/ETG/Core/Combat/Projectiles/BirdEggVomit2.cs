@@ -43,9 +43,9 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BirdEggVomit2.EggBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new BirdEggVomit2.EggBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
 
@@ -84,9 +84,9 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BirdEggVomit2.ClusterBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new BirdEggVomit2.ClusterBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }
@@ -102,9 +102,9 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BirdEggVomit2.InnerBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new BirdEggVomit2.InnerBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }

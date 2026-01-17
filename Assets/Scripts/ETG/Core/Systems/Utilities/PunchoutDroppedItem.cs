@@ -51,9 +51,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator MoveCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PunchoutDroppedItem.\u003CMoveCR\u003Ec__Iterator0()
+        return (IEnumerator) new PunchoutDroppedItem.<MoveCR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

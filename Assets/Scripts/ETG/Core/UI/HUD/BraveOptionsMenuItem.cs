@@ -369,7 +369,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator DeferFunctionNumberOfFrames(int numFrames, System.Action action)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BraveOptionsMenuItem.\u003CDeferFunctionNumberOfFrames\u003Ec__Iterator0()
+        return (IEnumerator) new BraveOptionsMenuItem.<DeferFunctionNumberOfFrames>c__Iterator0()
         {
           numFrames = numFrames,
           action = action
@@ -818,9 +818,9 @@ namespace ETG.Core.UI.HUD
       public IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BraveOptionsMenuItem.\u003CStart\u003Ec__Iterator1()
+        return (IEnumerator) new BraveOptionsMenuItem.<Start>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1215,7 +1215,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator HandleArrowBounce(dfControl targetControl)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BraveOptionsMenuItem.\u003CHandleArrowBounce\u003Ec__Iterator2()
+        return (IEnumerator) new BraveOptionsMenuItem.<HandleArrowBounce>c__Iterator2()
         {
           targetControl = targetControl
         };
@@ -1302,7 +1302,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator WaitForAreYouSure(System.Action OnYes, System.Action OnNo)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BraveOptionsMenuItem.\u003CWaitForAreYouSure\u003Ec__Iterator3()
+        return (IEnumerator) new BraveOptionsMenuItem.<WaitForAreYouSure>c__Iterator3()
         {
           OnYes = OnYes,
           OnNo = OnNo
@@ -1831,7 +1831,7 @@ namespace ETG.Core.UI.HUD
         Resolution targetRes)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BraveOptionsMenuItem.\u003CFrameDelayedWindowsShift\u003Ec__Iterator4()
+        return (IEnumerator) new BraveOptionsMenuItem.<FrameDelayedWindowsShift>c__Iterator4()
         {
           targetDisplayMode = targetDisplayMode,
           targetRes = targetRes

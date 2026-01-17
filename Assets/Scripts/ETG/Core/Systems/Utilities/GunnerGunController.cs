@@ -63,10 +63,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleLifespan(GameObject source)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GunnerGunController.\u003CHandleLifespan\u003Ec__Iterator0()
+        return (IEnumerator) new GunnerGunController.<HandleLifespan>c__Iterator0()
         {
           source = source,
-          \u0024this = this
+          $this = this
         };
       }
 

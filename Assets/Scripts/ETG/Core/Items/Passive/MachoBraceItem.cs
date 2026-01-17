@@ -127,10 +127,10 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleDamageBoost(PlayerController target)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MachoBraceItem.\u003CHandleDamageBoost\u003Ec__Iterator0()
+        return (IEnumerator) new MachoBraceItem.<HandleDamageBoost>c__Iterator0()
         {
           target = target,
-          \u0024this = this
+          $this = this
         };
       }
     }

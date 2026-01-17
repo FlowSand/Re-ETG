@@ -100,9 +100,9 @@ namespace ETG.Core.UI.HUD
       private IEnumerator ScaleTween()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dUITweenItem.\u003CScaleTween\u003Ec__Iterator0()
+        return (IEnumerator) new tk2dUITweenItem.<ScaleTween>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

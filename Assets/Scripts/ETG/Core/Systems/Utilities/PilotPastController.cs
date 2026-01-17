@@ -35,9 +35,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PilotPastController.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new PilotPastController.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -62,10 +62,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleFriendAndJunkToggle(bool state)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PilotPastController.\u003CHandleFriendAndJunkToggle\u003Ec__Iterator1()
+        return (IEnumerator) new PilotPastController.<HandleFriendAndJunkToggle>c__Iterator1()
         {
           state = state,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -73,9 +73,9 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator EndPastSuccess()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PilotPastController.\u003CEndPastSuccess\u003Ec__Iterator2()
+        return (IEnumerator) new PilotPastController.<EndPastSuccess>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -87,9 +87,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator BossCutscene_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PilotPastController.\u003CBossCutscene_CR\u003Ec__Iterator3()
+        return (IEnumerator) new PilotPastController.<BossCutscene_CR>c__Iterator3()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -97,11 +97,11 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ArriveFromWarp(tk2dBaseSprite targetSprite, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PilotPastController.\u003CArriveFromWarp\u003Ec__Iterator4()
+        return (IEnumerator) new PilotPastController.<ArriveFromWarp>c__Iterator4()
         {
           targetSprite = targetSprite,
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -118,9 +118,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBossKilled()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PilotPastController.\u003CHandleBossKilled\u003Ec__Iterator5()
+        return (IEnumerator) new PilotPastController.<HandleBossKilled>c__Iterator5()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

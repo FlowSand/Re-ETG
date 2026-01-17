@@ -48,7 +48,7 @@ namespace ETG.Core.Systems.Management
       private static bool s_hasBeenInitialized;
       public static string OldSavePath = Path.Combine(Application.dataPath, "saves");
       public static string SavePath = Application.persistentDataPath;
-      private static string secret = \u003CPrivateImplementationDetails\u003E\u007BDE5600AD\u002D6212\u002D4D84\u002D9A32\u002D9D951E3289D1\u007D.Decrypt.DecryptLiteral(new byte[512 /*0x0200*/]
+      private static string secret = <PrivateImplementationDetails>{DE5600AD-6212-4D84-9A32-9D951E3289D1}.Decrypt.DecryptLiteral(new byte[512 /*0x0200*/]
       {
         (byte) 107,
         (byte) 164,

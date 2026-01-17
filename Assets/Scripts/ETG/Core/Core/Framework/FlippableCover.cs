@@ -394,10 +394,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DelayedMakePerpendicular(float time)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FlippableCover.\u003CDelayedMakePerpendicular\u003Ec__Iterator0()
+        return (IEnumerator) new FlippableCover.<DelayedMakePerpendicular>c__Iterator0()
         {
           time = time,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -405,10 +405,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DelayedBreakBreakables(float time)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FlippableCover.\u003CDelayedBreakBreakables\u003Ec__Iterator1()
+        return (IEnumerator) new FlippableCover.<DelayedBreakBreakables>c__Iterator1()
         {
           time = time,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -488,9 +488,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDelayedMoveability()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FlippableCover.\u003CHandleDelayedMoveability\u003Ec__Iterator2()
+        return (IEnumerator) new FlippableCover.<HandleDelayedMoveability>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -498,10 +498,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDelayedVibration(PlayerController player)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FlippableCover.\u003CHandleDelayedVibration\u003Ec__Iterator3()
+        return (IEnumerator) new FlippableCover.<HandleDelayedVibration>c__Iterator3()
         {
           player = player,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -511,11 +511,11 @@ namespace ETG.Core.Core.Framework
         DungeonData.Direction flipDirection)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FlippableCover.\u003CProcessSubElement\u003Ec__Iterator4()
+        return (IEnumerator) new FlippableCover.<ProcessSubElement>c__Iterator4()
         {
           element = element,
           flipDirection = flipDirection,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -757,10 +757,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator StartFallAnimation(IntVector2 dir)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FlippableCover.\u003CStartFallAnimation\u003Ec__Iterator5()
+        return (IEnumerator) new FlippableCover.<StartFallAnimation>c__Iterator5()
         {
           dir = dir,
-          \u0024this = this
+          $this = this
         };
       }
 

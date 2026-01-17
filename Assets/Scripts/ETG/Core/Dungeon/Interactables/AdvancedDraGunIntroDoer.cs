@@ -68,9 +68,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator RunEmbers()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunIntroDoer.\u003CRunEmbers\u003Ec__Iterator0()
+        return (IEnumerator) new AdvancedDraGunIntroDoer.<RunEmbers>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -87,9 +87,9 @@ namespace ETG.Core.Dungeon.Interactables
       public IEnumerator DoIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunIntroDoer.\u003CDoIntro\u003Ec__Iterator1()
+        return (IEnumerator) new AdvancedDraGunIntroDoer.<DoIntro>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

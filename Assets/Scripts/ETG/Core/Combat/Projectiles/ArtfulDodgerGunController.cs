@@ -47,9 +47,9 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleDelayedReward()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ArtfulDodgerGunController.\u003CHandleDelayedReward\u003Ec__Iterator0()
+        return (IEnumerator) new ArtfulDodgerGunController.<HandleDelayedReward>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -39,10 +39,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator hideWindow(dfControl window)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ShowSpellWindow.\u003ChideWindow\u003Ec__Iterator0()
+        return (IEnumerator) new ShowSpellWindow.<hideWindow>c__Iterator0()
         {
           window = window,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -50,10 +50,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator showWindow(dfControl window)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ShowSpellWindow.\u003CshowWindow\u003Ec__Iterator1()
+        return (IEnumerator) new ShowSpellWindow.<showWindow>c__Iterator1()
         {
           window = window,
-          \u0024this = this
+          $this = this
         };
       }
     }

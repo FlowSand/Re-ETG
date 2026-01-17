@@ -62,9 +62,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator SpawnTraps()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TrapSpawnerController.\u003CSpawnTraps\u003Ec__Iterator0()
+        return (IEnumerator) new TrapSpawnerController.<SpawnTraps>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -72,10 +72,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator SpawnTrap(Vector2 pos)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TrapSpawnerController.\u003CSpawnTrap\u003Ec__Iterator1()
+        return (IEnumerator) new TrapSpawnerController.<SpawnTrap>c__Iterator1()
         {
           pos = pos,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -91,10 +91,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DestroyTrap(GameObject trap)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TrapSpawnerController.\u003CDestroyTrap\u003Ec__Iterator2()
+        return (IEnumerator) new TrapSpawnerController.<DestroyTrap>c__Iterator2()
         {
           trap = trap,
-          \u0024this = this
+          $this = this
         };
       }
     }

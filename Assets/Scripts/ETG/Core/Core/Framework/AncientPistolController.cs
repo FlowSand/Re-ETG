@@ -29,10 +29,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDelayedInitialization(RoomHandler room)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AncientPistolController.\u003CHandleDelayedInitialization\u003Ec__Iterator0()
+        return (IEnumerator) new AncientPistolController.<HandleDelayedInitialization>c__Iterator0()
         {
           room = room,
-          \u0024this = this
+          $this = this
         };
       }
 

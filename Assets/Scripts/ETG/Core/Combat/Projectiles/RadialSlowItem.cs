@@ -33,10 +33,10 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleStealEffect(PlayerController user)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowItem.\u003CHandleStealEffect\u003Ec__Iterator0()
+        return (IEnumerator) new RadialSlowItem.<HandleStealEffect>c__Iterator0()
         {
           user = user,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -82,9 +82,9 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleActive()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowItem.\u003CHandleActive\u003Ec__Iterator1()
+        return (IEnumerator) new RadialSlowItem.<HandleActive>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -92,10 +92,10 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator ProcessSlow(AIActor target)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowItem.\u003CProcessSlow\u003Ec__Iterator2()
+        return (IEnumerator) new RadialSlowItem.<ProcessSlow>c__Iterator2()
         {
           target = target,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -103,10 +103,10 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator ProcessHammerSlow(ForgeHammerController target)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowItem.\u003CProcessHammerSlow\u003Ec__Iterator3()
+        return (IEnumerator) new RadialSlowItem.<ProcessHammerSlow>c__Iterator3()
         {
           target = target,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -114,10 +114,10 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator ProcessTrapSlow(ProjectileTrapController target)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowItem.\u003CProcessTrapSlow\u003Ec__Iterator4()
+        return (IEnumerator) new RadialSlowItem.<ProcessTrapSlow>c__Iterator4()
         {
           target = target,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -125,11 +125,11 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator ProcessShopSlow(BaseShopController target, AIAnimator shopkeep)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowItem.\u003CProcessShopSlow\u003Ec__Iterator5()
+        return (IEnumerator) new RadialSlowItem.<ProcessShopSlow>c__Iterator5()
         {
           target = target,
           shopkeep = shopkeep,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -137,10 +137,10 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator ProcessBehaviorSpeculatorSlow(BehaviorSpeculator target)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowItem.\u003CProcessBehaviorSpeculatorSlow\u003Ec__Iterator6()
+        return (IEnumerator) new RadialSlowItem.<ProcessBehaviorSpeculatorSlow>c__Iterator6()
         {
           target = target,
-          \u0024this = this
+          $this = this
         };
       }
 

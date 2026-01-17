@@ -37,10 +37,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator WaitForChunkLoaded(AsyncOperation loader)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlaceableAsyncSceneLoader.\u003CWaitForChunkLoaded\u003Ec__Iterator0()
+        return (IEnumerator) new PlaceableAsyncSceneLoader.<WaitForChunkLoaded>c__Iterator0()
         {
           loader = loader,
-          \u0024this = this
+          $this = this
         };
       }
 

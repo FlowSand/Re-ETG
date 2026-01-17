@@ -31,10 +31,10 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleShield(PlayerController user)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FortuneFavorItem.\u003CHandleShield\u003Ec__Iterator0()
+        return (IEnumerator) new FortuneFavorItem.<HandleShield>c__Iterator0()
         {
           user = user,
-          \u0024this = this
+          $this = this
         };
       }
 

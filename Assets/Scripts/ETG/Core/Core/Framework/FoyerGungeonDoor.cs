@@ -61,10 +61,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleCoopAnimation(PlayerController p)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FoyerGungeonDoor.\u003CHandleCoopAnimation\u003Ec__Iterator0()
+        return (IEnumerator) new FoyerGungeonDoor.<HandleCoopAnimation>c__Iterator0()
         {
           p = p,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -72,10 +72,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLoading(PlayerController p)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FoyerGungeonDoor.\u003CHandleLoading\u003Ec__Iterator1()
+        return (IEnumerator) new FoyerGungeonDoor.<HandleLoading>c__Iterator1()
         {
           p = p,
-          \u0024this = this
+          $this = this
         };
       }
 

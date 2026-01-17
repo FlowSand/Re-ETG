@@ -443,11 +443,11 @@ public class tk<T, TContext>
     {
       get
       {
-        tk<T, TContext>.HorizontalGroup.\u003C\u003Ec__Iterator0 memberChildControls = new tk<T, TContext>.HorizontalGroup.\u003C\u003Ec__Iterator0()
+        tk<T, TContext>.HorizontalGroup.<>c__Iterator0 memberChildControls = new tk<T, TContext>.HorizontalGroup.<>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
-        memberChildControls.\u0024PC = -2;
+        memberChildControls.$PC = -2;
         return (IEnumerable<tkIControl>) memberChildControls;
       }
     }
@@ -1183,11 +1183,11 @@ label_3:
     {
       get
       {
-        tk<T, TContext>.VerticalGroup.\u003C\u003Ec__Iterator0 memberChildControls = new tk<T, TContext>.VerticalGroup.\u003C\u003Ec__Iterator0()
+        tk<T, TContext>.VerticalGroup.<>c__Iterator0 memberChildControls = new tk<T, TContext>.VerticalGroup.<>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
-        memberChildControls.\u0024PC = -2;
+        memberChildControls.$PC = -2;
         return (IEnumerable<tkIControl>) memberChildControls;
       }
     }

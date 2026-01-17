@@ -53,21 +53,21 @@ public class InControlManager : SingletonMonoBehavior<InControlManager, MonoBeha
     {
       Debug.Log((object) $"InControl (version {(object) InputManager.Version})");
       // ISSUE: reference to a compiler-generated field
-      if (InControlManager.\u003C\u003Ef__mg\u0024cache0 == null)
+      if (InControlManager.<>f__mg$cache0 == null)
       {
         // ISSUE: reference to a compiler-generated field
-        InControlManager.\u003C\u003Ef__mg\u0024cache0 = new Action<InControl.LogMessage>(InControlManager.LogMessage);
+        InControlManager.<>f__mg$cache0 = new Action<InControl.LogMessage>(InControlManager.LogMessage);
       }
       // ISSUE: reference to a compiler-generated field
-      Logger.OnLogMessage -= InControlManager.\u003C\u003Ef__mg\u0024cache0;
+      Logger.OnLogMessage -= InControlManager.<>f__mg$cache0;
       // ISSUE: reference to a compiler-generated field
-      if (InControlManager.\u003C\u003Ef__mg\u0024cache1 == null)
+      if (InControlManager.<>f__mg$cache1 == null)
       {
         // ISSUE: reference to a compiler-generated field
-        InControlManager.\u003C\u003Ef__mg\u0024cache1 = new Action<InControl.LogMessage>(InControlManager.LogMessage);
+        InControlManager.<>f__mg$cache1 = new Action<InControl.LogMessage>(InControlManager.LogMessage);
       }
       // ISSUE: reference to a compiler-generated field
-      Logger.OnLogMessage += InControlManager.\u003C\u003Ef__mg\u0024cache1;
+      Logger.OnLogMessage += InControlManager.<>f__mg$cache1;
       foreach (string customProfile in this.customProfiles)
       {
         System.Type type = System.Type.GetType(customProfile);

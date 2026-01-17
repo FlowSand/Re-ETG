@@ -129,14 +129,14 @@ public static class fsPortableReflection
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    fsPortableReflection.\u003CGetFlattenedMethods\u003Ec__Iterator0 flattenedMethods = new fsPortableReflection.\u003CGetFlattenedMethods\u003Ec__Iterator0()
+    fsPortableReflection.<GetFlattenedMethods>c__Iterator0 flattenedMethods = new fsPortableReflection.<GetFlattenedMethods>c__Iterator0()
     {
       type = type,
       methodName = methodName,
-      \u003C\u0024\u003Etype = type
+      <$>type = type
     };
     // ISSUE: reference to a compiler-generated field
-    flattenedMethods.\u0024PC = -2;
+    flattenedMethods.$PC = -2;
     return (IEnumerable<MethodInfo>) flattenedMethods;
   }
 

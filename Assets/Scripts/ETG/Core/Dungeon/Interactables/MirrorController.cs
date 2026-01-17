@@ -109,11 +109,11 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleShatter(PlayerController interactor, bool skipInitialWait = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MirrorController.\u003CHandleShatter\u003Ec__Iterator0()
+        return (IEnumerator) new MirrorController.<HandleShatter>c__Iterator0()
         {
           skipInitialWait = skipInitialWait,
           interactor = interactor,
-          \u0024this = this
+          $this = this
         };
       }
 

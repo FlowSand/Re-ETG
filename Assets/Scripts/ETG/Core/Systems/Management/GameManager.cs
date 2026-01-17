@@ -177,11 +177,11 @@ namespace ETG.Core.Systems.Management
       private IEnumerator SetResolutionPostFullscreenChange(int newWidth, int newHeight)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CSetResolutionPostFullscreenChange\u003Ec__Iterator0()
+        return (IEnumerator) new GameManager.<SetResolutionPostFullscreenChange>c__Iterator0()
         {
           newWidth = newWidth,
           newHeight = newHeight,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -897,11 +897,11 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedQuickRestart_CR(float duration, QuickRestartOptions options)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CDelayedQuickRestart_CR\u003Ec__Iterator1()
+        return (IEnumerator) new GameManager.<DelayedQuickRestart_CR>c__Iterator1()
         {
           duration = duration,
           options = options,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -975,10 +975,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator PostQuickStartCR(QuickRestartOptions options)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CPostQuickStartCR\u003Ec__Iterator2()
+        return (IEnumerator) new GameManager.<PostQuickStartCR>c__Iterator2()
         {
           options = options,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1009,10 +1009,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedLoadMainMenu_CR(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CDelayedLoadMainMenu_CR\u003Ec__Iterator3()
+        return (IEnumerator) new GameManager.<DelayedLoadMainMenu_CR>c__Iterator3()
         {
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1043,7 +1043,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleFrameDelayedEnteredFoyer(PlayerController p)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CHandleFrameDelayedEnteredFoyer\u003Ec__Iterator4()
+        return (IEnumerator) new GameManager.<HandleFrameDelayedEnteredFoyer>c__Iterator4()
         {
           p = p
         };
@@ -1059,10 +1059,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedReturnToFoyer_CR(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CDelayedReturnToFoyer_CR\u003Ec__Iterator5()
+        return (IEnumerator) new GameManager.<DelayedReturnToFoyer_CR>c__Iterator5()
         {
           delay = delay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1391,12 +1391,12 @@ namespace ETG.Core.Systems.Management
         bool doMainMenu)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CDelayedLoadCharacterSelect_CR\u003Ec__Iterator6()
+        return (IEnumerator) new GameManager.<DelayedLoadCharacterSelect_CR>c__Iterator6()
         {
           delay = delay,
           unloadGameData = unloadGameData,
           doMainMenu = doMainMenu,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1480,11 +1480,11 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedLoadBossrushFloor_CR(float delay, int bossrushTargetFloor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CDelayedLoadBossrushFloor_CR\u003Ec__Iterator7()
+        return (IEnumerator) new GameManager.<DelayedLoadBossrushFloor_CR>c__Iterator7()
         {
           delay = delay,
           bossrushTargetFloor = bossrushTargetFloor,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1559,11 +1559,11 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedLoadCustomLevel_CR(float delay, string customLevel)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CDelayedLoadCustomLevel_CR\u003Ec__Iterator8()
+        return (IEnumerator) new GameManager.<DelayedLoadCustomLevel_CR>c__Iterator8()
         {
           delay = delay,
           customLevel = customLevel,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1576,10 +1576,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedLoadNextLevel_CR(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CDelayedLoadNextLevel_CR\u003Ec__Iterator9()
+        return (IEnumerator) new GameManager.<DelayedLoadNextLevel_CR>c__Iterator9()
         {
           delay = delay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1587,10 +1587,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator LoadLevelByIndex(int nextIndex)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CLoadLevelByIndex\u003Ec__IteratorA()
+        return (IEnumerator) new GameManager.<LoadLevelByIndex>c__IteratorA()
         {
           nextIndex = nextIndex,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1648,10 +1648,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator LoadGameOver_CR(string gameOverSource)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CLoadGameOver_CR\u003Ec__IteratorB()
+        return (IEnumerator) new GameManager.<LoadGameOver_CR>c__IteratorB()
         {
           gameOverSource = gameOverSource,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1682,11 +1682,11 @@ namespace ETG.Core.Systems.Management
         bool isHandoff = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CEndLoadNextLevelAsync_CR\u003Ec__IteratorC()
+        return (IEnumerator) new GameManager.<EndLoadNextLevelAsync_CR>c__IteratorC()
         {
           async = async,
           loadingSceneHierarchy = loadingSceneHierarchy,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1694,10 +1694,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator LoadNextLevelAsync_CR(GameLevelDefinition gld)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CLoadNextLevelAsync_CR\u003Ec__IteratorD()
+        return (IEnumerator) new GameManager.<LoadNextLevelAsync_CR>c__IteratorD()
         {
           gld = gld,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1799,9 +1799,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator PixelateCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CPixelateCR\u003Ec__IteratorE()
+        return (IEnumerator) new GameManager.<PixelateCR>c__IteratorE()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1809,9 +1809,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DepixelateCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CDepixelateCR\u003Ec__IteratorF()
+        return (IEnumerator) new GameManager.<DepixelateCR>c__IteratorF()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1835,14 +1835,14 @@ namespace ETG.Core.Systems.Management
         GameManager.c_asyncSoundStartTime = UnityEngine.Time.realtimeSinceStartup;
         GameManager.c_asyncSoundStartFrame = UnityEngine.Time.frameCount;
         // ISSUE: reference to a compiler-generated field
-        if (GameManager.\u003C\u003Ef__mg\u0024cache0 == null)
+        if (GameManager.<>f__mg$cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          GameManager.\u003C\u003Ef__mg\u0024cache0 = new AkCallbackManager.BankCallback(GameManager.BankCallback);
+          GameManager.<>f__mg$cache0 = new AkCallbackManager.BankCallback(GameManager.BankCallback);
         }
         uint out_bankID;
         // ISSUE: reference to a compiler-generated field
-        int num = (int) AkSoundEngine.LoadBank("SFX.bnk", GameManager.\u003C\u003Ef__mg\u0024cache0, (object) null, -1, out out_bankID);
+        int num = (int) AkSoundEngine.LoadBank("SFX.bnk", GameManager.<>f__mg$cache0, (object) null, -1, out out_bankID);
         UnityEngine.Debug.LogError((object) ("async loading bank id: " + (object) out_bankID));
       }
 
@@ -2023,9 +2023,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CStart\u003Ec__Iterator10()
+        return (IEnumerator) new GameManager.<Start>c__Iterator10()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2378,9 +2378,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator EncounterableUnlockedChecks()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CEncounterableUnlockedChecks\u003Ec__Iterator11()
+        return (IEnumerator) new GameManager.<EncounterableUnlockedChecks>c__Iterator11()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2393,7 +2393,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleCustomTimer(float allowedTime, Action<bool> valueSetter)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameManager.\u003CHandleCustomTimer\u003Ec__Iterator12()
+        return (IEnumerator) new GameManager.<HandleCustomTimer>c__Iterator12()
         {
           valueSetter = valueSetter,
           allowedTime = allowedTime

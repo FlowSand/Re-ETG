@@ -71,9 +71,9 @@ public class StartBardSong : FsmStateAction
     List<StatModifier> activeModifiers)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new StartBardSong.\u003CHandleSongLifetime\u003Ec__Iterator0()
+    return (IEnumerator) new StartBardSong.<HandleSongLifetime>c__Iterator0()
     {
-      \u0024this = this
+      $this = this
     };
   }
 

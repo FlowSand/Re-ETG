@@ -73,12 +73,12 @@ public class LoopDungeonGenerator : IDungeonGenerator
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopDungeonGenerator.\u003CGenerateDungeonLayoutDeferred\u003Ec__Iterator0 dungeonLayoutDeferred = new LoopDungeonGenerator.\u003CGenerateDungeonLayoutDeferred\u003Ec__Iterator0()
+    LoopDungeonGenerator.<GenerateDungeonLayoutDeferred>c__Iterator0 dungeonLayoutDeferred = new LoopDungeonGenerator.<GenerateDungeonLayoutDeferred>c__Iterator0()
     {
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    dungeonLayoutDeferred.\u0024PC = -2;
+    dungeonLayoutDeferred.$PC = -2;
     return (IEnumerable) dungeonLayoutDeferred;
   }
 
@@ -87,12 +87,12 @@ public class LoopDungeonGenerator : IDungeonGenerator
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopDungeonGenerator.\u003CGenerateDungeonLayoutDeferred_Internal\u003Ec__Iterator1 deferredInternal = new LoopDungeonGenerator.\u003CGenerateDungeonLayoutDeferred_Internal\u003Ec__Iterator1()
+    LoopDungeonGenerator.<GenerateDungeonLayoutDeferred_Internal>c__Iterator1 deferredInternal = new LoopDungeonGenerator.<GenerateDungeonLayoutDeferred_Internal>c__Iterator1()
     {
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    deferredInternal.\u0024PC = -2;
+    deferredInternal.$PC = -2;
     return (IEnumerable<ProcessStatus>) deferredInternal;
   }
 

@@ -124,9 +124,9 @@ public abstract class tkControl<T, TContext> : tkIControl
   {
     get
     {
-      tkControl<T, TContext>.\u003C\u003Ec__Iterator0 cIterator0 = new tkControl<T, TContext>.\u003C\u003Ec__Iterator0();
-      tkControl<T, TContext>.\u003C\u003Ec__Iterator0 memberChildControls = cIterator0;
-      memberChildControls.\u0024PC = -2;
+      tkControl<T, TContext>.<>c__Iterator0 cIterator0 = new tkControl<T, TContext>.<>c__Iterator0();
+      tkControl<T, TContext>.<>c__Iterator0 memberChildControls = cIterator0;
+      memberChildControls.$PC = -2;
       return (IEnumerable<tkIControl>) memberChildControls;
     }
   }

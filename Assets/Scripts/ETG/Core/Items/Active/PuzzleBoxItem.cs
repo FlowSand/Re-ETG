@@ -148,7 +148,7 @@ namespace ETG.Core.Items.Active
       private IEnumerator TimedKill(AIActor targetActor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PuzzleBoxItem.\u003CTimedKill\u003Ec__Iterator0()
+        return (IEnumerator) new PuzzleBoxItem.<TimedKill>c__Iterator0()
         {
           targetActor = targetActor
         };

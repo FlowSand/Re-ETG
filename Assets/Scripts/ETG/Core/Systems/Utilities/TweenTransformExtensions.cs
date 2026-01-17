@@ -50,13 +50,13 @@ namespace ETG.Core.Systems.Utilities
         DaikonForge.Tween.Tween<float> tween = (DaikonForge.Tween.Tween<float>) null;
         DaikonForge.Tween.Tween<float> tween1 = DaikonForge.Tween.Tween<float>.Obtain().SetStartValue(0.0f).SetEndValue(1f);
         // ISSUE: reference to a compiler-generated field
-        if (TweenTransformExtensions.\u003C\u003Ef__mg\u0024cache0 == null)
+        if (TweenTransformExtensions.<>f__mg$cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenTransformExtensions.\u003C\u003Ef__mg\u0024cache0 = new TweenEasingCallback(TweenEasingFunctions.Linear);
+          TweenTransformExtensions.<>f__mg$cache0 = new TweenEasingCallback(TweenEasingFunctions.Linear);
         }
         // ISSUE: reference to a compiler-generated field
-        TweenEasingCallback fMgCache0 = TweenTransformExtensions.\u003C\u003Ef__mg\u0024cache0;
+        TweenEasingCallback fMgCache0 = TweenTransformExtensions.<>f__mg$cache0;
         tween = tween1.SetEasing(fMgCache0).OnExecute((TweenAssignmentCallback<float>) (time =>
         {
           transform.position = path.GetPosition(time);

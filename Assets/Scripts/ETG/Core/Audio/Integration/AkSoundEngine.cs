@@ -2912,9 +2912,9 @@ namespace ETG.Core.Audio.Integration
           AkSoundEngine.GameObjectHashFunction objectHashFunction;
           if (value == null)
           {
-            if (AkSoundEngine.\u003C\u003Ef__mg\u0024cache0 == null)
-              AkSoundEngine.\u003C\u003Ef__mg\u0024cache0 = new AkSoundEngine.GameObjectHashFunction(AkSoundEngine.InternalGameObjectHash);
-            objectHashFunction = AkSoundEngine.\u003C\u003Ef__mg\u0024cache0;
+            if (AkSoundEngine.<>f__mg$cache0 == null)
+              AkSoundEngine.<>f__mg$cache0 = new AkSoundEngine.GameObjectHashFunction(AkSoundEngine.InternalGameObjectHash);
+            objectHashFunction = AkSoundEngine.<>f__mg$cache0;
           }
           else
             objectHashFunction = value;
@@ -3021,13 +3021,13 @@ namespace ETG.Core.Audio.Integration
       static AkSoundEngine()
       {
         // ISSUE: reference to a compiler-generated field
-        if (AkSoundEngine.\u003C\u003Ef__mg\u0024cache1 == null)
+        if (AkSoundEngine.<>f__mg$cache1 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          AkSoundEngine.\u003C\u003Ef__mg\u0024cache1 = new AkSoundEngine.GameObjectHashFunction(AkSoundEngine.InternalGameObjectHash);
+          AkSoundEngine.<>f__mg$cache1 = new AkSoundEngine.GameObjectHashFunction(AkSoundEngine.InternalGameObjectHash);
         }
         // ISSUE: reference to a compiler-generated field
-        AkSoundEngine.gameObjectHash = AkSoundEngine.\u003C\u003Ef__mg\u0024cache1;
+        AkSoundEngine.gameObjectHash = AkSoundEngine.<>f__mg$cache1;
         AkSoundEngine.RegisteredGameObjects = new HashSet<ulong>();
       }
 

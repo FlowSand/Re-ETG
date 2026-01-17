@@ -110,11 +110,11 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleEjection(PlayerController triggerPlayer, bool success)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DemonFaceController.\u003CHandleEjection\u003Ec__Iterator0()
+        return (IEnumerator) new DemonFaceController.<HandleEjection>c__Iterator0()
         {
           triggerPlayer = triggerPlayer,
           success = success,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -130,9 +130,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator ProvideDumbReward()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DemonFaceController.\u003CProvideDumbReward\u003Ec__Iterator1()
+        return (IEnumerator) new DemonFaceController.<ProvideDumbReward>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

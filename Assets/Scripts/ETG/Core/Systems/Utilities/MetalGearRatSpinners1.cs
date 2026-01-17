@@ -31,9 +31,9 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatSpinners1.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new MetalGearRatSpinners1.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -41,9 +41,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator SpawnInnerRing()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatSpinners1.\u003CSpawnInnerRing\u003Ec__Iterator1()
+        return (IEnumerator) new MetalGearRatSpinners1.<SpawnInnerRing>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -51,9 +51,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator SpawnOuterRing()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatSpinners1.\u003CSpawnOuterRing\u003Ec__Iterator2()
+        return (IEnumerator) new MetalGearRatSpinners1.<SpawnOuterRing>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -126,9 +126,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MetalGearRatSpinners1.CircleDummy.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new MetalGearRatSpinners1.CircleDummy.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }
@@ -160,9 +160,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MetalGearRatSpinners1.CircleBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new MetalGearRatSpinners1.CircleBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }
@@ -195,9 +195,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MetalGearRatSpinners1.OrbitBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new MetalGearRatSpinners1.OrbitBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }

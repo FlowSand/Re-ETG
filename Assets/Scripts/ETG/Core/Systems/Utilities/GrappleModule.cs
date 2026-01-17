@@ -103,10 +103,10 @@ namespace ETG.Core.Systems.Utilities
       protected IEnumerator HandleGrappleEffect(PlayerController user)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GrappleModule.\u003CHandleGrappleEffect\u003Ec__Iterator0()
+        return (IEnumerator) new GrappleModule.<HandleGrappleEffect>c__Iterator0()
         {
           user = user,
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -28,9 +28,9 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AngryBookBasicAttack3.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new AngryBookBasicAttack3.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -48,9 +48,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new AngryBookBasicAttack3.DefaultBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new AngryBookBasicAttack3.DefaultBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }

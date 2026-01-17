@@ -73,7 +73,7 @@ public class PrefabsDict :
 
   private bool IsReadOnly => true;
 
-  bool ICollection<KeyValuePair<string, Transform>>.System\u002ECollections\u002EGeneric\u002EICollection\u003CSystem\u002ECollections\u002EGeneric\u002EKeyValuePair\u003Cstring\u002CUnityEngine\u002ETransform\u003E\u003E\u002EIsReadOnly
+  bool ICollection<KeyValuePair<string, Transform>>.System\u002ECollections\u002EGeneric\u002EICollection<System\u002ECollections\u002EGeneric\u002EKeyValuePair<string\u002CUnityEngine\u002ETransform>>\u002EIsReadOnly
   {
     get => true;
   }
@@ -90,7 +90,7 @@ public class PrefabsDict :
     throw new NotImplementedException("Cannot be copied");
   }
 
-  void ICollection<KeyValuePair<string, Transform>>.System\u002ECollections\u002EGeneric\u002EICollection\u003CSystem\u002ECollections\u002EGeneric\u002EKeyValuePair\u003Cstring\u002CUnityEngine\u002ETransform\u003E\u003E\u002ECopyTo(
+  void ICollection<KeyValuePair<string, Transform>>.System\u002ECollections\u002EGeneric\u002EICollection<System\u002ECollections\u002EGeneric\u002EKeyValuePair<string\u002CUnityEngine\u002ETransform>>\u002ECopyTo(
     KeyValuePair<string, Transform>[] array,
     int arrayIndex)
   {

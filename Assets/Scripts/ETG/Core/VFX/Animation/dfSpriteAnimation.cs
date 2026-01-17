@@ -289,9 +289,9 @@ namespace ETG.Core.VFX.Animation
       private IEnumerator Execute()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new dfSpriteAnimation.\u003CExecute\u003Ec__Iterator0()
+        return (IEnumerator) new dfSpriteAnimation.<Execute>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

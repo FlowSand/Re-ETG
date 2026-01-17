@@ -39,9 +39,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new GuidePastController.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -66,9 +66,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator BossCutscene_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.\u003CBossCutscene_CR\u003Ec__Iterator1()
+        return (IEnumerator) new GuidePastController.<BossCutscene_CR>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -76,9 +76,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleDogGoingNuts()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.\u003CHandleDogGoingNuts\u003Ec__Iterator2()
+        return (IEnumerator) new GuidePastController.<HandleDogGoingNuts>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -86,9 +86,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBulletTrap()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.\u003CHandleBulletTrap\u003Ec__Iterator3()
+        return (IEnumerator) new GuidePastController.<HandleBulletTrap>c__Iterator3()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -142,9 +142,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBossKilled()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.\u003CHandleBossKilled\u003Ec__Iterator4()
+        return (IEnumerator) new GuidePastController.<HandleBossKilled>c__Iterator4()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -177,11 +177,11 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleManualTalkDuration(Transform source, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.\u003CHandleManualTalkDuration\u003Ec__Iterator5()
+        return (IEnumerator) new GuidePastController.<HandleManualTalkDuration>c__Iterator5()
         {
           duration = duration,
           source = source,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -189,9 +189,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleIntroConversation()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.\u003CHandleIntroConversation\u003Ec__Iterator6()
+        return (IEnumerator) new GuidePastController.<HandleIntroConversation>c__Iterator6()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -199,9 +199,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleAntechamberConversation()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GuidePastController.\u003CHandleAntechamberConversation\u003Ec__Iterator7()
+        return (IEnumerator) new GuidePastController.<HandleAntechamberConversation>c__Iterator7()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

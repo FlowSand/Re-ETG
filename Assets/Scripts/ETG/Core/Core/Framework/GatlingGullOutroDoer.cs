@@ -53,9 +53,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleSequence()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GatlingGullOutroDoer.\u003CHandleSequence\u003Ec__Iterator0()
+        return (IEnumerator) new GatlingGullOutroDoer.<HandleSequence>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

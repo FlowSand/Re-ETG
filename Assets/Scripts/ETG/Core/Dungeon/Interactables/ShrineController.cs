@@ -154,10 +154,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleShrineConversation(PlayerController interactor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ShrineController.\u003CHandleShrineConversation\u003Ec__Iterator0()
+        return (IEnumerator) new ShrineController.<HandleShrineConversation>c__Iterator0()
         {
           interactor = interactor,
-          \u0024this = this
+          $this = this
         };
       }
 

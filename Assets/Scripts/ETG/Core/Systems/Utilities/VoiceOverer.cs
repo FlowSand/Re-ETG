@@ -84,9 +84,9 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator HandleIntroVO()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new VoiceOverer.\u003CHandleIntroVO\u003Ec__Iterator0()
+        return (IEnumerator) new VoiceOverer.<HandleIntroVO>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -94,9 +94,9 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator HandlePlayerLostVO()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new VoiceOverer.\u003CHandlePlayerLostVO\u003Ec__Iterator1()
+        return (IEnumerator) new VoiceOverer.<HandlePlayerLostVO>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -104,10 +104,10 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator HandlePlayerWonVO(float maxDuration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new VoiceOverer.\u003CHandlePlayerWonVO\u003Ec__Iterator2()
+        return (IEnumerator) new VoiceOverer.<HandlePlayerWonVO>c__Iterator2()
         {
           maxDuration = maxDuration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -136,11 +136,11 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator HandleTalk(string stringKey, float maxDuration = -1f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new VoiceOverer.\u003CHandleTalk\u003Ec__Iterator3()
+        return (IEnumerator) new VoiceOverer.<HandleTalk>c__Iterator3()
         {
           stringKey = stringKey,
           maxDuration = maxDuration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -148,11 +148,11 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator TalkRaw(string plaintext, float maxDuration = -1f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new VoiceOverer.\u003CTalkRaw\u003Ec__Iterator4()
+        return (IEnumerator) new VoiceOverer.<TalkRaw>c__Iterator4()
         {
           plaintext = plaintext,
           maxDuration = maxDuration,
-          \u0024this = this
+          $this = this
         };
       }
     }

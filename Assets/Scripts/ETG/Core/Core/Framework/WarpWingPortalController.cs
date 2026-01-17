@@ -33,9 +33,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WarpWingPortalController.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new WarpWingPortalController.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -224,7 +224,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDelayedAnimationTrigger(tk2dSpriteAnimator target)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WarpWingPortalController.\u003CHandleDelayedAnimationTrigger\u003Ec__Iterator1()
+        return (IEnumerator) new WarpWingPortalController.<HandleDelayedAnimationTrigger>c__Iterator1()
         {
           target = target
         };
@@ -236,7 +236,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator MarkUsed(WarpWingPortalController targetPortal)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WarpWingPortalController.\u003CMarkUsed\u003Ec__Iterator2()
+        return (IEnumerator) new WarpWingPortalController.<MarkUsed>c__Iterator2()
         {
           targetPortal = targetPortal
         };

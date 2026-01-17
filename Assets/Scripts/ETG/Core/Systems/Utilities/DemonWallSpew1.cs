@@ -33,9 +33,9 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DemonWallSpew1.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new DemonWallSpew1.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -43,10 +43,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator FireWall(float sign)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DemonWallSpew1.\u003CFireWall\u003Ec__Iterator1()
+        return (IEnumerator) new DemonWallSpew1.<FireWall>c__Iterator1()
         {
           sign = sign,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -54,10 +54,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator FireWaves(int index)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DemonWallSpew1.\u003CFireWaves\u003Ec__Iterator2()
+        return (IEnumerator) new DemonWallSpew1.<FireWaves>c__Iterator2()
         {
           index = index,
-          \u0024this = this
+          $this = this
         };
       }
     }

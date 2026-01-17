@@ -27,9 +27,9 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PaydaySynergyProcessor.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new PaydaySynergyProcessor.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

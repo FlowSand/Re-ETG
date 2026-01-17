@@ -39,9 +39,9 @@ namespace ETG.Core.Dungeon.Interactables
       public IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DraGunRoomPlaceable.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new DraGunRoomPlaceable.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

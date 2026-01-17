@@ -70,9 +70,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PortalGunPortalController.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new PortalGunPortalController.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

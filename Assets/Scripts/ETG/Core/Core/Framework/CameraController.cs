@@ -488,11 +488,11 @@ namespace ETG.Core.Core.Framework
       public IEnumerator UpdateOverridePosition_CR(Vector3 newOverridePosition, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CameraController.\u003CUpdateOverridePosition_CR\u003Ec__Iterator0()
+        return (IEnumerator) new CameraController.<UpdateOverridePosition_CR>c__Iterator0()
         {
           duration = duration,
           newOverridePosition = newOverridePosition,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -692,13 +692,13 @@ namespace ETG.Core.Core.Framework
         bool useCameraVibration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CameraController.\u003CHandleContinuousScreenShake\u003Ec__Iterator1()
+        return (IEnumerator) new CameraController.<HandleContinuousScreenShake>c__Iterator1()
         {
           direction = direction,
           magnitude = magnitude,
           shakeSpeed = shakeSpeed,
           useCameraVibration = useCameraVibration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -709,12 +709,12 @@ namespace ETG.Core.Core.Framework
         Vector2? origin)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CameraController.\u003CHandleDelayedScreenShake\u003Ec__Iterator2()
+        return (IEnumerator) new CameraController.<HandleDelayedScreenShake>c__Iterator2()
         {
           delay = delay,
           sss = sss,
           origin = origin,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -729,7 +729,7 @@ namespace ETG.Core.Core.Framework
         bool useCameraVibration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CameraController.\u003CHandleScreenShake\u003Ec__Iterator3()
+        return (IEnumerator) new CameraController.<HandleScreenShake>c__Iterator3()
         {
           origin = origin,
           magnitude = magnitude,
@@ -738,7 +738,7 @@ namespace ETG.Core.Core.Framework
           time = time,
           falloffTime = falloffTime,
           useCameraVibration = useCameraVibration,
-          \u0024this = this
+          $this = this
         };
       }
 

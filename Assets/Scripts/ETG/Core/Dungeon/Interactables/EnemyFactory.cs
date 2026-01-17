@@ -42,9 +42,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator SpawnWaveCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EnemyFactory.\u003CSpawnWaveCR\u003Ec__Iterator0()
+        return (IEnumerator) new EnemyFactory.<SpawnWaveCR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

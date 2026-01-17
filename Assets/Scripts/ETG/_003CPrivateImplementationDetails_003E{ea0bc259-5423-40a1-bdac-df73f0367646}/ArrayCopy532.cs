@@ -7,15 +7,15 @@
 using System.Runtime.InteropServices;
 
 #nullable disable
-namespace \u003CPrivateImplementationDetails\u003E\u007Bea0bc259\u002D5423\u002D40a1\u002Dbdac\u002Ddf73f0367646\u007D;
+namespace <PrivateImplementationDetails>{ea0bc259-5423-40a1-bdac-df73f0367646};
 
 [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
 internal class ArrayCopy532
 {
-  internal static ArrayCopy532.\u0024ArrayType\u0024535 \u0024\u0024field\u002D0;
+  internal static ArrayCopy532.$ArrayType$535 $$field-0;
 
   [StructLayout(LayoutKind.Explicit, Size = 535, Pack = 1)]
-  private struct \u0024ArrayType\u0024535
+  private struct $ArrayType$535
   {
   }
 }

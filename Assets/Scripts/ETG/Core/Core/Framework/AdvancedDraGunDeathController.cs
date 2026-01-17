@@ -45,9 +45,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunDeathController.\u003COnDeathExplosionsCR\u003Ec__Iterator0()
+        return (IEnumerator) new AdvancedDraGunDeathController.<OnDeathExplosionsCR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -55,11 +55,11 @@ namespace ETG.Core.Core.Framework
       private IEnumerator ExplodeHand(AIAnimator hand, float headDirection)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunDeathController.\u003CExplodeHand\u003Ec__Iterator1()
+        return (IEnumerator) new AdvancedDraGunDeathController.<ExplodeHand>c__Iterator1()
         {
           headDirection = headDirection,
           hand = hand,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -71,13 +71,13 @@ namespace ETG.Core.Core.Framework
         float postDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunDeathController.\u003CExplodeBall\u003Ec__Iterator2()
+        return (IEnumerator) new AdvancedDraGunDeathController.<ExplodeBall>c__Iterator2()
         {
           arm = arm,
           ballName = ballName,
           headDirection = headDirection,
           postDelay = postDelay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -89,13 +89,13 @@ namespace ETG.Core.Core.Framework
         float postDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunDeathController.\u003CExplodeShoulder\u003Ec__Iterator3()
+        return (IEnumerator) new AdvancedDraGunDeathController.<ExplodeShoulder>c__Iterator3()
         {
           arm = arm,
           ballName = ballName,
           headDirection = headDirection,
           postDelay = postDelay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -103,10 +103,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator FadeBodyCR(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunDeathController.\u003CFadeBodyCR\u003Ec__Iterator4()
+        return (IEnumerator) new AdvancedDraGunDeathController.<FadeBodyCR>c__Iterator4()
         {
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -149,7 +149,7 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DelayedSpriteFixer(tk2dBaseSprite sprite)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AdvancedDraGunDeathController.\u003CDelayedSpriteFixer\u003Ec__Iterator5()
+        return (IEnumerator) new AdvancedDraGunDeathController.<DelayedSpriteFixer>c__Iterator5()
         {
           sprite = sprite
         };

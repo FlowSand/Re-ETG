@@ -135,10 +135,10 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleBarrage(List<Vector2> targets)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DirectionalAttackActiveItem.\u003CHandleBarrage\u003Ec__Iterator0()
+        return (IEnumerator) new DirectionalAttackActiveItem.<HandleBarrage>c__Iterator0()
         {
           targets = targets,
-          \u0024this = this
+          $this = this
         };
       }
 

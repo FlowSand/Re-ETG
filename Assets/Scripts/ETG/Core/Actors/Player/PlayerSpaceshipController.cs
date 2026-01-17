@@ -118,9 +118,9 @@ namespace ETG.Core.Actors.Player
       private IEnumerator HandleDelayedEndGame()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerSpaceshipController.\u003CHandleDelayedEndGame\u003Ec__Iterator0()
+        return (IEnumerator) new PlayerSpaceshipController.<HandleDelayedEndGame>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

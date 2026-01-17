@@ -76,9 +76,9 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator HandleTimeTubeLightFX()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TimeTubeCreditsController.\u003CHandleTimeTubeLightFX\u003Ec__Iterator0()
+        return (IEnumerator) new TimeTubeCreditsController.<HandleTimeTubeLightFX>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -91,14 +91,14 @@ namespace ETG.Core.Systems.Utilities
         bool quickEndShatter = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TimeTubeCreditsController.\u003CHandleTimeTubeCredits\u003Ec__Iterator1()
+        return (IEnumerator) new TimeTubeCreditsController.<HandleTimeTubeCredits>c__Iterator1()
         {
           decayCenter = decayCenter,
           shotPlayerID = shotPlayerID,
           skipCredits = skipCredits,
           optionalAnimatorToDisable = optionalAnimatorToDisable,
           quickEndShatter = quickEndShatter,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -110,13 +110,13 @@ namespace ETG.Core.Systems.Utilities
         Transform TunnelTransform)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TimeTubeCreditsController.\u003CHandleTimefallCorpse\u003Ec__Iterator2()
+        return (IEnumerator) new TimeTubeCreditsController.<HandleTimefallCorpse>c__Iterator2()
         {
           sourcePlayer = sourcePlayer,
           isShotPlayer = isShotPlayer,
           TunnelCamera = TunnelCamera,
           TunnelTransform = TunnelTransform,
-          \u0024this = this
+          $this = this
         };
       }
     }

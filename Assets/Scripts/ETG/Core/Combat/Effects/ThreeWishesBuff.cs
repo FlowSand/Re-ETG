@@ -109,12 +109,12 @@ namespace ETG.Core.Combat.Effects
       private IEnumerator DelayedDamage(float source, GameObject vfx, GameObject finalVfx)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ThreeWishesBuff.\u003CDelayedDamage\u003Ec__Iterator0()
+        return (IEnumerator) new ThreeWishesBuff.<DelayedDamage>c__Iterator0()
         {
           vfx = vfx,
           source = source,
           finalVfx = finalVfx,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -122,7 +122,7 @@ namespace ETG.Core.Combat.Effects
       private IEnumerator TimedDestroy(GameObject target, float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ThreeWishesBuff.\u003CTimedDestroy\u003Ec__Iterator1()
+        return (IEnumerator) new ThreeWishesBuff.<TimedDestroy>c__Iterator1()
         {
           target = target,
           delay = delay

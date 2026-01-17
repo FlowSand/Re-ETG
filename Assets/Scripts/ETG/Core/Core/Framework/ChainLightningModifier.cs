@@ -132,10 +132,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDamageCooldown(AIActor damagedTarget)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ChainLightningModifier.\u003CHandleDamageCooldown\u003Ec__Iterator0()
+        return (IEnumerator) new ChainLightningModifier.<HandleDamageCooldown>c__Iterator0()
         {
           damagedTarget = damagedTarget,
-          \u0024this = this
+          $this = this
         };
       }
 

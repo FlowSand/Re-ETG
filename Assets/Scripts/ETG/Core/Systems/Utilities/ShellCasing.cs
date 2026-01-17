@@ -101,10 +101,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandlePush(Vector2 vel)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ShellCasing.\u003CHandlePush\u003Ec__Iterator0()
+        return (IEnumerator) new ShellCasing.<HandlePush>c__Iterator0()
         {
           vel = vel,
-          \u0024this = this
+          $this = this
         };
       }
     }

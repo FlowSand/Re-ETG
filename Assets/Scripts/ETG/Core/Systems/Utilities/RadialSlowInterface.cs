@@ -57,11 +57,11 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleNewEnemies(Vector2 centerPoint, RoomHandler targetRoom)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowInterface.\u003CHandleNewEnemies\u003Ec__Iterator0()
+        return (IEnumerator) new RadialSlowInterface.<HandleNewEnemies>c__Iterator0()
         {
           centerPoint = centerPoint,
           targetRoom = targetRoom,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -69,10 +69,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ProcessCirclePass(Vector2 centerPoint)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowInterface.\u003CProcessCirclePass\u003Ec__Iterator1()
+        return (IEnumerator) new RadialSlowInterface.<ProcessCirclePass>c__Iterator1()
         {
           centerPoint = centerPoint,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -80,9 +80,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ProcessEnsepia()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowInterface.\u003CProcessEnsepia\u003Ec__Iterator2()
+        return (IEnumerator) new RadialSlowInterface.<ProcessEnsepia>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -90,12 +90,12 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ProcessSlow(Vector2 centerPoint, AIActor target, float startTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RadialSlowInterface.\u003CProcessSlow\u003Ec__Iterator3()
+        return (IEnumerator) new RadialSlowInterface.<ProcessSlow>c__Iterator3()
         {
           startTime = startTime,
           target = target,
           centerPoint = centerPoint,
-          \u0024this = this
+          $this = this
         };
       }
     }

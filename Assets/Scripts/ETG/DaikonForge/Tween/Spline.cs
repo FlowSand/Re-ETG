@@ -151,9 +151,9 @@ public class Spline : IPathIterator, IEnumerable<Spline.ControlPoint>, IEnumerab
   private IEnumerator<Spline.ControlPoint> GetCustomEnumerator()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator<Spline.ControlPoint>) new Spline.\u003CGetCustomEnumerator\u003Ec__Iterator0()
+    return (IEnumerator<Spline.ControlPoint>) new Spline.<GetCustomEnumerator>c__Iterator0()
     {
-      \u0024this = this
+      $this = this
     };
   }
 

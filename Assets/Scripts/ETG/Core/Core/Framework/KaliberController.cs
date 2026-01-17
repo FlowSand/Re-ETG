@@ -37,9 +37,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DestroyHead()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new KaliberController.\u003CDestroyHead\u003Ec__Iterator0()
+        return (IEnumerator) new KaliberController.<DestroyHead>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

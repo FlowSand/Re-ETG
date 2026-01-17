@@ -390,11 +390,11 @@ public class Bullet
   private IEnumerator ChangeSpeedTask(Brave.BulletScript.Speed speed, int term)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Bullet.\u003CChangeSpeedTask\u003Ec__Iterator0()
+    return (IEnumerator) new Bullet.<ChangeSpeedTask>c__Iterator0()
     {
       speed = speed,
       term = term,
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -402,11 +402,11 @@ public class Bullet
   private IEnumerator ChangeDirectionTask(Brave.BulletScript.Direction direction, int term)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Bullet.\u003CChangeDirectionTask\u003Ec__Iterator1()
+    return (IEnumerator) new Bullet.<ChangeDirectionTask>c__Iterator1()
     {
       direction = direction,
       term = term,
-      \u0024this = this
+      $this = this
     };
   }
 

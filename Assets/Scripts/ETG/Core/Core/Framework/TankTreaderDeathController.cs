@@ -55,9 +55,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TankTreaderDeathController.\u003COnDeathExplosionsCR\u003Ec__Iterator0()
+        return (IEnumerator) new TankTreaderDeathController.<OnDeathExplosionsCR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

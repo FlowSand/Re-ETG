@@ -74,9 +74,9 @@ namespace ETG.Core.Combat.Effects
       private IEnumerator ApplyModification()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SpeedModificationBuff.\u003CApplyModification\u003Ec__Iterator0()
+        return (IEnumerator) new SpeedModificationBuff.<ApplyModification>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

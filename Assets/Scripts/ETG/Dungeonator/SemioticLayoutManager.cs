@@ -339,17 +339,17 @@ public class SemioticLayoutManager
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    SemioticLayoutManager.\u003CFindNearestValidLocationForLayout2\u003Ec__Iterator0 locationForLayout2 = new SemioticLayoutManager.\u003CFindNearestValidLocationForLayout2\u003Ec__Iterator0()
+    SemioticLayoutManager.<FindNearestValidLocationForLayout2>c__Iterator0 locationForLayout2 = new SemioticLayoutManager.<FindNearestValidLocationForLayout2>c__Iterator0()
     {
       newAreaBasePosition = newAreaBasePosition,
       staticAreaBasePosition = staticAreaBasePosition,
       staticExit = staticExit,
       newExit = newExit,
       canvas = canvas,
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    locationForLayout2.\u0024PC = -2;
+    locationForLayout2.$PC = -2;
     return (IEnumerable) locationForLayout2;
   }
 
@@ -653,17 +653,17 @@ label_9:
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    SemioticLayoutManager.\u003CCheckExitsAgainstDisparateLayouts\u003Ec__Iterator1 layoutsCIterator1 = new SemioticLayoutManager.\u003CCheckExitsAgainstDisparateLayouts\u003Ec__Iterator1()
+    SemioticLayoutManager.<CheckExitsAgainstDisparateLayouts>c__Iterator1 layoutsCIterator1 = new SemioticLayoutManager.<CheckExitsAgainstDisparateLayouts>c__Iterator1()
     {
       staticAreaBasePosition = staticAreaBasePosition,
       staticExit = staticExit,
       newAreaBasePosition = newAreaBasePosition,
       newExit = newExit,
       otherLayout = otherLayout,
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    layoutsCIterator1.\u0024PC = -2;
+    layoutsCIterator1.$PC = -2;
     return (IEnumerable<ProcessStatus>) layoutsCIterator1;
   }
 
@@ -734,17 +734,17 @@ label_9:
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    SemioticLayoutManager.\u003CCanPlaceLayoutAtPoint\u003Ec__Iterator2 atPointCIterator2 = new SemioticLayoutManager.\u003CCanPlaceLayoutAtPoint\u003Ec__Iterator2()
+    SemioticLayoutManager.<CanPlaceLayoutAtPoint>c__Iterator2 atPointCIterator2 = new SemioticLayoutManager.<CanPlaceLayoutAtPoint>c__Iterator2()
     {
       staticExit = staticExit,
       newExit = newExit,
       staticAreaBasePosition = staticAreaBasePosition,
       newAreaBasePosition = newAreaBasePosition,
       layout = layout,
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    atPointCIterator2.\u0024PC = -2;
+    atPointCIterator2.$PC = -2;
     return (IEnumerable) atPointCIterator2;
   }
 
@@ -847,16 +847,16 @@ label_9:
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    SemioticLayoutManager.\u003CCanPlaceRoomAtAttachPointByExit\u003Ec__Iterator3 byExitCIterator3 = new SemioticLayoutManager.\u003CCanPlaceRoomAtAttachPointByExit\u003Ec__Iterator3()
+    SemioticLayoutManager.<CanPlaceRoomAtAttachPointByExit>c__Iterator3 byExitCIterator3 = new SemioticLayoutManager.<CanPlaceRoomAtAttachPointByExit>c__Iterator3()
     {
       exitToTest = exitToTest,
       previousExit = previousExit,
       basePositionOfPreviousRoom = basePositionOfPreviousRoom,
       newRoom = newRoom,
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    byExitCIterator3.\u0024PC = -2;
+    byExitCIterator3.$PC = -2;
     return (IEnumerable<ProcessStatus>) byExitCIterator3;
   }
 

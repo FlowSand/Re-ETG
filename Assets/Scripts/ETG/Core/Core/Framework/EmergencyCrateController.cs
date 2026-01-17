@@ -121,9 +121,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DestroyCrateDelayed()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EmergencyCrateController.\u003CDestroyCrateDelayed\u003Ec__Iterator0()
+        return (IEnumerator) new EmergencyCrateController.<DestroyCrateDelayed>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -131,10 +131,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DestroyCrateWhenPickedUp(DebrisObject spawned)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EmergencyCrateController.\u003CDestroyCrateWhenPickedUp\u003Ec__Iterator1()
+        return (IEnumerator) new EmergencyCrateController.<DestroyCrateWhenPickedUp>c__Iterator1()
         {
           spawned = spawned,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -142,10 +142,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DestroyCrateWhenPickedUp(AmmoPickup spawnedAmmo)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EmergencyCrateController.\u003CDestroyCrateWhenPickedUp\u003Ec__Iterator2()
+        return (IEnumerator) new EmergencyCrateController.<DestroyCrateWhenPickedUp>c__Iterator2()
         {
           spawnedAmmo = spawnedAmmo,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -153,10 +153,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DestroyCrateWhenPickedUp(Gun spawnedGun)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EmergencyCrateController.\u003CDestroyCrateWhenPickedUp\u003Ec__Iterator3()
+        return (IEnumerator) new EmergencyCrateController.<DestroyCrateWhenPickedUp>c__Iterator3()
         {
           spawnedGun = spawnedGun,
-          \u0024this = this
+          $this = this
         };
       }
 

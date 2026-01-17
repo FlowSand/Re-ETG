@@ -348,9 +348,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator FrameDelayedConfigure()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ForgeHammerController.\u003CFrameDelayedConfigure\u003Ec__Iterator0()
+        return (IEnumerator) new ForgeHammerController.<FrameDelayedConfigure>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -90,11 +90,11 @@ namespace ETG.Core.Combat.Projectiles
       protected IEnumerator HandleAmbientSpawnTime(Vector2 centerPoint, float remainingTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InstantDamageOneEnemyProjectile.\u003CHandleAmbientSpawnTime\u003Ec__Iterator0()
+        return (IEnumerator) new InstantDamageOneEnemyProjectile.<HandleAmbientSpawnTime>c__Iterator0()
         {
           remainingTime = remainingTime,
           centerPoint = centerPoint,
-          \u0024this = this
+          $this = this
         };
       }
 

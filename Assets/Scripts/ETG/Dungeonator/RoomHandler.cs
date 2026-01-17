@@ -321,10 +321,10 @@ public class RoomHandler
   public IEnumerator DeferredMarkVisibleRoomsActive(PlayerController p)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new RoomHandler.\u003CDeferredMarkVisibleRoomsActive\u003Ec__Iterator0()
+    return (IEnumerator) new RoomHandler.<DeferredMarkVisibleRoomsActive>c__Iterator0()
     {
       p = p,
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -340,10 +340,10 @@ public class RoomHandler
   private IEnumerator HandleTimedReinforcementLayer(PrototypeRoomObjectLayer layer)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new RoomHandler.\u003CHandleTimedReinforcementLayer\u003Ec__Iterator1()
+    return (IEnumerator) new RoomHandler.<HandleTimedReinforcementLayer>c__Iterator1()
     {
       layer = layer,
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -418,13 +418,13 @@ public class RoomHandler
     bool reverse = false)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new RoomHandler.\u003CHandleBecomeTerrifyingDarkRoom\u003Ec__Iterator2()
+    return (IEnumerator) new RoomHandler.<HandleBecomeTerrifyingDarkRoom>c__Iterator2()
     {
       reverse = reverse,
       duration = duration,
       goalIntensity = goalIntensity,
       lightIntensity = lightIntensity,
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -725,9 +725,9 @@ public class RoomHandler
   protected IEnumerator HandleReinforcementPreloading()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new RoomHandler.\u003CHandleReinforcementPreloading\u003Ec__Iterator3()
+    return (IEnumerator) new RoomHandler.<HandleReinforcementPreloading>c__Iterator3()
     {
-      \u0024this = this
+      $this = this
     };
   }
 

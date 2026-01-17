@@ -96,11 +96,11 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleDeparture(bool isPrimary, AIAnimator anim)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ActiveSummonItem.\u003CHandleDeparture\u003Ec__Iterator0()
+        return (IEnumerator) new ActiveSummonItem.<HandleDeparture>c__Iterator0()
         {
           anim = anim,
           isPrimary = isPrimary,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -125,11 +125,11 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleLifespan(GameObject targetCompanion, PlayerController owner)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ActiveSummonItem.\u003CHandleLifespan\u003Ec__Iterator1()
+        return (IEnumerator) new ActiveSummonItem.<HandleLifespan>c__Iterator1()
         {
           owner = owner,
           targetCompanion = targetCompanion,
-          \u0024this = this
+          $this = this
         };
       }
 

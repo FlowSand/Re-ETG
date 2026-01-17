@@ -85,9 +85,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator MoveQuickstartOffscreen()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CMoveQuickstartOffscreen\u003Ec__Iterator0()
+        return (IEnumerator) new FinalIntroSequenceManager.<MoveQuickstartOffscreen>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -95,9 +95,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator MoveQuickstartOnScreen()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CMoveQuickstartOnScreen\u003Ec__Iterator1()
+        return (IEnumerator) new FinalIntroSequenceManager.<MoveQuickstartOnScreen>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -105,9 +105,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CStart\u003Ec__Iterator2()
+        return (IEnumerator) new FinalIntroSequenceManager.<Start>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -115,9 +115,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleBackgroundSkipChecks()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CHandleBackgroundSkipChecks\u003Ec__Iterator3()
+        return (IEnumerator) new FinalIntroSequenceManager.<HandleBackgroundSkipChecks>c__Iterator3()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -125,10 +125,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator SkippableWait(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CSkippableWait\u003Ec__Iterator4()
+        return (IEnumerator) new FinalIntroSequenceManager.<SkippableWait>c__Iterator4()
         {
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -136,9 +136,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator CoreSequence()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CCoreSequence\u003Ec__Iterator5()
+        return (IEnumerator) new FinalIntroSequenceManager.<CoreSequence>c__Iterator5()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -164,13 +164,13 @@ namespace ETG.Core.Systems.Management
         params string[] keys)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CSetIntroStringCR\u003Ec__Iterator6()
+        return (IEnumerator) new FinalIntroSequenceManager.<SetIntroStringCR>c__Iterator6()
         {
           customDura = customDura,
           fadePrevious = fadePrevious,
           resetToCenter = resetToCenter,
           keys = keys,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -210,10 +210,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator LegendSkippableWait(float dura)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CLegendSkippableWait\u003Ec__Iterator7()
+        return (IEnumerator) new FinalIntroSequenceManager.<LegendSkippableWait>c__Iterator7()
         {
           dura = dura,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -221,7 +221,7 @@ namespace ETG.Core.Systems.Management
       private IEnumerator ContinueMovingPreviousCard(FinalIntroSequenceCard previousCard)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CContinueMovingPreviousCard\u003Ec__Iterator8()
+        return (IEnumerator) new FinalIntroSequenceManager.<ContinueMovingPreviousCard>c__Iterator8()
         {
           previousCard = previousCard
         };
@@ -246,9 +246,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator LegendCore()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CLegendCore\u003Ec__Iterator9()
+        return (IEnumerator) new FinalIntroSequenceManager.<LegendCore>c__Iterator9()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -256,12 +256,12 @@ namespace ETG.Core.Systems.Management
       private IEnumerator FadeToBlack(float duration, bool startAtCurrent = false, bool force = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CFadeToBlack\u003Ec__IteratorA()
+        return (IEnumerator) new FinalIntroSequenceManager.<FadeToBlack>c__IteratorA()
         {
           startAtCurrent = startAtCurrent,
           duration = duration,
           force = force,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -269,9 +269,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleDevolverLogo()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CHandleDevolverLogo\u003Ec__IteratorB()
+        return (IEnumerator) new FinalIntroSequenceManager.<HandleDevolverLogo>c__IteratorB()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -279,9 +279,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleDodgeRollLogo()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CHandleDodgeRollLogo\u003Ec__IteratorC()
+        return (IEnumerator) new FinalIntroSequenceManager.<HandleDodgeRollLogo>c__IteratorC()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -289,9 +289,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DoQuickStart()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FinalIntroSequenceManager.\u003CDoQuickStart\u003Ec__IteratorD()
+        return (IEnumerator) new FinalIntroSequenceManager.<DoQuickStart>c__IteratorD()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

@@ -142,7 +142,7 @@ namespace ETG.Core.Items.Passive
         FlippableCover table)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TableFlipItem.\u003CHandleDelayedEffect\u003Ec__Iterator0()
+        return (IEnumerator) new TableFlipItem.<HandleDelayedEffect>c__Iterator0()
         {
           delayTime = delayTime,
           effect = effect,
@@ -290,10 +290,10 @@ namespace ETG.Core.Items.Passive
       private IEnumerator DelayedBlankEffect(FlippableCover table)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TableFlipItem.\u003CDelayedBlankEffect\u003Ec__Iterator1()
+        return (IEnumerator) new TableFlipItem.<DelayedBlankEffect>c__Iterator1()
         {
           table = table,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -392,9 +392,9 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleTimeSlowDuration()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TableFlipItem.\u003CHandleTimeSlowDuration\u003Ec__Iterator2()
+        return (IEnumerator) new TableFlipItem.<HandleTimeSlowDuration>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -419,9 +419,9 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleRageCooldown()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TableFlipItem.\u003CHandleRageCooldown\u003Ec__Iterator3()
+        return (IEnumerator) new TableFlipItem.<HandleRageCooldown>c__Iterator3()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -439,9 +439,9 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleVolleyCooldown()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TableFlipItem.\u003CHandleVolleyCooldown\u003Ec__Iterator4()
+        return (IEnumerator) new TableFlipItem.<HandleVolleyCooldown>c__Iterator4()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -456,10 +456,10 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleHeatEffectsCR(FlippableCover table)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TableFlipItem.\u003CHandleHeatEffectsCR\u003Ec__Iterator5()
+        return (IEnumerator) new TableFlipItem.<HandleHeatEffectsCR>c__Iterator5()
         {
           table = table,
-          \u0024this = this
+          $this = this
         };
       }
 

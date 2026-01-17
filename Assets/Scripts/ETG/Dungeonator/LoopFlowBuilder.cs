@@ -1329,16 +1329,16 @@ label_30:
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopFlowBuilder.\u003CAttachWarpCanvasToLayout\u003Ec__Iterator0 layout1 = new LoopFlowBuilder.\u003CAttachWarpCanvasToLayout\u003Ec__Iterator0()
+    LoopFlowBuilder.<AttachWarpCanvasToLayout>c__Iterator0 layout1 = new LoopFlowBuilder.<AttachWarpCanvasToLayout>c__Iterator0()
     {
       externalNode = externalNode,
       internalNode = internalNode,
       layout = layout,
       canvas = canvas,
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    layout1.\u0024PC = -2;
+    layout1.$PC = -2;
     return (IEnumerable) layout1;
   }
 
@@ -1362,16 +1362,16 @@ label_30:
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopFlowBuilder.\u003CAttachNewCanvasToLayout\u003Ec__Iterator1 layout1 = new LoopFlowBuilder.\u003CAttachNewCanvasToLayout\u003Ec__Iterator1()
+    LoopFlowBuilder.<AttachNewCanvasToLayout>c__Iterator1 layout1 = new LoopFlowBuilder.<AttachNewCanvasToLayout>c__Iterator1()
     {
       externalNode = externalNode,
       internalNode = internalNode,
       layout = layout,
       canvas = canvas,
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    layout1.\u0024PC = -2;
+    layout1.$PC = -2;
     return (IEnumerable) layout1;
   }
 
@@ -1417,12 +1417,12 @@ label_30:
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopFlowBuilder.\u003CDeferredBuild\u003Ec__Iterator2 deferredBuildCIterator2 = new LoopFlowBuilder.\u003CDeferredBuild\u003Ec__Iterator2()
+    LoopFlowBuilder.<DeferredBuild>c__Iterator2 deferredBuildCIterator2 = new LoopFlowBuilder.<DeferredBuild>c__Iterator2()
     {
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    deferredBuildCIterator2.\u0024PC = -2;
+    deferredBuildCIterator2.$PC = -2;
     return (IEnumerable) deferredBuildCIterator2;
   }
 

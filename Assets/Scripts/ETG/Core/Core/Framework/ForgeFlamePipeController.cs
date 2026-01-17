@@ -53,9 +53,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleBurst()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ForgeFlamePipeController.\u003CHandleBurst\u003Ec__Iterator0()
+        return (IEnumerator) new ForgeFlamePipeController.<HandleBurst>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

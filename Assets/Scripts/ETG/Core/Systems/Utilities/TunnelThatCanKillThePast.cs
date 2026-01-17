@@ -106,9 +106,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBulletPosition()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TunnelThatCanKillThePast.\u003CHandleBulletPosition\u003Ec__Iterator0()
+        return (IEnumerator) new TunnelThatCanKillThePast.<HandleBulletPosition>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

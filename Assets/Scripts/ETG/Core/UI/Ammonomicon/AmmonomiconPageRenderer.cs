@@ -221,9 +221,9 @@ namespace ETG.Core.UI.Ammonomicon
       private IEnumerator DelayedBuildPage()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconPageRenderer.\u003CDelayedBuildPage\u003Ec__Iterator0()
+        return (IEnumerator) new AmmonomiconPageRenderer.<DelayedBuildPage>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -281,7 +281,7 @@ namespace ETG.Core.UI.Ammonomicon
         List<tk2dBaseSprite> itemSprites)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconPageRenderer.\u003CHandleDeathItemsClipping\u003Ec__Iterator1()
+        return (IEnumerator) new AmmonomiconPageRenderer.<HandleDeathItemsClipping>c__Iterator1()
         {
           itemSprites = itemSprites,
           parentPanel = parentPanel
@@ -716,7 +716,7 @@ namespace ETG.Core.UI.Ammonomicon
         List<AdvancedSynergyEntry> activeSynergies = null)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconPageRenderer.\u003CConstructRectanglePageLayout\u003Ec__Iterator2()
+        return (IEnumerator) new AmmonomiconPageRenderer.<ConstructRectanglePageLayout>c__Iterator2()
         {
           hideButtons = hideButtons,
           sourcePanel = sourcePanel,
@@ -724,7 +724,7 @@ namespace ETG.Core.UI.Ammonomicon
           journalEntries = journalEntries,
           elementPaddingPx = elementPaddingPx,
           activeSynergies = activeSynergies,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1018,9 +1018,9 @@ namespace ETG.Core.UI.Ammonomicon
       private IEnumerator HandleFrameDelayedInactivation()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AmmonomiconPageRenderer.\u003CHandleFrameDelayedInactivation\u003Ec__Iterator3()
+        return (IEnumerator) new AmmonomiconPageRenderer.<HandleFrameDelayedInactivation>c__Iterator3()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

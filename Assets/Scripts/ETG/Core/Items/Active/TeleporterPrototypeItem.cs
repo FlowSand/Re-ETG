@@ -173,11 +173,11 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleTelefragDelay(RoomHandler targetRoom, bool allEnemies)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TeleporterPrototypeItem.\u003CHandleTelefragDelay\u003Ec__Iterator0()
+        return (IEnumerator) new TeleporterPrototypeItem.<HandleTelefragDelay>c__Iterator0()
         {
           targetRoom = targetRoom,
           allEnemies = allEnemies,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -185,7 +185,7 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleCreepyEyeWarp(PlayerController interactor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TeleporterPrototypeItem.\u003CHandleCreepyEyeWarp\u003Ec__Iterator1()
+        return (IEnumerator) new TeleporterPrototypeItem.<HandleCreepyEyeWarp>c__Iterator1()
         {
           interactor = interactor
         };

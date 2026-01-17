@@ -182,10 +182,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DeactivateLight(Light l)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ObjectVisibilityManager.\u003CDeactivateLight\u003Ec__Iterator0()
+        return (IEnumerator) new ObjectVisibilityManager.<DeactivateLight>c__Iterator0()
         {
           l = l,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -193,10 +193,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator ActivateLight(Light l)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ObjectVisibilityManager.\u003CActivateLight\u003Ec__Iterator1()
+        return (IEnumerator) new ObjectVisibilityManager.<ActivateLight>c__Iterator1()
         {
           l = l,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -211,10 +211,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator DelayedBecameVisible(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ObjectVisibilityManager.\u003CDelayedBecameVisible\u003Ec__Iterator2()
+        return (IEnumerator) new ObjectVisibilityManager.<DelayedBecameVisible>c__Iterator2()
         {
           delay = delay,
-          \u0024this = this
+          $this = this
         };
       }
 

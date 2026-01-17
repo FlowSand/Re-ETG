@@ -51,9 +51,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerIdentityPortraitDoer.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new PlayerIdentityPortraitDoer.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

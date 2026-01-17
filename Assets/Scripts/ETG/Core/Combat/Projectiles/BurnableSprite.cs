@@ -43,9 +43,9 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleBurning()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BurnableSprite.\u003CHandleBurning\u003Ec__Iterator0()
+        return (IEnumerator) new BurnableSprite.<HandleBurning>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

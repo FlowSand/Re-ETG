@@ -116,11 +116,11 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandlePutOn(PlayerController user, tk2dBaseSprite instanceBoxSprite)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CardboardBoxItem.\u003CHandlePutOn\u003Ec__Iterator0()
+        return (IEnumerator) new CardboardBoxItem.<HandlePutOn>c__Iterator0()
         {
           user = user,
           instanceBoxSprite = instanceBoxSprite,
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -2012,9 +2012,9 @@ namespace ETG.Core.UI.HUD
       private IEnumerator focusOnNextFrame()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new dfControl.\u003CfocusOnNextFrame\u003Ec__Iterator0()
+        return (IEnumerator) new dfControl.<focusOnNextFrame>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

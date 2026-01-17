@@ -41,13 +41,13 @@ namespace ETG.Core.Systems.Utilities
       {
         ObjectPool<LinearCastResult>.Factory factory = (ObjectPool<LinearCastResult>.Factory) (() => new LinearCastResult());
         // ISSUE: reference to a compiler-generated field
-        if (LinearCastResult.\u003C\u003Ef__mg\u0024cache0 == null)
+        if (LinearCastResult.<>f__mg$cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          LinearCastResult.\u003C\u003Ef__mg\u0024cache0 = new ObjectPool<LinearCastResult>.Cleanup(LinearCastResult.Cleanup);
+          LinearCastResult.<>f__mg$cache0 = new ObjectPool<LinearCastResult>.Cleanup(LinearCastResult.Cleanup);
         }
         // ISSUE: reference to a compiler-generated field
-        ObjectPool<LinearCastResult>.Cleanup fMgCache0 = LinearCastResult.\u003C\u003Ef__mg\u0024cache0;
+        ObjectPool<LinearCastResult>.Cleanup fMgCache0 = LinearCastResult.<>f__mg$cache0;
         LinearCastResult.Pool = new ObjectPool<LinearCastResult>(factory, 10, fMgCache0);
       }
     }

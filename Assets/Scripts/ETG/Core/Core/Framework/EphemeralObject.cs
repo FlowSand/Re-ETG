@@ -56,9 +56,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DestroyCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EphemeralObject.\u003CDestroyCR\u003Ec__Iterator0()
+        return (IEnumerator) new EphemeralObject.<DestroyCR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

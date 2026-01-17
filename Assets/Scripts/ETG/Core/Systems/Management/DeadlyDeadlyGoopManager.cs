@@ -421,10 +421,10 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleRecursiveElectrification(IntVector2 cellIndex)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DeadlyDeadlyGoopManager.\u003CHandleRecursiveElectrification\u003Ec__Iterator0()
+        return (IEnumerator) new DeadlyDeadlyGoopManager.<HandleRecursiveElectrification>c__Iterator0()
         {
           cellIndex = cellIndex,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1563,7 +1563,7 @@ namespace ETG.Core.Systems.Management
         AnimationCurve goopCurve)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DeadlyDeadlyGoopManager.\u003CTimedAddGoopArc_CR\u003Ec__Iterator1()
+        return (IEnumerator) new DeadlyDeadlyGoopManager.<TimedAddGoopArc_CR>c__Iterator1()
         {
           duration = duration,
           goopCurve = goopCurve,
@@ -1571,7 +1571,7 @@ namespace ETG.Core.Systems.Management
           arcDegrees = arcDegrees,
           origin = origin,
           direction = direction,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1592,13 +1592,13 @@ namespace ETG.Core.Systems.Management
         bool suppressSplashes = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DeadlyDeadlyGoopManager.\u003CTimedAddGoopCircle_CR\u003Ec__Iterator2()
+        return (IEnumerator) new DeadlyDeadlyGoopManager.<TimedAddGoopCircle_CR>c__Iterator2()
         {
           duration = duration,
           radius = radius,
           center = center,
           suppressSplashes = suppressSplashes,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1677,13 +1677,13 @@ namespace ETG.Core.Systems.Management
       private IEnumerator TimedAddGoopLine_CR(Vector2 p1, Vector2 p2, float radius, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DeadlyDeadlyGoopManager.\u003CTimedAddGoopLine_CR\u003Ec__Iterator3()
+        return (IEnumerator) new DeadlyDeadlyGoopManager.<TimedAddGoopLine_CR>c__Iterator3()
         {
           p1 = p1,
           duration = duration,
           p2 = p2,
           radius = radius,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1753,12 +1753,12 @@ namespace ETG.Core.Systems.Management
       public IEnumerator TimedAddGoopRect_CR(Vector2 min, Vector2 max, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DeadlyDeadlyGoopManager.\u003CTimedAddGoopRect_CR\u003Ec__Iterator4()
+        return (IEnumerator) new DeadlyDeadlyGoopManager.<TimedAddGoopRect_CR>c__Iterator4()
         {
           duration = duration,
           min = min,
           max = max,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1807,13 +1807,13 @@ namespace ETG.Core.Systems.Management
           int y = DeadlyDeadlyGoopManager.s_goopPointCenter.y;
           int radius1 = num5;
           // ISSUE: reference to a compiler-generated field
-          if (DeadlyDeadlyGoopManager.\u003C\u003Ef__mg\u0024cache0 == null)
+          if (DeadlyDeadlyGoopManager.<>f__mg$cache0 == null)
           {
             // ISSUE: reference to a compiler-generated field
-            DeadlyDeadlyGoopManager.\u003C\u003Ef__mg\u0024cache0 = new SetBackingFloatFunc(DeadlyDeadlyGoopManager.GetRadiusFraction);
+            DeadlyDeadlyGoopManager.<>f__mg$cache0 = new SetBackingFloatFunc(DeadlyDeadlyGoopManager.GetRadiusFraction);
           }
           // ISSUE: reference to a compiler-generated field
-          SetBackingFloatFunc fMgCache0 = DeadlyDeadlyGoopManager.\u003C\u003Ef__mg\u0024cache0;
+          SetBackingFloatFunc fMgCache0 = DeadlyDeadlyGoopManager.<>f__mg$cache0;
           pointsArray.SetCircle(x, y, radius1, true, fMgCache0);
         }
         int num6 = (int) ((double) excludeCenter.x / (double) DeadlyDeadlyGoopManager.GOOP_GRID_SIZE) - num1;
@@ -1824,13 +1824,13 @@ namespace ETG.Core.Systems.Management
         int y0 = num7;
         int radius2 = num8;
         // ISSUE: reference to a compiler-generated field
-        if (DeadlyDeadlyGoopManager.\u003C\u003Ef__mg\u0024cache1 == null)
+        if (DeadlyDeadlyGoopManager.<>f__mg$cache1 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          DeadlyDeadlyGoopManager.\u003C\u003Ef__mg\u0024cache1 = new SetBackingFloatFunc(DeadlyDeadlyGoopManager.GetRadiusFraction);
+          DeadlyDeadlyGoopManager.<>f__mg$cache1 = new SetBackingFloatFunc(DeadlyDeadlyGoopManager.GetRadiusFraction);
         }
         // ISSUE: reference to a compiler-generated field
-        SetBackingFloatFunc fMgCache1 = DeadlyDeadlyGoopManager.\u003C\u003Ef__mg\u0024cache1;
+        SetBackingFloatFunc fMgCache1 = DeadlyDeadlyGoopManager.<>f__mg$cache1;
         pointsArray1.SetCircle(x0, y0, radius2, false, fMgCache1);
         for (int x = 0; x < width; ++x)
         {

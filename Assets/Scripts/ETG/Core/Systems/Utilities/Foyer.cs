@@ -76,9 +76,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Foyer.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new Foyer.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -105,9 +105,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleIntroSequence()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Foyer.\u003CHandleIntroSequence\u003Ec__Iterator1()
+        return (IEnumerator) new Foyer.<HandleIntroSequence>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -116,7 +116,7 @@ namespace ETG.Core.Systems.Utilities
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        Foyer.\u003CHandleMainMenu\u003Ec__Iterator2 mainMenuCIterator2 = new Foyer.\u003CHandleMainMenu\u003Ec__Iterator2();
+        Foyer.<HandleMainMenu>c__Iterator2 mainMenuCIterator2 = new Foyer.<HandleMainMenu>c__Iterator2();
         return (IEnumerator) mainMenuCIterator2;
       }
 
@@ -197,7 +197,7 @@ namespace ETG.Core.Systems.Utilities
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        Foyer.\u003CHandleAmmonomiconLabel\u003Ec__Iterator3 ammonomiconLabelCIterator3 = new Foyer.\u003CHandleAmmonomiconLabel\u003Ec__Iterator3();
+        Foyer.<HandleAmmonomiconLabel>c__Iterator3 ammonomiconLabelCIterator3 = new Foyer.<HandleAmmonomiconLabel>c__Iterator3();
         return (IEnumerator) ammonomiconLabelCIterator3;
       }
 
@@ -205,9 +205,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleCharacterSelect()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Foyer.\u003CHandleCharacterSelect\u003Ec__Iterator4()
+        return (IEnumerator) new Foyer.<HandleCharacterSelect>c__Iterator4()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -215,11 +215,11 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator OnSelectedCharacter(float delayTime, FoyerCharacterSelectFlag flag)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Foyer.\u003COnSelectedCharacter\u003Ec__Iterator5()
+        return (IEnumerator) new Foyer.<OnSelectedCharacter>c__Iterator5()
         {
           delayTime = delayTime,
           flag = flag,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -227,7 +227,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleInputDelay(PlayerController p, float d)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Foyer.\u003CHandleInputDelay\u003Ec__Iterator6()
+        return (IEnumerator) new Foyer.<HandleInputDelay>c__Iterator6()
         {
           p = p,
           d = d

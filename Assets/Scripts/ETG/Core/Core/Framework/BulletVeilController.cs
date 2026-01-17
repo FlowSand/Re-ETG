@@ -30,9 +30,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletVeilController.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new BulletVeilController.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -106,10 +106,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleVeilParticles(bool reverse)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletVeilController.\u003CHandleVeilParticles\u003Ec__Iterator1()
+        return (IEnumerator) new BulletVeilController.<HandleVeilParticles>c__Iterator1()
         {
           reverse = reverse,
-          \u0024this = this
+          $this = this
         };
       }
 

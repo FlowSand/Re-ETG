@@ -85,10 +85,10 @@ namespace ETG.Core.Actors.Behaviors
       private IEnumerator DelayedGiveItem(PlayerController targetPlayer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CaterpillarDevourHeartBehavior.\u003CDelayedGiveItem\u003Ec__Iterator0()
+        return (IEnumerator) new CaterpillarDevourHeartBehavior.<DelayedGiveItem>c__Iterator0()
         {
           targetPlayer = targetPlayer,
-          \u0024this = this
+          $this = this
         };
       }
 

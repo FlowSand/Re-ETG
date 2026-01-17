@@ -113,9 +113,9 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleSlowBullets()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new IounStoneOrbitalItem.\u003CHandleSlowBullets\u003Ec__Iterator0()
+        return (IEnumerator) new IounStoneOrbitalItem.<HandleSlowBullets>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -178,9 +178,9 @@ public class Dungeon : MonoBehaviour
   private IEnumerator Start()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.\u003CStart\u003Ec__Iterator0()
+    return (IEnumerator) new Dungeon.<Start>c__Iterator0()
     {
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -226,10 +226,10 @@ public class Dungeon : MonoBehaviour
   public IEnumerator Regenerate(bool cleanup)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.\u003CRegenerate\u003Ec__Iterator1()
+    return (IEnumerator) new Dungeon.<Regenerate>c__Iterator1()
     {
       cleanup = cleanup,
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -237,7 +237,7 @@ public class Dungeon : MonoBehaviour
   private IEnumerator FrameDelayedMidgameInitialization(MidGameSaveData midgameSave)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.\u003CFrameDelayedMidgameInitialization\u003Ec__Iterator2()
+    return (IEnumerator) new Dungeon.<FrameDelayedMidgameInitialization>c__Iterator2()
     {
       midgameSave = midgameSave
     };
@@ -313,7 +313,7 @@ public class Dungeon : MonoBehaviour
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    Dungeon.\u003CForceRegenerateDelayed\u003Ec__Iterator3 delayedCIterator3 = new Dungeon.\u003CForceRegenerateDelayed\u003Ec__Iterator3();
+    Dungeon.<ForceRegenerateDelayed>c__Iterator3 delayedCIterator3 = new Dungeon.<ForceRegenerateDelayed>c__Iterator3();
     return (IEnumerator) delayedCIterator3;
   }
 
@@ -321,9 +321,9 @@ public class Dungeon : MonoBehaviour
   private IEnumerator PostDungeonGenerationCleanup()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.\u003CPostDungeonGenerationCleanup\u003Ec__Iterator4()
+    return (IEnumerator) new Dungeon.<PostDungeonGenerationCleanup>c__Iterator4()
     {
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -1208,12 +1208,12 @@ public class Dungeon : MonoBehaviour
     int cursedHealthMaximum)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.\u003CHandleDarkSoulsReset_CR\u003Ec__Iterator5()
+    return (IEnumerator) new Dungeon.<HandleDarkSoulsReset_CR>c__Iterator5()
     {
       dropItems = dropItems,
       p = p,
       cursedHealthMaximum = cursedHealthMaximum,
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -1888,9 +1888,9 @@ public class Dungeon : MonoBehaviour
   private IEnumerator HandleAmbientChannelVFX()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.\u003CHandleAmbientChannelVFX\u003Ec__Iterator6()
+    return (IEnumerator) new Dungeon.<HandleAmbientChannelVFX>c__Iterator6()
     {
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -1910,9 +1910,9 @@ public class Dungeon : MonoBehaviour
   private IEnumerator HandleAmbientPitVFX()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new Dungeon.\u003CHandleAmbientPitVFX\u003Ec__Iterator7()
+    return (IEnumerator) new Dungeon.<HandleAmbientPitVFX>c__Iterator7()
     {
-      \u0024this = this
+      $this = this
     };
   }
 }

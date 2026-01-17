@@ -28,9 +28,9 @@ namespace ETG.Core.Combat.Projectiles
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalGuideClap1.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new BossFinalGuideClap1.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -38,9 +38,9 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FireBolt()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalGuideClap1.\u003CFireBolt\u003Ec__Iterator1()
+        return (IEnumerator) new BossFinalGuideClap1.<FireBolt>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -55,9 +55,9 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BossFinalGuideClap1.LightningBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new BossFinalGuideClap1.LightningBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
 

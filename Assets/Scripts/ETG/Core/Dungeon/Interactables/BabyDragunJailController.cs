@@ -75,10 +75,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator EatCorpse(TalkDoerLite targetCorpse)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BabyDragunJailController.\u003CEatCorpse\u003Ec__Iterator0()
+        return (IEnumerator) new BabyDragunJailController.<EatCorpse>c__Iterator0()
         {
           targetCorpse = targetCorpse,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -106,10 +106,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleSoldItem(PickupObject targetItem)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BabyDragunJailController.\u003CHandleSoldItem\u003Ec__Iterator1()
+        return (IEnumerator) new BabyDragunJailController.<HandleSoldItem>c__Iterator1()
         {
           targetItem = targetItem,
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -104,9 +104,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator RegenerationCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ShelletonRespawnController.\u003CRegenerationCR\u003Ec__Iterator0()
+        return (IEnumerator) new ShelletonRespawnController.<RegenerationCR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -114,9 +114,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator RegenerateFromNothingCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ShelletonRespawnController.\u003CRegenerateFromNothingCR\u003Ec__Iterator1()
+        return (IEnumerator) new ShelletonRespawnController.<RegenerateFromNothingCR>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

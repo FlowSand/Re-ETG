@@ -851,9 +851,9 @@ namespace ETG.Core.Items.Pickups
       private IEnumerator HandleFrameDelayedTransformation()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Gun.\u003CHandleFrameDelayedTransformation\u003Ec__Iterator0()
+        return (IEnumerator) new Gun.<HandleFrameDelayedTransformation>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1748,9 +1748,9 @@ namespace ETG.Core.Items.Pickups
       private IEnumerator HandleSlash()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Gun.\u003CHandleSlash\u003Ec__Iterator1()
+        return (IEnumerator) new Gun.<HandleSlash>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2572,9 +2572,9 @@ namespace ETG.Core.Items.Pickups
       private IEnumerator HandleShellCasingFireDelay()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Gun.\u003CHandleShellCasingFireDelay\u003Ec__Iterator2()
+        return (IEnumerator) new Gun.<HandleShellCasingFireDelay>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3609,10 +3609,10 @@ namespace ETG.Core.Items.Pickups
       private IEnumerator HandleModuleCooldown(ProjectileModule mod)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Gun.\u003CHandleModuleCooldown\u003Ec__Iterator3()
+        return (IEnumerator) new Gun.<HandleModuleCooldown>c__Iterator3()
         {
           mod = mod,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3869,9 +3869,9 @@ namespace ETG.Core.Items.Pickups
       private IEnumerator HandleReload()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Gun.\u003CHandleReload\u003Ec__Iterator4()
+        return (IEnumerator) new Gun.<HandleReload>c__Iterator4()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -4285,13 +4285,13 @@ namespace ETG.Core.Items.Pickups
         bool oneShot)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Gun.\u003CHandleTemporaryBoost\u003Ec__Iterator5()
+        return (IEnumerator) new Gun.<HandleTemporaryBoost>c__Iterator5()
         {
           scaleMultiplier = scaleMultiplier,
           damageMultiplier = damageMultiplier,
           duration = duration,
           oneShot = oneShot,
-          \u0024this = this
+          $this = this
         };
       }
 

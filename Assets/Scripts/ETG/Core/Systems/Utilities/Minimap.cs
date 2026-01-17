@@ -260,10 +260,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleAutoPan(Vector3 targetPan)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Minimap.\u003CHandleAutoPan\u003Ec__Iterator0()
+        return (IEnumerator) new Minimap.<HandleAutoPan>c__Iterator0()
         {
           targetPan = targetPan,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -390,9 +390,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator DelayedMarkDirty()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Minimap.\u003CDelayedMarkDirty\u003Ec__Iterator1()
+        return (IEnumerator) new Minimap.<DelayedMarkDirty>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -487,13 +487,13 @@ namespace ETG.Core.Systems.Utilities
         bool isCurrentRoom = true)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Minimap.\u003CRevealMinimapRoomInternal\u003Ec__Iterator2()
+        return (IEnumerator) new Minimap.<RevealMinimapRoomInternal>c__Iterator2()
         {
           revealedRoom = revealedRoom,
           isCurrentRoom = isCurrentRoom,
           force = force,
           doBuild = doBuild,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -583,10 +583,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator TransitionToNewFadeState(bool newFadeState)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new Minimap.\u003CTransitionToNewFadeState\u003Ec__Iterator3()
+        return (IEnumerator) new Minimap.<TransitionToNewFadeState>c__Iterator3()
         {
           newFadeState = newFadeState,
-          \u0024this = this
+          $this = this
         };
       }
 

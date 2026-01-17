@@ -46,10 +46,10 @@ namespace ETG.Core.Core.Framework
       public IEnumerator DoReward(PlayerController player)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GunberMuncherController.\u003CDoReward\u003Ec__Iterator0()
+        return (IEnumerator) new GunberMuncherController.<DoReward>c__Iterator0()
         {
           player = player,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -243,12 +243,12 @@ namespace ETG.Core.Core.Framework
         Vector3 startPosition)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GunberMuncherController.\u003CHandleObjectPotToss\u003Ec__Iterator1()
+        return (IEnumerator) new GunberMuncherController.<HandleObjectPotToss>c__Iterator1()
         {
           spriteSource = spriteSource,
           startPosition = startPosition,
           player = player,
-          \u0024this = this
+          $this = this
         };
       }
     }

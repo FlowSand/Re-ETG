@@ -140,9 +140,9 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleInvulnerability()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RatBootsItem.\u003CHandleInvulnerability\u003Ec__Iterator0()
+        return (IEnumerator) new RatBootsItem.<HandleInvulnerability>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

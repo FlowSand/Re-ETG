@@ -140,9 +140,9 @@ namespace ETG.Core.UI.HUD
       private IEnumerator HandleTimedKeyBindingClear()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FullOptionsMenuController.\u003CHandleTimedKeyBindingClear\u003Ec__Iterator0()
+        return (IEnumerator) new FullOptionsMenuController.<HandleTimedKeyBindingClear>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -443,7 +443,7 @@ namespace ETG.Core.UI.HUD
       private IEnumerator WaitForAreYouSure(System.Action OnYes, System.Action OnNo)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FullOptionsMenuController.\u003CWaitForAreYouSure\u003Ec__Iterator1()
+        return (IEnumerator) new FullOptionsMenuController.<WaitForAreYouSure>c__Iterator1()
         {
           OnYes = OnYes,
           OnNo = OnNo
@@ -494,9 +494,9 @@ namespace ETG.Core.UI.HUD
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FullOptionsMenuController.\u003CStart\u003Ec__Iterator2()
+        return (IEnumerator) new FullOptionsMenuController.<Start>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -641,10 +641,10 @@ namespace ETG.Core.UI.HUD
       private IEnumerator HandleShwoop(bool reverse)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FullOptionsMenuController.\u003CHandleShwoop\u003Ec__Iterator3()
+        return (IEnumerator) new FullOptionsMenuController.<HandleShwoop>c__Iterator3()
         {
           reverse = reverse,
-          \u0024this = this
+          $this = this
         };
       }
 

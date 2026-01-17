@@ -156,10 +156,10 @@ namespace ETG.Core.Core.Framework
       protected IEnumerator FireBeam(Projectile projectile)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AIBeamShooter.\u003CFireBeam\u003Ec__Iterator0()
+        return (IEnumerator) new AIBeamShooter.<FireBeam>c__Iterator0()
         {
           projectile = projectile,
-          \u0024this = this
+          $this = this
         };
       }
 

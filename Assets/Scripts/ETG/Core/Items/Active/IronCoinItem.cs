@@ -51,10 +51,10 @@ namespace ETG.Core.Items.Active
       private IEnumerator SlaughterRoom(RoomHandler targetRoom)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new IronCoinItem.\u003CSlaughterRoom\u003Ec__Iterator0()
+        return (IEnumerator) new IronCoinItem.<SlaughterRoom>c__Iterator0()
         {
           targetRoom = targetRoom,
-          \u0024this = this
+          $this = this
         };
       }
 

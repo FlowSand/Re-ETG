@@ -35,9 +35,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DelayDetonateFrame()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RemoteMineController.\u003CDelayDetonateFrame\u003Ec__Iterator0()
+        return (IEnumerator) new RemoteMineController.<DelayDetonateFrame>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

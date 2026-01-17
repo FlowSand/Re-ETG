@@ -317,11 +317,11 @@ namespace ETG.Core.Core.Framework
       private IEnumerator WaitForCurrentGunFlipToEnd(Gun newGun, int change)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIAmmoController.\u003CWaitForCurrentGunFlipToEnd\u003Ec__Iterator0()
+        return (IEnumerator) new GameUIAmmoController.<WaitForCurrentGunFlipToEnd>c__Iterator0()
         {
           change = change,
           newGun = newGun,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -329,10 +329,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleGunCardFlipReverse(Gun newGun)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIAmmoController.\u003CHandleGunCardFlipReverse\u003Ec__Iterator1()
+        return (IEnumerator) new GameUIAmmoController.<HandleGunCardFlipReverse>c__Iterator1()
         {
           newGun = newGun,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -390,10 +390,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleGunCardFlip(Gun newGun)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GameUIAmmoController.\u003CHandleGunCardFlip\u003Ec__Iterator2()
+        return (IEnumerator) new GameUIAmmoController.<HandleGunCardFlip>c__Iterator2()
         {
           newGun = newGun,
-          \u0024this = this
+          $this = this
         };
       }
 

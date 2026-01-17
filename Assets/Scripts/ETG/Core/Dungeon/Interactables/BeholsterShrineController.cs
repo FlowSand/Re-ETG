@@ -184,9 +184,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleShrineCompletionVisuals()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BeholsterShrineController.\u003CHandleShrineCompletionVisuals\u003Ec__Iterator0()
+        return (IEnumerator) new BeholsterShrineController.<HandleShrineCompletionVisuals>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -194,10 +194,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleShrineConversation(PlayerController interactor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BeholsterShrineController.\u003CHandleShrineConversation\u003Ec__Iterator1()
+        return (IEnumerator) new BeholsterShrineController.<HandleShrineConversation>c__Iterator1()
         {
           interactor = interactor,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -207,10 +207,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleSpentText(PlayerController interactor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BeholsterShrineController.\u003CHandleSpentText\u003Ec__Iterator2()
+        return (IEnumerator) new BeholsterShrineController.<HandleSpentText>c__Iterator2()
         {
           interactor = interactor,
-          \u0024this = this
+          $this = this
         };
       }
 

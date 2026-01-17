@@ -35,9 +35,9 @@ namespace ETG.Core.Dungeon.Interactables
       public IEnumerator DoIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ResourcefulRatIntroDoer.\u003CDoIntro\u003Ec__Iterator0()
+        return (IEnumerator) new ResourcefulRatIntroDoer.<DoIntro>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -78,11 +78,11 @@ namespace ETG.Core.Dungeon.Interactables
       public IEnumerator DoRatTalk(string stringKey, bool multiline)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ResourcefulRatIntroDoer.\u003CDoRatTalk\u003Ec__Iterator1()
+        return (IEnumerator) new ResourcefulRatIntroDoer.<DoRatTalk>c__Iterator1()
         {
           multiline = multiline,
           stringKey = stringKey,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -90,10 +90,10 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator TalkRaw(string plaintext)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ResourcefulRatIntroDoer.\u003CTalkRaw\u003Ec__Iterator2()
+        return (IEnumerator) new ResourcefulRatIntroDoer.<TalkRaw>c__Iterator2()
         {
           plaintext = plaintext,
-          \u0024this = this
+          $this = this
         };
       }
     }

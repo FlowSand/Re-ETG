@@ -139,11 +139,11 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleSubSpriteFall(tk2dSprite targetSprite, float adjustedStartHeight)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HangingObjectController.\u003CHandleSubSpriteFall\u003Ec__Iterator0()
+        return (IEnumerator) new HangingObjectController.<HandleSubSpriteFall>c__Iterator0()
         {
           targetSprite = targetSprite,
           adjustedStartHeight = adjustedStartHeight,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -151,9 +151,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator Fall()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HangingObjectController.\u003CFall\u003Ec__Iterator1()
+        return (IEnumerator) new HangingObjectController.<Fall>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

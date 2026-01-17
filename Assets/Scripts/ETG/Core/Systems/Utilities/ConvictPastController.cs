@@ -34,9 +34,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConvictPastController.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new ConvictPastController.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -51,10 +51,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBossStart(float initialDelay = 0.0f)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConvictPastController.\u003CHandleBossStart\u003Ec__Iterator1()
+        return (IEnumerator) new ConvictPastController.<HandleBossStart>c__Iterator1()
         {
           initialDelay = initialDelay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -62,7 +62,7 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator DoPath(TalkDoerLite source, bool doDestroy)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConvictPastController.\u003CDoPath\u003Ec__Iterator2()
+        return (IEnumerator) new ConvictPastController.<DoPath>c__Iterator2()
         {
           source = source,
           doDestroy = doDestroy
@@ -78,9 +78,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator EnableHeadlights()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConvictPastController.\u003CEnableHeadlights\u003Ec__Iterator3()
+        return (IEnumerator) new ConvictPastController.<EnableHeadlights>c__Iterator3()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -88,10 +88,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleBossKilled(Transform bossTransform)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConvictPastController.\u003CHandleBossKilled\u003Ec__Iterator4()
+        return (IEnumerator) new ConvictPastController.<HandleBossKilled>c__Iterator4()
         {
           bossTransform = bossTransform,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -104,7 +104,7 @@ namespace ETG.Core.Systems.Utilities
         bool isThoughtBubble)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConvictPastController.\u003CDoAmbientTalk\u003Ec__Iterator5()
+        return (IEnumerator) new ConvictPastController.<DoAmbientTalk>c__Iterator5()
         {
           isThoughtBubble = isThoughtBubble,
           baseTransform = baseTransform,

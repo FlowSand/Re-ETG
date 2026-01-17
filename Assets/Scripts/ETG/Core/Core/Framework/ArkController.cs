@@ -43,9 +43,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ArkController.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new ArkController.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -118,9 +118,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLightSprite()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ArkController.\u003CHandleLightSprite\u003Ec__Iterator1()
+        return (IEnumerator) new ArkController.<HandleLightSprite>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -128,10 +128,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Open(PlayerController interactor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ArkController.\u003COpen\u003Ec__Iterator2()
+        return (IEnumerator) new ArkController.<Open>c__Iterator2()
         {
           interactor = interactor,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -200,10 +200,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleClockhair(PlayerController interactor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ArkController.\u003CHandleClockhair\u003Ec__Iterator3()
+        return (IEnumerator) new ArkController.<HandleClockhair>c__Iterator3()
         {
           interactor = interactor,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -248,10 +248,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleGun(PlayerController interactor)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ArkController.\u003CHandleGun\u003Ec__Iterator4()
+        return (IEnumerator) new ArkController.<HandleGun>c__Iterator4()
         {
           interactor = interactor,
-          \u0024this = this
+          $this = this
         };
       }
 

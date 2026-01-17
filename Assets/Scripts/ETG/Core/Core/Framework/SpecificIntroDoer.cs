@@ -63,7 +63,7 @@ namespace ETG.Core.Core.Framework
       public IEnumerator TimeInvariantWait(float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SpecificIntroDoer.\u003CTimeInvariantWait\u003Ec__Iterator0()
+        return (IEnumerator) new SpecificIntroDoer.<TimeInvariantWait>c__Iterator0()
         {
           duration = duration
         };

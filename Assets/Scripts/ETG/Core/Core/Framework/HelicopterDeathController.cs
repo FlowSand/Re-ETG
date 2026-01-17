@@ -40,9 +40,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleBossDeath()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HelicopterDeathController.\u003CHandleBossDeath\u003Ec__Iterator0()
+        return (IEnumerator) new HelicopterDeathController.<HandleBossDeath>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -50,9 +50,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLittleExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HelicopterDeathController.\u003CHandleLittleExplosionsCR\u003Ec__Iterator1()
+        return (IEnumerator) new HelicopterDeathController.<HandleLittleExplosionsCR>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -60,9 +60,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleBigExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HelicopterDeathController.\u003CHandleBigExplosionsCR\u003Ec__Iterator2()
+        return (IEnumerator) new HelicopterDeathController.<HandleBigExplosionsCR>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -71,7 +71,7 @@ namespace ETG.Core.Core.Framework
       {
         // ISSUE: object of a compiler-generated type is created
         // ISSUE: variable of a compiler-generated type
-        HelicopterDeathController.\u003CHandleFlightPitfall\u003Ec__Iterator3 pitfallCIterator3 = new HelicopterDeathController.\u003CHandleFlightPitfall\u003Ec__Iterator3();
+        HelicopterDeathController.<HandleFlightPitfall>c__Iterator3 pitfallCIterator3 = new HelicopterDeathController.<HandleFlightPitfall>c__Iterator3();
         return (IEnumerator) pitfallCIterator3;
       }
 
@@ -79,9 +79,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator SinkCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HelicopterDeathController.\u003CSinkCR\u003Ec__Iterator4()
+        return (IEnumerator) new HelicopterDeathController.<SinkCR>c__Iterator4()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

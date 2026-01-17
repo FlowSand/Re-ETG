@@ -48,9 +48,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator DelayedHide()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ConversationBarController.\u003CDelayedHide\u003Ec__Iterator0()
+        return (IEnumerator) new ConversationBarController.<DelayedHide>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

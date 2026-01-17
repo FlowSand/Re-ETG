@@ -41,9 +41,9 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RevolvenantGrabby1.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new RevolvenantGrabby1.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -82,9 +82,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new RevolvenantGrabby1.ArmBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new RevolvenantGrabby1.ArmBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
 
@@ -125,9 +125,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new RevolvenantGrabby1.CircleBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new RevolvenantGrabby1.CircleBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }
@@ -153,9 +153,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new RevolvenantGrabby1.HandBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new RevolvenantGrabby1.HandBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
 

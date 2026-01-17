@@ -135,10 +135,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator InvariantWaitForSeconds(float seconds)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.\u003CInvariantWaitForSeconds\u003Ec__Iterator0()
+        return (IEnumerator) new BossCardUIController.<InvariantWaitForSeconds>c__Iterator0()
         {
           seconds = seconds,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -280,10 +280,10 @@ namespace ETG.Core.Core.Framework
       public IEnumerator CoreSequence(PortraitSlideSettings pss)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.\u003CCoreSequence\u003Ec__Iterator1()
+        return (IEnumerator) new BossCardUIController.<CoreSequence>c__Iterator1()
         {
           pss = pss,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -299,9 +299,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleLightStreaks()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.\u003CHandleLightStreaks\u003Ec__Iterator2()
+        return (IEnumerator) new BossCardUIController.<HandleLightStreaks>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -309,10 +309,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator WomboCombo(PortraitSlideSettings pss)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.\u003CWomboCombo\u003Ec__Iterator3()
+        return (IEnumerator) new BossCardUIController.<WomboCombo>c__Iterator3()
         {
           pss = pss,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -320,9 +320,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleDelayedCoopCharacterSlide()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.\u003CHandleDelayedCoopCharacterSlide\u003Ec__Iterator4()
+        return (IEnumerator) new BossCardUIController.<HandleDelayedCoopCharacterSlide>c__Iterator4()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -330,9 +330,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleCharacterSlides()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.\u003CHandleCharacterSlides\u003Ec__Iterator5()
+        return (IEnumerator) new BossCardUIController.<HandleCharacterSlides>c__Iterator5()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -340,9 +340,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator LerpTextsToTargets()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.\u003CLerpTextsToTargets\u003Ec__Iterator6()
+        return (IEnumerator) new BossCardUIController.<LerpTextsToTargets>c__Iterator6()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -364,13 +364,13 @@ namespace ETG.Core.Core.Framework
         Material targetMaterial)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.\u003CFlashColorToColor\u003Ec__Iterator7()
+        return (IEnumerator) new BossCardUIController.<FlashColorToColor>c__Iterator7()
         {
           fadeDuration = fadeDuration,
           startColor = startColor,
           targetColor = targetColor,
           targetMaterial = targetMaterial,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -378,11 +378,11 @@ namespace ETG.Core.Core.Framework
       private IEnumerator FlashWhiteToBlack(Material targetMaterial, bool backToClear)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossCardUIController.\u003CFlashWhiteToBlack\u003Ec__Iterator8()
+        return (IEnumerator) new BossCardUIController.<FlashWhiteToBlack>c__Iterator8()
         {
           targetMaterial = targetMaterial,
           backToClear = backToClear,
-          \u0024this = this
+          $this = this
         };
       }
 

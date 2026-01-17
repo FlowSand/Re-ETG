@@ -70,9 +70,9 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleTimedDestroy()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PortableTurretController.\u003CHandleTimedDestroy\u003Ec__Iterator0()
+        return (IEnumerator) new PortableTurretController.<HandleTimedDestroy>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

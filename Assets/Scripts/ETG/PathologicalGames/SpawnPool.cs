@@ -319,13 +319,13 @@ public sealed class SpawnPool :
     Transform parent)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new SpawnPool.\u003CDoDespawnAfterSeconds\u003Ec__Iterator1()
+    return (IEnumerator) new SpawnPool.<DoDespawnAfterSeconds>c__Iterator1()
     {
       instance = instance,
       seconds = seconds,
       useParent = useParent,
       parent = parent,
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -386,10 +386,10 @@ public sealed class SpawnPool :
   private IEnumerator ListForAudioStop(AudioSource src)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new SpawnPool.\u003CListForAudioStop\u003Ec__Iterator2()
+    return (IEnumerator) new SpawnPool.<ListForAudioStop>c__Iterator2()
     {
       src = src,
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -397,10 +397,10 @@ public sealed class SpawnPool :
   private IEnumerator ListenForEmitDespawn(ParticleSystem emitter)
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new SpawnPool.\u003CListenForEmitDespawn\u003Ec__Iterator3()
+    return (IEnumerator) new SpawnPool.<ListenForEmitDespawn>c__Iterator3()
     {
       emitter = emitter,
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -431,9 +431,9 @@ public sealed class SpawnPool :
   public IEnumerator<Transform> GetEnumerator()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator<Transform>) new SpawnPool.\u003CGetEnumerator\u003Ec__Iterator4()
+    return (IEnumerator<Transform>) new SpawnPool.<GetEnumerator>c__Iterator4()
     {
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -441,9 +441,9 @@ public sealed class SpawnPool :
   IEnumerator IEnumerable.GetEnumerator()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new SpawnPool.\u003CSystem_Collections_IEnumerable_GetEnumerator\u003Ec__Iterator0()
+    return (IEnumerator) new SpawnPool.<System_Collections_IEnumerable_GetEnumerator>c__Iterator0()
     {
-      \u0024this = this
+      $this = this
     };
   }
 

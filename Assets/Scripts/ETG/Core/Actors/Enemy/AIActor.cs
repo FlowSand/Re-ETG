@@ -962,9 +962,9 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator WanderHackCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AIActor.\u003CWanderHackCR\u003Ec__Iterator0()
+        return (IEnumerator) new AIActor.<WanderHackCR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1730,10 +1730,10 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleReinforcementFall_CR(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AIActor.\u003CHandleReinforcementFall_CR\u003Ec__Iterator1()
+        return (IEnumerator) new AIActor.<HandleReinforcementFall_CR>c__Iterator1()
         {
           delay = delay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1785,9 +1785,9 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator DoCustomEngage()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AIActor.\u003CDoCustomEngage\u003Ec__Iterator2()
+        return (IEnumerator) new AIActor.<DoCustomEngage>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2066,10 +2066,10 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator FadeShadowCR(float scaleTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AIActor.\u003CFadeShadowCR\u003Ec__Iterator3()
+        return (IEnumerator) new AIActor.<FadeShadowCR>c__Iterator3()
         {
           scaleTime = scaleTime,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2077,10 +2077,10 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator ScaleShadowCR(float scaleTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AIActor.\u003CScaleShadowCR\u003Ec__Iterator4()
+        return (IEnumerator) new AIActor.<ScaleShadowCR>c__Iterator4()
         {
           scaleTime = scaleTime,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2117,9 +2117,9 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator BurnBlackPhantomCorpse()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AIActor.\u003CBurnBlackPhantomCorpse\u003Ec__Iterator5()
+        return (IEnumerator) new AIActor.<BurnBlackPhantomCorpse>c__Iterator5()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2357,10 +2357,10 @@ namespace ETG.Core.Actors.Enemy
         float jumpHeight)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AIActor.\u003CHandleJumpToPoint\u003Ec__Iterator6()
+        return (IEnumerator) new AIActor.<HandleJumpToPoint>c__Iterator6()
         {
           jumpTime = jumpTime,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2370,10 +2370,10 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator DashInDirection(Vector3 direction, float duration, float speedMultiplier)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AIActor.\u003CDashInDirection\u003Ec__Iterator7()
+        return (IEnumerator) new AIActor.<DashInDirection>c__Iterator7()
         {
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2381,12 +2381,12 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator DashByDistance(Vector3 direction, float distance, float speedMultiplier)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AIActor.\u003CDashByDistance\u003Ec__Iterator8()
+        return (IEnumerator) new AIActor.<DashByDistance>c__Iterator8()
         {
           direction = direction,
           speedMultiplier = speedMultiplier,
           distance = distance,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2476,9 +2476,9 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator FallDownCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AIActor.\u003CFallDownCR\u003Ec__Iterator9()
+        return (IEnumerator) new AIActor.<FallDownCR>c__Iterator9()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

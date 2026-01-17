@@ -40,9 +40,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator OnDeathExplosionsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GiantPowderSkullDeathController.\u003COnDeathExplosionsCR\u003Ec__Iterator0()
+        return (IEnumerator) new GiantPowderSkullDeathController.<OnDeathExplosionsCR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -50,9 +50,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleParticleSystemsCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GiantPowderSkullDeathController.\u003CHandleParticleSystemsCR\u003Ec__Iterator1()
+        return (IEnumerator) new GiantPowderSkullDeathController.<HandleParticleSystemsCR>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

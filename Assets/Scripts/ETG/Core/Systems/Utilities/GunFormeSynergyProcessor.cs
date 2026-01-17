@@ -90,7 +90,7 @@ namespace ETG.Core.Systems.Utilities
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GunFormeSynergyProcessor.\u003CHandleTransformationDuration\u003Ec__Iterator0()
+        return (IEnumerator) new GunFormeSynergyProcessor.<HandleTransformationDuration>c__Iterator0()
         {
           targetPlayer = targetPlayer,
           gunID = gunID,

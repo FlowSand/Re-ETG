@@ -11,7 +11,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 #nullable disable
-namespace \u003CPrivateImplementationDetails\u003E\u007BDE5600AD\u002D6212\u002D4D84\u002D9A32\u002D9D951E3289D1\u007D;
+namespace <PrivateImplementationDetails>{DE5600AD-6212-4D84-9A32-9D951E3289D1};
 
 [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
 public class Decrypt

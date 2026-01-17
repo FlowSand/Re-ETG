@@ -26,9 +26,9 @@ namespace ETG.Core.Combat.Projectiles
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PedestalMimicThrowStuff1.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new PedestalMimicThrowStuff1.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -43,9 +43,9 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new PedestalMimicThrowStuff1.AcceleratingBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new PedestalMimicThrowStuff1.AcceleratingBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }
@@ -56,9 +56,9 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new PedestalMimicThrowStuff1.HomingShot.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new PedestalMimicThrowStuff1.HomingShot.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
 

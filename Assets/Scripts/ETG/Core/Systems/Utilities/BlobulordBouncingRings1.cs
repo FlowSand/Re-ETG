@@ -24,9 +24,9 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BlobulordBouncingRings1.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new BlobulordBouncingRings1.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -44,9 +44,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BlobulordBouncingRings1.BouncingRingBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new BlobulordBouncingRings1.BouncingRingBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }

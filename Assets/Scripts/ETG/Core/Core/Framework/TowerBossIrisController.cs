@@ -49,9 +49,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator TimedClose()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TowerBossIrisController.\u003CTimedClose\u003Ec__Iterator0()
+        return (IEnumerator) new TowerBossIrisController.<TimedClose>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

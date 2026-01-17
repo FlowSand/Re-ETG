@@ -24,9 +24,9 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WizardPurpleHomingShots1.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new WizardPurpleHomingShots1.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -72,9 +72,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new WizardPurpleHomingShots1.KnightBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new WizardPurpleHomingShots1.KnightBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }
@@ -93,9 +93,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new WizardPurpleHomingShots1.MageBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new WizardPurpleHomingShots1.MageBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }
@@ -115,9 +115,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new WizardPurpleHomingShots1.BardBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new WizardPurpleHomingShots1.BardBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
 
@@ -149,9 +149,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new WizardPurpleHomingShots1.RogueBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new WizardPurpleHomingShots1.RogueBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
 

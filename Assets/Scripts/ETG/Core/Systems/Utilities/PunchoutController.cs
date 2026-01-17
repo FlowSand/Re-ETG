@@ -70,9 +70,9 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PunchoutController.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new PunchoutController.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -211,9 +211,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator UiFadeInCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PunchoutController.\u003CUiFadeInCR\u003Ec__Iterator1()
+        return (IEnumerator) new PunchoutController.<UiFadeInCR>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -221,9 +221,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator ControlsUiFadeOutCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PunchoutController.\u003CControlsUiFadeOutCR\u003Ec__Iterator2()
+        return (IEnumerator) new PunchoutController.<ControlsUiFadeOutCR>c__Iterator2()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -231,9 +231,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator TutorialUiFadeCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PunchoutController.\u003CTutorialUiFadeCR\u003Ec__Iterator3()
+        return (IEnumerator) new PunchoutController.<TutorialUiFadeCR>c__Iterator3()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -243,10 +243,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator DoWinFadeCR(bool skipDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PunchoutController.\u003CDoWinFadeCR\u003Ec__Iterator4()
+        return (IEnumerator) new PunchoutController.<DoWinFadeCR>c__Iterator4()
         {
           skipDelay = skipDelay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -256,10 +256,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator DoLoseFadeCR(bool skipDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PunchoutController.\u003CDoLoseFadeCR\u003Ec__Iterator5()
+        return (IEnumerator) new PunchoutController.<DoLoseFadeCR>c__Iterator5()
         {
           skipDelay = skipDelay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -301,9 +301,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator DoBombFadeCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PunchoutController.\u003CDoBombFadeCR\u003Ec__Iterator6()
+        return (IEnumerator) new PunchoutController.<DoBombFadeCR>c__Iterator6()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

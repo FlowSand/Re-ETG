@@ -82,9 +82,9 @@ public abstract class TweenPlayableComponent : MonoBehaviour
   public virtual IEnumerator WaitForCompletion()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new TweenPlayableComponent.\u003CWaitForCompletion\u003Ec__Iterator0()
+    return (IEnumerator) new TweenPlayableComponent.<WaitForCompletion>c__Iterator0()
     {
-      \u0024this = this
+      $this = this
     };
   }
 

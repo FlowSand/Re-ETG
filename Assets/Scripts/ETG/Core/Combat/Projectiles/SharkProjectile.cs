@@ -68,9 +68,9 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator AddLowObstacleCollider()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SharkProjectile.\u003CAddLowObstacleCollider\u003Ec__Iterator0()
+        return (IEnumerator) new SharkProjectile.<AddLowObstacleCollider>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -85,9 +85,9 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FrameDelayedDestruction()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SharkProjectile.\u003CFrameDelayedDestruction\u003Ec__Iterator1()
+        return (IEnumerator) new SharkProjectile.<FrameDelayedDestruction>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -179,7 +179,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator HandleEat(AIActor targetEat)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SharkProjectile.\u003CHandleEat\u003Ec__Iterator2()
+        return (IEnumerator) new SharkProjectile.<HandleEat>c__Iterator2()
         {
           targetEat = targetEat
         };
@@ -189,9 +189,9 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FindTarget()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SharkProjectile.\u003CFindTarget\u003Ec__Iterator3()
+        return (IEnumerator) new SharkProjectile.<FindTarget>c__Iterator3()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -341,13 +341,13 @@ namespace ETG.Core.Combat.Projectiles
               Vector2? sourceVelocity = new Vector2?(this.specRigidbody.Velocity);
               float? heightOffGround = new float?(-3f);
               // ISSUE: reference to a compiler-generated field
-              if (SharkProjectile.\u003C\u003Ef__mg\u0024cache0 == null)
+              if (SharkProjectile.<>f__mg$cache0 == null)
               {
                 // ISSUE: reference to a compiler-generated field
-                SharkProjectile.\u003C\u003Ef__mg\u0024cache0 = new VFXComplex.SpawnMethod(SharkProjectile.SpawnVFXBehind);
+                SharkProjectile.<>f__mg$cache0 = new VFXComplex.SpawnMethod(SharkProjectile.SpawnVFXBehind);
               }
               // ISSUE: reference to a compiler-generated field
-              VFXComplex.SpawnMethod fMgCache0 = SharkProjectile.\u003C\u003Ef__mg\u0024cache0;
+              VFXComplex.SpawnMethod fMgCache0 = SharkProjectile.<>f__mg$cache0;
               effect.SpawnAtPosition(position, (float) zRotation2, sourceNormal: sourceNormal, sourceVelocity: sourceVelocity, heightOffGround: heightOffGround, spawnMethod: fMgCache0);
             }
             else
@@ -360,13 +360,13 @@ namespace ETG.Core.Combat.Projectiles
               Vector2? sourceVelocity = new Vector2?(this.specRigidbody.Velocity);
               float? heightOffGround = new float?(-3f);
               // ISSUE: reference to a compiler-generated field
-              if (SharkProjectile.\u003C\u003Ef__mg\u0024cache1 == null)
+              if (SharkProjectile.<>f__mg$cache1 == null)
               {
                 // ISSUE: reference to a compiler-generated field
-                SharkProjectile.\u003C\u003Ef__mg\u0024cache1 = new VFXComplex.SpawnMethod(SharkProjectile.SpawnVFXBehind);
+                SharkProjectile.<>f__mg$cache1 = new VFXComplex.SpawnMethod(SharkProjectile.SpawnVFXBehind);
               }
               // ISSUE: reference to a compiler-generated field
-              VFXComplex.SpawnMethod fMgCache1 = SharkProjectile.\u003C\u003Ef__mg\u0024cache1;
+              VFXComplex.SpawnMethod fMgCache1 = SharkProjectile.<>f__mg$cache1;
               effect.SpawnAtPosition(position, (float) zRotation3, sourceNormal: sourceNormal, sourceVelocity: sourceVelocity, heightOffGround: heightOffGround, spawnMethod: fMgCache1);
             }
             if (!((UnityEngine.Object) this.ParticlesPrefab != (UnityEngine.Object) null))

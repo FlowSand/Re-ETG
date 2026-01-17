@@ -335,11 +335,11 @@ namespace ETG.Core.Core.Framework
       private IEnumerator RevertToClipForceLoop(tk2dSpriteAnimationClip playingClip, float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dSpriteAnimator.\u003CRevertToClipForceLoop\u003Ec__Iterator0()
+        return (IEnumerator) new tk2dSpriteAnimator.<RevertToClipForceLoop>c__Iterator0()
         {
           duration = duration,
           playingClip = playingClip,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -384,13 +384,13 @@ namespace ETG.Core.Core.Framework
         bool returnToLoopSection = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dSpriteAnimator.\u003CRevertToClip\u003Ec__Iterator1()
+        return (IEnumerator) new tk2dSpriteAnimator.<RevertToClip>c__Iterator1()
         {
           duration = duration,
           playingClip = playingClip,
           revertToClip = revertToClip,
           returnToLoopSection = returnToLoopSection,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -796,11 +796,11 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleEmissivePowerLerp(float duration, float targetPower)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dSpriteAnimator.\u003CHandleEmissivePowerLerp\u003Ec__Iterator2()
+        return (IEnumerator) new tk2dSpriteAnimator.<HandleEmissivePowerLerp>c__Iterator2()
         {
           duration = duration,
           targetPower = targetPower,
-          \u0024this = this
+          $this = this
         };
       }
 

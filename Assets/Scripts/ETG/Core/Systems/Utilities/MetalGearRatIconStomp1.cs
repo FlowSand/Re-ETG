@@ -89,9 +89,9 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatIconStomp1.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new MetalGearRatIconStomp1.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -99,10 +99,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator FireBullets(List<MetalGearRatIconStomp1.LineDummy> lineDummies)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatIconStomp1.\u003CFireBullets\u003Ec__Iterator1()
+        return (IEnumerator) new MetalGearRatIconStomp1.<FireBullets>c__Iterator1()
         {
           lineDummies = lineDummies,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -117,9 +117,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MetalGearRatIconStomp1.LineDummy.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new MetalGearRatIconStomp1.LineDummy.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }
@@ -140,9 +140,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MetalGearRatIconStomp1.IconBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new MetalGearRatIconStomp1.IconBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }

@@ -47,13 +47,13 @@ namespace ETG.Core.Items.Active
         float rayLength)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HeroSwordItem.\u003CHandleSwing\u003Ec__Iterator0()
+        return (IEnumerator) new HeroSwordItem.<HandleSwing>c__Iterator0()
         {
           user = user,
           aimVec = aimVec,
           rayLength = rayLength,
           rayDamage = rayDamage,
-          \u0024this = this
+          $this = this
         };
       }
 

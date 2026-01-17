@@ -1011,10 +1011,10 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator FrameDelayedInitialDeath(bool delayTilPostGeneration = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CFrameDelayedInitialDeath\u003Ec__Iterator0()
+        return (IEnumerator) new PlayerController.<FrameDelayedInitialDeath>c__Iterator0()
         {
           delayTilPostGeneration = delayTilPostGeneration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1036,7 +1036,7 @@ namespace ETG.Core.Actors.Enemy
         float duration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CDestroyEnemyBulletsInCircleForDuration\u003Ec__Iterator1()
+        return (IEnumerator) new PlayerController.<DestroyEnemyBulletsInCircleForDuration>c__Iterator1()
         {
           duration = duration,
           center = center,
@@ -1831,12 +1831,12 @@ namespace ETG.Core.Actors.Enemy
         bool isChest = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CCoopResurrectInternal\u003Ec__Iterator2()
+        return (IEnumerator) new PlayerController.<CoopResurrectInternal>c__Iterator2()
         {
           targetPosition = targetPosition,
           isChest = isChest,
           clipToWaitFor = clipToWaitFor,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1951,12 +1951,12 @@ namespace ETG.Core.Actors.Enemy
         bool shadowColoration)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CSpawnShadowBullet\u003Ec__Iterator3()
+        return (IEnumerator) new PlayerController.<SpawnShadowBullet>c__Iterator3()
         {
           obj = obj,
           additionalDelay = additionalDelay,
           shadowColoration = shadowColoration,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2268,13 +2268,13 @@ namespace ETG.Core.Actors.Enemy
         GameObject arrivalVFX2Prefab)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleTeleportToPoint\u003Ec__Iterator4()
+        return (IEnumerator) new PlayerController.<HandleTeleportToPoint>c__Iterator4()
         {
           departureVFXPrefab = departureVFXPrefab,
           targetPoint = targetPoint,
           arrivalVFX1Prefab = arrivalVFX1Prefab,
           arrivalVFX2Prefab = arrivalVFX2Prefab,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2356,13 +2356,13 @@ namespace ETG.Core.Actors.Enemy
             IntVector2? footprint = new IntVector2?(this.companions[index].Clearance * 3);
             CellTypes? passableCellTypes = new CellTypes?(CellTypes.FLOOR);
             // ISSUE: reference to a compiler-generated field
-            if (PlayerController.\u003C\u003Ef__mg\u0024cache0 == null)
+            if (PlayerController.<>f__mg$cache0 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              PlayerController.\u003C\u003Ef__mg\u0024cache0 = new CellValidator(Pathfinder.CellValidator_NoTopWalls);
+              PlayerController.<>f__mg$cache0 = new CellValidator(Pathfinder.CellValidator_NoTopWalls);
             }
             // ISSUE: reference to a compiler-generated field
-            CellValidator fMgCache0 = PlayerController.\u003C\u003Ef__mg\u0024cache0;
+            CellValidator fMgCache0 = PlayerController.<>f__mg$cache0;
             IntVector2? randomAvailableCell = currentRoom.GetRandomAvailableCell(footprint, passableCellTypes, cellValidator: fMgCache0);
             if (randomAvailableCell.HasValue)
               targetPosition = (randomAvailableCell.Value + IntVector2.One).ToVector3();
@@ -2465,13 +2465,13 @@ namespace ETG.Core.Actors.Enemy
         bool noFX = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleTeleport\u003Ec__Iterator5()
+        return (IEnumerator) new PlayerController.<HandleTeleport>c__Iterator5()
         {
           noFX = noFX,
           teleporter = teleporter,
           targetSpot = targetSpot,
           isReturnTeleport = isReturnTeleport,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2842,9 +2842,9 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleCloneEffect()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleCloneEffect\u003Ec__Iterator6()
+        return (IEnumerator) new PlayerController.<HandleCloneEffect>c__Iterator6()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2931,10 +2931,10 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator DelayedRoomReset(RoomHandler targetRoom)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CDelayedRoomReset\u003Ec__Iterator7()
+        return (IEnumerator) new PlayerController.<DelayedRoomReset>c__Iterator7()
         {
           targetRoom = targetRoom,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -2946,13 +2946,13 @@ namespace ETG.Core.Actors.Enemy
         PlayerController.EscapeSealedRoomStyle escapeStyle)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleResetAndRespawn_CR\u003Ec__Iterator8()
+        return (IEnumerator) new PlayerController.<HandleResetAndRespawn_CR>c__Iterator8()
         {
           doFullHeal = doFullHeal,
           escapeStyle = escapeStyle,
           roomToSpawnIn = roomToSpawnIn,
           roomToReset = roomToReset,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3043,9 +3043,9 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleFueledByRevenge()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleFueledByRevenge\u003Ec__Iterator9()
+        return (IEnumerator) new PlayerController.<HandleFueledByRevenge>c__Iterator9()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3260,10 +3260,10 @@ namespace ETG.Core.Actors.Enemy
       public IEnumerator HandleCoopDeath(bool ignoreCorpse = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleCoopDeath\u003Ec__IteratorA()
+        return (IEnumerator) new PlayerController.<HandleCoopDeath>c__IteratorA()
         {
           ignoreCorpse = ignoreCorpse,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3299,9 +3299,9 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleThreatArrow()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleThreatArrow\u003Ec__IteratorB()
+        return (IEnumerator) new PlayerController.<HandleThreatArrow>c__IteratorB()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3309,9 +3309,9 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleCoopArrow()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleCoopArrow\u003Ec__IteratorC()
+        return (IEnumerator) new PlayerController.<HandleCoopArrow>c__IteratorC()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3332,10 +3332,10 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator InvariantWait(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CInvariantWait\u003Ec__IteratorD()
+        return (IEnumerator) new PlayerController.<InvariantWait>c__IteratorD()
         {
           delay = delay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3351,9 +3351,9 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleDeath_CR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleDeath_CR\u003Ec__IteratorE()
+        return (IEnumerator) new PlayerController.<HandleDeath_CR>c__IteratorE()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3711,11 +3711,11 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator TimedRemoveActiveItem(int indexToRemove, float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CTimedRemoveActiveItem\u003Ec__IteratorF()
+        return (IEnumerator) new PlayerController.<TimedRemoveActiveItem>c__IteratorF()
         {
           delay = delay,
           indexToRemove = indexToRemove,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3916,10 +3916,10 @@ namespace ETG.Core.Actors.Enemy
       protected IEnumerator HandleSpinfallSpawn(float invisibleDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleSpinfallSpawn\u003Ec__Iterator10()
+        return (IEnumerator) new PlayerController.<HandleSpinfallSpawn>c__Iterator10()
         {
           invisibleDelay = invisibleDelay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3927,10 +3927,10 @@ namespace ETG.Core.Actors.Enemy
       protected IEnumerator HandleFallSpawn(float invisibleDelay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleFallSpawn\u003Ec__Iterator11()
+        return (IEnumerator) new PlayerController.<HandleFallSpawn>c__Iterator11()
         {
           invisibleDelay = invisibleDelay,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3940,9 +3940,9 @@ namespace ETG.Core.Actors.Enemy
       protected IEnumerator HandleSpitOut()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleSpitOut\u003Ec__Iterator12()
+        return (IEnumerator) new PlayerController.<HandleSpitOut>c__Iterator12()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3975,9 +3975,9 @@ namespace ETG.Core.Actors.Enemy
       protected IEnumerator PitRespawn(Vector2 splashPoint)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CPitRespawn\u003Ec__Iterator13()
+        return (IEnumerator) new PlayerController.<PitRespawn>c__Iterator13()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -3985,9 +3985,9 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator FallDownCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CFallDownCR\u003Ec__Iterator14()
+        return (IEnumerator) new PlayerController.<FallDownCR>c__Iterator14()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -4054,11 +4054,11 @@ namespace ETG.Core.Actors.Enemy
         float thresholdValue)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleForceWalkInDirectionWhilePaused\u003Ec__Iterator15()
+        return (IEnumerator) new PlayerController.<HandleForceWalkInDirectionWhilePaused>c__Iterator15()
         {
           direction = direction,
           thresholdValue = thresholdValue,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -4421,9 +4421,9 @@ namespace ETG.Core.Actors.Enemy
       private IEnumerator HandleBlinkDodgeRoll()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleBlinkDodgeRoll\u003Ec__Iterator16()
+        return (IEnumerator) new PlayerController.<HandleBlinkDodgeRoll>c__Iterator16()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -5157,7 +5157,7 @@ namespace ETG.Core.Actors.Enemy
         List<SpeculativeRigidbody> passThroughRigidbodies = null)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PlayerController.\u003CHandleForcedMove\u003Ec__Iterator17()
+        return (IEnumerator) new PlayerController.<HandleForcedMove>c__Iterator17()
         {
           initialDelay = initialDelay,
           passThroughRigidbodies = passThroughRigidbodies,
@@ -5165,7 +5165,7 @@ namespace ETG.Core.Actors.Enemy
           axialX = axialX,
           axialY = axialY,
           maximumTime = maximumTime,
-          \u0024this = this
+          $this = this
         };
       }
 

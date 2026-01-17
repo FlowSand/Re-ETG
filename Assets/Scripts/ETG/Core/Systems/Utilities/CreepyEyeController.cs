@@ -41,9 +41,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleAutowarpOut()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CreepyEyeController.\u003CHandleAutowarpOut\u003Ec__Iterator0()
+        return (IEnumerator) new CreepyEyeController.<HandleAutowarpOut>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

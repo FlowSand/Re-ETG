@@ -39,10 +39,10 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator HandleMove(IntVector2 targetPosition)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RoomMotionHandler.\u003CHandleMove\u003Ec__Iterator0()
+        return (IEnumerator) new RoomMotionHandler.<HandleMove>c__Iterator0()
         {
           targetPosition = targetPosition,
-          \u0024this = this
+          $this = this
         };
       }
     }

@@ -53,9 +53,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator HandleDestroy()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ParadoxPortalController.\u003CHandleDestroy\u003Ec__Iterator0()
+        return (IEnumerator) new ParadoxPortalController.<HandleDestroy>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

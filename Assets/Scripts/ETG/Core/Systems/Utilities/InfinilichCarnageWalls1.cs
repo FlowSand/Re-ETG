@@ -27,9 +27,9 @@ namespace ETG.Core.Systems.Utilities
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichCarnageWalls1.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new InfinilichCarnageWalls1.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -75,9 +75,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new InfinilichCarnageWalls1.TipBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new InfinilichCarnageWalls1.TipBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }
@@ -108,9 +108,9 @@ namespace ETG.Core.Systems.Utilities
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new InfinilichCarnageWalls1.ChainBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new InfinilichCarnageWalls1.ChainBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
       }

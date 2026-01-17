@@ -35,10 +35,10 @@ namespace ETG.Core.Systems.Management
       public IEnumerator ShowLevelName_CR(Dungeon d)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LevelNameUIManager.\u003CShowLevelName_CR\u003Ec__Iterator0()
+        return (IEnumerator) new LevelNameUIManager.<ShowLevelName_CR>c__Iterator0()
         {
           d = d,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -65,9 +65,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleLevelName()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LevelNameUIManager.\u003CHandleLevelName\u003Ec__Iterator1()
+        return (IEnumerator) new LevelNameUIManager.<HandleLevelName>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

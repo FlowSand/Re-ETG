@@ -420,14 +420,14 @@ namespace ETG.Core.Dungeon.Rooms
         bool isSpecialHorizontalTopCase = false)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DungeonDoorController.\u003CDepthLerp\u003Ec__Iterator0()
+        return (IEnumerator) new DungeonDoorController.<DepthLerp>c__Iterator0()
         {
           m = m,
           targetSprite = targetSprite,
           duration = duration,
           targetDepth = targetDepth,
           isSpecialHorizontalTopCase = isSpecialHorizontalTopCase,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -472,9 +472,9 @@ namespace ETG.Core.Dungeon.Rooms
       private IEnumerator DelayedReclose()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DungeonDoorController.\u003CDelayedReclose\u003Ec__Iterator1()
+        return (IEnumerator) new DungeonDoorController.<DelayedReclose>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -555,10 +555,10 @@ namespace ETG.Core.Dungeon.Rooms
       private IEnumerator DoCoopArrowWhilePlayerIsNear(PlayerController nearPlayer)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DungeonDoorController.\u003CDoCoopArrowWhilePlayerIsNear\u003Ec__Iterator2()
+        return (IEnumerator) new DungeonDoorController.<DoCoopArrowWhilePlayerIsNear>c__Iterator2()
         {
           nearPlayer = nearPlayer,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -599,7 +599,7 @@ namespace ETG.Core.Dungeon.Rooms
         Action<tk2dSpriteAnimator, tk2dSpriteAnimationClip> action)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DungeonDoorController.\u003CMoveTransformSmoothly\u003Ec__Iterator3()
+        return (IEnumerator) new DungeonDoorController.<MoveTransformSmoothly>c__Iterator3()
         {
           target = target,
           delta = delta,
@@ -680,7 +680,7 @@ namespace ETG.Core.Dungeon.Rooms
       private IEnumerator DelayedLayerChange(GameObject targetObject, string layer, float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DungeonDoorController.\u003CDelayedLayerChange\u003Ec__Iterator4()
+        return (IEnumerator) new DungeonDoorController.<DelayedLayerChange>c__Iterator4()
         {
           delay = delay,
           layer = layer,
@@ -788,9 +788,9 @@ namespace ETG.Core.Dungeon.Rooms
       private IEnumerator HandleFrameDelayedUnsealedVFXOverride()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DungeonDoorController.\u003CHandleFrameDelayedUnsealedVFXOverride\u003Ec__Iterator5()
+        return (IEnumerator) new DungeonDoorController.<HandleFrameDelayedUnsealedVFXOverride>c__Iterator5()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

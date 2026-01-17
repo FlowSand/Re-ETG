@@ -30,9 +30,9 @@ namespace ETG.Core.Actors.Behaviors
       private IEnumerator Initialize()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RedBarrelAwareness.\u003CInitialize\u003Ec__Iterator0()
+        return (IEnumerator) new RedBarrelAwareness.<Initialize>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

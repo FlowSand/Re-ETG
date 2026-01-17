@@ -69,7 +69,7 @@ namespace ETG.Core.Systems.Data
       private IEnumerator LerpFlashlight(AdditionalBraveLight abl, bool turnOff)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DarknessChallengeModifier.\u003CLerpFlashlight\u003Ec__Iterator0()
+        return (IEnumerator) new DarknessChallengeModifier.<LerpFlashlight>c__Iterator0()
         {
           abl = abl,
           turnOff = turnOff

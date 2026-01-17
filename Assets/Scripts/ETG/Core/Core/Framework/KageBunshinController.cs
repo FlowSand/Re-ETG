@@ -61,10 +61,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleFiringBeam(BeamController beam)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new KageBunshinController.\u003CHandleFiringBeam\u003Ec__Iterator0()
+        return (IEnumerator) new KageBunshinController.<HandleFiringBeam>c__Iterator0()
         {
           beam = beam,
-          \u0024this = this
+          $this = this
         };
       }
 

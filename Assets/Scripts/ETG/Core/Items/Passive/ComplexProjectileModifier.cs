@@ -139,12 +139,12 @@ namespace ETG.Core.Items.Passive
         Vector2 direction)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ComplexProjectileModifier.\u003CHandleChainExplosion\u003Ec__Iterator0()
+        return (IEnumerator) new ComplexProjectileModifier.<HandleChainExplosion>c__Iterator0()
         {
           startPosition = startPosition,
           direction = direction,
           enemySRB = enemySRB,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -341,10 +341,10 @@ namespace ETG.Core.Items.Passive
       private IEnumerator HandleTrailedSpawn(Projectile p)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ComplexProjectileModifier.\u003CHandleTrailedSpawn\u003Ec__Iterator1()
+        return (IEnumerator) new ComplexProjectileModifier.<HandleTrailedSpawn>c__Iterator1()
         {
           p = p,
-          \u0024this = this
+          $this = this
         };
       }
 

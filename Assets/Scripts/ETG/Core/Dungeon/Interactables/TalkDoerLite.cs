@@ -755,13 +755,13 @@ namespace ETG.Core.Dungeon.Interactables
         TextBoxManager.BoxSlideOrientation slideOrientation)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TalkDoerLite.\u003CHandleForcedTimedSpeech\u003Ec__Iterator0()
+        return (IEnumerator) new TalkDoerLite.<HandleForcedTimedSpeech>c__Iterator0()
         {
           initialDelay = initialDelay,
           words = words,
           slideOrientation = slideOrientation,
           duration = duration,
-          \u0024this = this
+          $this = this
         };
       }
 

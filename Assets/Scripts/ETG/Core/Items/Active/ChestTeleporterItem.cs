@@ -71,9 +71,9 @@ namespace ETG.Core.Items.Active
       private IEnumerator LaunchChestSpawns()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ChestTeleporterItem.\u003CLaunchChestSpawns\u003Ec__Iterator0()
+        return (IEnumerator) new ChestTeleporterItem.<LaunchChestSpawns>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

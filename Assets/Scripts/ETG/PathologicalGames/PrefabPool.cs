@@ -124,9 +124,9 @@ public class PrefabPool
   internal IEnumerator CullDespawned()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new PrefabPool.\u003CCullDespawned\u003Ec__Iterator0()
+    return (IEnumerator) new PrefabPool.<CullDespawned>c__Iterator0()
     {
-      \u0024this = this
+      $this = this
     };
   }
 
@@ -259,9 +259,9 @@ public class PrefabPool
   private IEnumerator PreloadOverTime()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new PrefabPool.\u003CPreloadOverTime\u003Ec__Iterator1()
+    return (IEnumerator) new PrefabPool.<PreloadOverTime>c__Iterator1()
     {
-      \u0024this = this
+      $this = this
     };
   }
 

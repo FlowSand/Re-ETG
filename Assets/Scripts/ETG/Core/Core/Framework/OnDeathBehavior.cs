@@ -80,10 +80,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator DelayedOnTriggerCR(float delay)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new OnDeathBehavior.\u003CDelayedOnTriggerCR\u003Ec__Iterator0()
+        return (IEnumerator) new OnDeathBehavior.<DelayedOnTriggerCR>c__Iterator0()
         {
           delay = delay,
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -143,10 +143,10 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator SlowDownOverTime(Projectile p)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new KthuliberProjectileController.\u003CSlowDownOverTime\u003Ec__Iterator0()
+        return (IEnumerator) new KthuliberProjectileController.<SlowDownOverTime>c__Iterator0()
         {
           p = p,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -154,7 +154,7 @@ namespace ETG.Core.Combat.Projectiles
       private IEnumerator FrameDelayedPostProcessing(Projectile p)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new KthuliberProjectileController.\u003CFrameDelayedPostProcessing\u003Ec__Iterator1()
+        return (IEnumerator) new KthuliberProjectileController.<FrameDelayedPostProcessing>c__Iterator1()
         {
           p = p
         };

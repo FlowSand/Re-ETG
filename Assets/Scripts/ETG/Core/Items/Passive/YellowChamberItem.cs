@@ -78,7 +78,7 @@ namespace ETG.Core.Items.Passive
       private IEnumerator DelayedDestroyEnemy(AIActor enemy, tk2dSpriteAnimator vfxAnimator)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new YellowChamberItem.\u003CDelayedDestroyEnemy\u003Ec__Iterator0()
+        return (IEnumerator) new YellowChamberItem.<DelayedDestroyEnemy>c__Iterator0()
         {
           vfxAnimator = vfxAnimator,
           enemy = enemy

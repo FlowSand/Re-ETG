@@ -49,9 +49,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator Pulse()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SpritePulser.\u003CPulse\u003Ec__Iterator0()
+        return (IEnumerator) new SpritePulser.<Pulse>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

@@ -24,9 +24,9 @@ namespace ETG.Core.Combat.Projectiles
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PhaseSpiderWeb1.\u003CTop\u003Ec__Iterator0()
+        return (IEnumerator) new PhaseSpiderWeb1.<Top>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -46,9 +46,9 @@ namespace ETG.Core.Combat.Projectiles
         protected override IEnumerator Top()
         {
           // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new PhaseSpiderWeb1.WebBullet.\u003CTop\u003Ec__Iterator0()
+          return (IEnumerator) new PhaseSpiderWeb1.WebBullet.<Top>c__Iterator0()
           {
-            \u0024this = this
+            $this = this
           };
         }
 

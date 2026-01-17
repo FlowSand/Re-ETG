@@ -79,9 +79,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ChallengeManager.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new ChallengeManager.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -163,9 +163,9 @@ namespace ETG.Core.Systems.Management
       private IEnumerator HandleNewChallengeAnnouncements()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ChallengeManager.\u003CHandleNewChallengeAnnouncements\u003Ec__Iterator1()
+        return (IEnumerator) new ChallengeManager.<HandleNewChallengeAnnouncements>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

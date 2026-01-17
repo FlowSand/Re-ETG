@@ -495,14 +495,14 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopBuilderComposite.\u003CBuildLoopComposite\u003Ec__Iterator0 compositeCIterator0 = new LoopBuilderComposite.\u003CBuildLoopComposite\u003Ec__Iterator0()
+    LoopBuilderComposite.<BuildLoopComposite>c__Iterator0 compositeCIterator0 = new LoopBuilderComposite.<BuildLoopComposite>c__Iterator0()
     {
       layout = layout,
       startPosition = startPosition,
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    compositeCIterator0.\u0024PC = -2;
+    compositeCIterator0.$PC = -2;
     return (IEnumerable) compositeCIterator0;
   }
 
@@ -608,7 +608,7 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
       }
     }
     // ISSUE: object of a compiler-generated type is created
-    List<Tuple<PrototypeRoomExit, PrototypeRoomExit>> list = seqA.Zip<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>, \u003C\u003E__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>>((IEnumerable<Tuple<PrototypeRoomExit, PrototypeRoomExit>>) seqB, (Func<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>, \u003C\u003E__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>>) ((d, p) => new \u003C\u003E__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>(d, p))).OrderBy<\u003C\u003E__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>, int>((Func<\u003C\u003E__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>, int>) (v => v.Dist)).Select<\u003C\u003E__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>, Tuple<PrototypeRoomExit, PrototypeRoomExit>>((Func<\u003C\u003E__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>, Tuple<PrototypeRoomExit, PrototypeRoomExit>>) (v => v.Pair)).ToList<Tuple<PrototypeRoomExit, PrototypeRoomExit>>();
+    List<Tuple<PrototypeRoomExit, PrototypeRoomExit>> list = seqA.Zip<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>, <>__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>>((IEnumerable<Tuple<PrototypeRoomExit, PrototypeRoomExit>>) seqB, (Func<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>, <>__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>>) ((d, p) => new <>__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>(d, p))).OrderBy<<>__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>, int>((Func<<>__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>, int>) (v => v.Dist)).Select<<>__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>, Tuple<PrototypeRoomExit, PrototypeRoomExit>>((Func<<>__AnonType1<int, Tuple<PrototypeRoomExit, PrototypeRoomExit>>, Tuple<PrototypeRoomExit, PrototypeRoomExit>>) (v => v.Pair)).ToList<Tuple<PrototypeRoomExit, PrototypeRoomExit>>();
     RuntimeRoomExitData closestExitL = (RuntimeRoomExitData) null;
     RuntimeRoomExitData closestExitR = (RuntimeRoomExitData) null;
     List<IntVector2> path = (List<IntVector2>) null;
@@ -710,14 +710,14 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopBuilderComposite.\u003CBuildCompositeDepthFirst\u003Ec__Iterator1 depthFirstCIterator1 = new LoopBuilderComposite.\u003CBuildCompositeDepthFirst\u003Ec__Iterator1()
+    LoopBuilderComposite.<BuildCompositeDepthFirst>c__Iterator1 depthFirstCIterator1 = new LoopBuilderComposite.<BuildCompositeDepthFirst>c__Iterator1()
     {
       layout = layout,
       startPosition = startPosition,
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    depthFirstCIterator1.\u0024PC = -2;
+    depthFirstCIterator1.$PC = -2;
     return (IEnumerable) depthFirstCIterator1;
   }
 
@@ -856,14 +856,14 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopBuilderComposite.\u003CBuildCompositeNodeDepthFirst\u003Ec__Iterator2 depthFirstCIterator2 = new LoopBuilderComposite.\u003CBuildCompositeNodeDepthFirst\u003Ec__Iterator2()
+    LoopBuilderComposite.<BuildCompositeNodeDepthFirst>c__Iterator2 depthFirstCIterator2 = new LoopBuilderComposite.<BuildCompositeNodeDepthFirst>c__Iterator2()
     {
       currentBuildData = currentBuildData,
       layout = layout,
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    depthFirstCIterator2.\u0024PC = -2;
+    depthFirstCIterator2.$PC = -2;
     return (IEnumerable<ProcessStatus>) depthFirstCIterator2;
   }
 
@@ -936,13 +936,13 @@ public class LoopBuilderComposite : ArbitraryFlowBuildData
   {
     // ISSUE: object of a compiler-generated type is created
     // ISSUE: variable of a compiler-generated type
-    LoopBuilderComposite.\u003CBuild\u003Ec__Iterator3 buildCIterator3 = new LoopBuilderComposite.\u003CBuild\u003Ec__Iterator3()
+    LoopBuilderComposite.<Build>c__Iterator3 buildCIterator3 = new LoopBuilderComposite.<Build>c__Iterator3()
     {
       startPosition = startPosition,
-      \u0024this = this
+      $this = this
     };
     // ISSUE: reference to a compiler-generated field
-    buildCIterator3.\u0024PC = -2;
+    buildCIterator3.$PC = -2;
     return (IEnumerable) buildCIterator3;
   }
 

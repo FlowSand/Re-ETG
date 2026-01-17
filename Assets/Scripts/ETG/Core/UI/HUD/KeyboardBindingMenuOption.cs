@@ -225,9 +225,9 @@ namespace ETG.Core.UI.HUD
       private IEnumerator WaitForAssignmentModeToEnd()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new KeyboardBindingMenuOption.\u003CWaitForAssignmentModeToEnd\u003Ec__Iterator0()
+        return (IEnumerator) new KeyboardBindingMenuOption.<WaitForAssignmentModeToEnd>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

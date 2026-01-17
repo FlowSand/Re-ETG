@@ -355,12 +355,12 @@ namespace ETG.Core.UI.HUD
         float delayTime)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MinimapUIController.\u003CHandleDelayedAnimation\u003Ec__Iterator0()
+        return (IEnumerator) new MinimapUIController.<HandleDelayedAnimation>c__Iterator0()
         {
           delayTime = delayTime,
           targetAnimator = targetAnimator,
           animationName = animationName,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -1013,9 +1013,9 @@ namespace ETG.Core.UI.HUD
       private IEnumerator MoveAllThings()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MinimapUIController.\u003CMoveAllThings\u003Ec__Iterator1()
+        return (IEnumerator) new MinimapUIController.<MoveAllThings>c__Iterator1()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

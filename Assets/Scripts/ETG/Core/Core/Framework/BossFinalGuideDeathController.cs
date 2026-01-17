@@ -42,9 +42,9 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandlePostDeathExplosionCR()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalGuideDeathController.\u003CHandlePostDeathExplosionCR\u003Ec__Iterator0()
+        return (IEnumerator) new BossFinalGuideDeathController.<HandlePostDeathExplosionCR>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
     }

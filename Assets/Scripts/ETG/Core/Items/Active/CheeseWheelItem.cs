@@ -28,10 +28,10 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleDuration(PlayerController user)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CheeseWheelItem.\u003CHandleDuration\u003Ec__Iterator0()
+        return (IEnumerator) new CheeseWheelItem.<HandleDuration>c__Iterator0()
         {
           user = user,
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -98,11 +98,11 @@ namespace ETG.Core.Items.Active
       private IEnumerator HandleEnemySuck(AIActor target, SpeculativeRigidbody ownerRigidbody)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CheeseWheelItem.\u003CHandleEnemySuck\u003Ec__Iterator1()
+        return (IEnumerator) new CheeseWheelItem.<HandleEnemySuck>c__Iterator1()
         {
           target = target,
           ownerRigidbody = ownerRigidbody,
-          \u0024this = this
+          $this = this
         };
       }
 

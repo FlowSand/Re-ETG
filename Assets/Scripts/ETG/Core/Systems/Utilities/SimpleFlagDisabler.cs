@@ -28,9 +28,9 @@ namespace ETG.Core.Systems.Utilities
       private IEnumerator Start()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SimpleFlagDisabler.\u003CStart\u003Ec__Iterator0()
+        return (IEnumerator) new SimpleFlagDisabler.<Start>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 

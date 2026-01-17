@@ -684,10 +684,10 @@ namespace ETG.Core.Core.Framework
       private IEnumerator HandleFireRate(float t)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AIShooter.\u003CHandleFireRate\u003Ec__Iterator0()
+        return (IEnumerator) new AIShooter.<HandleFireRate>c__Iterator0()
         {
           t = t,
-          \u0024this = this
+          $this = this
         };
       }
     }

@@ -129,9 +129,9 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator PlayIntro()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossStatuesIntroDoer.\u003CPlayIntro\u003Ec__Iterator0()
+        return (IEnumerator) new BossStatuesIntroDoer.<PlayIntro>c__Iterator0()
         {
-          \u0024this = this
+          $this = this
         };
       }
 
@@ -139,7 +139,7 @@ namespace ETG.Core.Dungeon.Interactables
       private IEnumerator WaitForSecondsInvariant(float time)
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossStatuesIntroDoer.\u003CWaitForSecondsInvariant\u003Ec__Iterator1()
+        return (IEnumerator) new BossStatuesIntroDoer.<WaitForSecondsInvariant>c__Iterator1()
         {
           time = time
         };
