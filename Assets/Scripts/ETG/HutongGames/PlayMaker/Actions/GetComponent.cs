@@ -7,45 +7,46 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.UnityObject)]
-[HutongGames.PlayMaker.Tooltip("Gets a Component attached to a GameObject and stores it in an Object variable. NOTE: Set the Object variable's Object Type to get a component of that type. E.g., set Object Type to UnityEngine.AudioListener to get the AudioListener component on the camera.")]
-public class GetComponent : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("The GameObject that owns the component.")]
-  public FsmOwnerDefault gameObject;
-  [HutongGames.PlayMaker.Tooltip("Store the component in an Object variable.\nNOTE: Set theObject variable's Object Type to get a component of that type. E.g., set Object Type to UnityEngine.AudioListener to get the AudioListener component on the camera.")]
-  [RequiredField]
-  [UIHint(UIHint.Variable)]
-  public FsmObject storeComponent;
-  [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
-  public bool everyFrame;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.UnityObject)]
+  [HutongGames.PlayMaker.Tooltip("Gets a Component attached to a GameObject and stores it in an Object variable. NOTE: Set the Object variable's Object Type to get a component of that type. E.g., set Object Type to UnityEngine.AudioListener to get the AudioListener component on the camera.")]
+  public class GetComponent : FsmStateAction
   {
-    this.gameObject = (FsmOwnerDefault) null;
-    this.storeComponent = (FsmObject) null;
-    this.everyFrame = false;
-  }
+    [HutongGames.PlayMaker.Tooltip("The GameObject that owns the component.")]
+    public FsmOwnerDefault gameObject;
+    [HutongGames.PlayMaker.Tooltip("Store the component in an Object variable.\nNOTE: Set theObject variable's Object Type to get a component of that type. E.g., set Object Type to UnityEngine.AudioListener to get the AudioListener component on the camera.")]
+    [RequiredField]
+    [UIHint(UIHint.Variable)]
+    public FsmObject storeComponent;
+    [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
+    public bool everyFrame;
 
-  public override void OnEnter()
-  {
-    this.DoGetComponent();
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
+    public override void Reset()
+    {
+      this.gameObject = (FsmOwnerDefault) null;
+      this.storeComponent = (FsmObject) null;
+      this.everyFrame = false;
+    }
 
-  public override void OnUpdate() => this.DoGetComponent();
+    public override void OnEnter()
+    {
+      this.DoGetComponent();
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
 
-  private void DoGetComponent()
-  {
-    if (this.storeComponent == null)
-      return;
-    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-    if ((Object) ownerDefaultTarget == (Object) null || this.storeComponent.IsNone)
-      return;
-    this.storeComponent.Value = (Object) ownerDefaultTarget.GetComponent(this.storeComponent.ObjectType);
+    public override void OnUpdate() => this.DoGetComponent();
+
+    private void DoGetComponent()
+    {
+      if (this.storeComponent == null)
+        return;
+      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+      if ((Object) ownerDefaultTarget == (Object) null || this.storeComponent.IsNone)
+        return;
+      this.storeComponent.Value = (Object) ownerDefaultTarget.GetComponent(this.storeComponent.ObjectType);
+    }
   }
 }

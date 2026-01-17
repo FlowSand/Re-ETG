@@ -7,44 +7,45 @@
 using System;
 
 #nullable disable
-namespace FullInspector;
-
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
-public sealed class InspectorCollectionPagerAttribute : Attribute
+namespace FullInspector
 {
-  public int PageMinimumCollectionLength;
-
-  public InspectorCollectionPagerAttribute()
+  [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+  public sealed class InspectorCollectionPagerAttribute : Attribute
   {
-    this.PageMinimumCollectionLength = fiSettings.DefaultPageMinimumCollectionLength;
-  }
+    public int PageMinimumCollectionLength;
 
-  public InspectorCollectionPagerAttribute(int pageMinimumCollectionLength)
-  {
-    this.PageMinimumCollectionLength = pageMinimumCollectionLength;
-  }
-
-  public bool AlwaysHide
-  {
-    set
+    public InspectorCollectionPagerAttribute()
     {
-      if (value)
-        this.PageMinimumCollectionLength = -1;
-      else
-        this.PageMinimumCollectionLength = fiSettings.DefaultPageMinimumCollectionLength;
+      this.PageMinimumCollectionLength = fiSettings.DefaultPageMinimumCollectionLength;
     }
-    get => this.PageMinimumCollectionLength < 0;
-  }
 
-  public bool AlwaysShow
-  {
-    set
+    public InspectorCollectionPagerAttribute(int pageMinimumCollectionLength)
     {
-      if (value)
-        this.PageMinimumCollectionLength = 0;
-      else
-        this.PageMinimumCollectionLength = fiSettings.DefaultPageMinimumCollectionLength;
+      this.PageMinimumCollectionLength = pageMinimumCollectionLength;
     }
-    get => this.PageMinimumCollectionLength == 0;
+
+    public bool AlwaysHide
+    {
+      set
+      {
+        if (value)
+          this.PageMinimumCollectionLength = -1;
+        else
+          this.PageMinimumCollectionLength = fiSettings.DefaultPageMinimumCollectionLength;
+      }
+      get => this.PageMinimumCollectionLength < 0;
+    }
+
+    public bool AlwaysShow
+    {
+      set
+      {
+        if (value)
+          this.PageMinimumCollectionLength = 0;
+        else
+          this.PageMinimumCollectionLength = fiSettings.DefaultPageMinimumCollectionLength;
+      }
+      get => this.PageMinimumCollectionLength == 0;
+    }
   }
 }

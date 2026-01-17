@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class PowerAMiniControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public PowerAMiniControllerMacProfile()
+  public class PowerAMiniControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "PowerA Mini Controller";
-    this.Meta = "PowerA Mini Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public PowerAMiniControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "PowerA Mini Controller";
+      this.Meta = "PowerA Mini Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 9414),
-        ProductID = new ushort?((ushort) 21530)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 9414),
+          ProductID = new ushort?((ushort) 21530)
+        }
+      };
+    }
   }
 }

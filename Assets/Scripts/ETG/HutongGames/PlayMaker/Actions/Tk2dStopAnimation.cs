@@ -7,40 +7,41 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory("2D Toolkit/SpriteAnimator")]
-[HutongGames.PlayMaker.Tooltip("Stops a sprite animation. \nNOTE: The Game Object must have a tk2dSpriteAnimator attached.")]
-public class Tk2dStopAnimation : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [CheckForComponent(typeof (tk2dSpriteAnimator))]
-  [HutongGames.PlayMaker.Tooltip("The Game Object to work with. NOTE: The Game Object must have a tk2dSpriteAnimator component attached.")]
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
-  private tk2dSpriteAnimator _sprite;
-
-  private void _getSprite()
+  [ActionCategory("2D Toolkit/SpriteAnimator")]
+  [HutongGames.PlayMaker.Tooltip("Stops a sprite animation. \nNOTE: The Game Object must have a tk2dSpriteAnimator attached.")]
+  public class Tk2dStopAnimation : FsmStateAction
   {
-    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-    if ((Object) ownerDefaultTarget == (Object) null)
-      return;
-    this._sprite = ownerDefaultTarget.GetComponent<tk2dSpriteAnimator>();
-  }
+    [CheckForComponent(typeof (tk2dSpriteAnimator))]
+    [HutongGames.PlayMaker.Tooltip("The Game Object to work with. NOTE: The Game Object must have a tk2dSpriteAnimator component attached.")]
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    private tk2dSpriteAnimator _sprite;
 
-  public override void Reset() => this.gameObject = (FsmOwnerDefault) null;
+    private void _getSprite()
+    {
+      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+      if ((Object) ownerDefaultTarget == (Object) null)
+        return;
+      this._sprite = ownerDefaultTarget.GetComponent<tk2dSpriteAnimator>();
+    }
 
-  public override void OnEnter()
-  {
-    this._getSprite();
-    this.DoStopAnimation();
-    this.Finish();
-  }
+    public override void Reset() => this.gameObject = (FsmOwnerDefault) null;
 
-  private void DoStopAnimation()
-  {
-    if ((Object) this._sprite == (Object) null)
-      this.LogWarning("Missing tk2dSpriteAnimator component: " + this._sprite.gameObject.name);
-    else
-      this._sprite.Stop();
+    public override void OnEnter()
+    {
+      this._getSprite();
+      this.DoStopAnimation();
+      this.Finish();
+    }
+
+    private void DoStopAnimation()
+    {
+      if ((Object) this._sprite == (Object) null)
+        this.LogWarning("Missing tk2dSpriteAnimator component: " + this._sprite.gameObject.name);
+      else
+        this._sprite.Stop();
+    }
   }
 }

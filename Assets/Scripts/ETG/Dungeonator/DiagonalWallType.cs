@@ -5,13 +5,14 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace Dungeonator;
-
-public enum DiagonalWallType
+namespace Dungeonator
 {
-  NONE,
-  NORTHEAST,
-  SOUTHEAST,
-  SOUTHWEST,
-  NORTHWEST,
+  public enum DiagonalWallType
+  {
+    NONE,
+    NORTHEAST,
+    SOUTHEAST,
+    SOUTHWEST,
+    NORTHWEST,
+  }
 }

@@ -5,22 +5,23 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector.LayoutToolkit;
-
-public static class fiLayoutUtility
+namespace FullInspector.LayoutToolkit
 {
-  public static fiLayout Margin(float margin, fiLayout layout)
+  public static class fiLayoutUtility
   {
-    return (fiLayout) new fiHorizontalLayout()
+    public static fiLayout Margin(float margin, fiLayout layout)
     {
-      margin,
-      (fiLayout) new fiVerticalLayout()
+      return (fiLayout) new fiHorizontalLayout()
       {
         margin,
-        layout,
+        (fiLayout) new fiVerticalLayout()
+        {
+          margin,
+          layout,
+          margin
+        },
         margin
-      },
-      margin
-    };
+      };
+    }
   }
 }

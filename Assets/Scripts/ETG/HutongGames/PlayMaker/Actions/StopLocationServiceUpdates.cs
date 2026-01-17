@@ -5,15 +5,16 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Device)]
-[Tooltip("Stops location service updates. This could be useful for saving battery life.")]
-public class StopLocationServiceUpdates : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public override void Reset()
+  [ActionCategory(ActionCategory.Device)]
+  [Tooltip("Stops location service updates. This could be useful for saving battery life.")]
+  public class StopLocationServiceUpdates : FsmStateAction
   {
-  }
+    public override void Reset()
+    {
+    }
 
-  public override void OnEnter() => this.Finish();
+    public override void OnEnter() => this.Finish();
+  }
 }

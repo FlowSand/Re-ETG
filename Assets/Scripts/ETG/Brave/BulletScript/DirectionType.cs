@@ -5,12 +5,13 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace Brave.BulletScript;
-
-public enum DirectionType
+namespace Brave.BulletScript
 {
-  Aim,
-  Absolute,
-  Relative,
-  Sequence,
+  public enum DirectionType
+  {
+    Aim,
+    Absolute,
+    Relative,
+    Sequence,
+  }
 }

@@ -8,14 +8,15 @@ using FullInspector.Serializers.FullSerializer;
 using System;
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public class fiLoadedSerializers : fiILoadedSerializers
+namespace FullInspector.Internal
 {
-  public Type DefaultSerializerProvider => typeof (FullSerializerMetadata);
-
-  public Type[] AllLoadedSerializerProviders
+  public class fiLoadedSerializers : fiILoadedSerializers
   {
-    get => new Type[1]{ typeof (FullSerializerMetadata) };
+    public Type DefaultSerializerProvider => typeof (FullSerializerMetadata);
+
+    public Type[] AllLoadedSerializerProviders
+    {
+      get => new Type[1]{ typeof (FullSerializerMetadata) };
+    }
   }
 }

@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public enum LockAxis
+namespace InControl
 {
-  None,
-  Horizontal,
-  Vertical,
+  public enum LockAxis
+  {
+    None,
+    Horizontal,
+    Vertical,
+  }
 }

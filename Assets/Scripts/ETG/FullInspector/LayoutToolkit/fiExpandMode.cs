@@ -5,10 +5,11 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector.LayoutToolkit;
-
-public enum fiExpandMode
+namespace FullInspector.LayoutToolkit
 {
-  Expand,
-  Fixed,
+  public enum fiExpandMode
+  {
+    Expand,
+    Fixed,
+  }
 }

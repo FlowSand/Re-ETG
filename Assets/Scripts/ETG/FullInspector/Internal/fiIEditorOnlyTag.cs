@@ -5,8 +5,9 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public interface fiIEditorOnlyTag
+namespace FullInspector.Internal
 {
+  public interface fiIEditorOnlyTag
+  {
+  }
 }

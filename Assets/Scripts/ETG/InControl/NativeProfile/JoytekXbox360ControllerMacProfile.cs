@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class JoytekXbox360ControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public JoytekXbox360ControllerMacProfile()
+  public class JoytekXbox360ControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Joytek Xbox 360 Controller";
-    this.Meta = "Joytek Xbox 360 Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public JoytekXbox360ControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Joytek Xbox 360 Controller";
+      this.Meta = "Joytek Xbox 360 Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 5678),
-        ProductID = new ushort?((ushort) 48879)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 5678),
+          ProductID = new ushort?((ushort) 48879)
+        }
+      };
+    }
   }
 }

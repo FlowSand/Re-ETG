@@ -5,16 +5,17 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Debug)]
-[Tooltip("Adds a text area to the action list. NOTE: Doesn't do anything, just for notes...")]
-public class Comment : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [UIHint(UIHint.Comment)]
-  public string comment;
+  [ActionCategory(ActionCategory.Debug)]
+  [Tooltip("Adds a text area to the action list. NOTE: Doesn't do anything, just for notes...")]
+  public class Comment : FsmStateAction
+  {
+    [UIHint(UIHint.Comment)]
+    public string comment;
 
-  public override void Reset() => this.comment = string.Empty;
+    public override void Reset() => this.comment = string.Empty;
 
-  public override void OnEnter() => this.Finish();
+    public override void OnEnter() => this.Finish();
+  }
 }

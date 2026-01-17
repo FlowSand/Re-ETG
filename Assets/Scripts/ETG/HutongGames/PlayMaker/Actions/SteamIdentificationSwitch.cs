@@ -7,54 +7,55 @@
 using Steamworks;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Logic)]
-public class SteamIdentificationSwitch : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [CompoundArray("Int Switches", "Compare Int", "Send Event")]
-  public FsmString[] targetIDs;
-  public FsmEvent[] sendEvent;
-  public bool everyFrame;
-  public FsmEvent defaultEvent;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.Logic)]
+  public class SteamIdentificationSwitch : FsmStateAction
   {
-    this.targetIDs = new FsmString[1];
-    this.sendEvent = new FsmEvent[1];
-    this.everyFrame = false;
-  }
+    [CompoundArray("Int Switches", "Compare Int", "Send Event")]
+    public FsmString[] targetIDs;
+    public FsmEvent[] sendEvent;
+    public bool everyFrame;
+    public FsmEvent defaultEvent;
 
-  public override void OnEnter()
-  {
-    this.DoIDSwitch();
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
-
-  public override void OnUpdate() => this.DoIDSwitch();
-
-  private void DoIDSwitch()
-  {
-    bool flag = false;
-    ulong num = 0;
-    if (GameManager.Instance.platformInterface is PlatformInterfaceSteam && SteamManager.Initialized)
+    public override void Reset()
     {
-      num = SteamUser.GetSteamID().m_SteamID;
-      flag = true;
+      this.targetIDs = new FsmString[1];
+      this.sendEvent = new FsmEvent[1];
+      this.everyFrame = false;
     }
-    if (flag)
+
+    public override void OnEnter()
     {
-      for (int index = 0; index < this.targetIDs.Length; ++index)
+      this.DoIDSwitch();
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
+
+    public override void OnUpdate() => this.DoIDSwitch();
+
+    private void DoIDSwitch()
+    {
+      bool flag = false;
+      ulong num = 0;
+      if (GameManager.Instance.platformInterface is PlatformInterfaceSteam && SteamManager.Initialized)
       {
-        if (this.targetIDs[index].Value == num.ToString())
+        num = SteamUser.GetSteamID().m_SteamID;
+        flag = true;
+      }
+      if (flag)
+      {
+        for (int index = 0; index < this.targetIDs.Length; ++index)
         {
-          this.Fsm.Event(this.sendEvent[index]);
-          return;
+          if (this.targetIDs[index].Value == num.ToString())
+          {
+            this.Fsm.Event(this.sendEvent[index]);
+            return;
+          }
         }
       }
+      this.Fsm.Event(this.defaultEvent);
     }
-    this.Fsm.Event(this.defaultEvent);
   }
 }

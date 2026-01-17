@@ -8,55 +8,56 @@ using System;
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Stop an iTween action.")]
-[ActionCategory("iTween")]
-public class iTweenStop : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
-  public FsmString id;
-  public iTweenFSMType iTweenType;
-  public bool includeChildren;
-  public bool inScene;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Stop an iTween action.")]
+  [ActionCategory("iTween")]
+  public class iTweenStop : FsmStateAction
   {
-    FsmString fsmString = new FsmString();
-    fsmString.UseVariable = true;
-    this.id = fsmString;
-    this.iTweenType = iTweenFSMType.all;
-    this.includeChildren = false;
-    this.inScene = false;
-  }
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    public FsmString id;
+    public iTweenFSMType iTweenType;
+    public bool includeChildren;
+    public bool inScene;
 
-  public override void OnEnter()
-  {
-    base.OnEnter();
-    this.DoiTween();
-    this.Finish();
-  }
-
-  private void DoiTween()
-  {
-    if (this.id.IsNone)
+    public override void Reset()
     {
-      if (this.iTweenType == iTweenFSMType.all)
-        iTween.Stop();
-      else if (this.inScene)
+      FsmString fsmString = new FsmString();
+      fsmString.UseVariable = true;
+      this.id = fsmString;
+      this.iTweenType = iTweenFSMType.all;
+      this.includeChildren = false;
+      this.inScene = false;
+    }
+
+    public override void OnEnter()
+    {
+      base.OnEnter();
+      this.DoiTween();
+      this.Finish();
+    }
+
+    private void DoiTween()
+    {
+      if (this.id.IsNone)
       {
-        iTween.Stop(Enum.GetName(typeof (iTweenFSMType), (object) this.iTweenType));
+        if (this.iTweenType == iTweenFSMType.all)
+          iTween.Stop();
+        else if (this.inScene)
+        {
+          iTween.Stop(Enum.GetName(typeof (iTweenFSMType), (object) this.iTweenType));
+        }
+        else
+        {
+          GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+          if ((UnityEngine.Object) ownerDefaultTarget == (UnityEngine.Object) null)
+            return;
+          iTween.Stop(ownerDefaultTarget, Enum.GetName(typeof (iTweenFSMType), (object) this.iTweenType), this.includeChildren);
+        }
       }
       else
-      {
-        GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-        if ((UnityEngine.Object) ownerDefaultTarget == (UnityEngine.Object) null)
-          return;
-        iTween.Stop(ownerDefaultTarget, Enum.GetName(typeof (iTweenFSMType), (object) this.iTweenType), this.includeChildren);
-      }
+        iTween.StopByName(this.id.Value);
     }
-    else
-      iTween.StopByName(this.id.Value);
   }
 }

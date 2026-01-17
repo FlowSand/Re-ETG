@@ -10,487 +10,488 @@ using System.Globalization;
 using System.Text;
 
 #nullable disable
-namespace FullSerializer;
-
-public class fsJsonParser
+namespace FullSerializer
 {
-  private int _start;
-  private string _input;
-  private readonly StringBuilder _cachedStringBuilder = new StringBuilder(256 /*0x0100*/);
-
-  private fsJsonParser(string input)
+  public class fsJsonParser
   {
-    this._input = input;
-    this._start = 0;
-  }
+    private int _start;
+    private string _input;
+    private readonly StringBuilder _cachedStringBuilder = new StringBuilder(256 /*0x0100*/);
 
-  private fsResult MakeFailure(string message)
-  {
-    int startIndex = Math.Max(0, this._start - 20);
-    int length = Math.Min(50, this._input.Length - startIndex);
-    return fsResult.Fail($"Error while parsing: {message}; context = <{this._input.Substring(startIndex, length)}>");
-  }
-
-  private bool TryMoveNext()
-  {
-    if (this._start >= this._input.Length)
-      return false;
-    ++this._start;
-    return true;
-  }
-
-  private bool HasValue() => this.HasValue(0);
-
-  private bool HasValue(int offset)
-  {
-    return this._start + offset >= 0 && this._start + offset < this._input.Length;
-  }
-
-  private char Character() => this.Character(0);
-
-  private char Character(int offset) => this._input[this._start + offset];
-
-  private void SkipSpace()
-  {
-label_15:
-    while (this.HasValue())
+    private fsJsonParser(string input)
     {
-      if (char.IsWhiteSpace(this.Character()))
-      {
-        this.TryMoveNext();
-      }
-      else
-      {
-        if (!this.HasValue(1) || this.Character(0) != '/')
-          break;
-        if (this.Character(1) == '/')
-        {
-          while (true)
-          {
-            if (this.HasValue() && !Environment.NewLine.Contains(string.Empty + (object) this.Character()))
-              this.TryMoveNext();
-            else
-              goto label_15;
-          }
-        }
-        else if (this.Character(1) == '*')
-        {
-          this.TryMoveNext();
-          this.TryMoveNext();
-          while (this.HasValue(1))
-          {
-            if (this.Character(0) == '*' && this.Character(1) == '/')
-            {
-              this.TryMoveNext();
-              this.TryMoveNext();
-              this.TryMoveNext();
-              break;
-            }
-            this.TryMoveNext();
-          }
-        }
-      }
+      this._input = input;
+      this._start = 0;
     }
-  }
 
-  private bool IsHex(char c)
-  {
-    if (c >= '0' && c <= '9' || c >= 'a' && c <= 'f')
+    private fsResult MakeFailure(string message)
+    {
+      int startIndex = Math.Max(0, this._start - 20);
+      int length = Math.Min(50, this._input.Length - startIndex);
+      return fsResult.Fail($"Error while parsing: {message}; context = <{this._input.Substring(startIndex, length)}>");
+    }
+
+    private bool TryMoveNext()
+    {
+      if (this._start >= this._input.Length)
+        return false;
+      ++this._start;
       return true;
-    return c >= 'A' && c <= 'F';
-  }
-
-  private uint ParseSingleChar(char c1, uint multipliyer)
-  {
-    uint singleChar = 0;
-    if (c1 >= '0' && c1 <= '9')
-      singleChar = ((uint) c1 - 48U /*0x30*/) * multipliyer;
-    else if (c1 >= 'A' && c1 <= 'F')
-      singleChar = (uint) ((int) c1 - 65 + 10) * multipliyer;
-    else if (c1 >= 'a' && c1 <= 'f')
-      singleChar = (uint) ((int) c1 - 97 + 10) * multipliyer;
-    return singleChar;
-  }
-
-  private uint ParseUnicode(char c1, char c2, char c3, char c4)
-  {
-    return this.ParseSingleChar(c1, 4096U /*0x1000*/) + this.ParseSingleChar(c2, 256U /*0x0100*/) + this.ParseSingleChar(c3, 16U /*0x10*/) + this.ParseSingleChar(c4, 1U);
-  }
-
-  private fsResult TryUnescapeChar(out char escaped)
-  {
-    this.TryMoveNext();
-    if (!this.HasValue())
-    {
-      escaped = ' ';
-      return this.MakeFailure("Unexpected end of input after \\");
     }
-    char ch = this.Character();
-    switch (ch)
+
+    private bool HasValue() => this.HasValue(0);
+
+    private bool HasValue(int offset)
     {
-      case 'a':
-        this.TryMoveNext();
-        escaped = '\a';
-        return fsResult.Success;
-      case 'b':
-        this.TryMoveNext();
-        escaped = '\b';
-        return fsResult.Success;
-      case 'f':
-        this.TryMoveNext();
-        escaped = '\f';
-        return fsResult.Success;
-      default:
-        switch (ch)
+      return this._start + offset >= 0 && this._start + offset < this._input.Length;
+    }
+
+    private char Character() => this.Character(0);
+
+    private char Character(int offset) => this._input[this._start + offset];
+
+    private void SkipSpace()
+    {
+  label_15:
+      while (this.HasValue())
+      {
+        if (char.IsWhiteSpace(this.Character()))
         {
-          case 'r':
-            this.TryMoveNext();
-            escaped = '\r';
-            return fsResult.Success;
-          case 't':
-            this.TryMoveNext();
-            escaped = '\t';
-            return fsResult.Success;
-          case 'u':
-            this.TryMoveNext();
-            if (this.IsHex(this.Character(0)) && this.IsHex(this.Character(1)) && this.IsHex(this.Character(2)) && this.IsHex(this.Character(3)))
-            {
-              uint unicode = this.ParseUnicode(this.Character(0), this.Character(1), this.Character(2), this.Character(3));
-              this.TryMoveNext();
-              this.TryMoveNext();
-              this.TryMoveNext();
-              this.TryMoveNext();
-              escaped = (char) unicode;
-              return fsResult.Success;
-            }
-            escaped = char.MinValue;
-            return this.MakeFailure($"invalid escape sequence '\\u{this.Character(0)}{this.Character(1)}{this.Character(2)}{this.Character(3)}'\n");
-          default:
-            switch (ch)
-            {
-              case '"':
-                this.TryMoveNext();
-                escaped = '"';
-                return fsResult.Success;
-              case '/':
-                this.TryMoveNext();
-                escaped = '/';
-                return fsResult.Success;
-              case '0':
-                this.TryMoveNext();
-                escaped = char.MinValue;
-                return fsResult.Success;
-              case '\\':
-                this.TryMoveNext();
-                escaped = '\\';
-                return fsResult.Success;
-              case 'n':
-                this.TryMoveNext();
-                escaped = '\n';
-                return fsResult.Success;
-              default:
-                escaped = char.MinValue;
-                return this.MakeFailure($"Invalid escape sequence \\{this.Character()}");
-            }
+          this.TryMoveNext();
         }
+        else
+        {
+          if (!this.HasValue(1) || this.Character(0) != '/')
+            break;
+          if (this.Character(1) == '/')
+          {
+            while (true)
+            {
+              if (this.HasValue() && !Environment.NewLine.Contains(string.Empty + (object) this.Character()))
+                this.TryMoveNext();
+              else
+                goto label_15;
+            }
+          }
+          else if (this.Character(1) == '*')
+          {
+            this.TryMoveNext();
+            this.TryMoveNext();
+            while (this.HasValue(1))
+            {
+              if (this.Character(0) == '*' && this.Character(1) == '/')
+              {
+                this.TryMoveNext();
+                this.TryMoveNext();
+                this.TryMoveNext();
+                break;
+              }
+              this.TryMoveNext();
+            }
+          }
+        }
+      }
     }
-  }
 
-  private fsResult TryParseExact(string content)
-  {
-    for (int index = 0; index < content.Length; ++index)
+    private bool IsHex(char c)
     {
-      if ((int) this.Character() != (int) content[index])
-        return this.MakeFailure("Expected " + (object) content[index]);
-      if (!this.TryMoveNext())
-        return this.MakeFailure("Unexpected end of content when parsing " + content);
+      if (c >= '0' && c <= '9' || c >= 'a' && c <= 'f')
+        return true;
+      return c >= 'A' && c <= 'F';
     }
-    return fsResult.Success;
-  }
 
-  private fsResult TryParseTrue(out fsData data)
-  {
-    fsResult exact = this.TryParseExact("true");
-    if (exact.Succeeded)
+    private uint ParseSingleChar(char c1, uint multipliyer)
     {
-      data = new fsData(true);
+      uint singleChar = 0;
+      if (c1 >= '0' && c1 <= '9')
+        singleChar = ((uint) c1 - 48U /*0x30*/) * multipliyer;
+      else if (c1 >= 'A' && c1 <= 'F')
+        singleChar = (uint) ((int) c1 - 65 + 10) * multipliyer;
+      else if (c1 >= 'a' && c1 <= 'f')
+        singleChar = (uint) ((int) c1 - 97 + 10) * multipliyer;
+      return singleChar;
+    }
+
+    private uint ParseUnicode(char c1, char c2, char c3, char c4)
+    {
+      return this.ParseSingleChar(c1, 4096U /*0x1000*/) + this.ParseSingleChar(c2, 256U /*0x0100*/) + this.ParseSingleChar(c3, 16U /*0x10*/) + this.ParseSingleChar(c4, 1U);
+    }
+
+    private fsResult TryUnescapeChar(out char escaped)
+    {
+      this.TryMoveNext();
+      if (!this.HasValue())
+      {
+        escaped = ' ';
+        return this.MakeFailure("Unexpected end of input after \\");
+      }
+      char ch = this.Character();
+      switch (ch)
+      {
+        case 'a':
+          this.TryMoveNext();
+          escaped = '\a';
+          return fsResult.Success;
+        case 'b':
+          this.TryMoveNext();
+          escaped = '\b';
+          return fsResult.Success;
+        case 'f':
+          this.TryMoveNext();
+          escaped = '\f';
+          return fsResult.Success;
+        default:
+          switch (ch)
+          {
+            case 'r':
+              this.TryMoveNext();
+              escaped = '\r';
+              return fsResult.Success;
+            case 't':
+              this.TryMoveNext();
+              escaped = '\t';
+              return fsResult.Success;
+            case 'u':
+              this.TryMoveNext();
+              if (this.IsHex(this.Character(0)) && this.IsHex(this.Character(1)) && this.IsHex(this.Character(2)) && this.IsHex(this.Character(3)))
+              {
+                uint unicode = this.ParseUnicode(this.Character(0), this.Character(1), this.Character(2), this.Character(3));
+                this.TryMoveNext();
+                this.TryMoveNext();
+                this.TryMoveNext();
+                this.TryMoveNext();
+                escaped = (char) unicode;
+                return fsResult.Success;
+              }
+              escaped = char.MinValue;
+              return this.MakeFailure($"invalid escape sequence '\\u{this.Character(0)}{this.Character(1)}{this.Character(2)}{this.Character(3)}'\n");
+            default:
+              switch (ch)
+              {
+                case '"':
+                  this.TryMoveNext();
+                  escaped = '"';
+                  return fsResult.Success;
+                case '/':
+                  this.TryMoveNext();
+                  escaped = '/';
+                  return fsResult.Success;
+                case '0':
+                  this.TryMoveNext();
+                  escaped = char.MinValue;
+                  return fsResult.Success;
+                case '\\':
+                  this.TryMoveNext();
+                  escaped = '\\';
+                  return fsResult.Success;
+                case 'n':
+                  this.TryMoveNext();
+                  escaped = '\n';
+                  return fsResult.Success;
+                default:
+                  escaped = char.MinValue;
+                  return this.MakeFailure($"Invalid escape sequence \\{this.Character()}");
+              }
+          }
+      }
+    }
+
+    private fsResult TryParseExact(string content)
+    {
+      for (int index = 0; index < content.Length; ++index)
+      {
+        if ((int) this.Character() != (int) content[index])
+          return this.MakeFailure("Expected " + (object) content[index]);
+        if (!this.TryMoveNext())
+          return this.MakeFailure("Unexpected end of content when parsing " + content);
+      }
       return fsResult.Success;
     }
-    data = (fsData) null;
-    return exact;
-  }
 
-  private fsResult TryParseFalse(out fsData data)
-  {
-    fsResult exact = this.TryParseExact("false");
-    if (exact.Succeeded)
+    private fsResult TryParseTrue(out fsData data)
     {
-      data = new fsData(false);
-      return fsResult.Success;
+      fsResult exact = this.TryParseExact("true");
+      if (exact.Succeeded)
+      {
+        data = new fsData(true);
+        return fsResult.Success;
+      }
+      data = (fsData) null;
+      return exact;
     }
-    data = (fsData) null;
-    return exact;
-  }
 
-  private fsResult TryParseNull(out fsData data)
-  {
-    fsResult exact = this.TryParseExact("null");
-    if (exact.Succeeded)
+    private fsResult TryParseFalse(out fsData data)
     {
-      data = new fsData();
-      return fsResult.Success;
+      fsResult exact = this.TryParseExact("false");
+      if (exact.Succeeded)
+      {
+        data = new fsData(false);
+        return fsResult.Success;
+      }
+      data = (fsData) null;
+      return exact;
     }
-    data = (fsData) null;
-    return exact;
-  }
 
-  private bool IsSeparator(char c) => char.IsWhiteSpace(c) || c == ',' || c == '}' || c == ']';
-
-  private fsResult TryParseNumber(out fsData data)
-  {
-    int start = this._start;
-    do
-      ;
-    while (this.TryMoveNext() && this.HasValue() && !this.IsSeparator(this.Character()));
-    string s = this._input.Substring(start, this._start - start);
-    if (s.Contains(".") || s == "Infinity" || s == "-Infinity" || s == "NaN")
+    private fsResult TryParseNull(out fsData data)
     {
-      double result;
-      if (!double.TryParse(s, NumberStyles.Any, (IFormatProvider) CultureInfo.InvariantCulture, out result))
+      fsResult exact = this.TryParseExact("null");
+      if (exact.Succeeded)
+      {
+        data = new fsData();
+        return fsResult.Success;
+      }
+      data = (fsData) null;
+      return exact;
+    }
+
+    private bool IsSeparator(char c) => char.IsWhiteSpace(c) || c == ',' || c == '}' || c == ']';
+
+    private fsResult TryParseNumber(out fsData data)
+    {
+      int start = this._start;
+      do
+        ;
+      while (this.TryMoveNext() && this.HasValue() && !this.IsSeparator(this.Character()));
+      string s = this._input.Substring(start, this._start - start);
+      if (s.Contains(".") || s == "Infinity" || s == "-Infinity" || s == "NaN")
+      {
+        double result;
+        if (!double.TryParse(s, NumberStyles.Any, (IFormatProvider) CultureInfo.InvariantCulture, out result))
+        {
+          data = (fsData) null;
+          return this.MakeFailure("Bad double format with " + s);
+        }
+        data = new fsData(result);
+        return fsResult.Success;
+      }
+      long result1;
+      if (!long.TryParse(s, NumberStyles.Any, (IFormatProvider) CultureInfo.InvariantCulture, out result1))
       {
         data = (fsData) null;
-        return this.MakeFailure("Bad double format with " + s);
+        return this.MakeFailure("Bad Int64 format with " + s);
       }
-      data = new fsData(result);
+      data = new fsData(result1);
       return fsResult.Success;
     }
-    long result1;
-    if (!long.TryParse(s, NumberStyles.Any, (IFormatProvider) CultureInfo.InvariantCulture, out result1))
-    {
-      data = (fsData) null;
-      return this.MakeFailure("Bad Int64 format with " + s);
-    }
-    data = new fsData(result1);
-    return fsResult.Success;
-  }
 
-  private fsResult TryParseString(out string str)
-  {
-    this._cachedStringBuilder.Length = 0;
-    if (this.Character() != '"' || !this.TryMoveNext())
+    private fsResult TryParseString(out string str)
     {
-      str = string.Empty;
-      return this.MakeFailure("Expected initial \" when parsing a string");
-    }
-    while (this.HasValue() && this.Character() != '"')
-    {
-      char ch = this.Character();
-      if (ch == '\\')
+      this._cachedStringBuilder.Length = 0;
+      if (this.Character() != '"' || !this.TryMoveNext())
       {
-        char escaped;
-        fsResult fsResult = this.TryUnescapeChar(out escaped);
-        if (fsResult.Failed)
+        str = string.Empty;
+        return this.MakeFailure("Expected initial \" when parsing a string");
+      }
+      while (this.HasValue() && this.Character() != '"')
+      {
+        char ch = this.Character();
+        if (ch == '\\')
         {
-          str = string.Empty;
-          return fsResult;
-        }
-        this._cachedStringBuilder.Append(escaped);
-      }
-      else
-      {
-        this._cachedStringBuilder.Append(ch);
-        if (!this.TryMoveNext())
-        {
-          str = string.Empty;
-          return this.MakeFailure("Unexpected end of input when reading a string");
-        }
-      }
-    }
-    if (!this.HasValue() || this.Character() != '"' || !this.TryMoveNext())
-    {
-      str = string.Empty;
-      return this.MakeFailure("No closing \" when parsing a string");
-    }
-    str = this._cachedStringBuilder.ToString();
-    return fsResult.Success;
-  }
-
-  private fsResult TryParseArray(out fsData arr)
-  {
-    if (this.Character() != '[')
-    {
-      arr = (fsData) null;
-      return this.MakeFailure("Expected initial [ when parsing an array");
-    }
-    if (!this.TryMoveNext())
-    {
-      arr = (fsData) null;
-      return this.MakeFailure("Unexpected end of input when parsing an array");
-    }
-    this.SkipSpace();
-    List<fsData> list = new List<fsData>();
-    while (this.HasValue() && this.Character() != ']')
-    {
-      fsData data;
-      fsResult array = this.RunParse(out data);
-      if (array.Failed)
-      {
-        arr = (fsData) null;
-        return array;
-      }
-      list.Add(data);
-      this.SkipSpace();
-      if (this.HasValue() && this.Character() == ',')
-      {
-        if (this.TryMoveNext())
-          this.SkipSpace();
-        else
-          break;
-      }
-    }
-    if (!this.HasValue() || this.Character() != ']' || !this.TryMoveNext())
-    {
-      arr = (fsData) null;
-      return this.MakeFailure("No closing ] for array");
-    }
-    arr = new fsData(list);
-    return fsResult.Success;
-  }
-
-  private fsResult TryParseObject(out fsData obj)
-  {
-    if (this.Character() != '{')
-    {
-      obj = (fsData) null;
-      return this.MakeFailure("Expected initial { when parsing an object");
-    }
-    if (!this.TryMoveNext())
-    {
-      obj = (fsData) null;
-      return this.MakeFailure("Unexpected end of input when parsing an object");
-    }
-    this.SkipSpace();
-    Dictionary<string, fsData> dict = new Dictionary<string, fsData>(!fsConfig.IsCaseSensitive ? (IEqualityComparer<string>) StringComparer.CurrentCultureIgnoreCase : (IEqualityComparer<string>) StringComparer.CurrentCulture);
-    while (this.HasValue() && this.Character() != '}')
-    {
-      this.SkipSpace();
-      string str;
-      fsResult fsResult = this.TryParseString(out str);
-      if (fsResult.Failed)
-      {
-        obj = (fsData) null;
-        return fsResult;
-      }
-      this.SkipSpace();
-      if (!this.HasValue() || this.Character() != ':' || !this.TryMoveNext())
-      {
-        obj = (fsData) null;
-        return this.MakeFailure($"Expected : after key \"{str}\"");
-      }
-      this.SkipSpace();
-      fsData data;
-      fsResult = this.RunParse(out data);
-      if (fsResult.Failed)
-      {
-        obj = (fsData) null;
-        return fsResult;
-      }
-      dict.Add(str, data);
-      this.SkipSpace();
-      if (this.HasValue() && this.Character() == ',')
-      {
-        if (this.TryMoveNext())
-          this.SkipSpace();
-        else
-          break;
-      }
-    }
-    if (!this.HasValue() || this.Character() != '}' || !this.TryMoveNext())
-    {
-      obj = (fsData) null;
-      return this.MakeFailure("No closing } for object");
-    }
-    obj = new fsData(dict);
-    return fsResult.Success;
-  }
-
-  private fsResult RunParse(out fsData data)
-  {
-    this.SkipSpace();
-    if (!this.HasValue())
-    {
-      data = (fsData) null;
-      return this.MakeFailure("Unexpected end of input");
-    }
-    char ch = this.Character();
-    switch (ch)
-    {
-      case '+':
-      case '-':
-      case '.':
-      case '0':
-      case '1':
-      case '2':
-      case '3':
-      case '4':
-      case '5':
-      case '6':
-      case '7':
-      case '8':
-      case '9':
-        return this.TryParseNumber(out data);
-      default:
-        if (ch != '"')
-        {
-          if (ch != 'I' && ch != 'N')
-          {
-            switch (ch)
-            {
-              case '[':
-                return this.TryParseArray(out data);
-              case 'f':
-                return this.TryParseFalse(out data);
-              case 'n':
-                return this.TryParseNull(out data);
-              case 't':
-                return this.TryParseTrue(out data);
-              case '{':
-                return this.TryParseObject(out data);
-              default:
-                data = (fsData) null;
-                return this.MakeFailure($"unable to parse; invalid token \"{(object) this.Character()}\"");
-            }
-          }
-          else
-            goto case '+';
-        }
-        else
-        {
-          string str;
-          fsResult fsResult = this.TryParseString(out str);
+          char escaped;
+          fsResult fsResult = this.TryUnescapeChar(out escaped);
           if (fsResult.Failed)
           {
-            data = (fsData) null;
+            str = string.Empty;
             return fsResult;
           }
-          data = new fsData(str);
-          return fsResult.Success;
+          this._cachedStringBuilder.Append(escaped);
         }
+        else
+        {
+          this._cachedStringBuilder.Append(ch);
+          if (!this.TryMoveNext())
+          {
+            str = string.Empty;
+            return this.MakeFailure("Unexpected end of input when reading a string");
+          }
+        }
+      }
+      if (!this.HasValue() || this.Character() != '"' || !this.TryMoveNext())
+      {
+        str = string.Empty;
+        return this.MakeFailure("No closing \" when parsing a string");
+      }
+      str = this._cachedStringBuilder.ToString();
+      return fsResult.Success;
     }
-  }
 
-  public static fsResult Parse(string input, out fsData data)
-  {
-    if (!string.IsNullOrEmpty(input))
-      return new fsJsonParser(input).RunParse(out data);
-    data = (fsData) null;
-    return fsResult.Fail("No input");
-  }
+    private fsResult TryParseArray(out fsData arr)
+    {
+      if (this.Character() != '[')
+      {
+        arr = (fsData) null;
+        return this.MakeFailure("Expected initial [ when parsing an array");
+      }
+      if (!this.TryMoveNext())
+      {
+        arr = (fsData) null;
+        return this.MakeFailure("Unexpected end of input when parsing an array");
+      }
+      this.SkipSpace();
+      List<fsData> list = new List<fsData>();
+      while (this.HasValue() && this.Character() != ']')
+      {
+        fsData data;
+        fsResult array = this.RunParse(out data);
+        if (array.Failed)
+        {
+          arr = (fsData) null;
+          return array;
+        }
+        list.Add(data);
+        this.SkipSpace();
+        if (this.HasValue() && this.Character() == ',')
+        {
+          if (this.TryMoveNext())
+            this.SkipSpace();
+          else
+            break;
+        }
+      }
+      if (!this.HasValue() || this.Character() != ']' || !this.TryMoveNext())
+      {
+        arr = (fsData) null;
+        return this.MakeFailure("No closing ] for array");
+      }
+      arr = new fsData(list);
+      return fsResult.Success;
+    }
 
-  public static fsData Parse(string input)
-  {
-    fsData data;
-    fsJsonParser.Parse(input, out data).AssertSuccess();
-    return data;
+    private fsResult TryParseObject(out fsData obj)
+    {
+      if (this.Character() != '{')
+      {
+        obj = (fsData) null;
+        return this.MakeFailure("Expected initial { when parsing an object");
+      }
+      if (!this.TryMoveNext())
+      {
+        obj = (fsData) null;
+        return this.MakeFailure("Unexpected end of input when parsing an object");
+      }
+      this.SkipSpace();
+      Dictionary<string, fsData> dict = new Dictionary<string, fsData>(!fsConfig.IsCaseSensitive ? (IEqualityComparer<string>) StringComparer.CurrentCultureIgnoreCase : (IEqualityComparer<string>) StringComparer.CurrentCulture);
+      while (this.HasValue() && this.Character() != '}')
+      {
+        this.SkipSpace();
+        string str;
+        fsResult fsResult = this.TryParseString(out str);
+        if (fsResult.Failed)
+        {
+          obj = (fsData) null;
+          return fsResult;
+        }
+        this.SkipSpace();
+        if (!this.HasValue() || this.Character() != ':' || !this.TryMoveNext())
+        {
+          obj = (fsData) null;
+          return this.MakeFailure($"Expected : after key \"{str}\"");
+        }
+        this.SkipSpace();
+        fsData data;
+        fsResult = this.RunParse(out data);
+        if (fsResult.Failed)
+        {
+          obj = (fsData) null;
+          return fsResult;
+        }
+        dict.Add(str, data);
+        this.SkipSpace();
+        if (this.HasValue() && this.Character() == ',')
+        {
+          if (this.TryMoveNext())
+            this.SkipSpace();
+          else
+            break;
+        }
+      }
+      if (!this.HasValue() || this.Character() != '}' || !this.TryMoveNext())
+      {
+        obj = (fsData) null;
+        return this.MakeFailure("No closing } for object");
+      }
+      obj = new fsData(dict);
+      return fsResult.Success;
+    }
+
+    private fsResult RunParse(out fsData data)
+    {
+      this.SkipSpace();
+      if (!this.HasValue())
+      {
+        data = (fsData) null;
+        return this.MakeFailure("Unexpected end of input");
+      }
+      char ch = this.Character();
+      switch (ch)
+      {
+        case '+':
+        case '-':
+        case '.':
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+          return this.TryParseNumber(out data);
+        default:
+          if (ch != '"')
+          {
+            if (ch != 'I' && ch != 'N')
+            {
+              switch (ch)
+              {
+                case '[':
+                  return this.TryParseArray(out data);
+                case 'f':
+                  return this.TryParseFalse(out data);
+                case 'n':
+                  return this.TryParseNull(out data);
+                case 't':
+                  return this.TryParseTrue(out data);
+                case '{':
+                  return this.TryParseObject(out data);
+                default:
+                  data = (fsData) null;
+                  return this.MakeFailure($"unable to parse; invalid token \"{(object) this.Character()}\"");
+              }
+            }
+            else
+              goto case '+';
+          }
+          else
+          {
+            string str;
+            fsResult fsResult = this.TryParseString(out str);
+            if (fsResult.Failed)
+            {
+              data = (fsData) null;
+              return fsResult;
+            }
+            data = new fsData(str);
+            return fsResult.Success;
+          }
+      }
+    }
+
+    public static fsResult Parse(string input, out fsData data)
+    {
+      if (!string.IsNullOrEmpty(input))
+        return new fsJsonParser(input).RunParse(out data);
+      data = (fsData) null;
+      return fsResult.Fail("No input");
+    }
+
+    public static fsData Parse(string input)
+    {
+      fsData data;
+      fsJsonParser.Parse(input, out data).AssertSuccess();
+      return data;
+    }
   }
 }

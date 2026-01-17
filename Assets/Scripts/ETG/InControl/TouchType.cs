@@ -5,12 +5,13 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public enum TouchType
+namespace InControl
 {
-  Direct,
-  Indirect,
-  Stylus,
-  Mouse,
+  public enum TouchType
+  {
+    Direct,
+    Indirect,
+    Stylus,
+    Mouse,
+  }
 }

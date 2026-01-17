@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class NaconGC100XFControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public NaconGC100XFControllerMacProfile()
+  public class NaconGC100XFControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Nacon GC-100XF Controller";
-    this.Meta = "Nacon GC-100XF Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public NaconGC100XFControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Nacon GC-100XF Controller";
+      this.Meta = "Nacon GC-100XF Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 4553),
-        ProductID = new ushort?((ushort) 22000)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 4553),
+          ProductID = new ushort?((ushort) 22000)
+        }
+      };
+    }
   }
 }

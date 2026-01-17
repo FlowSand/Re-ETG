@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class PDPMarvelControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public PDPMarvelControllerMacProfile()
+  public class PDPMarvelControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "PDP Marvel Controller";
-    this.Meta = "PDP Marvel Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public PDPMarvelControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "PDP Marvel Controller";
+      this.Meta = "PDP Marvel Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 3695),
-        ProductID = new ushort?((ushort) 327)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 3695),
+          ProductID = new ushort?((ushort) 327)
+        }
+      };
+    }
   }
 }

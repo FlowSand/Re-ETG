@@ -7,30 +7,31 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Sends an Event when a Key is pressed.")]
-[ActionCategory(ActionCategory.Input)]
-public class GetKeyDown : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [RequiredField]
-  public KeyCode key;
-  public FsmEvent sendEvent;
-  [UIHint(UIHint.Variable)]
-  public FsmBool storeResult;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Sends an Event when a Key is pressed.")]
+  [ActionCategory(ActionCategory.Input)]
+  public class GetKeyDown : FsmStateAction
   {
-    this.sendEvent = (FsmEvent) null;
-    this.key = KeyCode.None;
-    this.storeResult = (FsmBool) null;
-  }
+    [RequiredField]
+    public KeyCode key;
+    public FsmEvent sendEvent;
+    [UIHint(UIHint.Variable)]
+    public FsmBool storeResult;
 
-  public override void OnUpdate()
-  {
-    bool keyDown = Input.GetKeyDown(this.key);
-    if (keyDown)
-      this.Fsm.Event(this.sendEvent);
-    this.storeResult.Value = keyDown;
+    public override void Reset()
+    {
+      this.sendEvent = (FsmEvent) null;
+      this.key = KeyCode.None;
+      this.storeResult = (FsmBool) null;
+    }
+
+    public override void OnUpdate()
+    {
+      bool keyDown = Input.GetKeyDown(this.key);
+      if (keyDown)
+        this.Fsm.Event(this.sendEvent);
+      this.storeResult.Value = keyDown;
+    }
   }
 }

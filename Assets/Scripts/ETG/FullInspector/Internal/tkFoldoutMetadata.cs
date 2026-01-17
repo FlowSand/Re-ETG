@@ -7,12 +7,13 @@
 using System;
 
 #nullable disable
-namespace FullInspector.Internal;
-
-[Serializable]
-public class tkFoldoutMetadata : IGraphMetadataItemPersistent
+namespace FullInspector.Internal
 {
-  public bool IsExpanded;
+  [Serializable]
+  public class tkFoldoutMetadata : IGraphMetadataItemPersistent
+  {
+    public bool IsExpanded;
 
-  bool IGraphMetadataItemPersistent.ShouldSerialize() => !this.IsExpanded;
+    bool IGraphMetadataItemPersistent.ShouldSerialize() => !this.IsExpanded;
+  }
 }

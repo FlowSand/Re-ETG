@@ -7,44 +7,45 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Gets the 2d Speed of a Game Object and stores it in a Float Variable. NOTE: The Game Object must have a rigid body 2D.")]
-[ActionCategory(ActionCategory.Physics2D)]
-public class GetSpeed2d : ComponentAction<Rigidbody2D>
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("The GameObject with the Rigidbody2D attached")]
-  [CheckForComponent(typeof (Rigidbody2D))]
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
-  [HutongGames.PlayMaker.Tooltip("The speed, or in technical terms: velocity magnitude")]
-  [UIHint(UIHint.Variable)]
-  [RequiredField]
-  public FsmFloat storeResult;
-  [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
-  public bool everyFrame;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Gets the 2d Speed of a Game Object and stores it in a Float Variable. NOTE: The Game Object must have a rigid body 2D.")]
+  [ActionCategory(ActionCategory.Physics2D)]
+  public class GetSpeed2d : ComponentAction<Rigidbody2D>
   {
-    this.gameObject = (FsmOwnerDefault) null;
-    this.storeResult = (FsmFloat) null;
-    this.everyFrame = false;
-  }
+    [HutongGames.PlayMaker.Tooltip("The GameObject with the Rigidbody2D attached")]
+    [CheckForComponent(typeof (Rigidbody2D))]
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    [HutongGames.PlayMaker.Tooltip("The speed, or in technical terms: velocity magnitude")]
+    [UIHint(UIHint.Variable)]
+    [RequiredField]
+    public FsmFloat storeResult;
+    [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
+    public bool everyFrame;
 
-  public override void OnEnter()
-  {
-    this.DoGetSpeed();
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
+    public override void Reset()
+    {
+      this.gameObject = (FsmOwnerDefault) null;
+      this.storeResult = (FsmFloat) null;
+      this.everyFrame = false;
+    }
 
-  public override void OnUpdate() => this.DoGetSpeed();
+    public override void OnEnter()
+    {
+      this.DoGetSpeed();
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
 
-  private void DoGetSpeed()
-  {
-    if (this.storeResult.IsNone || !this.UpdateCache(this.Fsm.GetOwnerDefaultTarget(this.gameObject)))
-      return;
-    this.storeResult.Value = this.rigidbody2d.velocity.magnitude;
+    public override void OnUpdate() => this.DoGetSpeed();
+
+    private void DoGetSpeed()
+    {
+      if (this.storeResult.IsNone || !this.UpdateCache(this.Fsm.GetOwnerDefaultTarget(this.gameObject)))
+        return;
+      this.storeResult.Value = this.rigidbody2d.velocity.magnitude;
+    }
   }
 }

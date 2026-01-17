@@ -7,52 +7,53 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Animator)]
-[HutongGames.PlayMaker.Tooltip("Activates feet pivot. At 0% blending point is body mass center. At 100% blending point is feet pivot")]
-public class SetAnimatorFeetPivotActive : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [CheckForComponent(typeof (Animator))]
-  [HutongGames.PlayMaker.Tooltip("The Target. An Animator component is required")]
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
+  [ActionCategory(ActionCategory.Animator)]
   [HutongGames.PlayMaker.Tooltip("Activates feet pivot. At 0% blending point is body mass center. At 100% blending point is feet pivot")]
-  public FsmFloat feetPivotActive;
-  private Animator _animator;
-
-  public override void Reset()
+  public class SetAnimatorFeetPivotActive : FsmStateAction
   {
-    this.gameObject = (FsmOwnerDefault) null;
-    this.feetPivotActive = (FsmFloat) null;
-  }
+    [CheckForComponent(typeof (Animator))]
+    [HutongGames.PlayMaker.Tooltip("The Target. An Animator component is required")]
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    [HutongGames.PlayMaker.Tooltip("Activates feet pivot. At 0% blending point is body mass center. At 100% blending point is feet pivot")]
+    public FsmFloat feetPivotActive;
+    private Animator _animator;
 
-  public override void OnEnter()
-  {
-    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-    if ((Object) ownerDefaultTarget == (Object) null)
+    public override void Reset()
     {
-      this.Finish();
+      this.gameObject = (FsmOwnerDefault) null;
+      this.feetPivotActive = (FsmFloat) null;
     }
-    else
+
+    public override void OnEnter()
     {
-      this._animator = ownerDefaultTarget.GetComponent<Animator>();
-      if ((Object) this._animator == (Object) null)
+      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+      if ((Object) ownerDefaultTarget == (Object) null)
       {
         this.Finish();
       }
       else
       {
-        this.DoFeetPivotActive();
-        this.Finish();
+        this._animator = ownerDefaultTarget.GetComponent<Animator>();
+        if ((Object) this._animator == (Object) null)
+        {
+          this.Finish();
+        }
+        else
+        {
+          this.DoFeetPivotActive();
+          this.Finish();
+        }
       }
     }
-  }
 
-  private void DoFeetPivotActive()
-  {
-    if ((Object) this._animator == (Object) null)
-      return;
-    this._animator.feetPivotActive = this.feetPivotActive.Value;
+    private void DoFeetPivotActive()
+    {
+      if ((Object) this._animator == (Object) null)
+        return;
+      this._animator.feetPivotActive = this.feetPivotActive.Value;
+    }
   }
 }

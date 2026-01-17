@@ -5,12 +5,13 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace XInputDotNetPure;
-
-public enum PlayerIndex
+namespace XInputDotNetPure
 {
-  One,
-  Two,
-  Three,
-  Four,
+  public enum PlayerIndex
+  {
+    One,
+    Two,
+    Three,
+    Four,
+  }
 }

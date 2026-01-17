@@ -10,43 +10,44 @@ using System.Collections.ObjectModel;
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Controls the wall guns in the tutorial.")]
-[ActionCategory(".NPCs")]
-public class TutorialGuns : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public FsmBool enable;
-  public FsmBool disable;
-
-  public override void OnEnter()
+  [HutongGames.PlayMaker.Tooltip("Controls the wall guns in the tutorial.")]
+  [ActionCategory(".NPCs")]
+  public class TutorialGuns : FsmStateAction
   {
-    List<AIActor> activeEnemies = this.Owner.GetComponent<TalkDoerLite>().ParentRoom.GetActiveEnemies(RoomHandler.ActiveEnemyType.All);
-    for (int index = 0; index < activeEnemies.Count; ++index)
+    public FsmBool enable;
+    public FsmBool disable;
+
+    public override void OnEnter()
     {
-      AIActor aiActor = activeEnemies[index];
-      if (this.enable.Value)
+      List<AIActor> activeEnemies = this.Owner.GetComponent<TalkDoerLite>().ParentRoom.GetActiveEnemies(RoomHandler.ActiveEnemyType.All);
+      for (int index = 0; index < activeEnemies.Count; ++index)
       {
-        aiActor.enabled = true;
-        aiActor.specRigidbody.enabled = true;
-        aiActor.State = AIActor.ActorState.Normal;
+        AIActor aiActor = activeEnemies[index];
+        if (this.enable.Value)
+        {
+          aiActor.enabled = true;
+          aiActor.specRigidbody.enabled = true;
+          aiActor.State = AIActor.ActorState.Normal;
+        }
+        if (this.disable.Value)
+        {
+          aiActor.enabled = false;
+          aiActor.aiAnimator.PlayUntilCancelled("deactivate");
+          aiActor.specRigidbody.enabled = false;
+        }
       }
       if (this.disable.Value)
       {
-        aiActor.enabled = false;
-        aiActor.aiAnimator.PlayUntilCancelled("deactivate");
-        aiActor.specRigidbody.enabled = false;
+        ReadOnlyCollection<Projectile> allProjectiles = StaticReferenceManager.AllProjectiles;
+        for (int index = allProjectiles.Count - 1; index >= 0; --index)
+        {
+          if ((bool) (Object) allProjectiles[index])
+            allProjectiles[index].DieInAir();
+        }
       }
+      this.Finish();
     }
-    if (this.disable.Value)
-    {
-      ReadOnlyCollection<Projectile> allProjectiles = StaticReferenceManager.AllProjectiles;
-      for (int index = allProjectiles.Count - 1; index >= 0; --index)
-      {
-        if ((bool) (Object) allProjectiles[index])
-          allProjectiles[index].DieInAir();
-      }
-    }
-    this.Finish();
   }
 }

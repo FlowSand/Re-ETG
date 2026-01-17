@@ -5,26 +5,27 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class ThrustmasterGPXControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public ThrustmasterGPXControllerMacProfile()
+  public class ThrustmasterGPXControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Thrustmaster GPX Controller";
-    this.Meta = "Thrustmaster GPX Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[2]
+    public ThrustmasterGPXControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Thrustmaster GPX Controller";
+      this.Meta = "Thrustmaster GPX Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[2]
       {
-        VendorID = new ushort?((ushort) 1103),
-        ProductID = new ushort?((ushort) 45862)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 9414),
-        ProductID = new ushort?((ushort) 23298)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 1103),
+          ProductID = new ushort?((ushort) 45862)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 9414),
+          ProductID = new ushort?((ushort) 23298)
+        }
+      };
+    }
   }
 }

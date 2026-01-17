@@ -7,47 +7,48 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Subtracts a value from a Float Variable.")]
-[ActionCategory(ActionCategory.Math)]
-public class FloatSubtract : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("The float variable to subtract from.")]
-  [UIHint(UIHint.Variable)]
-  [RequiredField]
-  public FsmFloat floatVariable;
-  [HutongGames.PlayMaker.Tooltip("Value to subtract from the float variable.")]
-  [RequiredField]
-  public FsmFloat subtract;
-  [HutongGames.PlayMaker.Tooltip("Repeat every frame while the state is active.")]
-  public bool everyFrame;
-  [HutongGames.PlayMaker.Tooltip("Used with Every Frame. Adds the value over one second to make the operation frame rate independent.")]
-  public bool perSecond;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Subtracts a value from a Float Variable.")]
+  [ActionCategory(ActionCategory.Math)]
+  public class FloatSubtract : FsmStateAction
   {
-    this.floatVariable = (FsmFloat) null;
-    this.subtract = (FsmFloat) null;
-    this.everyFrame = false;
-    this.perSecond = false;
-  }
+    [HutongGames.PlayMaker.Tooltip("The float variable to subtract from.")]
+    [UIHint(UIHint.Variable)]
+    [RequiredField]
+    public FsmFloat floatVariable;
+    [HutongGames.PlayMaker.Tooltip("Value to subtract from the float variable.")]
+    [RequiredField]
+    public FsmFloat subtract;
+    [HutongGames.PlayMaker.Tooltip("Repeat every frame while the state is active.")]
+    public bool everyFrame;
+    [HutongGames.PlayMaker.Tooltip("Used with Every Frame. Adds the value over one second to make the operation frame rate independent.")]
+    public bool perSecond;
 
-  public override void OnEnter()
-  {
-    this.DoFloatSubtract();
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
+    public override void Reset()
+    {
+      this.floatVariable = (FsmFloat) null;
+      this.subtract = (FsmFloat) null;
+      this.everyFrame = false;
+      this.perSecond = false;
+    }
 
-  public override void OnUpdate() => this.DoFloatSubtract();
+    public override void OnEnter()
+    {
+      this.DoFloatSubtract();
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
 
-  private void DoFloatSubtract()
-  {
-    if (!this.perSecond)
-      this.floatVariable.Value -= this.subtract.Value;
-    else
-      this.floatVariable.Value -= this.subtract.Value * Time.deltaTime;
+    public override void OnUpdate() => this.DoFloatSubtract();
+
+    private void DoFloatSubtract()
+    {
+      if (!this.perSecond)
+        this.floatVariable.Value -= this.subtract.Value;
+      else
+        this.floatVariable.Value -= this.subtract.Value * Time.deltaTime;
+    }
   }
 }

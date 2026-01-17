@@ -7,92 +7,93 @@
 using System;
 
 #nullable disable
-namespace FullSerializer.Internal;
-
-public class fsPrimitiveConverter : fsConverter
+namespace FullSerializer.Internal
 {
-  public override bool CanProcess(Type type)
+  public class fsPrimitiveConverter : fsConverter
   {
-    return type.Resolve().IsPrimitive || type == typeof (string) || type == typeof (Decimal);
-  }
-
-  public override bool RequestCycleSupport(Type storageType) => false;
-
-  public override bool RequestInheritanceSupport(Type storageType) => false;
-
-  private static bool UseBool(Type type) => type == typeof (bool);
-
-  private static bool UseInt64(Type type)
-  {
-    return type == typeof (sbyte) || type == typeof (byte) || type == typeof (short) || type == typeof (ushort) || type == typeof (int) || type == typeof (uint) || type == typeof (long) || type == typeof (ulong);
-  }
-
-  private static bool UseDouble(Type type)
-  {
-    return type == typeof (float) || type == typeof (double) || type == typeof (Decimal);
-  }
-
-  private static bool UseString(Type type) => type == typeof (string) || type == typeof (char);
-
-  public override fsResult TrySerialize(object instance, out fsData serialized, Type storageType)
-  {
-    Type type = instance.GetType();
-    if (fsConfig.Serialize64BitIntegerAsString && (type == typeof (long) || type == typeof (ulong)))
+    public override bool CanProcess(Type type)
     {
-      serialized = new fsData((string) Convert.ChangeType(instance, typeof (string)));
-      return fsResult.Success;
+      return type.Resolve().IsPrimitive || type == typeof (string) || type == typeof (Decimal);
     }
-    if (fsPrimitiveConverter.UseBool(type))
-    {
-      serialized = new fsData((bool) instance);
-      return fsResult.Success;
-    }
-    if (fsPrimitiveConverter.UseInt64(type))
-    {
-      serialized = new fsData((long) Convert.ChangeType(instance, typeof (long)));
-      return fsResult.Success;
-    }
-    if (fsPrimitiveConverter.UseDouble(type))
-    {
-      serialized = new fsData((double) Convert.ChangeType(instance, typeof (double)));
-      return fsResult.Success;
-    }
-    if (fsPrimitiveConverter.UseString(type))
-    {
-      serialized = new fsData((string) Convert.ChangeType(instance, typeof (string)));
-      return fsResult.Success;
-    }
-    serialized = (fsData) null;
-    return fsResult.Fail("Unhandled primitive type " + (object) instance.GetType());
-  }
 
-  public override fsResult TryDeserialize(fsData storage, ref object instance, Type storageType)
-  {
-    fsResult success = fsResult.Success;
-    if (fsPrimitiveConverter.UseBool(storageType))
+    public override bool RequestCycleSupport(Type storageType) => false;
+
+    public override bool RequestInheritanceSupport(Type storageType) => false;
+
+    private static bool UseBool(Type type) => type == typeof (bool);
+
+    private static bool UseInt64(Type type)
     {
-      fsResult fsResult;
-      if ((fsResult = success + this.CheckType(storage, fsDataType.Boolean)).Succeeded)
-        instance = (object) storage.AsBool;
-      return fsResult;
+      return type == typeof (sbyte) || type == typeof (byte) || type == typeof (short) || type == typeof (ushort) || type == typeof (int) || type == typeof (uint) || type == typeof (long) || type == typeof (ulong);
     }
-    if (fsPrimitiveConverter.UseDouble(storageType) || fsPrimitiveConverter.UseInt64(storageType))
+
+    private static bool UseDouble(Type type)
     {
-      if (storage.IsDouble)
-        instance = Convert.ChangeType((object) storage.AsDouble, storageType);
-      else if (storage.IsInt64)
-        instance = Convert.ChangeType((object) storage.AsInt64, storageType);
-      else if (fsConfig.Serialize64BitIntegerAsString && storage.IsString && (storageType == typeof (long) || storageType == typeof (ulong)))
-        instance = Convert.ChangeType((object) storage.AsString, storageType);
-      else
-        return fsResult.Fail($"{this.GetType().Name} expected number but got {(object) storage.Type} in {(object) storage}");
-      return fsResult.Success;
+      return type == typeof (float) || type == typeof (double) || type == typeof (Decimal);
     }
-    if (!fsPrimitiveConverter.UseString(storageType))
-      return fsResult.Fail($"{this.GetType().Name}: Bad data; expected bool, number, string, but got {(object) storage}");
-    fsResult fsResult1;
-    if ((fsResult1 = success + this.CheckType(storage, fsDataType.String)).Succeeded)
-      instance = (object) storage.AsString;
-    return fsResult1;
+
+    private static bool UseString(Type type) => type == typeof (string) || type == typeof (char);
+
+    public override fsResult TrySerialize(object instance, out fsData serialized, Type storageType)
+    {
+      Type type = instance.GetType();
+      if (fsConfig.Serialize64BitIntegerAsString && (type == typeof (long) || type == typeof (ulong)))
+      {
+        serialized = new fsData((string) Convert.ChangeType(instance, typeof (string)));
+        return fsResult.Success;
+      }
+      if (fsPrimitiveConverter.UseBool(type))
+      {
+        serialized = new fsData((bool) instance);
+        return fsResult.Success;
+      }
+      if (fsPrimitiveConverter.UseInt64(type))
+      {
+        serialized = new fsData((long) Convert.ChangeType(instance, typeof (long)));
+        return fsResult.Success;
+      }
+      if (fsPrimitiveConverter.UseDouble(type))
+      {
+        serialized = new fsData((double) Convert.ChangeType(instance, typeof (double)));
+        return fsResult.Success;
+      }
+      if (fsPrimitiveConverter.UseString(type))
+      {
+        serialized = new fsData((string) Convert.ChangeType(instance, typeof (string)));
+        return fsResult.Success;
+      }
+      serialized = (fsData) null;
+      return fsResult.Fail("Unhandled primitive type " + (object) instance.GetType());
+    }
+
+    public override fsResult TryDeserialize(fsData storage, ref object instance, Type storageType)
+    {
+      fsResult success = fsResult.Success;
+      if (fsPrimitiveConverter.UseBool(storageType))
+      {
+        fsResult fsResult;
+        if ((fsResult = success + this.CheckType(storage, fsDataType.Boolean)).Succeeded)
+          instance = (object) storage.AsBool;
+        return fsResult;
+      }
+      if (fsPrimitiveConverter.UseDouble(storageType) || fsPrimitiveConverter.UseInt64(storageType))
+      {
+        if (storage.IsDouble)
+          instance = Convert.ChangeType((object) storage.AsDouble, storageType);
+        else if (storage.IsInt64)
+          instance = Convert.ChangeType((object) storage.AsInt64, storageType);
+        else if (fsConfig.Serialize64BitIntegerAsString && storage.IsString && (storageType == typeof (long) || storageType == typeof (ulong)))
+          instance = Convert.ChangeType((object) storage.AsString, storageType);
+        else
+          return fsResult.Fail($"{this.GetType().Name} expected number but got {(object) storage.Type} in {(object) storage}");
+        return fsResult.Success;
+      }
+      if (!fsPrimitiveConverter.UseString(storageType))
+        return fsResult.Fail($"{this.GetType().Name}: Bad data; expected bool, number, string, but got {(object) storage}");
+      fsResult fsResult1;
+      if ((fsResult1 = success + this.CheckType(storage, fsDataType.String)).Succeeded)
+        instance = (object) storage.AsString;
+      return fsResult1;
+    }
   }
 }

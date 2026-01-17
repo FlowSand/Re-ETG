@@ -7,12 +7,13 @@
 using System;
 
 #nullable disable
-namespace tk2dRuntime.TileMap;
-
-[Serializable]
-public class SpriteChannel
+namespace tk2dRuntime.TileMap
 {
-  public SpriteChunk[] chunks;
+  [Serializable]
+  public class SpriteChannel
+  {
+    public SpriteChunk[] chunks;
 
-  public SpriteChannel() => this.chunks = new SpriteChunk[0];
+    public SpriteChannel() => this.chunks = new SpriteChunk[0];
+  }
 }

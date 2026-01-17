@@ -7,59 +7,60 @@
 using System;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.String)]
-[Tooltip("Replaces each format item in a specified string with the text equivalent of variable's value. Stores the result in a string variable.")]
-public class FormatString : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [RequiredField]
-  [Tooltip("E.g. Hello {0} and {1}\nWith 2 variables that replace {0} and {1}\nSee C# string.Format docs.")]
-  public FsmString format;
-  [Tooltip("Variables to use for each formatting item.")]
-  public FsmVar[] variables;
-  [Tooltip("Store the formatted result in a string variable.")]
-  [UIHint(UIHint.Variable)]
-  [RequiredField]
-  public FsmString storeResult;
-  [Tooltip("Repeat every frame. This is useful if the variables are changing.")]
-  public bool everyFrame;
-  private object[] objectArray;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.String)]
+  [Tooltip("Replaces each format item in a specified string with the text equivalent of variable's value. Stores the result in a string variable.")]
+  public class FormatString : FsmStateAction
   {
-    this.format = (FsmString) null;
-    this.variables = (FsmVar[]) null;
-    this.storeResult = (FsmString) null;
-    this.everyFrame = false;
-  }
+    [RequiredField]
+    [Tooltip("E.g. Hello {0} and {1}\nWith 2 variables that replace {0} and {1}\nSee C# string.Format docs.")]
+    public FsmString format;
+    [Tooltip("Variables to use for each formatting item.")]
+    public FsmVar[] variables;
+    [Tooltip("Store the formatted result in a string variable.")]
+    [UIHint(UIHint.Variable)]
+    [RequiredField]
+    public FsmString storeResult;
+    [Tooltip("Repeat every frame. This is useful if the variables are changing.")]
+    public bool everyFrame;
+    private object[] objectArray;
 
-  public override void OnEnter()
-  {
-    this.objectArray = new object[this.variables.Length];
-    this.DoFormatString();
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
-
-  public override void OnUpdate() => this.DoFormatString();
-
-  private void DoFormatString()
-  {
-    for (int index = 0; index < this.variables.Length; ++index)
+    public override void Reset()
     {
-      this.variables[index].UpdateValue();
-      this.objectArray[index] = this.variables[index].GetValue();
+      this.format = (FsmString) null;
+      this.variables = (FsmVar[]) null;
+      this.storeResult = (FsmString) null;
+      this.everyFrame = false;
     }
-    try
+
+    public override void OnEnter()
     {
-      this.storeResult.Value = string.Format(this.format.Value, this.objectArray);
-    }
-    catch (FormatException ex)
-    {
-      this.LogError(ex.Message);
+      this.objectArray = new object[this.variables.Length];
+      this.DoFormatString();
+      if (this.everyFrame)
+        return;
       this.Finish();
+    }
+
+    public override void OnUpdate() => this.DoFormatString();
+
+    private void DoFormatString()
+    {
+      for (int index = 0; index < this.variables.Length; ++index)
+      {
+        this.variables[index].UpdateValue();
+        this.objectArray[index] = this.variables[index].GetValue();
+      }
+      try
+      {
+        this.storeResult.Value = string.Format(this.format.Value, this.objectArray);
+      }
+      catch (FormatException ex)
+      {
+        this.LogError(ex.Message);
+        this.Finish();
+      }
     }
   }
 }

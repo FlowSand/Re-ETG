@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector;
-
-public interface tkCustomEditor
+namespace FullInspector
 {
-  tkControlEditor GetEditor();
+  public interface tkCustomEditor
+  {
+    tkControlEditor GetEditor();
+  }
 }

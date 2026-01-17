@@ -5,10 +5,11 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public struct LogMessage
+namespace InControl
 {
-  public string text;
-  public LogMessageType type;
+  public struct LogMessage
+  {
+    public string text;
+    public LogMessageType type;
+  }
 }

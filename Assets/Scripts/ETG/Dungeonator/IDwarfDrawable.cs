@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace Dungeonator;
-
-public interface IDwarfDrawable
+namespace Dungeonator
 {
-  IntVector2 GetOverrideDwarfDimensions(PrototypePlacedObjectData objectData);
+  public interface IDwarfDrawable
+  {
+    IntVector2 GetOverrideDwarfDimensions(PrototypePlacedObjectData objectData);
+  }
 }

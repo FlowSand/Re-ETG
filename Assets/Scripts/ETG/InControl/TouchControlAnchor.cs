@@ -5,17 +5,18 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public enum TouchControlAnchor
+namespace InControl
 {
-  TopLeft,
-  CenterLeft,
-  BottomLeft,
-  TopCenter,
-  Center,
-  BottomCenter,
-  TopRight,
-  CenterRight,
-  BottomRight,
+  public enum TouchControlAnchor
+  {
+    TopLeft,
+    CenterLeft,
+    BottomLeft,
+    TopCenter,
+    Center,
+    BottomCenter,
+    TopRight,
+    CenterRight,
+    BottomRight,
+  }
 }

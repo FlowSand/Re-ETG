@@ -7,39 +7,40 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("GUILayout Text Field to edit an Int Variable. Optionally send an event if the text has been edited.")]
-[ActionCategory(ActionCategory.GUILayout)]
-public class GUILayoutIntField : GUILayoutAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Int Variable to show in the edit field.")]
-  [UIHint(UIHint.Variable)]
-  public FsmInt intVariable;
-  [HutongGames.PlayMaker.Tooltip("Optional GUIStyle in the active GUISKin.")]
-  public FsmString style;
-  [HutongGames.PlayMaker.Tooltip("Optional event to send when the value changes.")]
-  public FsmEvent changedEvent;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("GUILayout Text Field to edit an Int Variable. Optionally send an event if the text has been edited.")]
+  [ActionCategory(ActionCategory.GUILayout)]
+  public class GUILayoutIntField : GUILayoutAction
   {
-    base.Reset();
-    this.intVariable = (FsmInt) null;
-    this.style = (FsmString) string.Empty;
-    this.changedEvent = (FsmEvent) null;
-  }
+    [HutongGames.PlayMaker.Tooltip("Int Variable to show in the edit field.")]
+    [UIHint(UIHint.Variable)]
+    public FsmInt intVariable;
+    [HutongGames.PlayMaker.Tooltip("Optional GUIStyle in the active GUISKin.")]
+    public FsmString style;
+    [HutongGames.PlayMaker.Tooltip("Optional event to send when the value changes.")]
+    public FsmEvent changedEvent;
 
-  public override void OnGUI()
-  {
-    bool changed = GUI.changed;
-    GUI.changed = false;
-    this.intVariable.Value = string.IsNullOrEmpty(this.style.Value) ? int.Parse(GUILayout.TextField(this.intVariable.Value.ToString(), this.LayoutOptions)) : int.Parse(GUILayout.TextField(this.intVariable.Value.ToString(), (GUIStyle) this.style.Value, this.LayoutOptions));
-    if (GUI.changed)
+    public override void Reset()
     {
-      this.Fsm.Event(this.changedEvent);
-      GUIUtility.ExitGUI();
+      base.Reset();
+      this.intVariable = (FsmInt) null;
+      this.style = (FsmString) string.Empty;
+      this.changedEvent = (FsmEvent) null;
     }
-    else
-      GUI.changed = changed;
+
+    public override void OnGUI()
+    {
+      bool changed = GUI.changed;
+      GUI.changed = false;
+      this.intVariable.Value = string.IsNullOrEmpty(this.style.Value) ? int.Parse(GUILayout.TextField(this.intVariable.Value.ToString(), this.LayoutOptions)) : int.Parse(GUILayout.TextField(this.intVariable.Value.ToString(), (GUIStyle) this.style.Value, this.LayoutOptions));
+      if (GUI.changed)
+      {
+        this.Fsm.Event(this.changedEvent);
+        GUIUtility.ExitGUI();
+      }
+      else
+        GUI.changed = changed;
+    }
   }
 }

@@ -7,11 +7,12 @@
 using UnityEngine;
 
 #nullable disable
-namespace DaikonForge.Tween;
-
-public interface IPathIterator
+namespace DaikonForge.Tween
 {
-  Vector3 GetPosition(float time);
+  public interface IPathIterator
+  {
+    Vector3 GetPosition(float time);
 
-  Vector3 GetTangent(float time);
+    Vector3 GetTangent(float time);
+  }
 }

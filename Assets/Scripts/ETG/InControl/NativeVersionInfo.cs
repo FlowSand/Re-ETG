@@ -5,12 +5,13 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public struct NativeVersionInfo
+namespace InControl
 {
-  public uint major;
-  public uint minor;
-  public uint patch;
-  public uint build;
+  public struct NativeVersionInfo
+  {
+    public uint major;
+    public uint minor;
+    public uint patch;
+    public uint build;
+  }
 }

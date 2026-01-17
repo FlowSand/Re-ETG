@@ -7,12 +7,13 @@
 using UnityEngine;
 
 #nullable disable
-namespace InterfaceMovement;
-
-public class ButtonFocus : MonoBehaviour
+namespace InterfaceMovement
 {
-  private void Update()
+  public class ButtonFocus : MonoBehaviour
   {
-    this.transform.position = Vector3.MoveTowards(this.transform.position, this.transform.parent.GetComponent<ButtonManager>().focusedButton.transform.position, Time.deltaTime * 10f);
+    private void Update()
+    {
+      this.transform.position = Vector3.MoveTowards(this.transform.position, this.transform.parent.GetComponent<ButtonManager>().focusedButton.transform.position, Time.deltaTime * 10f);
+    }
   }
 }

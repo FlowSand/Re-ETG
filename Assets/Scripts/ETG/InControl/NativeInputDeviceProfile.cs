@@ -5,290 +5,291 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public abstract class NativeInputDeviceProfile : InputDeviceProfile
+namespace InControl
 {
-  public NativeInputDeviceMatcher[] Matchers;
-  public NativeInputDeviceMatcher[] LastResortMatchers;
-
-  public NativeInputDeviceProfile()
+  public abstract class NativeInputDeviceProfile : InputDeviceProfile
   {
-    this.Sensitivity = 1f;
-    this.LowerDeadZone = 0.2f;
-    this.UpperDeadZone = 0.9f;
-  }
+    public NativeInputDeviceMatcher[] Matchers;
+    public NativeInputDeviceMatcher[] LastResortMatchers;
 
-  internal bool Matches(NativeDeviceInfo deviceInfo) => this.Matches(deviceInfo, this.Matchers);
-
-  internal bool LastResortMatches(NativeDeviceInfo deviceInfo)
-  {
-    return this.Matches(deviceInfo, this.LastResortMatchers);
-  }
-
-  private bool Matches(NativeDeviceInfo deviceInfo, NativeInputDeviceMatcher[] matchers)
-  {
-    if (this.Matchers != null)
+    public NativeInputDeviceProfile()
     {
-      int length = this.Matchers.Length;
-      for (int index = 0; index < length; ++index)
-      {
-        if (this.Matchers[index].Matches(deviceInfo))
-          return true;
-      }
+      this.Sensitivity = 1f;
+      this.LowerDeadZone = 0.2f;
+      this.UpperDeadZone = 0.9f;
     }
-    return false;
-  }
 
-  protected static InputControlSource Button(int index)
-  {
-    return (InputControlSource) new NativeButtonSource(index);
-  }
+    internal bool Matches(NativeDeviceInfo deviceInfo) => this.Matches(deviceInfo, this.Matchers);
 
-  protected static InputControlSource Analog(int index)
-  {
-    return (InputControlSource) new NativeAnalogSource(index);
-  }
-
-  protected static InputControlMapping LeftStickLeftMapping(int analog)
-  {
-    return new InputControlMapping()
+    internal bool LastResortMatches(NativeDeviceInfo deviceInfo)
     {
-      Handle = "Left Stick Left",
-      Target = InputControlType.LeftStickLeft,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return this.Matches(deviceInfo, this.LastResortMatchers);
+    }
 
-  protected static InputControlMapping LeftStickRightMapping(int analog)
-  {
-    return new InputControlMapping()
+    private bool Matches(NativeDeviceInfo deviceInfo, NativeInputDeviceMatcher[] matchers)
     {
-      Handle = "Left Stick Right",
-      Target = InputControlType.LeftStickRight,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      if (this.Matchers != null)
+      {
+        int length = this.Matchers.Length;
+        for (int index = 0; index < length; ++index)
+        {
+          if (this.Matchers[index].Matches(deviceInfo))
+            return true;
+        }
+      }
+      return false;
+    }
 
-  protected static InputControlMapping LeftStickUpMapping(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlSource Button(int index)
     {
-      Handle = "Left Stick Up",
-      Target = InputControlType.LeftStickUp,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return (InputControlSource) new NativeButtonSource(index);
+    }
 
-  protected static InputControlMapping LeftStickDownMapping(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlSource Analog(int index)
     {
-      Handle = "Left Stick Down",
-      Target = InputControlType.LeftStickDown,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return (InputControlSource) new NativeAnalogSource(index);
+    }
 
-  protected static InputControlMapping LeftStickUpMapping2(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping LeftStickLeftMapping(int analog)
     {
-      Handle = "Left Stick Up",
-      Target = InputControlType.LeftStickUp,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Left Stick Left",
+        Target = InputControlType.LeftStickLeft,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping LeftStickDownMapping2(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping LeftStickRightMapping(int analog)
     {
-      Handle = "Left Stick Down",
-      Target = InputControlType.LeftStickDown,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Left Stick Right",
+        Target = InputControlType.LeftStickRight,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping RightStickLeftMapping(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping LeftStickUpMapping(int analog)
     {
-      Handle = "Right Stick Left",
-      Target = InputControlType.RightStickLeft,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Left Stick Up",
+        Target = InputControlType.LeftStickUp,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping RightStickRightMapping(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping LeftStickDownMapping(int analog)
     {
-      Handle = "Right Stick Right",
-      Target = InputControlType.RightStickRight,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Left Stick Down",
+        Target = InputControlType.LeftStickDown,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping RightStickUpMapping(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping LeftStickUpMapping2(int analog)
     {
-      Handle = "Right Stick Up",
-      Target = InputControlType.RightStickUp,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Left Stick Up",
+        Target = InputControlType.LeftStickUp,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping RightStickDownMapping(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping LeftStickDownMapping2(int analog)
     {
-      Handle = "Right Stick Down",
-      Target = InputControlType.RightStickDown,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Left Stick Down",
+        Target = InputControlType.LeftStickDown,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping RightStickUpMapping2(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping RightStickLeftMapping(int analog)
     {
-      Handle = "Right Stick Up",
-      Target = InputControlType.RightStickUp,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Right Stick Left",
+        Target = InputControlType.RightStickLeft,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping RightStickDownMapping2(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping RightStickRightMapping(int analog)
     {
-      Handle = "Right Stick Down",
-      Target = InputControlType.RightStickDown,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Right Stick Right",
+        Target = InputControlType.RightStickRight,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping LeftTriggerMapping(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping RightStickUpMapping(int analog)
     {
-      Handle = "Left Trigger",
-      Target = InputControlType.LeftTrigger,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.MinusOneToOne,
-      TargetRange = InputRange.ZeroToOne,
-      IgnoreInitialZeroValue = true
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Right Stick Up",
+        Target = InputControlType.RightStickUp,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping RightTriggerMapping(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping RightStickDownMapping(int analog)
     {
-      Handle = "Right Trigger",
-      Target = InputControlType.RightTrigger,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.MinusOneToOne,
-      TargetRange = InputRange.ZeroToOne,
-      IgnoreInitialZeroValue = true
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Right Stick Down",
+        Target = InputControlType.RightStickDown,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping DPadLeftMapping(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping RightStickUpMapping2(int analog)
     {
-      Handle = "DPad Left",
-      Target = InputControlType.DPadLeft,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Right Stick Up",
+        Target = InputControlType.RightStickUp,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping DPadRightMapping(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping RightStickDownMapping2(int analog)
     {
-      Handle = "DPad Right",
-      Target = InputControlType.DPadRight,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Right Stick Down",
+        Target = InputControlType.RightStickDown,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping DPadUpMapping(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping LeftTriggerMapping(int analog)
     {
-      Handle = "DPad Up",
-      Target = InputControlType.DPadUp,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Left Trigger",
+        Target = InputControlType.LeftTrigger,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.MinusOneToOne,
+        TargetRange = InputRange.ZeroToOne,
+        IgnoreInitialZeroValue = true
+      };
+    }
 
-  protected static InputControlMapping DPadDownMapping(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping RightTriggerMapping(int analog)
     {
-      Handle = "DPad Down",
-      Target = InputControlType.DPadDown,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Right Trigger",
+        Target = InputControlType.RightTrigger,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.MinusOneToOne,
+        TargetRange = InputRange.ZeroToOne,
+        IgnoreInitialZeroValue = true
+      };
+    }
 
-  protected static InputControlMapping DPadUpMapping2(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping DPadLeftMapping(int analog)
     {
-      Handle = "DPad Up",
-      Target = InputControlType.DPadUp,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "DPad Left",
+        Target = InputControlType.DPadLeft,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping DPadDownMapping2(int analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping DPadRightMapping(int analog)
     {
-      Handle = "DPad Down",
-      Target = InputControlType.DPadDown,
-      Source = NativeInputDeviceProfile.Analog(analog),
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
+      return new InputControlMapping()
+      {
+        Handle = "DPad Right",
+        Target = InputControlType.DPadRight,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
+
+    protected static InputControlMapping DPadUpMapping(int analog)
+    {
+      return new InputControlMapping()
+      {
+        Handle = "DPad Up",
+        Target = InputControlType.DPadUp,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
+
+    protected static InputControlMapping DPadDownMapping(int analog)
+    {
+      return new InputControlMapping()
+      {
+        Handle = "DPad Down",
+        Target = InputControlType.DPadDown,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
+
+    protected static InputControlMapping DPadUpMapping2(int analog)
+    {
+      return new InputControlMapping()
+      {
+        Handle = "DPad Up",
+        Target = InputControlType.DPadUp,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
+
+    protected static InputControlMapping DPadDownMapping2(int analog)
+    {
+      return new InputControlMapping()
+      {
+        Handle = "DPad Down",
+        Target = InputControlType.DPadDown,
+        Source = NativeInputDeviceProfile.Analog(analog),
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
   }
 }

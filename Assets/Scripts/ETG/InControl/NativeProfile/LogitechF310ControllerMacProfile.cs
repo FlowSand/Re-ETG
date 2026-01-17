@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class LogitechF310ControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public LogitechF310ControllerMacProfile()
+  public class LogitechF310ControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Logitech F310 Controller";
-    this.Meta = "Logitech F310 Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public LogitechF310ControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Logitech F310 Controller";
+      this.Meta = "Logitech F310 Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 1133),
-        ProductID = new ushort?((ushort) 49693)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 1133),
+          ProductID = new ushort?((ushort) 49693)
+        }
+      };
+    }
   }
 }

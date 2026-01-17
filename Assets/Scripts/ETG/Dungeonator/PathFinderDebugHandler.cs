@@ -5,13 +5,14 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace Dungeonator;
-
-public delegate void PathFinderDebugHandler(
-  int fromX,
-  int fromY,
-  int x,
-  int y,
-  PathFinderNodeType type,
-  int totalCost,
-  int cost);
+namespace Dungeonator
+{
+  public delegate void PathFinderDebugHandler(
+    int fromX,
+    int fromY,
+    int x,
+    int y,
+    PathFinderNodeType type,
+    int totalCost,
+    int cost);
+}

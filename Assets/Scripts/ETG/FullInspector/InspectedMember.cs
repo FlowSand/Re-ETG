@@ -8,53 +8,54 @@ using System;
 using System.Reflection;
 
 #nullable disable
-namespace FullInspector;
-
-public struct InspectedMember
+namespace FullInspector
 {
-  private InspectedProperty _property;
-  private InspectedMethod _method;
-
-  public InspectedMember(InspectedProperty property)
+  public struct InspectedMember
   {
-    this._property = property;
-    this._method = (InspectedMethod) null;
-  }
+    private InspectedProperty _property;
+    private InspectedMethod _method;
 
-  public InspectedMember(InspectedMethod method)
-  {
-    this._property = (InspectedProperty) null;
-    this._method = method;
-  }
-
-  public InspectedProperty Property
-  {
-    get
+    public InspectedMember(InspectedProperty property)
     {
-      if (!this.IsProperty)
-        throw new InvalidOperationException("Member is not a property");
-      return this._property;
+      this._property = property;
+      this._method = (InspectedMethod) null;
     }
-  }
 
-  public InspectedMethod Method
-  {
-    get
+    public InspectedMember(InspectedMethod method)
     {
-      if (!this.IsMethod)
-        throw new InvalidOperationException("Member is not a method");
-      return this._method;
+      this._property = (InspectedProperty) null;
+      this._method = method;
     }
-  }
 
-  public bool IsMethod => this._method != null;
+    public InspectedProperty Property
+    {
+      get
+      {
+        if (!this.IsProperty)
+          throw new InvalidOperationException("Member is not a property");
+        return this._property;
+      }
+    }
 
-  public bool IsProperty => this._property != null;
+    public InspectedMethod Method
+    {
+      get
+      {
+        if (!this.IsMethod)
+          throw new InvalidOperationException("Member is not a method");
+        return this._method;
+      }
+    }
 
-  public string Name => this.MemberInfo.Name;
+    public bool IsMethod => this._method != null;
 
-  public MemberInfo MemberInfo
-  {
-    get => this.IsMethod ? (MemberInfo) this._method.Method : this._property.MemberInfo;
+    public bool IsProperty => this._property != null;
+
+    public string Name => this.MemberInfo.Name;
+
+    public MemberInfo MemberInfo
+    {
+      get => this.IsMethod ? (MemberInfo) this._method.Method : this._property.MemberInfo;
+    }
   }
 }

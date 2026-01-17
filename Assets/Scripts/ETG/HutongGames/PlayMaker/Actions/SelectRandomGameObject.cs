@@ -5,45 +5,46 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[Tooltip("Selects a Random Game Object from an array of Game Objects.")]
-[ActionCategory(ActionCategory.GameObject)]
-public class SelectRandomGameObject : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [CompoundArray("Game Objects", "Game Object", "Weight")]
-  public FsmGameObject[] gameObjects;
-  [HasFloatSlider(0.0f, 1f)]
-  public FsmFloat[] weights;
-  [RequiredField]
-  [UIHint(UIHint.Variable)]
-  public FsmGameObject storeGameObject;
-
-  public override void Reset()
+  [Tooltip("Selects a Random Game Object from an array of Game Objects.")]
+  [ActionCategory(ActionCategory.GameObject)]
+  public class SelectRandomGameObject : FsmStateAction
   {
-    this.gameObjects = new FsmGameObject[3];
-    this.weights = new FsmFloat[3]
+    [CompoundArray("Game Objects", "Game Object", "Weight")]
+    public FsmGameObject[] gameObjects;
+    [HasFloatSlider(0.0f, 1f)]
+    public FsmFloat[] weights;
+    [RequiredField]
+    [UIHint(UIHint.Variable)]
+    public FsmGameObject storeGameObject;
+
+    public override void Reset()
     {
-      (FsmFloat) 1f,
-      (FsmFloat) 1f,
-      (FsmFloat) 1f
-    };
-    this.storeGameObject = (FsmGameObject) null;
-  }
+      this.gameObjects = new FsmGameObject[3];
+      this.weights = new FsmFloat[3]
+      {
+        (FsmFloat) 1f,
+        (FsmFloat) 1f,
+        (FsmFloat) 1f
+      };
+      this.storeGameObject = (FsmGameObject) null;
+    }
 
-  public override void OnEnter()
-  {
-    this.DoSelectRandomGameObject();
-    this.Finish();
-  }
+    public override void OnEnter()
+    {
+      this.DoSelectRandomGameObject();
+      this.Finish();
+    }
 
-  private void DoSelectRandomGameObject()
-  {
-    if (this.gameObjects == null || this.gameObjects.Length == 0 || this.storeGameObject == null)
-      return;
-    int randomWeightedIndex = ActionHelpers.GetRandomWeightedIndex(this.weights);
-    if (randomWeightedIndex == -1)
-      return;
-    this.storeGameObject.Value = this.gameObjects[randomWeightedIndex].Value;
+    private void DoSelectRandomGameObject()
+    {
+      if (this.gameObjects == null || this.gameObjects.Length == 0 || this.storeGameObject == null)
+        return;
+      int randomWeightedIndex = ActionHelpers.GetRandomWeightedIndex(this.weights);
+      if (randomWeightedIndex == -1)
+        return;
+      this.storeGameObject.Value = this.gameObjects[randomWeightedIndex].Value;
+    }
   }
 }

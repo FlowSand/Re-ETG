@@ -5,26 +5,27 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class RazerAtroxArcadeStickMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public RazerAtroxArcadeStickMacProfile()
+  public class RazerAtroxArcadeStickMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Razer Atrox Arcade Stick";
-    this.Meta = "Razer Atrox Arcade Stick on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[2]
+    public RazerAtroxArcadeStickMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Razer Atrox Arcade Stick";
+      this.Meta = "Razer Atrox Arcade Stick on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[2]
       {
-        VendorID = new ushort?((ushort) 5426),
-        ProductID = new ushort?((ushort) 2560 /*0x0A00*/)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 9414),
-        ProductID = new ushort?((ushort) 20480 /*0x5000*/)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 5426),
+          ProductID = new ushort?((ushort) 2560 /*0x0A00*/)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 9414),
+          ProductID = new ushort?((ushort) 20480 /*0x5000*/)
+        }
+      };
+    }
   }
 }

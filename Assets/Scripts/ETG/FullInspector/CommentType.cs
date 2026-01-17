@@ -5,12 +5,13 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector;
-
-public enum CommentType
+namespace FullInspector
 {
-  None,
-  Info,
-  Warning,
-  Error,
+  public enum CommentType
+  {
+    None,
+    Info,
+    Warning,
+    Error,
+  }
 }

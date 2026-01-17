@@ -9,58 +9,59 @@ using System.Collections.Generic;
 using UnityEngine;
 
 #nullable disable
-namespace Dungeonator;
-
-[Serializable]
-public class SemioticDungeonGenSettings
+namespace Dungeonator
 {
-  [SerializeField]
-  public List<DungeonFlow> flows;
-  [SerializeField]
-  public List<ExtraIncludedRoomData> mandatoryExtraRooms;
-  [SerializeField]
-  public List<ExtraIncludedRoomData> optionalExtraRooms;
-  [SerializeField]
-  public int MAX_GENERATION_ATTEMPTS = 25;
-  [SerializeField]
-  public bool DEBUG_RENDER_CANVASES_SEPARATELY;
-
-  public DungeonFlow GetRandomFlow()
+  [Serializable]
+  public class SemioticDungeonGenSettings
   {
-    if ((UnityEngine.Object) GameManager.Instance.BestGenerationDungeonPrefab != (UnityEngine.Object) null && GameManager.Instance.BestGenerationDungeonPrefab.tileIndices.tilesetId == GlobalDungeonData.ValidTilesets.FORGEGEON && !GameStatsManager.Instance.GetFlag(GungeonFlags.BLACKSMITH_MET_PREVIOUSLY))
-      return this.flows[0];
-    float num1 = 0.0f;
-    List<DungeonFlow> dungeonFlowList1 = new List<DungeonFlow>();
-    float num2 = 0.0f;
-    List<DungeonFlow> dungeonFlowList2 = new List<DungeonFlow>();
-    for (int index = 0; index < this.flows.Count; ++index)
+    [SerializeField]
+    public List<DungeonFlow> flows;
+    [SerializeField]
+    public List<ExtraIncludedRoomData> mandatoryExtraRooms;
+    [SerializeField]
+    public List<ExtraIncludedRoomData> optionalExtraRooms;
+    [SerializeField]
+    public int MAX_GENERATION_ATTEMPTS = 25;
+    [SerializeField]
+    public bool DEBUG_RENDER_CANVASES_SEPARATELY;
+
+    public DungeonFlow GetRandomFlow()
     {
-      if (GameStatsManager.Instance.QueryFlowDifferentiator(this.flows[index].name) > 0)
+      if ((UnityEngine.Object) GameManager.Instance.BestGenerationDungeonPrefab != (UnityEngine.Object) null && GameManager.Instance.BestGenerationDungeonPrefab.tileIndices.tilesetId == GlobalDungeonData.ValidTilesets.FORGEGEON && !GameStatsManager.Instance.GetFlag(GungeonFlags.BLACKSMITH_MET_PREVIOUSLY))
+        return this.flows[0];
+      float num1 = 0.0f;
+      List<DungeonFlow> dungeonFlowList1 = new List<DungeonFlow>();
+      float num2 = 0.0f;
+      List<DungeonFlow> dungeonFlowList2 = new List<DungeonFlow>();
+      for (int index = 0; index < this.flows.Count; ++index)
       {
-        ++num1;
-        dungeonFlowList1.Add(this.flows[index]);
+        if (GameStatsManager.Instance.QueryFlowDifferentiator(this.flows[index].name) > 0)
+        {
+          ++num1;
+          dungeonFlowList1.Add(this.flows[index]);
+        }
+        else
+        {
+          ++num2;
+          dungeonFlowList2.Add(this.flows[index]);
+        }
       }
-      else
+      if (dungeonFlowList2.Count <= 0 && dungeonFlowList1.Count > 0)
       {
-        ++num2;
-        dungeonFlowList2.Add(this.flows[index]);
+        dungeonFlowList2 = dungeonFlowList1;
+        num2 = num1;
       }
+      if (dungeonFlowList2.Count <= 0)
+        return (DungeonFlow) null;
+      float num3 = BraveRandom.GenerationRandomValue() * num2;
+      float num4 = 0.0f;
+      for (int index = 0; index < dungeonFlowList2.Count; ++index)
+      {
+        ++num4;
+        if ((double) num4 >= (double) num3)
+          return dungeonFlowList2[index];
+      }
+      return this.flows[BraveRandom.GenerationRandomRange(0, this.flows.Count)];
     }
-    if (dungeonFlowList2.Count <= 0 && dungeonFlowList1.Count > 0)
-    {
-      dungeonFlowList2 = dungeonFlowList1;
-      num2 = num1;
-    }
-    if (dungeonFlowList2.Count <= 0)
-      return (DungeonFlow) null;
-    float num3 = BraveRandom.GenerationRandomValue() * num2;
-    float num4 = 0.0f;
-    for (int index = 0; index < dungeonFlowList2.Count; ++index)
-    {
-      ++num4;
-      if ((double) num4 >= (double) num3)
-        return dungeonFlowList2[index];
-    }
-    return this.flows[BraveRandom.GenerationRandomRange(0, this.flows.Count)];
   }
 }

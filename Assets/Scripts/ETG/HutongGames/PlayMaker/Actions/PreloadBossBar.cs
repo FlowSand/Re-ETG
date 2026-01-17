@@ -5,15 +5,16 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(".NPCs")]
-public class PreloadBossBar : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public override void OnEnter()
+  [ActionCategory(".NPCs")]
+  public class PreloadBossBar : FsmStateAction
   {
-    GameUIRoot.Instance.bossController.ForceUpdateBossHealth(100f, 100f, StringTableManager.GetEnemiesString("#MANFRED_ENCNAME"));
-    GameManager.Instance.DungeonMusicController.SwitchToBossMusic("Play_MUS_Boss_Theme_Gull", this.Owner.gameObject);
-    this.Finish();
+    public override void OnEnter()
+    {
+      GameUIRoot.Instance.bossController.ForceUpdateBossHealth(100f, 100f, StringTableManager.GetEnemiesString("#MANFRED_ENCNAME"));
+      GameManager.Instance.DungeonMusicController.SwitchToBossMusic("Play_MUS_Boss_Theme_Gull", this.Owner.gameObject);
+      this.Finish();
+    }
   }
 }

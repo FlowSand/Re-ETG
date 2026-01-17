@@ -7,41 +7,42 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.GameObject)]
-[HutongGames.PlayMaker.Tooltip("Sets the Parent of a Game Object.")]
-public class SetParent : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("The Game Object to parent.")]
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
-  [HutongGames.PlayMaker.Tooltip("The new parent for the Game Object.")]
-  public FsmGameObject parent;
-  [HutongGames.PlayMaker.Tooltip("Set the local position to 0,0,0 after parenting.")]
-  public FsmBool resetLocalPosition;
-  [HutongGames.PlayMaker.Tooltip("Set the local rotation to 0,0,0 after parenting.")]
-  public FsmBool resetLocalRotation;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.GameObject)]
+  [HutongGames.PlayMaker.Tooltip("Sets the Parent of a Game Object.")]
+  public class SetParent : FsmStateAction
   {
-    this.gameObject = (FsmOwnerDefault) null;
-    this.parent = (FsmGameObject) null;
-    this.resetLocalPosition = (FsmBool) null;
-    this.resetLocalRotation = (FsmBool) null;
-  }
+    [HutongGames.PlayMaker.Tooltip("The Game Object to parent.")]
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    [HutongGames.PlayMaker.Tooltip("The new parent for the Game Object.")]
+    public FsmGameObject parent;
+    [HutongGames.PlayMaker.Tooltip("Set the local position to 0,0,0 after parenting.")]
+    public FsmBool resetLocalPosition;
+    [HutongGames.PlayMaker.Tooltip("Set the local rotation to 0,0,0 after parenting.")]
+    public FsmBool resetLocalRotation;
 
-  public override void OnEnter()
-  {
-    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-    if ((Object) ownerDefaultTarget != (Object) null)
+    public override void Reset()
     {
-      ownerDefaultTarget.transform.parent = !((Object) this.parent.Value == (Object) null) ? this.parent.Value.transform : (Transform) null;
-      if (this.resetLocalPosition.Value)
-        ownerDefaultTarget.transform.localPosition = Vector3.zero;
-      if (this.resetLocalRotation.Value)
-        ownerDefaultTarget.transform.localRotation = Quaternion.identity;
+      this.gameObject = (FsmOwnerDefault) null;
+      this.parent = (FsmGameObject) null;
+      this.resetLocalPosition = (FsmBool) null;
+      this.resetLocalRotation = (FsmBool) null;
     }
-    this.Finish();
+
+    public override void OnEnter()
+    {
+      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+      if ((Object) ownerDefaultTarget != (Object) null)
+      {
+        ownerDefaultTarget.transform.parent = !((Object) this.parent.Value == (Object) null) ? this.parent.Value.transform : (Transform) null;
+        if (this.resetLocalPosition.Value)
+          ownerDefaultTarget.transform.localPosition = Vector3.zero;
+        if (this.resetLocalRotation.Value)
+          ownerDefaultTarget.transform.localRotation = Quaternion.identity;
+      }
+      this.Finish();
+    }
   }
 }

@@ -5,15 +5,16 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[Tooltip("Removes all transitions to this state.")]
-[ActionCategory(".Brave")]
-public class DisconnectState : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public override void OnEnter()
+  [Tooltip("Removes all transitions to this state.")]
+  [ActionCategory(".Brave")]
+  public class DisconnectState : FsmStateAction
   {
-    BravePlayMakerUtility.DisconnectState(this.State);
-    this.Finish();
+    public override void OnEnter()
+    {
+      BravePlayMakerUtility.DisconnectState(this.State);
+      this.Finish();
+    }
   }
 }

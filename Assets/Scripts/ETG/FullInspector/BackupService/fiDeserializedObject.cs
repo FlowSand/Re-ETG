@@ -10,34 +10,35 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-namespace FullInspector.BackupService;
-
-public class fiDeserializedObject
+namespace FullInspector.BackupService
 {
-  public List<fiDeserializedMember> Members;
-
-  public fiDeserializedObject(fiSerializedObject serializedState)
+  public class fiDeserializedObject
   {
-    Type type = serializedState.Target.Target.GetType();
-    fiSerializationOperator serializationOperator = new fiSerializationOperator()
+    public List<fiDeserializedMember> Members;
+
+    public fiDeserializedObject(fiSerializedObject serializedState)
     {
-      SerializedObjects = serializedState.ObjectReferences
-    };
-    BaseSerializer baseSerializer = (BaseSerializer) fiSingletons.Get(BehaviorTypeToSerializerTypeMap.GetSerializerType(type));
-    InspectedType inspectedType = InspectedType.Get(type);
-    this.Members = new List<fiDeserializedMember>();
-    foreach (fiSerializedMember member in serializedState.Members)
-    {
-      InspectedProperty propertyByName = inspectedType.GetPropertyByName(member.Name);
-      if (propertyByName != null)
+      Type type = serializedState.Target.Target.GetType();
+      fiSerializationOperator serializationOperator = new fiSerializationOperator()
       {
-        object obj = baseSerializer.Deserialize(fsPortableReflection.AsMemberInfo(propertyByName.StorageType), member.Value, (ISerializationOperator) serializationOperator);
-        this.Members.Add(new fiDeserializedMember()
+        SerializedObjects = serializedState.ObjectReferences
+      };
+      BaseSerializer baseSerializer = (BaseSerializer) fiSingletons.Get(BehaviorTypeToSerializerTypeMap.GetSerializerType(type));
+      InspectedType inspectedType = InspectedType.Get(type);
+      this.Members = new List<fiDeserializedMember>();
+      foreach (fiSerializedMember member in serializedState.Members)
+      {
+        InspectedProperty propertyByName = inspectedType.GetPropertyByName(member.Name);
+        if (propertyByName != null)
         {
-          InspectedProperty = propertyByName,
-          Value = obj,
-          ShouldRestore = member.ShouldRestore
-        });
+          object obj = baseSerializer.Deserialize(fsPortableReflection.AsMemberInfo(propertyByName.StorageType), member.Value, (ISerializationOperator) serializationOperator);
+          this.Members.Add(new fiDeserializedMember()
+          {
+            InspectedProperty = propertyByName,
+            Value = obj,
+            ShouldRestore = member.ShouldRestore
+          });
+        }
       }
     }
   }

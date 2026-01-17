@@ -5,6 +5,7 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace Pathfinding;
-
-public delegate bool CellValidator(IntVector2 cell);
+namespace Pathfinding
+{
+  public delegate bool CellValidator(IntVector2 cell);
+}

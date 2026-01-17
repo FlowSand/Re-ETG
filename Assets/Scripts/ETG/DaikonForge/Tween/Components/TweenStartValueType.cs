@@ -5,10 +5,11 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace DaikonForge.Tween.Components;
-
-public enum TweenStartValueType
+namespace DaikonForge.Tween.Components
 {
-  Absolute,
-  SyncOnRun,
+  public enum TweenStartValueType
+  {
+    Absolute,
+    SyncOnRun,
+  }
 }

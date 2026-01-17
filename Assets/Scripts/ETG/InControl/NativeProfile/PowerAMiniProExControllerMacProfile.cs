@@ -5,31 +5,32 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class PowerAMiniProExControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public PowerAMiniProExControllerMacProfile()
+  public class PowerAMiniProExControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "PowerA Mini Pro Ex Controller";
-    this.Meta = "PowerA Mini Pro Ex Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[3]
+    public PowerAMiniProExControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "PowerA Mini Pro Ex Controller";
+      this.Meta = "PowerA Mini Pro Ex Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[3]
       {
-        VendorID = new ushort?((ushort) 5604),
-        ProductID = new ushort?((ushort) 16128)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 9414),
-        ProductID = new ushort?((ushort) 21274)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 9414),
-        ProductID = new ushort?((ushort) 21248)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 5604),
+          ProductID = new ushort?((ushort) 16128)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 9414),
+          ProductID = new ushort?((ushort) 21274)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 9414),
+          ProductID = new ushort?((ushort) 21248)
+        }
+      };
+    }
   }
 }

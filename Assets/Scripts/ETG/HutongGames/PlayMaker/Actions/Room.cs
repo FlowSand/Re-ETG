@@ -7,46 +7,47 @@
 using Dungeonator;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[Tooltip("Respondes to chest events.")]
-[ActionCategory(".NPCs")]
-public class Room : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [Tooltip("Seals the room the Owner is in.")]
-  public FsmBool seal;
-  [Tooltip("Unseals the room the Owner is in.")]
-  public FsmBool unseal;
-  [Tooltip("Ignores SealPrior in Tutorial.")]
-  public FsmBool unsealAllForceTutorial;
-
-  public override void Reset()
+  [Tooltip("Respondes to chest events.")]
+  [ActionCategory(".NPCs")]
+  public class Room : FsmStateAction
   {
-    this.seal = (FsmBool) false;
-    this.unseal = (FsmBool) false;
-  }
+    [Tooltip("Seals the room the Owner is in.")]
+    public FsmBool seal;
+    [Tooltip("Unseals the room the Owner is in.")]
+    public FsmBool unseal;
+    [Tooltip("Ignores SealPrior in Tutorial.")]
+    public FsmBool unsealAllForceTutorial;
 
-  public override void OnEnter()
-  {
-    TalkDoerLite component = this.Owner.GetComponent<TalkDoerLite>();
-    component.specRigidbody.Initialize();
-    RoomHandler roomFromPosition = GameManager.Instance.Dungeon.GetRoomFromPosition(component.specRigidbody.UnitCenter.ToIntVector2(VectorConversions.Floor));
-    if (this.seal.Value)
+    public override void Reset()
     {
-      roomFromPosition.npcSealState = RoomHandler.NPCSealState.SealAll;
-      if (GameManager.Instance.InTutorial && component.name.Contains("NPC_Tutorial_Knight_001_intro"))
-        roomFromPosition.npcSealState = RoomHandler.NPCSealState.SealNext;
-      roomFromPosition.SealRoom();
+      this.seal = (FsmBool) false;
+      this.unseal = (FsmBool) false;
     }
-    else if (this.unseal.Value)
+
+    public override void OnEnter()
     {
-      roomFromPosition.npcSealState = RoomHandler.NPCSealState.SealNone;
-      if (GameManager.Instance.InTutorial)
-        roomFromPosition.npcSealState = !component.name.Contains("NPC_Tutorial_Knight_001_intro") ? RoomHandler.NPCSealState.SealPrior : RoomHandler.NPCSealState.SealNone;
-      if (this.unsealAllForceTutorial.Value)
+      TalkDoerLite component = this.Owner.GetComponent<TalkDoerLite>();
+      component.specRigidbody.Initialize();
+      RoomHandler roomFromPosition = GameManager.Instance.Dungeon.GetRoomFromPosition(component.specRigidbody.UnitCenter.ToIntVector2(VectorConversions.Floor));
+      if (this.seal.Value)
+      {
+        roomFromPosition.npcSealState = RoomHandler.NPCSealState.SealAll;
+        if (GameManager.Instance.InTutorial && component.name.Contains("NPC_Tutorial_Knight_001_intro"))
+          roomFromPosition.npcSealState = RoomHandler.NPCSealState.SealNext;
+        roomFromPosition.SealRoom();
+      }
+      else if (this.unseal.Value)
+      {
         roomFromPosition.npcSealState = RoomHandler.NPCSealState.SealNone;
-      roomFromPosition.UnsealRoom();
+        if (GameManager.Instance.InTutorial)
+          roomFromPosition.npcSealState = !component.name.Contains("NPC_Tutorial_Knight_001_intro") ? RoomHandler.NPCSealState.SealPrior : RoomHandler.NPCSealState.SealNone;
+        if (this.unsealAllForceTutorial.Value)
+          roomFromPosition.npcSealState = RoomHandler.NPCSealState.SealNone;
+        roomFromPosition.UnsealRoom();
+      }
+      this.Finish();
     }
-    this.Finish();
   }
 }

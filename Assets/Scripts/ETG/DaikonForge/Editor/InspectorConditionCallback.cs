@@ -5,6 +5,7 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace DaikonForge.Editor;
-
-public delegate bool InspectorConditionCallback(object target);
+namespace DaikonForge.Editor
+{
+  public delegate bool InspectorConditionCallback(object target);
+}

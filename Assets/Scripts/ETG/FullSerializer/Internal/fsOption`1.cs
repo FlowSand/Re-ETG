@@ -7,25 +7,26 @@
 using System;
 
 #nullable disable
-namespace FullSerializer.Internal;
-
-public struct fsOption<T>(T value)
+namespace FullSerializer.Internal
 {
-  private bool _hasValue = true;
-  private T _value = value;
-  public static fsOption<T> Empty;
-
-  public bool HasValue => this._hasValue;
-
-  public bool IsEmpty => !this._hasValue;
-
-  public T Value
+  public struct fsOption<T>(T value)
   {
-    get
+    private bool _hasValue = true;
+    private T _value = value;
+    public static fsOption<T> Empty;
+
+    public bool HasValue => this._hasValue;
+
+    public bool IsEmpty => !this._hasValue;
+
+    public T Value
     {
-      if (this.IsEmpty)
-        throw new InvalidOperationException("fsOption is empty");
-      return this._value;
+      get
+      {
+        if (this.IsEmpty)
+          throw new InvalidOperationException("fsOption is empty");
+        return this._value;
+      }
     }
   }
 }

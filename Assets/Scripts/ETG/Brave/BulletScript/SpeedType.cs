@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace Brave.BulletScript;
-
-public enum SpeedType
+namespace Brave.BulletScript
 {
-  Absolute,
-  Relative,
-  Sequence,
+  public enum SpeedType
+  {
+    Absolute,
+    Relative,
+    Sequence,
+  }
 }

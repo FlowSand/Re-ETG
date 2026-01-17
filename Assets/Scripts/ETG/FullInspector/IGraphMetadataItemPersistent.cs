@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector;
-
-public interface IGraphMetadataItemPersistent
+namespace FullInspector
 {
-  bool ShouldSerialize();
+  public interface IGraphMetadataItemPersistent
+  {
+    bool ShouldSerialize();
+  }
 }

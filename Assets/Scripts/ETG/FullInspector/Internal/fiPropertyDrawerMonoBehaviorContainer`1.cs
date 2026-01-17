@@ -7,9 +7,10 @@
 using UnityEngine;
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public class fiPropertyDrawerMonoBehaviorContainer<T> : MonoBehaviour
+namespace FullInspector.Internal
 {
-  public T Item;
+  public class fiPropertyDrawerMonoBehaviorContainer<T> : MonoBehaviour
+  {
+    public T Item;
+  }
 }

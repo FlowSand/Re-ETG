@@ -7,64 +7,65 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.StateMachine)]
-[ActionTarget(typeof (PlayMakerFSM), "gameObject,fsmName", false)]
-[HutongGames.PlayMaker.Tooltip("Get the value of a Quaternion Variable from another FSM.")]
-public class GetFsmQuaternion : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("The GameObject that owns the FSM.")]
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
-  [UIHint(UIHint.FsmName)]
-  [HutongGames.PlayMaker.Tooltip("Optional name of FSM on Game Object")]
-  public FsmString fsmName;
-  [UIHint(UIHint.FsmQuaternion)]
-  [RequiredField]
-  public FsmString variableName;
-  [UIHint(UIHint.Variable)]
-  [RequiredField]
-  public FsmQuaternion storeValue;
-  [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
-  public bool everyFrame;
-  private GameObject goLastFrame;
-  protected PlayMakerFSM fsm;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.StateMachine)]
+  [ActionTarget(typeof (PlayMakerFSM), "gameObject,fsmName", false)]
+  [HutongGames.PlayMaker.Tooltip("Get the value of a Quaternion Variable from another FSM.")]
+  public class GetFsmQuaternion : FsmStateAction
   {
-    this.gameObject = (FsmOwnerDefault) null;
-    this.fsmName = (FsmString) string.Empty;
-    this.variableName = (FsmString) string.Empty;
-    this.storeValue = (FsmQuaternion) null;
-    this.everyFrame = false;
-  }
+    [HutongGames.PlayMaker.Tooltip("The GameObject that owns the FSM.")]
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    [UIHint(UIHint.FsmName)]
+    [HutongGames.PlayMaker.Tooltip("Optional name of FSM on Game Object")]
+    public FsmString fsmName;
+    [UIHint(UIHint.FsmQuaternion)]
+    [RequiredField]
+    public FsmString variableName;
+    [UIHint(UIHint.Variable)]
+    [RequiredField]
+    public FsmQuaternion storeValue;
+    [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
+    public bool everyFrame;
+    private GameObject goLastFrame;
+    protected PlayMakerFSM fsm;
 
-  public override void OnEnter()
-  {
-    this.DoGetFsmVariable();
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
-
-  public override void OnUpdate() => this.DoGetFsmVariable();
-
-  private void DoGetFsmVariable()
-  {
-    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-    if ((Object) ownerDefaultTarget == (Object) null)
-      return;
-    if ((Object) ownerDefaultTarget != (Object) this.goLastFrame)
+    public override void Reset()
     {
-      this.goLastFrame = ownerDefaultTarget;
-      this.fsm = ActionHelpers.GetGameObjectFsm(ownerDefaultTarget, this.fsmName.Value);
+      this.gameObject = (FsmOwnerDefault) null;
+      this.fsmName = (FsmString) string.Empty;
+      this.variableName = (FsmString) string.Empty;
+      this.storeValue = (FsmQuaternion) null;
+      this.everyFrame = false;
     }
-    if ((Object) this.fsm == (Object) null || this.storeValue == null)
-      return;
-    FsmQuaternion fsmQuaternion = this.fsm.FsmVariables.GetFsmQuaternion(this.variableName.Value);
-    if (fsmQuaternion == null)
-      return;
-    this.storeValue.Value = fsmQuaternion.Value;
+
+    public override void OnEnter()
+    {
+      this.DoGetFsmVariable();
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
+
+    public override void OnUpdate() => this.DoGetFsmVariable();
+
+    private void DoGetFsmVariable()
+    {
+      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+      if ((Object) ownerDefaultTarget == (Object) null)
+        return;
+      if ((Object) ownerDefaultTarget != (Object) this.goLastFrame)
+      {
+        this.goLastFrame = ownerDefaultTarget;
+        this.fsm = ActionHelpers.GetGameObjectFsm(ownerDefaultTarget, this.fsmName.Value);
+      }
+      if ((Object) this.fsm == (Object) null || this.storeValue == null)
+        return;
+      FsmQuaternion fsmQuaternion = this.fsm.FsmVariables.GetFsmQuaternion(this.variableName.Value);
+      if (fsmQuaternion == null)
+        return;
+      this.storeValue.Value = fsmQuaternion.Value;
+    }
   }
 }

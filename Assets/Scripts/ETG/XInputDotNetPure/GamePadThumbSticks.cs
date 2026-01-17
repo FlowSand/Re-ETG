@@ -7,35 +7,36 @@
 using UnityEngine;
 
 #nullable disable
-namespace XInputDotNetPure;
-
-public struct GamePadThumbSticks
+namespace XInputDotNetPure
 {
-  private GamePadThumbSticks.StickValue left;
-  private GamePadThumbSticks.StickValue right;
-
-  internal GamePadThumbSticks(
-    GamePadThumbSticks.StickValue left,
-    GamePadThumbSticks.StickValue right)
+  public struct GamePadThumbSticks
   {
-    this.left = left;
-    this.right = right;
-  }
+    private GamePadThumbSticks.StickValue left;
+    private GamePadThumbSticks.StickValue right;
 
-  public GamePadThumbSticks.StickValue Left => this.left;
+    internal GamePadThumbSticks(
+      GamePadThumbSticks.StickValue left,
+      GamePadThumbSticks.StickValue right)
+    {
+      this.left = left;
+      this.right = right;
+    }
 
-  public GamePadThumbSticks.StickValue Right => this.right;
+    public GamePadThumbSticks.StickValue Left => this.left;
 
-  public struct StickValue
-  {
-    private Vector2 vector;
+    public GamePadThumbSticks.StickValue Right => this.right;
 
-    internal StickValue(float x, float y) => this.vector = new Vector2(x, y);
+    public struct StickValue
+    {
+      private Vector2 vector;
 
-    public float X => this.vector.x;
+      internal StickValue(float x, float y) => this.vector = new Vector2(x, y);
 
-    public float Y => this.vector.y;
+      public float X => this.vector.x;
 
-    public Vector2 Vector => this.vector;
+      public float Y => this.vector.y;
+
+      public Vector2 Vector => this.vector;
+    }
   }
 }

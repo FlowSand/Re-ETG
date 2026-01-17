@@ -8,60 +8,61 @@ using System.Collections.Generic;
 using System.Text;
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public static class fiDisplayNameMapper
+namespace FullInspector.Internal
 {
-  private static readonly Dictionary<string, string> _mappedNames = new Dictionary<string, string>();
-
-  public static string Map(string propertyName)
+  public static class fiDisplayNameMapper
   {
-    if (string.IsNullOrEmpty(propertyName))
-      return string.Empty;
-    string str;
-    if (!fiDisplayNameMapper._mappedNames.TryGetValue(propertyName, out str))
-    {
-      str = fiDisplayNameMapper.MapInternal(propertyName);
-      fiDisplayNameMapper._mappedNames[propertyName] = str;
-    }
-    return str;
-  }
+    private static readonly Dictionary<string, string> _mappedNames = new Dictionary<string, string>();
 
-  private static string MapInternal(string propertyName)
-  {
-    if (propertyName.StartsWith("m_") && propertyName != "m_")
-      propertyName = propertyName.Substring(2);
-    int index1 = 0;
-    while (index1 < propertyName.Length && propertyName[index1] == '_')
-      ++index1;
-    if (index1 >= propertyName.Length)
-      return propertyName;
-    StringBuilder stringBuilder = new StringBuilder();
-    bool flag = true;
-    for (int index2 = index1; index2 < propertyName.Length; ++index2)
+    public static string Map(string propertyName)
     {
-      char upper = propertyName[index2];
-      if (upper == '_')
+      if (string.IsNullOrEmpty(propertyName))
+        return string.Empty;
+      string str;
+      if (!fiDisplayNameMapper._mappedNames.TryGetValue(propertyName, out str))
       {
-        flag = true;
+        str = fiDisplayNameMapper.MapInternal(propertyName);
+        fiDisplayNameMapper._mappedNames[propertyName] = str;
       }
-      else
+      return str;
+    }
+
+    private static string MapInternal(string propertyName)
+    {
+      if (propertyName.StartsWith("m_") && propertyName != "m_")
+        propertyName = propertyName.Substring(2);
+      int index1 = 0;
+      while (index1 < propertyName.Length && propertyName[index1] == '_')
+        ++index1;
+      if (index1 >= propertyName.Length)
+        return propertyName;
+      StringBuilder stringBuilder = new StringBuilder();
+      bool flag = true;
+      for (int index2 = index1; index2 < propertyName.Length; ++index2)
       {
-        if (flag)
+        char upper = propertyName[index2];
+        if (upper == '_')
         {
-          flag = false;
-          upper = char.ToUpper(upper);
+          flag = true;
         }
-        if (index2 != index1 && fiDisplayNameMapper.ShouldInsertSpace(index2, propertyName))
-          stringBuilder.Append(' ');
-        stringBuilder.Append(upper);
+        else
+        {
+          if (flag)
+          {
+            flag = false;
+            upper = char.ToUpper(upper);
+          }
+          if (index2 != index1 && fiDisplayNameMapper.ShouldInsertSpace(index2, propertyName))
+            stringBuilder.Append(' ');
+          stringBuilder.Append(upper);
+        }
       }
+      return stringBuilder.ToString();
     }
-    return stringBuilder.ToString();
-  }
 
-  private static bool ShouldInsertSpace(int currentIndex, string str)
-  {
-    return char.IsUpper(str[currentIndex]) && currentIndex + 1 < str.Length && !char.IsUpper(str[currentIndex + 1]);
+    private static bool ShouldInsertSpace(int currentIndex, string str)
+    {
+      return char.IsUpper(str[currentIndex]) && currentIndex + 1 < str.Length && !char.IsUpper(str[currentIndex + 1]);
+    }
   }
 }

@@ -8,20 +8,21 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public class fiFactory<T> where T : new()
+namespace FullInspector.Internal
 {
-  private Stack<T> _reusable = new Stack<T>();
-  private Action<T> _reset;
-
-  public fiFactory(Action<T> reset) => this._reset = reset;
-
-  public T GetInstance() => this._reusable.Count == 0 ? new T() : this._reusable.Pop();
-
-  public void ReuseInstance(T instance)
+  public class fiFactory<T> where T : new()
   {
-    this._reset(instance);
-    this._reusable.Push(instance);
+    private Stack<T> _reusable = new Stack<T>();
+    private Action<T> _reset;
+
+    public fiFactory(Action<T> reset) => this._reset = reset;
+
+    public T GetInstance() => this._reusable.Count == 0 ? new T() : this._reusable.Pop();
+
+    public void ReuseInstance(T instance)
+    {
+      this._reset(instance);
+      this._reusable.Push(instance);
+    }
   }
 }

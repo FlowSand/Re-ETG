@@ -5,15 +5,16 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullSerializer;
-
-public enum fsDataType
+namespace FullSerializer
 {
-  Array,
-  Object,
-  Double,
-  Int64,
-  Boolean,
-  String,
-  Null,
+  public enum fsDataType
+  {
+    Array,
+    Object,
+    Double,
+    Int64,
+    Boolean,
+    String,
+    Null,
+  }
 }

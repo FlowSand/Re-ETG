@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class LogitechChillStreamControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public LogitechChillStreamControllerMacProfile()
+  public class LogitechChillStreamControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Logitech Chill Stream Controller";
-    this.Meta = "Logitech Chill Stream Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public LogitechChillStreamControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Logitech Chill Stream Controller";
+      this.Meta = "Logitech Chill Stream Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 1133),
-        ProductID = new ushort?((ushort) 49730)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 1133),
+          ProductID = new ushort?((ushort) 49730)
+        }
+      };
+    }
   }
 }

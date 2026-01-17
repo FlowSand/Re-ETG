@@ -5,8 +5,9 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector;
-
-public class tk<T> : tk<T, tkDefaultContext>
+namespace FullInspector
 {
+  public class tk<T> : tk<T, tkDefaultContext>
+  {
+  }
 }

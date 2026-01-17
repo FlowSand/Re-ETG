@@ -9,43 +9,44 @@ using System.Collections;
 using System.Collections.Generic;
 
 #nullable disable
-namespace FullInspector;
-
-public static class fiListUtility
+namespace FullInspector
 {
-  public static void Add<T>(ref IList list)
+  public static class fiListUtility
   {
-    if (list.GetType().IsArray)
+    public static void Add<T>(ref IList list)
     {
-      T[] array = (T[]) list;
-      Array.Resize<T>(ref array, array.Length + 1);
-      list = (IList) array;
+      if (list.GetType().IsArray)
+      {
+        T[] array = (T[]) list;
+        Array.Resize<T>(ref array, array.Length + 1);
+        list = (IList) array;
+      }
+      else
+        list.Add((object) default (T));
     }
-    else
-      list.Add((object) default (T));
-  }
 
-  public static void InsertAt<T>(ref IList list, int index)
-  {
-    if (list.GetType().IsArray)
+    public static void InsertAt<T>(ref IList list, int index)
     {
-      List<T> objList = new List<T>((IEnumerable<T>) list);
-      objList.Insert(index, default (T));
-      list = (IList) objList.ToArray();
+      if (list.GetType().IsArray)
+      {
+        List<T> objList = new List<T>((IEnumerable<T>) list);
+        objList.Insert(index, default (T));
+        list = (IList) objList.ToArray();
+      }
+      else
+        list.Insert(index, (object) default (T));
     }
-    else
-      list.Insert(index, (object) default (T));
-  }
 
-  public static void RemoveAt<T>(ref IList list, int index)
-  {
-    if (list.GetType().IsArray)
+    public static void RemoveAt<T>(ref IList list, int index)
     {
-      List<T> objList = new List<T>((IEnumerable<T>) list);
-      objList.RemoveAt(index);
-      list = (IList) objList.ToArray();
+      if (list.GetType().IsArray)
+      {
+        List<T> objList = new List<T>((IEnumerable<T>) list);
+        objList.RemoveAt(index);
+        list = (IList) objList.ToArray();
+      }
+      else
+        list.RemoveAt(index);
     }
-    else
-      list.RemoveAt(index);
   }
 }

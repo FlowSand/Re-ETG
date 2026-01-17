@@ -5,42 +5,43 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[Tooltip("Forward an event received by this FSM to another target.")]
-[ActionCategory(ActionCategory.StateMachine)]
-public class ForwardEvent : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [Tooltip("Forward to this target.")]
-  public FsmEventTarget forwardTo;
-  [Tooltip("The events to forward.")]
-  public FsmEvent[] eventsToForward;
-  [Tooltip("Should this action eat the events or pass them on.")]
-  public bool eatEvents;
-
-  public override void Reset()
+  [Tooltip("Forward an event received by this FSM to another target.")]
+  [ActionCategory(ActionCategory.StateMachine)]
+  public class ForwardEvent : FsmStateAction
   {
-    this.forwardTo = new FsmEventTarget()
-    {
-      target = FsmEventTarget.EventTarget.FSMComponent
-    };
-    this.eventsToForward = (FsmEvent[]) null;
-    this.eatEvents = true;
-  }
+    [Tooltip("Forward to this target.")]
+    public FsmEventTarget forwardTo;
+    [Tooltip("The events to forward.")]
+    public FsmEvent[] eventsToForward;
+    [Tooltip("Should this action eat the events or pass them on.")]
+    public bool eatEvents;
 
-  public override bool Event(FsmEvent fsmEvent)
-  {
-    if (this.eventsToForward != null)
+    public override void Reset()
     {
-      foreach (FsmEvent fsmEvent1 in this.eventsToForward)
+      this.forwardTo = new FsmEventTarget()
       {
-        if (fsmEvent1 == fsmEvent)
+        target = FsmEventTarget.EventTarget.FSMComponent
+      };
+      this.eventsToForward = (FsmEvent[]) null;
+      this.eatEvents = true;
+    }
+
+    public override bool Event(FsmEvent fsmEvent)
+    {
+      if (this.eventsToForward != null)
+      {
+        foreach (FsmEvent fsmEvent1 in this.eventsToForward)
         {
-          this.Fsm.Event(this.forwardTo, fsmEvent);
-          return this.eatEvents;
+          if (fsmEvent1 == fsmEvent)
+          {
+            this.Fsm.Event(this.forwardTo, fsmEvent);
+            return this.eatEvents;
+          }
         }
       }
+      return false;
     }
-    return false;
   }
 }

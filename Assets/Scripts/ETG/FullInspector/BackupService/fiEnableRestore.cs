@@ -7,10 +7,11 @@
 using System;
 
 #nullable disable
-namespace FullInspector.BackupService;
-
-[Serializable]
-public class fiEnableRestore
+namespace FullInspector.BackupService
 {
-  public bool Enabled;
+  [Serializable]
+  public class fiEnableRestore
+  {
+    public bool Enabled;
+  }
 }

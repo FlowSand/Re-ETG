@@ -5,33 +5,34 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Math)]
-[Tooltip("Sets the value of an Integer Variable.")]
-public class SetIntValue : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [RequiredField]
-  [UIHint(UIHint.Variable)]
-  public FsmInt intVariable;
-  [RequiredField]
-  public FsmInt intValue;
-  public bool everyFrame;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.Math)]
+  [Tooltip("Sets the value of an Integer Variable.")]
+  public class SetIntValue : FsmStateAction
   {
-    this.intVariable = (FsmInt) null;
-    this.intValue = (FsmInt) null;
-    this.everyFrame = false;
-  }
+    [RequiredField]
+    [UIHint(UIHint.Variable)]
+    public FsmInt intVariable;
+    [RequiredField]
+    public FsmInt intValue;
+    public bool everyFrame;
 
-  public override void OnEnter()
-  {
-    this.intVariable.Value = this.intValue.Value;
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
+    public override void Reset()
+    {
+      this.intVariable = (FsmInt) null;
+      this.intValue = (FsmInt) null;
+      this.everyFrame = false;
+    }
 
-  public override void OnUpdate() => this.intVariable.Value = this.intValue.Value;
+    public override void OnEnter()
+    {
+      this.intVariable.Value = this.intValue.Value;
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
+
+    public override void OnUpdate() => this.intVariable.Value = this.intValue.Value;
+  }
 }

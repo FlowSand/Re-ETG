@@ -7,31 +7,32 @@
 using Brave;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory("PlayerPrefs")]
-[Tooltip("Returns the value corresponding to key in the preference file if it exists.")]
-public class PlayerPrefsGetFloat : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [Tooltip("Case sensitive key.")]
-  [CompoundArray("Count", "Key", "Variable")]
-  public FsmString[] keys;
-  [UIHint(UIHint.Variable)]
-  public FsmFloat[] variables;
-
-  public override void Reset()
+  [ActionCategory("PlayerPrefs")]
+  [Tooltip("Returns the value corresponding to key in the preference file if it exists.")]
+  public class PlayerPrefsGetFloat : FsmStateAction
   {
-    this.keys = new FsmString[1];
-    this.variables = new FsmFloat[1];
-  }
+    [Tooltip("Case sensitive key.")]
+    [CompoundArray("Count", "Key", "Variable")]
+    public FsmString[] keys;
+    [UIHint(UIHint.Variable)]
+    public FsmFloat[] variables;
 
-  public override void OnEnter()
-  {
-    for (int index = 0; index < this.keys.Length; ++index)
+    public override void Reset()
     {
-      if (!this.keys[index].IsNone || !this.keys[index].Value.Equals(string.Empty))
-        this.variables[index].Value = PlayerPrefs.GetFloat(this.keys[index].Value, !this.variables[index].IsNone ? this.variables[index].Value : 0.0f);
+      this.keys = new FsmString[1];
+      this.variables = new FsmFloat[1];
     }
-    this.Finish();
+
+    public override void OnEnter()
+    {
+      for (int index = 0; index < this.keys.Length; ++index)
+      {
+        if (!this.keys[index].IsNone || !this.keys[index].Value.Equals(string.Empty))
+          this.variables[index].Value = PlayerPrefs.GetFloat(this.keys[index].Value, !this.variables[index].IsNone ? this.variables[index].Value : 0.0f);
+      }
+      this.Finish();
+    }
   }
 }

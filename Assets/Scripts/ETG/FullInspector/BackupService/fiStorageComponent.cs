@@ -9,22 +9,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 #nullable disable
-namespace FullInspector.BackupService;
-
-[AddComponentMenu("")]
-public class fiStorageComponent : MonoBehaviour, fiIEditorOnlyTag
+namespace FullInspector.BackupService
 {
-  public List<fiSerializedObject> Objects = new List<fiSerializedObject>();
-
-  public void RemoveInvalidBackups()
+  [AddComponentMenu("")]
+  public class fiStorageComponent : MonoBehaviour, fiIEditorOnlyTag
   {
-    int index = 0;
-    while (index < this.Objects.Count)
+    public List<fiSerializedObject> Objects = new List<fiSerializedObject>();
+
+    public void RemoveInvalidBackups()
     {
-      if (this.Objects[index].Target.Target == (Object) null)
-        this.Objects.RemoveAt(index);
-      else
-        ++index;
+      int index = 0;
+      while (index < this.Objects.Count)
+      {
+        if (this.Objects[index].Target.Target == (Object) null)
+          this.Objects.RemoveAt(index);
+        else
+          ++index;
+      }
     }
   }
 }

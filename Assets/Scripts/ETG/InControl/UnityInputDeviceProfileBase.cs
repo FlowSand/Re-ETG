@@ -5,17 +5,18 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public abstract class UnityInputDeviceProfileBase : InputDeviceProfile
+namespace InControl
 {
-  public abstract bool IsJoystick { get; }
+  public abstract class UnityInputDeviceProfileBase : InputDeviceProfile
+  {
+    public abstract bool IsJoystick { get; }
 
-  public abstract bool HasJoystickName(string joystickName);
+    public abstract bool HasJoystickName(string joystickName);
 
-  public abstract bool HasLastResortRegex(string joystickName);
+    public abstract bool HasLastResortRegex(string joystickName);
 
-  public abstract bool HasJoystickOrRegexName(string joystickName);
+    public abstract bool HasJoystickOrRegexName(string joystickName);
 
-  public bool IsNotJoystick => !this.IsJoystick;
+    public bool IsNotJoystick => !this.IsJoystick;
+  }
 }

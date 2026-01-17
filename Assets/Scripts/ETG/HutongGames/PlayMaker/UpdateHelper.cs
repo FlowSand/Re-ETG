@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker;
-
-public class UpdateHelper
+namespace HutongGames.PlayMaker
 {
-  public static void SetDirty(Fsm fsm)
+  public class UpdateHelper
   {
+    public static void SetDirty(Fsm fsm)
+    {
+    }
   }
 }

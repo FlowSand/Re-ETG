@@ -7,76 +7,77 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Animator)]
-[HutongGames.PlayMaker.Tooltip("Gets the position and rotation of the target specified by SetTarget(AvatarTarget targetIndex, float targetNormalizedTime)).\nThe position and rotation are only valid when a frame has being evaluated after the SetTarget call")]
-public class GetAnimatorTarget : FsmStateActionAnimatorBase
+namespace HutongGames.PlayMaker.Actions
 {
-  [RequiredField]
-  [CheckForComponent(typeof (Animator))]
-  [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
-  public FsmOwnerDefault gameObject;
-  [HutongGames.PlayMaker.Tooltip("The target position")]
-  [ActionSection("Results")]
-  [UIHint(UIHint.Variable)]
-  public FsmVector3 targetPosition;
-  [UIHint(UIHint.Variable)]
-  [HutongGames.PlayMaker.Tooltip("The target rotation")]
-  public FsmQuaternion targetRotation;
-  [HutongGames.PlayMaker.Tooltip("If set, apply the position and rotation to this gameObject")]
-  public FsmGameObject targetGameObject;
-  private Animator _animator;
-  private Transform _transform;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.Animator)]
+  [HutongGames.PlayMaker.Tooltip("Gets the position and rotation of the target specified by SetTarget(AvatarTarget targetIndex, float targetNormalizedTime)).\nThe position and rotation are only valid when a frame has being evaluated after the SetTarget call")]
+  public class GetAnimatorTarget : FsmStateActionAnimatorBase
   {
-    base.Reset();
-    this.gameObject = (FsmOwnerDefault) null;
-    this.targetPosition = (FsmVector3) null;
-    this.targetRotation = (FsmQuaternion) null;
-    this.targetGameObject = (FsmGameObject) null;
-    this.everyFrame = false;
-  }
+    [RequiredField]
+    [CheckForComponent(typeof (Animator))]
+    [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
+    public FsmOwnerDefault gameObject;
+    [HutongGames.PlayMaker.Tooltip("The target position")]
+    [ActionSection("Results")]
+    [UIHint(UIHint.Variable)]
+    public FsmVector3 targetPosition;
+    [UIHint(UIHint.Variable)]
+    [HutongGames.PlayMaker.Tooltip("The target rotation")]
+    public FsmQuaternion targetRotation;
+    [HutongGames.PlayMaker.Tooltip("If set, apply the position and rotation to this gameObject")]
+    public FsmGameObject targetGameObject;
+    private Animator _animator;
+    private Transform _transform;
 
-  public override void OnEnter()
-  {
-    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-    if ((Object) ownerDefaultTarget == (Object) null)
+    public override void Reset()
     {
-      this.Finish();
+      base.Reset();
+      this.gameObject = (FsmOwnerDefault) null;
+      this.targetPosition = (FsmVector3) null;
+      this.targetRotation = (FsmQuaternion) null;
+      this.targetGameObject = (FsmGameObject) null;
+      this.everyFrame = false;
     }
-    else
+
+    public override void OnEnter()
     {
-      this._animator = ownerDefaultTarget.GetComponent<Animator>();
-      if ((Object) this._animator == (Object) null)
+      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+      if ((Object) ownerDefaultTarget == (Object) null)
       {
         this.Finish();
       }
       else
       {
-        GameObject gameObject = this.targetGameObject.Value;
-        if ((Object) gameObject != (Object) null)
-          this._transform = gameObject.transform;
-        this.DoGetTarget();
-        if (this.everyFrame)
-          return;
-        this.Finish();
+        this._animator = ownerDefaultTarget.GetComponent<Animator>();
+        if ((Object) this._animator == (Object) null)
+        {
+          this.Finish();
+        }
+        else
+        {
+          GameObject gameObject = this.targetGameObject.Value;
+          if ((Object) gameObject != (Object) null)
+            this._transform = gameObject.transform;
+          this.DoGetTarget();
+          if (this.everyFrame)
+            return;
+          this.Finish();
+        }
       }
     }
-  }
 
-  public override void OnActionUpdate() => this.DoGetTarget();
+    public override void OnActionUpdate() => this.DoGetTarget();
 
-  private void DoGetTarget()
-  {
-    if ((Object) this._animator == (Object) null)
-      return;
-    this.targetPosition.Value = this._animator.targetPosition;
-    this.targetRotation.Value = this._animator.targetRotation;
-    if (!((Object) this._transform != (Object) null))
-      return;
-    this._transform.position = this._animator.targetPosition;
-    this._transform.rotation = this._animator.targetRotation;
+    private void DoGetTarget()
+    {
+      if ((Object) this._animator == (Object) null)
+        return;
+      this.targetPosition.Value = this._animator.targetPosition;
+      this.targetRotation.Value = this._animator.targetRotation;
+      if (!((Object) this._transform != (Object) null))
+        return;
+      this._transform.position = this._animator.targetPosition;
+      this._transform.rotation = this._animator.targetRotation;
+    }
   }
 }

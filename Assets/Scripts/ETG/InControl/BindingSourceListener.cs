@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public interface BindingSourceListener
+namespace InControl
 {
-  void Reset();
+  public interface BindingSourceListener
+  {
+    void Reset();
 
-  BindingSource Listen(BindingListenOptions listenOptions, InputDevice device);
+    BindingSource Listen(BindingListenOptions listenOptions, InputDevice device);
+  }
 }

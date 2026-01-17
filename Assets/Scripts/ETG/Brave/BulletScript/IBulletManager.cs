@@ -7,25 +7,26 @@
 using UnityEngine;
 
 #nullable disable
-namespace Brave.BulletScript;
-
-public interface IBulletManager
+namespace Brave.BulletScript
 {
-  Vector2 PlayerPosition();
+  public interface IBulletManager
+  {
+    Vector2 PlayerPosition();
 
-  Vector2 PlayerVelocity();
+    Vector2 PlayerVelocity();
 
-  float TimeScale { get; set; }
+    float TimeScale { get; set; }
 
-  void BulletSpawnedHandler(Bullet bullet);
+    void BulletSpawnedHandler(Bullet bullet);
 
-  void RemoveBullet(Bullet bullet);
+    void RemoveBullet(Bullet bullet);
 
-  void DestroyBullet(Bullet deadBullet, bool suppressInAirEffects);
+    void DestroyBullet(Bullet deadBullet, bool suppressInAirEffects);
 
-  Vector2 TransformOffset(Vector2 parentPos, string transform);
+    Vector2 TransformOffset(Vector2 parentPos, string transform);
 
-  float GetTransformRotation(string transform);
+    float GetTransformRotation(string transform);
 
-  Animation GetUnityAnimation();
+    Animation GetUnityAnimation();
+  }
 }

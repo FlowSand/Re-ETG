@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace DaikonForge.Tween;
-
-public enum TweenLoopType
+namespace DaikonForge.Tween
 {
-  None,
-  Loop,
-  Pingpong,
+  public enum TweenLoopType
+  {
+    None,
+    Loop,
+    Pingpong,
+  }
 }

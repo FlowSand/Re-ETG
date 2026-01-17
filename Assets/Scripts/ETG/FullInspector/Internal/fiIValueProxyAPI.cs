@@ -5,13 +5,14 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public interface fiIValueProxyAPI
+namespace FullInspector.Internal
 {
-  object Value { get; set; }
+  public interface fiIValueProxyAPI
+  {
+    object Value { get; set; }
 
-  void SaveState();
+    void SaveState();
 
-  void LoadState();
+    void LoadState();
+  }
 }

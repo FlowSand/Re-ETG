@@ -5,29 +5,30 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Debug)]
-[Tooltip("Print the value of any FSM Variable in the PlayMaker Log Window.")]
-public class DebugFsmVariable : BaseLogAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [Tooltip("Info, Warning, or Error.")]
-  public LogLevel logLevel;
-  [UIHint(UIHint.Variable)]
-  [HideTypeFilter]
-  [Tooltip("The variable to debug.")]
-  public FsmVar variable;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.Debug)]
+  [Tooltip("Print the value of any FSM Variable in the PlayMaker Log Window.")]
+  public class DebugFsmVariable : BaseLogAction
   {
-    this.logLevel = LogLevel.Info;
-    this.variable = (FsmVar) null;
-    base.Reset();
-  }
+    [Tooltip("Info, Warning, or Error.")]
+    public LogLevel logLevel;
+    [UIHint(UIHint.Variable)]
+    [HideTypeFilter]
+    [Tooltip("The variable to debug.")]
+    public FsmVar variable;
 
-  public override void OnEnter()
-  {
-    ActionHelpers.DebugLog(this.Fsm, this.logLevel, this.variable.DebugString(), this.sendToUnityLog);
-    this.Finish();
+    public override void Reset()
+    {
+      this.logLevel = LogLevel.Info;
+      this.variable = (FsmVar) null;
+      base.Reset();
+    }
+
+    public override void OnEnter()
+    {
+      ActionHelpers.DebugLog(this.Fsm, this.logLevel, this.variable.DebugString(), this.sendToUnityLog);
+      this.Finish();
+    }
   }
 }

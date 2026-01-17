@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public static class fiOption
+namespace FullInspector.Internal
 {
-  public static fiOption<T> Just<T>(T value) => new fiOption<T>(value);
+  public static class fiOption
+  {
+    public static fiOption<T> Just<T>(T value) => new fiOption<T>(value);
+  }
 }

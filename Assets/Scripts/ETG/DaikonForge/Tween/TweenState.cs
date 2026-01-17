@@ -5,12 +5,13 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace DaikonForge.Tween;
-
-public enum TweenState
+namespace DaikonForge.Tween
 {
-  Stopped,
-  Paused,
-  Playing,
-  Started,
+  public enum TweenState
+  {
+    Stopped,
+    Paused,
+    Playing,
+    Started,
+  }
 }

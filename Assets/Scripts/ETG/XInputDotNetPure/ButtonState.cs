@@ -5,10 +5,11 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace XInputDotNetPure;
-
-public enum ButtonState
+namespace XInputDotNetPure
 {
-  Pressed,
-  Released,
+  public enum ButtonState
+  {
+    Pressed,
+    Released,
+  }
 }

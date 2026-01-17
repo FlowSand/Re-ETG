@@ -7,12 +7,13 @@
 using UnityEngine;
 
 #nullable disable
-namespace KeyboardAndMouseExample;
-
-public class CubeController : MonoBehaviour
+namespace KeyboardAndMouseExample
 {
-  private void Start()
+  public class CubeController : MonoBehaviour
   {
-    Debug.LogError((object) "Custom profiles are now deprecated. This example is left blank to prevent errors when importing new versions of InControl.");
+    private void Start()
+    {
+      Debug.LogError((object) "Custom profiles are now deprecated. This example is left blank to prevent errors when importing new versions of InControl.");
+    }
   }
 }

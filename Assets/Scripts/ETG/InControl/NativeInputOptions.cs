@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public struct NativeInputOptions
+namespace InControl
 {
-  public ushort updateRate;
-  public bool enableXInput;
-  public bool preventSleep;
+  public struct NativeInputOptions
+  {
+    public ushort updateRate;
+    public bool enableXInput;
+    public bool preventSleep;
+  }
 }

@@ -7,30 +7,31 @@
 using Brave;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory("PlayerPrefs")]
-[Tooltip("Sets the value of the preference identified by key.")]
-public class PlayerPrefsSetInt : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [Tooltip("Case sensitive key.")]
-  [CompoundArray("Count", "Key", "Value")]
-  public FsmString[] keys;
-  public FsmInt[] values;
-
-  public override void Reset()
+  [ActionCategory("PlayerPrefs")]
+  [Tooltip("Sets the value of the preference identified by key.")]
+  public class PlayerPrefsSetInt : FsmStateAction
   {
-    this.keys = new FsmString[1];
-    this.values = new FsmInt[1];
-  }
+    [Tooltip("Case sensitive key.")]
+    [CompoundArray("Count", "Key", "Value")]
+    public FsmString[] keys;
+    public FsmInt[] values;
 
-  public override void OnEnter()
-  {
-    for (int index = 0; index < this.keys.Length; ++index)
+    public override void Reset()
     {
-      if (!this.keys[index].IsNone || !this.keys[index].Value.Equals(string.Empty))
-        PlayerPrefs.SetInt(this.keys[index].Value, !this.values[index].IsNone ? this.values[index].Value : 0);
+      this.keys = new FsmString[1];
+      this.values = new FsmInt[1];
     }
-    this.Finish();
+
+    public override void OnEnter()
+    {
+      for (int index = 0; index < this.keys.Length; ++index)
+      {
+        if (!this.keys[index].IsNone || !this.keys[index].Value.Equals(string.Empty))
+          PlayerPrefs.SetInt(this.keys[index].Value, !this.values[index].IsNone ? this.values[index].Value : 0);
+      }
+      this.Finish();
+    }
   }
 }

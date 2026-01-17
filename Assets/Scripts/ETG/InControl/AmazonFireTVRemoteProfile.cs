@@ -5,50 +5,51 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-[AutoDiscover]
-public class AmazonFireTVRemoteProfile : UnityInputDeviceProfile
+namespace InControl
 {
-  public AmazonFireTVRemoteProfile()
+  [AutoDiscover]
+  public class AmazonFireTVRemoteProfile : UnityInputDeviceProfile
   {
-    this.Name = "Amazon Fire TV Remote";
-    this.Meta = "Amazon Fire TV Remote on Amazon Fire TV";
-    this.DeviceClass = InputDeviceClass.Remote;
-    this.DeviceStyle = InputDeviceStyle.AmazonFireTV;
-    this.IncludePlatforms = new string[1]{ "Amazon AFT" };
-    this.JoystickNames = new string[2]
+    public AmazonFireTVRemoteProfile()
     {
-      string.Empty,
-      "Amazon Fire TV Remote"
-    };
-    this.ButtonMappings = new InputControlMapping[3]
-    {
-      new InputControlMapping()
+      this.Name = "Amazon Fire TV Remote";
+      this.Meta = "Amazon Fire TV Remote on Amazon Fire TV";
+      this.DeviceClass = InputDeviceClass.Remote;
+      this.DeviceStyle = InputDeviceStyle.AmazonFireTV;
+      this.IncludePlatforms = new string[1]{ "Amazon AFT" };
+      this.JoystickNames = new string[2]
       {
-        Handle = "A",
-        Target = InputControlType.Action1,
-        Source = UnityInputDeviceProfile.Button0
-      },
-      new InputControlMapping()
+        string.Empty,
+        "Amazon Fire TV Remote"
+      };
+      this.ButtonMappings = new InputControlMapping[3]
       {
-        Handle = "Back",
-        Target = InputControlType.Back,
-        Source = UnityInputDeviceProfile.EscapeKey
-      },
-      new InputControlMapping()
+        new InputControlMapping()
+        {
+          Handle = "A",
+          Target = InputControlType.Action1,
+          Source = UnityInputDeviceProfile.Button0
+        },
+        new InputControlMapping()
+        {
+          Handle = "Back",
+          Target = InputControlType.Back,
+          Source = UnityInputDeviceProfile.EscapeKey
+        },
+        new InputControlMapping()
+        {
+          Handle = "Menu",
+          Target = InputControlType.Menu,
+          Source = UnityInputDeviceProfile.MenuKey
+        }
+      };
+      this.AnalogMappings = new InputControlMapping[4]
       {
-        Handle = "Menu",
-        Target = InputControlType.Menu,
-        Source = UnityInputDeviceProfile.MenuKey
-      }
-    };
-    this.AnalogMappings = new InputControlMapping[4]
-    {
-      UnityInputDeviceProfile.DPadLeftMapping(UnityInputDeviceProfile.Analog4),
-      UnityInputDeviceProfile.DPadRightMapping(UnityInputDeviceProfile.Analog4),
-      UnityInputDeviceProfile.DPadUpMapping(UnityInputDeviceProfile.Analog5),
-      UnityInputDeviceProfile.DPadDownMapping(UnityInputDeviceProfile.Analog5)
-    };
+        UnityInputDeviceProfile.DPadLeftMapping(UnityInputDeviceProfile.Analog4),
+        UnityInputDeviceProfile.DPadRightMapping(UnityInputDeviceProfile.Analog4),
+        UnityInputDeviceProfile.DPadUpMapping(UnityInputDeviceProfile.Analog5),
+        UnityInputDeviceProfile.DPadDownMapping(UnityInputDeviceProfile.Analog5)
+      };
+    }
   }
 }

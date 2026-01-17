@@ -7,15 +7,16 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Network)]
-[HutongGames.PlayMaker.Tooltip("Clear the host list which was received by MasterServer Request Host List")]
-public class MasterServerClearHostList : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public override void OnEnter()
+  [ActionCategory(ActionCategory.Network)]
+  [HutongGames.PlayMaker.Tooltip("Clear the host list which was received by MasterServer Request Host List")]
+  public class MasterServerClearHostList : FsmStateAction
   {
-    MasterServer.ClearHostList();
-    this.Finish();
+    public override void OnEnter()
+    {
+      MasterServer.ClearHostList();
+      this.Finish();
+    }
   }
 }

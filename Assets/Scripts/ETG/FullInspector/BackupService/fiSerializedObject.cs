@@ -9,15 +9,16 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-namespace FullInspector.BackupService;
-
-[Serializable]
-public class fiSerializedObject
+namespace FullInspector.BackupService
 {
-  public fiUnityObjectReference Target;
-  public string SavedAt;
-  public bool ShowDeserialized;
-  public fiDeserializedObject DeserializedState;
-  public List<fiSerializedMember> Members = new List<fiSerializedMember>();
-  public List<fiUnityObjectReference> ObjectReferences = new List<fiUnityObjectReference>();
+  [Serializable]
+  public class fiSerializedObject
+  {
+    public fiUnityObjectReference Target;
+    public string SavedAt;
+    public bool ShowDeserialized;
+    public fiDeserializedObject DeserializedState;
+    public List<fiSerializedMember> Members = new List<fiSerializedMember>();
+    public List<fiUnityObjectReference> ObjectReferences = new List<fiUnityObjectReference>();
+  }
 }

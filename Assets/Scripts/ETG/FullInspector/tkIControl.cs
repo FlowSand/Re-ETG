@@ -7,15 +7,16 @@
 using UnityEngine;
 
 #nullable disable
-namespace FullInspector;
-
-public interface tkIControl
+namespace FullInspector
 {
-  object Edit(Rect rect, object obj, object context, fiGraphMetadata metadata);
+  public interface tkIControl
+  {
+    object Edit(Rect rect, object obj, object context, fiGraphMetadata metadata);
 
-  float GetHeight(object obj, object context, fiGraphMetadata metadata);
+    float GetHeight(object obj, object context, fiGraphMetadata metadata);
 
-  void InitializeId(ref int nextId);
+    void InitializeId(ref int nextId);
 
-  System.Type ContextType { get; }
+    System.Type ContextType { get; }
+  }
 }

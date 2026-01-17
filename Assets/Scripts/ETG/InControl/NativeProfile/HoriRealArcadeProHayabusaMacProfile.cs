@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class HoriRealArcadeProHayabusaMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public HoriRealArcadeProHayabusaMacProfile()
+  public class HoriRealArcadeProHayabusaMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Hori Real Arcade Pro Hayabusa";
-    this.Meta = "Hori Real Arcade Pro Hayabusa on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public HoriRealArcadeProHayabusaMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Hori Real Arcade Pro Hayabusa";
+      this.Meta = "Hori Real Arcade Pro Hayabusa on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 3853),
-        ProductID = new ushort?((ushort) 99)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 3853),
+          ProductID = new ushort?((ushort) 99)
+        }
+      };
+    }
   }
 }

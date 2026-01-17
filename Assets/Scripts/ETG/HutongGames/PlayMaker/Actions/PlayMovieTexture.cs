@@ -7,31 +7,32 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Plays a Movie Texture. Use the Movie Texture in a Material, or in the GUI.")]
-[ActionCategory(ActionCategory.Movie)]
-public class PlayMovieTexture : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [RequiredField]
-  [ObjectType(typeof (MovieTexture))]
-  public FsmObject movieTexture;
-  public FsmBool loop;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Plays a Movie Texture. Use the Movie Texture in a Material, or in the GUI.")]
+  [ActionCategory(ActionCategory.Movie)]
+  public class PlayMovieTexture : FsmStateAction
   {
-    this.movieTexture = (FsmObject) null;
-    this.loop = (FsmBool) false;
-  }
+    [RequiredField]
+    [ObjectType(typeof (MovieTexture))]
+    public FsmObject movieTexture;
+    public FsmBool loop;
 
-  public override void OnEnter()
-  {
-    MovieTexture movieTexture = this.movieTexture.Value as MovieTexture;
-    if ((Object) movieTexture != (Object) null)
+    public override void Reset()
     {
-      movieTexture.loop = this.loop.Value;
-      movieTexture.Play();
+      this.movieTexture = (FsmObject) null;
+      this.loop = (FsmBool) false;
     }
-    this.Finish();
+
+    public override void OnEnter()
+    {
+      MovieTexture movieTexture = this.movieTexture.Value as MovieTexture;
+      if ((Object) movieTexture != (Object) null)
+      {
+        movieTexture.loop = this.loop.Value;
+        movieTexture.Play();
+      }
+      this.Finish();
+    }
   }
 }

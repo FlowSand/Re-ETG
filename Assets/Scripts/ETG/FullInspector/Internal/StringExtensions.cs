@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector.Internal;
-
-internal static class StringExtensions
+namespace FullInspector.Internal
 {
-  public static string F(this string format, params object[] args) => string.Format(format, args);
+  internal static class StringExtensions
+  {
+    public static string F(this string format, params object[] args) => string.Format(format, args);
+  }
 }

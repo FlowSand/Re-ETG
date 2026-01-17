@@ -7,38 +7,39 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Interrupts the automatic target matching. CompleteMatch will make the gameobject match the target completely at the next frame.")]
-[ActionCategory(ActionCategory.Animator)]
-public class AnimatorInterruptMatchTarget : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
-  [CheckForComponent(typeof (Animator))]
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
-  [HutongGames.PlayMaker.Tooltip("Will make the gameobject match the target completely at the next frame")]
-  public FsmBool completeMatch;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Interrupts the automatic target matching. CompleteMatch will make the gameobject match the target completely at the next frame.")]
+  [ActionCategory(ActionCategory.Animator)]
+  public class AnimatorInterruptMatchTarget : FsmStateAction
   {
-    this.gameObject = (FsmOwnerDefault) null;
-    this.completeMatch = (FsmBool) true;
-  }
+    [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
+    [CheckForComponent(typeof (Animator))]
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    [HutongGames.PlayMaker.Tooltip("Will make the gameobject match the target completely at the next frame")]
+    public FsmBool completeMatch;
 
-  public override void OnEnter()
-  {
-    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-    if ((Object) ownerDefaultTarget == (Object) null)
+    public override void Reset()
     {
-      this.Finish();
+      this.gameObject = (FsmOwnerDefault) null;
+      this.completeMatch = (FsmBool) true;
     }
-    else
+
+    public override void OnEnter()
     {
-      Animator component = ownerDefaultTarget.GetComponent<Animator>();
-      if ((Object) component != (Object) null)
-        component.InterruptMatchTarget(this.completeMatch.Value);
-      this.Finish();
+      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+      if ((Object) ownerDefaultTarget == (Object) null)
+      {
+        this.Finish();
+      }
+      else
+      {
+        Animator component = ownerDefaultTarget.GetComponent<Animator>();
+        if ((Object) component != (Object) null)
+          component.InterruptMatchTarget(this.completeMatch.Value);
+        this.Finish();
+      }
     }
   }
 }

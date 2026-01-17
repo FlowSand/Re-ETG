@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class TrustPredatorJoystickMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public TrustPredatorJoystickMacProfile()
+  public class TrustPredatorJoystickMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Trust Predator Joystick";
-    this.Meta = "Trust Predator Joystick on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public TrustPredatorJoystickMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Trust Predator Joystick";
+      this.Meta = "Trust Predator Joystick on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 2064),
-        ProductID = new ushort?((ushort) 3)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 2064),
+          ProductID = new ushort?((ushort) 3)
+        }
+      };
+    }
   }
 }

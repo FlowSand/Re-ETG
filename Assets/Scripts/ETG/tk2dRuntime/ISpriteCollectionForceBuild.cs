@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace tk2dRuntime;
-
-public interface ISpriteCollectionForceBuild
+namespace tk2dRuntime
 {
-  bool UsesSpriteCollection(tk2dSpriteCollectionData spriteCollection);
+  public interface ISpriteCollectionForceBuild
+  {
+    bool UsesSpriteCollection(tk2dSpriteCollectionData spriteCollection);
 
-  void ForceBuild();
+    void ForceBuild();
+  }
 }

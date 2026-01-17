@@ -8,34 +8,35 @@ using System;
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Lights)]
-[HutongGames.PlayMaker.Tooltip("Set Spot, Directional, or Point Light type.")]
-public class SetLightType : ComponentAction<Light>
+namespace HutongGames.PlayMaker.Actions
 {
-  [CheckForComponent(typeof (Light))]
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
-  [ObjectType(typeof (LightType))]
-  public FsmEnum lightType;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.Lights)]
+  [HutongGames.PlayMaker.Tooltip("Set Spot, Directional, or Point Light type.")]
+  public class SetLightType : ComponentAction<Light>
   {
-    this.gameObject = (FsmOwnerDefault) null;
-    this.lightType = (FsmEnum) (Enum) LightType.Point;
-  }
+    [CheckForComponent(typeof (Light))]
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    [ObjectType(typeof (LightType))]
+    public FsmEnum lightType;
 
-  public override void OnEnter()
-  {
-    this.DoSetLightType();
-    this.Finish();
-  }
+    public override void Reset()
+    {
+      this.gameObject = (FsmOwnerDefault) null;
+      this.lightType = (FsmEnum) (Enum) LightType.Point;
+    }
 
-  private void DoSetLightType()
-  {
-    if (!this.UpdateCache(this.Fsm.GetOwnerDefaultTarget(this.gameObject)))
-      return;
-    this.light.type = (LightType) this.lightType.Value;
+    public override void OnEnter()
+    {
+      this.DoSetLightType();
+      this.Finish();
+    }
+
+    private void DoSetLightType()
+    {
+      if (!this.UpdateCache(this.Fsm.GetOwnerDefaultTarget(this.gameObject)))
+        return;
+      this.light.type = (LightType) this.lightType.Value;
+    }
   }
 }

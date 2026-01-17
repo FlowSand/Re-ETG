@@ -7,15 +7,16 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.GUILayout)]
-[HutongGames.PlayMaker.Tooltip("Close a GUILayout group started with BeginArea.")]
-public class GUILayoutEndArea : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public override void Reset()
+  [ActionCategory(ActionCategory.GUILayout)]
+  [HutongGames.PlayMaker.Tooltip("Close a GUILayout group started with BeginArea.")]
+  public class GUILayoutEndArea : FsmStateAction
   {
-  }
+    public override void Reset()
+    {
+    }
 
-  public override void OnGUI() => GUILayout.EndArea();
+    public override void OnGUI() => GUILayout.EndArea();
+  }
 }

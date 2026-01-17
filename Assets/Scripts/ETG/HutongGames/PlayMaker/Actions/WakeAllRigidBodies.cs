@@ -7,34 +7,35 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Rigid bodies start sleeping when they come to rest. This action wakes up all rigid bodies in the scene. E.g., if you Set Gravity and want objects at rest to respond.")]
-[ActionCategory(ActionCategory.Physics)]
-public class WakeAllRigidBodies : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public bool everyFrame;
-  private Rigidbody[] bodies;
-
-  public override void Reset() => this.everyFrame = false;
-
-  public override void OnEnter()
+  [HutongGames.PlayMaker.Tooltip("Rigid bodies start sleeping when they come to rest. This action wakes up all rigid bodies in the scene. E.g., if you Set Gravity and want objects at rest to respond.")]
+  [ActionCategory(ActionCategory.Physics)]
+  public class WakeAllRigidBodies : FsmStateAction
   {
-    this.bodies = Object.FindObjectsOfType(typeof (Rigidbody)) as Rigidbody[];
-    this.DoWakeAll();
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
+    public bool everyFrame;
+    private Rigidbody[] bodies;
 
-  public override void OnUpdate() => this.DoWakeAll();
+    public override void Reset() => this.everyFrame = false;
 
-  private void DoWakeAll()
-  {
-    this.bodies = Object.FindObjectsOfType(typeof (Rigidbody)) as Rigidbody[];
-    if (this.bodies == null)
-      return;
-    foreach (Rigidbody body in this.bodies)
-      body.WakeUp();
+    public override void OnEnter()
+    {
+      this.bodies = Object.FindObjectsOfType(typeof (Rigidbody)) as Rigidbody[];
+      this.DoWakeAll();
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
+
+    public override void OnUpdate() => this.DoWakeAll();
+
+    private void DoWakeAll()
+    {
+      this.bodies = Object.FindObjectsOfType(typeof (Rigidbody)) as Rigidbody[];
+      if (this.bodies == null)
+        return;
+      foreach (Rigidbody body in this.bodies)
+        body.WakeUp();
+    }
   }
 }

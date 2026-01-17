@@ -11,56 +11,57 @@ using System.Reflection;
 using UnityEngine;
 
 #nullable disable
-namespace FullInspector;
-
-public class InspectedMethod
+namespace FullInspector
 {
-  public InspectedMethod(MethodInfo method)
+  public class InspectedMethod
   {
-    this.Method = method;
-    foreach (ParameterInfo parameter in method.GetParameters())
+    public InspectedMethod(MethodInfo method)
     {
-      if (!parameter.IsOptional)
+      this.Method = method;
+      foreach (ParameterInfo parameter in method.GetParameters())
       {
-        this.HasArguments = true;
-        break;
+        if (!parameter.IsOptional)
+        {
+          this.HasArguments = true;
+          break;
+        }
       }
+      this.DisplayLabel = new GUIContent();
+      InspectorNameAttribute attribute1 = fsPortableReflection.GetAttribute<InspectorNameAttribute>((MemberInfo) method);
+      if (attribute1 != null)
+        this.DisplayLabel.text = attribute1.DisplayName;
+      if (string.IsNullOrEmpty(this.DisplayLabel.text))
+        this.DisplayLabel.text = fiDisplayNameMapper.Map(method.Name);
+      InspectorTooltipAttribute attribute2 = fsPortableReflection.GetAttribute<InspectorTooltipAttribute>((MemberInfo) method);
+      if (attribute2 == null)
+        return;
+      this.DisplayLabel.tooltip = attribute2.Tooltip;
     }
-    this.DisplayLabel = new GUIContent();
-    InspectorNameAttribute attribute1 = fsPortableReflection.GetAttribute<InspectorNameAttribute>((MemberInfo) method);
-    if (attribute1 != null)
-      this.DisplayLabel.text = attribute1.DisplayName;
-    if (string.IsNullOrEmpty(this.DisplayLabel.text))
-      this.DisplayLabel.text = fiDisplayNameMapper.Map(method.Name);
-    InspectorTooltipAttribute attribute2 = fsPortableReflection.GetAttribute<InspectorTooltipAttribute>((MemberInfo) method);
-    if (attribute2 == null)
-      return;
-    this.DisplayLabel.tooltip = attribute2.Tooltip;
-  }
 
-  public MethodInfo Method { get; private set; }
+    public MethodInfo Method { get; private set; }
 
-  public GUIContent DisplayLabel { get; private set; }
+    public GUIContent DisplayLabel { get; private set; }
 
-  public bool HasArguments { get; private set; }
+    public bool HasArguments { get; private set; }
 
-  public void Invoke(object instance)
-  {
-    try
+    public void Invoke(object instance)
     {
-      object[] parameters1 = (object[]) null;
-      ParameterInfo[] parameters2 = this.Method.GetParameters();
-      if (parameters2.Length != 0)
+      try
       {
-        parameters1 = new object[parameters2.Length];
-        for (int index = 0; index < parameters1.Length; ++index)
-          parameters1[index] = parameters2[index].DefaultValue;
+        object[] parameters1 = (object[]) null;
+        ParameterInfo[] parameters2 = this.Method.GetParameters();
+        if (parameters2.Length != 0)
+        {
+          parameters1 = new object[parameters2.Length];
+          for (int index = 0; index < parameters1.Length; ++index)
+            parameters1[index] = parameters2[index].DefaultValue;
+        }
+        this.Method.Invoke(instance, parameters1);
       }
-      this.Method.Invoke(instance, parameters1);
-    }
-    catch (Exception ex)
-    {
-      Debug.LogException(ex);
+      catch (Exception ex)
+      {
+        Debug.LogException(ex);
+      }
     }
   }
 }

@@ -5,15 +5,16 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public enum NativeDeviceDriverType : ushort
+namespace InControl
 {
-  Unknown,
-  HID,
-  USB,
-  Bluetooth,
-  XInput,
-  DirectInput,
-  RawInput,
+  public enum NativeDeviceDriverType : ushort
+  {
+    Unknown,
+    HID,
+    USB,
+    Bluetooth,
+    XInput,
+    DirectInput,
+    RawInput,
+  }
 }

@@ -7,18 +7,19 @@
 using System;
 
 #nullable disable
-namespace FullInspector;
-
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
-public sealed class InspectorRangeAttribute : Attribute
+namespace FullInspector
 {
-  public float Min;
-  public float Max;
-  public float Step = float.NaN;
-
-  public InspectorRangeAttribute(float min, float max)
+  [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+  public sealed class InspectorRangeAttribute : Attribute
   {
-    this.Min = min;
-    this.Max = max;
+    public float Min;
+    public float Max;
+    public float Step = float.NaN;
+
+    public InspectorRangeAttribute(float min, float max)
+    {
+      this.Min = min;
+      this.Max = max;
+    }
   }
 }

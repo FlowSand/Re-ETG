@@ -5,15 +5,16 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[Tooltip("Causes the device to vibrate for half a second.")]
-[ActionCategory(ActionCategory.Device)]
-public class DeviceVibrate : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public override void Reset()
+  [Tooltip("Causes the device to vibrate for half a second.")]
+  [ActionCategory(ActionCategory.Device)]
+  public class DeviceVibrate : FsmStateAction
   {
-  }
+    public override void Reset()
+    {
+    }
 
-  public override void OnEnter() => this.Finish();
+    public override void OnEnter() => this.Finish();
+  }
 }

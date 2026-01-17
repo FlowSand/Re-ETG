@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace DaikonForge.Tween;
-
-public interface ITweenUpdatable
+namespace DaikonForge.Tween
 {
-  TweenState State { get; }
+  public interface ITweenUpdatable
+  {
+    TweenState State { get; }
 
-  void Update();
+    void Update();
+  }
 }

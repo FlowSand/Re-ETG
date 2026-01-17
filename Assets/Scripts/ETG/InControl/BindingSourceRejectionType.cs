@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public enum BindingSourceRejectionType
+namespace InControl
 {
-  None,
-  DuplicateBindingOnAction,
-  DuplicateBindingOnActionSet,
+  public enum BindingSourceRejectionType
+  {
+    None,
+    DuplicateBindingOnAction,
+    DuplicateBindingOnActionSet,
+  }
 }

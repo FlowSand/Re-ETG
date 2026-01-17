@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class HoriXbox360GemPadExMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public HoriXbox360GemPadExMacProfile()
+  public class HoriXbox360GemPadExMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Hori Xbox 360 Gem Pad Ex";
-    this.Meta = "Hori Xbox 360 Gem Pad Ex on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public HoriXbox360GemPadExMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Hori Xbox 360 Gem Pad Ex";
+      this.Meta = "Hori Xbox 360 Gem Pad Ex on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 9414),
-        ProductID = new ushort?((ushort) 21773)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 9414),
+          ProductID = new ushort?((ushort) 21773)
+        }
+      };
+    }
   }
 }

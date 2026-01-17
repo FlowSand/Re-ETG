@@ -7,49 +7,50 @@
 using System;
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public struct fiEither<TA, TB>
+namespace FullInspector.Internal
 {
-  private TA _valueA;
-  private TB _valueB;
-  private bool _hasA;
-
-  public fiEither(TA valueA)
+  public struct fiEither<TA, TB>
   {
-    this._hasA = true;
-    this._valueA = valueA;
-    this._valueB = default (TB);
-  }
+    private TA _valueA;
+    private TB _valueB;
+    private bool _hasA;
 
-  public fiEither(TB valueB)
-  {
-    this._hasA = false;
-    this._valueA = default (TA);
-    this._valueB = valueB;
-  }
-
-  public TA ValueA
-  {
-    get
+    public fiEither(TA valueA)
     {
-      if (!this.IsA)
-        throw new InvalidOperationException("Either does not contain value A");
-      return this._valueA;
+      this._hasA = true;
+      this._valueA = valueA;
+      this._valueB = default (TB);
     }
-  }
 
-  public TB ValueB
-  {
-    get
+    public fiEither(TB valueB)
     {
-      if (!this.IsB)
-        throw new InvalidOperationException("Either does not contain value B");
-      return this._valueB;
+      this._hasA = false;
+      this._valueA = default (TA);
+      this._valueB = valueB;
     }
+
+    public TA ValueA
+    {
+      get
+      {
+        if (!this.IsA)
+          throw new InvalidOperationException("Either does not contain value A");
+        return this._valueA;
+      }
+    }
+
+    public TB ValueB
+    {
+      get
+      {
+        if (!this.IsB)
+          throw new InvalidOperationException("Either does not contain value B");
+        return this._valueB;
+      }
+    }
+
+    public bool IsA => this._hasA;
+
+    public bool IsB => !this._hasA;
   }
-
-  public bool IsA => this._hasA;
-
-  public bool IsB => !this._hasA;
 }

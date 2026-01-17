@@ -5,8 +5,9 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector;
-
-public interface IGraphMetadataItemNotPersistent
+namespace FullInspector
 {
+  public interface IGraphMetadataItemNotPersistent
+  {
+  }
 }

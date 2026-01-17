@@ -8,31 +8,32 @@ using System.Collections;
 using System.Diagnostics;
 
 #nullable disable
-namespace Brave.BulletScript;
-
-public class DelayedBullet : Bullet
+namespace Brave.BulletScript
 {
-  private int m_delayFrames;
-
-  public DelayedBullet(int delayFrames)
-    : base()
+  public class DelayedBullet : Bullet
   {
-    this.m_delayFrames = delayFrames;
-  }
+    private int m_delayFrames;
 
-  public DelayedBullet(string name, int delayFrames)
-    : base(name)
-  {
-    this.m_delayFrames = delayFrames;
-  }
-
-  [DebuggerHidden]
-  protected override IEnumerator Top()
-  {
-    // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new DelayedBullet__Topc__Iterator0()
+    public DelayedBullet(int delayFrames)
+      : base()
     {
-      _this = this
-    };
+      this.m_delayFrames = delayFrames;
+    }
+
+    public DelayedBullet(string name, int delayFrames)
+      : base(name)
+    {
+      this.m_delayFrames = delayFrames;
+    }
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new DelayedBullet__Topc__Iterator0()
+      {
+        _this = this
+      };
+    }
   }
 }

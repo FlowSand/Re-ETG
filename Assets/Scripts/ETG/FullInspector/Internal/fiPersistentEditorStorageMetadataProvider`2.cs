@@ -5,19 +5,20 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public abstract class fiPersistentEditorStorageMetadataProvider<TItem, TStorage> : 
-  fiIPersistentMetadataProvider
-  where TItem : new()
-  where TStorage : fiIGraphMetadataStorage, new()
+namespace FullInspector.Internal
 {
-  public void RestoreData(UnityEngine.Object target)
+  public abstract class fiPersistentEditorStorageMetadataProvider<TItem, TStorage> : 
+    fiIPersistentMetadataProvider
+    where TItem : new()
+    where TStorage : fiIGraphMetadataStorage, new()
   {
-    fiPersistentEditorStorage.Read<TStorage>(target).RestoreData(target);
+    public void RestoreData(UnityEngine.Object target)
+    {
+      fiPersistentEditorStorage.Read<TStorage>(target).RestoreData(target);
+    }
+
+    public void Reset(UnityEngine.Object target) => fiPersistentEditorStorage.Reset<TStorage>(target);
+
+    public System.Type MetadataType => typeof (TItem);
   }
-
-  public void Reset(UnityEngine.Object target) => fiPersistentEditorStorage.Reset<TStorage>(target);
-
-  public System.Type MetadataType => typeof (TItem);
 }

@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public class tkFoldoutMetadataProvider : 
-  fiPersistentEditorStorageMetadataProvider<tkFoldoutMetadata, tkFoldoutGraphMetadataSerializer>
+namespace FullInspector.Internal
 {
+  public class tkFoldoutMetadataProvider : 
+    fiPersistentEditorStorageMetadataProvider<tkFoldoutMetadata, tkFoldoutGraphMetadataSerializer>
+  {
+  }
 }

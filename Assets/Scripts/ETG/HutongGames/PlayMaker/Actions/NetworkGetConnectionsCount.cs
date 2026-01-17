@@ -7,31 +7,32 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Get the number of connected players.\n\nOn a client this returns 1 (the server).")]
-[ActionCategory(ActionCategory.Network)]
-public class NetworkGetConnectionsCount : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Number of connected players.")]
-  [UIHint(UIHint.Variable)]
-  public FsmInt connectionsCount;
-  [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
-  public bool everyFrame;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Get the number of connected players.\n\nOn a client this returns 1 (the server).")]
+  [ActionCategory(ActionCategory.Network)]
+  public class NetworkGetConnectionsCount : FsmStateAction
   {
-    this.connectionsCount = (FsmInt) null;
-    this.everyFrame = true;
-  }
+    [HutongGames.PlayMaker.Tooltip("Number of connected players.")]
+    [UIHint(UIHint.Variable)]
+    public FsmInt connectionsCount;
+    [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
+    public bool everyFrame;
 
-  public override void OnEnter()
-  {
-    this.connectionsCount.Value = Network.connections.Length;
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
+    public override void Reset()
+    {
+      this.connectionsCount = (FsmInt) null;
+      this.everyFrame = true;
+    }
 
-  public override void OnUpdate() => this.connectionsCount.Value = Network.connections.Length;
+    public override void OnEnter()
+    {
+      this.connectionsCount.Value = Network.connections.Length;
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
+
+    public override void OnUpdate() => this.connectionsCount.Value = Network.connections.Length;
+  }
 }

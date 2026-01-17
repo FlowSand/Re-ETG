@@ -5,13 +5,14 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector;
-
-public interface fiIPersistentMetadataProvider
+namespace FullInspector
 {
-  void RestoreData(UnityEngine.Object target);
+  public interface fiIPersistentMetadataProvider
+  {
+    void RestoreData(UnityEngine.Object target);
 
-  void Reset(UnityEngine.Object target);
+    void Reset(UnityEngine.Object target);
 
-  System.Type MetadataType { get; }
+    System.Type MetadataType { get; }
+  }
 }

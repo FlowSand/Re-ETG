@@ -7,41 +7,42 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Gets the name of a Game Object and stores it in a String Variable.")]
-[ActionCategory(ActionCategory.GameObject)]
-public class GetName : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [RequiredField]
-  public FsmGameObject gameObject;
-  [RequiredField]
-  [UIHint(UIHint.Variable)]
-  public FsmString storeName;
-  public bool everyFrame;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Gets the name of a Game Object and stores it in a String Variable.")]
+  [ActionCategory(ActionCategory.GameObject)]
+  public class GetName : FsmStateAction
   {
-    FsmGameObject fsmGameObject = new FsmGameObject();
-    fsmGameObject.UseVariable = true;
-    this.gameObject = fsmGameObject;
-    this.storeName = (FsmString) null;
-    this.everyFrame = false;
-  }
+    [RequiredField]
+    public FsmGameObject gameObject;
+    [RequiredField]
+    [UIHint(UIHint.Variable)]
+    public FsmString storeName;
+    public bool everyFrame;
 
-  public override void OnEnter()
-  {
-    this.DoGetGameObjectName();
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
+    public override void Reset()
+    {
+      FsmGameObject fsmGameObject = new FsmGameObject();
+      fsmGameObject.UseVariable = true;
+      this.gameObject = fsmGameObject;
+      this.storeName = (FsmString) null;
+      this.everyFrame = false;
+    }
 
-  public override void OnUpdate() => this.DoGetGameObjectName();
+    public override void OnEnter()
+    {
+      this.DoGetGameObjectName();
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
 
-  private void DoGetGameObjectName()
-  {
-    GameObject gameObject = this.gameObject.Value;
-    this.storeName.Value = !((Object) gameObject != (Object) null) ? string.Empty : gameObject.name;
+    public override void OnUpdate() => this.DoGetGameObjectName();
+
+    private void DoGetGameObjectName()
+    {
+      GameObject gameObject = this.gameObject.Value;
+      this.storeName.Value = !((Object) gameObject != (Object) null) ? string.Empty : gameObject.name;
+    }
   }
 }

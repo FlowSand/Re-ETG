@@ -8,29 +8,30 @@ using Dungeonator;
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-public class ModifyVariableByInflationRate : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public FsmInt TargetVariable;
-  public FsmFloat AdditionalMultiplier = (FsmFloat) 1f;
-
-  public override void Reset()
+  public class ModifyVariableByInflationRate : FsmStateAction
   {
-  }
+    public FsmInt TargetVariable;
+    public FsmFloat AdditionalMultiplier = (FsmFloat) 1f;
 
-  public override string ErrorCheck() => string.Empty;
-
-  public override void OnEnter()
-  {
-    GameLevelDefinition loadedLevelDefinition = GameManager.Instance.GetLastLoadedLevelDefinition();
-    this.TargetVariable.Value = Mathf.RoundToInt((float) this.TargetVariable.Value * (loadedLevelDefinition == null ? 1f : loadedLevelDefinition.priceMultiplier) * this.AdditionalMultiplier.Value);
-    if ((bool) (Object) this.Owner)
+    public override void Reset()
     {
-      RoomHandler absoluteRoom = this.Owner.transform.position.GetAbsoluteRoom();
-      if (absoluteRoom != null && absoluteRoom.connectedRooms != null && absoluteRoom.connectedRooms.Count == 1 && absoluteRoom.connectedRooms[0].area.PrototypeRoomName.Contains("Black Market"))
-        this.TargetVariable.Value = Mathf.RoundToInt((float) this.TargetVariable.Value * 0.5f);
     }
-    this.Finish();
+
+    public override string ErrorCheck() => string.Empty;
+
+    public override void OnEnter()
+    {
+      GameLevelDefinition loadedLevelDefinition = GameManager.Instance.GetLastLoadedLevelDefinition();
+      this.TargetVariable.Value = Mathf.RoundToInt((float) this.TargetVariable.Value * (loadedLevelDefinition == null ? 1f : loadedLevelDefinition.priceMultiplier) * this.AdditionalMultiplier.Value);
+      if ((bool) (Object) this.Owner)
+      {
+        RoomHandler absoluteRoom = this.Owner.transform.position.GetAbsoluteRoom();
+        if (absoluteRoom != null && absoluteRoom.connectedRooms != null && absoluteRoom.connectedRooms.Count == 1 && absoluteRoom.connectedRooms[0].area.PrototypeRoomName.Contains("Black Market"))
+          this.TargetVariable.Value = Mathf.RoundToInt((float) this.TargetVariable.Value * 0.5f);
+      }
+      this.Finish();
+    }
   }
 }

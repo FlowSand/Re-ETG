@@ -7,19 +7,20 @@
 using Brave;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory("PlayerPrefs")]
-[Tooltip("Removes all keys and values from the preferences. Use with caution.")]
-public class PlayerPrefsDeleteAll : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public override void Reset()
+  [ActionCategory("PlayerPrefs")]
+  [Tooltip("Removes all keys and values from the preferences. Use with caution.")]
+  public class PlayerPrefsDeleteAll : FsmStateAction
   {
-  }
+    public override void Reset()
+    {
+    }
 
-  public override void OnEnter()
-  {
-    PlayerPrefs.DeleteAll();
-    this.Finish();
+    public override void OnEnter()
+    {
+      PlayerPrefs.DeleteAll();
+      this.Finish();
+    }
   }
 }

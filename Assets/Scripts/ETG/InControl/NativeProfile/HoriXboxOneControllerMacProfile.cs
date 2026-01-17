@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class HoriXboxOneControllerMacProfile : XboxOneDriverMacProfile
+namespace InControl.NativeProfile
 {
-  public HoriXboxOneControllerMacProfile()
+  public class HoriXboxOneControllerMacProfile : XboxOneDriverMacProfile
   {
-    this.Name = "Hori Xbox One Controller";
-    this.Meta = "Hori Xbox One Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public HoriXboxOneControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Hori Xbox One Controller";
+      this.Meta = "Hori Xbox One Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 3853),
-        ProductID = new ushort?((ushort) 103)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 3853),
+          ProductID = new ushort?((ushort) 103)
+        }
+      };
+    }
   }
 }

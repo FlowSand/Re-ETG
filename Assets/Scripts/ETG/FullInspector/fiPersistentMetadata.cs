@@ -11,41 +11,42 @@ using System.Linq;
 using UnityEngine;
 
 #nullable disable
-namespace FullInspector;
-
-public static class fiPersistentMetadata
+namespace FullInspector
 {
-  private static readonly fiIPersistentMetadataProvider[] s_providers;
-  private static Dictionary<fiUnityObjectReference, fiGraphMetadata> s_metadata = new Dictionary<fiUnityObjectReference, fiGraphMetadata>();
-
-  static fiPersistentMetadata()
+  public static class fiPersistentMetadata
   {
-    fiPersistentMetadata.s_providers = fiRuntimeReflectionUtility.GetAssemblyInstances<fiIPersistentMetadataProvider>().ToArray<fiIPersistentMetadataProvider>();
-    for (int index = 0; index < fiPersistentMetadata.s_providers.Length; ++index)
-      fiLog.Log((object) typeof (fiPersistentMetadata), "Using provider {0} to support metadata of type {1}", (object) fiPersistentMetadata.s_providers[index].GetType().CSharpName(), (object) fiPersistentMetadata.s_providers[index].MetadataType.CSharpName());
-  }
+    private static readonly fiIPersistentMetadataProvider[] s_providers;
+    private static Dictionary<fiUnityObjectReference, fiGraphMetadata> s_metadata = new Dictionary<fiUnityObjectReference, fiGraphMetadata>();
 
-  public static fiGraphMetadata GetMetadataFor(Object target_)
-  {
-    fiUnityObjectReference unityObjectReference = new fiUnityObjectReference(target_);
-    fiGraphMetadata metadataFor;
-    if (!fiPersistentMetadata.s_metadata.TryGetValue(unityObjectReference, out metadataFor))
+    static fiPersistentMetadata()
     {
-      metadataFor = new fiGraphMetadata(unityObjectReference);
-      fiPersistentMetadata.s_metadata[unityObjectReference] = metadataFor;
+      fiPersistentMetadata.s_providers = fiRuntimeReflectionUtility.GetAssemblyInstances<fiIPersistentMetadataProvider>().ToArray<fiIPersistentMetadataProvider>();
       for (int index = 0; index < fiPersistentMetadata.s_providers.Length; ++index)
-        fiPersistentMetadata.s_providers[index].RestoreData(unityObjectReference.Target);
+        fiLog.Log((object) typeof (fiPersistentMetadata), "Using provider {0} to support metadata of type {1}", (object) fiPersistentMetadata.s_providers[index].GetType().CSharpName(), (object) fiPersistentMetadata.s_providers[index].MetadataType.CSharpName());
     }
-    return metadataFor;
-  }
 
-  public static void Reset(Object target_)
-  {
-    fiUnityObjectReference key = new fiUnityObjectReference(target_);
-    if (!fiPersistentMetadata.s_metadata.ContainsKey(key))
-      return;
-    fiPersistentMetadata.s_metadata.Remove(key);
-    for (int index = 0; index < fiPersistentMetadata.s_providers.Length; ++index)
-      fiPersistentMetadata.s_providers[index].Reset(key.Target);
+    public static fiGraphMetadata GetMetadataFor(Object target_)
+    {
+      fiUnityObjectReference unityObjectReference = new fiUnityObjectReference(target_);
+      fiGraphMetadata metadataFor;
+      if (!fiPersistentMetadata.s_metadata.TryGetValue(unityObjectReference, out metadataFor))
+      {
+        metadataFor = new fiGraphMetadata(unityObjectReference);
+        fiPersistentMetadata.s_metadata[unityObjectReference] = metadataFor;
+        for (int index = 0; index < fiPersistentMetadata.s_providers.Length; ++index)
+          fiPersistentMetadata.s_providers[index].RestoreData(unityObjectReference.Target);
+      }
+      return metadataFor;
+    }
+
+    public static void Reset(Object target_)
+    {
+      fiUnityObjectReference key = new fiUnityObjectReference(target_);
+      if (!fiPersistentMetadata.s_metadata.ContainsKey(key))
+        return;
+      fiPersistentMetadata.s_metadata.Remove(key);
+      for (int index = 0; index < fiPersistentMetadata.s_providers.Length; ++index)
+        fiPersistentMetadata.s_providers[index].Reset(key.Target);
+    }
   }
 }

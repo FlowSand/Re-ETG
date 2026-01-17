@@ -7,58 +7,59 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Network)]
-[HutongGames.PlayMaker.Tooltip("Send Events based on the status of the network interface peer type: Disconneced, Server, Client, Connecting.")]
-public class NetworkPeerTypeSwitch : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Event to send if no client connection running. Server not initialized.")]
-  public FsmEvent isDisconnected;
-  [HutongGames.PlayMaker.Tooltip("Event to send if running as server.")]
-  public FsmEvent isServer;
-  [HutongGames.PlayMaker.Tooltip("Event to send if running as client.")]
-  public FsmEvent isClient;
-  [HutongGames.PlayMaker.Tooltip("Event to send attempting to connect to a server.")]
-  public FsmEvent isConnecting;
-  [HutongGames.PlayMaker.Tooltip("Repeat every frame. Useful if you're waiting for a particular network state.")]
-  public bool everyFrame;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.Network)]
+  [HutongGames.PlayMaker.Tooltip("Send Events based on the status of the network interface peer type: Disconneced, Server, Client, Connecting.")]
+  public class NetworkPeerTypeSwitch : FsmStateAction
   {
-    this.isDisconnected = (FsmEvent) null;
-    this.isServer = (FsmEvent) null;
-    this.isClient = (FsmEvent) null;
-    this.isConnecting = (FsmEvent) null;
-    this.everyFrame = false;
-  }
+    [HutongGames.PlayMaker.Tooltip("Event to send if no client connection running. Server not initialized.")]
+    public FsmEvent isDisconnected;
+    [HutongGames.PlayMaker.Tooltip("Event to send if running as server.")]
+    public FsmEvent isServer;
+    [HutongGames.PlayMaker.Tooltip("Event to send if running as client.")]
+    public FsmEvent isClient;
+    [HutongGames.PlayMaker.Tooltip("Event to send attempting to connect to a server.")]
+    public FsmEvent isConnecting;
+    [HutongGames.PlayMaker.Tooltip("Repeat every frame. Useful if you're waiting for a particular network state.")]
+    public bool everyFrame;
 
-  public override void OnEnter()
-  {
-    this.DoNetworkPeerTypeSwitch();
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
-
-  public override void OnUpdate() => this.DoNetworkPeerTypeSwitch();
-
-  private void DoNetworkPeerTypeSwitch()
-  {
-    switch (Network.peerType)
+    public override void Reset()
     {
-      case NetworkPeerType.Disconnected:
-        this.Fsm.Event(this.isDisconnected);
-        break;
-      case NetworkPeerType.Server:
-        this.Fsm.Event(this.isServer);
-        break;
-      case NetworkPeerType.Client:
-        this.Fsm.Event(this.isClient);
-        break;
-      case NetworkPeerType.Connecting:
-        this.Fsm.Event(this.isConnecting);
-        break;
+      this.isDisconnected = (FsmEvent) null;
+      this.isServer = (FsmEvent) null;
+      this.isClient = (FsmEvent) null;
+      this.isConnecting = (FsmEvent) null;
+      this.everyFrame = false;
+    }
+
+    public override void OnEnter()
+    {
+      this.DoNetworkPeerTypeSwitch();
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
+
+    public override void OnUpdate() => this.DoNetworkPeerTypeSwitch();
+
+    private void DoNetworkPeerTypeSwitch()
+    {
+      switch (Network.peerType)
+      {
+        case NetworkPeerType.Disconnected:
+          this.Fsm.Event(this.isDisconnected);
+          break;
+        case NetworkPeerType.Server:
+          this.Fsm.Event(this.isServer);
+          break;
+        case NetworkPeerType.Client:
+          this.Fsm.Event(this.isClient);
+          break;
+        case NetworkPeerType.Connecting:
+          this.Fsm.Event(this.isConnecting);
+          break;
+      }
     }
   }
 }

@@ -7,62 +7,63 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Plays a state. This could be used to synchronize your animation with audio or synchronize an Animator over the network.")]
-[ActionCategory(ActionCategory.Animator)]
-public class AnimatorPlay : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
-  [CheckForComponent(typeof (Animator))]
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
-  [HutongGames.PlayMaker.Tooltip("The name of the state that will be played.")]
-  public FsmString stateName;
-  [HutongGames.PlayMaker.Tooltip("The layer where the state is.")]
-  public FsmInt layer;
-  [HutongGames.PlayMaker.Tooltip("The normalized time at which the state will play")]
-  public FsmFloat normalizedTime;
-  [HutongGames.PlayMaker.Tooltip("Repeat every frame. Useful when using normalizedTime to manually control the animation.")]
-  public bool everyFrame;
-  private Animator _animator;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Plays a state. This could be used to synchronize your animation with audio or synchronize an Animator over the network.")]
+  [ActionCategory(ActionCategory.Animator)]
+  public class AnimatorPlay : FsmStateAction
   {
-    this.gameObject = (FsmOwnerDefault) null;
-    this.stateName = (FsmString) null;
-    FsmInt fsmInt = new FsmInt();
-    fsmInt.UseVariable = true;
-    this.layer = fsmInt;
-    FsmFloat fsmFloat = new FsmFloat();
-    fsmFloat.UseVariable = true;
-    this.normalizedTime = fsmFloat;
-    this.everyFrame = false;
-  }
+    [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
+    [CheckForComponent(typeof (Animator))]
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    [HutongGames.PlayMaker.Tooltip("The name of the state that will be played.")]
+    public FsmString stateName;
+    [HutongGames.PlayMaker.Tooltip("The layer where the state is.")]
+    public FsmInt layer;
+    [HutongGames.PlayMaker.Tooltip("The normalized time at which the state will play")]
+    public FsmFloat normalizedTime;
+    [HutongGames.PlayMaker.Tooltip("Repeat every frame. Useful when using normalizedTime to manually control the animation.")]
+    public bool everyFrame;
+    private Animator _animator;
 
-  public override void OnEnter()
-  {
-    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-    if ((Object) ownerDefaultTarget == (Object) null)
+    public override void Reset()
     {
-      this.Finish();
+      this.gameObject = (FsmOwnerDefault) null;
+      this.stateName = (FsmString) null;
+      FsmInt fsmInt = new FsmInt();
+      fsmInt.UseVariable = true;
+      this.layer = fsmInt;
+      FsmFloat fsmFloat = new FsmFloat();
+      fsmFloat.UseVariable = true;
+      this.normalizedTime = fsmFloat;
+      this.everyFrame = false;
     }
-    else
+
+    public override void OnEnter()
     {
-      this._animator = ownerDefaultTarget.GetComponent<Animator>();
-      this.DoAnimatorPlay();
-      if (this.everyFrame)
+      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+      if ((Object) ownerDefaultTarget == (Object) null)
+      {
+        this.Finish();
+      }
+      else
+      {
+        this._animator = ownerDefaultTarget.GetComponent<Animator>();
+        this.DoAnimatorPlay();
+        if (this.everyFrame)
+          return;
+        this.Finish();
+      }
+    }
+
+    public override void OnUpdate() => this.DoAnimatorPlay();
+
+    private void DoAnimatorPlay()
+    {
+      if (!((Object) this._animator != (Object) null))
         return;
-      this.Finish();
+      this._animator.Play(this.stateName.Value, !this.layer.IsNone ? this.layer.Value : -1, !this.normalizedTime.IsNone ? this.normalizedTime.Value : float.NegativeInfinity);
     }
-  }
-
-  public override void OnUpdate() => this.DoAnimatorPlay();
-
-  private void DoAnimatorPlay()
-  {
-    if (!((Object) this._animator != (Object) null))
-      return;
-    this._animator.Play(this.stateName.Value, !this.layer.IsNone ? this.layer.Value : -1, !this.normalizedTime.IsNone ? this.normalizedTime.Value : float.NegativeInfinity);
   }
 }

@@ -7,35 +7,36 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("GUI button. Sends an Event when pressed. Optionally store the button state in a Bool Variable.")]
-[ActionCategory(ActionCategory.GUI)]
-public class GUIButton : GUIContentAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public FsmEvent sendEvent;
-  [UIHint(UIHint.Variable)]
-  public FsmBool storeButtonState;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("GUI button. Sends an Event when pressed. Optionally store the button state in a Bool Variable.")]
+  [ActionCategory(ActionCategory.GUI)]
+  public class GUIButton : GUIContentAction
   {
-    base.Reset();
-    this.sendEvent = (FsmEvent) null;
-    this.storeButtonState = (FsmBool) null;
-    this.style = (FsmString) "Button";
-  }
+    public FsmEvent sendEvent;
+    [UIHint(UIHint.Variable)]
+    public FsmBool storeButtonState;
 
-  public override void OnGUI()
-  {
-    base.OnGUI();
-    bool flag = false;
-    if (GUI.Button(this.rect, this.content, (GUIStyle) this.style.Value))
+    public override void Reset()
     {
-      this.Fsm.Event(this.sendEvent);
-      flag = true;
+      base.Reset();
+      this.sendEvent = (FsmEvent) null;
+      this.storeButtonState = (FsmBool) null;
+      this.style = (FsmString) "Button";
     }
-    if (this.storeButtonState == null)
-      return;
-    this.storeButtonState.Value = flag;
+
+    public override void OnGUI()
+    {
+      base.OnGUI();
+      bool flag = false;
+      if (GUI.Button(this.rect, this.content, (GUIStyle) this.style.Value))
+      {
+        this.Fsm.Event(this.sendEvent);
+        flag = true;
+      }
+      if (this.storeButtonState == null)
+        return;
+      this.storeButtonState.Value = flag;
+    }
   }
 }

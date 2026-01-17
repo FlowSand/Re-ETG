@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class PDPXboxOneArcadeStickMacProfile : XboxOneDriverMacProfile
+namespace InControl.NativeProfile
 {
-  public PDPXboxOneArcadeStickMacProfile()
+  public class PDPXboxOneArcadeStickMacProfile : XboxOneDriverMacProfile
   {
-    this.Name = "PDP Xbox One Arcade Stick";
-    this.Meta = "PDP Xbox One Arcade Stick on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public PDPXboxOneArcadeStickMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "PDP Xbox One Arcade Stick";
+      this.Meta = "PDP Xbox One Arcade Stick on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 3695),
-        ProductID = new ushort?((ushort) 348)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 3695),
+          ProductID = new ushort?((ushort) 348)
+        }
+      };
+    }
   }
 }

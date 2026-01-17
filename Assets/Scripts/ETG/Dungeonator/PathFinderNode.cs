@@ -5,15 +5,16 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace Dungeonator;
-
-public struct PathFinderNode
+namespace Dungeonator
 {
-  public int F;
-  public int G;
-  public int H;
-  public int X;
-  public int Y;
-  public int PX;
-  public int PY;
+  public struct PathFinderNode
+  {
+    public int F;
+    public int G;
+    public int H;
+    public int X;
+    public int Y;
+    public int PX;
+    public int PY;
+  }
 }

@@ -5,18 +5,19 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public enum InputRangeType
+namespace InControl
 {
-  None,
-  MinusOneToOne,
-  OneToMinusOne,
-  ZeroToOne,
-  ZeroToMinusOne,
-  OneToZero,
-  MinusOneToZero,
-  ZeroToNegativeInfinity,
-  ZeroToPositiveInfinity,
-  Everything,
+  public enum InputRangeType
+  {
+    None,
+    MinusOneToOne,
+    OneToMinusOne,
+    ZeroToOne,
+    ZeroToMinusOne,
+    OneToZero,
+    MinusOneToZero,
+    ZeroToNegativeInfinity,
+    ZeroToPositiveInfinity,
+    Everything,
+  }
 }

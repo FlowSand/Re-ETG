@@ -7,9 +7,10 @@
 using System.Runtime.InteropServices;
 
 #nullable disable
-namespace PrivateImplementationDetails_017812A5_3652_47BD_840C_29D05E4D7339;
-
-[StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
-public class __BB_OBFUSCATOR_VERSION_1_16_1_2
+namespace PrivateImplementationDetails_017812A5_3652_47BD_840C_29D05E4D7339
 {
+  [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
+  public class __BB_OBFUSCATOR_VERSION_1_16_1_2
+  {
+  }
 }

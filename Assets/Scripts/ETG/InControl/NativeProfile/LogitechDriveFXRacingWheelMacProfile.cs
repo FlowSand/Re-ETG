@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class LogitechDriveFXRacingWheelMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public LogitechDriveFXRacingWheelMacProfile()
+  public class LogitechDriveFXRacingWheelMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Logitech DriveFX Racing Wheel";
-    this.Meta = "Logitech DriveFX Racing Wheel on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public LogitechDriveFXRacingWheelMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Logitech DriveFX Racing Wheel";
+      this.Meta = "Logitech DriveFX Racing Wheel on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 1133),
-        ProductID = new ushort?((ushort) 51875)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 1133),
+          ProductID = new ushort?((ushort) 51875)
+        }
+      };
+    }
   }
 }

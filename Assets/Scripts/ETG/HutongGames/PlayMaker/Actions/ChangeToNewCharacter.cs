@@ -9,54 +9,55 @@ using System.Diagnostics;
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Only use this in the Foyer!")]
-[ActionCategory(".NPCs")]
-public class ChangeToNewCharacter : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public string PlayerPrefabPath;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Only use this in the Foyer!")]
+  [ActionCategory(".NPCs")]
+  public class ChangeToNewCharacter : FsmStateAction
   {
-  }
+    public string PlayerPrefabPath;
 
-  public override void OnEnter()
-  {
-    GameManager.Instance.StartCoroutine(this.HandleCharacterChange());
-  }
-
-  [DebuggerHidden]
-  private IEnumerator HandleCharacterChange()
-  {
-    // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new ChangeToNewCharacter__HandleCharacterChangec__Iterator0()
+    public override void Reset()
     {
-      _this = this
-    };
-  }
-
-  private PlayerController GeneratePlayer()
-  {
-    PlayerController primaryPlayer = GameManager.Instance.PrimaryPlayer;
-    Vector3 position = primaryPlayer.transform.position;
-    Object.Destroy((Object) primaryPlayer.gameObject);
-    GameManager.Instance.ClearPrimaryPlayer();
-    GameManager.PlayerPrefabForNewGame = (GameObject) BraveResources.Load(this.PlayerPrefabPath);
-    GameStatsManager.Instance.BeginNewSession(GameManager.PlayerPrefabForNewGame.GetComponent<PlayerController>());
-    PlayerController player = (PlayerController) null;
-    if ((Object) player == (Object) null)
-    {
-      GameObject gameObject = Object.Instantiate<GameObject>(GameManager.PlayerPrefabForNewGame, position, Quaternion.identity);
-      GameManager.PlayerPrefabForNewGame = (GameObject) null;
-      gameObject.SetActive(true);
-      player = gameObject.GetComponent<PlayerController>();
     }
-    FoyerCharacterSelectFlag component = this.Owner.GetComponent<FoyerCharacterSelectFlag>();
-    if ((bool) (Object) component && component.IsAlternateCostume)
-      player.SwapToAlternateCostume();
-    GameManager.Instance.PrimaryPlayer = player;
-    player.PlayerIDX = 0;
-    return player;
+
+    public override void OnEnter()
+    {
+      GameManager.Instance.StartCoroutine(this.HandleCharacterChange());
+    }
+
+    [DebuggerHidden]
+    private IEnumerator HandleCharacterChange()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new ChangeToNewCharacter__HandleCharacterChangec__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    private PlayerController GeneratePlayer()
+    {
+      PlayerController primaryPlayer = GameManager.Instance.PrimaryPlayer;
+      Vector3 position = primaryPlayer.transform.position;
+      Object.Destroy((Object) primaryPlayer.gameObject);
+      GameManager.Instance.ClearPrimaryPlayer();
+      GameManager.PlayerPrefabForNewGame = (GameObject) BraveResources.Load(this.PlayerPrefabPath);
+      GameStatsManager.Instance.BeginNewSession(GameManager.PlayerPrefabForNewGame.GetComponent<PlayerController>());
+      PlayerController player = (PlayerController) null;
+      if ((Object) player == (Object) null)
+      {
+        GameObject gameObject = Object.Instantiate<GameObject>(GameManager.PlayerPrefabForNewGame, position, Quaternion.identity);
+        GameManager.PlayerPrefabForNewGame = (GameObject) null;
+        gameObject.SetActive(true);
+        player = gameObject.GetComponent<PlayerController>();
+      }
+      FoyerCharacterSelectFlag component = this.Owner.GetComponent<FoyerCharacterSelectFlag>();
+      if ((bool) (Object) component && component.IsAlternateCostume)
+        player.SwapToAlternateCostume();
+      GameManager.Instance.PrimaryPlayer = player;
+      player.PlayerIDX = 0;
+      return player;
+    }
   }
 }

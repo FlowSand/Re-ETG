@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector;
-
-public interface IInspectorAttributeOrder
+namespace FullInspector
 {
-  double Order { get; }
+  public interface IInspectorAttributeOrder
+  {
+    double Order { get; }
+  }
 }

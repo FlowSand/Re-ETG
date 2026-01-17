@@ -5,26 +5,27 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class RazerOnzaControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public RazerOnzaControllerMacProfile()
+  public class RazerOnzaControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Razer Onza Controller";
-    this.Meta = "Razer Onza Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[2]
+    public RazerOnzaControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Razer Onza Controller";
+      this.Meta = "Razer Onza Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[2]
       {
-        VendorID = new ushort?((ushort) 7085),
-        ProductID = new ushort?((ushort) 64769)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 5769),
-        ProductID = new ushort?((ushort) 64769)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 7085),
+          ProductID = new ushort?((ushort) 64769)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 5769),
+          ProductID = new ushort?((ushort) 64769)
+        }
+      };
+    }
   }
 }

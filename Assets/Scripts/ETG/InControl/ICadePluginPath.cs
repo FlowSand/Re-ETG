@@ -7,8 +7,9 @@
 using UnityEngine;
 
 #nullable disable
-namespace InControl;
-
-public class ICadePluginPath : ScriptableObject
+namespace InControl
 {
+  public class ICadePluginPath : ScriptableObject
+  {
+  }
 }

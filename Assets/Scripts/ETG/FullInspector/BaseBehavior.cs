@@ -5,8 +5,9 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector;
-
-public abstract class BaseBehavior : BaseBehavior<FullSerializerSerializer>
+namespace FullInspector
 {
+  public abstract class BaseBehavior : BaseBehavior<FullSerializerSerializer>
+  {
+  }
 }

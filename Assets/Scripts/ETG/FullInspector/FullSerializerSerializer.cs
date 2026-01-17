@@ -13,93 +13,94 @@ using System.Reflection;
 using UnityEngine;
 
 #nullable disable
-namespace FullInspector;
-
-public class FullSerializerSerializer : BaseSerializer
+namespace FullInspector
 {
-  [ThreadStatic]
-  private static fsSerializer _serializer;
-  private static readonly List<fsSerializer> _serializers = new List<fsSerializer>();
-  private static readonly List<System.Type> _converters = new List<System.Type>();
-  private static readonly List<System.Type> _processors = new List<System.Type>();
-
-  static FullSerializerSerializer()
+  public class FullSerializerSerializer : BaseSerializer
   {
-    FullSerializerSerializer.AddConverter<UnityObjectConverter>();
-    FullSerializerSerializer.AddProcessor<SerializationCallbackReceiverObjectProcessor>();
-  }
+    [ThreadStatic]
+    private static fsSerializer _serializer;
+    private static readonly List<fsSerializer> _serializers = new List<fsSerializer>();
+    private static readonly List<System.Type> _converters = new List<System.Type>();
+    private static readonly List<System.Type> _processors = new List<System.Type>();
 
-  private static fsSerializer Serializer
-  {
-    get
+    static FullSerializerSerializer()
     {
-      if (FullSerializerSerializer._serializer == null)
+      FullSerializerSerializer.AddConverter<UnityObjectConverter>();
+      FullSerializerSerializer.AddProcessor<SerializationCallbackReceiverObjectProcessor>();
+    }
+
+    private static fsSerializer Serializer
+    {
+      get
       {
-        lock ((object) typeof (FullSerializerSerializer))
+        if (FullSerializerSerializer._serializer == null)
         {
-          FullSerializerSerializer._serializer = new fsSerializer();
-          FullSerializerSerializer._serializers.Add(FullSerializerSerializer._serializer);
-          foreach (System.Type converter in FullSerializerSerializer._converters)
-            FullSerializerSerializer._serializer.AddConverter((fsBaseConverter) Activator.CreateInstance(converter));
-          foreach (System.Type processor in FullSerializerSerializer._processors)
-            FullSerializerSerializer._serializer.AddProcessor((fsObjectProcessor) Activator.CreateInstance(processor));
+          lock ((object) typeof (FullSerializerSerializer))
+          {
+            FullSerializerSerializer._serializer = new fsSerializer();
+            FullSerializerSerializer._serializers.Add(FullSerializerSerializer._serializer);
+            foreach (System.Type converter in FullSerializerSerializer._converters)
+              FullSerializerSerializer._serializer.AddConverter((fsBaseConverter) Activator.CreateInstance(converter));
+            foreach (System.Type processor in FullSerializerSerializer._processors)
+              FullSerializerSerializer._serializer.AddProcessor((fsObjectProcessor) Activator.CreateInstance(processor));
+          }
         }
+        return FullSerializerSerializer._serializer;
       }
-      return FullSerializerSerializer._serializer;
     }
-  }
 
-  public static void AddConverter<TConverter>() where TConverter : fsConverter, new()
-  {
-    lock ((object) typeof (FullSerializerSerializer))
+    public static void AddConverter<TConverter>() where TConverter : fsConverter, new()
     {
-      FullSerializerSerializer._converters.Add(typeof (TConverter));
-      foreach (fsSerializer serializer in FullSerializerSerializer._serializers)
-        serializer.AddConverter((fsBaseConverter) new TConverter());
+      lock ((object) typeof (FullSerializerSerializer))
+      {
+        FullSerializerSerializer._converters.Add(typeof (TConverter));
+        foreach (fsSerializer serializer in FullSerializerSerializer._serializers)
+          serializer.AddConverter((fsBaseConverter) new TConverter());
+      }
     }
-  }
 
-  public static void AddProcessor<TProcessor>() where TProcessor : fsObjectProcessor, new()
-  {
-    lock ((object) typeof (FullSerializerSerializer))
+    public static void AddProcessor<TProcessor>() where TProcessor : fsObjectProcessor, new()
     {
-      FullSerializerSerializer._processors.Add(typeof (TProcessor));
-      foreach (fsSerializer serializer in FullSerializerSerializer._serializers)
-        serializer.AddProcessor((fsObjectProcessor) new TProcessor());
+      lock ((object) typeof (FullSerializerSerializer))
+      {
+        FullSerializerSerializer._processors.Add(typeof (TProcessor));
+        foreach (fsSerializer serializer in FullSerializerSerializer._serializers)
+          serializer.AddProcessor((fsObjectProcessor) new TProcessor());
+      }
     }
-  }
 
-  public override string Serialize(
-    MemberInfo storageType,
-    object value,
-    ISerializationOperator serializationOperator)
-  {
-    FullSerializerSerializer.Serializer.Context.Set<ISerializationOperator>(serializationOperator);
-    fsData data;
-    if (FullSerializerSerializer.EmitFailWarning(FullSerializerSerializer.Serializer.TrySerialize(BaseSerializer.GetStorageType(storageType), value, out data)))
-      return (string) null;
-    return fiSettings.PrettyPrintSerializedJson ? fsJsonPrinter.PrettyJson(data) : fsJsonPrinter.CompressedJson(data);
-  }
+    public override string Serialize(
+      MemberInfo storageType,
+      object value,
+      ISerializationOperator serializationOperator)
+    {
+      FullSerializerSerializer.Serializer.Context.Set<ISerializationOperator>(serializationOperator);
+      fsData data;
+      if (FullSerializerSerializer.EmitFailWarning(FullSerializerSerializer.Serializer.TrySerialize(BaseSerializer.GetStorageType(storageType), value, out data)))
+        return (string) null;
+      return fiSettings.PrettyPrintSerializedJson ? fsJsonPrinter.PrettyJson(data) : fsJsonPrinter.CompressedJson(data);
+    }
 
-  public override object Deserialize(
-    MemberInfo storageType,
-    string serializedState,
-    ISerializationOperator serializationOperator)
-  {
-    fsData data;
-    if (FullSerializerSerializer.EmitFailWarning(fsJsonParser.Parse(serializedState, out data)))
-      return (object) null;
-    FullSerializerSerializer.Serializer.Context.Set<ISerializationOperator>(serializationOperator);
-    object result = (object) null;
-    return FullSerializerSerializer.EmitFailWarning(FullSerializerSerializer.Serializer.TryDeserialize(data, BaseSerializer.GetStorageType(storageType), ref result)) ? (object) null : result;
-  }
+    public override object Deserialize(
+      MemberInfo storageType,
+      string serializedState,
+      ISerializationOperator serializationOperator)
+    {
+      fsData data;
+      if (FullSerializerSerializer.EmitFailWarning(fsJsonParser.Parse(serializedState, out data)))
+        return (object) null;
+      FullSerializerSerializer.Serializer.Context.Set<ISerializationOperator>(serializationOperator);
+      object result = (object) null;
+      return FullSerializerSerializer.EmitFailWarning(FullSerializerSerializer.Serializer.TryDeserialize(data, BaseSerializer.GetStorageType(storageType), ref result)) ? (object) null : result;
+    }
 
-  public override bool SupportsMultithreading => true;
+    public override bool SupportsMultithreading => true;
 
-  private static bool EmitFailWarning(fsResult result)
-  {
-    if (fiSettings.EmitWarnings && result.RawMessages.Any<string>())
-      Debug.LogWarning((object) result.FormattedMessages);
-    return result.Failed;
+    private static bool EmitFailWarning(fsResult result)
+    {
+      if (fiSettings.EmitWarnings && result.RawMessages.Any<string>())
+        Debug.LogWarning((object) result.FormattedMessages);
+      return result.Failed;
+    }
   }
 }

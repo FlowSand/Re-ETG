@@ -7,9 +7,10 @@
 using UnityEngine;
 
 #nullable disable
-namespace FullInspector;
-
-public interface tkContextLabelRequest
+namespace FullInspector
 {
-  GUIContent Label { get; set; }
+  public interface tkContextLabelRequest
+  {
+    GUIContent Label { get; set; }
+  }
 }

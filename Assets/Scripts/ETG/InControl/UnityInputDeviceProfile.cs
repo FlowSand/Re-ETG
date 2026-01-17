@@ -11,338 +11,339 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 
 #nullable disable
-namespace InControl;
-
-public class UnityInputDeviceProfile : UnityInputDeviceProfileBase
+namespace InControl
 {
-  [SerializeField]
-  protected string[] JoystickNames;
-  [SerializeField]
-  protected string[] JoystickRegex;
-  [SerializeField]
-  protected string LastResortRegex;
-  protected static InputControlSource Button0 = UnityInputDeviceProfile.Button(0);
-  protected static InputControlSource Button1 = UnityInputDeviceProfile.Button(1);
-  protected static InputControlSource Button2 = UnityInputDeviceProfile.Button(2);
-  protected static InputControlSource Button3 = UnityInputDeviceProfile.Button(3);
-  protected static InputControlSource Button4 = UnityInputDeviceProfile.Button(4);
-  protected static InputControlSource Button5 = UnityInputDeviceProfile.Button(5);
-  protected static InputControlSource Button6 = UnityInputDeviceProfile.Button(6);
-  protected static InputControlSource Button7 = UnityInputDeviceProfile.Button(7);
-  protected static InputControlSource Button8 = UnityInputDeviceProfile.Button(8);
-  protected static InputControlSource Button9 = UnityInputDeviceProfile.Button(9);
-  protected static InputControlSource Button10 = UnityInputDeviceProfile.Button(10);
-  protected static InputControlSource Button11 = UnityInputDeviceProfile.Button(11);
-  protected static InputControlSource Button12 = UnityInputDeviceProfile.Button(12);
-  protected static InputControlSource Button13 = UnityInputDeviceProfile.Button(13);
-  protected static InputControlSource Button14 = UnityInputDeviceProfile.Button(14);
-  protected static InputControlSource Button15 = UnityInputDeviceProfile.Button(15);
-  protected static InputControlSource Button16 = UnityInputDeviceProfile.Button(16 /*0x10*/);
-  protected static InputControlSource Button17 = UnityInputDeviceProfile.Button(17);
-  protected static InputControlSource Button18 = UnityInputDeviceProfile.Button(18);
-  protected static InputControlSource Button19 = UnityInputDeviceProfile.Button(19);
-  protected static InputControlSource Analog0 = UnityInputDeviceProfile.Analog(0);
-  protected static InputControlSource Analog1 = UnityInputDeviceProfile.Analog(1);
-  protected static InputControlSource Analog2 = UnityInputDeviceProfile.Analog(2);
-  protected static InputControlSource Analog3 = UnityInputDeviceProfile.Analog(3);
-  protected static InputControlSource Analog4 = UnityInputDeviceProfile.Analog(4);
-  protected static InputControlSource Analog5 = UnityInputDeviceProfile.Analog(5);
-  protected static InputControlSource Analog6 = UnityInputDeviceProfile.Analog(6);
-  protected static InputControlSource Analog7 = UnityInputDeviceProfile.Analog(7);
-  protected static InputControlSource Analog8 = UnityInputDeviceProfile.Analog(8);
-  protected static InputControlSource Analog9 = UnityInputDeviceProfile.Analog(9);
-  protected static InputControlSource Analog10 = UnityInputDeviceProfile.Analog(10);
-  protected static InputControlSource Analog11 = UnityInputDeviceProfile.Analog(11);
-  protected static InputControlSource Analog12 = UnityInputDeviceProfile.Analog(12);
-  protected static InputControlSource Analog13 = UnityInputDeviceProfile.Analog(13);
-  protected static InputControlSource Analog14 = UnityInputDeviceProfile.Analog(14);
-  protected static InputControlSource Analog15 = UnityInputDeviceProfile.Analog(15);
-  protected static InputControlSource Analog16 = UnityInputDeviceProfile.Analog(16 /*0x10*/);
-  protected static InputControlSource Analog17 = UnityInputDeviceProfile.Analog(17);
-  protected static InputControlSource Analog18 = UnityInputDeviceProfile.Analog(18);
-  protected static InputControlSource Analog19 = UnityInputDeviceProfile.Analog(19);
-  protected static InputControlSource MenuKey = (InputControlSource) new UnityKeyCodeSource(new KeyCode[1]
+  public class UnityInputDeviceProfile : UnityInputDeviceProfileBase
   {
-    KeyCode.Menu
-  });
-  protected static InputControlSource EscapeKey = (InputControlSource) new UnityKeyCodeSource(new KeyCode[1]
-  {
-    KeyCode.Escape
-  });
-  protected static InputControlSource MouseButton0 = (InputControlSource) new UnityMouseButtonSource(0);
-  protected static InputControlSource MouseButton1 = (InputControlSource) new UnityMouseButtonSource(1);
-  protected static InputControlSource MouseButton2 = (InputControlSource) new UnityMouseButtonSource(2);
-  protected static InputControlSource MouseXAxis = (InputControlSource) new UnityMouseAxisSource("x");
-  protected static InputControlSource MouseYAxis = (InputControlSource) new UnityMouseAxisSource("y");
-  protected static InputControlSource MouseScrollWheel = (InputControlSource) new UnityMouseAxisSource("z");
-
-  public UnityInputDeviceProfile()
-  {
-    this.Sensitivity = 1f;
-    this.LowerDeadZone = 0.2f;
-    this.UpperDeadZone = 0.9f;
-    this.MinUnityVersion = VersionInfo.Min;
-    this.MaxUnityVersion = VersionInfo.Max;
-  }
-
-  [SerializeField]
-  public VersionInfo MinUnityVersion { get; protected set; }
-
-  [SerializeField]
-  public VersionInfo MaxUnityVersion { get; protected set; }
-
-  public override bool IsJoystick
-  {
-    get
+    [SerializeField]
+    protected string[] JoystickNames;
+    [SerializeField]
+    protected string[] JoystickRegex;
+    [SerializeField]
+    protected string LastResortRegex;
+    protected static InputControlSource Button0 = UnityInputDeviceProfile.Button(0);
+    protected static InputControlSource Button1 = UnityInputDeviceProfile.Button(1);
+    protected static InputControlSource Button2 = UnityInputDeviceProfile.Button(2);
+    protected static InputControlSource Button3 = UnityInputDeviceProfile.Button(3);
+    protected static InputControlSource Button4 = UnityInputDeviceProfile.Button(4);
+    protected static InputControlSource Button5 = UnityInputDeviceProfile.Button(5);
+    protected static InputControlSource Button6 = UnityInputDeviceProfile.Button(6);
+    protected static InputControlSource Button7 = UnityInputDeviceProfile.Button(7);
+    protected static InputControlSource Button8 = UnityInputDeviceProfile.Button(8);
+    protected static InputControlSource Button9 = UnityInputDeviceProfile.Button(9);
+    protected static InputControlSource Button10 = UnityInputDeviceProfile.Button(10);
+    protected static InputControlSource Button11 = UnityInputDeviceProfile.Button(11);
+    protected static InputControlSource Button12 = UnityInputDeviceProfile.Button(12);
+    protected static InputControlSource Button13 = UnityInputDeviceProfile.Button(13);
+    protected static InputControlSource Button14 = UnityInputDeviceProfile.Button(14);
+    protected static InputControlSource Button15 = UnityInputDeviceProfile.Button(15);
+    protected static InputControlSource Button16 = UnityInputDeviceProfile.Button(16 /*0x10*/);
+    protected static InputControlSource Button17 = UnityInputDeviceProfile.Button(17);
+    protected static InputControlSource Button18 = UnityInputDeviceProfile.Button(18);
+    protected static InputControlSource Button19 = UnityInputDeviceProfile.Button(19);
+    protected static InputControlSource Analog0 = UnityInputDeviceProfile.Analog(0);
+    protected static InputControlSource Analog1 = UnityInputDeviceProfile.Analog(1);
+    protected static InputControlSource Analog2 = UnityInputDeviceProfile.Analog(2);
+    protected static InputControlSource Analog3 = UnityInputDeviceProfile.Analog(3);
+    protected static InputControlSource Analog4 = UnityInputDeviceProfile.Analog(4);
+    protected static InputControlSource Analog5 = UnityInputDeviceProfile.Analog(5);
+    protected static InputControlSource Analog6 = UnityInputDeviceProfile.Analog(6);
+    protected static InputControlSource Analog7 = UnityInputDeviceProfile.Analog(7);
+    protected static InputControlSource Analog8 = UnityInputDeviceProfile.Analog(8);
+    protected static InputControlSource Analog9 = UnityInputDeviceProfile.Analog(9);
+    protected static InputControlSource Analog10 = UnityInputDeviceProfile.Analog(10);
+    protected static InputControlSource Analog11 = UnityInputDeviceProfile.Analog(11);
+    protected static InputControlSource Analog12 = UnityInputDeviceProfile.Analog(12);
+    protected static InputControlSource Analog13 = UnityInputDeviceProfile.Analog(13);
+    protected static InputControlSource Analog14 = UnityInputDeviceProfile.Analog(14);
+    protected static InputControlSource Analog15 = UnityInputDeviceProfile.Analog(15);
+    protected static InputControlSource Analog16 = UnityInputDeviceProfile.Analog(16 /*0x10*/);
+    protected static InputControlSource Analog17 = UnityInputDeviceProfile.Analog(17);
+    protected static InputControlSource Analog18 = UnityInputDeviceProfile.Analog(18);
+    protected static InputControlSource Analog19 = UnityInputDeviceProfile.Analog(19);
+    protected static InputControlSource MenuKey = (InputControlSource) new UnityKeyCodeSource(new KeyCode[1]
     {
-      if (this.LastResortRegex != null || this.JoystickNames != null && this.JoystickNames.Length > 0)
-        return true;
-      return this.JoystickRegex != null && this.JoystickRegex.Length > 0;
+      KeyCode.Menu
+    });
+    protected static InputControlSource EscapeKey = (InputControlSource) new UnityKeyCodeSource(new KeyCode[1]
+    {
+      KeyCode.Escape
+    });
+    protected static InputControlSource MouseButton0 = (InputControlSource) new UnityMouseButtonSource(0);
+    protected static InputControlSource MouseButton1 = (InputControlSource) new UnityMouseButtonSource(1);
+    protected static InputControlSource MouseButton2 = (InputControlSource) new UnityMouseButtonSource(2);
+    protected static InputControlSource MouseXAxis = (InputControlSource) new UnityMouseAxisSource("x");
+    protected static InputControlSource MouseYAxis = (InputControlSource) new UnityMouseAxisSource("y");
+    protected static InputControlSource MouseScrollWheel = (InputControlSource) new UnityMouseAxisSource("z");
+
+    public UnityInputDeviceProfile()
+    {
+      this.Sensitivity = 1f;
+      this.LowerDeadZone = 0.2f;
+      this.UpperDeadZone = 0.9f;
+      this.MinUnityVersion = VersionInfo.Min;
+      this.MaxUnityVersion = VersionInfo.Max;
     }
-  }
 
-  public override bool HasJoystickName(string joystickName)
-  {
-    if (this.IsNotJoystick)
-      return false;
-    if (this.JoystickNames != null && ((IEnumerable<string>) this.JoystickNames).Contains<string>(joystickName, (IEqualityComparer<string>) StringComparer.OrdinalIgnoreCase))
-      return true;
-    if (this.JoystickRegex != null)
+    [SerializeField]
+    public VersionInfo MinUnityVersion { get; protected set; }
+
+    [SerializeField]
+    public VersionInfo MaxUnityVersion { get; protected set; }
+
+    public override bool IsJoystick
     {
-      for (int index = 0; index < this.JoystickRegex.Length; ++index)
+      get
       {
-        if (Regex.IsMatch(joystickName, this.JoystickRegex[index], RegexOptions.IgnoreCase))
+        if (this.LastResortRegex != null || this.JoystickNames != null && this.JoystickNames.Length > 0)
           return true;
+        return this.JoystickRegex != null && this.JoystickRegex.Length > 0;
       }
     }
-    return false;
-  }
 
-  public override bool HasLastResortRegex(string joystickName)
-  {
-    return !this.IsNotJoystick && this.LastResortRegex != null && Regex.IsMatch(joystickName, this.LastResortRegex, RegexOptions.IgnoreCase);
-  }
-
-  public override bool HasJoystickOrRegexName(string joystickName)
-  {
-    return this.HasJoystickName(joystickName) || this.HasLastResortRegex(joystickName);
-  }
-
-  public override bool IsSupportedOnThisPlatform
-  {
-    get => this.IsSupportedOnThisVersionOfUnity && base.IsSupportedOnThisPlatform;
-  }
-
-  private bool IsSupportedOnThisVersionOfUnity
-  {
-    get
+    public override bool HasJoystickName(string joystickName)
     {
-      VersionInfo versionInfo = VersionInfo.UnityVersion();
-      return versionInfo >= this.MinUnityVersion && versionInfo <= this.MaxUnityVersion;
+      if (this.IsNotJoystick)
+        return false;
+      if (this.JoystickNames != null && ((IEnumerable<string>) this.JoystickNames).Contains<string>(joystickName, (IEqualityComparer<string>) StringComparer.OrdinalIgnoreCase))
+        return true;
+      if (this.JoystickRegex != null)
+      {
+        for (int index = 0; index < this.JoystickRegex.Length; ++index)
+        {
+          if (Regex.IsMatch(joystickName, this.JoystickRegex[index], RegexOptions.IgnoreCase))
+            return true;
+        }
+      }
+      return false;
     }
-  }
 
-  protected static InputControlSource Button(int index)
-  {
-    return (InputControlSource) new UnityButtonSource(index);
-  }
-
-  protected static InputControlSource Analog(int index)
-  {
-    return (InputControlSource) new UnityAnalogSource(index);
-  }
-
-  protected static InputControlMapping LeftStickLeftMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    public override bool HasLastResortRegex(string joystickName)
     {
-      Handle = "Left Stick Left",
-      Target = InputControlType.LeftStickLeft,
-      Source = analog,
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return !this.IsNotJoystick && this.LastResortRegex != null && Regex.IsMatch(joystickName, this.LastResortRegex, RegexOptions.IgnoreCase);
+    }
 
-  protected static InputControlMapping LeftStickRightMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    public override bool HasJoystickOrRegexName(string joystickName)
     {
-      Handle = "Left Stick Right",
-      Target = InputControlType.LeftStickRight,
-      Source = analog,
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return this.HasJoystickName(joystickName) || this.HasLastResortRegex(joystickName);
+    }
 
-  protected static InputControlMapping LeftStickUpMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    public override bool IsSupportedOnThisPlatform
     {
-      Handle = "Left Stick Up",
-      Target = InputControlType.LeftStickUp,
-      Source = analog,
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      get => this.IsSupportedOnThisVersionOfUnity && base.IsSupportedOnThisPlatform;
+    }
 
-  protected static InputControlMapping LeftStickDownMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    private bool IsSupportedOnThisVersionOfUnity
     {
-      Handle = "Left Stick Down",
-      Target = InputControlType.LeftStickDown,
-      Source = analog,
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      get
+      {
+        VersionInfo versionInfo = VersionInfo.UnityVersion();
+        return versionInfo >= this.MinUnityVersion && versionInfo <= this.MaxUnityVersion;
+      }
+    }
 
-  protected static InputControlMapping RightStickLeftMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlSource Button(int index)
     {
-      Handle = "Right Stick Left",
-      Target = InputControlType.RightStickLeft,
-      Source = analog,
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return (InputControlSource) new UnityButtonSource(index);
+    }
 
-  protected static InputControlMapping RightStickRightMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlSource Analog(int index)
     {
-      Handle = "Right Stick Right",
-      Target = InputControlType.RightStickRight,
-      Source = analog,
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return (InputControlSource) new UnityAnalogSource(index);
+    }
 
-  protected static InputControlMapping RightStickUpMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping LeftStickLeftMapping(InputControlSource analog)
     {
-      Handle = "Right Stick Up",
-      Target = InputControlType.RightStickUp,
-      Source = analog,
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Left Stick Left",
+        Target = InputControlType.LeftStickLeft,
+        Source = analog,
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping RightStickDownMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping LeftStickRightMapping(InputControlSource analog)
     {
-      Handle = "Right Stick Down",
-      Target = InputControlType.RightStickDown,
-      Source = analog,
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Left Stick Right",
+        Target = InputControlType.LeftStickRight,
+        Source = analog,
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping LeftTriggerMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping LeftStickUpMapping(InputControlSource analog)
     {
-      Handle = "Left Trigger",
-      Target = InputControlType.LeftTrigger,
-      Source = analog,
-      SourceRange = InputRange.MinusOneToOne,
-      TargetRange = InputRange.ZeroToOne,
-      IgnoreInitialZeroValue = true
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Left Stick Up",
+        Target = InputControlType.LeftStickUp,
+        Source = analog,
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping RightTriggerMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping LeftStickDownMapping(InputControlSource analog)
     {
-      Handle = "Right Trigger",
-      Target = InputControlType.RightTrigger,
-      Source = analog,
-      SourceRange = InputRange.MinusOneToOne,
-      TargetRange = InputRange.ZeroToOne,
-      IgnoreInitialZeroValue = true
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Left Stick Down",
+        Target = InputControlType.LeftStickDown,
+        Source = analog,
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping DPadLeftMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping RightStickLeftMapping(InputControlSource analog)
     {
-      Handle = "DPad Left",
-      Target = InputControlType.DPadLeft,
-      Source = analog,
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Right Stick Left",
+        Target = InputControlType.RightStickLeft,
+        Source = analog,
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping DPadRightMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping RightStickRightMapping(InputControlSource analog)
     {
-      Handle = "DPad Right",
-      Target = InputControlType.DPadRight,
-      Source = analog,
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Right Stick Right",
+        Target = InputControlType.RightStickRight,
+        Source = analog,
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping DPadUpMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping RightStickUpMapping(InputControlSource analog)
     {
-      Handle = "DPad Up",
-      Target = InputControlType.DPadUp,
-      Source = analog,
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Right Stick Up",
+        Target = InputControlType.RightStickUp,
+        Source = analog,
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping DPadDownMapping(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping RightStickDownMapping(InputControlSource analog)
     {
-      Handle = "DPad Down",
-      Target = InputControlType.DPadDown,
-      Source = analog,
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Right Stick Down",
+        Target = InputControlType.RightStickDown,
+        Source = analog,
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
 
-  protected static InputControlMapping DPadUpMapping2(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping LeftTriggerMapping(InputControlSource analog)
     {
-      Handle = "DPad Up",
-      Target = InputControlType.DPadUp,
-      Source = analog,
-      SourceRange = InputRange.ZeroToOne,
-      TargetRange = InputRange.ZeroToOne
-    };
-  }
+      return new InputControlMapping()
+      {
+        Handle = "Left Trigger",
+        Target = InputControlType.LeftTrigger,
+        Source = analog,
+        SourceRange = InputRange.MinusOneToOne,
+        TargetRange = InputRange.ZeroToOne,
+        IgnoreInitialZeroValue = true
+      };
+    }
 
-  protected static InputControlMapping DPadDownMapping2(InputControlSource analog)
-  {
-    return new InputControlMapping()
+    protected static InputControlMapping RightTriggerMapping(InputControlSource analog)
     {
-      Handle = "DPad Down",
-      Target = InputControlType.DPadDown,
-      Source = analog,
-      SourceRange = InputRange.ZeroToMinusOne,
-      TargetRange = InputRange.ZeroToOne
-    };
+      return new InputControlMapping()
+      {
+        Handle = "Right Trigger",
+        Target = InputControlType.RightTrigger,
+        Source = analog,
+        SourceRange = InputRange.MinusOneToOne,
+        TargetRange = InputRange.ZeroToOne,
+        IgnoreInitialZeroValue = true
+      };
+    }
+
+    protected static InputControlMapping DPadLeftMapping(InputControlSource analog)
+    {
+      return new InputControlMapping()
+      {
+        Handle = "DPad Left",
+        Target = InputControlType.DPadLeft,
+        Source = analog,
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
+
+    protected static InputControlMapping DPadRightMapping(InputControlSource analog)
+    {
+      return new InputControlMapping()
+      {
+        Handle = "DPad Right",
+        Target = InputControlType.DPadRight,
+        Source = analog,
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
+
+    protected static InputControlMapping DPadUpMapping(InputControlSource analog)
+    {
+      return new InputControlMapping()
+      {
+        Handle = "DPad Up",
+        Target = InputControlType.DPadUp,
+        Source = analog,
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
+
+    protected static InputControlMapping DPadDownMapping(InputControlSource analog)
+    {
+      return new InputControlMapping()
+      {
+        Handle = "DPad Down",
+        Target = InputControlType.DPadDown,
+        Source = analog,
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
+
+    protected static InputControlMapping DPadUpMapping2(InputControlSource analog)
+    {
+      return new InputControlMapping()
+      {
+        Handle = "DPad Up",
+        Target = InputControlType.DPadUp,
+        Source = analog,
+        SourceRange = InputRange.ZeroToOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
+
+    protected static InputControlMapping DPadDownMapping2(InputControlSource analog)
+    {
+      return new InputControlMapping()
+      {
+        Handle = "DPad Down",
+        Target = InputControlType.DPadDown,
+        Source = analog,
+        SourceRange = InputRange.ZeroToMinusOne,
+        TargetRange = InputRange.ZeroToOne
+      };
+    }
   }
 }

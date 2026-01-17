@@ -5,15 +5,16 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(".Brave")]
-[Tooltip("Prevents the FSM from firing global transitions.")]
-public class SuppressGlobalTransitions : FsmStateAction, INonFinishingState
+namespace HutongGames.PlayMaker.Actions
 {
-  public override void OnEnter()
+  [ActionCategory(".Brave")]
+  [Tooltip("Prevents the FSM from firing global transitions.")]
+  public class SuppressGlobalTransitions : FsmStateAction, INonFinishingState
   {
-    this.Fsm.SuppressGlobalTransitions = true;
-    this.Finish();
+    public override void OnEnter()
+    {
+      this.Fsm.SuppressGlobalTransitions = true;
+      this.Finish();
+    }
   }
 }

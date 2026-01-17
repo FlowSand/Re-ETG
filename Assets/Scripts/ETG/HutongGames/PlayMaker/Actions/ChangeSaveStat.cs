@@ -5,26 +5,27 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[Tooltip("Sends Events based on the data in a player save.")]
-[ActionCategory(".Brave")]
-public class ChangeSaveStat : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public TrackedStats stat;
-  public FsmFloat statChange;
-
-  public override void Reset()
+  [Tooltip("Sends Events based on the data in a player save.")]
+  [ActionCategory(".Brave")]
+  public class ChangeSaveStat : FsmStateAction
   {
-    this.stat = TrackedStats.BULLETS_FIRED;
-    this.statChange = (FsmFloat) 0.0f;
-  }
+    public TrackedStats stat;
+    public FsmFloat statChange;
 
-  public override string ErrorCheck() => string.Empty;
+    public override void Reset()
+    {
+      this.stat = TrackedStats.BULLETS_FIRED;
+      this.statChange = (FsmFloat) 0.0f;
+    }
 
-  public override void OnEnter()
-  {
-    GameStatsManager.Instance.RegisterStatChange(this.stat, this.statChange.Value);
-    this.Finish();
+    public override string ErrorCheck() => string.Empty;
+
+    public override void OnEnter()
+    {
+      GameStatsManager.Instance.RegisterStatChange(this.stat, this.statChange.Value);
+      this.Finish();
+    }
   }
 }

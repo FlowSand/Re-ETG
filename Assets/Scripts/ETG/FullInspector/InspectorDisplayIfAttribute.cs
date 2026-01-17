@@ -7,16 +7,17 @@
 using System;
 
 #nullable disable
-namespace FullInspector;
-
-[Obsolete("Please use InspectorShowIfAttribute instead")]
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
-public sealed class InspectorDisplayIfAttribute : Attribute
+namespace FullInspector
 {
-  public string ConditionalMemberName;
-
-  public InspectorDisplayIfAttribute(string conditionalMemberName)
+  [Obsolete("Please use InspectorShowIfAttribute instead")]
+  [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+  public sealed class InspectorDisplayIfAttribute : Attribute
   {
-    this.ConditionalMemberName = conditionalMemberName;
+    public string ConditionalMemberName;
+
+    public InspectorDisplayIfAttribute(string conditionalMemberName)
+    {
+      this.ConditionalMemberName = conditionalMemberName;
+    }
   }
 }

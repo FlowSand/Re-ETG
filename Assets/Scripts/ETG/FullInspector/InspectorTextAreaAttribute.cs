@@ -7,17 +7,18 @@
 using System;
 
 #nullable disable
-namespace FullInspector;
-
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
-public sealed class InspectorTextAreaAttribute : Attribute
+namespace FullInspector
 {
-  public float Height;
-
-  public InspectorTextAreaAttribute()
-    : this(250f)
+  [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+  public sealed class InspectorTextAreaAttribute : Attribute
   {
-  }
+    public float Height;
 
-  public InspectorTextAreaAttribute(float height) => this.Height = height;
+    public InspectorTextAreaAttribute()
+      : this(250f)
+    {
+    }
+
+    public InspectorTextAreaAttribute(float height) => this.Height = height;
+  }
 }

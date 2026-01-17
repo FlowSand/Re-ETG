@@ -5,26 +5,27 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class RazerSabertoothEliteControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public RazerSabertoothEliteControllerMacProfile()
+  public class RazerSabertoothEliteControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Razer Sabertooth Elite Controller";
-    this.Meta = "Razer Sabertooth Elite Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[2]
+    public RazerSabertoothEliteControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Razer Sabertooth Elite Controller";
+      this.Meta = "Razer Sabertooth Elite Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[2]
       {
-        VendorID = new ushort?((ushort) 5769),
-        ProductID = new ushort?((ushort) 65024)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 9414),
-        ProductID = new ushort?((ushort) 23812)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 5769),
+          ProductID = new ushort?((ushort) 65024)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 9414),
+          ProductID = new ushort?((ushort) 23812)
+        }
+      };
+    }
   }
 }

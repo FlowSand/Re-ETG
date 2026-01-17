@@ -7,39 +7,40 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Network)]
-[HutongGames.PlayMaker.Tooltip("Request a host list from the master server.\n\nUse MasterServer Get Host Data to get info on each host in the host list.")]
-public class MasterServerRequestHostList : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("The unique game type name.")]
-  [RequiredField]
-  public FsmString gameTypeName;
-  [HutongGames.PlayMaker.Tooltip("Event sent when the host list has arrived. NOTE: The action will not Finish until the host list arrives.")]
-  public FsmEvent HostListArrivedEvent;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.Network)]
+  [HutongGames.PlayMaker.Tooltip("Request a host list from the master server.\n\nUse MasterServer Get Host Data to get info on each host in the host list.")]
+  public class MasterServerRequestHostList : FsmStateAction
   {
-    this.gameTypeName = (FsmString) null;
-    this.HostListArrivedEvent = (FsmEvent) null;
-  }
+    [HutongGames.PlayMaker.Tooltip("The unique game type name.")]
+    [RequiredField]
+    public FsmString gameTypeName;
+    [HutongGames.PlayMaker.Tooltip("Event sent when the host list has arrived. NOTE: The action will not Finish until the host list arrives.")]
+    public FsmEvent HostListArrivedEvent;
 
-  public override void OnEnter() => this.DoMasterServerRequestHost();
+    public override void Reset()
+    {
+      this.gameTypeName = (FsmString) null;
+      this.HostListArrivedEvent = (FsmEvent) null;
+    }
 
-  public override void OnUpdate() => this.WatchServerRequestHost();
+    public override void OnEnter() => this.DoMasterServerRequestHost();
 
-  private void DoMasterServerRequestHost()
-  {
-    MasterServer.ClearHostList();
-    MasterServer.RequestHostList(this.gameTypeName.Value);
-  }
+    public override void OnUpdate() => this.WatchServerRequestHost();
 
-  private void WatchServerRequestHost()
-  {
-    if (MasterServer.PollHostList().Length == 0)
-      return;
-    this.Fsm.Event(this.HostListArrivedEvent);
-    this.Finish();
+    private void DoMasterServerRequestHost()
+    {
+      MasterServer.ClearHostList();
+      MasterServer.RequestHostList(this.gameTypeName.Value);
+    }
+
+    private void WatchServerRequestHost()
+    {
+      if (MasterServer.PollHostList().Length == 0)
+        return;
+      this.Fsm.Event(this.HostListArrivedEvent);
+      this.Finish();
+    }
   }
 }

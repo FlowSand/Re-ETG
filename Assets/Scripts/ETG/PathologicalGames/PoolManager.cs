@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace PathologicalGames;
-
-public static class PoolManager
+namespace PathologicalGames
 {
-  public static readonly SpawnPoolsDict Pools = new SpawnPoolsDict();
+  public static class PoolManager
+  {
+    public static readonly SpawnPoolsDict Pools = new SpawnPoolsDict();
+  }
 }

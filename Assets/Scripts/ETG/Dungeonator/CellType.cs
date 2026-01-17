@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace Dungeonator;
-
-public enum CellType
+namespace Dungeonator
 {
-  WALL = 1,
-  FLOOR = 2,
-  PIT = 4,
+  public enum CellType
+  {
+    WALL = 1,
+    FLOOR = 2,
+    PIT = 4,
+  }
 }

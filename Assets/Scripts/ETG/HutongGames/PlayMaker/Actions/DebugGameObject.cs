@@ -5,31 +5,32 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[Tooltip("Logs the value of a Game Object Variable in the PlayMaker Log Window.")]
-[ActionCategory(ActionCategory.Debug)]
-public class DebugGameObject : BaseLogAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [Tooltip("Info, Warning, or Error.")]
-  public LogLevel logLevel;
-  [Tooltip("The GameObject variable to debug.")]
-  [UIHint(UIHint.Variable)]
-  public FsmGameObject gameObject;
-
-  public override void Reset()
+  [Tooltip("Logs the value of a Game Object Variable in the PlayMaker Log Window.")]
+  [ActionCategory(ActionCategory.Debug)]
+  public class DebugGameObject : BaseLogAction
   {
-    this.logLevel = LogLevel.Info;
-    this.gameObject = (FsmGameObject) null;
-    base.Reset();
-  }
+    [Tooltip("Info, Warning, or Error.")]
+    public LogLevel logLevel;
+    [Tooltip("The GameObject variable to debug.")]
+    [UIHint(UIHint.Variable)]
+    public FsmGameObject gameObject;
 
-  public override void OnEnter()
-  {
-    string text = "None";
-    if (!this.gameObject.IsNone)
-      text = $"{this.gameObject.Name}: {(object) this.gameObject}";
-    ActionHelpers.DebugLog(this.Fsm, this.logLevel, text, this.sendToUnityLog);
-    this.Finish();
+    public override void Reset()
+    {
+      this.logLevel = LogLevel.Info;
+      this.gameObject = (FsmGameObject) null;
+      base.Reset();
+    }
+
+    public override void OnEnter()
+    {
+      string text = "None";
+      if (!this.gameObject.IsNone)
+        text = $"{this.gameObject.Name}: {(object) this.gameObject}";
+      ActionHelpers.DebugLog(this.Fsm, this.logLevel, text, this.sendToUnityLog);
+      this.Finish();
+    }
   }
 }

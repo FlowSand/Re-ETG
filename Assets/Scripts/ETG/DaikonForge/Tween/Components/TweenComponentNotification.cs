@@ -5,6 +5,7 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace DaikonForge.Tween.Components;
-
-public delegate void TweenComponentNotification(TweenPlayableComponent sender);
+namespace DaikonForge.Tween.Components
+{
+  public delegate void TweenComponentNotification(TweenPlayableComponent sender);
+}

@@ -7,47 +7,48 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HelpUrl("https://hutonggames.fogbugz.com/default.asp?W721")]
-[HutongGames.PlayMaker.Tooltip("Resume a sprite animation. Use Tk2dPauseAnimation for dynamic control. \nNOTE: The Game Object must have a tk2dSpriteAnimator attached.")]
-[ActionCategory("2D Toolkit/SpriteAnimator")]
-public class Tk2dResumeAnimation : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [CheckForComponent(typeof (tk2dSpriteAnimator))]
-  [HutongGames.PlayMaker.Tooltip("The Game Object to work with. NOTE: The Game Object must have a tk2dSpriteAnimator component attached.")]
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
-  private tk2dSpriteAnimator _sprite;
-
-  private void _getSprite()
+  [HelpUrl("https://hutonggames.fogbugz.com/default.asp?W721")]
+  [HutongGames.PlayMaker.Tooltip("Resume a sprite animation. Use Tk2dPauseAnimation for dynamic control. \nNOTE: The Game Object must have a tk2dSpriteAnimator attached.")]
+  [ActionCategory("2D Toolkit/SpriteAnimator")]
+  public class Tk2dResumeAnimation : FsmStateAction
   {
-    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-    if ((Object) ownerDefaultTarget == (Object) null)
-      return;
-    this._sprite = ownerDefaultTarget.GetComponent<tk2dSpriteAnimator>();
-  }
+    [CheckForComponent(typeof (tk2dSpriteAnimator))]
+    [HutongGames.PlayMaker.Tooltip("The Game Object to work with. NOTE: The Game Object must have a tk2dSpriteAnimator component attached.")]
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    private tk2dSpriteAnimator _sprite;
 
-  public override void Reset() => this.gameObject = (FsmOwnerDefault) null;
-
-  public override void OnEnter()
-  {
-    this._getSprite();
-    this.DoResumeAnimation();
-    this.Finish();
-  }
-
-  private void DoResumeAnimation()
-  {
-    if ((Object) this._sprite == (Object) null)
+    private void _getSprite()
     {
-      this.LogWarning("Missing tk2dSpriteAnimator component");
-    }
-    else
-    {
-      if (!this._sprite.Paused)
+      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+      if ((Object) ownerDefaultTarget == (Object) null)
         return;
-      this._sprite.Resume();
+      this._sprite = ownerDefaultTarget.GetComponent<tk2dSpriteAnimator>();
+    }
+
+    public override void Reset() => this.gameObject = (FsmOwnerDefault) null;
+
+    public override void OnEnter()
+    {
+      this._getSprite();
+      this.DoResumeAnimation();
+      this.Finish();
+    }
+
+    private void DoResumeAnimation()
+    {
+      if ((Object) this._sprite == (Object) null)
+      {
+        this.LogWarning("Missing tk2dSpriteAnimator component");
+      }
+      else
+      {
+        if (!this._sprite.Paused)
+          return;
+        this._sprite.Resume();
+      }
     }
   }
 }

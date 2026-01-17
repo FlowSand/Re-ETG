@@ -7,10 +7,11 @@
 using System;
 
 #nullable disable
-namespace AK.Wwise;
-
-[Serializable]
-public class CallbackFlags
+namespace AK.Wwise
 {
-  public uint value;
+  [Serializable]
+  public class CallbackFlags
+  {
+    public uint value;
+  }
 }

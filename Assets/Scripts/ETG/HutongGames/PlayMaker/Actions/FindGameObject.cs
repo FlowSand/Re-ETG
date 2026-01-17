@@ -7,60 +7,61 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Finds a Game Object by Name and/or Tag.")]
-[ActionCategory(ActionCategory.GameObject)]
-public class FindGameObject : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("The name of the GameObject to find. You can leave this empty if you specify a Tag.")]
-  public FsmString objectName;
-  [HutongGames.PlayMaker.Tooltip("Find a GameObject with this tag. If Object Name is specified then both name and Tag must match.")]
-  [UIHint(UIHint.Tag)]
-  public FsmString withTag;
-  [HutongGames.PlayMaker.Tooltip("Store the result in a GameObject variable.")]
-  [UIHint(UIHint.Variable)]
-  [RequiredField]
-  public FsmGameObject store;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Finds a Game Object by Name and/or Tag.")]
+  [ActionCategory(ActionCategory.GameObject)]
+  public class FindGameObject : FsmStateAction
   {
-    this.objectName = (FsmString) string.Empty;
-    this.withTag = (FsmString) "Untagged";
-    this.store = (FsmGameObject) null;
-  }
+    [HutongGames.PlayMaker.Tooltip("The name of the GameObject to find. You can leave this empty if you specify a Tag.")]
+    public FsmString objectName;
+    [HutongGames.PlayMaker.Tooltip("Find a GameObject with this tag. If Object Name is specified then both name and Tag must match.")]
+    [UIHint(UIHint.Tag)]
+    public FsmString withTag;
+    [HutongGames.PlayMaker.Tooltip("Store the result in a GameObject variable.")]
+    [UIHint(UIHint.Variable)]
+    [RequiredField]
+    public FsmGameObject store;
 
-  public override void OnEnter()
-  {
-    this.Find();
-    this.Finish();
-  }
-
-  private void Find()
-  {
-    if (this.withTag.Value != "Untagged")
+    public override void Reset()
     {
-      if (!string.IsNullOrEmpty(this.objectName.Value))
+      this.objectName = (FsmString) string.Empty;
+      this.withTag = (FsmString) "Untagged";
+      this.store = (FsmGameObject) null;
+    }
+
+    public override void OnEnter()
+    {
+      this.Find();
+      this.Finish();
+    }
+
+    private void Find()
+    {
+      if (this.withTag.Value != "Untagged")
       {
-        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag(this.withTag.Value))
+        if (!string.IsNullOrEmpty(this.objectName.Value))
         {
-          if (gameObject.name == this.objectName.Value)
+          foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag(this.withTag.Value))
           {
-            this.store.Value = gameObject;
-            return;
+            if (gameObject.name == this.objectName.Value)
+            {
+              this.store.Value = gameObject;
+              return;
+            }
           }
+          this.store.Value = (GameObject) null;
         }
-        this.store.Value = (GameObject) null;
+        else
+          this.store.Value = GameObject.FindGameObjectWithTag(this.withTag.Value);
       }
       else
-        this.store.Value = GameObject.FindGameObjectWithTag(this.withTag.Value);
+        this.store.Value = GameObject.Find(this.objectName.Value);
     }
-    else
-      this.store.Value = GameObject.Find(this.objectName.Value);
-  }
 
-  public override string ErrorCheck()
-  {
-    return string.IsNullOrEmpty(this.objectName.Value) && string.IsNullOrEmpty(this.withTag.Value) ? "Specify Name, Tag, or both." : (string) null;
+    public override string ErrorCheck()
+    {
+      return string.IsNullOrEmpty(this.objectName.Value) && string.IsNullOrEmpty(this.withTag.Value) ? "Specify Name, Tag, or both." : (string) null;
+    }
   }
 }

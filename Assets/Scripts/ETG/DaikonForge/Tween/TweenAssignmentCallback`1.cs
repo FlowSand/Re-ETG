@@ -5,6 +5,7 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace DaikonForge.Tween;
-
-public delegate void TweenAssignmentCallback<T>(T currentValue);
+namespace DaikonForge.Tween
+{
+  public delegate void TweenAssignmentCallback<T>(T currentValue);
+}

@@ -7,72 +7,73 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Animator)]
-[HutongGames.PlayMaker.Tooltip("Sets the value of a float parameter")]
-public class SetAnimatorFloat : FsmStateActionAnimatorBase
+namespace HutongGames.PlayMaker.Actions
 {
-  [CheckForComponent(typeof (Animator))]
-  [HutongGames.PlayMaker.Tooltip("The target.")]
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
-  [UIHint(UIHint.AnimatorFloat)]
-  [HutongGames.PlayMaker.Tooltip("The animator parameter")]
-  [RequiredField]
-  public FsmString parameter;
-  [HutongGames.PlayMaker.Tooltip("The float value to assign to the animator parameter")]
-  public FsmFloat Value;
-  [HutongGames.PlayMaker.Tooltip("Optional: The time allowed to parameter to reach the value. Requires everyFrame Checked on")]
-  public FsmFloat dampTime;
-  private Animator _animator;
-  private int _paramID;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.Animator)]
+  [HutongGames.PlayMaker.Tooltip("Sets the value of a float parameter")]
+  public class SetAnimatorFloat : FsmStateActionAnimatorBase
   {
-    base.Reset();
-    this.gameObject = (FsmOwnerDefault) null;
-    this.parameter = (FsmString) null;
-    FsmFloat fsmFloat = new FsmFloat();
-    fsmFloat.UseVariable = true;
-    this.dampTime = fsmFloat;
-    this.Value = (FsmFloat) null;
-  }
+    [CheckForComponent(typeof (Animator))]
+    [HutongGames.PlayMaker.Tooltip("The target.")]
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    [UIHint(UIHint.AnimatorFloat)]
+    [HutongGames.PlayMaker.Tooltip("The animator parameter")]
+    [RequiredField]
+    public FsmString parameter;
+    [HutongGames.PlayMaker.Tooltip("The float value to assign to the animator parameter")]
+    public FsmFloat Value;
+    [HutongGames.PlayMaker.Tooltip("Optional: The time allowed to parameter to reach the value. Requires everyFrame Checked on")]
+    public FsmFloat dampTime;
+    private Animator _animator;
+    private int _paramID;
 
-  public override void OnEnter()
-  {
-    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-    if ((Object) ownerDefaultTarget == (Object) null)
+    public override void Reset()
     {
-      this.Finish();
+      base.Reset();
+      this.gameObject = (FsmOwnerDefault) null;
+      this.parameter = (FsmString) null;
+      FsmFloat fsmFloat = new FsmFloat();
+      fsmFloat.UseVariable = true;
+      this.dampTime = fsmFloat;
+      this.Value = (FsmFloat) null;
     }
-    else
+
+    public override void OnEnter()
     {
-      this._animator = ownerDefaultTarget.GetComponent<Animator>();
-      if ((Object) this._animator == (Object) null)
+      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+      if ((Object) ownerDefaultTarget == (Object) null)
       {
         this.Finish();
       }
       else
       {
-        this._paramID = Animator.StringToHash(this.parameter.Value);
-        this.SetParameter();
-        if (this.everyFrame)
-          return;
-        this.Finish();
+        this._animator = ownerDefaultTarget.GetComponent<Animator>();
+        if ((Object) this._animator == (Object) null)
+        {
+          this.Finish();
+        }
+        else
+        {
+          this._paramID = Animator.StringToHash(this.parameter.Value);
+          this.SetParameter();
+          if (this.everyFrame)
+            return;
+          this.Finish();
+        }
       }
     }
-  }
 
-  public override void OnActionUpdate() => this.SetParameter();
+    public override void OnActionUpdate() => this.SetParameter();
 
-  private void SetParameter()
-  {
-    if ((Object) this._animator == (Object) null)
-      return;
-    if ((double) this.dampTime.Value > 0.0)
-      this._animator.SetFloat(this._paramID, this.Value.Value, this.dampTime.Value, Time.deltaTime);
-    else
-      this._animator.SetFloat(this._paramID, this.Value.Value);
+    private void SetParameter()
+    {
+      if ((Object) this._animator == (Object) null)
+        return;
+      if ((double) this.dampTime.Value > 0.0)
+        this._animator.SetFloat(this._paramID, this.Value.Value, this.dampTime.Value, Time.deltaTime);
+      else
+        this._animator.SetFloat(this._paramID, this.Value.Value);
+    }
   }
 }

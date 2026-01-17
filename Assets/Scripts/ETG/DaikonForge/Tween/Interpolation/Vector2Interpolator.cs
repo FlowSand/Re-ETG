@@ -7,26 +7,27 @@
 using UnityEngine;
 
 #nullable disable
-namespace DaikonForge.Tween.Interpolation;
-
-public class Vector2Interpolator : Interpolator<Vector2>
+namespace DaikonForge.Tween.Interpolation
 {
-  protected static Vector2Interpolator singleton;
-
-  public override Vector2 Add(Vector2 lhs, Vector2 rhs) => lhs + rhs;
-
-  public override Vector2 Interpolate(Vector2 startValue, Vector2 endValue, float time)
+  public class Vector2Interpolator : Interpolator<Vector2>
   {
-    return startValue + (endValue - startValue) * time;
-  }
+    protected static Vector2Interpolator singleton;
 
-  public static Interpolator<Vector2> Default
-  {
-    get
+    public override Vector2 Add(Vector2 lhs, Vector2 rhs) => lhs + rhs;
+
+    public override Vector2 Interpolate(Vector2 startValue, Vector2 endValue, float time)
     {
-      if (Vector2Interpolator.singleton == null)
-        Vector2Interpolator.singleton = new Vector2Interpolator();
-      return (Interpolator<Vector2>) Vector2Interpolator.singleton;
+      return startValue + (endValue - startValue) * time;
+    }
+
+    public static Interpolator<Vector2> Default
+    {
+      get
+      {
+        if (Vector2Interpolator.singleton == null)
+          Vector2Interpolator.singleton = new Vector2Interpolator();
+        return (Interpolator<Vector2>) Vector2Interpolator.singleton;
+      }
     }
   }
 }

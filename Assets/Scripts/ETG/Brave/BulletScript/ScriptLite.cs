@@ -5,12 +5,13 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace Brave.BulletScript;
-
-public class ScriptLite : BulletLite
+namespace Brave.BulletScript
 {
-  public ScriptLite()
-    : base()
+  public class ScriptLite : BulletLite
   {
+    public ScriptLite()
+      : base()
+    {
+    }
   }
 }

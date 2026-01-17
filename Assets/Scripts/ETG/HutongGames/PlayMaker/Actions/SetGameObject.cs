@@ -5,32 +5,33 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.GameObject)]
-[Tooltip("Sets the value of a Game Object Variable.")]
-public class SetGameObject : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [UIHint(UIHint.Variable)]
-  [RequiredField]
-  public FsmGameObject variable;
-  public FsmGameObject gameObject;
-  public bool everyFrame;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.GameObject)]
+  [Tooltip("Sets the value of a Game Object Variable.")]
+  public class SetGameObject : FsmStateAction
   {
-    this.variable = (FsmGameObject) null;
-    this.gameObject = (FsmGameObject) null;
-    this.everyFrame = false;
-  }
+    [UIHint(UIHint.Variable)]
+    [RequiredField]
+    public FsmGameObject variable;
+    public FsmGameObject gameObject;
+    public bool everyFrame;
 
-  public override void OnEnter()
-  {
-    this.variable.Value = this.gameObject.Value;
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
+    public override void Reset()
+    {
+      this.variable = (FsmGameObject) null;
+      this.gameObject = (FsmGameObject) null;
+      this.everyFrame = false;
+    }
 
-  public override void OnUpdate() => this.variable.Value = this.gameObject.Value;
+    public override void OnEnter()
+    {
+      this.variable.Value = this.gameObject.Value;
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
+
+    public override void OnUpdate() => this.variable.Value = this.gameObject.Value;
+  }
 }

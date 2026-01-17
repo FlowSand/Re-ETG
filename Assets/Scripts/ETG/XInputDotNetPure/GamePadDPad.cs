@@ -5,28 +5,29 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace XInputDotNetPure;
-
-public struct GamePadDPad
+namespace XInputDotNetPure
 {
-  private ButtonState up;
-  private ButtonState down;
-  private ButtonState left;
-  private ButtonState right;
-
-  internal GamePadDPad(ButtonState up, ButtonState down, ButtonState left, ButtonState right)
+  public struct GamePadDPad
   {
-    this.up = up;
-    this.down = down;
-    this.left = left;
-    this.right = right;
+    private ButtonState up;
+    private ButtonState down;
+    private ButtonState left;
+    private ButtonState right;
+
+    internal GamePadDPad(ButtonState up, ButtonState down, ButtonState left, ButtonState right)
+    {
+      this.up = up;
+      this.down = down;
+      this.left = left;
+      this.right = right;
+    }
+
+    public ButtonState Up => this.up;
+
+    public ButtonState Down => this.down;
+
+    public ButtonState Left => this.left;
+
+    public ButtonState Right => this.right;
   }
-
-  public ButtonState Up => this.up;
-
-  public ButtonState Down => this.down;
-
-  public ButtonState Left => this.left;
-
-  public ButtonState Right => this.right;
 }

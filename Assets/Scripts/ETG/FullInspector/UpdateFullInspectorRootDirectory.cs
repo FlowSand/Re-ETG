@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector;
-
-public class UpdateFullInspectorRootDirectory : fiSettingsProcessor
+namespace FullInspector
 {
-  public void Process() => fiSettings.RootDirectory = "Assets/Libraries/FullInspector2/";
+  public class UpdateFullInspectorRootDirectory : fiSettingsProcessor
+  {
+    public void Process() => fiSettings.RootDirectory = "Assets/Libraries/FullInspector2/";
+  }
 }

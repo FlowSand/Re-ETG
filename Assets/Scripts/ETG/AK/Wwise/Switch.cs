@@ -8,15 +8,16 @@ using System;
 using UnityEngine;
 
 #nullable disable
-namespace AK.Wwise;
-
-[Serializable]
-public class Switch : BaseGroupType
+namespace AK.Wwise
 {
-  public void SetValue(GameObject gameObject)
+  [Serializable]
+  public class Switch : BaseGroupType
   {
-    if (!this.IsValid())
-      return;
-    this.Verify(AkSoundEngine.SetSwitch(this.GetGroupID(), this.GetID(), gameObject));
+    public void SetValue(GameObject gameObject)
+    {
+      if (!this.IsValid())
+        return;
+      this.Verify(AkSoundEngine.SetSwitch(this.GetGroupID(), this.GetID(), gameObject));
+    }
   }
 }

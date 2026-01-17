@@ -7,9 +7,10 @@
 using UnityEngine;
 
 #nullable disable
-namespace DaikonForge.Tween.Components;
-
-[AddComponentMenu("Daikon Forge/Tween/Named Integer")]
-public class TweenIntegerProperty : TweenPropertyComponent<int>
+namespace DaikonForge.Tween.Components
 {
+  [AddComponentMenu("Daikon Forge/Tween/Named Integer")]
+  public class TweenIntegerProperty : TweenPropertyComponent<int>
+  {
+  }
 }

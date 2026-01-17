@@ -5,10 +5,11 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public enum TouchUnitType
+namespace InControl
 {
-  Percent,
-  Pixels,
+  public enum TouchUnitType
+  {
+    Percent,
+    Pixels,
+  }
 }

@@ -7,30 +7,31 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Set the maximum amount of connections/players allowed.\n\nThis cannot be set higher than the connection count given in Launch Server.\n\nSetting it to 0 means no new connections can be made but the existing ones stay connected.\n\nSetting it to -1 means the maximum connections count is set to the same number of current open connections. In that case, if a players drops then the slot is still open for him.")]
-[ActionCategory(ActionCategory.Network)]
-public class NetworkSetMaximumConnections : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("The maximum amount of connections/players allowed.")]
-  public FsmInt maximumConnections;
-
-  public override void Reset() => this.maximumConnections = (FsmInt) 32 /*0x20*/;
-
-  public override void OnEnter()
+  [HutongGames.PlayMaker.Tooltip("Set the maximum amount of connections/players allowed.\n\nThis cannot be set higher than the connection count given in Launch Server.\n\nSetting it to 0 means no new connections can be made but the existing ones stay connected.\n\nSetting it to -1 means the maximum connections count is set to the same number of current open connections. In that case, if a players drops then the slot is still open for him.")]
+  [ActionCategory(ActionCategory.Network)]
+  public class NetworkSetMaximumConnections : FsmStateAction
   {
-    if (this.maximumConnections.Value < -1)
+    [HutongGames.PlayMaker.Tooltip("The maximum amount of connections/players allowed.")]
+    public FsmInt maximumConnections;
+
+    public override void Reset() => this.maximumConnections = (FsmInt) 32 /*0x20*/;
+
+    public override void OnEnter()
     {
-      this.LogWarning("Network Maximum connections can not be less than -1");
-      this.maximumConnections.Value = -1;
+      if (this.maximumConnections.Value < -1)
+      {
+        this.LogWarning("Network Maximum connections can not be less than -1");
+        this.maximumConnections.Value = -1;
+      }
+      Network.maxConnections = this.maximumConnections.Value;
+      this.Finish();
     }
-    Network.maxConnections = this.maximumConnections.Value;
-    this.Finish();
-  }
 
-  public override string ErrorCheck()
-  {
-    return this.maximumConnections.Value < -1 ? "Network Maximum connections can not be less than -1" : string.Empty;
+    public override string ErrorCheck()
+    {
+      return this.maximumConnections.Value < -1 ? "Network Maximum connections can not be less than -1" : string.Empty;
+    }
   }
 }

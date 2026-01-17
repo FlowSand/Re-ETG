@@ -5,6 +5,7 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace Pathfinding;
-
-public delegate int ExtraWeightingFunction(IntVector2 prevStep, IntVector2 thisStep);
+namespace Pathfinding
+{
+  public delegate int ExtraWeightingFunction(IntVector2 prevStep, IntVector2 thisStep);
+}

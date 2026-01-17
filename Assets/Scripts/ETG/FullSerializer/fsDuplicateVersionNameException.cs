@@ -7,9 +7,10 @@
 using System;
 
 #nullable disable
-namespace FullSerializer;
-
-public sealed class fsDuplicateVersionNameException(Type typeA, Type typeB, string version) : 
-  Exception($"{(object) typeA} and {(object) typeB} have the same version string ({version}); please change one of them.")
+namespace FullSerializer
 {
+  public sealed class fsDuplicateVersionNameException(Type typeA, Type typeB, string version) : 
+    Exception($"{(object) typeA} and {(object) typeB} have the same version string ({version}); please change one of them.")
+  {
+  }
 }

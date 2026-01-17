@@ -7,9 +7,10 @@
 using UnityEngine;
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public interface fiIGraphMetadataStorage
+namespace FullInspector.Internal
 {
-  void RestoreData(Object target);
+  public interface fiIGraphMetadataStorage
+  {
+    void RestoreData(Object target);
+  }
 }

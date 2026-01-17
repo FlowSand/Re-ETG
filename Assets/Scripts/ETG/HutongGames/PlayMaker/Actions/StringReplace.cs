@@ -5,45 +5,46 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.String)]
-[Tooltip("Replace a substring with a new String.")]
-public class StringReplace : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [UIHint(UIHint.Variable)]
-  [RequiredField]
-  public FsmString stringVariable;
-  public FsmString replace;
-  public FsmString with;
-  [RequiredField]
-  [UIHint(UIHint.Variable)]
-  public FsmString storeResult;
-  public bool everyFrame;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.String)]
+  [Tooltip("Replace a substring with a new String.")]
+  public class StringReplace : FsmStateAction
   {
-    this.stringVariable = (FsmString) null;
-    this.replace = (FsmString) string.Empty;
-    this.with = (FsmString) string.Empty;
-    this.storeResult = (FsmString) null;
-    this.everyFrame = false;
-  }
+    [UIHint(UIHint.Variable)]
+    [RequiredField]
+    public FsmString stringVariable;
+    public FsmString replace;
+    public FsmString with;
+    [RequiredField]
+    [UIHint(UIHint.Variable)]
+    public FsmString storeResult;
+    public bool everyFrame;
 
-  public override void OnEnter()
-  {
-    this.DoReplace();
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
+    public override void Reset()
+    {
+      this.stringVariable = (FsmString) null;
+      this.replace = (FsmString) string.Empty;
+      this.with = (FsmString) string.Empty;
+      this.storeResult = (FsmString) null;
+      this.everyFrame = false;
+    }
 
-  public override void OnUpdate() => this.DoReplace();
+    public override void OnEnter()
+    {
+      this.DoReplace();
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
 
-  private void DoReplace()
-  {
-    if (this.stringVariable == null || this.storeResult == null)
-      return;
-    this.storeResult.Value = this.stringVariable.Value.Replace(this.replace.Value, this.with.Value);
+    public override void OnUpdate() => this.DoReplace();
+
+    private void DoReplace()
+    {
+      if (this.stringVariable == null || this.storeResult == null)
+        return;
+      this.storeResult.Value = this.stringVariable.Value.Replace(this.replace.Value, this.with.Value);
+    }
   }
 }

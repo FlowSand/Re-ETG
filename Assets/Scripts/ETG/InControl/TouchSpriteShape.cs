@@ -5,10 +5,11 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public enum TouchSpriteShape
+namespace InControl
 {
-  Oval,
-  Rectangle,
+  public enum TouchSpriteShape
+  {
+    Oval,
+    Rectangle,
+  }
 }

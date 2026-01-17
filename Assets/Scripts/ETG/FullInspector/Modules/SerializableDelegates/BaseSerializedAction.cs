@@ -5,8 +5,9 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector.Modules.SerializableDelegates;
-
-public class BaseSerializedAction : BaseSerializationDelegate
+namespace FullInspector.Modules.SerializableDelegates
 {
+  public class BaseSerializedAction : BaseSerializationDelegate
+  {
+  }
 }

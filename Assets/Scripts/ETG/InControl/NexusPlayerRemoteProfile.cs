@@ -5,42 +5,43 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-[AutoDiscover]
-public class NexusPlayerRemoteProfile : UnityInputDeviceProfile
+namespace InControl
 {
-  public NexusPlayerRemoteProfile()
+  [AutoDiscover]
+  public class NexusPlayerRemoteProfile : UnityInputDeviceProfile
   {
-    this.Name = "Nexus Player Remote";
-    this.Meta = "Nexus Player Remote";
-    this.DeviceClass = InputDeviceClass.Remote;
-    this.IncludePlatforms = new string[1]{ "Android" };
-    this.JoystickNames = new string[1]
+    public NexusPlayerRemoteProfile()
     {
-      "Google Nexus Remote"
-    };
-    this.ButtonMappings = new InputControlMapping[2]
-    {
-      new InputControlMapping()
+      this.Name = "Nexus Player Remote";
+      this.Meta = "Nexus Player Remote";
+      this.DeviceClass = InputDeviceClass.Remote;
+      this.IncludePlatforms = new string[1]{ "Android" };
+      this.JoystickNames = new string[1]
       {
-        Handle = "A",
-        Target = InputControlType.Action1,
-        Source = UnityInputDeviceProfile.Button0
-      },
-      new InputControlMapping()
+        "Google Nexus Remote"
+      };
+      this.ButtonMappings = new InputControlMapping[2]
       {
-        Handle = "Back",
-        Target = InputControlType.Back,
-        Source = UnityInputDeviceProfile.EscapeKey
-      }
-    };
-    this.AnalogMappings = new InputControlMapping[4]
-    {
-      UnityInputDeviceProfile.DPadLeftMapping(UnityInputDeviceProfile.Analog4),
-      UnityInputDeviceProfile.DPadRightMapping(UnityInputDeviceProfile.Analog4),
-      UnityInputDeviceProfile.DPadUpMapping(UnityInputDeviceProfile.Analog5),
-      UnityInputDeviceProfile.DPadDownMapping(UnityInputDeviceProfile.Analog5)
-    };
+        new InputControlMapping()
+        {
+          Handle = "A",
+          Target = InputControlType.Action1,
+          Source = UnityInputDeviceProfile.Button0
+        },
+        new InputControlMapping()
+        {
+          Handle = "Back",
+          Target = InputControlType.Back,
+          Source = UnityInputDeviceProfile.EscapeKey
+        }
+      };
+      this.AnalogMappings = new InputControlMapping[4]
+      {
+        UnityInputDeviceProfile.DPadLeftMapping(UnityInputDeviceProfile.Analog4),
+        UnityInputDeviceProfile.DPadRightMapping(UnityInputDeviceProfile.Analog4),
+        UnityInputDeviceProfile.DPadUpMapping(UnityInputDeviceProfile.Analog5),
+        UnityInputDeviceProfile.DPadDownMapping(UnityInputDeviceProfile.Analog5)
+      };
+    }
   }
 }

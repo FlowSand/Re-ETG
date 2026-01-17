@@ -7,29 +7,30 @@
 using System;
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public struct fiOption<T>(T value)
+namespace FullInspector.Internal
 {
-  private bool _hasValue = true;
-  private T _value = value;
-  public static fiOption<T> Empty = new fiOption<T>()
+  public struct fiOption<T>(T value)
   {
-    _hasValue = false,
-    _value = default (T)
-  };
-
-  public bool HasValue => this._hasValue;
-
-  public bool IsEmpty => !this._hasValue;
-
-  public T Value
-  {
-    get
+    private bool _hasValue = true;
+    private T _value = value;
+    public static fiOption<T> Empty = new fiOption<T>()
     {
-      if (!this.HasValue)
-        throw new InvalidOperationException("There is no value inside the option");
-      return this._value;
+      _hasValue = false,
+      _value = default (T)
+    };
+
+    public bool HasValue => this._hasValue;
+
+    public bool IsEmpty => !this._hasValue;
+
+    public T Value
+    {
+      get
+      {
+        if (!this.HasValue)
+          throw new InvalidOperationException("There is no value inside the option");
+        return this._value;
+      }
     }
   }
 }

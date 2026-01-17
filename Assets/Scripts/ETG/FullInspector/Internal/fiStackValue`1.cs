@@ -7,23 +7,24 @@
 using System.Collections.Generic;
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public class fiStackValue<T>
+namespace FullInspector.Internal
 {
-  private readonly Stack<T> _stack = new Stack<T>();
-
-  public void Push(T value) => this._stack.Push(value);
-
-  public T Pop() => this._stack.Count > 0 ? this._stack.Pop() : default (T);
-
-  public T Value
+  public class fiStackValue<T>
   {
-    get => this._stack.Peek();
-    set
+    private readonly Stack<T> _stack = new Stack<T>();
+
+    public void Push(T value) => this._stack.Push(value);
+
+    public T Pop() => this._stack.Count > 0 ? this._stack.Pop() : default (T);
+
+    public T Value
     {
-      this.Pop();
-      this.Push(value);
+      get => this._stack.Peek();
+      set
+      {
+        this.Pop();
+        this.Push(value);
+      }
     }
   }
 }

@@ -5,51 +5,52 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[Tooltip("Get the XY channels of a Vector2 Variable and store them in Float Variables.")]
-[ActionCategory(ActionCategory.Vector2)]
-public class GetVector2XY : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [Tooltip("The vector2 source")]
-  [UIHint(UIHint.Variable)]
-  [RequiredField]
-  public FsmVector2 vector2Variable;
-  [Tooltip("The x component")]
-  [UIHint(UIHint.Variable)]
-  public FsmFloat storeX;
-  [UIHint(UIHint.Variable)]
-  [Tooltip("The y component")]
-  public FsmFloat storeY;
-  [Tooltip("Repeat every frame.")]
-  public bool everyFrame;
-
-  public override void Reset()
+  [Tooltip("Get the XY channels of a Vector2 Variable and store them in Float Variables.")]
+  [ActionCategory(ActionCategory.Vector2)]
+  public class GetVector2XY : FsmStateAction
   {
-    this.vector2Variable = (FsmVector2) null;
-    this.storeX = (FsmFloat) null;
-    this.storeY = (FsmFloat) null;
-    this.everyFrame = false;
-  }
+    [Tooltip("The vector2 source")]
+    [UIHint(UIHint.Variable)]
+    [RequiredField]
+    public FsmVector2 vector2Variable;
+    [Tooltip("The x component")]
+    [UIHint(UIHint.Variable)]
+    public FsmFloat storeX;
+    [UIHint(UIHint.Variable)]
+    [Tooltip("The y component")]
+    public FsmFloat storeY;
+    [Tooltip("Repeat every frame.")]
+    public bool everyFrame;
 
-  public override void OnEnter()
-  {
-    this.DoGetVector2XYZ();
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
+    public override void Reset()
+    {
+      this.vector2Variable = (FsmVector2) null;
+      this.storeX = (FsmFloat) null;
+      this.storeY = (FsmFloat) null;
+      this.everyFrame = false;
+    }
 
-  public override void OnUpdate() => this.DoGetVector2XYZ();
+    public override void OnEnter()
+    {
+      this.DoGetVector2XYZ();
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
 
-  private void DoGetVector2XYZ()
-  {
-    if (this.vector2Variable == null)
-      return;
-    if (this.storeX != null)
-      this.storeX.Value = this.vector2Variable.Value.x;
-    if (this.storeY == null)
-      return;
-    this.storeY.Value = this.vector2Variable.Value.y;
+    public override void OnUpdate() => this.DoGetVector2XYZ();
+
+    private void DoGetVector2XYZ()
+    {
+      if (this.vector2Variable == null)
+        return;
+      if (this.storeX != null)
+        this.storeX.Value = this.vector2Variable.Value.x;
+      if (this.storeY == null)
+        return;
+      this.storeY.Value = this.vector2Variable.Value.y;
+    }
   }
 }

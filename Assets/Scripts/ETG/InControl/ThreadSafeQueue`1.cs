@@ -7,63 +7,64 @@
 using System.Collections.Generic;
 
 #nullable disable
-namespace InControl;
-
-internal class ThreadSafeQueue<T>
+namespace InControl
 {
-  private object sync;
-  private Queue<T> data;
-
-  public ThreadSafeQueue()
+  internal class ThreadSafeQueue<T>
   {
-    this.sync = new object();
-    this.data = new Queue<T>();
-  }
+    private object sync;
+    private Queue<T> data;
 
-  public ThreadSafeQueue(int capacity)
-  {
-    this.sync = new object();
-    this.data = new Queue<T>(capacity);
-  }
-
-  public void Enqueue(T item)
-  {
-    lock (this.sync)
-      this.data.Enqueue(item);
-  }
-
-  public bool Dequeue(out T item)
-  {
-    lock (this.sync)
+    public ThreadSafeQueue()
     {
-      if (this.data.Count > 0)
+      this.sync = new object();
+      this.data = new Queue<T>();
+    }
+
+    public ThreadSafeQueue(int capacity)
+    {
+      this.sync = new object();
+      this.data = new Queue<T>(capacity);
+    }
+
+    public void Enqueue(T item)
+    {
+      lock (this.sync)
+        this.data.Enqueue(item);
+    }
+
+    public bool Dequeue(out T item)
+    {
+      lock (this.sync)
       {
-        item = this.data.Dequeue();
-        return true;
+        if (this.data.Count > 0)
+        {
+          item = this.data.Dequeue();
+          return true;
+        }
       }
+      item = default (T);
+      return false;
     }
-    item = default (T);
-    return false;
-  }
 
-  public T Dequeue()
-  {
-    lock (this.sync)
+    public T Dequeue()
     {
-      if (this.data.Count > 0)
-        return this.data.Dequeue();
+      lock (this.sync)
+      {
+        if (this.data.Count > 0)
+          return this.data.Dequeue();
+      }
+      return default (T);
     }
-    return default (T);
-  }
 
-  public int Dequeue(ref IList<T> list)
-  {
-    lock (this.sync)
+    public int Dequeue(ref IList<T> list)
     {
-      int count = this.data.Count;
-      for (int index = 0; index < count; ++index)
-        list.Add(this.data.Dequeue());
-      return count;
+      lock (this.sync)
+      {
+        int count = this.data.Count;
+        for (int index = 0; index < count; ++index)
+          list.Add(this.data.Dequeue());
+        return count;
+      }
     }
   }
 }

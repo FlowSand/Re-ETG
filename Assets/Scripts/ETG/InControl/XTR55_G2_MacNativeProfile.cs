@@ -5,28 +5,29 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-[AutoDiscover]
-public class XTR55_G2_MacNativeProfile : NativeInputDeviceProfile
+namespace InControl
 {
-  public XTR55_G2_MacNativeProfile()
+  [AutoDiscover]
+  public class XTR55_G2_MacNativeProfile : NativeInputDeviceProfile
   {
-    this.Name = "SAILI Simulator XTR5.5 G2 FMS Controller";
-    this.Meta = "SAILI Simulator XTR5.5 G2 FMS Controller on OS X";
-    this.DeviceClass = InputDeviceClass.Controller;
-    this.IncludePlatforms = new string[1]{ "OS X" };
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public XTR55_G2_MacNativeProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "SAILI Simulator XTR5.5 G2 FMS Controller";
+      this.Meta = "SAILI Simulator XTR5.5 G2 FMS Controller on OS X";
+      this.DeviceClass = InputDeviceClass.Controller;
+      this.IncludePlatforms = new string[1]{ "OS X" };
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 2971),
-        ProductID = new ushort?((ushort) 16402),
-        NameLiterals = new string[1]
+        new NativeInputDeviceMatcher()
         {
-          "SAILI Simulator --- XTR5.5+G2+FMS Controller"
+          VendorID = new ushort?((ushort) 2971),
+          ProductID = new ushort?((ushort) 16402),
+          NameLiterals = new string[1]
+          {
+            "SAILI Simulator --- XTR5.5+G2+FMS Controller"
+          }
         }
-      }
-    };
+      };
+    }
   }
 }

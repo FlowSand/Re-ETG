@@ -7,9 +7,10 @@
 using System;
 
 #nullable disable
-namespace FullSerializer;
-
-public abstract class fsDirectConverter : fsBaseConverter
+namespace FullSerializer
 {
-  public abstract Type ModelType { get; }
+  public abstract class fsDirectConverter : fsBaseConverter
+  {
+    public abstract Type ModelType { get; }
+  }
 }

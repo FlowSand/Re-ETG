@@ -7,15 +7,16 @@
 using System;
 
 #nullable disable
-namespace FullInspector.BackupService;
-
-[Serializable]
-public class fiSerializedMember
+namespace FullInspector.BackupService
 {
-  public string Name;
-  public string Value;
-  public fiEnableRestore ShouldRestore = new fiEnableRestore()
+  [Serializable]
+  public class fiSerializedMember
   {
-    Enabled = true
-  };
+    public string Name;
+    public string Value;
+    public fiEnableRestore ShouldRestore = new fiEnableRestore()
+    {
+      Enabled = true
+    };
+  }
 }

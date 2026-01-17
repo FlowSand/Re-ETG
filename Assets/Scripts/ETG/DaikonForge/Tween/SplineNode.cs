@@ -7,18 +7,19 @@
 using UnityEngine;
 
 #nullable disable
-namespace DaikonForge.Tween;
-
-[ExecuteInEditMode]
-public class SplineNode : MonoBehaviour
+namespace DaikonForge.Tween
 {
-  public void OnDestroy()
+  [ExecuteInEditMode]
+  public class SplineNode : MonoBehaviour
   {
-    if (Application.isPlaying || (Object) this.transform.parent == (Object) null)
-      return;
-    SplineObject component = this.transform.parent.GetComponent<SplineObject>();
-    if ((Object) component == (Object) null)
-      return;
-    component.ControlPoints.Remove(this.transform);
+    public void OnDestroy()
+    {
+      if (Application.isPlaying || (Object) this.transform.parent == (Object) null)
+        return;
+      SplineObject component = this.transform.parent.GetComponent<SplineObject>();
+      if ((Object) component == (Object) null)
+        return;
+      component.ControlPoints.Remove(this.transform);
+    }
   }
 }

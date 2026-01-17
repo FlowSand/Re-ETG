@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class QanbaFightStickPlusMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public QanbaFightStickPlusMacProfile()
+  public class QanbaFightStickPlusMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Qanba Fight Stick Plus";
-    this.Meta = "Qanba Fight Stick Plus on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public QanbaFightStickPlusMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Qanba Fight Stick Plus";
+      this.Meta = "Qanba Fight Stick Plus on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 1848),
-        ProductID = new ushort?((ushort) 48879)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 1848),
+          ProductID = new ushort?((ushort) 48879)
+        }
+      };
+    }
   }
 }

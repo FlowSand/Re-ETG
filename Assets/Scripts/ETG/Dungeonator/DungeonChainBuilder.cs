@@ -5,8 +5,9 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace Dungeonator;
-
-public class DungeonChainBuilder
+namespace Dungeonator
 {
+  public class DungeonChainBuilder
+  {
+  }
 }

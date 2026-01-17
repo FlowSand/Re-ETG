@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class IonDrumRockerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public IonDrumRockerMacProfile()
+  public class IonDrumRockerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Ion Drum Rocker";
-    this.Meta = "Ion Drum Rocker on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public IonDrumRockerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Ion Drum Rocker";
+      this.Meta = "Ion Drum Rocker on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 7085),
-        ProductID = new ushort?((ushort) 304)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 7085),
+          ProductID = new ushort?((ushort) 304)
+        }
+      };
+    }
   }
 }

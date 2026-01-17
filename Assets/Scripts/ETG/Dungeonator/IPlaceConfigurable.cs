@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace Dungeonator;
-
-public interface IPlaceConfigurable
+namespace Dungeonator
 {
-  void ConfigureOnPlacement(RoomHandler room);
+  public interface IPlaceConfigurable
+  {
+    void ConfigureOnPlacement(RoomHandler room);
+  }
 }

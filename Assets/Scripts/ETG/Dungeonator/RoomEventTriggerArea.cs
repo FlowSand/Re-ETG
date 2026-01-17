@@ -9,56 +9,57 @@ using System.Collections.Generic;
 using UnityEngine;
 
 #nullable disable
-namespace Dungeonator;
-
-public class RoomEventTriggerArea
+namespace Dungeonator
 {
-  public HashSet<IntVector2> triggerCells;
-  public IntVector2 initialPosition;
-  public List<IEventTriggerable> events;
-  [NonSerialized]
-  public GameObject tempDataObject;
-
-  public RoomEventTriggerArea()
+  public class RoomEventTriggerArea
   {
-    this.triggerCells = new HashSet<IntVector2>();
-    this.events = new List<IEventTriggerable>();
-  }
+    public HashSet<IntVector2> triggerCells;
+    public IntVector2 initialPosition;
+    public List<IEventTriggerable> events;
+    [NonSerialized]
+    public GameObject tempDataObject;
 
-  public RoomEventTriggerArea(PrototypeEventTriggerArea prototype, IntVector2 basePosition)
-  {
-    this.triggerCells = new HashSet<IntVector2>();
-    this.events = new List<IEventTriggerable>();
-    for (int index = 0; index < prototype.triggerCells.Count; ++index)
+    public RoomEventTriggerArea()
     {
-      IntVector2 key = prototype.triggerCells[index].ToIntVector2() + basePosition;
-      GameManager.Instance.Dungeon.data[key].cellVisualData.containsObjectSpaceStamp = true;
-      this.triggerCells.Add(key);
-      if (index == 0)
-        this.initialPosition = key;
+      this.triggerCells = new HashSet<IntVector2>();
+      this.events = new List<IEventTriggerable>();
     }
-  }
 
-  public void Trigger(int eventIndex)
-  {
-    for (int index = 0; index < this.events.Count; ++index)
-      this.events[index].Trigger(eventIndex);
-  }
-
-  public void AddGameObject(GameObject g)
-  {
-    if (!(g.GetComponentInChildren(typeof (IEventTriggerable)) is IEventTriggerable componentInChildren))
-      return;
-    this.events.Add(componentInChildren);
-    if (!(componentInChildren is HangingObjectController))
-      return;
-    for (int x = 0; x < 2; ++x)
+    public RoomEventTriggerArea(PrototypeEventTriggerArea prototype, IntVector2 basePosition)
     {
-      for (int y = 0; y < 3; ++y)
+      this.triggerCells = new HashSet<IntVector2>();
+      this.events = new List<IEventTriggerable>();
+      for (int index = 0; index < prototype.triggerCells.Count; ++index)
       {
-        IntVector2 key = this.initialPosition + new IntVector2(x, y);
-        GameManager.Instance.Dungeon.data[key].cellVisualData.containsWallSpaceStamp = true;
+        IntVector2 key = prototype.triggerCells[index].ToIntVector2() + basePosition;
         GameManager.Instance.Dungeon.data[key].cellVisualData.containsObjectSpaceStamp = true;
+        this.triggerCells.Add(key);
+        if (index == 0)
+          this.initialPosition = key;
+      }
+    }
+
+    public void Trigger(int eventIndex)
+    {
+      for (int index = 0; index < this.events.Count; ++index)
+        this.events[index].Trigger(eventIndex);
+    }
+
+    public void AddGameObject(GameObject g)
+    {
+      if (!(g.GetComponentInChildren(typeof (IEventTriggerable)) is IEventTriggerable componentInChildren))
+        return;
+      this.events.Add(componentInChildren);
+      if (!(componentInChildren is HangingObjectController))
+        return;
+      for (int x = 0; x < 2; ++x)
+      {
+        for (int y = 0; y < 3; ++y)
+        {
+          IntVector2 key = this.initialPosition + new IntVector2(x, y);
+          GameManager.Instance.Dungeon.data[key].cellVisualData.containsWallSpaceStamp = true;
+          GameManager.Instance.Dungeon.data[key].cellVisualData.containsObjectSpaceStamp = true;
+        }
       }
     }
   }

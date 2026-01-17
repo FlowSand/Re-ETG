@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class MatCatzControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public MatCatzControllerMacProfile()
+  public class MatCatzControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Mat Catz Controller";
-    this.Meta = "Mat Catz Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public MatCatzControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Mat Catz Controller";
+      this.Meta = "Mat Catz Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 7085),
-        ProductID = new ushort?((ushort) 61462)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 7085),
+          ProductID = new ushort?((ushort) 61462)
+        }
+      };
+    }
   }
 }

@@ -7,30 +7,31 @@
 using System;
 
 #nullable disable
-namespace FullSerializer.Internal;
-
-public class fsGuidConverter : fsConverter
+namespace FullSerializer.Internal
 {
-  public override bool CanProcess(Type type) => type == typeof (Guid);
-
-  public override bool RequestCycleSupport(Type storageType) => false;
-
-  public override bool RequestInheritanceSupport(Type storageType) => false;
-
-  public override fsResult TrySerialize(object instance, out fsData serialized, Type storageType)
+  public class fsGuidConverter : fsConverter
   {
-    Guid guid = (Guid) instance;
-    serialized = new fsData(guid.ToString());
-    return fsResult.Success;
-  }
+    public override bool CanProcess(Type type) => type == typeof (Guid);
 
-  public override fsResult TryDeserialize(fsData data, ref object instance, Type storageType)
-  {
-    if (!data.IsString)
-      return fsResult.Fail("fsGuidConverter encountered an unknown JSON data type");
-    instance = (object) new Guid(data.AsString);
-    return fsResult.Success;
-  }
+    public override bool RequestCycleSupport(Type storageType) => false;
 
-  public override object CreateInstance(fsData data, Type storageType) => (object) new Guid();
+    public override bool RequestInheritanceSupport(Type storageType) => false;
+
+    public override fsResult TrySerialize(object instance, out fsData serialized, Type storageType)
+    {
+      Guid guid = (Guid) instance;
+      serialized = new fsData(guid.ToString());
+      return fsResult.Success;
+    }
+
+    public override fsResult TryDeserialize(fsData data, ref object instance, Type storageType)
+    {
+      if (!data.IsString)
+        return fsResult.Fail("fsGuidConverter encountered an unknown JSON data type");
+      instance = (object) new Guid(data.AsString);
+      return fsResult.Success;
+    }
+
+    public override object CreateInstance(fsData data, Type storageType) => (object) new Guid();
+  }
 }

@@ -5,21 +5,22 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class RazerStrikeControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public RazerStrikeControllerMacProfile()
+  public class RazerStrikeControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Razer Strike Controller";
-    this.Meta = "Razer Strike Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[1]
+    public RazerStrikeControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Razer Strike Controller";
+      this.Meta = "Razer Strike Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[1]
       {
-        VendorID = new ushort?((ushort) 5769),
-        ProductID = new ushort?((ushort) 1)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 5769),
+          ProductID = new ushort?((ushort) 1)
+        }
+      };
+    }
   }
 }

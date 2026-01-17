@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace DaikonForge.Tween;
-
-public interface IPoolableObject
+namespace DaikonForge.Tween
 {
-  void Release();
+  public interface IPoolableObject
+  {
+    void Release();
+  }
 }

@@ -7,15 +7,16 @@
 using System;
 
 #nullable disable
-namespace FullInspector;
-
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
-public class VerifyPrefabTypeAttribute : Attribute
+namespace FullInspector
 {
-  public VerifyPrefabTypeFlags PrefabType;
-
-  public VerifyPrefabTypeAttribute(VerifyPrefabTypeFlags prefabType)
+  [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+  public class VerifyPrefabTypeAttribute : Attribute
   {
-    this.PrefabType = prefabType;
+    public VerifyPrefabTypeFlags PrefabType;
+
+    public VerifyPrefabTypeAttribute(VerifyPrefabTypeFlags prefabType)
+    {
+      this.PrefabType = prefabType;
+    }
   }
 }

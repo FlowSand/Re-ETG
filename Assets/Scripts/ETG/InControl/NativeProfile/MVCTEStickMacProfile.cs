@@ -5,26 +5,27 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class MVCTEStickMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public MVCTEStickMacProfile()
+  public class MVCTEStickMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "MVC TE Stick";
-    this.Meta = "MVC TE Stick on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[2]
+    public MVCTEStickMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "MVC TE Stick";
+      this.Meta = "MVC TE Stick on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[2]
       {
-        VendorID = new ushort?((ushort) 7085),
-        ProductID = new ushort?((ushort) 61497)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 1848),
-        ProductID = new ushort?((ushort) 46904)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 7085),
+          ProductID = new ushort?((ushort) 61497)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 1848),
+          ProductID = new ushort?((ushort) 46904)
+        }
+      };
+    }
   }
 }

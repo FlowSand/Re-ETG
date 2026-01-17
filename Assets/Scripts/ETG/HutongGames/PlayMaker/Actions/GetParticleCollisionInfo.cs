@@ -5,23 +5,24 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Physics)]
-[Tooltip("Gets info on the last particle collision event. See Unity Particle System docs.")]
-public class GetParticleCollisionInfo : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [Tooltip("Get the GameObject hit.")]
-  [UIHint(UIHint.Variable)]
-  public FsmGameObject gameObjectHit;
-
-  public override void Reset() => this.gameObjectHit = (FsmGameObject) null;
-
-  private void StoreCollisionInfo() => this.gameObjectHit.Value = this.Fsm.ParticleCollisionGO;
-
-  public override void OnEnter()
+  [ActionCategory(ActionCategory.Physics)]
+  [Tooltip("Gets info on the last particle collision event. See Unity Particle System docs.")]
+  public class GetParticleCollisionInfo : FsmStateAction
   {
-    this.StoreCollisionInfo();
-    this.Finish();
+    [Tooltip("Get the GameObject hit.")]
+    [UIHint(UIHint.Variable)]
+    public FsmGameObject gameObjectHit;
+
+    public override void Reset() => this.gameObjectHit = (FsmGameObject) null;
+
+    private void StoreCollisionInfo() => this.gameObjectHit.Value = this.Fsm.ParticleCollisionGO;
+
+    public override void OnEnter()
+    {
+      this.StoreCollisionInfo();
+      this.Finish();
+    }
   }
 }

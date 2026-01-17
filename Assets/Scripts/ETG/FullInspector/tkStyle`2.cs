@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector;
-
-public abstract class tkStyle<T, TContext>
+namespace FullInspector
 {
-  public abstract void Activate(T obj, TContext context);
+  public abstract class tkStyle<T, TContext>
+  {
+    public abstract void Activate(T obj, TContext context);
 
-  public abstract void Deactivate(T obj, TContext context);
+    public abstract void Deactivate(T obj, TContext context);
+  }
 }

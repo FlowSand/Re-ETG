@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullSerializer.Internal;
-
-public static class fsOption
+namespace FullSerializer.Internal
 {
-  public static fsOption<T> Just<T>(T value) => new fsOption<T>(value);
+  public static class fsOption
+  {
+    public static fsOption<T> Just<T>(T value) => new fsOption<T>(value);
+  }
 }

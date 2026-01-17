@@ -7,11 +7,12 @@
 using UnityEngine;
 
 #nullable disable
-namespace BraveDynamicTree;
-
-public struct b2RayCastInput(Vector2 p1, Vector2 p2)
+namespace BraveDynamicTree
 {
-  public Vector2 p1 = p1;
-  public Vector2 p2 = p2;
-  public float maxFraction = 1f;
+  public struct b2RayCastInput(Vector2 p1, Vector2 p2)
+  {
+    public Vector2 p1 = p1;
+    public Vector2 p2 = p2;
+    public float maxFraction = 1f;
+  }
 }

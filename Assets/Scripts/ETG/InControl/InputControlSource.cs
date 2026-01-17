@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public interface InputControlSource
+namespace InControl
 {
-  float GetValue(InputDevice inputDevice);
+  public interface InputControlSource
+  {
+    float GetValue(InputDevice inputDevice);
 
-  bool GetState(InputDevice inputDevice);
+    bool GetState(InputDevice inputDevice);
+  }
 }

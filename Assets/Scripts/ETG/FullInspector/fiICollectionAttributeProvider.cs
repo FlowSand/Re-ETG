@@ -7,9 +7,10 @@
 using System.Collections.Generic;
 
 #nullable disable
-namespace FullInspector;
-
-public interface fiICollectionAttributeProvider
+namespace FullInspector
 {
-  IEnumerable<object> GetAttributes();
+  public interface fiICollectionAttributeProvider
+  {
+    IEnumerable<object> GetAttributes();
+  }
 }

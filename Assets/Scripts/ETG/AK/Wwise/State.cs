@@ -7,15 +7,16 @@
 using System;
 
 #nullable disable
-namespace AK.Wwise;
-
-[Serializable]
-public class State : BaseGroupType
+namespace AK.Wwise
 {
-  public void SetValue()
+  [Serializable]
+  public class State : BaseGroupType
   {
-    if (!this.IsValid())
-      return;
-    this.Verify(AkSoundEngine.SetState(this.GetGroupID(), this.GetID()));
+    public void SetValue()
+    {
+      if (!this.IsValid())
+        return;
+      this.Verify(AkSoundEngine.SetState(this.GetGroupID(), this.GetID()));
+    }
   }
 }

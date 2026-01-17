@@ -5,31 +5,32 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class HoriEX2ControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public HoriEX2ControllerMacProfile()
+  public class HoriEX2ControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Hori EX2 Controller";
-    this.Meta = "Hori EX2 Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[3]
+    public HoriEX2ControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Hori EX2 Controller";
+      this.Meta = "Hori EX2 Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[3]
       {
-        VendorID = new ushort?((ushort) 3853),
-        ProductID = new ushort?((ushort) 13)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 7085),
-        ProductID = new ushort?((ushort) 62721)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 9414),
-        ProductID = new ushort?((ushort) 21760)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 3853),
+          ProductID = new ushort?((ushort) 13)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 7085),
+          ProductID = new ushort?((ushort) 62721)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 9414),
+          ProductID = new ushort?((ushort) 21760)
+        }
+      };
+    }
   }
 }

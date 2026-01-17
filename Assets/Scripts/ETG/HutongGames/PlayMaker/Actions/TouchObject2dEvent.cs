@@ -7,95 +7,96 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Sends events when a 2d object is touched. Optionally filter by a fingerID. NOTE: Uses the MainCamera!")]
-[ActionCategory(ActionCategory.Device)]
-public class TouchObject2dEvent : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [RequiredField]
-  [CheckForComponent(typeof (Collider2D))]
-  [HutongGames.PlayMaker.Tooltip("The Game Object to detect touches on.")]
-  public FsmOwnerDefault gameObject;
-  [HutongGames.PlayMaker.Tooltip("Only detect touches that match this fingerID, or set to None.")]
-  public FsmInt fingerId;
-  [HutongGames.PlayMaker.Tooltip("Event to send on touch began.")]
-  [ActionSection("Events")]
-  public FsmEvent touchBegan;
-  [HutongGames.PlayMaker.Tooltip("Event to send on touch moved.")]
-  public FsmEvent touchMoved;
-  [HutongGames.PlayMaker.Tooltip("Event to send on stationary touch.")]
-  public FsmEvent touchStationary;
-  [HutongGames.PlayMaker.Tooltip("Event to send on touch ended.")]
-  public FsmEvent touchEnded;
-  [HutongGames.PlayMaker.Tooltip("Event to send on touch cancel.")]
-  public FsmEvent touchCanceled;
-  [HutongGames.PlayMaker.Tooltip("Store the fingerId of the touch.")]
-  [UIHint(UIHint.Variable)]
-  [ActionSection("Store Results")]
-  public FsmInt storeFingerId;
-  [HutongGames.PlayMaker.Tooltip("Store the 2d position where the object was touched.")]
-  [UIHint(UIHint.Variable)]
-  public FsmVector2 storeHitPoint;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Sends events when a 2d object is touched. Optionally filter by a fingerID. NOTE: Uses the MainCamera!")]
+  [ActionCategory(ActionCategory.Device)]
+  public class TouchObject2dEvent : FsmStateAction
   {
-    this.gameObject = (FsmOwnerDefault) null;
-    FsmInt fsmInt = new FsmInt();
-    fsmInt.UseVariable = true;
-    this.fingerId = fsmInt;
-    this.touchBegan = (FsmEvent) null;
-    this.touchMoved = (FsmEvent) null;
-    this.touchStationary = (FsmEvent) null;
-    this.touchEnded = (FsmEvent) null;
-    this.touchCanceled = (FsmEvent) null;
-    this.storeFingerId = (FsmInt) null;
-    this.storeHitPoint = (FsmVector2) null;
-  }
+    [RequiredField]
+    [CheckForComponent(typeof (Collider2D))]
+    [HutongGames.PlayMaker.Tooltip("The Game Object to detect touches on.")]
+    public FsmOwnerDefault gameObject;
+    [HutongGames.PlayMaker.Tooltip("Only detect touches that match this fingerID, or set to None.")]
+    public FsmInt fingerId;
+    [HutongGames.PlayMaker.Tooltip("Event to send on touch began.")]
+    [ActionSection("Events")]
+    public FsmEvent touchBegan;
+    [HutongGames.PlayMaker.Tooltip("Event to send on touch moved.")]
+    public FsmEvent touchMoved;
+    [HutongGames.PlayMaker.Tooltip("Event to send on stationary touch.")]
+    public FsmEvent touchStationary;
+    [HutongGames.PlayMaker.Tooltip("Event to send on touch ended.")]
+    public FsmEvent touchEnded;
+    [HutongGames.PlayMaker.Tooltip("Event to send on touch cancel.")]
+    public FsmEvent touchCanceled;
+    [HutongGames.PlayMaker.Tooltip("Store the fingerId of the touch.")]
+    [UIHint(UIHint.Variable)]
+    [ActionSection("Store Results")]
+    public FsmInt storeFingerId;
+    [HutongGames.PlayMaker.Tooltip("Store the 2d position where the object was touched.")]
+    [UIHint(UIHint.Variable)]
+    public FsmVector2 storeHitPoint;
 
-  public override void OnUpdate()
-  {
-    if ((Object) Camera.main == (Object) null)
+    public override void Reset()
     {
-      this.LogError("No MainCamera defined!");
-      this.Finish();
+      this.gameObject = (FsmOwnerDefault) null;
+      FsmInt fsmInt = new FsmInt();
+      fsmInt.UseVariable = true;
+      this.fingerId = fsmInt;
+      this.touchBegan = (FsmEvent) null;
+      this.touchMoved = (FsmEvent) null;
+      this.touchStationary = (FsmEvent) null;
+      this.touchEnded = (FsmEvent) null;
+      this.touchCanceled = (FsmEvent) null;
+      this.storeFingerId = (FsmInt) null;
+      this.storeHitPoint = (FsmVector2) null;
     }
-    else
+
+    public override void OnUpdate()
     {
-      if (Input.touchCount <= 0)
-        return;
-      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-      if ((Object) ownerDefaultTarget == (Object) null)
-        return;
-      foreach (Touch touch in Input.touches)
+      if ((Object) Camera.main == (Object) null)
       {
-        if (this.fingerId.IsNone || touch.fingerId == this.fingerId.Value)
+        this.LogError("No MainCamera defined!");
+        this.Finish();
+      }
+      else
+      {
+        if (Input.touchCount <= 0)
+          return;
+        GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+        if ((Object) ownerDefaultTarget == (Object) null)
+          return;
+        foreach (Touch touch in Input.touches)
         {
-          RaycastHit2D rayIntersection = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay((Vector3) touch.position), float.PositiveInfinity);
-          Fsm.RecordLastRaycastHit2DInfo(this.Fsm, rayIntersection);
-          if ((Object) rayIntersection.transform != (Object) null && (Object) rayIntersection.transform.gameObject == (Object) ownerDefaultTarget)
+          if (this.fingerId.IsNone || touch.fingerId == this.fingerId.Value)
           {
-            this.storeFingerId.Value = touch.fingerId;
-            this.storeHitPoint.Value = rayIntersection.point;
-            switch (touch.phase)
+            RaycastHit2D rayIntersection = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay((Vector3) touch.position), float.PositiveInfinity);
+            Fsm.RecordLastRaycastHit2DInfo(this.Fsm, rayIntersection);
+            if ((Object) rayIntersection.transform != (Object) null && (Object) rayIntersection.transform.gameObject == (Object) ownerDefaultTarget)
             {
-              case TouchPhase.Began:
-                this.Fsm.Event(this.touchBegan);
-                return;
-              case TouchPhase.Moved:
-                this.Fsm.Event(this.touchMoved);
-                return;
-              case TouchPhase.Stationary:
-                this.Fsm.Event(this.touchStationary);
-                return;
-              case TouchPhase.Ended:
-                this.Fsm.Event(this.touchEnded);
-                return;
-              case TouchPhase.Canceled:
-                this.Fsm.Event(this.touchCanceled);
-                return;
-              default:
-                continue;
+              this.storeFingerId.Value = touch.fingerId;
+              this.storeHitPoint.Value = rayIntersection.point;
+              switch (touch.phase)
+              {
+                case TouchPhase.Began:
+                  this.Fsm.Event(this.touchBegan);
+                  return;
+                case TouchPhase.Moved:
+                  this.Fsm.Event(this.touchMoved);
+                  return;
+                case TouchPhase.Stationary:
+                  this.Fsm.Event(this.touchStationary);
+                  return;
+                case TouchPhase.Ended:
+                  this.Fsm.Event(this.touchEnded);
+                  return;
+                case TouchPhase.Canceled:
+                  this.Fsm.Event(this.touchCanceled);
+                  return;
+                default:
+                  continue;
+              }
             }
           }
         }

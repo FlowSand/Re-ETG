@@ -5,18 +5,19 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[Tooltip("Sends Events.")]
-[ActionCategory(".Brave")]
-public class BroadcastEventInRoom : BraveFsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public FsmString eventString;
-
-  public override void OnEnter()
+  [Tooltip("Sends Events.")]
+  [ActionCategory(".Brave")]
+  public class BroadcastEventInRoom : BraveFsmStateAction
   {
-    base.OnEnter();
-    GameManager.BroadcastRoomFsmEvent(this.eventString.Value, this.Owner.transform.position.GetAbsoluteRoom());
-    this.Finish();
+    public FsmString eventString;
+
+    public override void OnEnter()
+    {
+      base.OnEnter();
+      GameManager.BroadcastRoomFsmEvent(this.eventString.Value, this.Owner.transform.position.GetAbsoluteRoom());
+      this.Finish();
+    }
   }
 }

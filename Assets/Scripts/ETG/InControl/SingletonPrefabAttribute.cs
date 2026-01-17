@@ -7,12 +7,13 @@
 using System;
 
 #nullable disable
-namespace InControl;
-
-[AttributeUsage(AttributeTargets.Class, Inherited = true)]
-public class SingletonPrefabAttribute : Attribute
+namespace InControl
 {
-  public readonly string Name;
+  [AttributeUsage(AttributeTargets.Class, Inherited = true)]
+  public class SingletonPrefabAttribute : Attribute
+  {
+    public readonly string Name;
 
-  public SingletonPrefabAttribute(string name) => this.Name = name;
+    public SingletonPrefabAttribute(string name) => this.Name = name;
+  }
 }

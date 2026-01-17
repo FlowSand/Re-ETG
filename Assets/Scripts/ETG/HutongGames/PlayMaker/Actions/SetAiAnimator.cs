@@ -7,56 +7,57 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(".Brave")]
-[HutongGames.PlayMaker.Tooltip("Handles updating an AIAnimator.")]
-public class SetAiAnimator : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public FsmOwnerDefault GameObject;
-  public SetAiAnimator.Mode mode;
-  [HutongGames.PlayMaker.Tooltip("Name of the new default animation state (Directional Animations only).  Leave blank to return to the default (idle/base).")]
-  public FsmString baseAnimName;
-
-  public override void Reset()
+  [ActionCategory(".Brave")]
+  [HutongGames.PlayMaker.Tooltip("Handles updating an AIAnimator.")]
+  public class SetAiAnimator : FsmStateAction
   {
-    this.GameObject = (FsmOwnerDefault) null;
-    this.mode = SetAiAnimator.Mode.SetBaseAnim;
-    this.baseAnimName = (FsmString) string.Empty;
-  }
+    public FsmOwnerDefault GameObject;
+    public SetAiAnimator.Mode mode;
+    [HutongGames.PlayMaker.Tooltip("Name of the new default animation state (Directional Animations only).  Leave blank to return to the default (idle/base).")]
+    public FsmString baseAnimName;
 
-  public override string ErrorCheck()
-  {
-    string str = string.Empty;
-    UnityEngine.GameObject gameObject = this.GameObject.OwnerOption != OwnerDefaultOption.UseOwner ? this.GameObject.GameObject.Value : this.Owner;
-    if ((bool) (Object) gameObject)
+    public override void Reset()
     {
-      AIAnimator component = gameObject.GetComponent<AIAnimator>();
-      if (!(bool) (Object) component)
-        return "Requires an AI Animator.\n";
-      if (this.mode == SetAiAnimator.Mode.SetBaseAnim && this.baseAnimName.Value != string.Empty && !component.HasDirectionalAnimation(this.baseAnimName.Value))
-        str = $"{str}Unknown animation {this.baseAnimName.Value}.\n";
+      this.GameObject = (FsmOwnerDefault) null;
+      this.mode = SetAiAnimator.Mode.SetBaseAnim;
+      this.baseAnimName = (FsmString) string.Empty;
     }
-    else if (!this.GameObject.GameObject.UseVariable)
-      return "No object specified";
-    return str;
-  }
 
-  public override void OnEnter()
-  {
-    AIAnimator component = this.Fsm.GetOwnerDefaultTarget(this.GameObject).GetComponent<AIAnimator>();
-    if (this.mode == SetAiAnimator.Mode.SetBaseAnim)
+    public override string ErrorCheck()
     {
-      if (this.baseAnimName.Value == string.Empty)
-        component.ClearBaseAnim();
-      else
-        component.SetBaseAnim(this.baseAnimName.Value);
+      string str = string.Empty;
+      UnityEngine.GameObject gameObject = this.GameObject.OwnerOption != OwnerDefaultOption.UseOwner ? this.GameObject.GameObject.Value : this.Owner;
+      if ((bool) (Object) gameObject)
+      {
+        AIAnimator component = gameObject.GetComponent<AIAnimator>();
+        if (!(bool) (Object) component)
+          return "Requires an AI Animator.\n";
+        if (this.mode == SetAiAnimator.Mode.SetBaseAnim && this.baseAnimName.Value != string.Empty && !component.HasDirectionalAnimation(this.baseAnimName.Value))
+          str = $"{str}Unknown animation {this.baseAnimName.Value}.\n";
+      }
+      else if (!this.GameObject.GameObject.UseVariable)
+        return "No object specified";
+      return str;
     }
-    this.Finish();
-  }
 
-  public enum Mode
-  {
-    SetBaseAnim,
+    public override void OnEnter()
+    {
+      AIAnimator component = this.Fsm.GetOwnerDefaultTarget(this.GameObject).GetComponent<AIAnimator>();
+      if (this.mode == SetAiAnimator.Mode.SetBaseAnim)
+      {
+        if (this.baseAnimName.Value == string.Empty)
+          component.ClearBaseAnim();
+        else
+          component.SetBaseAnim(this.baseAnimName.Value);
+      }
+      this.Finish();
+    }
+
+    public enum Mode
+    {
+      SetBaseAnim,
+    }
   }
 }

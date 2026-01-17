@@ -7,33 +7,34 @@
 using Dungeonator;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-public class CheckRoomVisited : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [Tooltip("Event sent if there are.")]
-  public FsmEvent HasVisited;
-  [Tooltip("Event sent if there aren't.")]
-  public FsmEvent HasNotVisited;
-  private RoomHandler m_targetRoom;
-
-  public RoomHandler targetRoom
+  public class CheckRoomVisited : FsmStateAction
   {
-    get => this.m_targetRoom;
-    set => this.m_targetRoom = value;
-  }
+    [Tooltip("Event sent if there are.")]
+    public FsmEvent HasVisited;
+    [Tooltip("Event sent if there aren't.")]
+    public FsmEvent HasNotVisited;
+    private RoomHandler m_targetRoom;
 
-  public override void Awake() => base.Awake();
-
-  public override void OnEnter()
-  {
-    if (this.targetRoom != null)
+    public RoomHandler targetRoom
     {
-      if (this.targetRoom.visibility == RoomHandler.VisibilityStatus.OBSCURED)
-        this.Fsm.Event(this.HasNotVisited);
-      else
-        this.Fsm.Event(this.HasVisited);
+      get => this.m_targetRoom;
+      set => this.m_targetRoom = value;
     }
-    this.Finish();
+
+    public override void Awake() => base.Awake();
+
+    public override void OnEnter()
+    {
+      if (this.targetRoom != null)
+      {
+        if (this.targetRoom.visibility == RoomHandler.VisibilityStatus.OBSCURED)
+          this.Fsm.Event(this.HasNotVisited);
+        else
+          this.Fsm.Event(this.HasVisited);
+      }
+      this.Finish();
+    }
   }
 }

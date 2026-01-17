@@ -10,125 +10,126 @@ using System.Diagnostics;
 using UnityEngine;
 
 #nullable disable
-namespace DaikonForge.Tween.Components;
-
-public abstract class TweenPlayableComponent : MonoBehaviour
+namespace DaikonForge.Tween.Components
 {
-  [SerializeField]
-  protected bool autoRun;
-
-  public event TweenComponentNotification TweenStarted;
-
-  public event TweenComponentNotification TweenStopped;
-
-  public event TweenComponentNotification TweenPaused;
-
-  public event TweenComponentNotification TweenResumed;
-
-  public event TweenComponentNotification TweenLoopCompleted;
-
-  public event TweenComponentNotification TweenCompleted;
-
-  public virtual string TweenName { get; set; }
-
-  public abstract TweenState State { get; }
-
-  public abstract TweenBase BaseTween { get; }
-
-  [Inspector("General", 1, BackingField = "autoRun", Tooltip = "If set to TRUE, this Tween will automatically play when the scene starts")]
-  public bool AutoRun
+  public abstract class TweenPlayableComponent : MonoBehaviour
   {
-    get => this.autoRun;
-    set => this.autoRun = value;
-  }
+    [SerializeField]
+    protected bool autoRun;
 
-  public abstract void Play();
+    public event TweenComponentNotification TweenStarted;
 
-  public abstract void Stop();
+    public event TweenComponentNotification TweenStopped;
 
-  public abstract void Rewind();
+    public event TweenComponentNotification TweenPaused;
 
-  public abstract void FastForward();
+    public event TweenComponentNotification TweenResumed;
 
-  public abstract void Pause();
+    public event TweenComponentNotification TweenLoopCompleted;
 
-  public abstract void Resume();
+    public event TweenComponentNotification TweenCompleted;
 
-  public virtual void Awake()
-  {
-  }
+    public virtual string TweenName { get; set; }
 
-  public virtual void Start()
-  {
-  }
+    public abstract TweenState State { get; }
 
-  public virtual void OnEnable()
-  {
-  }
+    public abstract TweenBase BaseTween { get; }
 
-  public virtual void OnDisable()
-  {
-  }
-
-  public virtual void OnDestroy()
-  {
-  }
-
-  public virtual void Enable() => this.enabled = true;
-
-  public virtual void Disable() => this.enabled = false;
-
-  [DebuggerHidden]
-  public virtual IEnumerator WaitForCompletion()
-  {
-    // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new TweenPlayableComponent__WaitForCompletionc__Iterator0()
+    [Inspector("General", 1, BackingField = "autoRun", Tooltip = "If set to TRUE, this Tween will automatically play when the scene starts")]
+    public bool AutoRun
     {
-      _this = this
-    };
-  }
+      get => this.autoRun;
+      set => this.autoRun = value;
+    }
 
-  protected virtual void onPaused()
-  {
-    if (this.TweenPaused == null)
-      return;
-    this.TweenPaused(this);
-  }
+    public abstract void Play();
 
-  protected virtual void onResumed()
-  {
-    if (this.TweenResumed == null)
-      return;
-    this.TweenResumed(this);
-  }
+    public abstract void Stop();
 
-  protected virtual void onStarted()
-  {
-    if (this.TweenStarted == null)
-      return;
-    this.TweenStarted(this);
-  }
+    public abstract void Rewind();
 
-  protected virtual void onStopped()
-  {
-    if (this.TweenStopped == null)
-      return;
-    this.TweenStopped(this);
-  }
+    public abstract void FastForward();
 
-  protected virtual void onLoopCompleted()
-  {
-    if (this.TweenLoopCompleted == null)
-      return;
-    this.TweenLoopCompleted(this);
-  }
+    public abstract void Pause();
 
-  protected virtual void onCompleted()
-  {
-    if (this.TweenCompleted == null)
-      return;
-    this.TweenCompleted(this);
-  }
+    public abstract void Resume();
 
-  public override string ToString() => $"{this.TweenName} - {base.ToString()}";
+    public virtual void Awake()
+    {
+    }
+
+    public virtual void Start()
+    {
+    }
+
+    public virtual void OnEnable()
+    {
+    }
+
+    public virtual void OnDisable()
+    {
+    }
+
+    public virtual void OnDestroy()
+    {
+    }
+
+    public virtual void Enable() => this.enabled = true;
+
+    public virtual void Disable() => this.enabled = false;
+
+    [DebuggerHidden]
+    public virtual IEnumerator WaitForCompletion()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new TweenPlayableComponent__WaitForCompletionc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    protected virtual void onPaused()
+    {
+      if (this.TweenPaused == null)
+        return;
+      this.TweenPaused(this);
+    }
+
+    protected virtual void onResumed()
+    {
+      if (this.TweenResumed == null)
+        return;
+      this.TweenResumed(this);
+    }
+
+    protected virtual void onStarted()
+    {
+      if (this.TweenStarted == null)
+        return;
+      this.TweenStarted(this);
+    }
+
+    protected virtual void onStopped()
+    {
+      if (this.TweenStopped == null)
+        return;
+      this.TweenStopped(this);
+    }
+
+    protected virtual void onLoopCompleted()
+    {
+      if (this.TweenLoopCompleted == null)
+        return;
+      this.TweenLoopCompleted(this);
+    }
+
+    protected virtual void onCompleted()
+    {
+      if (this.TweenCompleted == null)
+        return;
+      this.TweenCompleted(this);
+    }
+
+    public override string ToString() => $"{this.TweenName} - {base.ToString()}";
+  }
 }

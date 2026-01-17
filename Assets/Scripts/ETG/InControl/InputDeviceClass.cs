@@ -5,14 +5,15 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public enum InputDeviceClass
+namespace InControl
 {
-  Unknown,
-  Keyboard,
-  Mouse,
-  Controller,
-  Remote,
-  FlightStick,
+  public enum InputDeviceClass
+  {
+    Unknown,
+    Keyboard,
+    Mouse,
+    Controller,
+    Remote,
+    FlightStick,
+  }
 }

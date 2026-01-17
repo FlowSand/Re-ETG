@@ -7,54 +7,55 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Sets a trigger parameter to active. Triggers are parameters that act mostly like booleans, but get reset to inactive when they are used in a transition.")]
-[ActionCategory(ActionCategory.Animator)]
-public class SetAnimatorTrigger : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [CheckForComponent(typeof (Animator))]
-  [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
-  [HutongGames.PlayMaker.Tooltip("The trigger name")]
-  [UIHint(UIHint.AnimatorTrigger)]
-  [RequiredField]
-  public FsmString trigger;
-  private Animator _animator;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Sets a trigger parameter to active. Triggers are parameters that act mostly like booleans, but get reset to inactive when they are used in a transition.")]
+  [ActionCategory(ActionCategory.Animator)]
+  public class SetAnimatorTrigger : FsmStateAction
   {
-    this.gameObject = (FsmOwnerDefault) null;
-    this.trigger = (FsmString) null;
-  }
+    [CheckForComponent(typeof (Animator))]
+    [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    [HutongGames.PlayMaker.Tooltip("The trigger name")]
+    [UIHint(UIHint.AnimatorTrigger)]
+    [RequiredField]
+    public FsmString trigger;
+    private Animator _animator;
 
-  public override void OnEnter()
-  {
-    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-    if ((Object) ownerDefaultTarget == (Object) null)
+    public override void Reset()
     {
-      this.Finish();
+      this.gameObject = (FsmOwnerDefault) null;
+      this.trigger = (FsmString) null;
     }
-    else
+
+    public override void OnEnter()
     {
-      this._animator = ownerDefaultTarget.GetComponent<Animator>();
-      if ((Object) this._animator == (Object) null)
+      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+      if ((Object) ownerDefaultTarget == (Object) null)
       {
         this.Finish();
       }
       else
       {
-        this.SetTrigger();
-        this.Finish();
+        this._animator = ownerDefaultTarget.GetComponent<Animator>();
+        if ((Object) this._animator == (Object) null)
+        {
+          this.Finish();
+        }
+        else
+        {
+          this.SetTrigger();
+          this.Finish();
+        }
       }
     }
-  }
 
-  private void SetTrigger()
-  {
-    if (!((Object) this._animator != (Object) null))
-      return;
-    this._animator.SetTrigger(this.trigger.Value);
+    private void SetTrigger()
+    {
+      if (!((Object) this._animator != (Object) null))
+        return;
+      this._animator.SetTrigger(this.trigger.Value);
+    }
   }
 }

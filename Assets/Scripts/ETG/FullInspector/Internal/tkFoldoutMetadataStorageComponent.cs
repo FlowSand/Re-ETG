@@ -7,10 +7,11 @@
 using UnityEngine;
 
 #nullable disable
-namespace FullInspector.Internal;
-
-[AddComponentMenu("")]
-public class tkFoldoutMetadataStorageComponent : 
-  fiBaseStorageComponent<tkFoldoutGraphMetadataSerializer>
+namespace FullInspector.Internal
 {
+  [AddComponentMenu("")]
+  public class tkFoldoutMetadataStorageComponent : 
+    fiBaseStorageComponent<tkFoldoutGraphMetadataSerializer>
+  {
+  }
 }

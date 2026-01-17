@@ -5,12 +5,13 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public class TouchInputDevice : InputDevice
+namespace InControl
 {
-  public TouchInputDevice()
-    : base("Touch Input Device", true)
+  public class TouchInputDevice : InputDevice
   {
+    public TouchInputDevice()
+      : base("Touch Input Device", true)
+    {
+    }
   }
 }

@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector;
-
-public interface IInspectedMemberFilter
+namespace FullInspector
 {
-  bool IsInterested(InspectedProperty property);
+  public interface IInspectedMemberFilter
+  {
+    bool IsInterested(InspectedProperty property);
 
-  bool IsInterested(InspectedMethod method);
+    bool IsInterested(InspectedMethod method);
+  }
 }

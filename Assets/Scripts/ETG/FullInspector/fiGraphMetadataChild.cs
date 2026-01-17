@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector;
-
-public struct fiGraphMetadataChild
+namespace FullInspector
 {
-  public fiGraphMetadata Metadata;
+  public struct fiGraphMetadataChild
+  {
+    public fiGraphMetadata Metadata;
+  }
 }

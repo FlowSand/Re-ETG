@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullInspector.BackupService;
-
-public class fiDeserializedMember
+namespace FullInspector.BackupService
 {
-  public InspectedProperty InspectedProperty;
-  public object Value;
-  public fiEnableRestore ShouldRestore;
+  public class fiDeserializedMember
+  {
+    public InspectedProperty InspectedProperty;
+    public object Value;
+    public fiEnableRestore ShouldRestore;
+  }
 }

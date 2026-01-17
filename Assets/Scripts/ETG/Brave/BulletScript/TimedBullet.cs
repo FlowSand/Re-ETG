@@ -8,31 +8,32 @@ using System.Collections;
 using System.Diagnostics;
 
 #nullable disable
-namespace Brave.BulletScript;
-
-public class TimedBullet : Bullet
+namespace Brave.BulletScript
 {
-  private int m_destroyTimer;
-
-  public TimedBullet(int destroyTimer)
-    : base()
+  public class TimedBullet : Bullet
   {
-    this.m_destroyTimer = destroyTimer;
-  }
+    private int m_destroyTimer;
 
-  public TimedBullet(string name, int destroyTimer)
-    : base(name)
-  {
-    this.m_destroyTimer = destroyTimer;
-  }
-
-  [DebuggerHidden]
-  protected override IEnumerator Top()
-  {
-    // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new TimedBullet__Topc__Iterator0()
+    public TimedBullet(int destroyTimer)
+      : base()
     {
-      _this = this
-    };
+      this.m_destroyTimer = destroyTimer;
+    }
+
+    public TimedBullet(string name, int destroyTimer)
+      : base(name)
+    {
+      this.m_destroyTimer = destroyTimer;
+    }
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new TimedBullet__Topc__Iterator0()
+      {
+        _this = this
+      };
+    }
   }
 }

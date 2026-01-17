@@ -7,11 +7,12 @@
 using System;
 
 #nullable disable
-namespace FullInspector.Internal;
-
-public interface fiILoadedSerializers
+namespace FullInspector.Internal
 {
-  Type DefaultSerializerProvider { get; }
+  public interface fiILoadedSerializers
+  {
+    Type DefaultSerializerProvider { get; }
 
-  Type[] AllLoadedSerializerProviders { get; }
+    Type[] AllLoadedSerializerProviders { get; }
+  }
 }

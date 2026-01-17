@@ -7,11 +7,12 @@
 using System;
 
 #nullable disable
-namespace Dungeonator;
-
-[Serializable]
-public class MetaInjectionUnlockedChanceEntry
+namespace Dungeonator
 {
-  public DungeonPrerequisite[] prerequisites;
-  public float ChanceToTrigger = 1f;
+  [Serializable]
+  public class MetaInjectionUnlockedChanceEntry
+  {
+    public DungeonPrerequisite[] prerequisites;
+    public float ChanceToTrigger = 1f;
+  }
 }

@@ -5,13 +5,14 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public enum BindingSourceType
+namespace InControl
 {
-  None,
-  DeviceBindingSource,
-  KeyBindingSource,
-  MouseBindingSource,
-  UnknownDeviceBindingSource,
+  public enum BindingSourceType
+  {
+    None,
+    DeviceBindingSource,
+    KeyBindingSource,
+    MouseBindingSource,
+    UnknownDeviceBindingSource,
+  }
 }

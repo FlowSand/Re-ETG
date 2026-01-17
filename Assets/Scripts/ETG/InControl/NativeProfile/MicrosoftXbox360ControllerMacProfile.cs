@@ -5,46 +5,47 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl.NativeProfile;
-
-public class MicrosoftXbox360ControllerMacProfile : Xbox360DriverMacProfile
+namespace InControl.NativeProfile
 {
-  public MicrosoftXbox360ControllerMacProfile()
+  public class MicrosoftXbox360ControllerMacProfile : Xbox360DriverMacProfile
   {
-    this.Name = "Microsoft Xbox 360 Controller";
-    this.Meta = "Microsoft Xbox 360 Controller on Mac";
-    this.Matchers = new NativeInputDeviceMatcher[6]
+    public MicrosoftXbox360ControllerMacProfile()
     {
-      new NativeInputDeviceMatcher()
+      this.Name = "Microsoft Xbox 360 Controller";
+      this.Meta = "Microsoft Xbox 360 Controller on Mac";
+      this.Matchers = new NativeInputDeviceMatcher[6]
       {
-        VendorID = new ushort?((ushort) 1118),
-        ProductID = new ushort?((ushort) 654)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 1118),
-        ProductID = new ushort?((ushort) 655)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 3695),
-        ProductID = new ushort?((ushort) 307)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 3695),
-        ProductID = new ushort?((ushort) 63233)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 3695),
-        ProductID = new ushort?((ushort) 672)
-      },
-      new NativeInputDeviceMatcher()
-      {
-        VendorID = new ushort?((ushort) 1118),
-        ProductID = new ushort?((ushort) 672)
-      }
-    };
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 1118),
+          ProductID = new ushort?((ushort) 654)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 1118),
+          ProductID = new ushort?((ushort) 655)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 3695),
+          ProductID = new ushort?((ushort) 307)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 3695),
+          ProductID = new ushort?((ushort) 63233)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 3695),
+          ProductID = new ushort?((ushort) 672)
+        },
+        new NativeInputDeviceMatcher()
+        {
+          VendorID = new ushort?((ushort) 1118),
+          ProductID = new ushort?((ushort) 672)
+        }
+      };
+    }
   }
 }

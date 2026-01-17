@@ -5,17 +5,18 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public interface IInputControl
+namespace InControl
 {
-  bool HasChanged { get; }
+  public interface IInputControl
+  {
+    bool HasChanged { get; }
 
-  bool IsPressed { get; }
+    bool IsPressed { get; }
 
-  bool WasPressed { get; }
+    bool WasPressed { get; }
 
-  bool WasReleased { get; }
+    bool WasReleased { get; }
 
-  void ClearInputState();
+    void ClearInputState();
+  }
 }

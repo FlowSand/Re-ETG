@@ -5,11 +5,12 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace FullSerializer;
-
-public enum fsMemberSerialization
+namespace FullSerializer
 {
-  OptIn,
-  OptOut,
-  Default,
+  public enum fsMemberSerialization
+  {
+    OptIn,
+    OptOut,
+    Default,
+  }
 }

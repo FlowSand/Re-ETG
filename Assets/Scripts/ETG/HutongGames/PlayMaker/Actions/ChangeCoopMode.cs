@@ -9,57 +9,58 @@ using System.Diagnostics;
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Only use this in the Foyer!")]
-[ActionCategory(".NPCs")]
-public class ChangeCoopMode : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  public string PlayerPrefabPath;
-  public bool TargetCoopMode = true;
-  public bool IsTestCoopValid;
-  public FsmEvent IfCoopValidEvent;
-
-  public override void Reset()
+  [HutongGames.PlayMaker.Tooltip("Only use this in the Foyer!")]
+  [ActionCategory(".NPCs")]
+  public class ChangeCoopMode : FsmStateAction
   {
-  }
+    public string PlayerPrefabPath;
+    public bool TargetCoopMode = true;
+    public bool IsTestCoopValid;
+    public FsmEvent IfCoopValidEvent;
 
-  public override void OnEnter()
-  {
-    if (this.IsTestCoopValid)
-      this.Fsm.Event(this.IfCoopValidEvent);
-    else
-      this.Fsm.GameObject.GetComponent<TalkDoerLite>().StartCoroutine(this.HandleCharacterChange());
-  }
-
-  [DebuggerHidden]
-  private IEnumerator HandleCharacterChange()
-  {
-    // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator) new ChangeCoopMode__HandleCharacterChangec__Iterator0()
+    public override void Reset()
     {
-      _this = this
-    };
-  }
-
-  private PlayerController GeneratePlayer()
-  {
-    if ((Object) GameManager.Instance.SecondaryPlayer != (Object) null)
-      return GameManager.Instance.SecondaryPlayer;
-    GameManager.Instance.ClearSecondaryPlayer();
-    GameManager.LastUsedCoopPlayerPrefab = (GameObject) BraveResources.Load(this.PlayerPrefabPath);
-    PlayerController player = (PlayerController) null;
-    if ((Object) player == (Object) null)
-    {
-      GameObject gameObject = Object.Instantiate<GameObject>(GameManager.LastUsedCoopPlayerPrefab, this.Fsm.GameObject.transform.position, Quaternion.identity);
-      gameObject.SetActive(true);
-      player = gameObject.GetComponent<PlayerController>();
     }
-    FoyerCharacterSelectFlag component = this.Owner.GetComponent<FoyerCharacterSelectFlag>();
-    if ((bool) (Object) component && component.IsAlternateCostume)
-      player.SwapToAlternateCostume();
-    GameManager.Instance.SecondaryPlayer = player;
-    player.PlayerIDX = 1;
-    return player;
+
+    public override void OnEnter()
+    {
+      if (this.IsTestCoopValid)
+        this.Fsm.Event(this.IfCoopValidEvent);
+      else
+        this.Fsm.GameObject.GetComponent<TalkDoerLite>().StartCoroutine(this.HandleCharacterChange());
+    }
+
+    [DebuggerHidden]
+    private IEnumerator HandleCharacterChange()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new ChangeCoopMode__HandleCharacterChangec__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    private PlayerController GeneratePlayer()
+    {
+      if ((Object) GameManager.Instance.SecondaryPlayer != (Object) null)
+        return GameManager.Instance.SecondaryPlayer;
+      GameManager.Instance.ClearSecondaryPlayer();
+      GameManager.LastUsedCoopPlayerPrefab = (GameObject) BraveResources.Load(this.PlayerPrefabPath);
+      PlayerController player = (PlayerController) null;
+      if ((Object) player == (Object) null)
+      {
+        GameObject gameObject = Object.Instantiate<GameObject>(GameManager.LastUsedCoopPlayerPrefab, this.Fsm.GameObject.transform.position, Quaternion.identity);
+        gameObject.SetActive(true);
+        player = gameObject.GetComponent<PlayerController>();
+      }
+      FoyerCharacterSelectFlag component = this.Owner.GetComponent<FoyerCharacterSelectFlag>();
+      if ((bool) (Object) component && component.IsAlternateCostume)
+        player.SwapToAlternateCostume();
+      GameManager.Instance.SecondaryPlayer = player;
+      player.PlayerIDX = 1;
+      return player;
+    }
   }
 }

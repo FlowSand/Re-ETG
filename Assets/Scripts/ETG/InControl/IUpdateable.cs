@@ -5,9 +5,10 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public interface IUpdateable
+namespace InControl
 {
-  void Update(ulong updateTick, float deltaTime);
+  public interface IUpdateable
+  {
+    void Update(ulong updateTick, float deltaTime);
+  }
 }

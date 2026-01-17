@@ -7,45 +7,46 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[ActionCategory(ActionCategory.Math)]
-[HutongGames.PlayMaker.Tooltip("Clamps the value of Float Variable to a Min/Max range.")]
-public class FloatClamp : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Float variable to clamp.")]
-  [UIHint(UIHint.Variable)]
-  [RequiredField]
-  public FsmFloat floatVariable;
-  [RequiredField]
-  [HutongGames.PlayMaker.Tooltip("The minimum value.")]
-  public FsmFloat minValue;
-  [HutongGames.PlayMaker.Tooltip("The maximum value.")]
-  [RequiredField]
-  public FsmFloat maxValue;
-  [HutongGames.PlayMaker.Tooltip("Repeate every frame. Useful if the float variable is changing.")]
-  public bool everyFrame;
-
-  public override void Reset()
+  [ActionCategory(ActionCategory.Math)]
+  [HutongGames.PlayMaker.Tooltip("Clamps the value of Float Variable to a Min/Max range.")]
+  public class FloatClamp : FsmStateAction
   {
-    this.floatVariable = (FsmFloat) null;
-    this.minValue = (FsmFloat) null;
-    this.maxValue = (FsmFloat) null;
-    this.everyFrame = false;
-  }
+    [HutongGames.PlayMaker.Tooltip("Float variable to clamp.")]
+    [UIHint(UIHint.Variable)]
+    [RequiredField]
+    public FsmFloat floatVariable;
+    [RequiredField]
+    [HutongGames.PlayMaker.Tooltip("The minimum value.")]
+    public FsmFloat minValue;
+    [HutongGames.PlayMaker.Tooltip("The maximum value.")]
+    [RequiredField]
+    public FsmFloat maxValue;
+    [HutongGames.PlayMaker.Tooltip("Repeate every frame. Useful if the float variable is changing.")]
+    public bool everyFrame;
 
-  public override void OnEnter()
-  {
-    this.DoClamp();
-    if (this.everyFrame)
-      return;
-    this.Finish();
-  }
+    public override void Reset()
+    {
+      this.floatVariable = (FsmFloat) null;
+      this.minValue = (FsmFloat) null;
+      this.maxValue = (FsmFloat) null;
+      this.everyFrame = false;
+    }
 
-  public override void OnUpdate() => this.DoClamp();
+    public override void OnEnter()
+    {
+      this.DoClamp();
+      if (this.everyFrame)
+        return;
+      this.Finish();
+    }
 
-  private void DoClamp()
-  {
-    this.floatVariable.Value = Mathf.Clamp(this.floatVariable.Value, this.minValue.Value, this.maxValue.Value);
+    public override void OnUpdate() => this.DoClamp();
+
+    private void DoClamp()
+    {
+      this.floatVariable.Value = Mathf.Clamp(this.floatVariable.Value, this.minValue.Value, this.maxValue.Value);
+    }
   }
 }

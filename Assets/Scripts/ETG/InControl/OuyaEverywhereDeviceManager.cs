@@ -5,38 +5,39 @@
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
 
 #nullable disable
-namespace InControl;
-
-public class OuyaEverywhereDeviceManager : InputDeviceManager
+namespace InControl
 {
-  private bool[] deviceConnected = new bool[4];
-
-  public OuyaEverywhereDeviceManager()
+  public class OuyaEverywhereDeviceManager : InputDeviceManager
   {
-    for (int deviceIndex = 0; deviceIndex < 4; ++deviceIndex)
-      this.devices.Add((InputDevice) new OuyaEverywhereDevice(deviceIndex));
-  }
+    private bool[] deviceConnected = new bool[4];
 
-  public override void Update(ulong updateTick, float deltaTime)
-  {
-    for (int index = 0; index < 4; ++index)
+    public OuyaEverywhereDeviceManager()
     {
-      OuyaEverywhereDevice device = this.devices[index] as OuyaEverywhereDevice;
-      if (device.IsConnected != this.deviceConnected[index])
+      for (int deviceIndex = 0; deviceIndex < 4; ++deviceIndex)
+        this.devices.Add((InputDevice) new OuyaEverywhereDevice(deviceIndex));
+    }
+
+    public override void Update(ulong updateTick, float deltaTime)
+    {
+      for (int index = 0; index < 4; ++index)
       {
-        if (device.IsConnected)
+        OuyaEverywhereDevice device = this.devices[index] as OuyaEverywhereDevice;
+        if (device.IsConnected != this.deviceConnected[index])
         {
-          device.BeforeAttach();
-          InputManager.AttachDevice((InputDevice) device);
+          if (device.IsConnected)
+          {
+            device.BeforeAttach();
+            InputManager.AttachDevice((InputDevice) device);
+          }
+          else
+            InputManager.DetachDevice((InputDevice) device);
+          this.deviceConnected[index] = device.IsConnected;
         }
-        else
-          InputManager.DetachDevice((InputDevice) device);
-        this.deviceConnected[index] = device.IsConnected;
       }
     }
-  }
 
-  public static void Enable()
-  {
+    public static void Enable()
+    {
+    }
   }
 }

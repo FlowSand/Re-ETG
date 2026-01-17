@@ -9,35 +9,36 @@ using System.Text;
 using UnityEngine;
 
 #nullable disable
-namespace Dungeonator;
-
-public class FlowBuilderDebugger
+namespace Dungeonator
 {
-  protected StringBuilder builder;
-
-  public FlowBuilderDebugger() => this.builder = new StringBuilder();
-
-  public void Log(string s) => this.builder.AppendLine(s);
-
-  public void Log(RoomHandler parent, RoomHandler child)
+  public class FlowBuilderDebugger
   {
-    this.builder.AppendLine($"{parent.area.prototypeRoom.name} built {child.area.prototypeRoom.name}");
-  }
+    protected StringBuilder builder;
 
-  public void LogMonoHeapStatus()
-  {
-  }
+    public FlowBuilderDebugger() => this.builder = new StringBuilder();
 
-  public void FinalizeLog()
-  {
-    string str = Application.dataPath + "\\dungeonDebug.txt";
-    if (File.Exists(str))
+    public void Log(string s) => this.builder.AppendLine(s);
+
+    public void Log(RoomHandler parent, RoomHandler child)
     {
-      new FileInfo(str).IsReadOnly = false;
-      File.Delete(str);
+      this.builder.AppendLine($"{parent.area.prototypeRoom.name} built {child.area.prototypeRoom.name}");
     }
-    StreamWriter streamWriter = new StreamWriter(str);
-    streamWriter.WriteLine(this.builder.ToString());
-    streamWriter.Close();
+
+    public void LogMonoHeapStatus()
+    {
+    }
+
+    public void FinalizeLog()
+    {
+      string str = Application.dataPath + "\\dungeonDebug.txt";
+      if (File.Exists(str))
+      {
+        new FileInfo(str).IsReadOnly = false;
+        File.Delete(str);
+      }
+      StreamWriter streamWriter = new StreamWriter(str);
+      streamWriter.WriteLine(this.builder.ToString());
+      streamWriter.Close();
+    }
   }
 }

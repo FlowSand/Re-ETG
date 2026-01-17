@@ -7,15 +7,16 @@
 using System.Collections.Generic;
 
 #nullable disable
-namespace InControl;
-
-public abstract class InputDeviceManager
+namespace InControl
 {
-  protected List<InputDevice> devices = new List<InputDevice>();
-
-  public abstract void Update(ulong updateTick, float deltaTime);
-
-  public virtual void Destroy()
+  public abstract class InputDeviceManager
   {
+    protected List<InputDevice> devices = new List<InputDevice>();
+
+    public abstract void Update(ulong updateTick, float deltaTime);
+
+    public virtual void Destroy()
+    {
+    }
   }
 }

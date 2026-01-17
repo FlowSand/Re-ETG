@@ -7,61 +7,62 @@
 using UnityEngine;
 
 #nullable disable
-namespace HutongGames.PlayMaker.Actions;
-
-[HutongGames.PlayMaker.Tooltip("Get the scale of a sprite. \nNOTE: The Game Object must have a tk2dBaseSprite or derived component attached ( tk2dSprite, tk2dAnimatedSprite)")]
-[ActionCategory("2D Toolkit/Sprite")]
-public class Tk2dSpriteGetScale : FsmStateAction
+namespace HutongGames.PlayMaker.Actions
 {
-  [CheckForComponent(typeof (tk2dBaseSprite))]
-  [HutongGames.PlayMaker.Tooltip("The Game Object to work with. NOTE: The Game Object must have a tk2dBaseSprite or derived component attached ( tk2dSprite, tk2dAnimatedSprite).")]
-  [RequiredField]
-  public FsmOwnerDefault gameObject;
-  [UIHint(UIHint.Variable)]
-  [HutongGames.PlayMaker.Tooltip("The scale Id")]
-  public FsmVector3 scale;
-  [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
-  [ActionSection("")]
-  public bool everyframe;
-  private tk2dBaseSprite _sprite;
-
-  private void _getSprite()
+  [HutongGames.PlayMaker.Tooltip("Get the scale of a sprite. \nNOTE: The Game Object must have a tk2dBaseSprite or derived component attached ( tk2dSprite, tk2dAnimatedSprite)")]
+  [ActionCategory("2D Toolkit/Sprite")]
+  public class Tk2dSpriteGetScale : FsmStateAction
   {
-    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-    if ((Object) ownerDefaultTarget == (Object) null)
-      return;
-    this._sprite = ownerDefaultTarget.GetComponent<tk2dBaseSprite>();
-  }
+    [CheckForComponent(typeof (tk2dBaseSprite))]
+    [HutongGames.PlayMaker.Tooltip("The Game Object to work with. NOTE: The Game Object must have a tk2dBaseSprite or derived component attached ( tk2dSprite, tk2dAnimatedSprite).")]
+    [RequiredField]
+    public FsmOwnerDefault gameObject;
+    [UIHint(UIHint.Variable)]
+    [HutongGames.PlayMaker.Tooltip("The scale Id")]
+    public FsmVector3 scale;
+    [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
+    [ActionSection("")]
+    public bool everyframe;
+    private tk2dBaseSprite _sprite;
 
-  public override void Reset()
-  {
-    this.gameObject = (FsmOwnerDefault) null;
-    this.scale = (FsmVector3) null;
-    this.everyframe = false;
-  }
-
-  public override void OnEnter()
-  {
-    this._getSprite();
-    this.DoGetSpriteScale();
-    if (this.everyframe)
-      return;
-    this.Finish();
-  }
-
-  public override void OnUpdate() => this.DoGetSpriteScale();
-
-  private void DoGetSpriteScale()
-  {
-    if ((Object) this._sprite == (Object) null)
+    private void _getSprite()
     {
-      this.LogWarning("Missing tk2dBaseSprite component");
-    }
-    else
-    {
-      if (!(this._sprite.scale != this.scale.Value))
+      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+      if ((Object) ownerDefaultTarget == (Object) null)
         return;
-      this.scale.Value = this._sprite.scale;
+      this._sprite = ownerDefaultTarget.GetComponent<tk2dBaseSprite>();
+    }
+
+    public override void Reset()
+    {
+      this.gameObject = (FsmOwnerDefault) null;
+      this.scale = (FsmVector3) null;
+      this.everyframe = false;
+    }
+
+    public override void OnEnter()
+    {
+      this._getSprite();
+      this.DoGetSpriteScale();
+      if (this.everyframe)
+        return;
+      this.Finish();
+    }
+
+    public override void OnUpdate() => this.DoGetSpriteScale();
+
+    private void DoGetSpriteScale()
+    {
+      if ((Object) this._sprite == (Object) null)
+      {
+        this.LogWarning("Missing tk2dBaseSprite component");
+      }
+      else
+      {
+        if (!(this._sprite.scale != this.scale.Value))
+          return;
+        this.scale.Value = this._sprite.scale;
+      }
     }
   }
 }
