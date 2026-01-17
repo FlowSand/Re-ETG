@@ -179,7 +179,7 @@ namespace ETG.Core.UI.HUD
               flag = true;
             }
           }
-          else if ((int) ch != (int) "\n"[0] && (int) ch != (int) "\r"[0] && ch != '\t' && ch != '\u001B')
+          else if ((int) ch != (int) "\n"[0] && (int) ch != (int) "\r"[0] && ch != '\t' && ch != '')
           {
             str += (string) (object) ch;
             flag = true;

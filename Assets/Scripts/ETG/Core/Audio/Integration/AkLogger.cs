@@ -27,7 +27,7 @@ namespace ETG.Core.Audio.Integration
         // ISSUE: reference to a compiler-generated field
         this.errorLoggerDelegate = AkLogger._f__mg_cache0;
         // ISSUE: explicit constructor call
-        base.\u002Ector();
+        // base..ctor(); // Removed: explicit base constructor calls not allowed in C#
         if (AkLogger.ms_Instance != null)
           return;
         AkLogger.ms_Instance = this;

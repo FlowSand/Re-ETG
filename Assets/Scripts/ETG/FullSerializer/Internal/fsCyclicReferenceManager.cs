@@ -69,14 +69,14 @@ public class fsCyclicReferenceManager
   {
     public static readonly IEqualityComparer<object> Instance = (IEqualityComparer<object>) new fsCyclicReferenceManager.ObjectReferenceEqualityComparator();
 
-    bool IEqualityComparer<object>.System\u002ECollections\u002EGeneric\u002EIEqualityComparer<object>\u002EEquals(
+    bool IEqualityComparer<object>.System.Collections.Generic.IEqualityComparer<object>.Equals(
       object x,
       object y)
     {
       return object.ReferenceEquals(x, y);
     }
 
-    int IEqualityComparer<object>.System\u002ECollections\u002EGeneric\u002EIEqualityComparer<object>\u002EGetHashCode(
+    int IEqualityComparer<object>.System.Collections.Generic.IEqualityComparer<object>.GetHashCode(
       object obj)
     {
       return RuntimeHelpers.GetHashCode(obj);

@@ -182,7 +182,7 @@ public class SpawnPoolsDict :
 
   private bool IsReadOnly => true;
 
-  bool ICollection<KeyValuePair<string, SpawnPool>>.System\u002ECollections\u002EGeneric\u002EICollection<System\u002ECollections\u002EGeneric\u002EKeyValuePair<string\u002CPathologicalGames\u002ESpawnPool>>\u002EIsReadOnly
+  bool ICollection<KeyValuePair<string, SpawnPool>>.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,PathologicalGames.SpawnPool>>.IsReadOnly
   {
     get => true;
   }
@@ -202,7 +202,7 @@ public class SpawnPoolsDict :
     throw new NotImplementedException("PoolManager.Pools cannot be copied");
   }
 
-  void ICollection<KeyValuePair<string, SpawnPool>>.System\u002ECollections\u002EGeneric\u002EICollection<System\u002ECollections\u002EGeneric\u002EKeyValuePair<string\u002CPathologicalGames\u002ESpawnPool>>\u002ECopyTo(
+  void ICollection<KeyValuePair<string, SpawnPool>>.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<string,PathologicalGames.SpawnPool>>.CopyTo(
     KeyValuePair<string, SpawnPool>[] array,
     int arrayIndex)
   {
