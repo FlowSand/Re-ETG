@@ -1,7 +1,9 @@
 {
   "name": "ETG.Runtime",
   "rootNamespace": "",
-  "references": [],
+  "references": [
+    "ETG.Shims"
+  ],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": true,
