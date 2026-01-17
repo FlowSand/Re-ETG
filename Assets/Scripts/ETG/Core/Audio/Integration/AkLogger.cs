@@ -19,13 +19,13 @@ namespace ETG.Core.Audio.Integration
       private AkLogger()
       {
         // ISSUE: reference to a compiler-generated field
-        if (AkLogger.<>f__mg_cache0 == null)
+        if (AkLogger._f__mg_cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          AkLogger.<>f__mg_cache0 = new AkLogger.ErrorLoggerInteropDelegate(AkLogger.WwiseInternalLogError);
+          AkLogger._f__mg_cache0 = new AkLogger.ErrorLoggerInteropDelegate(AkLogger.WwiseInternalLogError);
         }
         // ISSUE: reference to a compiler-generated field
-        this.errorLoggerDelegate = AkLogger.<>f__mg_cache0;
+        this.errorLoggerDelegate = AkLogger._f__mg_cache0;
         // ISSUE: explicit constructor call
         base.\u002Ector();
         if (AkLogger.ms_Instance != null)

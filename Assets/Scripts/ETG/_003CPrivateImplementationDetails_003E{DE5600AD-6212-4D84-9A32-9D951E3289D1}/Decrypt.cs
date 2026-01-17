@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: <PrivateImplementationDetails>{DE5600AD-6212-4D84-9A32-9D951E3289D1}.Decrypt
+// Type: PrivateImplementationDetails_DE5600AD_6212_4D84_9A32_9D951E3289D1.Decrypt
 // Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: E27C5245-924B-4031-BFBB-14AA632E24E2
 // Assembly location: D:\Github\Re-ETG\Managed\Assembly-CSharp.dll
@@ -11,7 +11,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 #nullable disable
-namespace <PrivateImplementationDetails>{DE5600AD-6212-4D84-9A32-9D951E3289D1};
+namespace PrivateImplementationDetails_DE5600AD_6212_4D84_9A32_9D951E3289D1;
 
 [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
 public class Decrypt

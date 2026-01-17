@@ -1835,14 +1835,14 @@ namespace ETG.Core.Systems.Management
         GameManager.c_asyncSoundStartTime = UnityEngine.Time.realtimeSinceStartup;
         GameManager.c_asyncSoundStartFrame = UnityEngine.Time.frameCount;
         // ISSUE: reference to a compiler-generated field
-        if (GameManager.<>f__mg_cache0 == null)
+        if (GameManager._f__mg_cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          GameManager.<>f__mg_cache0 = new AkCallbackManager.BankCallback(GameManager.BankCallback);
+          GameManager._f__mg_cache0 = new AkCallbackManager.BankCallback(GameManager.BankCallback);
         }
         uint out_bankID;
         // ISSUE: reference to a compiler-generated field
-        int num = (int) AkSoundEngine.LoadBank("SFX.bnk", GameManager.<>f__mg_cache0, (object) null, -1, out out_bankID);
+        int num = (int) AkSoundEngine.LoadBank("SFX.bnk", GameManager._f__mg_cache0, (object) null, -1, out out_bankID);
         UnityEngine.Debug.LogError((object) ("async loading bank id: " + (object) out_bankID));
       }
 

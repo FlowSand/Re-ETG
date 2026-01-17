@@ -209,13 +209,13 @@ namespace ETG.Core.Systems.Utilities
         DebrisObject debrisObject = item;
         Action<DebrisObject> onGrounded = debrisObject.OnGrounded;
         // ISSUE: reference to a compiler-generated field
-        if (LootEngine.<>f__mg_cache0 == null)
+        if (LootEngine._f__mg_cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          LootEngine.<>f__mg_cache0 = new Action<DebrisObject>(LootEngine.PostprocessItemSpawn);
+          LootEngine._f__mg_cache0 = new Action<DebrisObject>(LootEngine.PostprocessItemSpawn);
         }
         // ISSUE: reference to a compiler-generated field
-        Action<DebrisObject> fMgCache0 = LootEngine.<>f__mg_cache0;
+        Action<DebrisObject> fMgCache0 = LootEngine._f__mg_cache0;
         debrisObject.OnGrounded = onGrounded - fMgCache0;
       }
 
@@ -250,13 +250,13 @@ namespace ETG.Core.Systems.Utilities
           DebrisObject debrisObject = orAddComponent;
           Action<DebrisObject> onGrounded = debrisObject.OnGrounded;
           // ISSUE: reference to a compiler-generated field
-          if (LootEngine.<>f__mg_cache1 == null)
+          if (LootEngine._f__mg_cache1 == null)
           {
             // ISSUE: reference to a compiler-generated field
-            LootEngine.<>f__mg_cache1 = new Action<DebrisObject>(LootEngine.PostprocessItemSpawn);
+            LootEngine._f__mg_cache1 = new Action<DebrisObject>(LootEngine.PostprocessItemSpawn);
           }
           // ISSUE: reference to a compiler-generated field
-          Action<DebrisObject> fMgCache1 = LootEngine.<>f__mg_cache1;
+          Action<DebrisObject> fMgCache1 = LootEngine._f__mg_cache1;
           debrisObject.OnGrounded = onGrounded + fMgCache1;
         }
         orAddComponent.additionalHeightBoost = !disableHeightBoost ? 1.5f : 0.0f;
@@ -272,13 +272,13 @@ namespace ETG.Core.Systems.Utilities
           DebrisObject debrisObject = orAddComponent;
           Action<DebrisObject> onTouchedGround = debrisObject.OnTouchedGround;
           // ISSUE: reference to a compiler-generated field
-          if (LootEngine.<>f__mg_cache2 == null)
+          if (LootEngine._f__mg_cache2 == null)
           {
             // ISSUE: reference to a compiler-generated field
-            LootEngine.<>f__mg_cache2 = new Action<DebrisObject>(LootEngine.BecomeViableItem);
+            LootEngine._f__mg_cache2 = new Action<DebrisObject>(LootEngine.BecomeViableItem);
           }
           // ISSUE: reference to a compiler-generated field
-          Action<DebrisObject> fMgCache2 = LootEngine.<>f__mg_cache2;
+          Action<DebrisObject> fMgCache2 = LootEngine._f__mg_cache2;
           debrisObject.OnTouchedGround = onTouchedGround + fMgCache2;
         }
         orAddComponent.AssignFinalWorldDepth(-0.5f);
@@ -535,13 +535,13 @@ namespace ETG.Core.Systems.Utilities
             DebrisObject debrisObject2 = orAddComponent;
             Action<DebrisObject> onGrounded = debrisObject2.OnGrounded;
             // ISSUE: reference to a compiler-generated field
-            if (LootEngine.<>f__mg_cache3 == null)
+            if (LootEngine._f__mg_cache3 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              LootEngine.<>f__mg_cache3 = new Action<DebrisObject>(LootEngine.PostprocessItemSpawn);
+              LootEngine._f__mg_cache3 = new Action<DebrisObject>(LootEngine.PostprocessItemSpawn);
             }
             // ISSUE: reference to a compiler-generated field
-            Action<DebrisObject> fMgCache3 = LootEngine.<>f__mg_cache3;
+            Action<DebrisObject> fMgCache3 = LootEngine._f__mg_cache3;
             debrisObject2.OnGrounded = onGrounded + fMgCache3;
           }
           orAddComponent.FlagAsPickup();
@@ -581,13 +581,13 @@ namespace ETG.Core.Systems.Utilities
               DebrisObject debrisObject = orAddComponent;
               Action<DebrisObject> onGrounded = debrisObject.OnGrounded;
               // ISSUE: reference to a compiler-generated field
-              if (LootEngine.<>f__mg_cache4 == null)
+              if (LootEngine._f__mg_cache4 == null)
               {
                 // ISSUE: reference to a compiler-generated field
-                LootEngine.<>f__mg_cache4 = new Action<DebrisObject>(LootEngine.PostprocessItemSpawn);
+                LootEngine._f__mg_cache4 = new Action<DebrisObject>(LootEngine.PostprocessItemSpawn);
               }
               // ISSUE: reference to a compiler-generated field
-              Action<DebrisObject> fMgCache4 = LootEngine.<>f__mg_cache4;
+              Action<DebrisObject> fMgCache4 = LootEngine._f__mg_cache4;
               debrisObject.OnGrounded = onGrounded + fMgCache4;
             }
             orAddComponent.additionalHeightBoost = 1.5f;

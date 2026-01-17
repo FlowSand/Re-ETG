@@ -200,247 +200,247 @@ public class TweenEasingFunctions
     {
       case EasingType.Linear:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cacheD == null)
+        if (TweenEasingFunctions._f__mg_cacheD == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cacheD = new TweenEasingCallback(TweenEasingFunctions.Linear);
+          TweenEasingFunctions._f__mg_cacheD = new TweenEasingCallback(TweenEasingFunctions.Linear);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cacheD;
+        return TweenEasingFunctions._f__mg_cacheD;
       case EasingType.Bounce:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache3 == null)
+        if (TweenEasingFunctions._f__mg_cache3 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache3 = new TweenEasingCallback(TweenEasingFunctions.Bounce);
+          TweenEasingFunctions._f__mg_cache3 = new TweenEasingCallback(TweenEasingFunctions.Bounce);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache3;
+        return TweenEasingFunctions._f__mg_cache3;
       case EasingType.BackEaseIn:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache0 == null)
+        if (TweenEasingFunctions._f__mg_cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache0 = new TweenEasingCallback(TweenEasingFunctions.EaseInBack);
+          TweenEasingFunctions._f__mg_cache0 = new TweenEasingCallback(TweenEasingFunctions.EaseInBack);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache0;
+        return TweenEasingFunctions._f__mg_cache0;
       case EasingType.BackEaseOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache2 == null)
+        if (TweenEasingFunctions._f__mg_cache2 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache2 = new TweenEasingCallback(TweenEasingFunctions.EaseOutBack);
+          TweenEasingFunctions._f__mg_cache2 = new TweenEasingCallback(TweenEasingFunctions.EaseOutBack);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache2;
+        return TweenEasingFunctions._f__mg_cache2;
       case EasingType.BackEaseInOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache1 == null)
+        if (TweenEasingFunctions._f__mg_cache1 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache1 = new TweenEasingCallback(TweenEasingFunctions.EaseInOutBack);
+          TweenEasingFunctions._f__mg_cache1 = new TweenEasingCallback(TweenEasingFunctions.EaseInOutBack);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache1;
+        return TweenEasingFunctions._f__mg_cache1;
       case EasingType.CircEaseIn:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache4 == null)
+        if (TweenEasingFunctions._f__mg_cache4 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache4 = new TweenEasingCallback(TweenEasingFunctions.EaseInCirc);
+          TweenEasingFunctions._f__mg_cache4 = new TweenEasingCallback(TweenEasingFunctions.EaseInCirc);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache4;
+        return TweenEasingFunctions._f__mg_cache4;
       case EasingType.CircEaseOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache6 == null)
+        if (TweenEasingFunctions._f__mg_cache6 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache6 = new TweenEasingCallback(TweenEasingFunctions.EaseOutCirc);
+          TweenEasingFunctions._f__mg_cache6 = new TweenEasingCallback(TweenEasingFunctions.EaseOutCirc);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache6;
+        return TweenEasingFunctions._f__mg_cache6;
       case EasingType.CircEaseInOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache5 == null)
+        if (TweenEasingFunctions._f__mg_cache5 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache5 = new TweenEasingCallback(TweenEasingFunctions.EaseInOutCirc);
+          TweenEasingFunctions._f__mg_cache5 = new TweenEasingCallback(TweenEasingFunctions.EaseInOutCirc);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache5;
+        return TweenEasingFunctions._f__mg_cache5;
       case EasingType.CubicEaseIn:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache7 == null)
+        if (TweenEasingFunctions._f__mg_cache7 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache7 = new TweenEasingCallback(TweenEasingFunctions.EaseInCubic);
+          TweenEasingFunctions._f__mg_cache7 = new TweenEasingCallback(TweenEasingFunctions.EaseInCubic);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache7;
+        return TweenEasingFunctions._f__mg_cache7;
       case EasingType.CubicEaseOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache9 == null)
+        if (TweenEasingFunctions._f__mg_cache9 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache9 = new TweenEasingCallback(TweenEasingFunctions.EaseOutCubic);
+          TweenEasingFunctions._f__mg_cache9 = new TweenEasingCallback(TweenEasingFunctions.EaseOutCubic);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache9;
+        return TweenEasingFunctions._f__mg_cache9;
       case EasingType.CubicEaseInOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache8 == null)
+        if (TweenEasingFunctions._f__mg_cache8 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache8 = new TweenEasingCallback(TweenEasingFunctions.EaseInOutCubic);
+          TweenEasingFunctions._f__mg_cache8 = new TweenEasingCallback(TweenEasingFunctions.EaseInOutCubic);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache8;
+        return TweenEasingFunctions._f__mg_cache8;
       case EasingType.ExpoEaseIn:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cacheA == null)
+        if (TweenEasingFunctions._f__mg_cacheA == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cacheA = new TweenEasingCallback(TweenEasingFunctions.EaseInExpo);
+          TweenEasingFunctions._f__mg_cacheA = new TweenEasingCallback(TweenEasingFunctions.EaseInExpo);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cacheA;
+        return TweenEasingFunctions._f__mg_cacheA;
       case EasingType.ExpoEaseOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cacheC == null)
+        if (TweenEasingFunctions._f__mg_cacheC == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cacheC = new TweenEasingCallback(TweenEasingFunctions.EaseOutExpo);
+          TweenEasingFunctions._f__mg_cacheC = new TweenEasingCallback(TweenEasingFunctions.EaseOutExpo);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cacheC;
+        return TweenEasingFunctions._f__mg_cacheC;
       case EasingType.ExpoEaseInOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cacheB == null)
+        if (TweenEasingFunctions._f__mg_cacheB == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cacheB = new TweenEasingCallback(TweenEasingFunctions.EaseInOutExpo);
+          TweenEasingFunctions._f__mg_cacheB = new TweenEasingCallback(TweenEasingFunctions.EaseInOutExpo);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cacheB;
+        return TweenEasingFunctions._f__mg_cacheB;
       case EasingType.QuadEaseIn:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cacheE == null)
+        if (TweenEasingFunctions._f__mg_cacheE == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cacheE = new TweenEasingCallback(TweenEasingFunctions.EaseInQuad);
+          TweenEasingFunctions._f__mg_cacheE = new TweenEasingCallback(TweenEasingFunctions.EaseInQuad);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cacheE;
+        return TweenEasingFunctions._f__mg_cacheE;
       case EasingType.QuadEaseOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache10 == null)
+        if (TweenEasingFunctions._f__mg_cache10 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache10 = new TweenEasingCallback(TweenEasingFunctions.EaseOutQuad);
+          TweenEasingFunctions._f__mg_cache10 = new TweenEasingCallback(TweenEasingFunctions.EaseOutQuad);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache10;
+        return TweenEasingFunctions._f__mg_cache10;
       case EasingType.QuadEaseInOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cacheF == null)
+        if (TweenEasingFunctions._f__mg_cacheF == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cacheF = new TweenEasingCallback(TweenEasingFunctions.EaseInOutQuad);
+          TweenEasingFunctions._f__mg_cacheF = new TweenEasingCallback(TweenEasingFunctions.EaseInOutQuad);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cacheF;
+        return TweenEasingFunctions._f__mg_cacheF;
       case EasingType.QuartEaseIn:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache11 == null)
+        if (TweenEasingFunctions._f__mg_cache11 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache11 = new TweenEasingCallback(TweenEasingFunctions.EaseInQuart);
+          TweenEasingFunctions._f__mg_cache11 = new TweenEasingCallback(TweenEasingFunctions.EaseInQuart);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache11;
+        return TweenEasingFunctions._f__mg_cache11;
       case EasingType.QuartEaseOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache13 == null)
+        if (TweenEasingFunctions._f__mg_cache13 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache13 = new TweenEasingCallback(TweenEasingFunctions.EaseOutQuart);
+          TweenEasingFunctions._f__mg_cache13 = new TweenEasingCallback(TweenEasingFunctions.EaseOutQuart);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache13;
+        return TweenEasingFunctions._f__mg_cache13;
       case EasingType.QuartEaseInOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache12 == null)
+        if (TweenEasingFunctions._f__mg_cache12 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache12 = new TweenEasingCallback(TweenEasingFunctions.EaseInOutQuart);
+          TweenEasingFunctions._f__mg_cache12 = new TweenEasingCallback(TweenEasingFunctions.EaseInOutQuart);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache12;
+        return TweenEasingFunctions._f__mg_cache12;
       case EasingType.QuintEaseIn:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache14 == null)
+        if (TweenEasingFunctions._f__mg_cache14 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache14 = new TweenEasingCallback(TweenEasingFunctions.EaseInQuint);
+          TweenEasingFunctions._f__mg_cache14 = new TweenEasingCallback(TweenEasingFunctions.EaseInQuint);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache14;
+        return TweenEasingFunctions._f__mg_cache14;
       case EasingType.QuintEaseOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache16 == null)
+        if (TweenEasingFunctions._f__mg_cache16 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache16 = new TweenEasingCallback(TweenEasingFunctions.EaseOutQuint);
+          TweenEasingFunctions._f__mg_cache16 = new TweenEasingCallback(TweenEasingFunctions.EaseOutQuint);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache16;
+        return TweenEasingFunctions._f__mg_cache16;
       case EasingType.QuintEaseInOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache15 == null)
+        if (TweenEasingFunctions._f__mg_cache15 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache15 = new TweenEasingCallback(TweenEasingFunctions.EaseInOutQuint);
+          TweenEasingFunctions._f__mg_cache15 = new TweenEasingCallback(TweenEasingFunctions.EaseInOutQuint);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache15;
+        return TweenEasingFunctions._f__mg_cache15;
       case EasingType.SineEaseIn:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache17 == null)
+        if (TweenEasingFunctions._f__mg_cache17 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache17 = new TweenEasingCallback(TweenEasingFunctions.EaseInSine);
+          TweenEasingFunctions._f__mg_cache17 = new TweenEasingCallback(TweenEasingFunctions.EaseInSine);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache17;
+        return TweenEasingFunctions._f__mg_cache17;
       case EasingType.SineEaseOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache19 == null)
+        if (TweenEasingFunctions._f__mg_cache19 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache19 = new TweenEasingCallback(TweenEasingFunctions.EaseOutSine);
+          TweenEasingFunctions._f__mg_cache19 = new TweenEasingCallback(TweenEasingFunctions.EaseOutSine);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache19;
+        return TweenEasingFunctions._f__mg_cache19;
       case EasingType.SineEaseInOut:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache18 == null)
+        if (TweenEasingFunctions._f__mg_cache18 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache18 = new TweenEasingCallback(TweenEasingFunctions.EaseInOutSine);
+          TweenEasingFunctions._f__mg_cache18 = new TweenEasingCallback(TweenEasingFunctions.EaseInOutSine);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache18;
+        return TweenEasingFunctions._f__mg_cache18;
       case EasingType.Spring:
         // ISSUE: reference to a compiler-generated field
-        if (TweenEasingFunctions.<>f__mg_cache1A == null)
+        if (TweenEasingFunctions._f__mg_cache1A == null)
         {
           // ISSUE: reference to a compiler-generated field
-          TweenEasingFunctions.<>f__mg_cache1A = new TweenEasingCallback(TweenEasingFunctions.Spring);
+          TweenEasingFunctions._f__mg_cache1A = new TweenEasingCallback(TweenEasingFunctions.Spring);
         }
         // ISSUE: reference to a compiler-generated field
-        return TweenEasingFunctions.<>f__mg_cache1A;
+        return TweenEasingFunctions._f__mg_cache1A;
       default:
         throw new NotImplementedException();
     }

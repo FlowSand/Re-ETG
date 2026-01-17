@@ -1222,13 +1222,13 @@ namespace ETG.Core.Core.Framework
         Vector2? sourceVelocity = new Vector2?(this.specRigidbody.Velocity);
         float? heightOffGround = new float?(0.75f + num);
         // ISSUE: reference to a compiler-generated field
-        if (Projectile.<>f__mg_cache0 == null)
+        if (Projectile._f__mg_cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          Projectile.<>f__mg_cache0 = new VFXComplex.SpawnMethod(SpawnManager.SpawnDecal);
+          Projectile._f__mg_cache0 = new VFXComplex.SpawnMethod(SpawnManager.SpawnDecal);
         }
         // ISSUE: reference to a compiler-generated field
-        VFXComplex.SpawnMethod fMgCache0 = Projectile.<>f__mg_cache0;
+        VFXComplex.SpawnMethod fMgCache0 = Projectile._f__mg_cache0;
         vfxPool2.SpawnAtPosition(position, parent: parent1, sourceNormal: sourceNormal, sourceVelocity: sourceVelocity, heightOffGround: heightOffGround, spawnMethod: fMgCache0);
       }
 

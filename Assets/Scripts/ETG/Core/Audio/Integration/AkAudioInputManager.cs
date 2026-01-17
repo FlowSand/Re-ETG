@@ -32,13 +32,13 @@ namespace ETG.Core.Audio.Integration
         AK.Wwise.Event @event = akEvent;
         GameObject gameObject1 = gameObject;
         // ISSUE: reference to a compiler-generated field
-        if (AkAudioInputManager.<>f__mg_cache0 == null)
+        if (AkAudioInputManager._f__mg_cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          AkAudioInputManager.<>f__mg_cache0 = new AkCallbackManager.EventCallback(AkAudioInputManager.EventCallback);
+          AkAudioInputManager._f__mg_cache0 = new AkCallbackManager.EventCallback(AkAudioInputManager.EventCallback);
         }
         // ISSUE: reference to a compiler-generated field
-        AkCallbackManager.EventCallback fMgCache0 = AkAudioInputManager.<>f__mg_cache0;
+        AkCallbackManager.EventCallback fMgCache0 = AkAudioInputManager._f__mg_cache0;
         uint playingID = @event.Post(gameObject1, 1U, fMgCache0);
         AkAudioInputManager.AddPlayingID(playingID, sampleDelegate, formatDelegate);
         return playingID;
@@ -54,13 +54,13 @@ namespace ETG.Core.Audio.Integration
         int in_eventID = (int) akEventID;
         GameObject in_gameObjectID = gameObject;
         // ISSUE: reference to a compiler-generated field
-        if (AkAudioInputManager.<>f__mg_cache1 == null)
+        if (AkAudioInputManager._f__mg_cache1 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          AkAudioInputManager.<>f__mg_cache1 = new AkCallbackManager.EventCallback(AkAudioInputManager.EventCallback);
+          AkAudioInputManager._f__mg_cache1 = new AkCallbackManager.EventCallback(AkAudioInputManager.EventCallback);
         }
         // ISSUE: reference to a compiler-generated field
-        AkCallbackManager.EventCallback fMgCache1 = AkAudioInputManager.<>f__mg_cache1;
+        AkCallbackManager.EventCallback fMgCache1 = AkAudioInputManager._f__mg_cache1;
         uint playingID = AkSoundEngine.PostEvent((uint) in_eventID, in_gameObjectID, 1U, fMgCache1, (object) null);
         AkAudioInputManager.AddPlayingID(playingID, sampleDelegate, formatDelegate);
         return playingID;
@@ -76,13 +76,13 @@ namespace ETG.Core.Audio.Integration
         string in_pszEventName = akEventName;
         GameObject in_gameObjectID = gameObject;
         // ISSUE: reference to a compiler-generated field
-        if (AkAudioInputManager.<>f__mg_cache2 == null)
+        if (AkAudioInputManager._f__mg_cache2 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          AkAudioInputManager.<>f__mg_cache2 = new AkCallbackManager.EventCallback(AkAudioInputManager.EventCallback);
+          AkAudioInputManager._f__mg_cache2 = new AkCallbackManager.EventCallback(AkAudioInputManager.EventCallback);
         }
         // ISSUE: reference to a compiler-generated field
-        AkCallbackManager.EventCallback fMgCache2 = AkAudioInputManager.<>f__mg_cache2;
+        AkCallbackManager.EventCallback fMgCache2 = AkAudioInputManager._f__mg_cache2;
         uint playingID = AkSoundEngine.PostEvent(in_pszEventName, in_gameObjectID, 1U, fMgCache2, (object) null);
         AkAudioInputManager.AddPlayingID(playingID, sampleDelegate, formatDelegate);
         return playingID;
@@ -142,21 +142,21 @@ namespace ETG.Core.Audio.Integration
       static AkAudioInputManager()
       {
         // ISSUE: reference to a compiler-generated field
-        if (AkAudioInputManager.<>f__mg_cache3 == null)
+        if (AkAudioInputManager._f__mg_cache3 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          AkAudioInputManager.<>f__mg_cache3 = new AkAudioInputManager.AudioSamplesInteropDelegate(AkAudioInputManager.InternalAudioSamplesDelegate);
+          AkAudioInputManager._f__mg_cache3 = new AkAudioInputManager.AudioSamplesInteropDelegate(AkAudioInputManager.InternalAudioSamplesDelegate);
         }
         // ISSUE: reference to a compiler-generated field
-        AkAudioInputManager.audioSamplesDelegate = AkAudioInputManager.<>f__mg_cache3;
+        AkAudioInputManager.audioSamplesDelegate = AkAudioInputManager._f__mg_cache3;
         // ISSUE: reference to a compiler-generated field
-        if (AkAudioInputManager.<>f__mg_cache4 == null)
+        if (AkAudioInputManager._f__mg_cache4 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          AkAudioInputManager.<>f__mg_cache4 = new AkAudioInputManager.AudioFormatInteropDelegate(AkAudioInputManager.InternalAudioFormatDelegate);
+          AkAudioInputManager._f__mg_cache4 = new AkAudioInputManager.AudioFormatInteropDelegate(AkAudioInputManager.InternalAudioFormatDelegate);
         }
         // ISSUE: reference to a compiler-generated field
-        AkAudioInputManager.audioFormatDelegate = AkAudioInputManager.<>f__mg_cache4;
+        AkAudioInputManager.audioFormatDelegate = AkAudioInputManager._f__mg_cache4;
       }
 
       public delegate void AudioFormatDelegate(uint playingID, AkAudioFormat format);

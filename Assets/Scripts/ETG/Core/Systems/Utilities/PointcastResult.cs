@@ -52,13 +52,13 @@ namespace ETG.Core.Systems.Utilities
       {
         ObjectPool<PointcastResult>.Factory factory = (ObjectPool<PointcastResult>.Factory) (() => new PointcastResult());
         // ISSUE: reference to a compiler-generated field
-        if (PointcastResult.<>f__mg_cache0 == null)
+        if (PointcastResult._f__mg_cache0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          PointcastResult.<>f__mg_cache0 = new ObjectPool<PointcastResult>.Cleanup(PointcastResult.Cleanup);
+          PointcastResult._f__mg_cache0 = new ObjectPool<PointcastResult>.Cleanup(PointcastResult.Cleanup);
         }
         // ISSUE: reference to a compiler-generated field
-        ObjectPool<PointcastResult>.Cleanup fMgCache0 = PointcastResult.<>f__mg_cache0;
+        ObjectPool<PointcastResult>.Cleanup fMgCache0 = PointcastResult._f__mg_cache0;
         PointcastResult.Pool = new ObjectPool<PointcastResult>(factory, 10, fMgCache0);
       }
     }

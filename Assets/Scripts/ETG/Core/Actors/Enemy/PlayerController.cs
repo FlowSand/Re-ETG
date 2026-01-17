@@ -2356,13 +2356,13 @@ namespace ETG.Core.Actors.Enemy
             IntVector2? footprint = new IntVector2?(this.companions[index].Clearance * 3);
             CellTypes? passableCellTypes = new CellTypes?(CellTypes.FLOOR);
             // ISSUE: reference to a compiler-generated field
-            if (PlayerController.<>f__mg_cache0 == null)
+            if (PlayerController._f__mg_cache0 == null)
             {
               // ISSUE: reference to a compiler-generated field
-              PlayerController.<>f__mg_cache0 = new CellValidator(Pathfinder.CellValidator_NoTopWalls);
+              PlayerController._f__mg_cache0 = new CellValidator(Pathfinder.CellValidator_NoTopWalls);
             }
             // ISSUE: reference to a compiler-generated field
-            CellValidator fMgCache0 = PlayerController.<>f__mg_cache0;
+            CellValidator fMgCache0 = PlayerController._f__mg_cache0;
             IntVector2? randomAvailableCell = currentRoom.GetRandomAvailableCell(footprint, passableCellTypes, cellValidator: fMgCache0);
             if (randomAvailableCell.HasValue)
               targetPosition = (randomAvailableCell.Value + IntVector2.One).ToVector3();

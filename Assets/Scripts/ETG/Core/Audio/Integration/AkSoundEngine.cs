@@ -2912,9 +2912,9 @@ namespace ETG.Core.Audio.Integration
           AkSoundEngine.GameObjectHashFunction objectHashFunction;
           if (value == null)
           {
-            if (AkSoundEngine.<>f__mg_cache0 == null)
-              AkSoundEngine.<>f__mg_cache0 = new AkSoundEngine.GameObjectHashFunction(AkSoundEngine.InternalGameObjectHash);
-            objectHashFunction = AkSoundEngine.<>f__mg_cache0;
+            if (AkSoundEngine._f__mg_cache0 == null)
+              AkSoundEngine._f__mg_cache0 = new AkSoundEngine.GameObjectHashFunction(AkSoundEngine.InternalGameObjectHash);
+            objectHashFunction = AkSoundEngine._f__mg_cache0;
           }
           else
             objectHashFunction = value;
@@ -3021,13 +3021,13 @@ namespace ETG.Core.Audio.Integration
       static AkSoundEngine()
       {
         // ISSUE: reference to a compiler-generated field
-        if (AkSoundEngine.<>f__mg_cache1 == null)
+        if (AkSoundEngine._f__mg_cache1 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          AkSoundEngine.<>f__mg_cache1 = new AkSoundEngine.GameObjectHashFunction(AkSoundEngine.InternalGameObjectHash);
+          AkSoundEngine._f__mg_cache1 = new AkSoundEngine.GameObjectHashFunction(AkSoundEngine.InternalGameObjectHash);
         }
         // ISSUE: reference to a compiler-generated field
-        AkSoundEngine.gameObjectHash = AkSoundEngine.<>f__mg_cache1;
+        AkSoundEngine.gameObjectHash = AkSoundEngine._f__mg_cache1;
         AkSoundEngine.RegisteredGameObjects = new HashSet<ulong>();
       }
 

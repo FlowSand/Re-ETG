@@ -136,13 +136,13 @@ public abstract class TweenBase : ITweenUpdatable
   protected virtual void Reset()
   {
     // ISSUE: reference to a compiler-generated field
-    if (TweenBase.<>f__mg_cache0 == null)
+    if (TweenBase._f__mg_cache0 == null)
     {
       // ISSUE: reference to a compiler-generated field
-      TweenBase.<>f__mg_cache0 = new TweenEasingCallback(TweenEasingFunctions.Linear);
+      TweenBase._f__mg_cache0 = new TweenEasingCallback(TweenEasingFunctions.Linear);
     }
     // ISSUE: reference to a compiler-generated field
-    this.Easing = TweenBase.<>f__mg_cache0;
+    this.Easing = TweenBase._f__mg_cache0;
     this.LoopType = TweenLoopType.None;
     this.CurrentTime = 0.0f;
     this.Delay = 0.0f;

@@ -98,10 +98,10 @@ public class Tk2dTextMeshSetAnchor : FsmStateAction
     if (lower != null)
     {
       // ISSUE: reference to a compiler-generated field
-      if (Tk2dTextMeshSetAnchor.<>f__switch_map3 == null)
+      if (Tk2dTextMeshSetAnchor._f__switch_map3 == null)
       {
         // ISSUE: reference to a compiler-generated field
-        Tk2dTextMeshSetAnchor.<>f__switch_map3 = new Dictionary<string, int>(9)
+        Tk2dTextMeshSetAnchor._f__switch_map3 = new Dictionary<string, int>(9)
         {
           {
             "lowerleft",
@@ -143,7 +143,7 @@ public class Tk2dTextMeshSetAnchor : FsmStateAction
       }
       int num;
       // ISSUE: reference to a compiler-generated field
-      if (Tk2dTextMeshSetAnchor.<>f__switch_map3.TryGetValue(lower, out num))
+      if (Tk2dTextMeshSetAnchor._f__switch_map3.TryGetValue(lower, out num))
       {
         switch (num)
         {

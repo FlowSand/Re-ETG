@@ -739,10 +739,10 @@ namespace ETG.Core.Systems.Utilities
         if (type == null)
           return;
         // ISSUE: reference to a compiler-generated field
-        if (iTween.<>f__switch_map0 == null)
+        if (iTween._f__switch_map0 == null)
         {
           // ISSUE: reference to a compiler-generated field
-          iTween.<>f__switch_map0 = new Dictionary<string, int>(10)
+          iTween._f__switch_map0 = new Dictionary<string, int>(10)
           {
             {
               "value",
@@ -788,7 +788,7 @@ namespace ETG.Core.Systems.Utilities
         }
         int num;
         // ISSUE: reference to a compiler-generated field
-        if (!iTween.<>f__switch_map0.TryGetValue(type, out num))
+        if (!iTween._f__switch_map0.TryGetValue(type, out num))
           return;
         switch (num)
         {
