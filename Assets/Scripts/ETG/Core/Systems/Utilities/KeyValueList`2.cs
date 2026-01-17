@@ -143,7 +143,7 @@ namespace ETG.Core.Systems.Utilities
       public IEnumerator<KeyValuePair<K, V>> GetEnumerator()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator<KeyValuePair<K, V>>) new KeyValueList<K, V>.<GetEnumerator>c__Iterator1()
+        return (IEnumerator<KeyValuePair<K, V>>) new KeyValueList_K_V__GetEnumeratorc__Iterator1()
         {
           _this = this
         };
@@ -153,7 +153,7 @@ namespace ETG.Core.Systems.Utilities
       IEnumerator IEnumerable.GetEnumerator()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new KeyValueList<K, V>.<System_Collections_IEnumerable_GetEnumerator>c__Iterator0()
+        return (IEnumerator) new KeyValueList_K_V__System_Collections_IEnumerable_GetEnumeratorc__Iterator0()
         {
           _this = this
         };

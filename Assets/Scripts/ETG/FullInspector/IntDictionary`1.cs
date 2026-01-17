@@ -139,7 +139,7 @@ internal class IntDictionary<TValue> :
   public IEnumerator<KeyValuePair<int, TValue>> GetEnumerator()
   {
     // ISSUE: object of a compiler-generated type is created
-    return (IEnumerator<KeyValuePair<int, TValue>>) new IntDictionary<TValue>.<GetEnumerator>c__Iterator0()
+    return (IEnumerator<KeyValuePair<int, TValue>>) new IntDictionary_TValue__GetEnumeratorc__Iterator0()
     {
       _this = this
     };
