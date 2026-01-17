@@ -259,8 +259,13 @@ namespace ETG.Core.Core.Framework
         }
       }
 
-      public class DodgeState(bool isLeft) : PunchoutGameActor.State(isLeft)
+      public class DodgeState : PunchoutGameActor.State
       {
+        public DodgeState(bool isLeft)
+          : base(isLeft)
+        {
+        }
+
         public override string AnimName => "dodge";
 
         public override void Start()
@@ -276,8 +281,13 @@ namespace ETG.Core.Core.Framework
         }
       }
 
-      public class HitState(bool isLeft) : PunchoutGameActor.State(isLeft)
+      public class HitState : PunchoutGameActor.State
       {
+        public HitState(bool isLeft)
+          : base(isLeft)
+        {
+        }
+
         public override string AnimName => "hit";
       }
 
