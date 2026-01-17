@@ -17,7 +17,8 @@
       "Bash(git commit:*)",
       "Bash(powershell -Command:*)",
       "Bash(python ClassifyAndMoveFiles.py:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(echo $env:LOCALAPPDATA)"
     ]
   }
 }
