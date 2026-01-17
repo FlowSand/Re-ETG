@@ -129,19 +129,28 @@ namespace FullInspector
       }
     }
 
-    public class Color(tk<T, TContext>.Value<UnityEngine.Color> color) : tk<T, TContext>.ColorIf(tk<T, TContext>.Val<bool>((tk<T, TContext>.Value<bool>.GeneratorNoContext) (o => true)), color)
+    public class Color : tk<T, TContext>.ColorIf
     {
+      public Color(tk<T, TContext>.Value<UnityEngine.Color> color)
+        : base(tk<T, TContext>.Val<bool>((tk<T, TContext>.Value<bool>.GeneratorNoContext) (o => true)), color)
+      {
+      }
     }
 
-    public class ColorIf(
-      tk<T, TContext>.Value<bool> shouldActivate,
-      tk<T, TContext>.Value<UnityEngine.Color> color) : tk<T, TContext>.ConditionalStyle(new Func<T, TContext, bool>(shouldActivate.GetCurrentValue), (Func<T, TContext, object>) ((obj, context) =>
+    public class ColorIf : tk<T, TContext>.ConditionalStyle
     {
-      UnityEngine.Color color1 = GUI.color;
-      GUI.color = color.GetCurrentValue(obj, context);
-      return (object) color1;
-    }), (Action<T, TContext, object>) ((obj, context, state) => GUI.color = (UnityEngine.Color) state))
-    {
+      public ColorIf(
+        tk<T, TContext>.Value<bool> shouldActivate,
+        tk<T, TContext>.Value<UnityEngine.Color> color)
+        : base(new Func<T, TContext, bool>(shouldActivate.GetCurrentValue), (Func<T, TContext, object>) ((obj, context) =>
+      {
+        UnityEngine.Color color1 = GUI.color;
+        GUI.color = color.GetCurrentValue(obj, context);
+        return (object) color1;
+      }), (Action<T, TContext, object>) ((obj, context, state) => GUI.color = (UnityEngine.Color) state))
+      {
+      }
+
       public ColorIf(
         tk<T, TContext>.Value<bool>.Generator shouldActivate,
         tk<T, TContext>.Value<UnityEngine.Color> color)
@@ -324,12 +333,17 @@ namespace FullInspector
       }
     }
 
-    public class EnabledIf(tk<T, TContext>.Value<bool> isEnabled) : tk<T, TContext>.ConditionalStyle((Func<T, TContext, bool>) ((o, c) => !isEnabled.GetCurrentValue(o, c)), (Func<T, TContext, object>) ((obj, context) =>
+    public class EnabledIf : tk<T, TContext>.ConditionalStyle
     {
-      fiLateBindings.EditorGUI.BeginDisabledGroup(true);
-      return (object) null;
-    }), (Action<T, TContext, object>) ((obj, context, state) => fiLateBindings.EditorGUI.EndDisabledGroup()))
-    {
+      public EnabledIf(tk<T, TContext>.Value<bool> isEnabled)
+        : base((Func<T, TContext, bool>) ((o, c) => !isEnabled.GetCurrentValue(o, c)), (Func<T, TContext, object>) ((obj, context) =>
+      {
+        fiLateBindings.EditorGUI.BeginDisabledGroup(true);
+        return (object) null;
+      }), (Action<T, TContext, object>) ((obj, context, state) => fiLateBindings.EditorGUI.EndDisabledGroup()))
+      {
+      }
+
       public EnabledIf(tk<T, TContext>.Value<bool>.Generator isEnabled)
         : this(tk<T, TContext>.Val<bool>(isEnabled))
       {
@@ -1057,12 +1071,17 @@ namespace FullInspector
       }
     }
 
-    public class ReadOnlyIf(tk<T, TContext>.Value<bool> isReadOnly) : tk<T, TContext>.ConditionalStyle(new Func<T, TContext, bool>(isReadOnly.GetCurrentValue), (Func<T, TContext, object>) ((obj, context) =>
+    public class ReadOnlyIf : tk<T, TContext>.ConditionalStyle
     {
-      fiLateBindings.EditorGUI.BeginDisabledGroup(true);
-      return (object) null;
-    }), (Action<T, TContext, object>) ((obj, context, state) => fiLateBindings.EditorGUI.EndDisabledGroup()))
-    {
+      public ReadOnlyIf(tk<T, TContext>.Value<bool> isReadOnly)
+        : base(new Func<T, TContext, bool>(isReadOnly.GetCurrentValue), (Func<T, TContext, object>) ((obj, context) =>
+      {
+        fiLateBindings.EditorGUI.BeginDisabledGroup(true);
+        return (object) null;
+      }), (Action<T, TContext, object>) ((obj, context, state) => fiLateBindings.EditorGUI.EndDisabledGroup()))
+      {
+      }
+
       public ReadOnlyIf(tk<T, TContext>.Value<bool>.Generator isReadOnly)
         : this(tk<T, TContext>.Val<bool>(isReadOnly))
       {

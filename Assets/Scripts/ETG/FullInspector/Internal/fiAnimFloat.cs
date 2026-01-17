@@ -11,8 +11,13 @@ using UnityEngine;
 namespace FullInspector.Internal
 {
   [Serializable]
-  public class fiAnimFloat(float value) : fiBaseAnimValue<float>(value)
+  public class fiAnimFloat : fiBaseAnimValue<float>
   {
+    public fiAnimFloat(float value)
+      : base(value)
+    {
+    }
+
     [SerializeField]
     private float m_Value;
 

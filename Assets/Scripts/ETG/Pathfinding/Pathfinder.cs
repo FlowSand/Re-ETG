@@ -568,18 +568,32 @@ namespace Pathfinding
 
     public static bool HasInstance => (UnityEngine.Object) Pathfinder.Instance != (UnityEngine.Object) null;
 
-    private struct PathNode(CellData cellData, int x, int y) : IComparable<Pathfinder.PathNode>
+    private struct PathNode : IComparable<Pathfinder.PathNode>
     {
-      public readonly CellData CellData = cellData;
-      public IntVector2 Position = new IntVector2(x, y);
-      public int Pass = 0;
-      public int ParentId = 0;
-      public int Steps = 0;
-      public int CombinedWeight = 0;
-      public int ActorPathCount = 0;
-      public int EstimatedRemainingDist = 0;
-      public int FailDist = 0;
-      public int SquareClearance = 0;
+      public readonly CellData CellData;
+      public IntVector2 Position;
+      public int Pass;
+      public int ParentId;
+      public int Steps;
+      public int CombinedWeight;
+      public int ActorPathCount;
+      public int EstimatedRemainingDist;
+      public int FailDist;
+      public int SquareClearance;
+
+      public PathNode(CellData cellData, int x, int y)
+      {
+        this.CellData = cellData;
+        this.Position = new IntVector2(x, y);
+        this.Pass = 0;
+        this.ParentId = 0;
+        this.Steps = 0;
+        this.CombinedWeight = 0;
+        this.ActorPathCount = 0;
+        this.EstimatedRemainingDist = 0;
+        this.FailDist = 0;
+        this.SquareClearance = 0;
+      }
 
       public int EstimatedCost => this.CombinedWeight + this.EstimatedRemainingDist + 2;
 
@@ -646,10 +660,16 @@ namespace Pathfinding
       public int CompareTo(Pathfinder.PathNode other) => this.EstimatedCost - other.EstimatedCost;
     }
 
-    private struct PathNodeProxy(int nodeId, int estimatedCost) : IComparable<Pathfinder.PathNodeProxy>
+    private struct PathNodeProxy : IComparable<Pathfinder.PathNodeProxy>
     {
-      public int NodeId = nodeId;
-      public int EstimatedCost = estimatedCost;
+      public int NodeId;
+      public int EstimatedCost;
+
+      public PathNodeProxy(int nodeId, int estimatedCost)
+      {
+        this.NodeId = nodeId;
+        this.EstimatedCost = estimatedCost;
+      }
 
       public int CompareTo(Pathfinder.PathNodeProxy other)
       {

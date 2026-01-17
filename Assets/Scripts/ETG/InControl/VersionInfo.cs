@@ -11,12 +11,20 @@ using UnityEngine;
 #nullable disable
 namespace InControl
 {
-  public struct VersionInfo(int major, int minor, int patch, int build) : IComparable<VersionInfo>
+  public struct VersionInfo : IComparable<VersionInfo>
   {
-    public int Major = major;
-    public int Minor = minor;
-    public int Patch = patch;
-    public int Build = build;
+    public int Major;
+    public int Minor;
+    public int Patch;
+    public int Build;
+
+    public VersionInfo(int major, int minor, int patch, int build)
+    {
+      this.Major = major;
+      this.Minor = minor;
+      this.Patch = patch;
+      this.Build = build;
+    }
 
     public static VersionInfo InControlVersion()
     {
