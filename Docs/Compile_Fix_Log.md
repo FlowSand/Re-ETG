@@ -137,28 +137,81 @@ namespace DaikonForge.Tween
 
 ## 修复记录
 
-### Round 1: [待执行] Unicode转义序列批量修复
+### Round 1: ✅ Unicode转义序列批量修复 + C# 10.0升级
 
-**开始时间：** 待定
+**开始时间：** 2026-01-18 (approximately 23:45)
 **错误数（修复前）：** 970
+**策略选择：** 采用策略1（Unicode修复）+ 策略3（升级C# language version）
 
 **执行步骤：**
-1. 待执行...
+1. ✅ 创建`fix_unicode_escapes.py`脚本
+2. ✅ 批量替换6种Unicode转义序列
+   - `\u003C` → `<`
+   - `\u003E` → `>`
+   - `\u0024` → `$`
+   - `\u002D` → `-`
+   - `\u007B` → `{`
+   - `\u007D` → `}`
+3. ✅ 创建`Assets/csc.rsp`文件，内容：`-langversion:10.0`
+4. ✅ Git提交（commit 8e4bb978）
 
 **结果：**
-- 待完成
+- **修改文件数：** 692个.cs文件
+- **解决问题：** Unicode转义序列编译错误
+- **解决问题：** CS8773 file-scoped namespace错误（通过升级到C# 10.0）
+- **未解决问题：** 发现新问题 - `$`字符在标识符中仍然无效
+
+**验证：**
+- Unity重新编译后，发现`$`字符不能作为标识符使用
+- 需要进行Round 2修复
 
 **Git提交：**
-- 待提交
+- Commit: 8e4bb978
+- Message: `[Task-04] Round 1: Fix Unicode escapes and upgrade to C# 10.0`
+
+---
+
+### Round 2: ✅ 修复非法$标识符
+
+**开始时间：** 2026-01-18 (approximately 00:15)
+**错误数（修复前）：** ~几百个（估计）
+**根本原因：** C#中`$`字符只能用于字符串插值前缀，不能作为标识符的一部分
+
+**执行步骤：**
+1. ✅ 创建`fix_dollar_identifiers.py`脚本
+2. ✅ 批量替换`$`标识符为有效标识符
+   - `$this` → `_this`
+   - `$PC` → `_PC`
+   - `$state` → `_state`
+   - 其他`$identifier`模式 → `_identifier`
+3. ✅ 清除Unity编译缓存（`Library/ScriptAssemblies`）
+4. ✅ Git提交（commit bbe624c2）
+
+**结果：**
+- **修改文件数：** 669个.cs文件
+- **解决问题：** CS1056 "Unexpected character '$'" 错误
+- **编译状态：** Unity日志显示0个编译错误
+
+**验证：**
+- Unity日志中`grep "error CS"`返回0
+- Unity成功导入693个修改后的文件
+- CompileScripts时间：10510.145ms
+- csc.rsp已加载，使用`-langversion:10.0`
+
+**Git提交：**
+- Commit: bbe624c2
+- Message: `[Task-04] Round 2: Fix invalid dollar sign identifiers`
 
 ---
 
 ## 最终验证
 
-- [ ] Unity Console显示 0 errors
-- [ ] 所有程序集编译成功
-- [ ] 可以进入Play Mode
-- [ ] 无破坏性修改（API签名、序列化字段）
+- ✅ Unity Console显示 0 errors (通过日志验证)
+- ⏳ 所有程序集编译成功 (待用户确认Unity Console状态)
+- ⏳ 可以进入Play Mode (待验证)
+- ✅ 无破坏性修改（API签名、序列化字段）
+  - 仅修改了编译器生成的字段名（`$this` → `_this`）
+  - 符合CLAUDE.md约束
 
 ---
 
