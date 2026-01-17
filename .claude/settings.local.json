@@ -18,7 +18,9 @@
       "Bash(powershell -Command:*)",
       "Bash(python ClassifyAndMoveFiles.py:*)",
       "Bash(python:*)",
-      "Bash(echo $env:LOCALAPPDATA)"
+      "Bash(echo $env:LOCALAPPDATA)",
+      "Bash(7z l:*)",
+      "Bash(git reset:*)"
     ]
   }
 }
