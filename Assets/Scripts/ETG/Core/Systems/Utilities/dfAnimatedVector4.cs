@@ -10,10 +10,13 @@ using UnityEngine;
 
 namespace ETG.Core.Systems.Utilities
 {
-    public class dfAnimatedVector4(Vector4 StartValue, Vector4 EndValue, float Time) : 
-      dfAnimatedValue<Vector4>(StartValue, EndValue, Time)
+  public class dfAnimatedVector4 : dfAnimatedValue<Vector4>
+  {
+    public dfAnimatedVector4(Vector4 StartValue, Vector4 EndValue, float Time) : base(StartValue, EndValue, Time)
     {
-      protected override Vector4 Lerp(Vector4 startValue, Vector4 endValue, float time)
+    }
+
+    protected override Vector4 Lerp(Vector4 startValue, Vector4 endValue, float time)
       {
         return Vector4.Lerp(startValue, endValue, time);
       }

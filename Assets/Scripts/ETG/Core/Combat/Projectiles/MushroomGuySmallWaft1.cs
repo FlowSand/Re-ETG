@@ -42,8 +42,12 @@ namespace ETG.Core.Combat.Projectiles
         return (IEnumerator) null;
       }
 
-      public class WaftBullet(string bankName) : Bullet(bankName)
+      public class WaftBullet : Bullet
       {
+        public WaftBullet(string bankName) : base(bankName)
+        {
+        }
+
         [DebuggerHidden]
         protected override IEnumerator Top()
         {

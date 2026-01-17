@@ -10,10 +10,13 @@ using UnityEngine;
 
 namespace ETG.Core.Systems.Utilities
 {
-    public class dfAnimatedColor32(Color32 StartValue, Color32 EndValue, float Time) : 
-      dfAnimatedValue<Color32>(StartValue, EndValue, Time)
+  public class dfAnimatedColor32 : dfAnimatedValue<Color32>
+  {
+    public dfAnimatedColor32(Color32 StartValue, Color32 EndValue, float Time) : base(StartValue, EndValue, Time)
     {
-      protected override Color32 Lerp(Color32 startValue, Color32 endValue, float time)
+    }
+
+    protected override Color32 Lerp(Color32 startValue, Color32 endValue, float time)
       {
         return (Color32) Color.Lerp((Color) startValue, (Color) endValue, time);
       }

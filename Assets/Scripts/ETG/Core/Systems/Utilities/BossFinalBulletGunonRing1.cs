@@ -65,8 +65,12 @@ namespace ETG.Core.Systems.Utilities
         }
       }
 
-      public class BatBullet(string name) : Bullet(name)
+      public class BatBullet : Bullet
       {
+        public BatBullet(string name) : base(name)
+        {
+        }
+
         protected override IEnumerator Top()
         {
           this.Direction = this.GetAimDirection(this.Position, !BraveUtility.RandomBool() ? 1f : 0.0f, 12f);

@@ -50,8 +50,12 @@ namespace ETG.Core.Combat.Projectiles
         }
       }
 
-      public class HomingShot(string bulletName) : Bullet(bulletName)
+      public class HomingShot : Bullet
       {
+        public HomingShot(string bulletName) : base(bulletName)
+        {
+        }
+
         [DebuggerHidden]
         protected override IEnumerator Top()
         {

@@ -10,10 +10,13 @@ using UnityEngine;
 
 namespace ETG.Core.Systems.Utilities
 {
-    public class dfAnimatedQuaternion(Quaternion StartValue, Quaternion EndValue, float Time) : 
-      dfAnimatedValue<Quaternion>(StartValue, EndValue, Time)
+  public class dfAnimatedQuaternion : dfAnimatedValue<Quaternion>
+  {
+    public dfAnimatedQuaternion(Quaternion StartValue, Quaternion EndValue, float Time) : base(StartValue, EndValue, Time)
     {
-      protected override Quaternion Lerp(Quaternion startValue, Quaternion endValue, float time)
+    }
+
+    protected override Quaternion Lerp(Quaternion startValue, Quaternion endValue, float time)
       {
         return Quaternion.Lerp(startValue, endValue, time);
       }
