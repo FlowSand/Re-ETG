@@ -9,11 +9,17 @@ using System;
 #nullable disable
 namespace FullSerializer.Internal
 {
-  public struct fsOption<T>(T value)
+  public struct fsOption<T>
   {
-    private bool _hasValue = true;
-    private T _value = value;
+    private bool _hasValue;
+    private T _value;
     public static fsOption<T> Empty;
+
+    public fsOption(T value)
+    {
+      _hasValue = true;
+      _value = value;
+    }
 
     public bool HasValue => this._hasValue;
 

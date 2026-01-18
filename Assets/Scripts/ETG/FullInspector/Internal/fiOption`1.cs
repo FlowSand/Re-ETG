@@ -9,15 +9,21 @@ using System;
 #nullable disable
 namespace FullInspector.Internal
 {
-  public struct fiOption<T>(T value)
+  public struct fiOption<T>
   {
-    private bool _hasValue = true;
-    private T _value = value;
+    private bool _hasValue;
+    private T _value;
     public static fiOption<T> Empty = new fiOption<T>()
     {
       _hasValue = false,
       _value = default (T)
     };
+
+    public fiOption(T value)
+    {
+      _hasValue = true;
+      _value = value;
+    }
 
     public bool HasValue => this._hasValue;
 

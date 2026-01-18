@@ -11,11 +11,15 @@ using UnityEngine;
 
 namespace ETG.Core.Systems.Utilities
 {
-    public class dfMarkupBoxTexture(
-      dfMarkupElement element,
-      dfMarkupDisplayType display,
-      dfMarkupStyle style) : dfMarkupBox(element, display, style)
+    public class dfMarkupBoxTexture : dfMarkupBox
     {
+      public dfMarkupBoxTexture(
+        dfMarkupElement element,
+        dfMarkupDisplayType display,
+        dfMarkupStyle style) : base(element, display, style)
+      {
+      }
+
       private static int[] TRIANGLE_INDICES = new int[6]
       {
         0,
