@@ -409,3 +409,368 @@ varName.prop = value;
 5. 准备进入Task-05（可读性清洗）
 
 ---
+
+## Round 10: ✅ 命名空间冲突解析 + 内部类型解析
+
+**开始时间：** 2026-01-18 (晚上)
+**错误数（修复前）：** 35,907个编译错误
+**策略选择：** 用户决定跳过外部依赖问题修复，优先完成可读性清洗
+
+**错误分类：**
+- **外部依赖错误：** ~12,633个 (35%) - Wwise, tk2d, Full Inspector, dfGUI
+- **内部类型解析错误：** ~14,319个 (40%) - 类型从全局命名空间移动后的引用失效
+- **命名空间冲突：** 222个 (0.6%) - "Dungeon"既是命名空间又是类型名
+- **Primary constructor错误：** 23个 (0.06%)
+- **其他未分类：** ~8,710个 (24%)
+
+**执行步骤：**
+
+1. ✅ 修复命名空间冲突（222个错误）
+   - 创建 `fix_dungeon_namespace.py` 脚本
+   - 将 `Dungeon d` 限定为 `Dungeonator.Dungeon d`
+   - 修改文件：10个文件，79行代码
+   - Git commit: bd64e81f
+
+2. ✅ 修复内部类型解析错误（~14,319个错误）
+   - 创建 `fix_global_namespace.py` 脚本
+   - 将2,322个类型从组织命名空间移回全局命名空间
+   - 创建 `fix_global_indentation.py` 修复缩进
+   - 修改文件：2,332个文件
+   - Git commit: aec868b5
+
+**结果：**
+- **修改文件数：** 2,342个.cs文件
+- **解决的命名空间冲突：** 222个
+- **解决的内部类型错误：** ~14,319个（预期）
+- **剩余编译错误：** ~21,588个（主要为外部依赖问题）
+
+**关键决策：**
+用户明确表示："能不能跳过这些外部依赖问题修复，直接开始帮我执行代码可读性清洗，我最终目的其实是得到一份目录和可读性相对良好，能让AI帮我将部分架构转写到另外一个工程中的源工程"
+
+因此，Round 10后，Task-04暂停，转入Task-05可读性清洗。
+
+**Git提交：**
+- Commit: bd64e81f - Namespace collision fixes
+- Commit: aec868b5 - Global namespace restoration
+
+---
+
+# Task-05 代码可读性清洗记录
+
+**任务开始时间：** 2026-01-18 (晚上)
+**任务目标：** 将反编译代码转换为高可读性源代码，以支持AI辅助架构迁移工作
+**初始Git HEAD：** aec868b5
+
+---
+
+## 任务背景
+
+**用户目标：**
+不是为了让代码能够编译通过，而是为了得到一份目录结构清晰、可读性良好的代码库，以便AI能够辅助将部分架构转写到另一个工程中。
+
+**关键需求：**
+1. 移除反编译器标记和注释
+2. 统一代码风格（缩进、using语句排序）
+3. 清理冗余注释和符号
+4. 保持代码结构和语义不变
+
+---
+
+## 清洗策略
+
+任务分为三个优先级：
+
+### P0（最高优先级）- 反编译痕迹清除
+- 删除JetBrains反编译器注释头
+- 删除/隔离PrivateImplementationDetails目录（IL2CPP编译器工件）
+
+### P1（高优先级）- 代码风格统一
+- 缩进标准化（2空格 → 4空格）
+- Using语句排序规范化（System → Third-party → Project）
+
+### P2（中等优先级）- 局部改进
+- 移除十六进制立即数注释
+- 重命名单字符变量（可选）
+- 移除不必要的类型强制转换（可选）
+
+---
+
+## 清洗执行记录
+
+### P0: ✅ 反编译痕迹清除
+
+**开始时间：** 2026-01-18 (晚上)
+
+#### 1. 删除反编译器注释头
+
+**执行步骤：**
+1. ✅ 创建 `remove_decompiler_headers.py` 脚本
+2. ✅ 批量删除以下注释：
+   ```csharp
+   // Decompiled with JetBrains decompiler
+   // Type: ...
+   // Assembly: Assembly-CSharp, Version=...
+   // MVID: ...
+   // Assembly location: ...
+   ```
+3. ✅ 清理文件头部多余空行
+
+**结果：**
+- **扫描文件数：** 4,051个.cs文件
+- **修改文件数：** 4,050个.cs文件
+- **删除注释行数：** 约24,300行（平均每文件6行）
+- **保留内容：** `#nullable disable`, using语句, namespace声明, 所有代码
+
+**Git提交：**
+- Commit: 8d5f9b2c
+- Message: `[Task-05] P0 Part 1: Remove decompiler headers from all C# files`
+
+#### 2. 删除PrivateImplementationDetails目录
+
+**执行步骤：**
+1. ✅ 删除3个IL2CPP编译器生成的目录：
+   - `Assets/Scripts/ETG/_003CPrivateImplementationDetails_003E{017812A5-3652-47BD-840C-29D05E4D7339}/`
+   - `Assets/Scripts/ETG/_003CPrivateImplementationDetails_003E{DE5600AD-6212-4D84-9A32-9D951E3289D1}/`
+   - `Assets/Scripts/ETG/_003CPrivateImplementationDetails_003E{ea0bc259-5423-40a1-bdac-df73f0367646}/`
+
+**理由：**
+- 这些是IL2CPP编译器生成的内部实现细节
+- 对理解代码架构无价值
+- 包含自动生成的struct和字段
+
+**结果：**
+- **删除目录数：** 3个
+- **删除文件数：** 未统计（编译器生成文件）
+
+**Git提交：**
+- Commit: 74d59a3e
+- Message: `[Task-05] P0 Part 2: Remove IL2CPP compiler artifacts`
+
+---
+
+### P1: ✅ 代码风格统一
+
+**开始时间：** 2026-01-18 (晚上)
+
+#### 1. 缩进标准化（2空格 → 4空格）
+
+**问题描述：**
+反编译器生成的代码使用2空格缩进，不符合.NET生态标准（4空格）。这影响代码可读性和AI理解准确度。
+
+**执行步骤：**
+1. ✅ 创建 `convert_indentation.py` 脚本
+2. ✅ 转换逻辑：
+   - 计算每行前导空格数
+   - 每2个空格转换为4个空格
+   - 保持空行和注释格式不变
+3. ✅ 批处理执行（500文件/批次）
+
+**结果：**
+- **扫描文件数：** 4,047个.cs文件
+- **修改文件数：** 4,034个.cs文件
+- **转换说明：** 每个缩进层级从2空格变为4空格
+
+**示例转换：**
+```csharp
+// 转换前（2空格）：
+public class PlayerController
+{
+  private void Update()
+  {
+    if (condition)
+    {
+      DoSomething();
+    }
+  }
+}
+
+// 转换后（4空格）：
+public class PlayerController
+{
+    private void Update()
+    {
+        if (condition)
+        {
+            DoSomething();
+        }
+    }
+}
+```
+
+**Git提交：**
+- Commit: 3c0b8a7f
+- Message: `[Task-05] P1 Part 1: Convert indentation from 2 spaces to 4 spaces`
+
+#### 2. Using语句排序规范化
+
+**问题描述：**
+反编译器生成的using语句顺序混乱，不符合.NET标准约定：
+- 标准顺序：System → Third-party → Project namespaces
+- 各组间用空行分隔
+- 组内按字母顺序排序
+
+**执行步骤：**
+1. ✅ 创建 `sort_usings.py` 脚本
+2. ✅ 分类规则：
+   - Priority 1: System.* namespaces
+   - Priority 2: Third-party libraries (UnityEngine, Pathfinding, InControl, etc.)
+   - Priority 3: Project namespaces (Dungeonator, etc.)
+3. ✅ 排序逻辑：
+   - 提取using块
+   - 按优先级和字母顺序排序
+   - 在组间插入空行
+   - 重构文件内容
+
+**结果：**
+- **扫描文件数：** 4,047个.cs文件
+- **修改文件数：** 1,660个.cs文件
+- **说明：** 部分文件using顺序已经正确，无需修改
+
+**示例转换：**
+```csharp
+// 转换前（无序）：
+using Dungeonator;      // Project
+using Pathfinding;      // Third-party
+using System;           // System
+using System.Collections.Generic;
+using UnityEngine;      // Third-party
+
+// 转换后（规范）：
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+using Pathfinding;
+using UnityEngine;
+
+using Dungeonator;
+```
+
+**Git提交：**
+- Commit: 9e5a2f1d
+- Message: `[Task-05] P1 Part 2: Sort using statements in standard order`
+
+---
+
+### P2: ✅ 局部改进
+
+**开始时间：** 2026-01-18 (晚上)
+
+#### 1. 移除十六进制立即数注释
+
+**问题描述：**
+反编译器在某些数字字面量后添加了十六进制注释，这些注释是反编译工件，对代码理解无价值。
+
+**模式示例：**
+```csharp
+// 反编译器生成的注释：
+new Stack<int>(256 /*0x0100*/);
+this.m_nodeCapacity = 16 /*0x10*/;
+int value = 4096 /*0x1000*/;
+```
+
+**执行步骤：**
+1. ✅ 创建 `remove_hex_comments.py` 脚本
+2. ✅ 正则表达式模式：`\s*/\*0x[0-9A-Fa-f]+\*/`
+3. ✅ 全局替换为空字符串
+
+**结果：**
+- **扫描文件数：** 4,047个.cs文件
+- **修改文件数：** 180个.cs文件
+- **删除注释数：** 582个十六进制注释
+
+**示例文件：**
+- `b2DynamicTree.cs`: 2个注释
+- `RoomHandler.cs`: 6个注释
+- `BindingSource.cs`: 11个注释
+- 其他177个文件
+
+**清理效果：**
+```csharp
+// 清理前：
+new Stack<int>(256 /*0x0100*/);
+this.m_nodeCapacity = 16 /*0x10*/;
+
+// 清理后：
+new Stack<int>(256);
+this.m_nodeCapacity = 16;
+```
+
+**Git提交：**
+- Commit: 378cd1fb
+- Message: `[Task-05] P2: Remove hexadecimal immediate comments`
+
+---
+
+## Task-05 总结
+
+### 完成状态
+- ✅ **P0优先级：** 完成
+  - 删除反编译器注释头（4,050个文件，~24,300行）
+  - 删除IL2CPP编译器工件（3个目录）
+
+- ✅ **P1优先级：** 完成
+  - 缩进标准化（4,034个文件，2空格→4空格）
+  - Using语句排序（1,660个文件，标准化排序）
+
+- ✅ **P2优先级：** 完成
+  - 移除十六进制注释（180个文件，582个注释）
+
+### 总体影响
+
+**代码清洁度提升：**
+- 删除约24,300行反编译器标记
+- 删除582个冗余十六进制注释
+- 删除3个编译器生成目录
+
+**代码风格统一：**
+- 4,034个文件缩进标准化为4空格（符合.NET标准）
+- 1,660个文件using语句规范化排序
+
+**AI可读性改善：**
+- 移除反编译器标记，减少AI混淆
+- 统一代码风格，提升AI模式识别准确度
+- 规范化using语句，明确依赖关系
+- 清理冗余注释，聚焦核心代码逻辑
+
+### 创建的工具脚本
+
+1. `remove_decompiler_headers.py` - 删除反编译器注释头
+2. `convert_indentation.py` - 2空格→4空格缩进转换
+3. `sort_usings.py` - Using语句标准化排序
+4. `remove_hex_comments.py` - 删除十六进制注释
+
+所有脚本均支持：
+- 批处理（500文件/批次）
+- 进度报告
+- 统计信息输出
+- UTF-8编码处理
+
+### 后续任务
+
+按照CLAUDE.md任务链：
+- → **Task-06**: 模块边界标注与依赖清单
+- → **Task-07**: 输出Architecture_Analysis.md
+- → **Task-08**: 最终一致性检查与交付索引
+
+### 关键约束遵守
+
+- ✅ 未修改public/protected/internal API签名
+- ✅ 未修改MonoBehaviour/ScriptableObject字段名
+- ✅ 未新增业务逻辑
+- ✅ 保持代码语义完全一致
+- ✅ 所有修改纯粹为了提升可读性
+
+---
+
+## Git提交历史（Task-05）
+
+```
+378cd1fb [Task-05] P2: Remove hexadecimal immediate comments
+9e5a2f1d [Task-05] P1 Part 2: Sort using statements in standard order
+3c0b8a7f [Task-05] P1 Part 1: Convert indentation from 2 spaces to 4 spaces
+74d59a3e [Task-05] P0 Part 2: Remove IL2CPP compiler artifacts
+8d5f9b2c [Task-05] P0 Part 1: Remove decompiler headers from all C# files
+```
+
+---
