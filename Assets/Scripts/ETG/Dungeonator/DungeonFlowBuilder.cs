@@ -776,14 +776,21 @@ namespace Dungeonator
       return false;
     }
 
-    private struct FlowRoomAttachData(
-      WeightedRoom w,
-      PrototypeRoomExit exitOfNew,
-      PrototypeRoomExit exitOfOld)
+    private struct FlowRoomAttachData
     {
-      public WeightedRoom weightedRoom = w;
-      public PrototypeRoomExit exitOfNewRoom = exitOfNew;
-      public PrototypeRoomExit exitToUse = exitOfOld;
+      public WeightedRoom weightedRoom;
+      public PrototypeRoomExit exitOfNewRoom;
+      public PrototypeRoomExit exitToUse;
+
+      public FlowRoomAttachData(
+        WeightedRoom w,
+        PrototypeRoomExit exitOfNew,
+        PrototypeRoomExit exitOfOld)
+      {
+        weightedRoom = w;
+        exitOfNewRoom = exitOfNew;
+        exitToUse = exitOfOld;
+      }
     }
 
     internal class LoopPathData

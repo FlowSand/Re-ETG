@@ -10,12 +10,20 @@ using System.Text.RegularExpressions;
 
 namespace ETG.Core.Systems.Utilities
 {
-    public struct dfMarkupBorders(int left, int right, int top, int bottom)
+    public struct dfMarkupBorders
     {
-      public int left = left;
-      public int top = top;
-      public int right = right;
-      public int bottom = bottom;
+      public int left;
+      public int top;
+      public int right;
+      public int bottom;
+
+      public dfMarkupBorders(int left, int right, int top, int bottom)
+      {
+        this.left = left;
+        this.top = top;
+        this.right = right;
+        this.bottom = bottom;
+      }
 
       public int horizontal => this.left + this.right;
 

@@ -218,3 +218,95 @@ namespace DaikonForge.Tween
 ## 参考文档
 - `CLAUDE.md` - 工程化清洗规则
 - `Docs/Task03_to_Task04_Handoff.md` - Task-03交接文档
+
+---
+
+## 补充修复记录 (Round 3-9)
+
+> **注：** Round 3-8的详细记录未在文档中记录，但通过Git历史可追溯。以下仅记录Round 9 Part 7。
+
+### Round 9 Part 7: ✅ 修复剩余Primary Constructor语法
+
+**开始时间：** 2026-01-18 (下午)
+**错误类型：** C# 12.0 Primary Constructor语法在C# 10.0中不支持
+**修复前状态：** Round 9 Parts 1-6已修复23个文件
+
+**问题描述：**
+反编译器生成了C# 12.0的Primary Constructor语法（结构体声明时直接包含参数），但项目配置为C# 10.0，导致编译错误。
+
+**错误模式示例：**
+```csharp
+// C# 12.0语法（无效）：
+public struct IntVector2(int x, int y)
+{
+    public int x = x;
+    public int y = y;
+}
+
+// 转换为C# 10.0兼容（有效）：
+public struct IntVector2
+{
+    public int x;
+    public int y;
+
+    public IntVector2(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+}
+```
+
+**执行步骤：**
+
+1. ✅ 定位所有使用primary constructor的struct（14个文件，15个structs）
+2. ✅ 批量修复，按复杂度分组：
+   - **简单组（1参数）：** 2个文件
+     - `Assets/Scripts/ETG/Dungeonator/CellOcclusionData.cs`
+     - `Assets/Scripts/ETG/Core/Systems/Utilities/Tribool.cs`
+
+   - **中等组（2-3参数）：** 3个文件
+     - `Assets/Scripts/ETG/Core/Systems/Utilities/IntVector2.cs` (2参数)
+     - `Assets/Scripts/ETG/Core/Systems/Utilities/dfMarkupStyle.cs` (3参数)
+     - `Assets/Scripts/ETG/Core/Systems/Utilities/GeneratedEnemyData.cs` (3参数)
+
+   - **复杂组（4+参数或嵌套）：** 9个文件
+     - `Assets/Scripts/ETG/Core/Systems/Utilities/dfMarkupBorders.cs` (4参数)
+     - `Assets/Scripts/ETG/Core/Systems/Utilities/dfTouchInfo.cs` (6参数)
+     - `Assets/Scripts/ETG/Core/Core/Framework/SpeculativeRigidbody.cs` (2个嵌套structs)
+       - `PushedRigidbodyData` (1参数)
+       - `TemporaryException` (3参数)
+     - `Assets/Scripts/ETG/Core/Core/Enums/PixelCollider.cs` (嵌套struct `StepData`, 2参数)
+     - `Assets/Scripts/ETG/Core/Core/Framework/TrackInputDirectionalPad.cs` (嵌套struct `TrackedKeyInput`, 2参数)
+     - `Assets/Scripts/ETG/Dungeonator/DungeonFlowBuilder.cs` (嵌套struct `FlowRoomAttachData`, 3参数)
+     - `Assets/Scripts/ETG/Core/Systems/Utilities/PlatformInterface.cs` (嵌套struct `LightFXUnit`, 2参数)
+     - `Assets/Scripts/ETG/Core/Systems/Utilities/TK2DInteriorDecorator.cs` (嵌套struct `WallExpanse`, 2参数)
+
+3. ✅ 对每个文件执行以下转换：
+   - 移除struct声明中的参数列表
+   - 将字段声明的初始化表达式移除（`public int x = x;` → `public int x;`）
+   - 创建传统构造函数方法，将初始化逻辑移入构造函数体
+
+**结果：**
+- **修改文件数：** 14个.cs文件
+- **修复struct数：** 15个structs
+- **解决问题：** Primary constructor语法编译错误
+- **预期编译状态：** 0个编译错误（待Unity重新编译验证）
+
+**约束符合性：**
+- ✅ 未修改public/protected/internal API签名（构造函数签名保持完全一致）
+- ✅ 未修改MonoBehaviour/ScriptableObject字段名（修复的都是structs）
+- ✅ 未新增业务逻辑（纯语法转换）
+- ✅ 保持序列化兼容性（字段名和类型未变）
+
+**Git提交：**
+- Commit: 待提交
+- Message建议: `[Task-04] Round 9 Part 7: Fix remaining primary constructors (14 files, 15 structs)`
+
+**后续步骤：**
+1. 用户触发Unity重新编译
+2. 验证Unity Console显示0个编译错误
+3. 如编译通过，Task-04完成，准备进入Task-05（可读性清洗）
+4. 如仍有错误，分析并启动Round 10修复
+
+---

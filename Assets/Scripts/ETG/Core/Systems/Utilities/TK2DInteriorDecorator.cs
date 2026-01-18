@@ -1183,13 +1183,22 @@ namespace ETG.Core.Systems.Utilities
         FAILED_CHANCE,
       }
 
-      public struct WallExpanse(IntVector2 bp, int w)
+      public struct WallExpanse
       {
-        public IntVector2 basePosition = bp;
-        public int width = w;
-        public bool hasMirror = false;
-        public IntVector2 mirroredExpanseBasePosition = IntVector2.Zero;
-        public int mirroredExpanseWidth = 0;
+        public IntVector2 basePosition;
+        public int width;
+        public bool hasMirror;
+        public IntVector2 mirroredExpanseBasePosition;
+        public int mirroredExpanseWidth;
+
+        public WallExpanse(IntVector2 bp, int w)
+        {
+          basePosition = bp;
+          width = w;
+          hasMirror = false;
+          mirroredExpanseBasePosition = IntVector2.Zero;
+          mirroredExpanseWidth = 0;
+        }
 
         public IntVector2 GetPositionInMirroredExpanse(int basePlacement, int stampWidth)
         {

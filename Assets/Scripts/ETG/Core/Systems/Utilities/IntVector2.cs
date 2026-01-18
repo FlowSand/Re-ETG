@@ -12,7 +12,7 @@ using UnityEngine;
 namespace ETG.Core.Systems.Utilities
 {
     [Serializable]
-    public struct IntVector2(int x, int y)
+    public struct IntVector2
     {
       public static IntVector2 Zero = new IntVector2(0, 0);
       public static IntVector2 One = new IntVector2(1, 1);
@@ -38,8 +38,14 @@ namespace ETG.Core.Systems.Utilities
       public static IntVector2[] m_cachedCardinals;
       public static IntVector2[] m_cachedOrdinals;
       public static IntVector2[] m_cachedCardinalsAndOrdinals;
-      public int x = x;
-      public int y = y;
+      public int x;
+      public int y;
+
+      public IntVector2(int x, int y)
+      {
+        this.x = x;
+        this.y = y;
+      }
 
       public static IntVector2[] Cardinals
       {

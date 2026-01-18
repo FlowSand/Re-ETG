@@ -153,10 +153,16 @@ namespace ETG.Core.Core.Framework
         B,
       }
 
-      protected struct TrackedKeyInput(TrackInputDirectionalPad.TrackInputSequenceKey key, float t)
+      protected struct TrackedKeyInput
       {
-        public TrackInputDirectionalPad.TrackInputSequenceKey sourceKey = key;
-        public float sourceTime = t;
+        public TrackInputDirectionalPad.TrackInputSequenceKey sourceKey;
+        public float sourceTime;
+
+        public TrackedKeyInput(TrackInputDirectionalPad.TrackInputSequenceKey key, float t)
+        {
+          sourceKey = key;
+          sourceTime = t;
+        }
       }
     }
 

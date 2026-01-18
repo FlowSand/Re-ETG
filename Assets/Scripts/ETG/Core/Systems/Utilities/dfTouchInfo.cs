@@ -14,21 +14,32 @@ namespace ETG.Core.Systems.Utilities
 {
     [Serializable]
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public struct dfTouchInfo(
-      int fingerID,
-      TouchPhase phase,
-      int tapCount,
-      Vector2 position,
-      Vector2 positionDelta,
-      float timeDelta)
+    public struct dfTouchInfo
     {
-      private int m_FingerId = fingerID;
-      private Vector2 m_Position = position;
-      private Vector2 m_RawPosition = position;
-      private Vector2 m_PositionDelta = positionDelta;
-      private float m_TimeDelta = timeDelta;
-      private int m_TapCount = tapCount;
-      private TouchPhase m_Phase = phase;
+      private int m_FingerId;
+      private Vector2 m_Position;
+      private Vector2 m_RawPosition;
+      private Vector2 m_PositionDelta;
+      private float m_TimeDelta;
+      private int m_TapCount;
+      private TouchPhase m_Phase;
+
+      public dfTouchInfo(
+        int fingerID,
+        TouchPhase phase,
+        int tapCount,
+        Vector2 position,
+        Vector2 positionDelta,
+        float timeDelta)
+      {
+        m_FingerId = fingerID;
+        m_Position = position;
+        m_RawPosition = position;
+        m_PositionDelta = positionDelta;
+        m_TimeDelta = timeDelta;
+        m_TapCount = tapCount;
+        m_Phase = phase;
+      }
 
       public int fingerId => this.m_FingerId;
 

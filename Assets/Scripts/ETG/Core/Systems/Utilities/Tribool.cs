@@ -10,12 +10,17 @@ using System;
 
 namespace ETG.Core.Systems.Utilities
 {
-    public struct Tribool(int v)
+    public struct Tribool
     {
       public static Tribool Complete = new Tribool(2);
       public static Tribool Ready = new Tribool(1);
       public static Tribool Unready = new Tribool(0);
-      public int value = v;
+      public int value;
+
+      public Tribool(int v)
+      {
+        value = v;
+      }
 
       public override string ToString() => string.Format("[Tribool] " + this.value.ToString());
 

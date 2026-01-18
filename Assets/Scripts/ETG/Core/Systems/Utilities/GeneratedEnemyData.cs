@@ -8,11 +8,18 @@
 
 namespace ETG.Core.Systems.Utilities
 {
-    public struct GeneratedEnemyData(string id, float percent, bool isSig)
+    public struct GeneratedEnemyData
     {
-      public string enemyGuid = id;
-      public float percentOfEnemies = percent;
-      public bool isSignatureEnemy = isSig;
+      public string enemyGuid;
+      public float percentOfEnemies;
+      public bool isSignatureEnemy;
+
+      public GeneratedEnemyData(string id, float percent, bool isSig)
+      {
+        enemyGuid = id;
+        percentOfEnemies = percent;
+        isSignatureEnemy = isSig;
+      }
     }
 
 }

@@ -402,11 +402,18 @@ namespace ETG.Core.Systems.Utilities
         return trackedStatEventString;
       }
 
-      private struct LightFXUnit(Color32 sourceColor, float sourceDuration)
+      private struct LightFXUnit
       {
-        public Color32 TargetLightColor = sourceColor;
-        public float remainingDuration = sourceDuration;
-        public float startDuration = sourceDuration;
+        public Color32 TargetLightColor;
+        public float remainingDuration;
+        public float startDuration;
+
+        public LightFXUnit(Color32 sourceColor, float sourceDuration)
+        {
+          TargetLightColor = sourceColor;
+          remainingDuration = sourceDuration;
+          startDuration = sourceDuration;
+        }
       }
 
       private class DlcUnlockedItem

@@ -1118,10 +1118,16 @@ namespace ETG.Core.Core.Enums
         public IntVector2 offset;
       }
 
-      public struct StepData(IntVector2 deltaPos, float deltaTime)
+      public struct StepData
       {
-        public IntVector2 deltaPos = deltaPos;
-        public float deltaTime = deltaTime;
+        public IntVector2 deltaPos;
+        public float deltaTime;
+
+        public StepData(IntVector2 deltaPos, float deltaTime)
+        {
+          this.deltaPos = deltaPos;
+          this.deltaTime = deltaTime;
+        }
       }
     }
 

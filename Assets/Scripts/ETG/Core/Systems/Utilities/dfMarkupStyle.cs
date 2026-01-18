@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace ETG.Core.Systems.Utilities
 {
-    public struct dfMarkupStyle(dfDynamicFont Font, int FontSize, FontStyle FontStyle)
+    public struct dfMarkupStyle
     {
       private static Dictionary<string, Color> namedColors = new Dictionary<string, Color>()
       {
@@ -94,23 +94,44 @@ namespace ETG.Core.Systems.Utilities
           Color.yellow
         }
       };
-      internal int Version = 0;
-      public dfRichTextLabel Host = (dfRichTextLabel) null;
-      public dfAtlas Atlas = (dfAtlas) null;
-      public dfDynamicFont Font = Font;
-      public int FontSize = FontSize;
-      public FontStyle FontStyle = FontStyle;
-      public dfMarkupTextDecoration TextDecoration = dfMarkupTextDecoration.None;
-      public dfMarkupTextAlign Align = dfMarkupTextAlign.Left;
-      public dfMarkupVerticalAlign VerticalAlign = dfMarkupVerticalAlign.Baseline;
-      public Color Color = Color.white;
-      public Color BackgroundColor = Color.clear;
-      public float Opacity = 1f;
-      public bool PreserveWhitespace = false;
-      public bool Preformatted = false;
-      public int WordSpacing = 0;
-      public int CharacterSpacing = 0;
-      private int lineHeight = 0;
+      internal int Version;
+      public dfRichTextLabel Host;
+      public dfAtlas Atlas;
+      public dfDynamicFont Font;
+      public int FontSize;
+      public FontStyle FontStyle;
+      public dfMarkupTextDecoration TextDecoration;
+      public dfMarkupTextAlign Align;
+      public dfMarkupVerticalAlign VerticalAlign;
+      public Color Color;
+      public Color BackgroundColor;
+      public float Opacity;
+      public bool PreserveWhitespace;
+      public bool Preformatted;
+      public int WordSpacing;
+      public int CharacterSpacing;
+      private int lineHeight;
+
+      public dfMarkupStyle(dfDynamicFont Font, int FontSize, FontStyle FontStyle)
+      {
+        Version = 0;
+        Host = (dfRichTextLabel) null;
+        Atlas = (dfAtlas) null;
+        this.Font = Font;
+        this.FontSize = FontSize;
+        this.FontStyle = FontStyle;
+        TextDecoration = dfMarkupTextDecoration.None;
+        Align = dfMarkupTextAlign.Left;
+        VerticalAlign = dfMarkupVerticalAlign.Baseline;
+        Color = Color.white;
+        BackgroundColor = Color.clear;
+        Opacity = 1f;
+        PreserveWhitespace = false;
+        Preformatted = false;
+        WordSpacing = 0;
+        CharacterSpacing = 0;
+        lineHeight = 0;
+      }
 
       public int LineHeight
       {

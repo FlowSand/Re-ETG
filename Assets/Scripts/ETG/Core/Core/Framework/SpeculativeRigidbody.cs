@@ -820,11 +820,18 @@ namespace ETG.Core.Core.Framework
         public bool ShowSlope;
       }
 
-      public struct PushedRigidbodyData(SpeculativeRigidbody specRigidbody)
+      public struct PushedRigidbodyData
       {
-        public SpeculativeRigidbody SpecRigidbody = specRigidbody;
-        public bool PushedThisFrame = false;
-        public IntVector2 Direction = IntVector2.Zero;
+        public SpeculativeRigidbody SpecRigidbody;
+        public bool PushedThisFrame;
+        public IntVector2 Direction;
+
+        public PushedRigidbodyData(SpeculativeRigidbody specRigidbody)
+        {
+          SpecRigidbody = specRigidbody;
+          PushedThisFrame = false;
+          Direction = IntVector2.Zero;
+        }
 
         public bool CollidedX => this.Direction.x != 0;
 
@@ -836,14 +843,21 @@ namespace ETG.Core.Core.Framework
         }
       }
 
-      public struct TemporaryException(
-        SpeculativeRigidbody specRigidbody,
-        float minTime,
-        float? maxTime)
+      public struct TemporaryException
       {
-        public SpeculativeRigidbody SpecRigidbody = specRigidbody;
-        public float MinTimeRemaining = minTime;
-        public float? MaxTimeRemaining = maxTime;
+        public SpeculativeRigidbody SpecRigidbody;
+        public float MinTimeRemaining;
+        public float? MaxTimeRemaining;
+
+        public TemporaryException(
+          SpeculativeRigidbody specRigidbody,
+          float minTime,
+          float? maxTime)
+        {
+          SpecRigidbody = specRigidbody;
+          MinTimeRemaining = minTime;
+          MaxTimeRemaining = maxTime;
+        }
 
         public bool HasEnded(SpeculativeRigidbody myRigidbody)
         {
