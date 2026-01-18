@@ -11,75 +11,72 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Dungeon.Interactables
-{
-    [RequireComponent(typeof (GenericIntroDoer))]
-    public class HelicopterIntroDoer : SpecificIntroDoer
+[RequireComponent(typeof (GenericIntroDoer))]
+public class HelicopterIntroDoer : SpecificIntroDoer
+  {
+    private bool m_isFinished;
+
+    public bool IsCameraModified { get; set; }
+
+    public override bool IsIntroFinished => this.m_isFinished && base.IsIntroFinished;
+
+    protected override void OnDestroy()
     {
-      private bool m_isFinished;
+      this.ModifyCamera(false);
+      base.OnDestroy();
+    }
 
-      public bool IsCameraModified { get; set; }
+    public override void StartIntro(List<tk2dSpriteAnimator> animators)
+    {
+      base.StartIntro(animators);
+      this.StartCoroutine(this.DoIntro());
+    }
 
-      public override bool IsIntroFinished => this.m_isFinished && base.IsIntroFinished;
-
-      protected override void OnDestroy()
+    [DebuggerHidden]
+    public IEnumerator DoIntro()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new HelicopterIntroDoer__DoIntroc__Iterator0()
       {
-        this.ModifyCamera(false);
-        base.OnDestroy();
-      }
+        _this = this
+      };
+    }
 
-      public override void StartIntro(List<tk2dSpriteAnimator> animators)
-      {
-        base.StartIntro(animators);
-        this.StartCoroutine(this.DoIntro());
-      }
+    public override void PlayerWalkedIn(PlayerController player, List<tk2dSpriteAnimator> animators)
+    {
+      GameManager.Instance.MainCameraController.SetZoomScaleImmediate(0.75f);
+      int num1 = (int) AkSoundEngine.PostEvent("Play_boss_helicopter_loop_01", this.gameObject);
+      int num2 = (int) AkSoundEngine.PostEvent("Play_State_Volume_Lower_01", this.gameObject);
+      this.aiActor.ParentRoom.CompletelyPreventLeaving = true;
+    }
 
-      [DebuggerHidden]
-      public IEnumerator DoIntro()
+    public override Vector2? OverrideOutroPosition
+    {
+      get
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HelicopterIntroDoer__DoIntroc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      public override void PlayerWalkedIn(PlayerController player, List<tk2dSpriteAnimator> animators)
-      {
-        GameManager.Instance.MainCameraController.SetZoomScaleImmediate(0.75f);
-        int num1 = (int) AkSoundEngine.PostEvent("Play_boss_helicopter_loop_01", this.gameObject);
-        int num2 = (int) AkSoundEngine.PostEvent("Play_State_Volume_Lower_01", this.gameObject);
-        this.aiActor.ParentRoom.CompletelyPreventLeaving = true;
-      }
-
-      public override Vector2? OverrideOutroPosition
-      {
-        get
-        {
-          this.ModifyCamera(true);
-          return new Vector2?();
-        }
-      }
-
-      public void ModifyCamera(bool value)
-      {
-        if (!GameManager.HasInstance || GameManager.Instance.IsLoadingLevel || GameManager.IsReturningToBreach || this.IsCameraModified == value)
-          return;
-        CameraController cameraController = GameManager.Instance.MainCameraController;
-        if (value)
-        {
-          cameraController.OverrideZoomScale = 0.75f;
-          cameraController.LockToRoom = true;
-          cameraController.controllerCamera.isTransitioning = false;
-        }
-        else
-        {
-          cameraController.SetZoomScaleImmediate(1f);
-          cameraController.LockToRoom = false;
-          int num = (int) AkSoundEngine.PostEvent("Stop_State_Volume_Lower_01", this.gameObject);
-        }
-        this.IsCameraModified = value;
+        this.ModifyCamera(true);
+        return new Vector2?();
       }
     }
 
-}
+    public void ModifyCamera(bool value)
+    {
+      if (!GameManager.HasInstance || GameManager.Instance.IsLoadingLevel || GameManager.IsReturningToBreach || this.IsCameraModified == value)
+        return;
+      CameraController cameraController = GameManager.Instance.MainCameraController;
+      if (value)
+      {
+        cameraController.OverrideZoomScale = 0.75f;
+        cameraController.LockToRoom = true;
+        cameraController.controllerCamera.isTransitioning = false;
+      }
+      else
+      {
+        cameraController.SetZoomScaleImmediate(1f);
+        cameraController.LockToRoom = false;
+        int num = (int) AkSoundEngine.PostEvent("Stop_State_Volume_Lower_01", this.gameObject);
+      }
+      this.IsCameraModified = value;
+    }
+  }
+

@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Combat.Effects
-{
-    public enum ProcessStatus
-    {
-      Incomplete,
-      Fail,
-      Success,
-    }
+public enum ProcessStatus
+  {
+    Incomplete,
+    Fail,
+    Success,
+  }
 
-}

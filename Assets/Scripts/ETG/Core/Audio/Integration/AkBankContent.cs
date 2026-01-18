@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkBankContent
-    {
-      AkBankContent_StructureOnly,
-      AkBankContent_All,
-    }
+public enum AkBankContent
+  {
+    AkBankContent_StructureOnly,
+    AkBankContent_All,
+  }
 
-}

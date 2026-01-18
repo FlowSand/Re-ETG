@@ -8,11 +8,8 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Management
-{
-    public class SceneLightManager : MonoBehaviour
-    {
-      public Color[] validColors;
-    }
+public class SceneLightManager : MonoBehaviour
+  {
+    public Color[] validColors;
+  }
 
-}

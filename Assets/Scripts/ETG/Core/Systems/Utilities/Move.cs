@@ -8,16 +8,13 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class Move : MonoBehaviour
+public class Move : MonoBehaviour
+  {
+    private void Update()
     {
-      private void Update()
-      {
-        Vector3 zero = Vector3.zero;
-        this.transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * BraveTime.DeltaTime * 5f, Space.World);
-        this.transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * BraveTime.DeltaTime * 5f, Space.World);
-      }
+      Vector3 zero = Vector3.zero;
+      this.transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * BraveTime.DeltaTime * 5f, Space.World);
+      this.transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * BraveTime.DeltaTime * 5f, Space.World);
     }
+  }
 
-}

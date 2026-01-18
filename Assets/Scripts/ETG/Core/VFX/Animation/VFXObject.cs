@@ -9,20 +9,17 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    [Serializable]
-    public class VFXObject
-    {
-      public GameObject effect;
-      public bool orphaned;
-      public bool attached = true;
-      public bool persistsOnDeath;
-      public bool usesZHeight;
-      public float zHeight;
-      public VFXAlignment alignment;
-      [HideInInspector]
-      public bool destructible;
-    }
+[Serializable]
+public class VFXObject
+  {
+    public GameObject effect;
+    public bool orphaned;
+    public bool attached = true;
+    public bool persistsOnDeath;
+    public bool usesZHeight;
+    public float zHeight;
+    public VFXAlignment alignment;
+    [HideInInspector]
+    public bool destructible;
+  }
 
-}

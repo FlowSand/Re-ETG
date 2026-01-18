@@ -8,15 +8,12 @@ using FullInspector;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class BraveGoodInspectorSettings : fiSettingsProcessor
+public class BraveGoodInspectorSettings : fiSettingsProcessor
+  {
+    public void Process()
     {
-      public void Process()
-      {
-        fiSettings.SerializeAutoProperties = false;
-        fiSettings.RootDirectory = "Assets/Libraries/FullInspector2/";
-      }
+      fiSettings.SerializeAutoProperties = false;
+      fiSettings.RootDirectory = "Assets/Libraries/FullInspector2/";
     }
+  }
 
-}

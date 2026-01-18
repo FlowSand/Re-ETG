@@ -8,64 +8,61 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public class AkPropagationPathInfoProxy : AkPropagationPathInfo
+public class AkPropagationPathInfoProxy : AkPropagationPathInfo
+  {
+    private IntPtr swigCPtr;
+
+    internal AkPropagationPathInfoProxy(IntPtr cPtr, bool cMemoryOwn)
+      : base(AkSoundEnginePINVOKE.CSharp_AkPropagationPathInfoProxy_SWIGUpcast(cPtr), cMemoryOwn)
     {
-      private IntPtr swigCPtr;
+      this.swigCPtr = cPtr;
+    }
 
-      internal AkPropagationPathInfoProxy(IntPtr cPtr, bool cMemoryOwn)
-        : base(AkSoundEnginePINVOKE.CSharp_AkPropagationPathInfoProxy_SWIGUpcast(cPtr), cMemoryOwn)
+    public AkPropagationPathInfoProxy()
+      : this(AkSoundEnginePINVOKE.CSharp_new_AkPropagationPathInfoProxy(), true)
+    {
+    }
+
+    internal static IntPtr getCPtr(AkPropagationPathInfoProxy obj)
+    {
+      return obj == null ? IntPtr.Zero : obj.swigCPtr;
+    }
+
+    internal override void setCPtr(IntPtr cPtr)
+    {
+      base.setCPtr(AkSoundEnginePINVOKE.CSharp_AkPropagationPathInfoProxy_SWIGUpcast(cPtr));
+      this.swigCPtr = cPtr;
+    }
+
+    ~AkPropagationPathInfoProxy() => this.Dispose();
+
+    public override void Dispose()
+    {
+      lock ((object) this)
       {
-        this.swigCPtr = cPtr;
-      }
-
-      public AkPropagationPathInfoProxy()
-        : this(AkSoundEnginePINVOKE.CSharp_new_AkPropagationPathInfoProxy(), true)
-      {
-      }
-
-      internal static IntPtr getCPtr(AkPropagationPathInfoProxy obj)
-      {
-        return obj == null ? IntPtr.Zero : obj.swigCPtr;
-      }
-
-      internal override void setCPtr(IntPtr cPtr)
-      {
-        base.setCPtr(AkSoundEnginePINVOKE.CSharp_AkPropagationPathInfoProxy_SWIGUpcast(cPtr));
-        this.swigCPtr = cPtr;
-      }
-
-      ~AkPropagationPathInfoProxy() => this.Dispose();
-
-      public override void Dispose()
-      {
-        lock ((object) this)
+        if (this.swigCPtr != IntPtr.Zero)
         {
-          if (this.swigCPtr != IntPtr.Zero)
+          if (this.swigCMemOwn)
           {
-            if (this.swigCMemOwn)
-            {
-              this.swigCMemOwn = false;
-              AkSoundEnginePINVOKE.CSharp_delete_AkPropagationPathInfoProxy(this.swigCPtr);
-            }
-            this.swigCPtr = IntPtr.Zero;
+            this.swigCMemOwn = false;
+            AkSoundEnginePINVOKE.CSharp_delete_AkPropagationPathInfoProxy(this.swigCPtr);
           }
-          GC.SuppressFinalize((object) this);
-          base.Dispose();
+          this.swigCPtr = IntPtr.Zero;
         }
-      }
-
-      public static int GetSizeOf()
-      {
-        return AkSoundEnginePINVOKE.CSharp_AkPropagationPathInfoProxy_GetSizeOf();
-      }
-
-      public AkVector GetNodePoint(uint idx)
-      {
-        IntPtr nodePoint = AkSoundEnginePINVOKE.CSharp_AkPropagationPathInfoProxy_GetNodePoint(this.swigCPtr, idx);
-        return !(nodePoint == IntPtr.Zero) ? new AkVector(nodePoint, false) : (AkVector) null;
+        GC.SuppressFinalize((object) this);
+        base.Dispose();
       }
     }
 
-}
+    public static int GetSizeOf()
+    {
+      return AkSoundEnginePINVOKE.CSharp_AkPropagationPathInfoProxy_GetSizeOf();
+    }
+
+    public AkVector GetNodePoint(uint idx)
+    {
+      IntPtr nodePoint = AkSoundEnginePINVOKE.CSharp_AkPropagationPathInfoProxy_GetNodePoint(this.swigCPtr, idx);
+      return !(nodePoint == IntPtr.Zero) ? new AkVector(nodePoint, false) : (AkVector) null;
+    }
+  }
+

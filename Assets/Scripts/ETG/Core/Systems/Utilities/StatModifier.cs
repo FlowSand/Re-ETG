@@ -9,44 +9,41 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class StatModifier
+[Serializable]
+public class StatModifier
+  {
+    public PlayerStats.StatType statToBoost;
+    public StatModifier.ModifyMethod modifyType;
+    public float amount;
+    [NonSerialized]
+    public bool hasBeenOwnerlessProcessed;
+    [NonSerialized]
+    public bool ignoredForSaveData;
+    [HideInInspector]
+    public bool isMeatBunBuff;
+
+    public static StatModifier Create(
+      PlayerStats.StatType targetStat,
+      StatModifier.ModifyMethod method,
+      float amt)
     {
-      public PlayerStats.StatType statToBoost;
-      public StatModifier.ModifyMethod modifyType;
-      public float amount;
-      [NonSerialized]
-      public bool hasBeenOwnerlessProcessed;
-      [NonSerialized]
-      public bool ignoredForSaveData;
-      [HideInInspector]
-      public bool isMeatBunBuff;
-
-      public static StatModifier Create(
-        PlayerStats.StatType targetStat,
-        StatModifier.ModifyMethod method,
-        float amt)
+      return new StatModifier()
       {
-        return new StatModifier()
-        {
-          statToBoost = targetStat,
-          amount = amt,
-          modifyType = method
-        };
-      }
-
-      public bool PersistsOnCoopDeath
-      {
-        get => this.statToBoost == PlayerStats.StatType.Curse && (double) this.amount > 0.0;
-      }
-
-      public enum ModifyMethod
-      {
-        ADDITIVE,
-        MULTIPLICATIVE,
-      }
+        statToBoost = targetStat,
+        amount = amt,
+        modifyType = method
+      };
     }
 
-}
+    public bool PersistsOnCoopDeath
+    {
+      get => this.statToBoost == PlayerStats.StatType.Curse && (double) this.amount > 0.0;
+    }
+
+    public enum ModifyMethod
+    {
+      ADDITIVE,
+      MULTIPLICATIVE,
+    }
+  }
+

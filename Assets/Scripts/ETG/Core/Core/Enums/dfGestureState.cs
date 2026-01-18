@@ -6,17 +6,14 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfGestureState
-    {
-      None,
-      Possible,
-      Began,
-      Changed,
-      Ended,
-      Cancelled,
-      Failed,
-    }
+public enum dfGestureState
+  {
+    None,
+    Possible,
+    Began,
+    Changed,
+    Ended,
+    Cancelled,
+    Failed,
+  }
 
-}

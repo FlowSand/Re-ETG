@@ -9,32 +9,29 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class DwarfEventListener : BraveBehaviour, IEventTriggerable
+public class DwarfEventListener : BraveBehaviour, IEventTriggerable
+  {
+    public List<DwarfEventListener.Pair> events;
+    public Action<int> OnTrigger;
+
+    public void Trigger(int index)
     {
-      public List<DwarfEventListener.Pair> events;
-      public Action<int> OnTrigger;
-
-      public void Trigger(int index)
+      if (this.OnTrigger != null)
+        this.OnTrigger(index);
+      for (int index1 = 0; index1 < this.events.Count; ++index1)
       {
-        if (this.OnTrigger != null)
-          this.OnTrigger(index);
-        for (int index1 = 0; index1 < this.events.Count; ++index1)
-        {
-          if (this.events[index1].eventIndex == index)
-            this.SendPlaymakerEvent(this.events[index1].playmakerEvent);
-        }
-      }
-
-      protected override void OnDestroy() => base.OnDestroy();
-
-      [Serializable]
-      public class Pair
-      {
-        public int eventIndex;
-        public string playmakerEvent;
+        if (this.events[index1].eventIndex == index)
+          this.SendPlaymakerEvent(this.events[index1].playmakerEvent);
       }
     }
 
-}
+    protected override void OnDestroy() => base.OnDestroy();
+
+    [Serializable]
+    public class Pair
+    {
+      public int eventIndex;
+      public string playmakerEvent;
+    }
+  }
+

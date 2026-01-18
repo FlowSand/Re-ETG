@@ -8,19 +8,16 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class UndieListener : MonoBehaviour
+public class UndieListener : MonoBehaviour
+  {
+    private void OnClick(dfControl control, dfMouseEventArgs mouseEvent)
     {
-      private void OnClick(dfControl control, dfMouseEventArgs mouseEvent)
-      {
-        dfGUIManager.PopModal();
-        Pixelator.Instance.LerpToLetterbox(0.5f, 0.0f);
-        GameManager.Instance.PrimaryPlayer.healthHaver.FullHeal();
-        this.transform.parent.gameObject.SetActive(false);
-        GameManager.Instance.Unpause();
-        GameManager.Instance.PrimaryPlayer.ClearDeadFlags();
-      }
+      dfGUIManager.PopModal();
+      Pixelator.Instance.LerpToLetterbox(0.5f, 0.0f);
+      GameManager.Instance.PrimaryPlayer.healthHaver.FullHeal();
+      this.transform.parent.gameObject.SetActive(false);
+      GameManager.Instance.Unpause();
+      GameManager.Instance.PrimaryPlayer.ClearDeadFlags();
     }
+  }
 
-}

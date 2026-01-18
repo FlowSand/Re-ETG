@@ -9,12 +9,9 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    [Serializable]
-    public class tk2dCollider2DData
-    {
-      public Vector2[] points = new Vector2[0];
-    }
+[Serializable]
+public class tk2dCollider2DData
+  {
+    public Vector2[] points = new Vector2[0];
+  }
 
-}

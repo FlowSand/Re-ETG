@@ -6,15 +6,12 @@
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    public enum VFXPoolType
-    {
-      None,
-      All,
-      SequentialGroups,
-      RandomGroups,
-      Single,
-    }
+public enum VFXPoolType
+  {
+    None,
+    All,
+    SequentialGroups,
+    RandomGroups,
+    Single,
+  }
 
-}

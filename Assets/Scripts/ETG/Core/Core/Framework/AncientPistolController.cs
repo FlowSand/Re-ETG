@@ -12,31 +12,28 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class AncientPistolController : BraveBehaviour, IPlaceConfigurable
+public class AncientPistolController : BraveBehaviour, IPlaceConfigurable
+  {
+    [NonSerialized]
+    public List<RoomHandler> RoomSequence;
+    public List<bool> RoomSequenceEnemies;
+
+    public void ConfigureOnPlacement(RoomHandler room)
     {
-      [NonSerialized]
-      public List<RoomHandler> RoomSequence;
-      public List<bool> RoomSequenceEnemies;
-
-      public void ConfigureOnPlacement(RoomHandler room)
-      {
-        this.StartCoroutine(this.HandleDelayedInitialization(room));
-      }
-
-      [DebuggerHidden]
-      private IEnumerator HandleDelayedInitialization(RoomHandler room)
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AncientPistolController__HandleDelayedInitializationc__Iterator0()
-        {
-          room = room,
-          _this = this
-        };
-      }
-
-      protected override void OnDestroy() => base.OnDestroy();
+      this.StartCoroutine(this.HandleDelayedInitialization(room));
     }
 
-}
+    [DebuggerHidden]
+    private IEnumerator HandleDelayedInitialization(RoomHandler room)
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new AncientPistolController__HandleDelayedInitializationc__Iterator0()
+      {
+        room = room,
+        _this = this
+      };
+    }
+
+    protected override void OnDestroy() => base.OnDestroy();
+  }
+

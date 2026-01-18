@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    [Serializable]
-    public struct NumericSynergyMultiplier
-    {
-      [LongNumericEnum]
-      public CustomSynergyType RequiredSynergy;
-      public float SynergyMultiplier;
-    }
+[Serializable]
+public struct NumericSynergyMultiplier
+  {
+    [LongNumericEnum]
+    public CustomSynergyType RequiredSynergy;
+    public float SynergyMultiplier;
+  }
 
-}

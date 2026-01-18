@@ -9,83 +9,80 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Actors.Behaviors
-{
-    [InspectorDropdownName("Bosses/BossStatues/StompBehavior")]
-    public class BossStatuesStompBehavior : BossStatuesPatternBehavior
+[InspectorDropdownName("Bosses/BossStatues/StompBehavior")]
+public class BossStatuesStompBehavior : BossStatuesPatternBehavior
+  {
+    public float HangTime = 1f;
+    private int m_frameCount;
+
+    public override void EndContinuousUpdate()
     {
-      public float HangTime = 1f;
-      private int m_frameCount;
-
-      public override void EndContinuousUpdate()
+      base.EndContinuousUpdate();
+      for (int index = 0; index < this.m_activeStatueCount; ++index)
       {
-        base.EndContinuousUpdate();
-        for (int index = 0; index < this.m_activeStatueCount; ++index)
+        BossStatueController activeStatue = this.m_activeStatues[index];
+        if ((bool) (Object) activeStatue && activeStatue.healthHaver.IsAlive)
         {
-          BossStatueController activeStatue = this.m_activeStatues[index];
-          if ((bool) (Object) activeStatue && activeStatue.healthHaver.IsAlive)
-          {
-            activeStatue.IsStomping = false;
-            activeStatue.HangTime = 0.0f;
-            activeStatue.State = BossStatueController.StatueState.StandStill;
-          }
+          activeStatue.IsStomping = false;
+          activeStatue.HangTime = 0.0f;
+          activeStatue.State = BossStatueController.StatueState.StandStill;
         }
-      }
-
-      protected override void InitPositions()
-      {
-        for (int index = 0; index < this.m_activeStatueCount; ++index)
-        {
-          BossStatueController activeStatue = this.m_activeStatues[index];
-          if ((bool) (Object) activeStatue && activeStatue.healthHaver.IsAlive)
-          {
-            PlayerController playerClosestToPoint = GameManager.Instance.GetPlayerClosestToPoint(activeStatue.GroundPosition);
-            if ((bool) (Object) playerClosestToPoint)
-              activeStatue.Target = new Vector2?(playerClosestToPoint.specRigidbody.UnitCenter);
-            if (this.attackType == null)
-              activeStatue.QueuedBulletScript.Add((BulletScriptSelector) null);
-            activeStatue.IsStomping = true;
-            activeStatue.HangTime = this.HangTime;
-          }
-        }
-        this.m_frameCount = 0;
-      }
-
-      protected override void UpdatePositions()
-      {
-        for (int index = 0; index < this.m_activeStatueCount; ++index)
-        {
-          BossStatueController activeStatue = this.m_activeStatues[index];
-          if ((bool) (Object) activeStatue && activeStatue.healthHaver.IsAlive)
-          {
-            PlayerController playerClosestToPoint = GameManager.Instance.GetPlayerClosestToPoint(activeStatue.GroundPosition);
-            if ((bool) (Object) playerClosestToPoint)
-              activeStatue.Target = new Vector2?(playerClosestToPoint.specRigidbody.UnitCenter);
-          }
-        }
-        ++this.m_frameCount;
-      }
-
-      protected override bool IsFinished()
-      {
-        if (this.m_frameCount < 3)
-          return false;
-        for (int index = 0; index < this.m_activeStatueCount; ++index)
-        {
-          if (!this.m_activeStatues[index].IsGrounded)
-            return false;
-        }
-        int num = (int) AkSoundEngine.PostEvent("Play_ENM_kali_shockwave_01", this.m_statuesController.bulletBank.gameObject);
-        return true;
-      }
-
-      protected override void BeginState(BossStatuesPatternBehavior.PatternState state)
-      {
-        base.BeginState(state);
-        if (state != BossStatuesPatternBehavior.PatternState.InProgress)
-          return;
-        this.SetActiveState(BossStatueController.StatueState.WaitForAttack);
       }
     }
 
-}
+    protected override void InitPositions()
+    {
+      for (int index = 0; index < this.m_activeStatueCount; ++index)
+      {
+        BossStatueController activeStatue = this.m_activeStatues[index];
+        if ((bool) (Object) activeStatue && activeStatue.healthHaver.IsAlive)
+        {
+          PlayerController playerClosestToPoint = GameManager.Instance.GetPlayerClosestToPoint(activeStatue.GroundPosition);
+          if ((bool) (Object) playerClosestToPoint)
+            activeStatue.Target = new Vector2?(playerClosestToPoint.specRigidbody.UnitCenter);
+          if (this.attackType == null)
+            activeStatue.QueuedBulletScript.Add((BulletScriptSelector) null);
+          activeStatue.IsStomping = true;
+          activeStatue.HangTime = this.HangTime;
+        }
+      }
+      this.m_frameCount = 0;
+    }
+
+    protected override void UpdatePositions()
+    {
+      for (int index = 0; index < this.m_activeStatueCount; ++index)
+      {
+        BossStatueController activeStatue = this.m_activeStatues[index];
+        if ((bool) (Object) activeStatue && activeStatue.healthHaver.IsAlive)
+        {
+          PlayerController playerClosestToPoint = GameManager.Instance.GetPlayerClosestToPoint(activeStatue.GroundPosition);
+          if ((bool) (Object) playerClosestToPoint)
+            activeStatue.Target = new Vector2?(playerClosestToPoint.specRigidbody.UnitCenter);
+        }
+      }
+      ++this.m_frameCount;
+    }
+
+    protected override bool IsFinished()
+    {
+      if (this.m_frameCount < 3)
+        return false;
+      for (int index = 0; index < this.m_activeStatueCount; ++index)
+      {
+        if (!this.m_activeStatues[index].IsGrounded)
+          return false;
+      }
+      int num = (int) AkSoundEngine.PostEvent("Play_ENM_kali_shockwave_01", this.m_statuesController.bulletBank.gameObject);
+      return true;
+    }
+
+    protected override void BeginState(BossStatuesPatternBehavior.PatternState state)
+    {
+      base.BeginState(state);
+      if (state != BossStatuesPatternBehavior.PatternState.InProgress)
+        return;
+      this.SetActiveState(BossStatueController.StatueState.WaitForAttack);
+    }
+  }
+

@@ -10,51 +10,48 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class MatterAntimatterProjectileModifier : BraveBehaviour
+public class MatterAntimatterProjectileModifier : BraveBehaviour
+  {
+    public bool isAntimatter;
+    private bool m_hasAnnihilated;
+    public ExplosionData antimatterExplosion;
+
+    [DebuggerHidden]
+    private IEnumerator Start()
     {
-      public bool isAntimatter;
-      private bool m_hasAnnihilated;
-      public ExplosionData antimatterExplosion;
-
-      [DebuggerHidden]
-      private IEnumerator Start()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new MatterAntimatterProjectileModifier__Startc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MatterAntimatterProjectileModifier__Startc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      private void OnPreCollision(
-        SpeculativeRigidbody myRigidbody,
-        PixelCollider myPixelCollider,
-        SpeculativeRigidbody otherRigidbody,
-        PixelCollider otherPixelCollider)
-      {
-        if (this.m_hasAnnihilated || !(bool) (Object) otherRigidbody.projectile)
-          return;
-        MatterAntimatterProjectileModifier component = otherRigidbody.GetComponent<MatterAntimatterProjectileModifier>();
-        if ((bool) (Object) component && component.isAntimatter != this.isAntimatter)
-        {
-          this.m_hasAnnihilated = true;
-          component.m_hasAnnihilated = true;
-          otherRigidbody.projectile.DieInAir();
-          this.projectile.DieInAir();
-          Vector3 vector3 = (Vector3) ((myRigidbody.UnitCenter + otherRigidbody.UnitCenter) / 2f);
-          Pixelator.Instance.FadeToColor(0.1f, Color.white, true, 0.05f);
-          GameManager.Instance.BestActivePlayer.ForceBlank(breaksWalls: false, overrideCenter: new Vector2?(vector3.XY()));
-          if (this.isAntimatter)
-            Exploder.Explode(vector3, this.antimatterExplosion, Vector2.zero);
-          else
-            Exploder.Explode(vector3, component.antimatterExplosion, Vector2.zero);
-        }
-        PhysicsEngine.SkipCollision = true;
-      }
-
-      protected override void OnDestroy() => base.OnDestroy();
+        _this = this
+      };
     }
 
-}
+    private void OnPreCollision(
+      SpeculativeRigidbody myRigidbody,
+      PixelCollider myPixelCollider,
+      SpeculativeRigidbody otherRigidbody,
+      PixelCollider otherPixelCollider)
+    {
+      if (this.m_hasAnnihilated || !(bool) (Object) otherRigidbody.projectile)
+        return;
+      MatterAntimatterProjectileModifier component = otherRigidbody.GetComponent<MatterAntimatterProjectileModifier>();
+      if ((bool) (Object) component && component.isAntimatter != this.isAntimatter)
+      {
+        this.m_hasAnnihilated = true;
+        component.m_hasAnnihilated = true;
+        otherRigidbody.projectile.DieInAir();
+        this.projectile.DieInAir();
+        Vector3 vector3 = (Vector3) ((myRigidbody.UnitCenter + otherRigidbody.UnitCenter) / 2f);
+        Pixelator.Instance.FadeToColor(0.1f, Color.white, true, 0.05f);
+        GameManager.Instance.BestActivePlayer.ForceBlank(breaksWalls: false, overrideCenter: new Vector2?(vector3.XY()));
+        if (this.isAntimatter)
+          Exploder.Explode(vector3, this.antimatterExplosion, Vector2.zero);
+        else
+          Exploder.Explode(vector3, component.antimatterExplosion, Vector2.zero);
+      }
+      PhysicsEngine.SkipCollision = true;
+    }
+
+    protected override void OnDestroy() => base.OnDestroy();
+  }
+

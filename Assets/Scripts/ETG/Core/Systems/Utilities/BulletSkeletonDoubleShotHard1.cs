@@ -8,12 +8,9 @@ using FullInspector;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("BulletSkeleton/DoubleShotHard1")]
-    public class BulletSkeletonDoubleShotHard1 : BulletSkeletonDoubleShot1
-    {
-      protected override bool IsHard => true;
-    }
+[InspectorDropdownName("BulletSkeleton/DoubleShotHard1")]
+public class BulletSkeletonDoubleShotHard1 : BulletSkeletonDoubleShot1
+  {
+    protected override bool IsHard => true;
+  }
 
-}

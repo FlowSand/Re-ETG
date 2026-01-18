@@ -9,22 +9,19 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Actors.Enemy
-{
-    [Serializable]
-    public class GameActorHealthEffect : GameActorEffect
+[Serializable]
+public class GameActorHealthEffect : GameActorEffect
+  {
+    public float DamagePerSecondToEnemies = 10f;
+    public bool ignitesGoops;
+
+    public override void EffectTick(GameActor actor, RuntimeGameActorEffectData effectData)
     {
-      public float DamagePerSecondToEnemies = 10f;
-      public bool ignitesGoops;
-
-      public override void EffectTick(GameActor actor, RuntimeGameActorEffectData effectData)
-      {
-        if (this.AffectsEnemies && actor is AIActor)
-          actor.healthHaver.ApplyDamage(this.DamagePerSecondToEnemies * BraveTime.DeltaTime, Vector2.zero, this.effectIdentifier, damageCategory: DamageCategory.DamageOverTime);
-        if (!this.ignitesGoops)
-          return;
-        DeadlyDeadlyGoopManager.IgniteGoopsCircle(actor.CenterPosition, 0.5f);
-      }
+      if (this.AffectsEnemies && actor is AIActor)
+        actor.healthHaver.ApplyDamage(this.DamagePerSecondToEnemies * BraveTime.DeltaTime, Vector2.zero, this.effectIdentifier, damageCategory: DamageCategory.DamageOverTime);
+      if (!this.ignitesGoops)
+        return;
+      DeadlyDeadlyGoopManager.IgniteGoopsCircle(actor.CenterPosition, 0.5f);
     }
+  }
 
-}

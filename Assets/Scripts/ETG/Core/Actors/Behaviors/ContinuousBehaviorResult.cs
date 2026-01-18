@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Actors.Behaviors
-{
-    public enum ContinuousBehaviorResult
-    {
-      Continue,
-      Finished,
-    }
+public enum ContinuousBehaviorResult
+  {
+    Continue,
+    Finished,
+  }
 
-}

@@ -8,17 +8,14 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class RendererRenderer : MonoBehaviour
+public class RendererRenderer : MonoBehaviour
+  {
+    private void Start()
     {
-      private void Start()
-      {
-      }
-
-      private void LateUpdate()
-      {
-      }
     }
 
-}
+    private void LateUpdate()
+    {
+    }
+  }
+

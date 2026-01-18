@@ -8,10 +8,7 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class TrimElementTagsAttribute : PropertyAttribute
-    {
-    }
+public class TrimElementTagsAttribute : PropertyAttribute
+  {
+  }
 
-}

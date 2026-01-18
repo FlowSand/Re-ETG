@@ -8,11 +8,8 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    public class tk2dResource : ScriptableObject
-    {
-      public Object objectReference;
-    }
+public class tk2dResource : ScriptableObject
+  {
+    public Object objectReference;
+  }
 
-}

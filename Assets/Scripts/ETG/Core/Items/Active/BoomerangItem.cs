@@ -6,10 +6,7 @@
 
 #nullable disable
 
-namespace ETG.Core.Items.Active
-{
-    public class BoomerangItem : PlayerItem
-    {
-    }
+public class BoomerangItem : PlayerItem
+  {
+  }
 
-}

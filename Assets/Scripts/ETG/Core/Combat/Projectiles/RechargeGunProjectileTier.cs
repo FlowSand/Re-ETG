@@ -8,13 +8,10 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Projectiles
-{
-    [Serializable]
-    public class RechargeGunProjectileTier
-    {
-      public int RequiredStacks;
-      public Projectile ReplacementProjectile;
-    }
+[Serializable]
+public class RechargeGunProjectileTier
+  {
+    public int RequiredStacks;
+    public Projectile ReplacementProjectile;
+  }
 
-}

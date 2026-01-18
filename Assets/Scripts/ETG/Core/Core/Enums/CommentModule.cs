@@ -8,22 +8,19 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    [Serializable]
-    public struct CommentModule
+[Serializable]
+public struct CommentModule
+  {
+    public string stringKey;
+    public float duration;
+    public CommentModule.CommentTarget target;
+    public float delay;
+
+    public enum CommentTarget
     {
-      public string stringKey;
-      public float duration;
-      public CommentModule.CommentTarget target;
-      public float delay;
-
-      public enum CommentTarget
-      {
-        PRIMARY,
-        SECONDARY,
-        DOG,
-      }
+      PRIMARY,
+      SECONDARY,
+      DOG,
     }
+  }
 
-}

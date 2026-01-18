@@ -8,17 +8,14 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class PausableMonoBehaviour : MonoBehaviour
+public class PausableMonoBehaviour : MonoBehaviour
+  {
+    public virtual void OnPauseGame()
     {
-      public virtual void OnPauseGame()
-      {
-      }
-
-      public virtual void OnResumeGame()
-      {
-      }
     }
 
-}
+    public virtual void OnResumeGame()
+    {
+    }
+  }
+

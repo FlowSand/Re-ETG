@@ -8,21 +8,18 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    public class GunWeaponPanelSpriteOverride : MonoBehaviour
+public class GunWeaponPanelSpriteOverride : MonoBehaviour
+  {
+    public IntVector2[] spritePairs;
+
+    public int GetMatch(int input)
     {
-      public IntVector2[] spritePairs;
-
-      public int GetMatch(int input)
+      for (int index = 0; index < this.spritePairs.Length; ++index)
       {
-        for (int index = 0; index < this.spritePairs.Length; ++index)
-        {
-          if (this.spritePairs[index].x == input)
-            return this.spritePairs[index].y;
-        }
-        return input;
+        if (this.spritePairs[index].x == input)
+          return this.spritePairs[index].y;
       }
+      return input;
     }
+  }
 
-}

@@ -6,9 +6,6 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [dfEventCategory("Child Controls")]
-    public delegate void ChildControlEventHandler(dfControl container, dfControl child);
+[dfEventCategory("Child Controls")]
+public delegate void ChildControlEventHandler(dfControl container, dfControl child);
 
-}

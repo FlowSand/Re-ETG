@@ -9,18 +9,15 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    [Serializable]
-    public class AkGameObjPositionOffsetData
+[Serializable]
+public class AkGameObjPositionOffsetData
+  {
+    public bool KeepMe;
+    public Vector3 positionOffset;
+
+    public AkGameObjPositionOffsetData(bool IReallyWantToBeConstructed = false)
     {
-      public bool KeepMe;
-      public Vector3 positionOffset;
-
-      public AkGameObjPositionOffsetData(bool IReallyWantToBeConstructed = false)
-      {
-        this.KeepMe = IReallyWantToBeConstructed;
-      }
+      this.KeepMe = IReallyWantToBeConstructed;
     }
+  }
 
-}

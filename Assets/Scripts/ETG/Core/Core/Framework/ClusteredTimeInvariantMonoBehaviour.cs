@@ -6,32 +6,29 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class ClusteredTimeInvariantMonoBehaviour : BraveBehaviour
+public class ClusteredTimeInvariantMonoBehaviour : BraveBehaviour
+  {
+    protected float m_deltaTime;
+
+    protected virtual void Awake()
     {
-      protected float m_deltaTime;
-
-      protected virtual void Awake()
-      {
-        StaticReferenceManager.AllClusteredTimeInvariantBehaviours.Add(this);
-      }
-
-      public void DoUpdate(float realDeltaTime)
-      {
-        this.m_deltaTime = realDeltaTime;
-        this.InvariantUpdate(realDeltaTime);
-      }
-
-      protected virtual void InvariantUpdate(float realDeltaTime)
-      {
-      }
-
-      protected override void OnDestroy()
-      {
-        StaticReferenceManager.AllClusteredTimeInvariantBehaviours.Remove(this);
-        base.OnDestroy();
-      }
+      StaticReferenceManager.AllClusteredTimeInvariantBehaviours.Add(this);
     }
 
-}
+    public void DoUpdate(float realDeltaTime)
+    {
+      this.m_deltaTime = realDeltaTime;
+      this.InvariantUpdate(realDeltaTime);
+    }
+
+    protected virtual void InvariantUpdate(float realDeltaTime)
+    {
+    }
+
+    protected override void OnDestroy()
+    {
+      StaticReferenceManager.AllClusteredTimeInvariantBehaviours.Remove(this);
+      base.OnDestroy();
+    }
+  }
+

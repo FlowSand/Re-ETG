@@ -8,17 +8,14 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class TitleScreenController : MonoBehaviour
+public class TitleScreenController : MonoBehaviour
+  {
+    private void Start()
     {
-      private void Start()
-      {
-      }
-
-      private void Update()
-      {
-      }
     }
 
-}
+    private void Update()
+    {
+    }
+  }
+

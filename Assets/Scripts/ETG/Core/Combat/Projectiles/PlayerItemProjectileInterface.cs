@@ -8,24 +8,21 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Projectiles
-{
-    [Serializable]
-    public class PlayerItemProjectileInterface
+[Serializable]
+public class PlayerItemProjectileInterface
+  {
+    public bool UseCurrentGunProjectile = true;
+    public Projectile SpecifiedProjectile;
+
+    public Projectile GetProjectile(PlayerController targetPlayer)
     {
-      public bool UseCurrentGunProjectile = true;
-      public Projectile SpecifiedProjectile;
-
-      public Projectile GetProjectile(PlayerController targetPlayer)
+      if (this.UseCurrentGunProjectile && (bool) (UnityEngine.Object) targetPlayer.CurrentGun)
       {
-        if (this.UseCurrentGunProjectile && (bool) (UnityEngine.Object) targetPlayer.CurrentGun)
-        {
-          Projectile currentProjectile = targetPlayer.CurrentGun.DefaultModule.GetCurrentProjectile();
-          if ((bool) (UnityEngine.Object) currentProjectile)
-            return currentProjectile;
-        }
-        return this.SpecifiedProjectile;
+        Projectile currentProjectile = targetPlayer.CurrentGun.DefaultModule.GetCurrentProjectile();
+        if ((bool) (UnityEngine.Object) currentProjectile)
+          return currentProjectile;
       }
+      return this.SpecifiedProjectile;
     }
+  }
 
-}

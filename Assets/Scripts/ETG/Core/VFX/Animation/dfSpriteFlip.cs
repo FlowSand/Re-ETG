@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    [Flags]
-    public enum dfSpriteFlip
-    {
-      None = 0,
-      FlipHorizontal = 1,
-      FlipVertical = 2,
-    }
+[Flags]
+public enum dfSpriteFlip
+  {
+    None = 0,
+    FlipHorizontal = 1,
+    FlipVertical = 2,
+  }
 
-}

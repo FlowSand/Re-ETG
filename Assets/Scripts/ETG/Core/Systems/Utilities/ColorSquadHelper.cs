@@ -11,23 +11,20 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class ColorSquadHelper : MonoBehaviour, IPlaceConfigurable
+public class ColorSquadHelper : MonoBehaviour, IPlaceConfigurable
+  {
+    private RoomHandler m_room;
+
+    [DebuggerHidden]
+    private IEnumerator Start()
     {
-      private RoomHandler m_room;
-
-      [DebuggerHidden]
-      private IEnumerator Start()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new ColorSquadHelper__Startc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ColorSquadHelper__Startc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      public void ConfigureOnPlacement(RoomHandler room) => this.m_room = room;
+        _this = this
+      };
     }
 
-}
+    public void ConfigureOnPlacement(RoomHandler room) => this.m_room = room;
+  }
+

@@ -6,15 +6,12 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum GunHandedness
-    {
-      AutoDetect,
-      TwoHanded,
-      OneHanded,
-      HiddenOneHanded,
-      NoHanded,
-    }
+public enum GunHandedness
+  {
+    AutoDetect,
+    TwoHanded,
+    OneHanded,
+    HiddenOneHanded,
+    NoHanded,
+  }
 
-}

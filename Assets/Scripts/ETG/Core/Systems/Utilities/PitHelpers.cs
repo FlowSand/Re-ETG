@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class PitHelpers
-    {
-      [HelpBox("Extend pit colliders by x/y pixels")]
-      public IntVector2 PreJump;
-      public IntVector2 Landing;
-    }
+[Serializable]
+public class PitHelpers
+  {
+    [HelpBox("Extend pit colliders by x/y pixels")]
+    public IntVector2 PreJump;
+    public IntVector2 Landing;
+  }
 
-}

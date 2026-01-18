@@ -12,65 +12,62 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Projectiles
-{
-    public class LeadMaidenSustain1 : Script
+public class LeadMaidenSustain1 : Script
+  {
+    private const int NumWaves = 3;
+    private const int NumBullets = 12;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      private const int NumWaves = 3;
-      private const int NumBullets = 12;
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new LeadMaidenSustain1__Topc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    public class SpikeBullet : Bullet
+    {
+      private int m_fireTick;
+      private float m_hitNormal;
+
+      public SpikeBullet(int fireTick)
+        : base()
+      {
+        this.m_fireTick = fireTick;
+      }
 
       [DebuggerHidden]
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new LeadMaidenSustain1__Topc__Iterator0()
+        return (IEnumerator) new LeadMaidenSustain1.SpikeBullet__Topc__Iterator0()
         {
           _this = this
         };
       }
 
-      public class SpikeBullet : Bullet
+      private void OnCollision(CollisionData tileCollision)
       {
-        private int m_fireTick;
-        private float m_hitNormal;
+        this.Speed = 0.0f;
+        this.m_hitNormal = tileCollision.Normal.ToAngle();
+        PhysicsEngine.PostSliceVelocity = new Vector2?(new Vector2());
+        this.Projectile.specRigidbody.OnCollision -= new Action<CollisionData>(this.OnCollision);
+        if (!(bool) (UnityEngine.Object) tileCollision.OtherRigidbody)
+          return;
+        this.Vanish();
+      }
 
-        public SpikeBullet(int fireTick)
-          : base()
-        {
-          this.m_fireTick = fireTick;
-        }
-
-        [DebuggerHidden]
-        protected override IEnumerator Top()
-        {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new LeadMaidenSustain1.SpikeBullet__Topc__Iterator0()
-          {
-            _this = this
-          };
-        }
-
-        private void OnCollision(CollisionData tileCollision)
-        {
-          this.Speed = 0.0f;
-          this.m_hitNormal = tileCollision.Normal.ToAngle();
-          PhysicsEngine.PostSliceVelocity = new Vector2?(new Vector2());
-          this.Projectile.specRigidbody.OnCollision -= new Action<CollisionData>(this.OnCollision);
-          if (!(bool) (UnityEngine.Object) tileCollision.OtherRigidbody)
-            return;
-          this.Vanish();
-        }
-
-        public override void OnBulletDestruction(
-          Bullet.DestroyType destroyType,
-          SpeculativeRigidbody hitRigidbody,
-          bool preventSpawningProjectiles)
-        {
-          if (!(bool) (UnityEngine.Object) this.Projectile)
-            return;
-          this.Projectile.specRigidbody.OnCollision -= new Action<CollisionData>(this.OnCollision);
-        }
+      public override void OnBulletDestruction(
+        Bullet.DestroyType destroyType,
+        SpeculativeRigidbody hitRigidbody,
+        bool preventSpawningProjectiles)
+      {
+        if (!(bool) (UnityEngine.Object) this.Projectile)
+          return;
+        this.Projectile.specRigidbody.OnCollision -= new Action<CollisionData>(this.OnCollision);
       }
     }
+  }
 
-}

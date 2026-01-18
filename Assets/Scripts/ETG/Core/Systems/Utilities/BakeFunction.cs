@@ -6,10 +6,7 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class BakeFunction
-    {
-    }
+public class BakeFunction
+  {
+  }
 
-}

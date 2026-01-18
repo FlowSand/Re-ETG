@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    [AttributeUsage(AttributeTargets.Delegate, Inherited = true, AllowMultiple = false)]
-    public class dfEventCategoryAttribute : Attribute
-    {
-      public dfEventCategoryAttribute(string category) => this.Category = category;
+[AttributeUsage(AttributeTargets.Delegate, Inherited = true, AllowMultiple = false)]
+public class dfEventCategoryAttribute : Attribute
+  {
+    public dfEventCategoryAttribute(string category) => this.Category = category;
 
-      public string Category { get; private set; }
-    }
+    public string Category { get; private set; }
+  }
 
-}

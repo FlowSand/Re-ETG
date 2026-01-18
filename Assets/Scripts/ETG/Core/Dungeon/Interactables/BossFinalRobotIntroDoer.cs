@@ -8,14 +8,11 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Dungeon.Interactables
-{
-    [RequireComponent(typeof (GenericIntroDoer))]
-    public class BossFinalRobotIntroDoer : SpecificIntroDoer
-    {
-      protected override void OnDestroy() => base.OnDestroy();
+[RequireComponent(typeof (GenericIntroDoer))]
+public class BossFinalRobotIntroDoer : SpecificIntroDoer
+  {
+    protected override void OnDestroy() => base.OnDestroy();
 
-      public override void EndIntro() => this.aiAnimator.StopVfx("torch_intro");
-    }
+    public override void EndIntro() => this.aiAnimator.StopVfx("torch_intro");
+  }
 
-}

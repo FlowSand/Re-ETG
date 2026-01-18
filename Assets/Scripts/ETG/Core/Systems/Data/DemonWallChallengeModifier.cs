@@ -10,34 +10,31 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    public class DemonWallChallengeModifier : ChallengeModifier
+public class DemonWallChallengeModifier : ChallengeModifier
+  {
+    [EnemyIdentifier]
+    public string SniperGuyGuid;
+    public float SniperCooldown = 2.4f;
+    private AIActor m_sniper1;
+    private AIActor m_sniper2;
+
+    [DebuggerHidden]
+    private IEnumerator Start()
     {
-      [EnemyIdentifier]
-      public string SniperGuyGuid;
-      public float SniperCooldown = 2.4f;
-      private AIActor m_sniper1;
-      private AIActor m_sniper2;
-
-      [DebuggerHidden]
-      private IEnumerator Start()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new DemonWallChallengeModifier__Startc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new DemonWallChallengeModifier__Startc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      private void LateUpdate()
-      {
-        if ((bool) (Object) this.m_sniper1)
-          this.m_sniper1.sprite.UpdateZDepth();
-        if (!(bool) (Object) this.m_sniper2)
-          return;
-        this.m_sniper2.sprite.UpdateZDepth();
-      }
+        _this = this
+      };
     }
 
-}
+    private void LateUpdate()
+    {
+      if ((bool) (Object) this.m_sniper1)
+        this.m_sniper1.sprite.UpdateZDepth();
+      if (!(bool) (Object) this.m_sniper2)
+        return;
+      this.m_sniper2.sprite.UpdateZDepth();
+    }
+  }
+

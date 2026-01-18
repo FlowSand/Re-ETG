@@ -6,15 +6,12 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum PlayerInputState
-    {
-      AllInput,
-      NoInput,
-      OnlyMovement,
-      FoyerInputOnly,
-      NoMovement,
-    }
+public enum PlayerInputState
+  {
+    AllInput,
+    NoInput,
+    OnlyMovement,
+    FoyerInputOnly,
+    NoMovement,
+  }
 
-}

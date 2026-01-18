@@ -10,20 +10,17 @@ using UnityEngine.SceneManagement;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [AddComponentMenu("Daikon Forge/Examples/General/Load Level On Click")]
-    [Serializable]
-    public class LoadLevelByName : MonoBehaviour
+[AddComponentMenu("Daikon Forge/Examples/General/Load Level On Click")]
+[Serializable]
+public class LoadLevelByName : MonoBehaviour
+  {
+    public string LevelName;
+
+    private void OnClick()
     {
-      public string LevelName;
-
-      private void OnClick()
-      {
-        if (string.IsNullOrEmpty(this.LevelName))
-          return;
-        SceneManager.LoadScene(this.LevelName);
-      }
+      if (string.IsNullOrEmpty(this.LevelName))
+        return;
+      SceneManager.LoadScene(this.LevelName);
     }
+  }
 
-}

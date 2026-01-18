@@ -8,17 +8,14 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class ThievingRatController : MonoBehaviour
+public class ThievingRatController : MonoBehaviour
+  {
+    private void Start()
     {
-      private void Start()
-      {
-      }
-
-      private void Update()
-      {
-      }
     }
 
-}
+    private void Update()
+    {
+    }
+  }
+

@@ -6,9 +6,6 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [dfEventCategory("Mouse Input")]
-    public delegate void MouseEventHandler(dfControl control, dfMouseEventArgs mouseEvent);
+[dfEventCategory("Mouse Input")]
+public delegate void MouseEventHandler(dfControl control, dfMouseEventArgs mouseEvent);
 
-}

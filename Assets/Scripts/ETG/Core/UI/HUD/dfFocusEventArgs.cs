@@ -6,22 +6,19 @@
 
 #nullable disable
 
-namespace ETG.Core.UI.HUD
-{
-    public class dfFocusEventArgs : dfControlEventArgs
+public class dfFocusEventArgs : dfControlEventArgs
+  {
+    public bool AllowScrolling;
+
+    internal dfFocusEventArgs(dfControl GotFocus, dfControl LostFocus, bool AllowScrolling)
+      : base(GotFocus)
     {
-      public bool AllowScrolling;
-
-      internal dfFocusEventArgs(dfControl GotFocus, dfControl LostFocus, bool AllowScrolling)
-        : base(GotFocus)
-      {
-        this.LostFocus = LostFocus;
-        this.AllowScrolling = AllowScrolling;
-      }
-
-      public dfControl GotFocus => this.Source;
-
-      public dfControl LostFocus { get; private set; }
+      this.LostFocus = LostFocus;
+      this.AllowScrolling = AllowScrolling;
     }
 
-}
+    public dfControl GotFocus => this.Source;
+
+    public dfControl LostFocus { get; private set; }
+  }
+

@@ -9,64 +9,61 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public static class RewardManifest
+  public static class RewardManifest
+  {
+    public static void Initialize(RewardManager manager)
     {
-      public static void Initialize(RewardManager manager)
+      manager.SeededRunManifests = new Dictionary<GlobalDungeonData.ValidTilesets, FloorRewardManifest>();
+      GlobalDungeonData.ValidTilesets[] values = (GlobalDungeonData.ValidTilesets[]) Enum.GetValues(typeof (GlobalDungeonData.ValidTilesets));
+      for (int index1 = 0; index1 < manager.FloorRewardData.Count; ++index1)
       {
-        manager.SeededRunManifests = new Dictionary<GlobalDungeonData.ValidTilesets, FloorRewardManifest>();
-        GlobalDungeonData.ValidTilesets[] values = (GlobalDungeonData.ValidTilesets[]) Enum.GetValues(typeof (GlobalDungeonData.ValidTilesets));
-        for (int index1 = 0; index1 < manager.FloorRewardData.Count; ++index1)
+        FloorRewardData sourceData = manager.FloorRewardData[index1];
+        for (int index2 = 0; index2 < values.Length; ++index2)
         {
-          FloorRewardData sourceData = manager.FloorRewardData[index1];
-          for (int index2 = 0; index2 < values.Length; ++index2)
+          GlobalDungeonData.ValidTilesets key = values[index2];
+          if ((sourceData.AssociatedTilesets & key) == key)
           {
-            GlobalDungeonData.ValidTilesets key = values[index2];
-            if ((sourceData.AssociatedTilesets & key) == key)
-            {
-              FloorRewardManifest manifestForFloor = RewardManifest.GenerateManifestForFloor(manager, sourceData);
-              if (!manager.SeededRunManifests.ContainsKey(key))
-                manager.SeededRunManifests.Add(key, manifestForFloor);
-            }
+            FloorRewardManifest manifestForFloor = RewardManifest.GenerateManifestForFloor(manager, sourceData);
+            if (!manager.SeededRunManifests.ContainsKey(key))
+              manager.SeededRunManifests.Add(key, manifestForFloor);
           }
         }
-      }
-
-      public static void Reinitialize(RewardManager manager)
-      {
-        GlobalDungeonData.ValidTilesets[] values = (GlobalDungeonData.ValidTilesets[]) Enum.GetValues(typeof (GlobalDungeonData.ValidTilesets));
-        for (int index1 = 0; index1 < manager.FloorRewardData.Count; ++index1)
-        {
-          FloorRewardData sourceData = manager.FloorRewardData[index1];
-          for (int index2 = 0; index2 < values.Length; ++index2)
-          {
-            GlobalDungeonData.ValidTilesets key = values[index2];
-            if ((sourceData.AssociatedTilesets & key) == key)
-            {
-              RewardManifest.GenerateManifestForFloor(manager, sourceData);
-              if (manager.SeededRunManifests.ContainsKey(key))
-                RewardManifest.RegenerateManifest(manager, manager.SeededRunManifests[key]);
-            }
-          }
-        }
-      }
-
-      public static void ClearManifest(RewardManager manager) => manager.SeededRunManifests.Clear();
-
-      private static FloorRewardManifest GenerateManifestForFloor(
-        RewardManager manager,
-        FloorRewardData sourceData)
-      {
-        FloorRewardManifest manifestForFloor = new FloorRewardManifest();
-        manifestForFloor.Initialize(manager);
-        return manifestForFloor;
-      }
-
-      private static void RegenerateManifest(RewardManager manager, FloorRewardManifest targetData)
-      {
-        targetData.Reinitialize(manager);
       }
     }
 
-}
+    public static void Reinitialize(RewardManager manager)
+    {
+      GlobalDungeonData.ValidTilesets[] values = (GlobalDungeonData.ValidTilesets[]) Enum.GetValues(typeof (GlobalDungeonData.ValidTilesets));
+      for (int index1 = 0; index1 < manager.FloorRewardData.Count; ++index1)
+      {
+        FloorRewardData sourceData = manager.FloorRewardData[index1];
+        for (int index2 = 0; index2 < values.Length; ++index2)
+        {
+          GlobalDungeonData.ValidTilesets key = values[index2];
+          if ((sourceData.AssociatedTilesets & key) == key)
+          {
+            RewardManifest.GenerateManifestForFloor(manager, sourceData);
+            if (manager.SeededRunManifests.ContainsKey(key))
+              RewardManifest.RegenerateManifest(manager, manager.SeededRunManifests[key]);
+          }
+        }
+      }
+    }
+
+    public static void ClearManifest(RewardManager manager) => manager.SeededRunManifests.Clear();
+
+    private static FloorRewardManifest GenerateManifestForFloor(
+      RewardManager manager,
+      FloorRewardData sourceData)
+    {
+      FloorRewardManifest manifestForFloor = new FloorRewardManifest();
+      manifestForFloor.Initialize(manager);
+      return manifestForFloor;
+    }
+
+    private static void RegenerateManifest(RewardManager manager, FloorRewardManifest targetData)
+    {
+      targetData.Reinitialize(manager);
+    }
+  }
+

@@ -8,23 +8,20 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
+public class dfAnimatedQuaternion : dfAnimatedValue<Quaternion>
 {
-  public class dfAnimatedQuaternion : dfAnimatedValue<Quaternion>
+  public dfAnimatedQuaternion(Quaternion StartValue, Quaternion EndValue, float Time) : base(StartValue, EndValue, Time)
   {
-    public dfAnimatedQuaternion(Quaternion StartValue, Quaternion EndValue, float Time) : base(StartValue, EndValue, Time)
+  }
+
+  protected override Quaternion Lerp(Quaternion startValue, Quaternion endValue, float time)
     {
+      return Quaternion.Lerp(startValue, endValue, time);
     }
 
-    protected override Quaternion Lerp(Quaternion startValue, Quaternion endValue, float time)
-      {
-        return Quaternion.Lerp(startValue, endValue, time);
-      }
-
-      public static implicit operator dfAnimatedQuaternion(Quaternion value)
-      {
-        return new dfAnimatedQuaternion(value, value, 0.0f);
-      }
+    public static implicit operator dfAnimatedQuaternion(Quaternion value)
+    {
+      return new dfAnimatedQuaternion(value, value, 0.0f);
     }
+  }
 
-}

@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum MultiPositionTypeLabel
-    {
-      Simple_Mode,
-      Large_Mode,
-      MultiPosition_Mode,
-    }
+public enum MultiPositionTypeLabel
+  {
+    Simple_Mode,
+    Large_Mode,
+    MultiPosition_Mode,
+  }
 
-}

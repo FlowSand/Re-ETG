@@ -8,10 +8,7 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class CompactVector2 : PropertyAttribute
-    {
-    }
+public class CompactVector2 : PropertyAttribute
+  {
+  }
 
-}

@@ -6,15 +6,12 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkQueryRTPCValue
-    {
-      RTPCValue_Default,
-      RTPCValue_Global,
-      RTPCValue_GameObject,
-      RTPCValue_PlayingID,
-      RTPCValue_Unavailable,
-    }
+public enum AkQueryRTPCValue
+  {
+    RTPCValue_Default,
+    RTPCValue_Global,
+    RTPCValue_GameObject,
+    RTPCValue_PlayingID,
+    RTPCValue_Unavailable,
+  }
 
-}

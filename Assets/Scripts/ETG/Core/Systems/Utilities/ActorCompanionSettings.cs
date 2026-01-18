@@ -8,12 +8,9 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public struct ActorCompanionSettings
-    {
-      public bool WarpsToRandomPoint;
-    }
+[Serializable]
+public struct ActorCompanionSettings
+  {
+    public bool WarpsToRandomPoint;
+  }
 
-}

@@ -9,14 +9,11 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class TalkResponse
-    {
-      public string response;
-      public string followupModuleID;
-      public List<TalkResult> resultActions;
-    }
+[Serializable]
+public class TalkResponse
+  {
+    public string response;
+    public string followupModuleID;
+    public List<TalkResult> resultActions;
+  }
 
-}

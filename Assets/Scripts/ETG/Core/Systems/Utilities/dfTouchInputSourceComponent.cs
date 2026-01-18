@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public abstract class dfTouchInputSourceComponent : MonoBehaviour
-    {
-      public int Priority;
+  public abstract class dfTouchInputSourceComponent : MonoBehaviour
+  {
+    public int Priority;
 
-      public abstract IDFTouchInputSource Source { get; }
-    }
+    public abstract IDFTouchInputSource Source { get; }
+  }
 
-}

@@ -8,34 +8,31 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [AddComponentMenu("Daikon Forge/Examples/Color Picker/Hue Slider")]
-    public class HueSliderSelector : MonoBehaviour
+[AddComponentMenu("Daikon Forge/Examples/Color Picker/Hue Slider")]
+public class HueSliderSelector : MonoBehaviour
+  {
+    private dfSlider slider;
+    private Color hue;
+
+    public Color Hue
     {
-      private dfSlider slider;
-      private Color hue;
-
-      public Color Hue
+      get => this.hue;
+      set
       {
-        get => this.hue;
-        set
-        {
-          if (object.Equals((object) value, (object) this.hue))
-            return;
-          this.hue = value;
-          if (!((Object) this.slider != (Object) null))
-            return;
-          this.slider.Value = HSBColor.FromColor(value).h;
-        }
-      }
-
-      public void Start() => this.slider = this.GetComponent<dfSlider>();
-
-      public void OnValueChanged(dfControl control, float value)
-      {
-        this.hue = new HSBColor(value, 1f, 1f, 1f).ToColor();
+        if (object.Equals((object) value, (object) this.hue))
+          return;
+        this.hue = value;
+        if (!((Object) this.slider != (Object) null))
+          return;
+        this.slider.Value = HSBColor.FromColor(value).h;
       }
     }
 
-}
+    public void Start() => this.slider = this.GetComponent<dfSlider>();
+
+    public void OnValueChanged(dfControl control, float value)
+    {
+      this.hue = new HSBColor(value, 1f, 1f, 1f).ToColor();
+    }
+  }
+

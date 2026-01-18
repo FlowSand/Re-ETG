@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfTextScaleMode
-    {
-      None,
-      ControlSize,
-      ScreenResolution,
-    }
+public enum dfTextScaleMode
+  {
+    None,
+    ControlSize,
+    ScreenResolution,
+  }
 
-}

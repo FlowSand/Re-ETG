@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class HelpBoxAttribute : PropertyAttribute
-    {
-      public string Message;
+public class HelpBoxAttribute : PropertyAttribute
+  {
+    public string Message;
 
-      public HelpBoxAttribute(string message) => this.Message = message;
-    }
+    public HelpBoxAttribute(string message) => this.Message = message;
+  }
 
-}

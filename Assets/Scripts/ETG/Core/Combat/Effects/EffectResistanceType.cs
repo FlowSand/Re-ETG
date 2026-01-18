@@ -6,15 +6,12 @@
 
 #nullable disable
 
-namespace ETG.Core.Combat.Effects
-{
-    public enum EffectResistanceType
-    {
-      None,
-      Fire,
-      Poison,
-      Freeze,
-      Charm,
-    }
+public enum EffectResistanceType
+  {
+    None,
+    Fire,
+    Poison,
+    Freeze,
+    Charm,
+  }
 
-}

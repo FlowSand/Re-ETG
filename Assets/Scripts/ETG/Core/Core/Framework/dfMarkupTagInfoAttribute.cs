@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    [AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
-    public class dfMarkupTagInfoAttribute : Attribute
-    {
-      public dfMarkupTagInfoAttribute(string tagName) => this.TagName = tagName;
+[AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
+public class dfMarkupTagInfoAttribute : Attribute
+  {
+    public dfMarkupTagInfoAttribute(string tagName) => this.TagName = tagName;
 
-      public string TagName { get; set; }
-    }
+    public string TagName { get; set; }
+  }
 
-}

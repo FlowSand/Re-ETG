@@ -10,17 +10,14 @@ using System.Collections;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("BulletShotgunMan/DeathBurst1")]
-    public class BulletShotgunManDeathBurst1 : Script
+[InspectorDropdownName("BulletShotgunMan/DeathBurst1")]
+public class BulletShotgunManDeathBurst1 : Script
+  {
+    protected override IEnumerator Top()
     {
-      protected override IEnumerator Top()
-      {
-        for (int index = 0; index <= 6; ++index)
-          this.Fire(new Brave.BulletScript.Direction((float) (index * 60)), new Brave.BulletScript.Speed(6.5f), new Bullet("flashybullet"));
-        return (IEnumerator) null;
-      }
+      for (int index = 0; index <= 6; ++index)
+        this.Fire(new Brave.BulletScript.Direction((float) (index * 60)), new Brave.BulletScript.Speed(6.5f), new Bullet("flashybullet"));
+      return (IEnumerator) null;
     }
+  }
 
-}

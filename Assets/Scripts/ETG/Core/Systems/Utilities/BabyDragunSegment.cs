@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    internal struct BabyDragunSegment
-    {
-      public Vector2 lastPosition;
-      public float initialStartingDistance;
-      public float pathDist;
-    }
+internal struct BabyDragunSegment
+  {
+    public Vector2 lastPosition;
+    public float initialStartingDistance;
+    public float pathDist;
+  }
 
-}

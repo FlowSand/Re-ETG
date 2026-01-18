@@ -6,15 +6,12 @@
 
 #nullable disable
 
-namespace ETG.Core.Items.Passive
-{
-    public interface IPaydayItem
-    {
-      void StoreData(string id1, string id2, string id3);
+public interface IPaydayItem
+  {
+    void StoreData(string id1, string id2, string id3);
 
-      string GetID(int placement);
+    string GetID(int placement);
 
-      bool HasCachedData();
-    }
+    bool HasCachedData();
+  }
 
-}

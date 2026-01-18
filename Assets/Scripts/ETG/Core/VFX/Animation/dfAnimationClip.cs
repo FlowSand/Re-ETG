@@ -10,24 +10,21 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    [AddComponentMenu("Daikon Forge/User Interface/Animation Clip")]
-    [Serializable]
-    public class dfAnimationClip : MonoBehaviour
+[AddComponentMenu("Daikon Forge/User Interface/Animation Clip")]
+[Serializable]
+public class dfAnimationClip : MonoBehaviour
+  {
+    [SerializeField]
+    private dfAtlas atlas;
+    [SerializeField]
+    private List<string> sprites = new List<string>();
+
+    public dfAtlas Atlas
     {
-      [SerializeField]
-      private dfAtlas atlas;
-      [SerializeField]
-      private List<string> sprites = new List<string>();
-
-      public dfAtlas Atlas
-      {
-        get => this.atlas;
-        set => this.atlas = value;
-      }
-
-      public List<string> Sprites => this.sprites;
+      get => this.atlas;
+      set => this.atlas = value;
     }
 
-}
+    public List<string> Sprites => this.sprites;
+  }
+

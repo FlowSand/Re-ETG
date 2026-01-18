@@ -13,40 +13,37 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("MimicWall/Slam1")]
-    public class WallMimicSlam1 : Script
+[InspectorDropdownName("MimicWall/Slam1")]
+public class WallMimicSlam1 : Script
+  {
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new WallMimicSlam1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WallMimicSlam1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      protected void FireLine(
-        float centralAngle,
-        float numBullets,
-        float minAngle,
-        float maxAngle,
-        bool addBlackBullets = false)
-      {
-        float num1 = (float) (((double) maxAngle - (double) minAngle) / ((double) numBullets - 1.0));
-        for (int index = 0; (double) index < (double) numBullets; ++index)
-        {
-          float num2 = Mathf.Atan((float) (((double) minAngle + (double) index * (double) num1) / 45.0)) * 57.29578f;
-          float f = Mathf.Cos(num2 * ((float) Math.PI / 180f));
-          float num3 = (double) Mathf.Abs(f) >= 0.0001 ? 1f / f : 1f;
-          Bullet bullet = new Bullet();
-          if (addBlackBullets && index % 2 == 1)
-            bullet.ForceBlackBullet = true;
-          this.Fire(new Brave.BulletScript.Direction(num2 + centralAngle), new Brave.BulletScript.Speed(num3 * 9f), bullet);
-        }
-      }
+        _this = this
+      };
     }
 
-}
+    protected void FireLine(
+      float centralAngle,
+      float numBullets,
+      float minAngle,
+      float maxAngle,
+      bool addBlackBullets = false)
+    {
+      float num1 = (float) (((double) maxAngle - (double) minAngle) / ((double) numBullets - 1.0));
+      for (int index = 0; (double) index < (double) numBullets; ++index)
+      {
+        float num2 = Mathf.Atan((float) (((double) minAngle + (double) index * (double) num1) / 45.0)) * 57.29578f;
+        float f = Mathf.Cos(num2 * ((float) Math.PI / 180f));
+        float num3 = (double) Mathf.Abs(f) >= 0.0001 ? 1f / f : 1f;
+        Bullet bullet = new Bullet();
+        if (addBlackBullets && index % 2 == 1)
+          bullet.ForceBlackBullet = true;
+        this.Fire(new Brave.BulletScript.Direction(num2 + centralAngle), new Brave.BulletScript.Speed(num3 * 9f), bullet);
+      }
+    }
+  }
+

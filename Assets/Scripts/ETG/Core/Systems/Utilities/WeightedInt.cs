@@ -8,15 +8,12 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class WeightedInt
-    {
-      public string annotation;
-      public int value;
-      public float weight;
-      public DungeonPrerequisite[] additionalPrerequisites;
-    }
+[Serializable]
+public class WeightedInt
+  {
+    public string annotation;
+    public int value;
+    public float weight;
+    public DungeonPrerequisite[] additionalPrerequisites;
+  }
 
-}

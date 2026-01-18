@@ -11,22 +11,19 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/MineFlayer/Bong1")]
-    public class MineFlayerBong1 : Script
+[InspectorDropdownName("Bosses/MineFlayer/Bong1")]
+public class MineFlayerBong1 : Script
+  {
+    private const int NumBullets = 90;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      private const int NumBullets = 90;
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new MineFlayerBong1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MineFlayerBong1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

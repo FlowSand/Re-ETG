@@ -9,17 +9,14 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    [Serializable]
-    public class NeighborDependencyData
+[Serializable]
+public class NeighborDependencyData
+  {
+    public List<IndexNeighborDependency> neighborDependencies;
+
+    public NeighborDependencyData(List<IndexNeighborDependency> bcs)
     {
-      public List<IndexNeighborDependency> neighborDependencies;
-
-      public NeighborDependencyData(List<IndexNeighborDependency> bcs)
-      {
-        this.neighborDependencies = bcs;
-      }
+      this.neighborDependencies = bcs;
     }
+  }
 
-}

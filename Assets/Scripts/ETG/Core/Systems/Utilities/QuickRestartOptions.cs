@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public struct QuickRestartOptions
-    {
-      public bool GunGame;
-      public ChallengeModeType ChallengeMode;
-      public bool BossRush;
-      public int NumMetas;
-    }
+public struct QuickRestartOptions
+  {
+    public bool GunGame;
+    public ChallengeModeType ChallengeMode;
+    public bool BossRush;
+    public int NumMetas;
+  }
 
-}

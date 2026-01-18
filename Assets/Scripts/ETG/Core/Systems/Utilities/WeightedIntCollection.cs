@@ -9,50 +9,47 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class WeightedIntCollection
-    {
-      public WeightedInt[] elements;
+[Serializable]
+public class WeightedIntCollection
+  {
+    public WeightedInt[] elements;
 
-      public int SelectByWeight(System.Random generatorRandom)
+    public int SelectByWeight(System.Random generatorRandom)
+    {
+      List<WeightedInt> weightedIntList = new List<WeightedInt>();
+      float num1 = 0.0f;
+      for (int index1 = 0; index1 < this.elements.Length; ++index1)
       {
-        List<WeightedInt> weightedIntList = new List<WeightedInt>();
-        float num1 = 0.0f;
-        for (int index1 = 0; index1 < this.elements.Length; ++index1)
+        WeightedInt element = this.elements[index1];
+        if ((double) element.weight > 0.0)
         {
-          WeightedInt element = this.elements[index1];
-          if ((double) element.weight > 0.0)
+          bool flag = true;
+          for (int index2 = 0; index2 < element.additionalPrerequisites.Length; ++index2)
           {
-            bool flag = true;
-            for (int index2 = 0; index2 < element.additionalPrerequisites.Length; ++index2)
+            if (!element.additionalPrerequisites[index2].CheckConditionsFulfilled())
             {
-              if (!element.additionalPrerequisites[index2].CheckConditionsFulfilled())
-              {
-                flag = false;
-                break;
-              }
-            }
-            if (flag)
-            {
-              weightedIntList.Add(element);
-              num1 += element.weight;
+              flag = false;
+              break;
             }
           }
+          if (flag)
+          {
+            weightedIntList.Add(element);
+            num1 += element.weight;
+          }
         }
-        float num2 = (generatorRandom == null ? UnityEngine.Random.value : (float) generatorRandom.NextDouble()) * num1;
-        float num3 = 0.0f;
-        for (int index = 0; index < weightedIntList.Count; ++index)
-        {
-          num3 += weightedIntList[index].weight;
-          if ((double) num3 > (double) num2)
-            return weightedIntList[index].value;
-        }
-        return weightedIntList[0].value;
       }
-
-      public int SelectByWeight() => this.SelectByWeight((System.Random) null);
+      float num2 = (generatorRandom == null ? UnityEngine.Random.value : (float) generatorRandom.NextDouble()) * num1;
+      float num3 = 0.0f;
+      for (int index = 0; index < weightedIntList.Count; ++index)
+      {
+        num3 += weightedIntList[index].weight;
+        if ((double) num3 > (double) num2)
+          return weightedIntList[index].value;
+      }
+      return weightedIntList[0].value;
     }
 
-}
+    public int SelectByWeight() => this.SelectByWeight((System.Random) null);
+  }
+

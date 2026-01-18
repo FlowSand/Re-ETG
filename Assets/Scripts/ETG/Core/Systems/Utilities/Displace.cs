@@ -8,31 +8,28 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [ExecuteInEditMode]
-    [RequireComponent(typeof (WaterBase))]
-    public class Displace : MonoBehaviour
+[ExecuteInEditMode]
+[RequireComponent(typeof (WaterBase))]
+public class Displace : MonoBehaviour
+  {
+    public void Awake()
     {
-      public void Awake()
-      {
-        if (this.enabled)
-          this.OnEnable();
-        else
-          this.OnDisable();
-      }
-
-      public void OnEnable()
-      {
-        Shader.EnableKeyword("WATER_VERTEX_DISPLACEMENT_ON");
-        Shader.DisableKeyword("WATER_VERTEX_DISPLACEMENT_OFF");
-      }
-
-      public void OnDisable()
-      {
-        Shader.EnableKeyword("WATER_VERTEX_DISPLACEMENT_OFF");
-        Shader.DisableKeyword("WATER_VERTEX_DISPLACEMENT_ON");
-      }
+      if (this.enabled)
+        this.OnEnable();
+      else
+        this.OnDisable();
     }
 
-}
+    public void OnEnable()
+    {
+      Shader.EnableKeyword("WATER_VERTEX_DISPLACEMENT_ON");
+      Shader.DisableKeyword("WATER_VERTEX_DISPLACEMENT_OFF");
+    }
+
+    public void OnDisable()
+    {
+      Shader.EnableKeyword("WATER_VERTEX_DISPLACEMENT_OFF");
+      Shader.DisableKeyword("WATER_VERTEX_DISPLACEMENT_ON");
+    }
+  }
+

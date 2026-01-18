@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfProgressFillMode
-    {
-      Stretch,
-      Fill,
-    }
+public enum dfProgressFillMode
+  {
+    Stretch,
+    Fill,
+  }
 
-}

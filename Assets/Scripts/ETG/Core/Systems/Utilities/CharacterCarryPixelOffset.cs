@@ -8,13 +8,10 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public struct CharacterCarryPixelOffset
-    {
-      public PlayableCharacters character;
-      public IntVector2 carryPixelOffset;
-    }
+[Serializable]
+public struct CharacterCarryPixelOffset
+  {
+    public PlayableCharacters character;
+    public IntVector2 carryPixelOffset;
+  }
 
-}

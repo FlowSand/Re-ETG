@@ -8,116 +8,113 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public class AkSpatialAudioInitSettings : IDisposable
+public class AkSpatialAudioInitSettings : IDisposable
+  {
+    private IntPtr swigCPtr;
+    protected bool swigCMemOwn;
+
+    internal AkSpatialAudioInitSettings(IntPtr cPtr, bool cMemoryOwn)
     {
-      private IntPtr swigCPtr;
-      protected bool swigCMemOwn;
+      this.swigCMemOwn = cMemoryOwn;
+      this.swigCPtr = cPtr;
+    }
 
-      internal AkSpatialAudioInitSettings(IntPtr cPtr, bool cMemoryOwn)
+    public AkSpatialAudioInitSettings()
+      : this(AkSoundEnginePINVOKE.CSharp_new_AkSpatialAudioInitSettings(), true)
+    {
+    }
+
+    internal static IntPtr getCPtr(AkSpatialAudioInitSettings obj)
+    {
+      return obj == null ? IntPtr.Zero : obj.swigCPtr;
+    }
+
+    internal virtual void setCPtr(IntPtr cPtr)
+    {
+      this.Dispose();
+      this.swigCPtr = cPtr;
+    }
+
+    ~AkSpatialAudioInitSettings() => this.Dispose();
+
+    public virtual void Dispose()
+    {
+      lock ((object) this)
       {
-        this.swigCMemOwn = cMemoryOwn;
-        this.swigCPtr = cPtr;
-      }
-
-      public AkSpatialAudioInitSettings()
-        : this(AkSoundEnginePINVOKE.CSharp_new_AkSpatialAudioInitSettings(), true)
-      {
-      }
-
-      internal static IntPtr getCPtr(AkSpatialAudioInitSettings obj)
-      {
-        return obj == null ? IntPtr.Zero : obj.swigCPtr;
-      }
-
-      internal virtual void setCPtr(IntPtr cPtr)
-      {
-        this.Dispose();
-        this.swigCPtr = cPtr;
-      }
-
-      ~AkSpatialAudioInitSettings() => this.Dispose();
-
-      public virtual void Dispose()
-      {
-        lock ((object) this)
+        if (this.swigCPtr != IntPtr.Zero)
         {
-          if (this.swigCPtr != IntPtr.Zero)
+          if (this.swigCMemOwn)
           {
-            if (this.swigCMemOwn)
-            {
-              this.swigCMemOwn = false;
-              AkSoundEnginePINVOKE.CSharp_delete_AkSpatialAudioInitSettings(this.swigCPtr);
-            }
-            this.swigCPtr = IntPtr.Zero;
+            this.swigCMemOwn = false;
+            AkSoundEnginePINVOKE.CSharp_delete_AkSpatialAudioInitSettings(this.swigCPtr);
           }
-          GC.SuppressFinalize((object) this);
+          this.swigCPtr = IntPtr.Zero;
         }
-      }
-
-      public int uPoolID
-      {
-        set => AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uPoolID_set(this.swigCPtr, value);
-        get => AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uPoolID_get(this.swigCPtr);
-      }
-
-      public uint uPoolSize
-      {
-        set
-        {
-          AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uPoolSize_set(this.swigCPtr, value);
-        }
-        get => AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uPoolSize_get(this.swigCPtr);
-      }
-
-      public uint uMaxSoundPropagationDepth
-      {
-        set
-        {
-          AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uMaxSoundPropagationDepth_set(this.swigCPtr, value);
-        }
-        get
-        {
-          return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uMaxSoundPropagationDepth_get(this.swigCPtr);
-        }
-      }
-
-      public uint uDiffractionFlags
-      {
-        set
-        {
-          AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uDiffractionFlags_set(this.swigCPtr, value);
-        }
-        get
-        {
-          return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uDiffractionFlags_get(this.swigCPtr);
-        }
-      }
-
-      public float fDiffractionShadowAttenFactor
-      {
-        set
-        {
-          AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_fDiffractionShadowAttenFactor_set(this.swigCPtr, value);
-        }
-        get
-        {
-          return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_fDiffractionShadowAttenFactor_get(this.swigCPtr);
-        }
-      }
-
-      public float fDiffractionShadowDegrees
-      {
-        set
-        {
-          AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_fDiffractionShadowDegrees_set(this.swigCPtr, value);
-        }
-        get
-        {
-          return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_fDiffractionShadowDegrees_get(this.swigCPtr);
-        }
+        GC.SuppressFinalize((object) this);
       }
     }
 
-}
+    public int uPoolID
+    {
+      set => AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uPoolID_set(this.swigCPtr, value);
+      get => AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uPoolID_get(this.swigCPtr);
+    }
+
+    public uint uPoolSize
+    {
+      set
+      {
+        AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uPoolSize_set(this.swigCPtr, value);
+      }
+      get => AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uPoolSize_get(this.swigCPtr);
+    }
+
+    public uint uMaxSoundPropagationDepth
+    {
+      set
+      {
+        AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uMaxSoundPropagationDepth_set(this.swigCPtr, value);
+      }
+      get
+      {
+        return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uMaxSoundPropagationDepth_get(this.swigCPtr);
+      }
+    }
+
+    public uint uDiffractionFlags
+    {
+      set
+      {
+        AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uDiffractionFlags_set(this.swigCPtr, value);
+      }
+      get
+      {
+        return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uDiffractionFlags_get(this.swigCPtr);
+      }
+    }
+
+    public float fDiffractionShadowAttenFactor
+    {
+      set
+      {
+        AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_fDiffractionShadowAttenFactor_set(this.swigCPtr, value);
+      }
+      get
+      {
+        return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_fDiffractionShadowAttenFactor_get(this.swigCPtr);
+      }
+    }
+
+    public float fDiffractionShadowDegrees
+    {
+      set
+      {
+        AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_fDiffractionShadowDegrees_set(this.swigCPtr, value);
+      }
+      get
+      {
+        return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_fDiffractionShadowDegrees_get(this.swigCPtr);
+      }
+    }
+  }
+

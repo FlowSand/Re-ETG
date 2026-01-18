@@ -11,55 +11,52 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class MimicRatRockets1 : Script
+public class MimicRatRockets1 : Script
+  {
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new MimicRatRockets1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MimicRatRockets1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
+    }
 
-      private void FireRocket(Vector2 start, int xOffset, int yOffset)
+    private void FireRocket(Vector2 start, int xOffset, int yOffset)
+    {
+      for (int index = 0; index < 3; ++index)
       {
-        for (int index = 0; index < 3; ++index)
+        if (index != 1 || !BraveUtility.RandomBool())
         {
-          if (index != 1 || !BraveUtility.RandomBool())
-          {
-            Vector2 target = (!BraveUtility.RandomBool() ? this.GetPredictedTargetPosition(1f, 14f) : this.BulletManager.PlayerPosition()) + BraveMathCollege.DegreesToVector(this.RandomAngle(), Random.Range(0.0f, 2.5f));
-            float offsetAngle = (float) (index - 1) * Random.Range(25f, 90f);
-            this.Fire(Offset.OverridePosition(start + new Vector2((float) xOffset / 16f, (float) yOffset / 16f)), new Brave.BulletScript.Direction(type: Brave.BulletScript.DirectionType.Aim), new Brave.BulletScript.Speed(Random.Range(10f, 11f)), (Bullet) new MimicRatRockets1.ArcBullet(target, offsetAngle));
-          }
-        }
-      }
-
-      public class ArcBullet : Bullet
-      {
-        private Vector2 m_target;
-        private float m_offsetAngle;
-
-        public ArcBullet(Vector2 target, float offsetAngle)
-          : base()
-        {
-          this.m_target = target;
-          this.m_offsetAngle = offsetAngle;
-        }
-
-        [DebuggerHidden]
-        protected override IEnumerator Top()
-        {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MimicRatRockets1.ArcBullet__Topc__Iterator0()
-          {
-            _this = this
-          };
+          Vector2 target = (!BraveUtility.RandomBool() ? this.GetPredictedTargetPosition(1f, 14f) : this.BulletManager.PlayerPosition()) + BraveMathCollege.DegreesToVector(this.RandomAngle(), Random.Range(0.0f, 2.5f));
+          float offsetAngle = (float) (index - 1) * Random.Range(25f, 90f);
+          this.Fire(Offset.OverridePosition(start + new Vector2((float) xOffset / 16f, (float) yOffset / 16f)), new Brave.BulletScript.Direction(type: Brave.BulletScript.DirectionType.Aim), new Brave.BulletScript.Speed(Random.Range(10f, 11f)), (Bullet) new MimicRatRockets1.ArcBullet(target, offsetAngle));
         }
       }
     }
 
-}
+    public class ArcBullet : Bullet
+    {
+      private Vector2 m_target;
+      private float m_offsetAngle;
+
+      public ArcBullet(Vector2 target, float offsetAngle)
+        : base()
+      {
+        this.m_target = target;
+        this.m_offsetAngle = offsetAngle;
+      }
+
+      [DebuggerHidden]
+      protected override IEnumerator Top()
+      {
+        // ISSUE: object of a compiler-generated type is created
+        return (IEnumerator) new MimicRatRockets1.ArcBullet__Topc__Iterator0()
+        {
+          _this = this
+        };
+      }
+    }
+  }
+

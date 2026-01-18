@@ -8,10 +8,7 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class TileIndexListAttribute : PropertyAttribute
-    {
-    }
+public class TileIndexListAttribute : PropertyAttribute
+  {
+  }
 
-}

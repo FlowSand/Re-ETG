@@ -6,27 +6,24 @@
 
 #nullable disable
 
-namespace ETG.Core.UI.HUD
-{
-    [dfMarkupTagInfo("br")]
-    public class dfMarkupTagBr : dfMarkupTag
+[dfMarkupTagInfo("br")]
+public class dfMarkupTagBr : dfMarkupTag
+  {
+    public dfMarkupTagBr()
+      : base("br")
     {
-      public dfMarkupTagBr()
-        : base("br")
-      {
-        this.IsClosedTag = true;
-      }
-
-      public dfMarkupTagBr(dfMarkupTag original)
-        : base(original)
-      {
-        this.IsClosedTag = true;
-      }
-
-      protected override void _PerformLayoutImpl(dfMarkupBox container, dfMarkupStyle style)
-      {
-        container.AddLineBreak();
-      }
+      this.IsClosedTag = true;
     }
 
-}
+    public dfMarkupTagBr(dfMarkupTag original)
+      : base(original)
+    {
+      this.IsClosedTag = true;
+    }
+
+    protected override void _PerformLayoutImpl(dfMarkupBox container, dfMarkupStyle style)
+    {
+      container.AddLineBreak();
+    }
+  }
+

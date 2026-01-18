@@ -8,11 +8,8 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class MemoryTester : MonoBehaviour
-    {
-      public static bool HasInstance;
-    }
+public class MemoryTester : MonoBehaviour
+  {
+    public static bool HasInstance;
+  }
 
-}

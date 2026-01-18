@@ -8,16 +8,13 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    public class CheckDirectionalAnimationAttribute : PropertyAttribute
+public class CheckDirectionalAnimationAttribute : PropertyAttribute
+  {
+    public string aiAnimator;
+
+    public CheckDirectionalAnimationAttribute(string aiAnimator = null)
     {
-      public string aiAnimator;
-
-      public CheckDirectionalAnimationAttribute(string aiAnimator = null)
-      {
-        this.aiAnimator = aiAnimator;
-      }
+      this.aiAnimator = aiAnimator;
     }
+  }
 
-}

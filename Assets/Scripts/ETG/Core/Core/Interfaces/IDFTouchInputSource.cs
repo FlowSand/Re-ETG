@@ -8,17 +8,14 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IDFTouchInputSource
-    {
-      int TouchCount { get; }
+public interface IDFTouchInputSource
+  {
+    int TouchCount { get; }
 
-      IList<dfTouchInfo> Touches { get; }
+    IList<dfTouchInfo> Touches { get; }
 
-      void Update();
+    void Update();
 
-      dfTouchInfo GetTouch(int index);
-    }
+    dfTouchInfo GetTouch(int index);
+  }
 
-}

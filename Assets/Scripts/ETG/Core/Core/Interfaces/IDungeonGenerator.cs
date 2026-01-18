@@ -8,11 +8,8 @@ using Dungeonator;
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IDungeonGenerator
-    {
-      DungeonData GenerateDungeonLayout();
-    }
+public interface IDungeonGenerator
+  {
+    DungeonData GenerateDungeonLayout();
+  }
 
-}

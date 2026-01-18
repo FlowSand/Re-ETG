@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfIntersectionType
-    {
-      None,
-      Inside,
-      Intersecting,
-    }
+public enum dfIntersectionType
+  {
+    None,
+    Inside,
+    Intersecting,
+  }
 
-}

@@ -8,21 +8,18 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class SimpleStatLabel : MonoBehaviour
+public class SimpleStatLabel : MonoBehaviour
+  {
+    public TrackedStats stat;
+    protected dfLabel m_label;
+
+    private void Start() => this.m_label = this.GetComponent<dfLabel>();
+
+    private void Update()
     {
-      public TrackedStats stat;
-      protected dfLabel m_label;
-
-      private void Start() => this.m_label = this.GetComponent<dfLabel>();
-
-      private void Update()
-      {
-        if (!(bool) (Object) this.m_label || !this.m_label.IsVisible)
-          return;
-        this.m_label.Text = IntToStringSansGarbage.GetStringForInt(Mathf.FloorToInt(GameStatsManager.Instance.GetPlayerStatValue(this.stat)));
-      }
+      if (!(bool) (Object) this.m_label || !this.m_label.IsVisible)
+        return;
+      this.m_label.Text = IntToStringSansGarbage.GetStringForInt(Mathf.FloorToInt(GameStatsManager.Instance.GetPlayerStatValue(this.stat)));
     }
+  }
 
-}

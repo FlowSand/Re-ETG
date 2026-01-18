@@ -8,13 +8,10 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public struct BreakFrame
-    {
-      public float healthPercentage;
-      public string sprite;
-    }
+[Serializable]
+public struct BreakFrame
+  {
+    public float healthPercentage;
+    public string sprite;
+  }
 
-}

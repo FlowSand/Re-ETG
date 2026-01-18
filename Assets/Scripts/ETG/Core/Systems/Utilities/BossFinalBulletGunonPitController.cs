@@ -8,17 +8,14 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class BossFinalBulletGunonPitController : MonoBehaviour
+public class BossFinalBulletGunonPitController : MonoBehaviour
+  {
+    private void Start()
     {
-      private void Start()
-      {
-      }
-
-      private void Update()
-      {
-      }
     }
 
-}
+    private void Update()
+    {
+    }
+  }
+

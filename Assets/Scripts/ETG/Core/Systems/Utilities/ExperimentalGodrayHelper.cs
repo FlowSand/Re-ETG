@@ -10,20 +10,17 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [ExecuteInEditMode]
-    public class ExperimentalGodrayHelper : MonoBehaviour
+[ExecuteInEditMode]
+public class ExperimentalGodrayHelper : MonoBehaviour
+  {
+    [DebuggerHidden]
+    private IEnumerator Start()
     {
-      [DebuggerHidden]
-      private IEnumerator Start()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new ExperimentalGodrayHelper__Startc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ExperimentalGodrayHelper__Startc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

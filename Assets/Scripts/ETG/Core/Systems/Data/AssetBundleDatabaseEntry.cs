@@ -9,27 +9,24 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    [Serializable]
-    public abstract class AssetBundleDatabaseEntry
+[Serializable]
+  public abstract class AssetBundleDatabaseEntry
+  {
+    public string myGuid;
+    public string unityGuid;
+    public string path;
+[NonSerialized]
+    protected UnityEngine.Object loadedPrefab;
+
+    public abstract AssetBundle assetBundle { get; }
+
+    public string name
     {
-      public string myGuid;
-      public string unityGuid;
-      public string path;
-      [NonSerialized]
-      protected UnityEngine.Object loadedPrefab;
-
-      public abstract AssetBundle assetBundle { get; }
-
-      public string name
-      {
-        get => this.path.Substring(this.path.LastIndexOf('/') + 1).Replace(".prefab", string.Empty);
-      }
-
-      public bool HasLoadedPrefab => (bool) this.loadedPrefab;
-
-      public virtual void DropReference() => this.loadedPrefab = (UnityEngine.Object) null;
+      get => this.path.Substring(this.path.LastIndexOf('/') + 1).Replace(".prefab", string.Empty);
     }
 
-}
+    public bool HasLoadedPrefab => (bool) this.loadedPrefab;
+
+    public virtual void DropReference() => this.loadedPrefab = (UnityEngine.Object) null;
+  }
+

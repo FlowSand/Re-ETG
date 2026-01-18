@@ -8,22 +8,19 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Items.Guns
-{
-    [Serializable]
-    public class GunFormeData
+[Serializable]
+public class GunFormeData
+  {
+    public bool RequiresSynergy = true;
+    [LongNumericEnum]
+    [ShowInInspectorIf("RequiresSynergy", false)]
+    public CustomSynergyType RequiredSynergy;
+    [PickupIdentifier]
+    public int FormeID;
+
+    public bool IsValid(PlayerController p)
     {
-      public bool RequiresSynergy = true;
-      [LongNumericEnum]
-      [ShowInInspectorIf("RequiresSynergy", false)]
-      public CustomSynergyType RequiredSynergy;
-      [PickupIdentifier]
-      public int FormeID;
-
-      public bool IsValid(PlayerController p)
-      {
-        return !this.RequiresSynergy || p.HasActiveBonusSynergy(this.RequiredSynergy);
-      }
+      return !this.RequiresSynergy || p.HasActiveBonusSynergy(this.RequiredSynergy);
     }
+  }
 
-}

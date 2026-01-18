@@ -8,11 +8,8 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public static class dfRectOffsetExtensions
-    {
-      public static readonly RectOffset Empty = new RectOffset();
-    }
+  public static class dfRectOffsetExtensions
+  {
+    public static readonly RectOffset Empty = new RectOffset();
+  }
 
-}

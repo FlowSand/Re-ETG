@@ -9,18 +9,15 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    public class DungeonDatabase
+public class DungeonDatabase
+  {
+    public static Dungeonator.Dungeon GetOrLoadByName(string name)
     {
-      public static Dungeon GetOrLoadByName(string name)
-      {
-        AssetBundle assetBundle = ResourceManager.LoadAssetBundle("dungeons/" + name.ToLower());
-        DebugTime.RecordStartTime();
-        Dungeon component = assetBundle.LoadAsset<GameObject>(name).GetComponent<Dungeon>();
-        DebugTime.Log("AssetBundle.LoadAsset<Dungeon>({0})", (object) name);
-        return component;
-      }
+      AssetBundle assetBundle = ResourceManager.LoadAssetBundle("dungeons/" + name.ToLower());
+      DebugTime.RecordStartTime();
+      Dungeonator.Dungeon component = assetBundle.LoadAsset<GameObject>(name).GetComponent<Dungeonator.Dungeon>();
+      DebugTime.Log("AssetBundle.LoadAsset<Dungeonator.Dungeon>({0})", (object) name);
+      return component;
     }
+  }
 
-}

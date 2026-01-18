@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfPlayDirection
-    {
-      Forward,
-      Reverse,
-    }
+public enum dfPlayDirection
+  {
+    Forward,
+    Reverse,
+  }
 
-}

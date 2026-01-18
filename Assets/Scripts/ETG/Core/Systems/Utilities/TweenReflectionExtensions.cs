@@ -9,22 +9,19 @@ using DaikonForge.Tween.Interpolation;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public static class TweenReflectionExtensions
+  public static class TweenReflectionExtensions
+  {
+    public static DaikonForge.Tween.Tween<T> TweenProperty<T>(this object target, string propertyName)
     {
-      public static DaikonForge.Tween.Tween<T> TweenProperty<T>(this object target, string propertyName)
-      {
-        return TweenNamedProperty<T>.Obtain(target, propertyName);
-      }
-
-      public static DaikonForge.Tween.Tween<T> TweenProperty<T>(
-        this object target,
-        string propertyName,
-        Interpolator<T> interpolator)
-      {
-        return TweenNamedProperty<T>.Obtain(target, propertyName, interpolator);
-      }
+      return TweenNamedProperty<T>.Obtain(target, propertyName);
     }
 
-}
+    public static DaikonForge.Tween.Tween<T> TweenProperty<T>(
+      this object target,
+      string propertyName,
+      Interpolator<T> interpolator)
+    {
+      return TweenNamedProperty<T>.Obtain(target, propertyName, interpolator);
+    }
+  }
+

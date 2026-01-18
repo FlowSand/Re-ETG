@@ -6,8 +6,5 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public delegate float SetBackingFloatFunc(int x, int y, bool value, float currentFloatValue);
+public delegate float SetBackingFloatFunc(int x, int y, bool value, float currentFloatValue);
 
-}

@@ -8,19 +8,16 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IAutoAimTarget
-    {
-      bool IsValid { get; }
+public interface IAutoAimTarget
+  {
+    bool IsValid { get; }
 
-      Vector2 AimCenter { get; }
+    Vector2 AimCenter { get; }
 
-      Vector2 Velocity { get; }
+    Vector2 Velocity { get; }
 
-      bool IgnoreForSuperDuperAutoAim { get; }
+    bool IgnoreForSuperDuperAutoAim { get; }
 
-      float MinDistForSuperDuperAutoAim { get; }
-    }
+    float MinDistForSuperDuperAutoAim { get; }
+  }
 
-}

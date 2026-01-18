@@ -12,110 +12,107 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class RevolvenantPunch1 : Script
+public class RevolvenantPunch1 : Script
+  {
+    private const int NumArmBullets = 20;
+
+    public bool Spew { get; set; }
+
+    public Vector2 ArmPosition { get; set; }
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      private const int NumArmBullets = 20;
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new RevolvenantPunch1__Topc__Iterator0()
+      {
+        _this = this
+      };
+    }
 
-      public bool Spew { get; set; }
+    private class ArmBullet : Bullet
+    {
+      public const int NumBullets = 3;
+      public const int BulletDelay = 60;
+      private const float WiggleMagnitude = 0.4f;
+      private const int WiggleTime = 30;
+      private const int NumBulletsToPreShake = 5;
+      private RevolvenantPunch1 m_parentScript;
+      private RevolvenantPunch1 revolvenantPunch1;
+      private RevolvenantPunch1.HandBullet m_handBullet;
+      private int m_index;
 
-      public Vector2 ArmPosition { get; set; }
+      public ArmBullet(
+        RevolvenantPunch1 parentScript,
+        RevolvenantPunch1.HandBullet handBullet,
+        int index)
+        : base()
+      {
+        this.m_parentScript = parentScript;
+        this.m_handBullet = handBullet;
+        this.m_index = index;
+      }
 
       [DebuggerHidden]
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new RevolvenantPunch1__Topc__Iterator0()
+        return (IEnumerator) new RevolvenantPunch1.ArmBullet__Topc__Iterator0()
+        {
+          _this = this
+        };
+      }
+    }
+
+    private class HandBullet : Bullet
+    {
+      private RevolvenantPunch1 m_parentScript;
+
+      public HandBullet(RevolvenantPunch1 parentScript)
+        : base("hand")
+      {
+        this.m_parentScript = parentScript;
+      }
+
+      public bool HasStopped { get; set; }
+
+      [DebuggerHidden]
+      protected override IEnumerator Top()
+      {
+        // ISSUE: object of a compiler-generated type is created
+        return (IEnumerator) new RevolvenantPunch1.HandBullet__Topc__Iterator0()
         {
           _this = this
         };
       }
 
-      private class ArmBullet : Bullet
+      private void OnCollision(CollisionData collision)
       {
-        public const int NumBullets = 3;
-        public const int BulletDelay = 60;
-        private const float WiggleMagnitude = 0.4f;
-        private const int WiggleTime = 30;
-        private const int NumBulletsToPreShake = 5;
-        private RevolvenantPunch1 m_parentScript;
-        private RevolvenantPunch1 revolvenantPunch1;
-        private RevolvenantPunch1.HandBullet m_handBullet;
-        private int m_index;
-
-        public ArmBullet(
-          RevolvenantPunch1 parentScript,
-          RevolvenantPunch1.HandBullet handBullet,
-          int index)
-          : base()
+        bool flag = collision.collisionType == CollisionData.CollisionType.TileMap;
+        SpeculativeRigidbody otherRigidbody = collision.OtherRigidbody;
+        if ((bool) (UnityEngine.Object) otherRigidbody)
+          flag = (bool) (UnityEngine.Object) otherRigidbody.majorBreakable || otherRigidbody.PreventPiercing || !(bool) (UnityEngine.Object) otherRigidbody.gameActor && !(bool) (UnityEngine.Object) otherRigidbody.minorBreakable;
+        if (flag)
         {
-          this.m_parentScript = parentScript;
-          this.m_handBullet = handBullet;
-          this.m_index = index;
+          this.Position = collision.MyRigidbody.UnitCenter + PhysicsEngine.PixelToUnit(collision.NewPixelsToMove);
+          this.Speed = 0.0f;
+          this.HasStopped = true;
+          PhysicsEngine.PostSliceVelocity = new Vector2?(new Vector2(0.0f, 0.0f));
+          this.Projectile.specRigidbody.OnCollision -= new Action<CollisionData>(this.OnCollision);
         }
-
-        [DebuggerHidden]
-        protected override IEnumerator Top()
-        {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new RevolvenantPunch1.ArmBullet__Topc__Iterator0()
-          {
-            _this = this
-          };
-        }
+        else
+          PhysicsEngine.PostSliceVelocity = new Vector2?(collision.MyRigidbody.Velocity);
       }
 
-      private class HandBullet : Bullet
+      public override void OnBulletDestruction(
+        Bullet.DestroyType destroyType,
+        SpeculativeRigidbody hitRigidbody,
+        bool preventSpawningProjectiles)
       {
-        private RevolvenantPunch1 m_parentScript;
-
-        public HandBullet(RevolvenantPunch1 parentScript)
-          : base("hand")
-        {
-          this.m_parentScript = parentScript;
-        }
-
-        public bool HasStopped { get; set; }
-
-        [DebuggerHidden]
-        protected override IEnumerator Top()
-        {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new RevolvenantPunch1.HandBullet__Topc__Iterator0()
-          {
-            _this = this
-          };
-        }
-
-        private void OnCollision(CollisionData collision)
-        {
-          bool flag = collision.collisionType == CollisionData.CollisionType.TileMap;
-          SpeculativeRigidbody otherRigidbody = collision.OtherRigidbody;
-          if ((bool) (UnityEngine.Object) otherRigidbody)
-            flag = (bool) (UnityEngine.Object) otherRigidbody.majorBreakable || otherRigidbody.PreventPiercing || !(bool) (UnityEngine.Object) otherRigidbody.gameActor && !(bool) (UnityEngine.Object) otherRigidbody.minorBreakable;
-          if (flag)
-          {
-            this.Position = collision.MyRigidbody.UnitCenter + PhysicsEngine.PixelToUnit(collision.NewPixelsToMove);
-            this.Speed = 0.0f;
-            this.HasStopped = true;
-            PhysicsEngine.PostSliceVelocity = new Vector2?(new Vector2(0.0f, 0.0f));
-            this.Projectile.specRigidbody.OnCollision -= new Action<CollisionData>(this.OnCollision);
-          }
-          else
-            PhysicsEngine.PostSliceVelocity = new Vector2?(collision.MyRigidbody.Velocity);
-        }
-
-        public override void OnBulletDestruction(
-          Bullet.DestroyType destroyType,
-          SpeculativeRigidbody hitRigidbody,
-          bool preventSpawningProjectiles)
-        {
-          if ((bool) (UnityEngine.Object) this.Projectile)
-            this.Projectile.specRigidbody.OnCollision -= new Action<CollisionData>(this.OnCollision);
-          this.HasStopped = true;
-        }
+        if ((bool) (UnityEngine.Object) this.Projectile)
+          this.Projectile.specRigidbody.OnCollision -= new Action<CollisionData>(this.OnCollision);
+        this.HasStopped = true;
       }
     }
+  }
 
-}

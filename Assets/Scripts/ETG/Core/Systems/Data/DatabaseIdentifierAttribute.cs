@@ -6,10 +6,7 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    public interface DatabaseIdentifierAttribute
-    {
-    }
+public interface DatabaseIdentifierAttribute
+  {
+  }
 
-}

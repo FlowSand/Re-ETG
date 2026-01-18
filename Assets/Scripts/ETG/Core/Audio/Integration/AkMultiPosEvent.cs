@@ -8,17 +8,14 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public class AkMultiPosEvent
+public class AkMultiPosEvent
+  {
+    public bool eventIsPlaying;
+    public List<AkAmbient> list = new List<AkAmbient>();
+
+    public void FinishedPlaying(object in_cookie, AkCallbackType in_type, object in_info)
     {
-      public bool eventIsPlaying;
-      public List<AkAmbient> list = new List<AkAmbient>();
-
-      public void FinishedPlaying(object in_cookie, AkCallbackType in_type, object in_info)
-      {
-        this.eventIsPlaying = false;
-      }
+      this.eventIsPlaying = false;
     }
+  }
 
-}

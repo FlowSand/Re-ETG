@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class DebugStringHolder : MonoBehaviour
-    {
-      public string String;
-      public string JenkinsTag;
-      public string PerforceChangelist;
-    }
+public class DebugStringHolder : MonoBehaviour
+  {
+    public string String;
+    public string JenkinsTag;
+    public string PerforceChangelist;
+  }
 
-}

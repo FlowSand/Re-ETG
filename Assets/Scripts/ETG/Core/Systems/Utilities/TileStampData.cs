@@ -10,13 +10,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class TileStampData : StampDataBase
-    {
-      [SerializeField]
-      public List<int> stampTileIndices;
-    }
+[Serializable]
+public class TileStampData : StampDataBase
+  {
+    [SerializeField]
+    public List<int> stampTileIndices;
+  }
 
-}

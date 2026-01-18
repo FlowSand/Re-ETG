@@ -8,21 +8,18 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    [Serializable]
-    public class tk2dSpriteCollectionPlatform
+[Serializable]
+public class tk2dSpriteCollectionPlatform
+  {
+    public string name = string.Empty;
+    public tk2dSpriteCollection spriteCollection;
+
+    public bool Valid => this.name.Length > 0 && (UnityEngine.Object) this.spriteCollection != (UnityEngine.Object) null;
+
+    public void CopyFrom(tk2dSpriteCollectionPlatform source)
     {
-      public string name = string.Empty;
-      public tk2dSpriteCollection spriteCollection;
-
-      public bool Valid => this.name.Length > 0 && (UnityEngine.Object) this.spriteCollection != (UnityEngine.Object) null;
-
-      public void CopyFrom(tk2dSpriteCollectionPlatform source)
-      {
-        this.name = source.name;
-        this.spriteCollection = source.spriteCollection;
-      }
+      this.name = source.name;
+      this.spriteCollection = source.spriteCollection;
     }
+  }
 
-}

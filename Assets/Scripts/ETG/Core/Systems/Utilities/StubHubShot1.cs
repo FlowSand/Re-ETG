@@ -9,20 +9,17 @@ using System.Collections;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class StubHubShot1 : Script
+public class StubHubShot1 : Script
+  {
+    private const int NumBullets = 12;
+
+    protected override IEnumerator Top()
     {
-      private const int NumBullets = 12;
-
-      protected override IEnumerator Top()
-      {
-        float num1 = this.RandomAngle();
-        float num2 = 30f;
-        for (int index = 0; index < 12; ++index)
-          this.Fire(new Brave.BulletScript.Direction(num1 + (float) index * num2), new Brave.BulletScript.Speed(9f), (Bullet) null);
-        return (IEnumerator) null;
-      }
+      float num1 = this.RandomAngle();
+      float num2 = 30f;
+      for (int index = 0; index < 12; ++index)
+        this.Fire(new Brave.BulletScript.Direction(num1 + (float) index * num2), new Brave.BulletScript.Speed(9f), (Bullet) null);
+      return (IEnumerator) null;
     }
+  }
 
-}

@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class BraveCacheChecker : MonoBehaviour
+public class BraveCacheChecker : MonoBehaviour
+  {
+    public void Start()
     {
-      public void Start()
-      {
-      }
     }
+  }
 
-}

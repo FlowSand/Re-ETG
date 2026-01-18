@@ -8,10 +8,7 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class EncounterIdentifierAttribute : PropertyAttribute, DatabaseIdentifierAttribute
-    {
-    }
+public class EncounterIdentifierAttribute : PropertyAttribute, DatabaseIdentifierAttribute
+  {
+  }
 
-}

@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    [Serializable]
-    public class ChallengeFloorData
-    {
-      public GlobalDungeonData.ValidTilesets floorID;
-      public int minChallenges = 1;
-      public int maxChallenges = 1;
-    }
+[Serializable]
+public class ChallengeFloorData
+  {
+    public GlobalDungeonData.ValidTilesets floorID;
+    public int minChallenges = 1;
+    public int maxChallenges = 1;
+  }
 
-}

@@ -6,26 +6,23 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfMarkupDisplayType
-    {
-      inline,
-      block,
-      listItem,
-      inlineBlock,
-      table,
-      inlineTable,
-      tableRowGroup,
-      tableHeaderGroup,
-      tableFooterGroup,
-      tableRow,
-      tableColumnGroup,
-      tableColumn,
-      tableCell,
-      tableCaption,
-      none,
-      inherit,
-    }
+public enum dfMarkupDisplayType
+  {
+    inline,
+    block,
+    listItem,
+    inlineBlock,
+    table,
+    inlineTable,
+    tableRowGroup,
+    tableHeaderGroup,
+    tableFooterGroup,
+    tableRow,
+    tableColumnGroup,
+    tableColumn,
+    tableCell,
+    tableCaption,
+    none,
+    inherit,
+  }
 
-}

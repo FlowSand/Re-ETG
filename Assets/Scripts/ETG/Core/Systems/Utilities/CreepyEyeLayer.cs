@@ -9,13 +9,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public struct CreepyEyeLayer
-    {
-      public Transform xform;
-      public tk2dSprite sprite;
-    }
+[Serializable]
+public struct CreepyEyeLayer
+  {
+    public Transform xform;
+    public tk2dSprite sprite;
+  }
 
-}

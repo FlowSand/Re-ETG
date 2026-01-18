@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Dungeon.Interactables
-{
-    public class GatlingGullLeapPoint : DungeonPlaceableBehaviour
-    {
-      public bool ForRockets;
-      public bool ForReposition;
-    }
+public class GatlingGullLeapPoint : DungeonPlaceableBehaviour
+  {
+    public bool ForRockets;
+    public bool ForReposition;
+  }
 
-}

@@ -6,18 +6,15 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class WeightedItem<T>
+public class WeightedItem<T>
+  {
+    public T value;
+    public float weight;
+
+    public WeightedItem(T v, float w)
     {
-      public T value;
-      public float weight;
-
-      public WeightedItem(T v, float w)
-      {
-        this.value = v;
-        this.weight = w;
-      }
+      this.value = v;
+      this.weight = w;
     }
+  }
 
-}

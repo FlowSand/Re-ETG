@@ -8,16 +8,13 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    [Serializable]
-    public class BossChallengeData
-    {
-      public string Annotation;
-      [EnemyIdentifier]
-      public string[] BossGuids;
-      public int NumToSelect;
-      public ChallengeModifier[] Modifiers;
-    }
+[Serializable]
+public class BossChallengeData
+  {
+    public string Annotation;
+    [EnemyIdentifier]
+    public string[] BossGuids;
+    public int NumToSelect;
+    public ChallengeModifier[] Modifiers;
+  }
 
-}

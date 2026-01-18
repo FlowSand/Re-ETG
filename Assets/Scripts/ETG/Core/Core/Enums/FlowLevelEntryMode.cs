@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum FlowLevelEntryMode
-    {
-      NONE,
-      ALL_MIMICS,
-    }
+public enum FlowLevelEntryMode
+  {
+    NONE,
+    ALL_MIMICS,
+  }
 
-}

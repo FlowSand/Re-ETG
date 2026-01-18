@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkPreparationType
-    {
-      Preparation_Load,
-      Preparation_Unload,
-      Preparation_LoadAndDecode,
-    }
+public enum AkPreparationType
+  {
+    Preparation_Load,
+    Preparation_Unload,
+    Preparation_LoadAndDecode,
+  }
 
-}

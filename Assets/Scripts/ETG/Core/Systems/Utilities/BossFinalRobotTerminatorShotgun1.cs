@@ -11,35 +11,32 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/BossFinalRobot/TerminatorShotgun1")]
-    public class BossFinalRobotTerminatorShotgun1 : Script
+[InspectorDropdownName("Bosses/BossFinalRobot/TerminatorShotgun1")]
+public class BossFinalRobotTerminatorShotgun1 : Script
+  {
+    protected override IEnumerator Top()
     {
-      protected override IEnumerator Top()
+      switch (Random.Range(0, 4))
       {
-        switch (Random.Range(0, 4))
-        {
-          case 0:
-            for (int index = -2; index <= 2; ++index)
-              this.Fire(new Brave.BulletScript.Direction((float) (index * 6), Brave.BulletScript.DirectionType.Aim), new Brave.BulletScript.Speed(5f), (Bullet) null);
-            break;
-          case 1:
-            for (int index = -2; index <= 2; ++index)
-              this.Fire(new Brave.BulletScript.Direction((float) (index * 6), Brave.BulletScript.DirectionType.Aim), new Brave.BulletScript.Speed(9f), (Bullet) null);
-            break;
-          case 2:
-            float aimDirection = this.GetAimDirection(1f, 9f);
-            for (int index = -2; index <= 2; ++index)
-              this.Fire(new Brave.BulletScript.Direction(aimDirection + (float) (index * 6)), new Brave.BulletScript.Speed((float) (10.0 - (double) Mathf.Abs(index) * 0.5)), (Bullet) null);
-            break;
-          case 3:
-            for (int index = -2; index <= 2; ++index)
-              this.Fire(new Brave.BulletScript.Direction((float) (index * 6), Brave.BulletScript.DirectionType.Aim), new Brave.BulletScript.Speed(9f), (Bullet) null);
-            break;
-        }
-        return (IEnumerator) null;
+        case 0:
+          for (int index = -2; index <= 2; ++index)
+            this.Fire(new Brave.BulletScript.Direction((float) (index * 6), Brave.BulletScript.DirectionType.Aim), new Brave.BulletScript.Speed(5f), (Bullet) null);
+          break;
+        case 1:
+          for (int index = -2; index <= 2; ++index)
+            this.Fire(new Brave.BulletScript.Direction((float) (index * 6), Brave.BulletScript.DirectionType.Aim), new Brave.BulletScript.Speed(9f), (Bullet) null);
+          break;
+        case 2:
+          float aimDirection = this.GetAimDirection(1f, 9f);
+          for (int index = -2; index <= 2; ++index)
+            this.Fire(new Brave.BulletScript.Direction(aimDirection + (float) (index * 6)), new Brave.BulletScript.Speed((float) (10.0 - (double) Mathf.Abs(index) * 0.5)), (Bullet) null);
+          break;
+        case 3:
+          for (int index = -2; index <= 2; ++index)
+            this.Fire(new Brave.BulletScript.Direction((float) (index * 6), Brave.BulletScript.DirectionType.Aim), new Brave.BulletScript.Speed(9f), (Bullet) null);
+          break;
       }
+      return (IEnumerator) null;
     }
+  }
 
-}

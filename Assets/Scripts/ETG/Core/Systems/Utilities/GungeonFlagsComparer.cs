@@ -8,13 +8,10 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class GungeonFlagsComparer : IEqualityComparer<GungeonFlags>
-    {
-      public bool Equals(GungeonFlags x, GungeonFlags y) => x == y;
+public class GungeonFlagsComparer : IEqualityComparer<GungeonFlags>
+  {
+    public bool Equals(GungeonFlags x, GungeonFlags y) => x == y;
 
-      public int GetHashCode(GungeonFlags obj) => (int) obj;
-    }
+    public int GetHashCode(GungeonFlags obj) => (int) obj;
+  }
 
-}

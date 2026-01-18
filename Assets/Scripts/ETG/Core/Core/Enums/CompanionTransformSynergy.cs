@@ -8,15 +8,12 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    [Serializable]
-    public class CompanionTransformSynergy
-    {
-      [LongNumericEnum]
-      public CustomSynergyType RequiredSynergy;
-      [EnemyIdentifier]
-      public string SynergyCompanionGuid;
-    }
+[Serializable]
+public class CompanionTransformSynergy
+  {
+    [LongNumericEnum]
+    public CustomSynergyType RequiredSynergy;
+    [EnemyIdentifier]
+    public string SynergyCompanionGuid;
+  }
 
-}

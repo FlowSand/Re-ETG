@@ -8,45 +8,42 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.UI.HUD
-{
-    [AddComponentMenu("2D Toolkit/UI/tk2dUIBaseItemControl")]
-    public abstract class tk2dUIBaseItemControl : MonoBehaviour
+[AddComponentMenu("2D Toolkit/UI/tk2dUIBaseItemControl")]
+  public abstract class tk2dUIBaseItemControl : MonoBehaviour
+  {
+    public tk2dUIItem uiItem;
+
+    public GameObject SendMessageTarget
     {
-      public tk2dUIItem uiItem;
-
-      public GameObject SendMessageTarget
+      get
       {
-        get
-        {
-          return (Object) this.uiItem != (Object) null ? this.uiItem.sendMessageTarget : (GameObject) null;
-        }
-        set
-        {
-          if (!((Object) this.uiItem != (Object) null))
-            return;
-          this.uiItem.sendMessageTarget = value;
-        }
+        return (Object) this.uiItem != (Object) null ? this.uiItem.sendMessageTarget : (GameObject) null;
       }
-
-      public static void ChangeGameObjectActiveState(GameObject go, bool isActive)
+      set
       {
-        go.SetActive(isActive);
-      }
-
-      public static void ChangeGameObjectActiveStateWithNullCheck(GameObject go, bool isActive)
-      {
-        if (!((Object) go != (Object) null))
+        if (!((Object) this.uiItem != (Object) null))
           return;
-        tk2dUIBaseItemControl.ChangeGameObjectActiveState(go, isActive);
-      }
-
-      protected void DoSendMessage(string methodName, object parameter)
-      {
-        if (!((Object) this.SendMessageTarget != (Object) null) || methodName.Length <= 0)
-          return;
-        this.SendMessageTarget.SendMessage(methodName, parameter, SendMessageOptions.RequireReceiver);
+        this.uiItem.sendMessageTarget = value;
       }
     }
 
-}
+    public static void ChangeGameObjectActiveState(GameObject go, bool isActive)
+    {
+      go.SetActive(isActive);
+    }
+
+    public static void ChangeGameObjectActiveStateWithNullCheck(GameObject go, bool isActive)
+    {
+      if (!((Object) go != (Object) null))
+        return;
+      tk2dUIBaseItemControl.ChangeGameObjectActiveState(go, isActive);
+    }
+
+    protected void DoSendMessage(string methodName, object parameter)
+    {
+      if (!((Object) this.SendMessageTarget != (Object) null) || methodName.Length <= 0)
+        return;
+      this.SendMessageTarget.SendMessage(methodName, parameter, SendMessageOptions.RequireReceiver);
+    }
+  }
+

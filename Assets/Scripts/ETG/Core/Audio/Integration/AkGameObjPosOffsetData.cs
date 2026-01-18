@@ -8,11 +8,8 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public class AkGameObjPosOffsetData : ScriptableObject
-    {
-      public Vector3 positionOffset;
-    }
+public class AkGameObjPosOffsetData : ScriptableObject
+  {
+    public Vector3 positionOffset;
+  }
 
-}

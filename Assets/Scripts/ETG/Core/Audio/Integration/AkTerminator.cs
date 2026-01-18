@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    [AddComponentMenu("Wwise/AkTerminator")]
-    [ExecuteInEditMode]
-    [DisallowMultipleComponent]
-    public class AkTerminator : MonoBehaviour
-    {
-    }
+[AddComponentMenu("Wwise/AkTerminator")]
+[ExecuteInEditMode]
+[DisallowMultipleComponent]
+public class AkTerminator : MonoBehaviour
+  {
+  }
 
-}

@@ -8,16 +8,13 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class PrettyDungeonMaterialAttribute : PropertyAttribute
+public class PrettyDungeonMaterialAttribute : PropertyAttribute
+  {
+    public string tilesetProperty;
+
+    public PrettyDungeonMaterialAttribute(string tilesetPropertyName)
     {
-      public string tilesetProperty;
-
-      public PrettyDungeonMaterialAttribute(string tilesetPropertyName)
-      {
-        this.tilesetProperty = tilesetPropertyName;
-      }
+      this.tilesetProperty = tilesetPropertyName;
     }
+  }
 
-}

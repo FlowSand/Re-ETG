@@ -8,20 +8,17 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Effects
-{
-    [ExecuteInEditMode]
-    [AddComponentMenu("Image Effects/Vortex")]
-    public class VortexEffect : ImageEffectBase
+[ExecuteInEditMode]
+[AddComponentMenu("Image Effects/Vortex")]
+public class VortexEffect : ImageEffectBase
+  {
+    public Vector2 radius = new Vector2(0.4f, 0.4f);
+    public float angle = 50f;
+    public Vector2 center = new Vector2(0.5f, 0.5f);
+
+    private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-      public Vector2 radius = new Vector2(0.4f, 0.4f);
-      public float angle = 50f;
-      public Vector2 center = new Vector2(0.5f, 0.5f);
-
-      private void OnRenderImage(RenderTexture source, RenderTexture destination)
-      {
-        ImageEffects.RenderDistortion(this.material, source, destination, this.angle, this.center, this.radius);
-      }
+      ImageEffects.RenderDistortion(this.material, source, destination, this.angle, this.center, this.radius);
     }
+  }
 
-}

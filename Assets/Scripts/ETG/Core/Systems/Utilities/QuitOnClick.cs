@@ -8,12 +8,9 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [AddComponentMenu("Daikon Forge/Examples/General/Quit On Click")]
-    public class QuitOnClick : MonoBehaviour
-    {
-      private void OnClick() => Application.Quit();
-    }
+[AddComponentMenu("Daikon Forge/Examples/General/Quit On Click")]
+public class QuitOnClick : MonoBehaviour
+  {
+    private void OnClick() => Application.Quit();
+  }
 
-}

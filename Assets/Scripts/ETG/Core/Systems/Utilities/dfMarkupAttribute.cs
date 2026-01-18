@@ -6,21 +6,18 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class dfMarkupAttribute
+public class dfMarkupAttribute
+  {
+    public dfMarkupAttribute(string name, string value)
     {
-      public dfMarkupAttribute(string name, string value)
-      {
-        this.Name = name;
-        this.Value = value;
-      }
-
-      public string Name { get; set; }
-
-      public string Value { get; set; }
-
-      public override string ToString() => $"{this.Name}='{this.Value}'";
+      this.Name = name;
+      this.Value = value;
     }
 
-}
+    public string Name { get; set; }
+
+    public string Value { get; set; }
+
+    public override string ToString() => $"{this.Name}='{this.Value}'";
+  }
+

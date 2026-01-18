@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum WaterQuality
-    {
-      Low,
-      Medium,
-      High,
-    }
+public enum WaterQuality
+  {
+    Low,
+    Medium,
+    High,
+  }
 
-}

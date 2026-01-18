@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    [Serializable]
-    public class LootModData
-    {
-      [PickupIdentifier]
-      public int AssociatedPickupId = -1;
-      public float DropRateMultiplier;
-    }
+[Serializable]
+public class LootModData
+  {
+    [PickupIdentifier]
+    public int AssociatedPickupId = -1;
+    public float DropRateMultiplier;
+  }
 
-}

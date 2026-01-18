@@ -11,64 +11,61 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/BossFinalBullet/GunonRing2")]
-    public class BossFinalBulletGunonRing2 : Script
+[InspectorDropdownName("Bosses/BossFinalBullet/GunonRing2")]
+public class BossFinalBulletGunonRing2 : Script
+  {
+    private const float ExpandSpeed = 3f;
+    private const float ExpandAcceleration = -0.3f;
+    private const float RotationalSpeed = 13f;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      private const float ExpandSpeed = 3f;
-      private const float ExpandAcceleration = -0.3f;
-      private const float RotationalSpeed = 13f;
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new BossFinalBulletGunonRing2__Topc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    public class BatBullet : Bullet
+    {
+      private float m_angle;
+      private int m_index;
+      private BossFinalBulletGunonRing1 m_parentScript;
+
+      public BatBullet()
+        : base("bat")
+      {
+      }
 
       [DebuggerHidden]
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalBulletGunonRing2__Topc__Iterator0()
+        return (IEnumerator) new BossFinalBulletGunonRing2.BatBullet__Topc__Iterator0()
         {
           _this = this
         };
       }
-
-      public class BatBullet : Bullet
-      {
-        private float m_angle;
-        private int m_index;
-        private BossFinalBulletGunonRing1 m_parentScript;
-
-        public BatBullet()
-          : base("bat")
-        {
-        }
-
-        [DebuggerHidden]
-        protected override IEnumerator Top()
-        {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BossFinalBulletGunonRing2.BatBullet__Topc__Iterator0()
-          {
-            _this = this
-          };
-        }
-      }
-
-      public class FireBullet : Bullet
-      {
-        public FireBullet()
-          : base("fire")
-        {
-        }
-
-        [DebuggerHidden]
-        protected override IEnumerator Top()
-        {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new BossFinalBulletGunonRing2.FireBullet__Topc__Iterator0()
-          {
-            _this = this
-          };
-        }
-      }
     }
 
-}
+    public class FireBullet : Bullet
+    {
+      public FireBullet()
+        : base("fire")
+      {
+      }
+
+      [DebuggerHidden]
+      protected override IEnumerator Top()
+      {
+        // ISSUE: object of a compiler-generated type is created
+        return (IEnumerator) new BossFinalBulletGunonRing2.FireBullet__Topc__Iterator0()
+        {
+          _this = this
+        };
+      }
+    }
+  }
+

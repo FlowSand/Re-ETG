@@ -8,16 +8,13 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public class AkTriggerDisable : AkTriggerBase
+public class AkTriggerDisable : AkTriggerBase
+  {
+    private void OnDisable()
     {
-      private void OnDisable()
-      {
-        if (this.triggerDelegate == null)
-          return;
-        this.triggerDelegate((GameObject) null);
-      }
+      if (this.triggerDelegate == null)
+        return;
+      this.triggerDelegate((GameObject) null);
     }
+  }
 
-}

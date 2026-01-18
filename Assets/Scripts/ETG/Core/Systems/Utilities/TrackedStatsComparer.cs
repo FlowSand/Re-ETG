@@ -8,13 +8,10 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class TrackedStatsComparer : IEqualityComparer<TrackedStats>
-    {
-      public bool Equals(TrackedStats x, TrackedStats y) => x == y;
+public class TrackedStatsComparer : IEqualityComparer<TrackedStats>
+  {
+    public bool Equals(TrackedStats x, TrackedStats y) => x == y;
 
-      public int GetHashCode(TrackedStats obj) => (int) obj;
-    }
+    public int GetHashCode(TrackedStats obj) => (int) obj;
+  }
 
-}

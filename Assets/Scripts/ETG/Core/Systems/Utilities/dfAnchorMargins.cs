@@ -9,24 +9,21 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class dfAnchorMargins
+[Serializable]
+public class dfAnchorMargins
+  {
+    [SerializeField]
+    public float left;
+    [SerializeField]
+    public float top;
+    [SerializeField]
+    public float right;
+    [SerializeField]
+    public float bottom;
+
+    public override string ToString()
     {
-      [SerializeField]
-      public float left;
-      [SerializeField]
-      public float top;
-      [SerializeField]
-      public float right;
-      [SerializeField]
-      public float bottom;
-
-      public override string ToString()
-      {
-        return $"[L:{this.left},T:{this.top},R:{this.right},B:{this.bottom}]";
-      }
+      return $"[L:{this.left},T:{this.top},R:{this.right},B:{this.bottom}]";
     }
+  }
 
-}

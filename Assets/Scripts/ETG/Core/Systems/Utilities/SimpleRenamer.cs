@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class SimpleRenamer : MonoBehaviour
-    {
-      public string OverrideName;
+public class SimpleRenamer : MonoBehaviour
+  {
+    public string OverrideName;
 
-      public void Start() => this.name = this.OverrideName;
-    }
+    public void Start() => this.name = this.OverrideName;
+  }
 
-}

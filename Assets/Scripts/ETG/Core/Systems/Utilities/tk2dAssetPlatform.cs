@@ -8,19 +8,16 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class tk2dAssetPlatform
+[Serializable]
+public class tk2dAssetPlatform
+  {
+    public string name = string.Empty;
+    public float scale = 1f;
+
+    public tk2dAssetPlatform(string name, float scale)
     {
-      public string name = string.Empty;
-      public float scale = 1f;
-
-      public tk2dAssetPlatform(string name, float scale)
-      {
-        this.name = name;
-        this.scale = scale;
-      }
+      this.name = name;
+      this.scale = scale;
     }
+  }
 
-}

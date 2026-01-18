@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkChannelOrdering
-    {
-      ChannelOrdering_Standard,
-      ChannelOrdering_RunTime,
-    }
+public enum AkChannelOrdering
+  {
+    ChannelOrdering_Standard,
+    ChannelOrdering_RunTime,
+  }
 
-}

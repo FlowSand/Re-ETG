@@ -8,14 +8,11 @@ using FullInspector;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/DraGun/GlockDirectedHardLeft2")]
-    public class DraGunGlockDirectedHardLeft2 : DraGunGlockDirected2
-    {
-      protected override string BulletName => "glockLeft";
+[InspectorDropdownName("Bosses/DraGun/GlockDirectedHardLeft2")]
+public class DraGunGlockDirectedHardLeft2 : DraGunGlockDirected2
+  {
+    protected override string BulletName => "glockLeft";
 
-      protected override bool IsHard => true;
-    }
+    protected override bool IsHard => true;
+  }
 
-}

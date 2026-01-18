@@ -8,15 +8,12 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class PitSquarePlacementOptions
-    {
-      public float PitSquareChance = 0.1f;
-      public bool CanBeFlushLeft;
-      public bool CanBeFlushRight;
-      public bool CanBeFlushBottom;
-    }
+[Serializable]
+public class PitSquarePlacementOptions
+  {
+    public float PitSquareChance = 0.1f;
+    public bool CanBeFlushLeft;
+    public bool CanBeFlushRight;
+    public bool CanBeFlushBottom;
+  }
 
-}

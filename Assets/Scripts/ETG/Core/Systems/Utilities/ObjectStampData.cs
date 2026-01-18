@@ -9,13 +9,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class ObjectStampData : StampDataBase
-    {
-      [SerializeField]
-      public GameObject objectReference;
-    }
+[Serializable]
+public class ObjectStampData : StampDataBase
+  {
+    [SerializeField]
+    public GameObject objectReference;
+  }
 
-}

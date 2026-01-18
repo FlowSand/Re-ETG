@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum PlatformDlc
-    {
-      EARLY_MTX_GUN,
-      EARLY_COBALT_HAMMER,
-    }
+public enum PlatformDlc
+  {
+    EARLY_MTX_GUN,
+    EARLY_COBALT_HAMMER,
+  }
 
-}

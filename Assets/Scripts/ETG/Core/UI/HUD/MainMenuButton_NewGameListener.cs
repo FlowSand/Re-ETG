@@ -8,14 +8,11 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.UI.HUD
-{
-    public class MainMenuButton_NewGameListener : MonoBehaviour
+public class MainMenuButton_NewGameListener : MonoBehaviour
+  {
+    private void OnClick(dfControl control, dfMouseEventArgs mouseEvent)
     {
-      private void OnClick(dfControl control, dfMouseEventArgs mouseEvent)
-      {
-        GameManager.Instance.LoadCharacterSelect();
-      }
+      GameManager.Instance.LoadCharacterSelect();
     }
+  }
 
-}

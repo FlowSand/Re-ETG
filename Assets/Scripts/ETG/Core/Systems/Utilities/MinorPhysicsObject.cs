@@ -8,17 +8,14 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class MinorPhysicsObject : MonoBehaviour
+public class MinorPhysicsObject : MonoBehaviour
+  {
+    private void Start()
     {
-      private void Start()
-      {
-      }
-
-      private void Update()
-      {
-      }
     }
 
-}
+    private void Update()
+    {
+    }
+  }
+

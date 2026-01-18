@@ -8,16 +8,13 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public class AkTriggerMouseUp : AkTriggerBase
+public class AkTriggerMouseUp : AkTriggerBase
+  {
+    private void OnMouseUp()
     {
-      private void OnMouseUp()
-      {
-        if (this.triggerDelegate == null)
-          return;
-        this.triggerDelegate((GameObject) null);
-      }
+      if (this.triggerDelegate == null)
+        return;
+      this.triggerDelegate((GameObject) null);
     }
+  }
 
-}

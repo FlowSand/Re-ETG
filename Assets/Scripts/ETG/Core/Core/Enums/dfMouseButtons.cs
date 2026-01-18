@@ -8,15 +8,12 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    [Flags]
-    public enum dfMouseButtons
-    {
-      None = 0,
-      Left = 1,
-      Right = 2,
-      Middle = 4,
-    }
+[Flags]
+public enum dfMouseButtons
+  {
+    None = 0,
+    Left = 1,
+    Right = 2,
+    Middle = 4,
+  }
 
-}

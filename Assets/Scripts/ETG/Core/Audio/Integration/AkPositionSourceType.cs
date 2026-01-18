@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkPositionSourceType
-    {
-      AkUserDef,
-      AkGameDef,
-    }
+public enum AkPositionSourceType
+  {
+    AkUserDef,
+    AkGameDef,
+  }
 
-}

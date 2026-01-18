@@ -6,11 +6,8 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IEventTriggerable
-    {
-      void Trigger(int index);
-    }
+public interface IEventTriggerable
+  {
+    void Trigger(int index);
+  }
 
-}

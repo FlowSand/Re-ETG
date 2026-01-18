@@ -8,27 +8,24 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class UVScrollTriggerableInitializer : MonoBehaviour
+public class UVScrollTriggerableInitializer : MonoBehaviour
+  {
+    public int NumberFrames;
+    public float TimePerFrame;
+
+    public void OnSpawned() => this.ResetAnimation();
+
+    public void TriggerAnimation()
     {
-      public int NumberFrames;
-      public float TimePerFrame;
-
-      public void OnSpawned() => this.ResetAnimation();
-
-      public void TriggerAnimation()
-      {
-        float num = UnityEngine.Time.realtimeSinceStartup % ((float) this.NumberFrames * this.TimePerFrame);
-        Material material = this.GetComponent<MeshRenderer>().material;
-        material.SetFloat("_TimeOffset", num);
-        material.SetFloat("_ForcedFrame", -1f);
-      }
-
-      public void ResetAnimation()
-      {
-        this.GetComponent<MeshRenderer>().material.SetFloat("_ForcedFrame", 0.0f);
-      }
+      float num = UnityEngine.Time.realtimeSinceStartup % ((float) this.NumberFrames * this.TimePerFrame);
+      Material material = this.GetComponent<MeshRenderer>().material;
+      material.SetFloat("_TimeOffset", num);
+      material.SetFloat("_ForcedFrame", -1f);
     }
 
-}
+    public void ResetAnimation()
+    {
+      this.GetComponent<MeshRenderer>().material.SetFloat("_ForcedFrame", 0.0f);
+    }
+  }
+

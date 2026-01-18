@@ -6,15 +6,12 @@
 
 #nullable disable
 
-namespace ETG.Core.Actors.Behaviors
-{
-    public enum BehaviorResult
-    {
-      Continue,
-      SkipRemainingClassBehaviors,
-      SkipAllRemainingBehaviors,
-      RunContinuousInClass,
-      RunContinuous,
-    }
+public enum BehaviorResult
+  {
+    Continue,
+    SkipRemainingClassBehaviors,
+    SkipAllRemainingBehaviors,
+    RunContinuousInClass,
+    RunContinuous,
+  }
 
-}

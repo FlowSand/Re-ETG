@@ -9,21 +9,18 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Effects
-{
-    public class DamageTypeEffectMatrix : ScriptableObject
+public class DamageTypeEffectMatrix : ScriptableObject
+  {
+    public List<DamageTypeEffectDefinition> definitions;
+
+    public DamageTypeEffectDefinition GetDefinitionForType(CoreDamageTypes typeFlags)
     {
-      public List<DamageTypeEffectDefinition> definitions;
-
-      public DamageTypeEffectDefinition GetDefinitionForType(CoreDamageTypes typeFlags)
+      for (int index = 0; index < this.definitions.Count; ++index)
       {
-        for (int index = 0; index < this.definitions.Count; ++index)
-        {
-          if ((typeFlags & this.definitions[index].damageType) == this.definitions[index].damageType)
-            return this.definitions[index];
-        }
-        return (DamageTypeEffectDefinition) null;
+        if ((typeFlags & this.definitions[index].damageType) == this.definitions[index].damageType)
+          return this.definitions[index];
       }
+      return (DamageTypeEffectDefinition) null;
     }
+  }
 
-}

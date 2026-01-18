@@ -8,11 +8,8 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class RelatedObjects : MonoBehaviour
-    {
-      public GameObject[] relatedObjects;
-    }
+public class RelatedObjects : MonoBehaviour
+  {
+    public GameObject[] relatedObjects;
+  }
 
-}

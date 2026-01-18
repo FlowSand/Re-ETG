@@ -6,15 +6,12 @@
 
 #nullable disable
 
-namespace ETG.Core.Actors.Behaviors
-{
-    public abstract class AttackBehaviorBase : BehaviorBase
-    {
-      public abstract bool IsReady();
+  public abstract class AttackBehaviorBase : BehaviorBase
+  {
+    public abstract bool IsReady();
 
-      public abstract float GetMinReadyRange();
+    public abstract float GetMinReadyRange();
 
-      public abstract float GetMaxRange();
-    }
+    public abstract float GetMaxRange();
+  }
 
-}

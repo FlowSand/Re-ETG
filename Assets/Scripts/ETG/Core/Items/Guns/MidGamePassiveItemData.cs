@@ -8,19 +8,16 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Items.Guns
-{
-    public class MidGamePassiveItemData
+public class MidGamePassiveItemData
+  {
+    public int PickupID = -1;
+    public List<object> SerializedData;
+
+    public MidGamePassiveItemData(PassiveItem p)
     {
-      public int PickupID = -1;
-      public List<object> SerializedData;
-
-      public MidGamePassiveItemData(PassiveItem p)
-      {
-        this.PickupID = p.PickupObjectId;
-        this.SerializedData = new List<object>();
-        p.MidGameSerialize(this.SerializedData);
-      }
+      this.PickupID = p.PickupObjectId;
+      this.SerializedData = new List<object>();
+      p.MidGameSerialize(this.SerializedData);
     }
+  }
 
-}

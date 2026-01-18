@@ -6,25 +6,22 @@
 
 #nullable disable
 
-namespace ETG.Core.Items.Passive
-{
-    public class AncientPrimerItem : PassiveItem
+public class AncientPrimerItem : PassiveItem
+  {
+    public override void Pickup(PlayerController player)
     {
-      public override void Pickup(PlayerController player)
-      {
-        if (this.m_pickedUp)
-          return;
-        base.Pickup(player);
-      }
-
-      public override DebrisObject Drop(PlayerController player)
-      {
-        DebrisObject debrisObject = base.Drop(player);
-        debrisObject.GetComponent<AncientPrimerItem>().m_pickedUpThisRun = true;
-        return debrisObject;
-      }
-
-      protected override void OnDestroy() => base.OnDestroy();
+      if (this.m_pickedUp)
+        return;
+      base.Pickup(player);
     }
 
-}
+    public override DebrisObject Drop(PlayerController player)
+    {
+      DebrisObject debrisObject = base.Drop(player);
+      debrisObject.GetComponent<AncientPrimerItem>().m_pickedUpThisRun = true;
+      return debrisObject;
+    }
+
+    protected override void OnDestroy() => base.OnDestroy();
+  }
+

@@ -6,18 +6,15 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class DraGunNeckController : BraveBehaviour
+public class DraGunNeckController : BraveBehaviour
+  {
+    public void Start() => this.aiActor = this.transform.parent.GetComponent<AIActor>();
+
+    protected override void OnDestroy() => base.OnDestroy();
+
+    public void TriggerAnimationEvent(string eventInfo)
     {
-      public void Start() => this.aiActor = this.transform.parent.GetComponent<AIActor>();
-
-      protected override void OnDestroy() => base.OnDestroy();
-
-      public void TriggerAnimationEvent(string eventInfo)
-      {
-        this.aiActor.behaviorSpeculator.TriggerAnimationEvent(eventInfo);
-      }
+      this.aiActor.behaviorSpeculator.TriggerAnimationEvent(eventInfo);
     }
+  }
 
-}

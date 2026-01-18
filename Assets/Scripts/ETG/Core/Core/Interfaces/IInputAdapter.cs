@@ -8,23 +8,20 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IInputAdapter
-    {
-      bool GetKeyDown(KeyCode key);
+public interface IInputAdapter
+  {
+    bool GetKeyDown(KeyCode key);
 
-      bool GetKeyUp(KeyCode key);
+    bool GetKeyUp(KeyCode key);
 
-      float GetAxis(string axisName);
+    float GetAxis(string axisName);
 
-      Vector2 GetMousePosition();
+    Vector2 GetMousePosition();
 
-      bool GetMouseButton(int button);
+    bool GetMouseButton(int button);
 
-      bool GetMouseButtonDown(int button);
+    bool GetMouseButtonDown(int button);
 
-      bool GetMouseButtonUp(int button);
-    }
+    bool GetMouseButtonUp(int button);
+  }
 
-}

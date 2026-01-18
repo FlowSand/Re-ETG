@@ -9,16 +9,13 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Effects
-{
-    [Serializable]
-    public class DamageTypeEffectDefinition
-    {
-      [HideInInspector]
-      [SerializeField]
-      public string name = "dongs";
-      public CoreDamageTypes damageType;
-      public VFXPool wallDecals;
-    }
+[Serializable]
+public class DamageTypeEffectDefinition
+  {
+    [HideInInspector]
+    [SerializeField]
+    public string name = "dongs";
+    public CoreDamageTypes damageType;
+    public VFXPool wallDecals;
+  }
 
-}

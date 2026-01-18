@@ -11,20 +11,17 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/BulletBros/TridentAttack1")]
-    public class BulletBrosTridentAttack1 : Script
+[InspectorDropdownName("Bosses/BulletBros/TridentAttack1")]
+public class BulletBrosTridentAttack1 : Script
+  {
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new BulletBrosTridentAttack1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletBrosTridentAttack1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

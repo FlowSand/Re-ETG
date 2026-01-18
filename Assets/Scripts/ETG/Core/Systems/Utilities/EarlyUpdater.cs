@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class EarlyUpdater : MonoBehaviour
-    {
-      private void Awake() => BraveTime.CacheDeltaTimeForFrame();
+public class EarlyUpdater : MonoBehaviour
+  {
+    private void Awake() => BraveTime.CacheDeltaTimeForFrame();
 
-      private void Update() => BraveTime.CacheDeltaTimeForFrame();
-    }
+    private void Update() => BraveTime.CacheDeltaTimeForFrame();
+  }
 
-}

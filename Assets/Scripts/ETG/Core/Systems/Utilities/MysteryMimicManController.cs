@@ -10,19 +10,16 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class MysteryMimicManController : MonoBehaviour
+public class MysteryMimicManController : MonoBehaviour
+  {
+    [DebuggerHidden]
+    private IEnumerator Start()
     {
-      [DebuggerHidden]
-      private IEnumerator Start()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new MysteryMimicManController__Startc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MysteryMimicManController__Startc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

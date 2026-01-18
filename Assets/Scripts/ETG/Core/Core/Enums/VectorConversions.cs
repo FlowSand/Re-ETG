@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum VectorConversions
-    {
-      Floor,
-      Ceil,
-      Round,
-    }
+public enum VectorConversions
+  {
+    Floor,
+    Ceil,
+    Round,
+  }
 
-}

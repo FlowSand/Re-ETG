@@ -8,27 +8,24 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class StringTableStringAttribute : PropertyAttribute
+public class StringTableStringAttribute : PropertyAttribute
+  {
+    public string stringTableTarget;
+    public bool isInToggledState;
+    public string keyToWrite = string.Empty;
+    public StringTableStringAttribute.TargetStringTableType targetStringTable;
+
+    public StringTableStringAttribute(string tableTarget = null)
     {
-      public string stringTableTarget;
-      public bool isInToggledState;
-      public string keyToWrite = string.Empty;
-      public StringTableStringAttribute.TargetStringTableType targetStringTable;
-
-      public StringTableStringAttribute(string tableTarget = null)
-      {
-        this.stringTableTarget = tableTarget;
-      }
-
-      public enum TargetStringTableType
-      {
-        DEFAULT,
-        ENEMIES,
-        ITEMS,
-        UI,
-      }
+      this.stringTableTarget = tableTarget;
     }
 
-}
+    public enum TargetStringTableType
+    {
+      DEFAULT,
+      ENEMIES,
+      ITEMS,
+      UI,
+    }
+  }
+

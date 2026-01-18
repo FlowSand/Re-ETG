@@ -11,20 +11,17 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/Beholster/Wave1")]
-    public class BeholsterWave1 : Script
+[InspectorDropdownName("Bosses/Beholster/Wave1")]
+public class BeholsterWave1 : Script
+  {
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new BeholsterWave1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BeholsterWave1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

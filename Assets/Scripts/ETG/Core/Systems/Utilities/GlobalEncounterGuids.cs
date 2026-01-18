@@ -6,11 +6,8 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public static class GlobalEncounterGuids
-    {
-      public static string Mimic = "0dcef380e17d409684da9787b04994bf";
-    }
+  public static class GlobalEncounterGuids
+  {
+    public static string Mimic = "0dcef380e17d409684da9787b04994bf";
+  }
 
-}

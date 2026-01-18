@@ -8,23 +8,20 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class DamageTypeModifier
+[Serializable]
+public class DamageTypeModifier
+  {
+    public CoreDamageTypes damageType;
+    public float damageMultiplier = 1f;
+
+    public DamageTypeModifier()
     {
-      public CoreDamageTypes damageType;
-      public float damageMultiplier = 1f;
-
-      public DamageTypeModifier()
-      {
-      }
-
-      public DamageTypeModifier(DamageTypeModifier other)
-      {
-        this.damageType = other.damageType;
-        this.damageMultiplier = other.damageMultiplier;
-      }
     }
 
-}
+    public DamageTypeModifier(DamageTypeModifier other)
+    {
+      this.damageType = other.damageType;
+      this.damageMultiplier = other.damageMultiplier;
+    }
+  }
+

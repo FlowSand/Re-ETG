@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class GunderfuryTier
-    {
-      [PickupIdentifier]
-      public int GunID;
-      public string IdleVFX;
-    }
+[Serializable]
+public class GunderfuryTier
+  {
+    [PickupIdentifier]
+    public int GunID;
+    public string IdleVFX;
+  }
 
-}

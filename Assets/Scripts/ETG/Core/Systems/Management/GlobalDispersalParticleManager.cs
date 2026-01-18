@@ -9,29 +9,26 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Management
-{
-    public static class GlobalDispersalParticleManager
+  public static class GlobalDispersalParticleManager
+  {
+    public static Dictionary<GameObject, ParticleSystem> PrefabToSystemMap;
+
+    public static ParticleSystem GetSystemForPrefab(GameObject prefab)
     {
-      public static Dictionary<GameObject, ParticleSystem> PrefabToSystemMap;
-
-      public static ParticleSystem GetSystemForPrefab(GameObject prefab)
-      {
-        if (GlobalDispersalParticleManager.PrefabToSystemMap == null)
-          GlobalDispersalParticleManager.PrefabToSystemMap = new Dictionary<GameObject, ParticleSystem>();
-        if (GlobalDispersalParticleManager.PrefabToSystemMap.ContainsKey(prefab))
-          return GlobalDispersalParticleManager.PrefabToSystemMap[prefab];
-        ParticleSystem component = Object.Instantiate<GameObject>(prefab, Vector3.zero, Quaternion.identity).GetComponent<ParticleSystem>();
-        GlobalDispersalParticleManager.PrefabToSystemMap.Add(prefab, component);
-        return component;
-      }
-
-      public static void Clear()
-      {
-        if (GlobalDispersalParticleManager.PrefabToSystemMap == null)
-          return;
-        GlobalDispersalParticleManager.PrefabToSystemMap.Clear();
-      }
+      if (GlobalDispersalParticleManager.PrefabToSystemMap == null)
+        GlobalDispersalParticleManager.PrefabToSystemMap = new Dictionary<GameObject, ParticleSystem>();
+      if (GlobalDispersalParticleManager.PrefabToSystemMap.ContainsKey(prefab))
+        return GlobalDispersalParticleManager.PrefabToSystemMap[prefab];
+      ParticleSystem component = Object.Instantiate<GameObject>(prefab, Vector3.zero, Quaternion.identity).GetComponent<ParticleSystem>();
+      GlobalDispersalParticleManager.PrefabToSystemMap.Add(prefab, component);
+      return component;
     }
 
-}
+    public static void Clear()
+    {
+      if (GlobalDispersalParticleManager.PrefabToSystemMap == null)
+        return;
+      GlobalDispersalParticleManager.PrefabToSystemMap.Clear();
+    }
+  }
+

@@ -11,35 +11,32 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Kaliber/TwoHeads1")]
-    public class KaliberTwoHeads1 : Script
+[InspectorDropdownName("Kaliber/TwoHeads1")]
+public class KaliberTwoHeads1 : Script
+  {
+    private const int NumShots = 6;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      private const int NumShots = 6;
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new KaliberTwoHeads1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new KaliberTwoHeads1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      private void FireArc(
-        string transform,
-        float startAngle,
-        float sweepAngle,
-        int numBullets,
-        int muzzleIndex,
-        bool offset)
-      {
-        float num = !offset ? (float) numBullets : (float) (numBullets - 1);
-        for (int i = 0; (double) i < (double) num; ++i)
-          this.Fire(new Offset(transform), new Brave.BulletScript.Direction(this.SubdivideArc(startAngle, sweepAngle, numBullets, i, offset)), new Brave.BulletScript.Speed(9f), new Bullet(suppressVfx: i != muzzleIndex));
-      }
+        _this = this
+      };
     }
 
-}
+    private void FireArc(
+      string transform,
+      float startAngle,
+      float sweepAngle,
+      int numBullets,
+      int muzzleIndex,
+      bool offset)
+    {
+      float num = !offset ? (float) numBullets : (float) (numBullets - 1);
+      for (int i = 0; (double) i < (double) num; ++i)
+        this.Fire(new Offset(transform), new Brave.BulletScript.Direction(this.SubdivideArc(startAngle, sweepAngle, numBullets, i, offset)), new Brave.BulletScript.Speed(9f), new Bullet(suppressVfx: i != muzzleIndex));
+    }
+  }
+

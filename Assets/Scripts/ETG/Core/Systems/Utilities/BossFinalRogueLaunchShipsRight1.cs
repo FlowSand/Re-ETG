@@ -8,11 +8,8 @@ using FullInspector;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/BossFinalRogue/LaunchShipsRight1")]
-    public class BossFinalRogueLaunchShipsRight1 : BossFinalRogueLaunchShips1
-    {
-    }
+[InspectorDropdownName("Bosses/BossFinalRogue/LaunchShipsRight1")]
+public class BossFinalRogueLaunchShipsRight1 : BossFinalRogueLaunchShips1
+  {
+  }
 
-}

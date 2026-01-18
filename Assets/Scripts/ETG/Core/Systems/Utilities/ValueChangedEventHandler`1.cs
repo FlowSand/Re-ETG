@@ -6,9 +6,6 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [dfEventCategory("Properties")]
-    public delegate void ValueChangedEventHandler<T>(object sender, T value);
+[dfEventCategory("Properties")]
+public delegate void ValueChangedEventHandler<T>(object sender, T value);
 
-}

@@ -8,16 +8,13 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Effects
-{
-    [ExecuteInEditMode]
-    [AddComponentMenu("Image Effects/Sepia Tone")]
-    public class SepiaToneEffect : ImageEffectBase
+[ExecuteInEditMode]
+[AddComponentMenu("Image Effects/Sepia Tone")]
+public class SepiaToneEffect : ImageEffectBase
+  {
+    private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-      private void OnRenderImage(RenderTexture source, RenderTexture destination)
-      {
-        Graphics.Blit((Texture) source, destination, this.material);
-      }
+      Graphics.Blit((Texture) source, destination, this.material);
     }
+  }
 
-}

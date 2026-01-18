@@ -9,55 +9,52 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Items.Active
-{
-    public class TimeSlowPlayerItem : PlayerItem
+public class TimeSlowPlayerItem : PlayerItem
+  {
+    public float timeScale = 0.5f;
+    public float duration = 5f;
+    public bool HasSynergy;
+    [LongNumericEnum]
+    public CustomSynergyType RequiredSynergy;
+    public float overrideTimeScale;
+    public RadialSlowInterface test;
+
+    protected override void DoEffect(PlayerController user)
     {
-      public float timeScale = 0.5f;
-      public float duration = 5f;
-      public bool HasSynergy;
-      [LongNumericEnum]
-      public CustomSynergyType RequiredSynergy;
-      public float overrideTimeScale;
-      public RadialSlowInterface test;
+      user.StartCoroutine(this.HandleDuration(user));
+    }
 
-      protected override void DoEffect(PlayerController user)
+    [DebuggerHidden]
+    private IEnumerator HandleDuration(PlayerController user)
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new TimeSlowPlayerItem__HandleDurationc__Iterator0()
       {
-        user.StartCoroutine(this.HandleDuration(user));
-      }
+        user = user,
+        _this = this
+      };
+    }
 
-      [DebuggerHidden]
-      private IEnumerator HandleDuration(PlayerController user)
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new TimeSlowPlayerItem__HandleDurationc__Iterator0()
-        {
-          user = user,
-          _this = this
-        };
-      }
+    protected override void OnPreDrop(PlayerController user)
+    {
+      if (!this.IsCurrentlyActive)
+        return;
+      this.StopAllCoroutines();
+      int num = (int) AkSoundEngine.PostEvent("State_Bullet_Time_off", this.gameObject);
+      BraveTime.ClearMultiplier(this.gameObject);
+      this.IsCurrentlyActive = false;
+    }
 
-      protected override void OnPreDrop(PlayerController user)
+    protected override void OnDestroy()
+    {
+      if (this.IsCurrentlyActive)
       {
-        if (!this.IsCurrentlyActive)
-          return;
         this.StopAllCoroutines();
         int num = (int) AkSoundEngine.PostEvent("State_Bullet_Time_off", this.gameObject);
         BraveTime.ClearMultiplier(this.gameObject);
         this.IsCurrentlyActive = false;
       }
-
-      protected override void OnDestroy()
-      {
-        if (this.IsCurrentlyActive)
-        {
-          this.StopAllCoroutines();
-          int num = (int) AkSoundEngine.PostEvent("State_Bullet_Time_off", this.gameObject);
-          BraveTime.ClearMultiplier(this.gameObject);
-          this.IsCurrentlyActive = false;
-        }
-        base.OnDestroy();
-      }
+      base.OnDestroy();
     }
+  }
 
-}

@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfMobileKeyboardTrigger
-    {
-      Manual,
-      ShowOnFocus,
-      ShowOnClick,
-    }
+public enum dfMobileKeyboardTrigger
+  {
+    Manual,
+    ShowOnFocus,
+    ShowOnClick,
+  }
 
-}

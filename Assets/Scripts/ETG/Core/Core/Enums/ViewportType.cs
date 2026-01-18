@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum ViewportType
-    {
-      Camera,
-      Gameplay,
-    }
+public enum ViewportType
+  {
+    Camera,
+    Gameplay,
+  }
 
-}

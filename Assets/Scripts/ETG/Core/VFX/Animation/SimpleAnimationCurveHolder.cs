@@ -8,11 +8,8 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    public class SimpleAnimationCurveHolder : MonoBehaviour
-    {
-      public AnimationCurve curve;
-    }
+public class SimpleAnimationCurveHolder : MonoBehaviour
+  {
+    public AnimationCurve curve;
+  }
 
-}

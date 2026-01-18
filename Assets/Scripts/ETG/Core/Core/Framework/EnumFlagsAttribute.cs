@@ -8,10 +8,7 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class EnumFlagsAttribute : PropertyAttribute
-    {
-    }
+public class EnumFlagsAttribute : PropertyAttribute
+  {
+  }
 
-}

@@ -10,20 +10,17 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("MimicWall/IntroSlam1")]
-    public class WallMimicIntroSlam1 : WallMimicSlam1
+[InspectorDropdownName("MimicWall/IntroSlam1")]
+public class WallMimicIntroSlam1 : WallMimicSlam1
+  {
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new WallMimicIntroSlam1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new WallMimicIntroSlam1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum HitDirection
-    {
-      Unknown,
-      Forward,
-      Backward,
-    }
+public enum HitDirection
+  {
+    Unknown,
+    Forward,
+    Backward,
+  }
 
-}

@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    public class CheckAnimationAttribute : PropertyAttribute
-    {
-      public string animator;
+public class CheckAnimationAttribute : PropertyAttribute
+  {
+    public string animator;
 
-      public CheckAnimationAttribute(string animator = null) => this.animator = animator;
-    }
+    public CheckAnimationAttribute(string animator = null) => this.animator = animator;
+  }
 
-}

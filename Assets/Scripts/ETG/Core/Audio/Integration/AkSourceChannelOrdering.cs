@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkSourceChannelOrdering
-    {
-      SourceChannelOrdering_Standard,
-      SourceChannelOrdering_Film,
-      SourceChannelOrdering_FuMa,
-    }
+public enum AkSourceChannelOrdering
+  {
+    SourceChannelOrdering_Standard,
+    SourceChannelOrdering_Film,
+    SourceChannelOrdering_FuMa,
+  }
 
-}

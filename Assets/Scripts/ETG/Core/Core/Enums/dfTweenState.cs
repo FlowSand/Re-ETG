@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfTweenState
-    {
-      Stopped,
-      Paused,
-      Playing,
-      Started,
-    }
+public enum dfTweenState
+  {
+    Stopped,
+    Paused,
+    Playing,
+    Started,
+  }
 
-}

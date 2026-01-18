@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkDiffractionFlags
-    {
-      DiffractionFlags_UseBuiltInParam = 1,
-      DiffractionFlags_UseObstruction = 2,
-      DiffractionFlags_CalcEmitterVirtualPosition = 8,
-      DefaultDiffractionFlags = 11, // 0x0000000B
-    }
+public enum AkDiffractionFlags
+  {
+    DiffractionFlags_UseBuiltInParam = 1,
+    DiffractionFlags_UseObstruction = 2,
+    DiffractionFlags_CalcEmitterVirtualPosition = 8,
+    DefaultDiffractionFlags = 11, // 0x0000000B
+  }
 
-}

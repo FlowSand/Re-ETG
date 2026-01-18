@@ -9,14 +9,11 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class DungeonChainStructure
-    {
-      public FlowNodeBuildData parentNode;
-      public FlowNodeBuildData optionalRequiredNode;
-      public List<FlowNodeBuildData> containedNodes = new List<FlowNodeBuildData>();
-      public int previousLoopDistanceMetric = int.MaxValue;
-    }
+public class DungeonChainStructure
+  {
+    public FlowNodeBuildData parentNode;
+    public FlowNodeBuildData optionalRequiredNode;
+    public List<FlowNodeBuildData> containedNodes = new List<FlowNodeBuildData>();
+    public int previousLoopDistanceMetric = int.MaxValue;
+  }
 
-}

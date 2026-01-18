@@ -10,39 +10,36 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class AutoDistortionDoer : BraveBehaviour
+public class AutoDistortionDoer : BraveBehaviour
+  {
+    public float Intensity = 0.25f;
+    public float Width = 0.125f;
+    public float Radius = 5f;
+    public float Duration = 1f;
+    public float DelayTime = 0.25f;
+    private bool m_triggered;
+
+    private void Start() => this.OnSpawned();
+
+    private void OnSpawned()
     {
-      public float Intensity = 0.25f;
-      public float Width = 0.125f;
-      public float Radius = 5f;
-      public float Duration = 1f;
-      public float DelayTime = 0.25f;
-      private bool m_triggered;
-
-      private void Start() => this.OnSpawned();
-
-      private void OnSpawned()
-      {
-        if (this.m_triggered)
-          return;
-        this.StartCoroutine(this.Distort(!(bool) (Object) this.sprite ? this.transform.position.XY() : this.sprite.WorldCenter));
-        this.m_triggered = true;
-      }
-
-      [DebuggerHidden]
-      private IEnumerator Distort(Vector2 centerPoint)
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AutoDistortionDoer__Distortc__Iterator0()
-        {
-          centerPoint = centerPoint,
-          _this = this
-        };
-      }
-
-      private void OnDespawned() => this.m_triggered = false;
+      if (this.m_triggered)
+        return;
+      this.StartCoroutine(this.Distort(!(bool) (Object) this.sprite ? this.transform.position.XY() : this.sprite.WorldCenter));
+      this.m_triggered = true;
     }
 
-}
+    [DebuggerHidden]
+    private IEnumerator Distort(Vector2 centerPoint)
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new AutoDistortionDoer__Distortc__Iterator0()
+      {
+        centerPoint = centerPoint,
+        _this = this
+      };
+    }
+
+    private void OnDespawned() => this.m_triggered = false;
+  }
+

@@ -11,22 +11,19 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/GiantPowderSkull/RollSlam1")]
-    public class GiantPowderSkullRollSlam1 : Script
+[InspectorDropdownName("Bosses/GiantPowderSkull/RollSlam1")]
+public class GiantPowderSkullRollSlam1 : Script
+  {
+    private const float OffsetDist = 1.5f;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      private const float OffsetDist = 1.5f;
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new GiantPowderSkullRollSlam1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GiantPowderSkullRollSlam1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

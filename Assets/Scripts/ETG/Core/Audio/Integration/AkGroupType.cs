@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkGroupType
-    {
-      AkGroupType_Switch,
-      AkGroupType_State,
-    }
+public enum AkGroupType
+  {
+    AkGroupType_Switch,
+    AkGroupType_State,
+  }
 
-}

@@ -6,10 +6,7 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface INonFinishingState
-    {
-    }
+public interface INonFinishingState
+  {
+  }
 
-}

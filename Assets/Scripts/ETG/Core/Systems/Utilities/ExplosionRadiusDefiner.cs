@@ -8,12 +8,9 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class ExplosionRadiusDefiner : MonoBehaviour
-    {
-      [SerializeField]
-      public float Radius = 3f;
-    }
+public class ExplosionRadiusDefiner : MonoBehaviour
+  {
+    [SerializeField]
+    public float Radius = 3f;
+  }
 
-}

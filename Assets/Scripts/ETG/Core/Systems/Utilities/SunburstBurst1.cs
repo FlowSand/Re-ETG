@@ -10,35 +10,32 @@ using System.Collections;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Sunburst/Burst1")]
-    public class SunburstBurst1 : Script
+[InspectorDropdownName("Sunburst/Burst1")]
+public class SunburstBurst1 : Script
+  {
+    private const int NumBullets = 24;
+
+    protected override IEnumerator Top()
     {
-      private const int NumBullets = 24;
+      float num1 = this.RandomAngle();
+      float num2 = 15f;
+      for (int index = 0; index < 24; ++index)
+        this.Fire(new Brave.BulletScript.Direction(num1 + (float) index * num2), new Brave.BulletScript.Speed(9f), (Bullet) new SunburstBurst1.BurstBullet());
+      return (IEnumerator) null;
+    }
+
+    public class BurstBullet : Bullet
+    {
+      public BurstBullet()
+        : base()
+      {
+      }
 
       protected override IEnumerator Top()
       {
-        float num1 = this.RandomAngle();
-        float num2 = 15f;
-        for (int index = 0; index < 24; ++index)
-          this.Fire(new Brave.BulletScript.Direction(num1 + (float) index * num2), new Brave.BulletScript.Speed(9f), (Bullet) new SunburstBurst1.BurstBullet());
+        this.ChangeSpeed(new Brave.BulletScript.Speed(5f), 40);
         return (IEnumerator) null;
       }
-
-      public class BurstBullet : Bullet
-      {
-        public BurstBullet()
-          : base()
-        {
-        }
-
-        protected override IEnumerator Top()
-        {
-          this.ChangeSpeed(new Brave.BulletScript.Speed(5f), 40);
-          return (IEnumerator) null;
-        }
-      }
     }
+  }
 
-}

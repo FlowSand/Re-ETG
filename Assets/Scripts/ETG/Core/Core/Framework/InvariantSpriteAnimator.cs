@@ -8,12 +8,9 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    [RequireComponent(typeof (tk2dSpriteAnimator))]
-    public class InvariantSpriteAnimator : BraveBehaviour
-    {
-      public void Awake() => this.spriteAnimator.ignoreTimeScale = true;
-    }
+[RequireComponent(typeof (tk2dSpriteAnimator))]
+public class InvariantSpriteAnimator : BraveBehaviour
+  {
+    public void Awake() => this.spriteAnimator.ignoreTimeScale = true;
+  }
 
-}

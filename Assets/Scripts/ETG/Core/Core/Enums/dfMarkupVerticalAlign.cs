@@ -6,15 +6,12 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfMarkupVerticalAlign
-    {
-      Baseline,
-      Top,
-      Middle,
-      Bottom,
-      None,
-    }
+public enum dfMarkupVerticalAlign
+  {
+    Baseline,
+    Top,
+    Middle,
+    Bottom,
+    None,
+  }
 
-}

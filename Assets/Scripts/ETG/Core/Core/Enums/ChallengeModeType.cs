@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum ChallengeModeType
-    {
-      None,
-      ChallengeMode,
-      ChallengeMegaMode,
-      GunslingKingTemporary,
-    }
+public enum ChallengeModeType
+  {
+    None,
+    ChallengeMode,
+    ChallengeMegaMode,
+    GunslingKingTemporary,
+  }
 
-}

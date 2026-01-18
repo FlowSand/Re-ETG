@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfVerticalAlignment
-    {
-      Top,
-      Middle,
-      Bottom,
-    }
+public enum dfVerticalAlignment
+  {
+    Top,
+    Middle,
+    Bottom,
+  }
 
-}

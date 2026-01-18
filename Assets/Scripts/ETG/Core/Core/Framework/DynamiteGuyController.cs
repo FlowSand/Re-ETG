@@ -6,21 +6,18 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class DynamiteGuyController : BraveBehaviour
+public class DynamiteGuyController : BraveBehaviour
+  {
+    public SimpleSparksDoer SparksDoer;
+
+    public void Update()
     {
-      public SimpleSparksDoer SparksDoer;
-
-      public void Update()
-      {
-        if (!this.aiActor.HasBeenAwoken || this.aiAnimator.IsPlaying("spawn"))
-          return;
-        this.SparksDoer.enabled = true;
-        this.enabled = false;
-      }
-
-      protected override void OnDestroy() => base.OnDestroy();
+      if (!this.aiActor.HasBeenAwoken || this.aiAnimator.IsPlaying("spawn"))
+        return;
+      this.SparksDoer.enabled = true;
+      this.enabled = false;
     }
 
-}
+    protected override void OnDestroy() => base.OnDestroy();
+  }
+

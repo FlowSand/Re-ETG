@@ -9,13 +9,10 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class DevolverTier
-    {
-      [EnemyIdentifier]
-      public List<string> tierGuids;
-    }
+[Serializable]
+public class DevolverTier
+  {
+    [EnemyIdentifier]
+    public List<string> tierGuids;
+  }
 
-}

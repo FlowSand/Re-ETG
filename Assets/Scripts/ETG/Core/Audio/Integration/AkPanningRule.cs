@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkPanningRule
-    {
-      AkPanningRule_Speakers,
-      AkPanningRule_Headphones,
-    }
+public enum AkPanningRule
+  {
+    AkPanningRule_Speakers,
+    AkPanningRule_Headphones,
+  }
 
-}

@@ -9,19 +9,16 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class FoyerCoatRackController : BraveBehaviour
+public class FoyerCoatRackController : BraveBehaviour
+  {
+    [DebuggerHidden]
+    private IEnumerator Start()
     {
-      [DebuggerHidden]
-      private IEnumerator Start()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new FoyerCoatRackController__Startc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new FoyerCoatRackController__Startc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

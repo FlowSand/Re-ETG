@@ -6,9 +6,6 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [dfEventCategory("Animation Events")]
-    public delegate void TweenNotification(dfTweenPlayableBase sender);
+[dfEventCategory("Animation Events")]
+public delegate void TweenNotification(dfTweenPlayableBase sender);
 
-}

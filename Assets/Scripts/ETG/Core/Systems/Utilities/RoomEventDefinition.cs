@@ -8,19 +8,16 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class RoomEventDefinition
+[Serializable]
+public class RoomEventDefinition
+  {
+    public RoomEventTriggerCondition condition;
+    public RoomEventTriggerAction action;
+
+    public RoomEventDefinition(RoomEventTriggerCondition c, RoomEventTriggerAction a)
     {
-      public RoomEventTriggerCondition condition;
-      public RoomEventTriggerAction action;
-
-      public RoomEventDefinition(RoomEventTriggerCondition c, RoomEventTriggerAction a)
-      {
-        this.condition = c;
-        this.action = a;
-      }
+      this.condition = c;
+      this.action = a;
     }
+  }
 
-}

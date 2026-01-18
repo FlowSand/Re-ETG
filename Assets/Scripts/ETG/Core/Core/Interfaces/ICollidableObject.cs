@@ -8,15 +8,12 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface ICollidableObject
-    {
-      PixelCollider PrimaryPixelCollider { get; }
+public interface ICollidableObject
+  {
+    PixelCollider PrimaryPixelCollider { get; }
 
-      bool CanCollideWith(SpeculativeRigidbody rigidbody);
+    bool CanCollideWith(SpeculativeRigidbody rigidbody);
 
-      List<PixelCollider> GetPixelColliders();
-    }
+    List<PixelCollider> GetPixelColliders();
+  }
 
-}

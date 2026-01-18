@@ -11,40 +11,37 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("AngryBook/BlueWave1")]
-    public class AngryBookBlueWave1 : Script
+[InspectorDropdownName("AngryBook/BlueWave1")]
+public class AngryBookBlueWave1 : Script
+  {
+    public int NumBullets = 32 /*0x20*/;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      public int NumBullets = 32 /*0x20*/;
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new AngryBookBlueWave1__Topc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    public class WaveBullet : Bullet
+    {
+      public WaveBullet()
+        : base()
+      {
+      }
 
       [DebuggerHidden]
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AngryBookBlueWave1__Topc__Iterator0()
+        return (IEnumerator) new AngryBookBlueWave1.WaveBullet__Topc__Iterator0()
         {
           _this = this
         };
       }
-
-      public class WaveBullet : Bullet
-      {
-        public WaveBullet()
-          : base()
-        {
-        }
-
-        [DebuggerHidden]
-        protected override IEnumerator Top()
-        {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new AngryBookBlueWave1.WaveBullet__Topc__Iterator0()
-          {
-            _this = this
-          };
-        }
-      }
     }
+  }
 
-}

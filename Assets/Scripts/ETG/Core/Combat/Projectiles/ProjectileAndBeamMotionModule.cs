@@ -8,14 +8,11 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Projectiles
-{
-    public abstract class ProjectileAndBeamMotionModule : ProjectileMotionModule
-    {
-      public abstract Vector2 GetBoneOffset(
-        BasicBeamController.BeamBone bone,
-        BeamController sourceBeam,
-        bool inverted);
-    }
+  public abstract class ProjectileAndBeamMotionModule : ProjectileMotionModule
+  {
+    public abstract Vector2 GetBoneOffset(
+      BasicBeamController.BeamBone bone,
+      BeamController sourceBeam,
+      bool inverted);
+  }
 
-}

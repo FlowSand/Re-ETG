@@ -8,14 +8,11 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    [AddComponentMenu("2D Toolkit/UI/Core/tk2dUISpriteAnimator")]
-    public class tk2dUISpriteAnimator : tk2dSpriteAnimator
-    {
-      public override void LateUpdate() => this.UpdateAnimation(tk2dUITime.deltaTime);
+[AddComponentMenu("2D Toolkit/UI/Core/tk2dUISpriteAnimator")]
+public class tk2dUISpriteAnimator : tk2dSpriteAnimator
+  {
+    public override void LateUpdate() => this.UpdateAnimation(tk2dUITime.deltaTime);
 
-      protected override void OnDestroy() => base.OnDestroy();
-    }
+    protected override void OnDestroy() => base.OnDestroy();
+  }
 
-}

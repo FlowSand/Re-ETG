@@ -11,57 +11,54 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Dungeon.Interactables
-{
-    [RequireComponent(typeof (GenericIntroDoer))]
-    public class BossFinalRogueIntroDoer : SpecificIntroDoer
+[RequireComponent(typeof (GenericIntroDoer))]
+public class BossFinalRogueIntroDoer : SpecificIntroDoer
+  {
+    private bool m_isFinished;
+
+    protected override void OnDestroy() => base.OnDestroy();
+
+    public override Vector2? OverrideIntroPosition
     {
-      private bool m_isFinished;
-
-      protected override void OnDestroy() => base.OnDestroy();
-
-      public override Vector2? OverrideIntroPosition
+      get
       {
-        get
-        {
-          GameManager.Instance.MainCameraController.OverrideZoomScale = 0.6666f;
-          return new Vector2?(this.GetComponent<BossFinalRogueController>().CameraPos);
-        }
-      }
-
-      public override void StartIntro(List<tk2dSpriteAnimator> animators)
-      {
-        this.StartCoroutine(this.DoIntro());
-      }
-
-      [DebuggerHidden]
-      public IEnumerator DoIntro()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalRogueIntroDoer__DoIntroc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      public override bool IsIntroFinished => this.m_isFinished;
-
-      public override Vector2? OverrideOutroPosition
-      {
-        get
-        {
-          BossFinalRogueController component = this.GetComponent<BossFinalRogueController>();
-          component.InitCamera();
-          return new Vector2?(component.CameraPos);
-        }
-      }
-
-      public override void EndIntro()
-      {
-        this.GetComponent<BossFinalRogueController>().InitCamera();
-        GameManager.Instance.MainCameraController.SetManualControl(true);
         GameManager.Instance.MainCameraController.OverrideZoomScale = 0.6666f;
+        return new Vector2?(this.GetComponent<BossFinalRogueController>().CameraPos);
       }
     }
 
-}
+    public override void StartIntro(List<tk2dSpriteAnimator> animators)
+    {
+      this.StartCoroutine(this.DoIntro());
+    }
+
+    [DebuggerHidden]
+    public IEnumerator DoIntro()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new BossFinalRogueIntroDoer__DoIntroc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    public override bool IsIntroFinished => this.m_isFinished;
+
+    public override Vector2? OverrideOutroPosition
+    {
+      get
+      {
+        BossFinalRogueController component = this.GetComponent<BossFinalRogueController>();
+        component.InitCamera();
+        return new Vector2?(component.CameraPos);
+      }
+    }
+
+    public override void EndIntro()
+    {
+      this.GetComponent<BossFinalRogueController>().InitCamera();
+      GameManager.Instance.MainCameraController.SetManualControl(true);
+      GameManager.Instance.MainCameraController.OverrideZoomScale = 0.6666f;
+    }
+  }
+

@@ -8,10 +8,7 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class DwarfConfigurableAttribute : PropertyAttribute
-    {
-    }
+public class DwarfConfigurableAttribute : PropertyAttribute
+  {
+  }
 
-}

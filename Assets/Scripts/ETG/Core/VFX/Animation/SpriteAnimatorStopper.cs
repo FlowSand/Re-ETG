@@ -10,22 +10,19 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    public class SpriteAnimatorStopper : MonoBehaviour
+public class SpriteAnimatorStopper : MonoBehaviour
+  {
+    public float duration = 10f;
+    private tk2dSpriteAnimator animator;
+
+    [DebuggerHidden]
+    private IEnumerator Start()
     {
-      public float duration = 10f;
-      private tk2dSpriteAnimator animator;
-
-      [DebuggerHidden]
-      private IEnumerator Start()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new SpriteAnimatorStopper__Startc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SpriteAnimatorStopper__Startc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

@@ -8,17 +8,14 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class CharacterSelectButton_Listener : MonoBehaviour
+public class CharacterSelectButton_Listener : MonoBehaviour
+  {
+    public GameObject playerToSelect;
+
+    private void OnClick(dfControl control, dfMouseEventArgs mouseEvent)
     {
-      public GameObject playerToSelect;
-
-      private void OnClick(dfControl control, dfMouseEventArgs mouseEvent)
-      {
-        GameManager.PlayerPrefabForNewGame = this.playerToSelect;
-        GameManager.Instance.LoadNextLevel();
-      }
+      GameManager.PlayerPrefabForNewGame = this.playerToSelect;
+      GameManager.Instance.LoadNextLevel();
     }
+  }
 
-}

@@ -11,38 +11,35 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Sunburst/DeathBurst1")]
-    public class SunburstDeathBurst1 : Script
+[InspectorDropdownName("Sunburst/DeathBurst1")]
+public class SunburstDeathBurst1 : Script
+  {
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new SunburstDeathBurst1__Topc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    public class BurstBullet : Bullet
+    {
+      public BurstBullet()
+        : base()
+      {
+      }
+
       [DebuggerHidden]
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SunburstDeathBurst1__Topc__Iterator0()
+        return (IEnumerator) new SunburstDeathBurst1.BurstBullet__Topc__Iterator0()
         {
           _this = this
         };
       }
-
-      public class BurstBullet : Bullet
-      {
-        public BurstBullet()
-          : base()
-        {
-        }
-
-        [DebuggerHidden]
-        protected override IEnumerator Top()
-        {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new SunburstDeathBurst1.BurstBullet__Topc__Iterator0()
-          {
-            _this = this
-          };
-        }
-      }
     }
+  }
 
-}

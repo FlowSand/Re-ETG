@@ -11,72 +11,69 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class AuraSynergyProcessor : MonoBehaviour
+public class AuraSynergyProcessor : MonoBehaviour
+  {
+    [LongNumericEnum]
+    public CustomSynergyType RequiredSynergy;
+    public bool TriggeredOnReload;
+    public float AuraRadius = 5f;
+    public bool HasOverrideDuration;
+    public float OverrideDuration = 0.05f;
+    public bool DoPoison;
+    public GameActorHealthEffect PoisonEffect;
+    public bool DoFreeze;
+    public GameActorFreezeEffect FreezeEffect;
+    public bool DoBurn;
+    public GameActorFireEffect FireEffect;
+    public bool DoCharm;
+    public GameActorCharmEffect CharmEffect;
+    public bool DoSlow;
+    public GameActorSpeedEffect SpeedEffect;
+    public bool DoStun;
+    public float StunDuration = 1f;
+    private Gun m_gun;
+
+    private void Awake()
     {
-      [LongNumericEnum]
-      public CustomSynergyType RequiredSynergy;
-      public bool TriggeredOnReload;
-      public float AuraRadius = 5f;
-      public bool HasOverrideDuration;
-      public float OverrideDuration = 0.05f;
-      public bool DoPoison;
-      public GameActorHealthEffect PoisonEffect;
-      public bool DoFreeze;
-      public GameActorFreezeEffect FreezeEffect;
-      public bool DoBurn;
-      public GameActorFireEffect FireEffect;
-      public bool DoCharm;
-      public GameActorCharmEffect CharmEffect;
-      public bool DoSlow;
-      public GameActorSpeedEffect SpeedEffect;
-      public bool DoStun;
-      public float StunDuration = 1f;
-      private Gun m_gun;
-
-      private void Awake()
-      {
-        this.m_gun = this.GetComponent<Gun>();
-        this.m_gun.OnReloadPressed += new Action<PlayerController, Gun, bool>(this.HandleReload);
-      }
-
-      private void HandleReload(PlayerController sourcePlayer, Gun arg2, bool arg3)
-      {
-        if (!(bool) (UnityEngine.Object) sourcePlayer || !sourcePlayer.HasActiveBonusSynergy(this.RequiredSynergy) || !this.TriggeredOnReload)
-          return;
-        this.StartCoroutine(this.HandleReloadTrigger());
-      }
-
-      [DebuggerHidden]
-      private IEnumerator HandleReloadTrigger()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AuraSynergyProcessor__HandleReloadTriggerc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      private void ProcessEnemy(AIActor enemy, float distance)
-      {
-        if (this.DoPoison)
-          enemy.ApplyEffect((GameActorEffect) this.PoisonEffect);
-        if (this.DoFreeze)
-          enemy.ApplyEffect((GameActorEffect) this.FreezeEffect, BraveTime.DeltaTime);
-        if (this.DoBurn)
-          enemy.ApplyEffect((GameActorEffect) this.FireEffect);
-        if (this.DoCharm)
-          enemy.ApplyEffect((GameActorEffect) this.CharmEffect);
-        if (this.DoSlow)
-          enemy.ApplyEffect((GameActorEffect) this.SpeedEffect);
-        if (!this.DoStun || !(bool) (UnityEngine.Object) enemy.behaviorSpeculator)
-          return;
-        if (enemy.behaviorSpeculator.IsStunned)
-          enemy.behaviorSpeculator.UpdateStun(this.StunDuration);
-        else
-          enemy.behaviorSpeculator.Stun(this.StunDuration);
-      }
+      this.m_gun = this.GetComponent<Gun>();
+      this.m_gun.OnReloadPressed += new Action<PlayerController, Gun, bool>(this.HandleReload);
     }
 
-}
+    private void HandleReload(PlayerController sourcePlayer, Gun arg2, bool arg3)
+    {
+      if (!(bool) (UnityEngine.Object) sourcePlayer || !sourcePlayer.HasActiveBonusSynergy(this.RequiredSynergy) || !this.TriggeredOnReload)
+        return;
+      this.StartCoroutine(this.HandleReloadTrigger());
+    }
+
+    [DebuggerHidden]
+    private IEnumerator HandleReloadTrigger()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new AuraSynergyProcessor__HandleReloadTriggerc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    private void ProcessEnemy(AIActor enemy, float distance)
+    {
+      if (this.DoPoison)
+        enemy.ApplyEffect((GameActorEffect) this.PoisonEffect);
+      if (this.DoFreeze)
+        enemy.ApplyEffect((GameActorEffect) this.FreezeEffect, BraveTime.DeltaTime);
+      if (this.DoBurn)
+        enemy.ApplyEffect((GameActorEffect) this.FireEffect);
+      if (this.DoCharm)
+        enemy.ApplyEffect((GameActorEffect) this.CharmEffect);
+      if (this.DoSlow)
+        enemy.ApplyEffect((GameActorEffect) this.SpeedEffect);
+      if (!this.DoStun || !(bool) (UnityEngine.Object) enemy.behaviorSpeculator)
+        return;
+      if (enemy.behaviorSpeculator.IsStunned)
+        enemy.behaviorSpeculator.UpdateStun(this.StunDuration);
+      else
+        enemy.behaviorSpeculator.Stun(this.StunDuration);
+    }
+  }
+

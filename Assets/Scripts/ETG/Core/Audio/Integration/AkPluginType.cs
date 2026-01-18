@@ -6,17 +6,14 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkPluginType
-    {
-      AkPluginTypeNone = 0,
-      AkPluginTypeCodec = 1,
-      AkPluginTypeSource = 2,
-      AkPluginTypeEffect = 3,
-      AkPluginTypeMixer = 6,
-      AkPluginTypeSink = 7,
-      AkPluginTypeMask = 15, // 0x0000000F
-    }
+public enum AkPluginType
+  {
+    AkPluginTypeNone = 0,
+    AkPluginTypeCodec = 1,
+    AkPluginTypeSource = 2,
+    AkPluginTypeEffect = 3,
+    AkPluginTypeMixer = 6,
+    AkPluginTypeSink = 7,
+    AkPluginTypeMask = 15, // 0x0000000F
+  }
 
-}

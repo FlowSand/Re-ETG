@@ -6,11 +6,8 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IAmmonomiconFocusable
-    {
-      void Focus(bool allowScrolling = true);
-    }
+public interface IAmmonomiconFocusable
+  {
+    void Focus(bool allowScrolling = true);
+  }
 
-}

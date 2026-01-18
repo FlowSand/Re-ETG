@@ -9,27 +9,24 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class StatHolder : MonoBehaviour
+public class StatHolder : MonoBehaviour
+  {
+    public bool RequiresPlayerItemActive;
+    public StatModifier[] modifiers;
+
+    private void Start()
     {
-      public bool RequiresPlayerItemActive;
-      public StatModifier[] modifiers;
-
-      private void Start()
+      if (!this.RequiresPlayerItemActive)
+        return;
+      PlayerItem component = this.GetComponent<PlayerItem>();
+      if (!(bool) (UnityEngine.Object) component)
+        return;
+      component.OnActivationStatusChanged += (Action<PlayerItem>) (a =>
       {
-        if (!this.RequiresPlayerItemActive)
+        if (!(bool) (UnityEngine.Object) a.LastOwner)
           return;
-        PlayerItem component = this.GetComponent<PlayerItem>();
-        if (!(bool) (UnityEngine.Object) component)
-          return;
-        component.OnActivationStatusChanged += (Action<PlayerItem>) (a =>
-        {
-          if (!(bool) (UnityEngine.Object) a.LastOwner)
-            return;
-          a.LastOwner.stats.RecalculateStats(a.LastOwner);
-        });
-      }
+        a.LastOwner.stats.RecalculateStats(a.LastOwner);
+      });
     }
+  }
 
-}

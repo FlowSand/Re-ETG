@@ -6,21 +6,18 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum PlayableCharacters
-    {
-      Pilot,
-      Convict,
-      Robot,
-      Ninja,
-      Cosmonaut,
-      Soldier,
-      Guide,
-      CoopCultist,
-      Bullet,
-      Eevee,
-      Gunslinger,
-    }
+public enum PlayableCharacters
+  {
+    Pilot,
+    Convict,
+    Robot,
+    Ninja,
+    Cosmonaut,
+    Soldier,
+    Guide,
+    CoopCultist,
+    Bullet,
+    Eevee,
+    Gunslinger,
+  }
 
-}

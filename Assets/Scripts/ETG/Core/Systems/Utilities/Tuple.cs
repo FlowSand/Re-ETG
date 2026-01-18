@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public static class Tuple
+  public static class Tuple
+  {
+    public static Tuple<T1, T2> Create<T1, T2>(T1 item1, T2 second)
     {
-      public static Tuple<T1, T2> Create<T1, T2>(T1 item1, T2 second)
-      {
-        return new Tuple<T1, T2>(item1, second);
-      }
+      return new Tuple<T1, T2>(item1, second);
     }
+  }
 
-}

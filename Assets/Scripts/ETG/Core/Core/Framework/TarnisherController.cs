@@ -9,22 +9,19 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class TarnisherController : BraveBehaviour
+public class TarnisherController : BraveBehaviour
+  {
+    public void Awake() => this.healthHaver.OnPreDeath += new Action<Vector2>(this.OnPreDeath);
+
+    protected override void OnDestroy()
     {
-      public void Awake() => this.healthHaver.OnPreDeath += new Action<Vector2>(this.OnPreDeath);
-
-      protected override void OnDestroy()
-      {
-        base.OnDestroy();
-        this.healthHaver.OnPreDeath -= new Action<Vector2>(this.OnPreDeath);
-      }
-
-      private void OnPreDeath(Vector2 vector2)
-      {
-        this.aiAnimator.OtherAnimations.Find((Predicate<AIAnimator.NamedDirectionalAnimation>) (a => a.name == "pitfall")).anim.Prefix = "pitfall_dead";
-      }
+      base.OnDestroy();
+      this.healthHaver.OnPreDeath -= new Action<Vector2>(this.OnPreDeath);
     }
 
-}
+    private void OnPreDeath(Vector2 vector2)
+    {
+      this.aiAnimator.OtherAnimations.Find((Predicate<AIAnimator.NamedDirectionalAnimation>) (a => a.name == "pitfall")).anim.Prefix = "pitfall_dead";
+    }
+  }
+

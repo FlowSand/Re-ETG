@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkMultiPositionType
-    {
-      MultiPositionType_SingleSource,
-      MultiPositionType_MultiSources,
-      MultiPositionType_MultiDirections,
-    }
+public enum AkMultiPositionType
+  {
+    MultiPositionType_SingleSource,
+    MultiPositionType_MultiSources,
+    MultiPositionType_MultiDirections,
+  }
 
-}

@@ -8,11 +8,8 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    [AttributeUsage(AttributeTargets.Method)]
-    public class dfEventProxyAttribute : Attribute
-    {
-    }
+[AttributeUsage(AttributeTargets.Method)]
+public class dfEventProxyAttribute : Attribute
+  {
+  }
 
-}

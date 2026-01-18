@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IObservableValue
-    {
-      object Value { get; }
+public interface IObservableValue
+  {
+    object Value { get; }
 
-      bool HasChanged { get; }
-    }
+    bool HasChanged { get; }
+  }
 
-}

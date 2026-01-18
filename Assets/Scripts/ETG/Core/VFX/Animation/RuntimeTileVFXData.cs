@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    public struct RuntimeTileVFXData
-    {
-      public bool vfxHasEverBeenInstantiated;
-      public float cooldownRemaining;
-    }
+public struct RuntimeTileVFXData
+  {
+    public bool vfxHasEverBeenInstantiated;
+    public float cooldownRemaining;
+  }
 
-}

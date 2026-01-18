@@ -8,18 +8,15 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    [AddComponentMenu("Wwise/AkState")]
-    public class AkState : AkUnityEventHandler
+[AddComponentMenu("Wwise/AkState")]
+public class AkState : AkUnityEventHandler
+  {
+    public int groupID;
+    public int valueID;
+
+    public override void HandleEvent(GameObject in_gameObject)
     {
-      public int groupID;
-      public int valueID;
-
-      public override void HandleEvent(GameObject in_gameObject)
-      {
-        int num = (int) AkSoundEngine.SetState((uint) this.groupID, (uint) this.valueID);
-      }
+      int num = (int) AkSoundEngine.SetState((uint) this.groupID, (uint) this.valueID);
     }
+  }
 
-}

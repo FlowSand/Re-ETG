@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfMarkupTextDecoration
-    {
-      None,
-      Underline,
-      Overline,
-      LineThrough,
-    }
+public enum dfMarkupTextDecoration
+  {
+    None,
+    Underline,
+    Overline,
+    LineThrough,
+  }
 
-}

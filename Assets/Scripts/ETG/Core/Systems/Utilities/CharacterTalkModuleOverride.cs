@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class CharacterTalkModuleOverride
-    {
-      public PlayableCharacters character;
-      public string moduleToOverride;
-      public string replacementModule;
-    }
+[Serializable]
+public class CharacterTalkModuleOverride
+  {
+    public PlayableCharacters character;
+    public string moduleToOverride;
+    public string replacementModule;
+  }
 
-}

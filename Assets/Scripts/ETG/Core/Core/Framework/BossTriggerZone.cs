@@ -10,54 +10,51 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    [RequireComponent(typeof (SpeculativeRigidbody))]
-    public class BossTriggerZone : BraveBehaviour
+[RequireComponent(typeof (SpeculativeRigidbody))]
+public class BossTriggerZone : BraveBehaviour
+  {
+    public bool HasTriggered { get; set; }
+
+    public RoomHandler ParentRoom { get; set; }
+
+    public void Start()
     {
-      public bool HasTriggered { get; set; }
+      this.specRigidbody.OnTriggerCollision += new SpeculativeRigidbody.OnTriggerDelegate(this.OnTriggerCollision);
+      this.ParentRoom = GameManager.Instance.Dungeon.GetRoomFromPosition(this.specRigidbody.UnitCenter.ToIntVector2(VectorConversions.Floor));
+      if (this.ParentRoom == null)
+        return;
+      if (this.ParentRoom.bossTriggerZones == null)
+        this.ParentRoom.bossTriggerZones = new List<BossTriggerZone>();
+      this.ParentRoom.bossTriggerZones.Add(this);
+    }
 
-      public RoomHandler ParentRoom { get; set; }
+    protected override void OnDestroy() => base.OnDestroy();
 
-      public void Start()
+    private void OnTriggerCollision(
+      SpeculativeRigidbody otherRigidbody,
+      SpeculativeRigidbody myRigidbody,
+      CollisionData collisionData)
+    {
+      if (this.HasTriggered || collisionData.OtherPixelCollider.CollisionLayer != CollisionLayer.PlayerCollider && collisionData.OtherPixelCollider.CollisionLayer != CollisionLayer.PlayerHitBox)
+        return;
+      PlayerController component1 = otherRigidbody.GetComponent<PlayerController>();
+      if (!(bool) (Object) component1)
+        return;
+      List<HealthHaver> allHealthHavers = StaticReferenceManager.AllHealthHavers;
+      for (int index = 0; index < allHealthHavers.Count; ++index)
       {
-        this.specRigidbody.OnTriggerCollision += new SpeculativeRigidbody.OnTriggerDelegate(this.OnTriggerCollision);
-        this.ParentRoom = GameManager.Instance.Dungeon.GetRoomFromPosition(this.specRigidbody.UnitCenter.ToIntVector2(VectorConversions.Floor));
-        if (this.ParentRoom == null)
-          return;
-        if (this.ParentRoom.bossTriggerZones == null)
-          this.ParentRoom.bossTriggerZones = new List<BossTriggerZone>();
-        this.ParentRoom.bossTriggerZones.Add(this);
-      }
-
-      protected override void OnDestroy() => base.OnDestroy();
-
-      private void OnTriggerCollision(
-        SpeculativeRigidbody otherRigidbody,
-        SpeculativeRigidbody myRigidbody,
-        CollisionData collisionData)
-      {
-        if (this.HasTriggered || collisionData.OtherPixelCollider.CollisionLayer != CollisionLayer.PlayerCollider && collisionData.OtherPixelCollider.CollisionLayer != CollisionLayer.PlayerHitBox)
-          return;
-        PlayerController component1 = otherRigidbody.GetComponent<PlayerController>();
-        if (!(bool) (Object) component1)
-          return;
-        List<HealthHaver> allHealthHavers = StaticReferenceManager.AllHealthHavers;
-        for (int index = 0; index < allHealthHavers.Count; ++index)
+        if (allHealthHavers[index].IsBoss)
         {
-          if (allHealthHavers[index].IsBoss)
+          GenericIntroDoer component2 = allHealthHavers[index].GetComponent<GenericIntroDoer>();
+          if ((bool) (Object) component2 && component2.triggerType == GenericIntroDoer.TriggerType.BossTriggerZone)
           {
-            GenericIntroDoer component2 = allHealthHavers[index].GetComponent<GenericIntroDoer>();
-            if ((bool) (Object) component2 && component2.triggerType == GenericIntroDoer.TriggerType.BossTriggerZone)
-            {
-              component2.GetComponent<ObjectVisibilityManager>().ChangeToVisibility(RoomHandler.VisibilityStatus.CURRENT);
-              component2.TriggerSequence(component1);
-              this.HasTriggered = true;
-              break;
-            }
+            component2.GetComponent<ObjectVisibilityManager>().ChangeToVisibility(RoomHandler.VisibilityStatus.CURRENT);
+            component2.TriggerSequence(component1);
+            this.HasTriggered = true;
+            break;
           }
         }
       }
     }
+  }
 
-}

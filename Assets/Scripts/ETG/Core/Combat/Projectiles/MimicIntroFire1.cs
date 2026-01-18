@@ -11,57 +11,54 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Projectiles
-{
-    public class MimicIntroFire1 : Script
+public class MimicIntroFire1 : Script
+  {
+    protected override IEnumerator Top()
     {
-      protected override IEnumerator Top()
+      this.Fire(new Brave.BulletScript.Direction(this.AimDirection), new Brave.BulletScript.Speed(8f), (Bullet) new MimicIntroFire1.BigBullet((bool) (Object) this.BulletBank && (bool) (Object) this.BulletBank.aiActor && this.BulletBank.aiActor.IsBlackPhantom));
+      return (IEnumerator) null;
+    }
+
+    public class BigBullet : Bullet
+    {
+      private bool m_isBlackPhantom;
+
+      public BigBullet(bool isBlackPhantom)
+        : base("bigbullet")
       {
-        this.Fire(new Brave.BulletScript.Direction(this.AimDirection), new Brave.BulletScript.Speed(8f), (Bullet) new MimicIntroFire1.BigBullet((bool) (Object) this.BulletBank && (bool) (Object) this.BulletBank.aiActor && this.BulletBank.aiActor.IsBlackPhantom));
-        return (IEnumerator) null;
+        this.ForceBlackBullet = true;
+        this.m_isBlackPhantom = isBlackPhantom;
       }
 
-      public class BigBullet : Bullet
+      [DebuggerHidden]
+      protected override IEnumerator Top()
       {
-        private bool m_isBlackPhantom;
-
-        public BigBullet(bool isBlackPhantom)
-          : base("bigbullet")
+        // ISSUE: object of a compiler-generated type is created
+        return (IEnumerator) new MimicIntroFire1.BigBullet__Topc__Iterator0()
         {
-          this.ForceBlackBullet = true;
-          this.m_isBlackPhantom = isBlackPhantom;
-        }
+          _this = this
+        };
+      }
 
-        [DebuggerHidden]
-        protected override IEnumerator Top()
+      public override void OnBulletDestruction(
+        Bullet.DestroyType destroyType,
+        SpeculativeRigidbody hitRigidbody,
+        bool preventSpawningProjectiles)
+      {
+        if (preventSpawningProjectiles)
+          return;
+        for (int index = 0; index < 8; ++index)
         {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new MimicIntroFire1.BigBullet__Topc__Iterator0()
+          Bullet bullet = (Bullet) new SpeedChangingBullet(10f, 120, 600);
+          this.Fire(new Brave.BulletScript.Direction((float) (index * 45)), new Brave.BulletScript.Speed(8f), bullet);
+          if (!this.m_isBlackPhantom)
           {
-            _this = this
-          };
-        }
-
-        public override void OnBulletDestruction(
-          Bullet.DestroyType destroyType,
-          SpeculativeRigidbody hitRigidbody,
-          bool preventSpawningProjectiles)
-        {
-          if (preventSpawningProjectiles)
-            return;
-          for (int index = 0; index < 8; ++index)
-          {
-            Bullet bullet = (Bullet) new SpeedChangingBullet(10f, 120, 600);
-            this.Fire(new Brave.BulletScript.Direction((float) (index * 45)), new Brave.BulletScript.Speed(8f), bullet);
-            if (!this.m_isBlackPhantom)
-            {
-              bullet.ForceBlackBullet = false;
-              bullet.Projectile.ForceBlackBullet = false;
-              bullet.Projectile.ReturnFromBlackBullet();
-            }
+            bullet.ForceBlackBullet = false;
+            bullet.Projectile.ForceBlackBullet = false;
+            bullet.Projectile.ReturnFromBlackBullet();
           }
         }
       }
     }
+  }
 
-}

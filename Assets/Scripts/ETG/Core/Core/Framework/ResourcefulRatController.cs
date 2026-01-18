@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class ResourcefulRatController : BraveBehaviour
-    {
-      public GameObject[] MouseTraps;
-      public GameObject ReticleQuad;
-      public ScreenShakeSettings cheeseSlamScreenShake;
-    }
+public class ResourcefulRatController : BraveBehaviour
+  {
+    public GameObject[] MouseTraps;
+    public GameObject ReticleQuad;
+    public ScreenShakeSettings cheeseSlamScreenShake;
+  }
 
-}

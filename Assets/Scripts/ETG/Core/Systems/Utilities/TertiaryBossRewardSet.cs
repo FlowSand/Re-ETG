@@ -9,15 +9,12 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class TertiaryBossRewardSet
-    {
-      public string annotation = "reward";
-      public float weight = 1f;
-      [PickupIdentifier]
-      public List<int> dropIds;
-    }
+[Serializable]
+public class TertiaryBossRewardSet
+  {
+    public string annotation = "reward";
+    public float weight = 1f;
+    [PickupIdentifier]
+    public List<int> dropIds;
+  }
 
-}

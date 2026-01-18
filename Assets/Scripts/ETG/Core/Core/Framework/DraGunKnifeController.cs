@@ -8,11 +8,8 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class DraGunKnifeController : BraveBehaviour
-    {
-      public GameObject ReticleQuad;
-    }
+public class DraGunKnifeController : BraveBehaviour
+  {
+    public GameObject ReticleQuad;
+  }
 
-}

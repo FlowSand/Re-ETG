@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkConnectionType
-    {
-      ConnectionType_Direct,
-      ConnectionType_GameDefSend,
-      ConnectionType_UserDefSend,
-    }
+public enum AkConnectionType
+  {
+    ConnectionType_Direct,
+    ConnectionType_GameDefSend,
+    ConnectionType_UserDefSend,
+  }
 
-}

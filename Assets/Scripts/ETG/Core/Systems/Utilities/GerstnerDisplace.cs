@@ -8,12 +8,9 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [RequireComponent(typeof (WaterBase))]
-    [ExecuteInEditMode]
-    public class GerstnerDisplace : Displace
-    {
-    }
+[RequireComponent(typeof (WaterBase))]
+[ExecuteInEditMode]
+public class GerstnerDisplace : Displace
+  {
+  }
 
-}

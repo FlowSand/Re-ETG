@@ -6,17 +6,14 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class dfControlEventArgs
-    {
-      internal dfControlEventArgs(dfControl Target) => this.Source = Target;
+public class dfControlEventArgs
+  {
+    internal dfControlEventArgs(dfControl Target) => this.Source = Target;
 
-      public dfControl Source { get; internal set; }
+    public dfControl Source { get; internal set; }
 
-      public bool Used { get; private set; }
+    public bool Used { get; private set; }
 
-      public void Use() => this.Used = true;
-    }
+    public void Use() => this.Used = true;
+  }
 
-}

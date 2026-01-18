@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field)]
-    public class dfTooltipAttribute : Attribute
-    {
-      public dfTooltipAttribute(string tooltip) => this.Tooltip = tooltip;
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field)]
+public class dfTooltipAttribute : Attribute
+  {
+    public dfTooltipAttribute(string tooltip) => this.Tooltip = tooltip;
 
-      public string Tooltip { get; private set; }
-    }
+    public string Tooltip { get; private set; }
+  }
 
-}

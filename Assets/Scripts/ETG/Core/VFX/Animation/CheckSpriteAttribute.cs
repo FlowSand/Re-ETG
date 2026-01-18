@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    public class CheckSpriteAttribute : PropertyAttribute
-    {
-      public string sprite;
+public class CheckSpriteAttribute : PropertyAttribute
+  {
+    public string sprite;
 
-      public CheckSpriteAttribute(string sprite = null) => this.sprite = sprite;
-    }
+    public CheckSpriteAttribute(string sprite = null) => this.sprite = sprite;
+  }
 
-}

@@ -8,15 +8,12 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class PickupIdentifierAttribute : PropertyAttribute, DatabaseIdentifierAttribute
-    {
-      public System.Type PickupType;
+public class PickupIdentifierAttribute : PropertyAttribute, DatabaseIdentifierAttribute
+  {
+    public System.Type PickupType;
 
-      public PickupIdentifierAttribute() => this.PickupType = typeof (PickupObject);
+    public PickupIdentifierAttribute() => this.PickupType = typeof (PickupObject);
 
-      public PickupIdentifierAttribute(System.Type type) => this.PickupType = type;
-    }
+    public PickupIdentifierAttribute(System.Type type) => this.PickupType = type;
+  }
 
-}

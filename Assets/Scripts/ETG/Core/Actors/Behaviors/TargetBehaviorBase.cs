@@ -6,10 +6,7 @@
 
 #nullable disable
 
-namespace ETG.Core.Actors.Behaviors
-{
-    public abstract class TargetBehaviorBase : BehaviorBase
-    {
-    }
+  public abstract class TargetBehaviorBase : BehaviorBase
+  {
+  }
 
-}

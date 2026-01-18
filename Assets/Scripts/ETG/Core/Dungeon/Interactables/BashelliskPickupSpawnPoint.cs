@@ -6,10 +6,7 @@
 
 #nullable disable
 
-namespace ETG.Core.Dungeon.Interactables
-{
-    public class BashelliskPickupSpawnPoint : DungeonPlaceableBehaviour
-    {
-    }
+public class BashelliskPickupSpawnPoint : DungeonPlaceableBehaviour
+  {
+  }
 
-}

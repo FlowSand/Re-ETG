@@ -10,56 +10,53 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    public class GenericRoomTable : ScriptableObject
+public class GenericRoomTable : ScriptableObject
+  {
+    public WeightedRoomCollection includedRooms;
+    public List<GenericRoomTable> includedRoomTables;
+    [NonSerialized]
+    protected List<WeightedRoom> m_compiledList;
+    [NonSerialized]
+    protected WeightedRoomCollection m_compiledCollection;
+
+    public WeightedRoom SelectByWeight() => this.GetCompiledCollection().SelectByWeight();
+
+    public WeightedRoom SelectByWeightWithoutDuplicates(List<PrototypeDungeonRoom> extant)
     {
-      public WeightedRoomCollection includedRooms;
-      public List<GenericRoomTable> includedRoomTables;
-      [NonSerialized]
-      protected List<WeightedRoom> m_compiledList;
-      [NonSerialized]
-      protected WeightedRoomCollection m_compiledCollection;
-
-      public WeightedRoom SelectByWeight() => this.GetCompiledCollection().SelectByWeight();
-
-      public WeightedRoom SelectByWeightWithoutDuplicates(List<PrototypeDungeonRoom> extant)
-      {
-        return this.GetCompiledCollection().SelectByWeightWithoutDuplicates(extant);
-      }
-
-      public List<WeightedRoom> GetCompiledList()
-      {
-        if (this.m_compiledList != null)
-          return this.m_compiledList;
-        List<WeightedRoom> compiledList = new List<WeightedRoom>();
-        for (int index = 0; index < this.includedRooms.elements.Count; ++index)
-          compiledList.Add(this.includedRooms.elements[index]);
-        for (int index1 = 0; index1 < this.includedRoomTables.Count; ++index1)
-        {
-          WeightedRoomCollection compiledCollection = this.includedRoomTables[index1].GetCompiledCollection();
-          for (int index2 = 0; index2 < compiledCollection.elements.Count; ++index2)
-            compiledList.Add(compiledCollection.elements[index2]);
-        }
-        if (Application.isPlaying)
-          this.m_compiledList = compiledList;
-        return compiledList;
-      }
-
-      protected WeightedRoomCollection GetCompiledCollection()
-      {
-        WeightedRoomCollection compiledCollection1 = new WeightedRoomCollection();
-        for (int index = 0; index < this.includedRooms.elements.Count; ++index)
-          compiledCollection1.Add(this.includedRooms.elements[index]);
-        for (int index1 = 0; index1 < this.includedRoomTables.Count; ++index1)
-        {
-          WeightedRoomCollection compiledCollection2 = this.includedRoomTables[index1].GetCompiledCollection();
-          for (int index2 = 0; index2 < compiledCollection2.elements.Count; ++index2)
-            compiledCollection1.Add(compiledCollection2.elements[index2]);
-        }
-        this.m_compiledCollection = compiledCollection1;
-        return compiledCollection1;
-      }
+      return this.GetCompiledCollection().SelectByWeightWithoutDuplicates(extant);
     }
 
-}
+    public List<WeightedRoom> GetCompiledList()
+    {
+      if (this.m_compiledList != null)
+        return this.m_compiledList;
+      List<WeightedRoom> compiledList = new List<WeightedRoom>();
+      for (int index = 0; index < this.includedRooms.elements.Count; ++index)
+        compiledList.Add(this.includedRooms.elements[index]);
+      for (int index1 = 0; index1 < this.includedRoomTables.Count; ++index1)
+      {
+        WeightedRoomCollection compiledCollection = this.includedRoomTables[index1].GetCompiledCollection();
+        for (int index2 = 0; index2 < compiledCollection.elements.Count; ++index2)
+          compiledList.Add(compiledCollection.elements[index2]);
+      }
+      if (Application.isPlaying)
+        this.m_compiledList = compiledList;
+      return compiledList;
+    }
+
+    protected WeightedRoomCollection GetCompiledCollection()
+    {
+      WeightedRoomCollection compiledCollection1 = new WeightedRoomCollection();
+      for (int index = 0; index < this.includedRooms.elements.Count; ++index)
+        compiledCollection1.Add(this.includedRooms.elements[index]);
+      for (int index1 = 0; index1 < this.includedRoomTables.Count; ++index1)
+      {
+        WeightedRoomCollection compiledCollection2 = this.includedRoomTables[index1].GetCompiledCollection();
+        for (int index2 = 0; index2 < compiledCollection2.elements.Count; ++index2)
+          compiledCollection1.Add(compiledCollection2.elements[index2]);
+      }
+      this.m_compiledCollection = compiledCollection1;
+      return compiledCollection1;
+    }
+  }
+

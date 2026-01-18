@@ -8,19 +8,16 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Effects
-{
-    [ExecuteInEditMode]
-    [AddComponentMenu("Image Effects/Color Correction (Ramp)")]
-    public class ColorCorrectionEffect : ImageEffectBase
+[ExecuteInEditMode]
+[AddComponentMenu("Image Effects/Color Correction (Ramp)")]
+public class ColorCorrectionEffect : ImageEffectBase
+  {
+    public Texture textureRamp;
+
+    private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-      public Texture textureRamp;
-
-      private void OnRenderImage(RenderTexture source, RenderTexture destination)
-      {
-        this.material.SetTexture("_RampTex", this.textureRamp);
-        Graphics.Blit((Texture) source, destination, this.material);
-      }
+      this.material.SetTexture("_RampTex", this.textureRamp);
+      Graphics.Blit((Texture) source, destination, this.material);
     }
+  }
 
-}

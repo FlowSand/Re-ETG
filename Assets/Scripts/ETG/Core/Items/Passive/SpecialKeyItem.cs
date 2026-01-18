@@ -6,24 +6,21 @@
 
 #nullable disable
 
-namespace ETG.Core.Items.Passive
-{
-    public class SpecialKeyItem : PassiveItem
+public class SpecialKeyItem : PassiveItem
+  {
+    public SpecialKeyItem.SpecialKeyType keyType;
+
+    protected override void OnDestroy() => base.OnDestroy();
+
+    public override void Pickup(PlayerController player)
     {
-      public SpecialKeyItem.SpecialKeyType keyType;
-
-      protected override void OnDestroy() => base.OnDestroy();
-
-      public override void Pickup(PlayerController player)
-      {
-        base.Pickup(player);
-        GameUIRoot.Instance.UpdatePlayerConsumables(player.carriedConsumables);
-      }
-
-      public enum SpecialKeyType
-      {
-        RESOURCEFUL_RAT_LAIR,
-      }
+      base.Pickup(player);
+      GameUIRoot.Instance.UpdatePlayerConsumables(player.carriedConsumables);
     }
 
-}
+    public enum SpecialKeyType
+    {
+      RESOURCEFUL_RAT_LAIR,
+    }
+  }
+

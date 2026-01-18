@@ -8,13 +8,10 @@ using FullInspector;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/BulletKing/DirectedFireDownLeftHard")]
-    public class BulletKingDirectedFireDownLeftHard : 
-      BulletKingDirectedFireDownLeft,
-      BulletKingDirectedFireHard
-    {
-    }
+[InspectorDropdownName("Bosses/BulletKing/DirectedFireDownLeftHard")]
+public class BulletKingDirectedFireDownLeftHard : 
+    BulletKingDirectedFireDownLeft,
+    BulletKingDirectedFireHard
+  {
+  }
 
-}

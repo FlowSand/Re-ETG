@@ -8,14 +8,11 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public abstract class CastResult
-    {
-      public Vector2 Contact;
-      public Vector2 Normal;
-      public PixelCollider MyPixelCollider;
-      public PixelCollider OtherPixelCollider;
-    }
+  public abstract class CastResult
+  {
+    public Vector2 Contact;
+    public Vector2 Normal;
+    public PixelCollider MyPixelCollider;
+    public PixelCollider OtherPixelCollider;
+  }
 
-}

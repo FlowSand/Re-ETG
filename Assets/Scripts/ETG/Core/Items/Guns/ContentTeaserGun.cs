@@ -6,10 +6,7 @@
 
 #nullable disable
 
-namespace ETG.Core.Items.Guns
-{
-    public class ContentTeaserGun : Gun
-    {
-    }
+public class ContentTeaserGun : Gun
+  {
+  }
 
-}

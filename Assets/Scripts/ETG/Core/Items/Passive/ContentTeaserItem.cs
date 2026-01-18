@@ -6,10 +6,7 @@
 
 #nullable disable
 
-namespace ETG.Core.Items.Passive
-{
-    public class ContentTeaserItem : PassiveItem
-    {
-    }
+public class ContentTeaserItem : PassiveItem
+  {
+  }
 
-}

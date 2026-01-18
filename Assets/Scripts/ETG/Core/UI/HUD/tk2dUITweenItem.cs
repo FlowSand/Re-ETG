@@ -10,106 +10,103 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.UI.HUD
-{
-    [AddComponentMenu("2D Toolkit/UI/tk2dUITweenItem")]
-    public class tk2dUITweenItem : tk2dUIBaseItemControl
+[AddComponentMenu("2D Toolkit/UI/tk2dUITweenItem")]
+public class tk2dUITweenItem : tk2dUIBaseItemControl
+  {
+    private Vector3 onUpScale;
+    public Vector3 onDownScale = new Vector3(0.9f, 0.9f, 0.9f);
+    public float tweenDuration = 0.1f;
+    public bool canButtonBeHeldDown = true;
+    [SerializeField]
+    private bool useOnReleaseInsteadOfOnUp;
+    private bool internalTweenInProgress;
+    private Vector3 tweenTargetScale = Vector3.one;
+    private Vector3 tweenStartingScale = Vector3.one;
+    private float tweenTimeElapsed;
+
+    public bool UseOnReleaseInsteadOfOnUp => this.useOnReleaseInsteadOfOnUp;
+
+    private void Awake() => this.onUpScale = this.transform.localScale;
+
+    private void OnEnable()
     {
-      private Vector3 onUpScale;
-      public Vector3 onDownScale = new Vector3(0.9f, 0.9f, 0.9f);
-      public float tweenDuration = 0.1f;
-      public bool canButtonBeHeldDown = true;
-      [SerializeField]
-      private bool useOnReleaseInsteadOfOnUp;
-      private bool internalTweenInProgress;
-      private Vector3 tweenTargetScale = Vector3.one;
-      private Vector3 tweenStartingScale = Vector3.one;
-      private float tweenTimeElapsed;
-
-      public bool UseOnReleaseInsteadOfOnUp => this.useOnReleaseInsteadOfOnUp;
-
-      private void Awake() => this.onUpScale = this.transform.localScale;
-
-      private void OnEnable()
+      if ((bool) (UnityEngine.Object) this.uiItem)
       {
-        if ((bool) (UnityEngine.Object) this.uiItem)
+        this.uiItem.OnDown += new System.Action(this.ButtonDown);
+        if (this.canButtonBeHeldDown)
         {
-          this.uiItem.OnDown += new System.Action(this.ButtonDown);
-          if (this.canButtonBeHeldDown)
-          {
-            if (this.useOnReleaseInsteadOfOnUp)
-              this.uiItem.OnRelease += new System.Action(this.ButtonUp);
-            else
-              this.uiItem.OnUp += new System.Action(this.ButtonUp);
-          }
+          if (this.useOnReleaseInsteadOfOnUp)
+            this.uiItem.OnRelease += new System.Action(this.ButtonUp);
+          else
+            this.uiItem.OnUp += new System.Action(this.ButtonUp);
         }
-        this.internalTweenInProgress = false;
-        this.tweenTimeElapsed = 0.0f;
+      }
+      this.internalTweenInProgress = false;
+      this.tweenTimeElapsed = 0.0f;
+      this.transform.localScale = this.onUpScale;
+    }
+
+    private void OnDisable()
+    {
+      if (!(bool) (UnityEngine.Object) this.uiItem)
+        return;
+      this.uiItem.OnDown -= new System.Action(this.ButtonDown);
+      if (!this.canButtonBeHeldDown)
+        return;
+      if (this.useOnReleaseInsteadOfOnUp)
+        this.uiItem.OnRelease -= new System.Action(this.ButtonUp);
+      else
+        this.uiItem.OnUp -= new System.Action(this.ButtonUp);
+    }
+
+    private void ButtonDown()
+    {
+      if ((double) this.tweenDuration <= 0.0)
+      {
+        this.transform.localScale = this.onDownScale;
+      }
+      else
+      {
         this.transform.localScale = this.onUpScale;
-      }
-
-      private void OnDisable()
-      {
-        if (!(bool) (UnityEngine.Object) this.uiItem)
+        this.tweenTargetScale = this.onDownScale;
+        this.tweenStartingScale = this.transform.localScale;
+        if (this.internalTweenInProgress)
           return;
-        this.uiItem.OnDown -= new System.Action(this.ButtonDown);
-        if (!this.canButtonBeHeldDown)
-          return;
-        if (this.useOnReleaseInsteadOfOnUp)
-          this.uiItem.OnRelease -= new System.Action(this.ButtonUp);
-        else
-          this.uiItem.OnUp -= new System.Action(this.ButtonUp);
-      }
-
-      private void ButtonDown()
-      {
-        if ((double) this.tweenDuration <= 0.0)
-        {
-          this.transform.localScale = this.onDownScale;
-        }
-        else
-        {
-          this.transform.localScale = this.onUpScale;
-          this.tweenTargetScale = this.onDownScale;
-          this.tweenStartingScale = this.transform.localScale;
-          if (this.internalTweenInProgress)
-            return;
-          this.StartCoroutine(this.ScaleTween());
-          this.internalTweenInProgress = true;
-        }
-      }
-
-      private void ButtonUp()
-      {
-        if ((double) this.tweenDuration <= 0.0)
-        {
-          this.transform.localScale = this.onUpScale;
-        }
-        else
-        {
-          this.tweenTargetScale = this.onUpScale;
-          this.tweenStartingScale = this.transform.localScale;
-          if (this.internalTweenInProgress)
-            return;
-          this.StartCoroutine(this.ScaleTween());
-          this.internalTweenInProgress = true;
-        }
-      }
-
-      [DebuggerHidden]
-      private IEnumerator ScaleTween()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new tk2dUITweenItem__ScaleTweenc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      public void InternalSetUseOnReleaseInsteadOfOnUp(bool state)
-      {
-        this.useOnReleaseInsteadOfOnUp = state;
+        this.StartCoroutine(this.ScaleTween());
+        this.internalTweenInProgress = true;
       }
     }
 
-}
+    private void ButtonUp()
+    {
+      if ((double) this.tweenDuration <= 0.0)
+      {
+        this.transform.localScale = this.onUpScale;
+      }
+      else
+      {
+        this.tweenTargetScale = this.onUpScale;
+        this.tweenStartingScale = this.transform.localScale;
+        if (this.internalTweenInProgress)
+          return;
+        this.StartCoroutine(this.ScaleTween());
+        this.internalTweenInProgress = true;
+      }
+    }
+
+    [DebuggerHidden]
+    private IEnumerator ScaleTween()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new tk2dUITweenItem__ScaleTweenc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    public void InternalSetUseOnReleaseInsteadOfOnUp(bool state)
+    {
+      this.useOnReleaseInsteadOfOnUp = state;
+    }
+  }
+

@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfFillDirection
-    {
-      Horizontal,
-      Vertical,
-    }
+public enum dfFillDirection
+  {
+    Horizontal,
+    Vertical,
+  }
 
-}

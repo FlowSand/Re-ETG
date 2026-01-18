@@ -10,20 +10,17 @@ using System.Collections;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Blizzbulon/BasicAttack1")]
-    public class BlizzbulonBasicAttack1 : Script
+[InspectorDropdownName("Blizzbulon/BasicAttack1")]
+public class BlizzbulonBasicAttack1 : Script
+  {
+    private const int NumBullets = 12;
+
+    protected override IEnumerator Top()
     {
-      private const int NumBullets = 12;
-
-      protected override IEnumerator Top()
-      {
-        float num = 30f;
-        for (int index = 0; index < 12; ++index)
-          this.Fire(new Brave.BulletScript.Direction((float) index * num), new Brave.BulletScript.Speed(6f), (Bullet) null);
-        return (IEnumerator) null;
-      }
+      float num = 30f;
+      for (int index = 0; index < 12; ++index)
+        this.Fire(new Brave.BulletScript.Direction((float) index * num), new Brave.BulletScript.Speed(6f), (Bullet) null);
+      return (IEnumerator) null;
     }
+  }
 
-}

@@ -10,23 +10,20 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public abstract class ObjectDatabase<T> : ScriptableObject where T : UnityEngine.Object
+  public abstract class ObjectDatabase<T> : ScriptableObject where T : UnityEngine.Object
+  {
+    public List<T> Objects;
+
+    public int InternalGetId(T obj) => this.Objects.IndexOf(obj);
+
+    public T InternalGetById(int id)
     {
-      public List<T> Objects;
-
-      public int InternalGetId(T obj) => this.Objects.IndexOf(obj);
-
-      public T InternalGetById(int id)
-      {
-        return id < 0 || id >= this.Objects.Count ? (T) null : this.Objects[id];
-      }
-
-      public T InternalGetByName(string name)
-      {
-        return this.Objects.Find((Predicate<T>) (obj => (UnityEngine.Object) obj != (UnityEngine.Object) null && obj.name.Equals(name, StringComparison.OrdinalIgnoreCase)));
-      }
+      return id < 0 || id >= this.Objects.Count ? (T) null : this.Objects[id];
     }
 
-}
+    public T InternalGetByName(string name)
+    {
+      return this.Objects.Find((Predicate<T>) (obj => (UnityEngine.Object) obj != (UnityEngine.Object) null && obj.name.Equals(name, StringComparison.OrdinalIgnoreCase)));
+    }
+  }
+

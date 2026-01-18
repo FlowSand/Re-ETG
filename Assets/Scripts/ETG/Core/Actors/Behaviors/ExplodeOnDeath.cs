@@ -11,47 +11,44 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Actors.Behaviors
-{
-    public class ExplodeOnDeath : OnDeathBehavior
+public class ExplodeOnDeath : OnDeathBehavior
+  {
+    public ExplosionData explosionData;
+    public bool immuneToIBombApp;
+    public bool LinearChainExplosion;
+    public float ChainDuration = 1f;
+    public float ChainDistance = 10f;
+    public int ChainNumExplosions = 5;
+    public bool ChainIsReversed;
+    public GameObject ChainTargetSprite;
+    public ExplosionData LinearChainExplosionData;
+
+    protected override void OnDestroy() => base.OnDestroy();
+
+    protected override void OnTrigger(Vector2 dirVec)
     {
-      public ExplosionData explosionData;
-      public bool immuneToIBombApp;
-      public bool LinearChainExplosion;
-      public float ChainDuration = 1f;
-      public float ChainDistance = 10f;
-      public int ChainNumExplosions = 5;
-      public bool ChainIsReversed;
-      public GameObject ChainTargetSprite;
-      public ExplosionData LinearChainExplosionData;
-
-      protected override void OnDestroy() => base.OnDestroy();
-
-      protected override void OnTrigger(Vector2 dirVec)
-      {
-        if (!this.enabled)
-          return;
-        Exploder.Explode((Vector3) this.specRigidbody.GetUnitCenter(ColliderType.HitBox), this.explosionData, Vector2.zero);
-        if (!this.LinearChainExplosion)
-          return;
-        GameManager.Instance.Dungeon.StartCoroutine(this.HandleChainExplosion());
-      }
-
-      [DebuggerHidden]
-      public IEnumerator HandleChainExplosion()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ExplodeOnDeath__HandleChainExplosionc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      private bool ValidExplosionPosition(Vector2 pos)
-      {
-        IntVector2 intVector2 = pos.ToIntVector2(VectorConversions.Floor);
-        return GameManager.Instance.Dungeon.data.CheckInBoundsAndValid(intVector2) && GameManager.Instance.Dungeon.data[intVector2].type != CellType.WALL;
-      }
+      if (!this.enabled)
+        return;
+      Exploder.Explode((Vector3) this.specRigidbody.GetUnitCenter(ColliderType.HitBox), this.explosionData, Vector2.zero);
+      if (!this.LinearChainExplosion)
+        return;
+      GameManager.Instance.Dungeon.StartCoroutine(this.HandleChainExplosion());
     }
 
-}
+    [DebuggerHidden]
+    public IEnumerator HandleChainExplosion()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new ExplodeOnDeath__HandleChainExplosionc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    private bool ValidExplosionPosition(Vector2 pos)
+    {
+      IntVector2 intVector2 = pos.ToIntVector2(VectorConversions.Floor);
+      return GameManager.Instance.Dungeon.data.CheckInBoundsAndValid(intVector2) && GameManager.Instance.Dungeon.data[intVector2].type != CellType.WALL;
+    }
+  }
+

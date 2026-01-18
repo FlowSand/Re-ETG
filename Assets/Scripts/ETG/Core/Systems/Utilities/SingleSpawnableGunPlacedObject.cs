@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public interface SingleSpawnableGunPlacedObject
-    {
-      void Initialize(Gun sourceGun);
+public interface SingleSpawnableGunPlacedObject
+  {
+    void Initialize(Gun sourceGun);
 
-      void Deactivate();
-    }
+    void Deactivate();
+  }
 
-}

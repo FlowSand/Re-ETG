@@ -8,13 +8,10 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public struct DrillWaveDefinition
-    {
-      public int MinEnemies;
-      public int MaxEnemies;
-    }
+[Serializable]
+public struct DrillWaveDefinition
+  {
+    public int MinEnemies;
+    public int MaxEnemies;
+  }
 
-}

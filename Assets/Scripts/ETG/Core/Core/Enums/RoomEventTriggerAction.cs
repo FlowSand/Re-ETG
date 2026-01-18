@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum RoomEventTriggerAction
-    {
-      SEAL_ROOM,
-      UNSEAL_ROOM,
-      BECOME_TERRIFYING_AND_DARK,
-      END_TERRIFYING_AND_DARK,
-    }
+public enum RoomEventTriggerAction
+  {
+    SEAL_ROOM,
+    UNSEAL_ROOM,
+    BECOME_TERRIFYING_AND_DARK,
+    END_TERRIFYING_AND_DARK,
+  }
 
-}

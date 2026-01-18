@@ -8,14 +8,11 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Actors.Enemy
-{
-    public class AIActorDummy : AIActor
-    {
-      public bool isInBossTab;
-      public GameObject realPrefab;
+public class AIActorDummy : AIActor
+  {
+    public bool isInBossTab;
+    public GameObject realPrefab;
 
-      public override bool InBossAmmonomiconTab => this.isInBossTab;
-    }
+    public override bool InBossAmmonomiconTab => this.isInBossTab;
+  }
 
-}

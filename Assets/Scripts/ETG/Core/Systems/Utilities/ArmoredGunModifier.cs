@@ -8,80 +8,77 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class ArmoredGunModifier : MonoBehaviour
+public class ArmoredGunModifier : MonoBehaviour
+  {
+    [PickupIdentifier]
+    public int ArmoredId = -1;
+    [PickupIdentifier]
+    public int UnarmoredId = -1;
+    [CheckAnimation(null)]
+    public string ArmorUpAnimation;
+    [CheckAnimation(null)]
+    public string ArmorLostAnimation;
+    private Gun m_gun;
+    private bool m_armored = true;
+
+    private void Awake()
     {
-      [PickupIdentifier]
-      public int ArmoredId = -1;
-      [PickupIdentifier]
-      public int UnarmoredId = -1;
-      [CheckAnimation(null)]
-      public string ArmorUpAnimation;
-      [CheckAnimation(null)]
-      public string ArmorLostAnimation;
-      private Gun m_gun;
-      private bool m_armored = true;
+      this.m_gun = this.GetComponent<Gun>();
+      if (this.ArmoredId < 0)
+        this.ArmoredId = PickupObjectDatabase.GetById(this.UnarmoredId).GetComponent<ArmoredGunModifier>().ArmoredId;
+      if (this.UnarmoredId >= 0)
+        return;
+      this.UnarmoredId = PickupObjectDatabase.GetById(this.ArmoredId).GetComponent<ArmoredGunModifier>().UnarmoredId;
+    }
 
-      private void Awake()
+    private void Update()
+    {
+      if ((bool) (Object) this.m_gun && !(bool) (Object) this.m_gun.CurrentOwner)
       {
-        this.m_gun = this.GetComponent<Gun>();
-        if (this.ArmoredId < 0)
-          this.ArmoredId = PickupObjectDatabase.GetById(this.UnarmoredId).GetComponent<ArmoredGunModifier>().ArmoredId;
-        if (this.UnarmoredId >= 0)
+        PlayerController bestActivePlayer = GameManager.Instance.BestActivePlayer;
+        if (!(bool) (Object) bestActivePlayer)
           return;
-        this.UnarmoredId = PickupObjectDatabase.GetById(this.ArmoredId).GetComponent<ArmoredGunModifier>().UnarmoredId;
+        if ((bool) (Object) bestActivePlayer.healthHaver && (double) bestActivePlayer.healthHaver.Armor > 0.0)
+          this.m_gun.sprite.SetSprite((PickupObjectDatabase.GetById(this.ArmoredId) as Gun).sprite.spriteId);
+        else
+          this.m_gun.sprite.SetSprite((PickupObjectDatabase.GetById(this.UnarmoredId) as Gun).sprite.spriteId);
       }
-
-      private void Update()
+      else
       {
-        if ((bool) (Object) this.m_gun && !(bool) (Object) this.m_gun.CurrentOwner)
+        if (!(bool) (Object) this.m_gun || !(bool) (Object) this.m_gun.CurrentOwner || !(bool) (Object) this.m_gun.CurrentOwner.healthHaver)
+          return;
+        float num = this.m_gun.CurrentOwner.healthHaver.Armor;
+        if (this.m_gun.OwnerHasSynergy(CustomSynergyType.NANOARMOR))
+          num = 20f;
+        if (this.m_armored && (double) num <= 0.0)
         {
-          PlayerController bestActivePlayer = GameManager.Instance.BestActivePlayer;
-          if (!(bool) (Object) bestActivePlayer)
-            return;
-          if ((bool) (Object) bestActivePlayer.healthHaver && (double) bestActivePlayer.healthHaver.Armor > 0.0)
-            this.m_gun.sprite.SetSprite((PickupObjectDatabase.GetById(this.ArmoredId) as Gun).sprite.spriteId);
-          else
-            this.m_gun.sprite.SetSprite((PickupObjectDatabase.GetById(this.UnarmoredId) as Gun).sprite.spriteId);
+          this.BecomeUnarmored();
         }
         else
         {
-          if (!(bool) (Object) this.m_gun || !(bool) (Object) this.m_gun.CurrentOwner || !(bool) (Object) this.m_gun.CurrentOwner.healthHaver)
+          if (this.m_armored || (double) num <= 0.0)
             return;
-          float num = this.m_gun.CurrentOwner.healthHaver.Armor;
-          if (this.m_gun.OwnerHasSynergy(CustomSynergyType.NANOARMOR))
-            num = 20f;
-          if (this.m_armored && (double) num <= 0.0)
-          {
-            this.BecomeUnarmored();
-          }
-          else
-          {
-            if (this.m_armored || (double) num <= 0.0)
-              return;
-            this.BecomeArmored();
-          }
+          this.BecomeArmored();
         }
-      }
-
-      private void BecomeArmored()
-      {
-        if (this.m_armored)
-          return;
-        this.m_armored = true;
-        this.m_gun.TransformToTargetGun(PickupObjectDatabase.GetById(this.ArmoredId) as Gun);
-        this.m_gun.spriteAnimator.Play(this.ArmorUpAnimation);
-      }
-
-      private void BecomeUnarmored()
-      {
-        if (!this.m_armored)
-          return;
-        this.m_armored = false;
-        this.m_gun.TransformToTargetGun(PickupObjectDatabase.GetById(this.UnarmoredId) as Gun);
-        this.m_gun.spriteAnimator.Play(this.ArmorLostAnimation);
       }
     }
 
-}
+    private void BecomeArmored()
+    {
+      if (this.m_armored)
+        return;
+      this.m_armored = true;
+      this.m_gun.TransformToTargetGun(PickupObjectDatabase.GetById(this.ArmoredId) as Gun);
+      this.m_gun.spriteAnimator.Play(this.ArmorUpAnimation);
+    }
+
+    private void BecomeUnarmored()
+    {
+      if (!this.m_armored)
+        return;
+      this.m_armored = false;
+      this.m_gun.TransformToTargetGun(PickupObjectDatabase.GetById(this.UnarmoredId) as Gun);
+      this.m_gun.spriteAnimator.Play(this.ArmorLostAnimation);
+    }
+  }
+

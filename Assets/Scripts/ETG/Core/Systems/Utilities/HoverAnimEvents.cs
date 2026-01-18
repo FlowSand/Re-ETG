@@ -8,22 +8,19 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [AddComponentMenu("Daikon Forge/Examples/Sprites/Hover Animation Events")]
-    public class HoverAnimEvents : MonoBehaviour
+[AddComponentMenu("Daikon Forge/Examples/Sprites/Hover Animation Events")]
+public class HoverAnimEvents : MonoBehaviour
+  {
+    public dfSpriteAnimation hoverAnimation;
+
+    public void OnMouseEnter(dfControl control, dfMouseEventArgs mouseEvent)
     {
-      public dfSpriteAnimation hoverAnimation;
-
-      public void OnMouseEnter(dfControl control, dfMouseEventArgs mouseEvent)
-      {
-        this.hoverAnimation.PlayForward();
-      }
-
-      public void OnMouseLeave(dfControl control, dfMouseEventArgs mouseEvent)
-      {
-        this.hoverAnimation.PlayReverse();
-      }
+      this.hoverAnimation.PlayForward();
     }
 
-}
+    public void OnMouseLeave(dfControl control, dfMouseEventArgs mouseEvent)
+    {
+      this.hoverAnimation.PlayReverse();
+    }
+  }
+

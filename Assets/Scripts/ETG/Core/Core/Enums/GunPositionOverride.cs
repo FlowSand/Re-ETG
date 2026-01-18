@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum GunPositionOverride
-    {
-      AutoDetect,
-      Forward,
-      Back,
-    }
+public enum GunPositionOverride
+  {
+    AutoDetect,
+    Forward,
+    Back,
+  }
 
-}

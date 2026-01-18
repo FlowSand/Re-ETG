@@ -11,174 +11,171 @@ using System.Text.RegularExpressions;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class dfMarkupParser
+public class dfMarkupParser
+  {
+    private static Regex TAG_PATTERN = (Regex) null;
+    private static Regex ATTR_PATTERN = (Regex) null;
+    private static Regex STYLE_PATTERN = (Regex) null;
+    private static Dictionary<string, System.Type> tagTypes = (Dictionary<string, System.Type>) null;
+    private static dfMarkupParser parserInstance = new dfMarkupParser();
+    private dfRichTextLabel owner;
+
+    static dfMarkupParser()
     {
-      private static Regex TAG_PATTERN = (Regex) null;
-      private static Regex ATTR_PATTERN = (Regex) null;
-      private static Regex STYLE_PATTERN = (Regex) null;
-      private static Dictionary<string, System.Type> tagTypes = (Dictionary<string, System.Type>) null;
-      private static dfMarkupParser parserInstance = new dfMarkupParser();
-      private dfRichTextLabel owner;
+      RegexOptions options = RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture | RegexOptions.CultureInvariant;
+      dfMarkupParser.TAG_PATTERN = new Regex("(\\<\\/?)(?<tag>[a-zA-Z0-9__]+)(\\s(?<attr>.+?))?([\\/]*\\>)", options);
+      dfMarkupParser.ATTR_PATTERN = new Regex("(?<key>[a-zA-Z0-9__]+)=(?<value>(\"((\\\\\")|\\\\\\\\|[^\"\\n])*\")|('((\\\\')|\\\\\\\\|[^'\\n])*')|\\d+|\\w+)", options);
+      dfMarkupParser.STYLE_PATTERN = new Regex("(?<key>[a-zA-Z0-9\\-]+)(\\s*\\:\\s*)(?<value>[^;]+)", options);
+    }
 
-      static dfMarkupParser()
+    public static dfList<dfMarkupElement> Parse(dfRichTextLabel owner, string source)
+    {
+      try
       {
-        RegexOptions options = RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture | RegexOptions.CultureInvariant;
-        dfMarkupParser.TAG_PATTERN = new Regex("(\\<\\/?)(?<tag>[a-zA-Z0-9__]+)(\\s(?<attr>.+?))?([\\/]*\\>)", options);
-        dfMarkupParser.ATTR_PATTERN = new Regex("(?<key>[a-zA-Z0-9__]+)=(?<value>(\"((\\\\\")|\\\\\\\\|[^\"\\n])*\")|('((\\\\')|\\\\\\\\|[^'\\n])*')|\\d+|\\w+)", options);
-        dfMarkupParser.STYLE_PATTERN = new Regex("(?<key>[a-zA-Z0-9\\-]+)(\\s*\\:\\s*)(?<value>[^;]+)", options);
+        dfMarkupParser.parserInstance.owner = owner;
+        return dfMarkupParser.parserInstance.parseMarkup(source);
       }
-
-      public static dfList<dfMarkupElement> Parse(dfRichTextLabel owner, string source)
+      finally
       {
-        try
-        {
-          dfMarkupParser.parserInstance.owner = owner;
-          return dfMarkupParser.parserInstance.parseMarkup(source);
-        }
-        finally
-        {
-        }
       }
+    }
 
-      private dfList<dfMarkupElement> parseMarkup(string source)
+    private dfList<dfMarkupElement> parseMarkup(string source)
+    {
+      Queue<dfMarkupElement> tokens = new Queue<dfMarkupElement>();
+      MatchCollection matchCollection = dfMarkupParser.TAG_PATTERN.Matches(source);
+      int startIndex = 0;
+      for (int i = 0; i < matchCollection.Count; ++i)
       {
-        Queue<dfMarkupElement> tokens = new Queue<dfMarkupElement>();
-        MatchCollection matchCollection = dfMarkupParser.TAG_PATTERN.Matches(source);
-        int startIndex = 0;
-        for (int i = 0; i < matchCollection.Count; ++i)
+        Match tag = matchCollection[i];
+        if (tag.Index > startIndex)
         {
-          Match tag = matchCollection[i];
-          if (tag.Index > startIndex)
-          {
-            dfMarkupString dfMarkupString = new dfMarkupString(source.Substring(startIndex, tag.Index - startIndex));
-            tokens.Enqueue((dfMarkupElement) dfMarkupString);
-          }
-          startIndex = tag.Index + tag.Length;
-          tokens.Enqueue(this.parseTag(tag));
-        }
-        if (startIndex < source.Length)
-        {
-          dfMarkupString dfMarkupString = new dfMarkupString(source.Substring(startIndex));
+          dfMarkupString dfMarkupString = new dfMarkupString(source.Substring(startIndex, tag.Index - startIndex));
           tokens.Enqueue((dfMarkupElement) dfMarkupString);
         }
-        return this.processTokens(tokens);
+        startIndex = tag.Index + tag.Length;
+        tokens.Enqueue(this.parseTag(tag));
       }
-
-      private dfList<dfMarkupElement> processTokens(Queue<dfMarkupElement> tokens)
+      if (startIndex < source.Length)
       {
-        dfList<dfMarkupElement> dfList = dfList<dfMarkupElement>.Obtain();
-        while (tokens.Count > 0)
-          dfList.Add(this.parseElement(tokens));
-        for (int index = 0; index < dfList.Count; ++index)
-        {
-          if (dfList[index] is dfMarkupTag)
-            ((dfMarkupTag) dfList[index]).Owner = this.owner;
-        }
-        return dfList;
+        dfMarkupString dfMarkupString = new dfMarkupString(source.Substring(startIndex));
+        tokens.Enqueue((dfMarkupElement) dfMarkupString);
       }
+      return this.processTokens(tokens);
+    }
 
-      private dfMarkupElement parseElement(Queue<dfMarkupElement> tokens)
+    private dfList<dfMarkupElement> processTokens(Queue<dfMarkupElement> tokens)
+    {
+      dfList<dfMarkupElement> dfList = dfList<dfMarkupElement>.Obtain();
+      while (tokens.Count > 0)
+        dfList.Add(this.parseElement(tokens));
+      for (int index = 0; index < dfList.Count; ++index)
       {
-        dfMarkupElement dfMarkupElement = tokens.Dequeue();
-        if (dfMarkupElement is dfMarkupString)
-          return ((dfMarkupString) dfMarkupElement).SplitWords();
-        dfMarkupTag original = (dfMarkupTag) dfMarkupElement;
-        if (original.IsClosedTag || original.IsEndTag)
-          return (dfMarkupElement) this.refineTag(original);
-        while (tokens.Count > 0)
-        {
-          dfMarkupElement element = this.parseElement(tokens);
-          if (element is dfMarkupTag)
-          {
-            dfMarkupTag dfMarkupTag = (dfMarkupTag) element;
-            if (dfMarkupTag.IsEndTag)
-            {
-              if (!(dfMarkupTag.TagName == original.TagName))
-                return (dfMarkupElement) this.refineTag(original);
-              break;
-            }
-          }
-          original.AddChildNode(element);
-        }
+        if (dfList[index] is dfMarkupTag)
+          ((dfMarkupTag) dfList[index]).Owner = this.owner;
+      }
+      return dfList;
+    }
+
+    private dfMarkupElement parseElement(Queue<dfMarkupElement> tokens)
+    {
+      dfMarkupElement dfMarkupElement = tokens.Dequeue();
+      if (dfMarkupElement is dfMarkupString)
+        return ((dfMarkupString) dfMarkupElement).SplitWords();
+      dfMarkupTag original = (dfMarkupTag) dfMarkupElement;
+      if (original.IsClosedTag || original.IsEndTag)
         return (dfMarkupElement) this.refineTag(original);
-      }
-
-      private dfMarkupTag refineTag(dfMarkupTag original)
+      while (tokens.Count > 0)
       {
-        if (original.IsEndTag)
-          return original;
-        if (dfMarkupParser.tagTypes == null)
+        dfMarkupElement element = this.parseElement(tokens);
+        if (element is dfMarkupTag)
         {
-          dfMarkupParser.tagTypes = new Dictionary<string, System.Type>();
-          foreach (System.Type assemblyType in this.getAssemblyTypes())
+          dfMarkupTag dfMarkupTag = (dfMarkupTag) element;
+          if (dfMarkupTag.IsEndTag)
           {
-            if (typeof (dfMarkupTag).IsAssignableFrom(assemblyType))
+            if (!(dfMarkupTag.TagName == original.TagName))
+              return (dfMarkupElement) this.refineTag(original);
+            break;
+          }
+        }
+        original.AddChildNode(element);
+      }
+      return (dfMarkupElement) this.refineTag(original);
+    }
+
+    private dfMarkupTag refineTag(dfMarkupTag original)
+    {
+      if (original.IsEndTag)
+        return original;
+      if (dfMarkupParser.tagTypes == null)
+      {
+        dfMarkupParser.tagTypes = new Dictionary<string, System.Type>();
+        foreach (System.Type assemblyType in this.getAssemblyTypes())
+        {
+          if (typeof (dfMarkupTag).IsAssignableFrom(assemblyType))
+          {
+            object[] customAttributes = assemblyType.GetCustomAttributes(typeof (dfMarkupTagInfoAttribute), true);
+            if (customAttributes != null && customAttributes.Length != 0)
             {
-              object[] customAttributes = assemblyType.GetCustomAttributes(typeof (dfMarkupTagInfoAttribute), true);
-              if (customAttributes != null && customAttributes.Length != 0)
+              for (int index = 0; index < customAttributes.Length; ++index)
               {
-                for (int index = 0; index < customAttributes.Length; ++index)
-                {
-                  string tagName = ((dfMarkupTagInfoAttribute) customAttributes[index]).TagName;
-                  dfMarkupParser.tagTypes[tagName] = assemblyType;
-                }
+                string tagName = ((dfMarkupTagInfoAttribute) customAttributes[index]).TagName;
+                dfMarkupParser.tagTypes[tagName] = assemblyType;
               }
             }
           }
         }
-        if (!dfMarkupParser.tagTypes.ContainsKey(original.TagName))
-          return original;
-        return (dfMarkupTag) Activator.CreateInstance(dfMarkupParser.tagTypes[original.TagName], (object) original);
       }
-
-      private System.Type[] getAssemblyTypes() => Assembly.GetExecutingAssembly().GetExportedTypes();
-
-      private dfMarkupElement parseTag(Match tag)
-      {
-        string lowerInvariant = tag.Groups[nameof (tag)].Value.ToLowerInvariant();
-        if (tag.Value.StartsWith("</"))
-          return (dfMarkupElement) new dfMarkupTag(lowerInvariant)
-          {
-            IsEndTag = true
-          };
-        dfMarkupTag element = new dfMarkupTag(lowerInvariant);
-        string input = tag.Groups["attr"].Value;
-        MatchCollection matchCollection = dfMarkupParser.ATTR_PATTERN.Matches(input);
-        for (int i = 0; i < matchCollection.Count; ++i)
-        {
-          Match match = matchCollection[i];
-          string name = match.Groups["key"].Value;
-          string text = dfMarkupEntity.Replace(match.Groups["value"].Value);
-          if (text.StartsWith("\""))
-            text = text.Trim('"');
-          else if (text.StartsWith("'"))
-            text = text.Trim('\'');
-          if (!string.IsNullOrEmpty(text))
-          {
-            if (name == "style")
-              this.parseStyleAttribute(element, text);
-            else
-              element.Attributes.Add(new dfMarkupAttribute(name, text));
-          }
-        }
-        if (tag.Value.EndsWith("/>") || lowerInvariant == "br" || lowerInvariant == "img")
-          element.IsClosedTag = true;
-        return (dfMarkupElement) element;
-      }
-
-      private void parseStyleAttribute(dfMarkupTag element, string text)
-      {
-        MatchCollection matchCollection = dfMarkupParser.STYLE_PATTERN.Matches(text);
-        for (int i = 0; i < matchCollection.Count; ++i)
-        {
-          Match match = matchCollection[i];
-          string lowerInvariant = match.Groups["key"].Value.ToLowerInvariant();
-          string str = match.Groups["value"].Value;
-          element.Attributes.Add(new dfMarkupAttribute(lowerInvariant, str));
-        }
-      }
+      if (!dfMarkupParser.tagTypes.ContainsKey(original.TagName))
+        return original;
+      return (dfMarkupTag) Activator.CreateInstance(dfMarkupParser.tagTypes[original.TagName], (object) original);
     }
 
-}
+    private System.Type[] getAssemblyTypes() => Assembly.GetExecutingAssembly().GetExportedTypes();
+
+    private dfMarkupElement parseTag(Match tag)
+    {
+      string lowerInvariant = tag.Groups[nameof (tag)].Value.ToLowerInvariant();
+      if (tag.Value.StartsWith("</"))
+        return (dfMarkupElement) new dfMarkupTag(lowerInvariant)
+        {
+          IsEndTag = true
+        };
+      dfMarkupTag element = new dfMarkupTag(lowerInvariant);
+      string input = tag.Groups["attr"].Value;
+      MatchCollection matchCollection = dfMarkupParser.ATTR_PATTERN.Matches(input);
+      for (int i = 0; i < matchCollection.Count; ++i)
+      {
+        Match match = matchCollection[i];
+        string name = match.Groups["key"].Value;
+        string text = dfMarkupEntity.Replace(match.Groups["value"].Value);
+        if (text.StartsWith("\""))
+          text = text.Trim('"');
+        else if (text.StartsWith("'"))
+          text = text.Trim('\'');
+        if (!string.IsNullOrEmpty(text))
+        {
+          if (name == "style")
+            this.parseStyleAttribute(element, text);
+          else
+            element.Attributes.Add(new dfMarkupAttribute(name, text));
+        }
+      }
+      if (tag.Value.EndsWith("/>") || lowerInvariant == "br" || lowerInvariant == "img")
+        element.IsClosedTag = true;
+      return (dfMarkupElement) element;
+    }
+
+    private void parseStyleAttribute(dfMarkupTag element, string text)
+    {
+      MatchCollection matchCollection = dfMarkupParser.STYLE_PATTERN.Matches(text);
+      for (int i = 0; i < matchCollection.Count; ++i)
+      {
+        Match match = matchCollection[i];
+        string lowerInvariant = match.Groups["key"].Value.ToLowerInvariant();
+        string str = match.Groups["value"].Value;
+        element.Attributes.Add(new dfMarkupAttribute(lowerInvariant, str));
+      }
+    }
+  }
+

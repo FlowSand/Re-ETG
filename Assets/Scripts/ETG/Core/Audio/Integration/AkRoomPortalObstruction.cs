@@ -9,30 +9,27 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    [RequireComponent(typeof (AkRoomPortal))]
-    [AddComponentMenu("Wwise/AkRoomPortalObstruction")]
-    public class AkRoomPortalObstruction : AkObstructionOcclusion
+[RequireComponent(typeof (AkRoomPortal))]
+[AddComponentMenu("Wwise/AkRoomPortalObstruction")]
+public class AkRoomPortalObstruction : AkObstructionOcclusion
+  {
+    private AkRoomPortal m_portal;
+
+    private void Awake()
     {
-      private AkRoomPortal m_portal;
-
-      private void Awake()
-      {
-        this.InitIntervalsAndFadeRates();
-        this.m_portal = this.GetComponent<AkRoomPortal>();
-      }
-
-      protected override void UpdateObstructionOcclusionValuesForListeners()
-      {
-        this.UpdateObstructionOcclusionValues(AkSpatialAudioListener.TheSpatialAudioListener);
-      }
-
-      protected override void SetObstructionOcclusion(
-        KeyValuePair<AkAudioListener, AkObstructionOcclusion.ObstructionOcclusionValue> ObsOccPair)
-      {
-        int num = (int) AkSoundEngine.SetPortalObstruction(this.m_portal.GetID(), ObsOccPair.Value.currentValue);
-      }
+      this.InitIntervalsAndFadeRates();
+      this.m_portal = this.GetComponent<AkRoomPortal>();
     }
 
-}
+    protected override void UpdateObstructionOcclusionValuesForListeners()
+    {
+      this.UpdateObstructionOcclusionValues(AkSpatialAudioListener.TheSpatialAudioListener);
+    }
+
+    protected override void SetObstructionOcclusion(
+      KeyValuePair<AkAudioListener, AkObstructionOcclusion.ObstructionOcclusionValue> ObsOccPair)
+    {
+      int num = (int) AkSoundEngine.SetPortalObstruction(this.m_portal.GetID(), ObsOccPair.Value.currentValue);
+    }
+  }
+

@@ -11,23 +11,20 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/Bashellisk/RandomLeadShots1")]
-    public class BashelliskRandomLeadShots1 : Script
+[InspectorDropdownName("Bosses/Bashellisk/RandomLeadShots1")]
+public class BashelliskRandomLeadShots1 : Script
+  {
+    public int NumBullets = 10;
+    public float BulletSpeed = 14f;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      public int NumBullets = 10;
-      public float BulletSpeed = 14f;
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new BashelliskRandomLeadShots1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BashelliskRandomLeadShots1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

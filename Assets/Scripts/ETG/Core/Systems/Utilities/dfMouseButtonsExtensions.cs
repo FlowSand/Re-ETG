@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public static class dfMouseButtonsExtensions
+  public static class dfMouseButtonsExtensions
+  {
+    public static bool IsSet(this dfMouseButtons value, dfMouseButtons flag)
     {
-      public static bool IsSet(this dfMouseButtons value, dfMouseButtons flag)
-      {
-        return flag == (value & flag);
-      }
+      return flag == (value & flag);
     }
+  }
 
-}

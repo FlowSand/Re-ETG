@@ -8,12 +8,9 @@ using FullInspector;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/Megalich/PoundLeft1")]
-    public class MegalichPoundLeft1 : MegalichPound1
-    {
-      protected override float FireDirection => 1f;
-    }
+[InspectorDropdownName("Bosses/Megalich/PoundLeft1")]
+public class MegalichPoundLeft1 : MegalichPound1
+  {
+    protected override float FireDirection => 1f;
+  }
 
-}

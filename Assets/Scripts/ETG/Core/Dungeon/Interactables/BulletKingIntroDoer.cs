@@ -9,23 +9,20 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Dungeon.Interactables
-{
-    [RequireComponent(typeof (GenericIntroDoer))]
-    public class BulletKingIntroDoer : SpecificIntroDoer
-    {
-      protected override void OnDestroy() => base.OnDestroy();
+[RequireComponent(typeof (GenericIntroDoer))]
+public class BulletKingIntroDoer : SpecificIntroDoer
+  {
+    protected override void OnDestroy() => base.OnDestroy();
 
-      public override void StartIntro(List<tk2dSpriteAnimator> animators)
+    public override void StartIntro(List<tk2dSpriteAnimator> animators)
+    {
+      BulletKingToadieController[] objectsOfType = Object.FindObjectsOfType<BulletKingToadieController>();
+      for (int index = 0; index < objectsOfType.Length; ++index)
       {
-        BulletKingToadieController[] objectsOfType = Object.FindObjectsOfType<BulletKingToadieController>();
-        for (int index = 0; index < objectsOfType.Length; ++index)
-        {
-          animators.Add(objectsOfType[index].spriteAnimator);
-          if ((bool) (Object) objectsOfType[index].scepterAnimator)
-            animators.Add(objectsOfType[index].scepterAnimator);
-        }
+        animators.Add(objectsOfType[index].spriteAnimator);
+        if ((bool) (Object) objectsOfType[index].scepterAnimator)
+          animators.Add(objectsOfType[index].scepterAnimator);
       }
     }
+  }
 
-}

@@ -8,21 +8,18 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    [Serializable]
-    public class PrototypePlacedObjectFieldData
+[Serializable]
+public class PrototypePlacedObjectFieldData
+  {
+    public PrototypePlacedObjectFieldData.FieldType fieldType;
+    public string fieldName;
+    public float floatValue;
+    public bool boolValue;
+
+    public enum FieldType
     {
-      public PrototypePlacedObjectFieldData.FieldType fieldType;
-      public string fieldName;
-      public float floatValue;
-      public bool boolValue;
-
-      public enum FieldType
-      {
-        FLOAT,
-        BOOL,
-      }
+      FLOAT,
+      BOOL,
     }
+  }
 
-}

@@ -8,13 +8,10 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class GunClassModifierOverride
-    {
-      public GunClass classToModify;
-      public float modifier = 0.2f;
-    }
+[Serializable]
+public class GunClassModifierOverride
+  {
+    public GunClass classToModify;
+    public float modifier = 0.2f;
+  }
 
-}

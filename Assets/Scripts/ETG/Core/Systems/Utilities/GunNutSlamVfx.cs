@@ -10,28 +10,25 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class GunNutSlamVfx : MonoBehaviour
+public class GunNutSlamVfx : MonoBehaviour
+  {
+    public VFXPool SlamVfx;
+    public float SlamCount;
+    public float SlamDistance;
+    public float SlamDelay;
+    public VFXPool DustVfx;
+    public float DustOffset;
+
+    public void OnSpawned() => this.StartCoroutine(this.DoVfx());
+
+    [DebuggerHidden]
+    private IEnumerator DoVfx()
     {
-      public VFXPool SlamVfx;
-      public float SlamCount;
-      public float SlamDistance;
-      public float SlamDelay;
-      public VFXPool DustVfx;
-      public float DustOffset;
-
-      public void OnSpawned() => this.StartCoroutine(this.DoVfx());
-
-      [DebuggerHidden]
-      private IEnumerator DoVfx()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new GunNutSlamVfx__DoVfxc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new GunNutSlamVfx__DoVfxc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

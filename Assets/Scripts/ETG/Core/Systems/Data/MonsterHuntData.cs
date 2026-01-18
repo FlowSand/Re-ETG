@@ -9,14 +9,11 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    public class MonsterHuntData : ScriptableObject
-    {
-      [SerializeField]
-      public List<MonsterHuntQuest> OrderedQuests;
-      [SerializeField]
-      public List<MonsterHuntQuest> ProceduralQuests;
-    }
+public class MonsterHuntData : ScriptableObject
+  {
+    [SerializeField]
+    public List<MonsterHuntQuest> OrderedQuests;
+    [SerializeField]
+    public List<MonsterHuntQuest> ProceduralQuests;
+  }
 
-}

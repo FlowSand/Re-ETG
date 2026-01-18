@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class RoomInternalMaterialTransition
-    {
-      public TileIndexGrid transitionGrid;
-      public int materialTransition;
-      public float proceduralThreshold = 0.5f;
-    }
+[Serializable]
+public class RoomInternalMaterialTransition
+  {
+    public TileIndexGrid transitionGrid;
+    public int materialTransition;
+    public float proceduralThreshold = 0.5f;
+  }
 
-}

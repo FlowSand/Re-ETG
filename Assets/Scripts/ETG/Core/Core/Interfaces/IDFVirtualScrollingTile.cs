@@ -6,15 +6,12 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IDFVirtualScrollingTile
-    {
-      int VirtualScrollItemIndex { get; set; }
+public interface IDFVirtualScrollingTile
+  {
+    int VirtualScrollItemIndex { get; set; }
 
-      void OnScrollPanelItemVirtualize(object backingListItem);
+    void OnScrollPanelItemVirtualize(object backingListItem);
 
-      dfPanel GetDfPanel();
-    }
+    dfPanel GetDfPanel();
+  }
 
-}

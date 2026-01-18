@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class DebugLines : MonoBehaviour
-    {
-      public static bool ShowGcBar;
-      public static bool ShowFrameTimes;
-      private static int m_frameTimeWindow = 360;
-    }
+public class DebugLines : MonoBehaviour
+  {
+    public static bool ShowGcBar;
+    public static bool ShowFrameTimes;
+    private static int m_frameTimeWindow = 360;
+  }
 
-}

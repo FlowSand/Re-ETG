@@ -9,18 +9,15 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class BossFinalConvictDeathController : BraveBehaviour
+public class BossFinalConvictDeathController : BraveBehaviour
+  {
+    public void Start() => this.healthHaver.OnPreDeath += new Action<Vector2>(this.OnBossDeath);
+
+    protected override void OnDestroy() => base.OnDestroy();
+
+    private void OnBossDeath(Vector2 dir)
     {
-      public void Start() => this.healthHaver.OnPreDeath += new Action<Vector2>(this.OnBossDeath);
-
-      protected override void OnDestroy() => base.OnDestroy();
-
-      private void OnBossDeath(Vector2 dir)
-      {
-        UnityEngine.Object.FindObjectOfType<ConvictPastController>().OnBossKilled(this.transform);
-      }
+      UnityEngine.Object.FindObjectOfType<ConvictPastController>().OnBossKilled(this.transform);
     }
+  }
 
-}

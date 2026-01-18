@@ -6,9 +6,6 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [dfEventCategory("General")]
-    public delegate void ControlCallbackHandler(dfControl control);
+[dfEventCategory("General")]
+public delegate void ControlCallbackHandler(dfControl control);
 
-}

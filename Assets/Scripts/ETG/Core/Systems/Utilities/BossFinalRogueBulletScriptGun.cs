@@ -6,52 +6,49 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class BossFinalRogueBulletScriptGun : BossFinalRogueGunController
+public class BossFinalRogueBulletScriptGun : BossFinalRogueGunController
+  {
+    public ShootBehavior ShootBehavior;
+    private bool m_isRunning;
+
+    public override void Start()
     {
-      public ShootBehavior ShootBehavior;
-      private bool m_isRunning;
+      base.Start();
+      this.ShootBehavior.Init(this.ship.gameObject, this.ship.aiActor, this.ship.aiShooter);
+      this.ShootBehavior.Start();
+    }
 
-      public override void Start()
+    public override void Update()
+    {
+      base.Update();
+      this.ShootBehavior.SetDeltaTime(BraveTime.DeltaTime);
+      this.ShootBehavior.Upkeep();
+      if (!this.m_isRunning || this.ShootBehavior.ContinuousUpdate() != ContinuousBehaviorResult.Finished)
+        return;
+      this.m_isRunning = false;
+      this.ShootBehavior.EndContinuousUpdate();
+    }
+
+    protected override void OnDestroy() => base.OnDestroy();
+
+    public override void Fire()
+    {
+      switch (this.ShootBehavior.Update())
       {
-        base.Start();
-        this.ShootBehavior.Init(this.ship.gameObject, this.ship.aiActor, this.ship.aiShooter);
-        this.ShootBehavior.Start();
-      }
-
-      public override void Update()
-      {
-        base.Update();
-        this.ShootBehavior.SetDeltaTime(BraveTime.DeltaTime);
-        this.ShootBehavior.Upkeep();
-        if (!this.m_isRunning || this.ShootBehavior.ContinuousUpdate() != ContinuousBehaviorResult.Finished)
-          return;
-        this.m_isRunning = false;
-        this.ShootBehavior.EndContinuousUpdate();
-      }
-
-      protected override void OnDestroy() => base.OnDestroy();
-
-      public override void Fire()
-      {
-        switch (this.ShootBehavior.Update())
-        {
-          case BehaviorResult.RunContinuousInClass:
-          case BehaviorResult.RunContinuous:
-            this.m_isRunning = true;
-            break;
-        }
-      }
-
-      public override bool IsFinished => !this.m_isRunning;
-
-      public override void CeaseFire()
-      {
-        if (!this.m_isRunning)
-          return;
-        this.ShootBehavior.EndContinuousUpdate();
+        case BehaviorResult.RunContinuousInClass:
+        case BehaviorResult.RunContinuous:
+          this.m_isRunning = true;
+          break;
       }
     }
 
-}
+    public override bool IsFinished => !this.m_isRunning;
+
+    public override void CeaseFire()
+    {
+      if (!this.m_isRunning)
+        return;
+      this.ShootBehavior.EndContinuousUpdate();
+    }
+  }
+

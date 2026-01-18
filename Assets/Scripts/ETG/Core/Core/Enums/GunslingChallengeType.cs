@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum GunslingChallengeType
-    {
-      NO_DAMAGE,
-      NO_DODGE_ROLL,
-      SPECIFIC_GUN,
-      DAISUKE_CHALLENGES,
-    }
+public enum GunslingChallengeType
+  {
+    NO_DAMAGE,
+    NO_DODGE_ROLL,
+    SPECIFIC_GUN,
+    DAISUKE_CHALLENGES,
+  }
 
-}

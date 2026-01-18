@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class LightStampData : ObjectStampData
-    {
-      public bool CanBeTopWallLight = true;
-      public bool CanBeCenterLight = true;
-      public int FallbackIndex;
-    }
+[Serializable]
+public class LightStampData : ObjectStampData
+  {
+    public bool CanBeTopWallLight = true;
+    public bool CanBeCenterLight = true;
+    public int FallbackIndex;
+  }
 
-}

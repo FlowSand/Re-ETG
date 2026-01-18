@@ -10,21 +10,18 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class HellFaceFire1 : Script
+public class HellFaceFire1 : Script
+  {
+    public const int NumEyeBullets = 8;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      public const int NumEyeBullets = 8;
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new HellFaceFire1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new HellFaceFire1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

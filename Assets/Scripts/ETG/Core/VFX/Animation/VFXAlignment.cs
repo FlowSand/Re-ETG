@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    public enum VFXAlignment
-    {
-      Fixed,
-      NormalAligned,
-      VelocityAligned,
-    }
+public enum VFXAlignment
+  {
+    Fixed,
+    NormalAligned,
+    VelocityAligned,
+  }
 
-}

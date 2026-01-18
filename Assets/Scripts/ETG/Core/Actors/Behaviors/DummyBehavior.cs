@@ -8,11 +8,8 @@ using FullInspector;
 
 #nullable disable
 
-namespace ETG.Core.Actors.Behaviors
-{
-    public class DummyBehavior : BaseBehavior<FullSerializerSerializer>
-    {
-      public AttackBehaviorBase Behavior;
-    }
+public class DummyBehavior : BaseBehavior<FullSerializerSerializer>
+  {
+    public AttackBehaviorBase Behavior;
+  }
 
-}

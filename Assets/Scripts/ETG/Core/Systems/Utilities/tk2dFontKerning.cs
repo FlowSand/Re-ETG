@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class tk2dFontKerning
-    {
-      public int c0;
-      public int c1;
-      public float amount;
-    }
+[Serializable]
+public class tk2dFontKerning
+  {
+    public int c0;
+    public int c1;
+    public float amount;
+  }
 
-}

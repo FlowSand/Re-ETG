@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class SpawnObjectItem : BraveBehaviour
-    {
-      public PlayerController SpawningPlayer;
+public class SpawnObjectItem : BraveBehaviour
+  {
+    public PlayerController SpawningPlayer;
 
-      protected override void OnDestroy() => base.OnDestroy();
-    }
+    protected override void OnDestroy() => base.OnDestroy();
+  }
 
-}

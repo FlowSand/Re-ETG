@@ -8,68 +8,65 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public class AkSourceSettings : IDisposable
+public class AkSourceSettings : IDisposable
+  {
+    private IntPtr swigCPtr;
+    protected bool swigCMemOwn;
+
+    internal AkSourceSettings(IntPtr cPtr, bool cMemoryOwn)
     {
-      private IntPtr swigCPtr;
-      protected bool swigCMemOwn;
+      this.swigCMemOwn = cMemoryOwn;
+      this.swigCPtr = cPtr;
+    }
 
-      internal AkSourceSettings(IntPtr cPtr, bool cMemoryOwn)
+    public AkSourceSettings()
+      : this(AkSoundEnginePINVOKE.CSharp_new_AkSourceSettings(), true)
+    {
+    }
+
+    internal static IntPtr getCPtr(AkSourceSettings obj) => obj == null ? IntPtr.Zero : obj.swigCPtr;
+
+    internal virtual void setCPtr(IntPtr cPtr)
+    {
+      this.Dispose();
+      this.swigCPtr = cPtr;
+    }
+
+    ~AkSourceSettings() => this.Dispose();
+
+    public virtual void Dispose()
+    {
+      lock ((object) this)
       {
-        this.swigCMemOwn = cMemoryOwn;
-        this.swigCPtr = cPtr;
-      }
-
-      public AkSourceSettings()
-        : this(AkSoundEnginePINVOKE.CSharp_new_AkSourceSettings(), true)
-      {
-      }
-
-      internal static IntPtr getCPtr(AkSourceSettings obj) => obj == null ? IntPtr.Zero : obj.swigCPtr;
-
-      internal virtual void setCPtr(IntPtr cPtr)
-      {
-        this.Dispose();
-        this.swigCPtr = cPtr;
-      }
-
-      ~AkSourceSettings() => this.Dispose();
-
-      public virtual void Dispose()
-      {
-        lock ((object) this)
+        if (this.swigCPtr != IntPtr.Zero)
         {
-          if (this.swigCPtr != IntPtr.Zero)
+          if (this.swigCMemOwn)
           {
-            if (this.swigCMemOwn)
-            {
-              this.swigCMemOwn = false;
-              AkSoundEnginePINVOKE.CSharp_delete_AkSourceSettings(this.swigCPtr);
-            }
-            this.swigCPtr = IntPtr.Zero;
+            this.swigCMemOwn = false;
+            AkSoundEnginePINVOKE.CSharp_delete_AkSourceSettings(this.swigCPtr);
           }
-          GC.SuppressFinalize((object) this);
+          this.swigCPtr = IntPtr.Zero;
         }
-      }
-
-      public uint sourceID
-      {
-        set => AkSoundEnginePINVOKE.CSharp_AkSourceSettings_sourceID_set(this.swigCPtr, value);
-        get => AkSoundEnginePINVOKE.CSharp_AkSourceSettings_sourceID_get(this.swigCPtr);
-      }
-
-      public IntPtr pMediaMemory
-      {
-        set => AkSoundEnginePINVOKE.CSharp_AkSourceSettings_pMediaMemory_set(this.swigCPtr, value);
-        get => AkSoundEnginePINVOKE.CSharp_AkSourceSettings_pMediaMemory_get(this.swigCPtr);
-      }
-
-      public uint uMediaSize
-      {
-        set => AkSoundEnginePINVOKE.CSharp_AkSourceSettings_uMediaSize_set(this.swigCPtr, value);
-        get => AkSoundEnginePINVOKE.CSharp_AkSourceSettings_uMediaSize_get(this.swigCPtr);
+        GC.SuppressFinalize((object) this);
       }
     }
 
-}
+    public uint sourceID
+    {
+      set => AkSoundEnginePINVOKE.CSharp_AkSourceSettings_sourceID_set(this.swigCPtr, value);
+      get => AkSoundEnginePINVOKE.CSharp_AkSourceSettings_sourceID_get(this.swigCPtr);
+    }
+
+    public IntPtr pMediaMemory
+    {
+      set => AkSoundEnginePINVOKE.CSharp_AkSourceSettings_pMediaMemory_set(this.swigCPtr, value);
+      get => AkSoundEnginePINVOKE.CSharp_AkSourceSettings_pMediaMemory_get(this.swigCPtr);
+    }
+
+    public uint uMediaSize
+    {
+      set => AkSoundEnginePINVOKE.CSharp_AkSourceSettings_uMediaSize_set(this.swigCPtr, value);
+      get => AkSoundEnginePINVOKE.CSharp_AkSourceSettings_uMediaSize_get(this.swigCPtr);
+    }
+  }
+

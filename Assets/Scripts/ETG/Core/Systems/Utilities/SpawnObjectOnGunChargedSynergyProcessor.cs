@@ -8,10 +8,7 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class SpawnObjectOnGunChargedSynergyProcessor : MonoBehaviour
-    {
-    }
+public class SpawnObjectOnGunChargedSynergyProcessor : MonoBehaviour
+  {
+  }
 
-}

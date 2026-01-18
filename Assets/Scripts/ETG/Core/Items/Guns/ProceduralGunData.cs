@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Items.Guns
-{
-    public class ProceduralGunData : ScriptableObject
-    {
-      public ProceduralDataPoint ammoData;
-      public ProceduralDataPoint damageData;
-      public ProceduralDataPoint cooldownData;
-    }
+public class ProceduralGunData : ScriptableObject
+  {
+    public ProceduralDataPoint ammoData;
+    public ProceduralDataPoint damageData;
+    public ProceduralDataPoint cooldownData;
+  }
 
-}

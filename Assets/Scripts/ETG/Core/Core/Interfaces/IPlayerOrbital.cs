@@ -8,27 +8,24 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IPlayerOrbital
-    {
-      void Reinitialize();
+public interface IPlayerOrbital
+  {
+    void Reinitialize();
 
-      Transform GetTransform();
+    Transform GetTransform();
 
-      void ToggleRenderer(bool visible);
+    void ToggleRenderer(bool visible);
 
-      int GetOrbitalTier();
+    int GetOrbitalTier();
 
-      void SetOrbitalTier(int tier);
+    void SetOrbitalTier(int tier);
 
-      int GetOrbitalTierIndex();
+    int GetOrbitalTierIndex();
 
-      void SetOrbitalTierIndex(int tierIndex);
+    void SetOrbitalTierIndex(int tierIndex);
 
-      float GetOrbitalRadius();
+    float GetOrbitalRadius();
 
-      float GetOrbitalRotationalSpeed();
-    }
+    float GetOrbitalRotationalSpeed();
+  }
 
-}

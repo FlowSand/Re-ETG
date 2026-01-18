@@ -9,13 +9,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.VFX.Animation
-{
-    [Serializable]
-    public class SpriteStampData : StampDataBase
-    {
-      [SerializeField]
-      public Sprite spriteReference;
-    }
+[Serializable]
+public class SpriteStampData : StampDataBase
+  {
+    [SerializeField]
+    public Sprite spriteReference;
+  }
 
-}

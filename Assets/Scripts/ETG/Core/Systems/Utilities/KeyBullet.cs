@@ -8,10 +8,7 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class KeyBullet : MonoBehaviour
-    {
-    }
+public class KeyBullet : MonoBehaviour
+  {
+  }
 
-}

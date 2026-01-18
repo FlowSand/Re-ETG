@@ -9,29 +9,26 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    public class SynergyDatabase : ScriptableObject
-    {
-      public static Color SynergyBlue = new Color(0.596078455f, 0.980392158f, 1f);
-      [SerializeField]
-      public SynergyEntry[] synergies;
+public class SynergyDatabase : ScriptableObject
+  {
+    public static Color SynergyBlue = new Color(0.596078455f, 0.980392158f, 1f);
+    [SerializeField]
+    public SynergyEntry[] synergies;
 
-      public void RebuildSynergies(PlayerController p, List<int> previouslyActiveSynergies)
+    public void RebuildSynergies(PlayerController p, List<int> previouslyActiveSynergies)
+    {
+      if (!(bool) (Object) p)
+        return;
+      if (p.ActiveExtraSynergies == null)
+        p.ActiveExtraSynergies = new List<int>();
+      p.ActiveExtraSynergies.Clear();
+      if (p.inventory == null)
+        return;
+      for (int index = 0; index < this.synergies.Length; ++index)
       {
-        if (!(bool) (Object) p)
-          return;
-        if (p.ActiveExtraSynergies == null)
-          p.ActiveExtraSynergies = new List<int>();
-        p.ActiveExtraSynergies.Clear();
-        if (p.inventory == null)
-          return;
-        for (int index = 0; index < this.synergies.Length; ++index)
-        {
-          if (this.synergies[index].SynergyIsAvailable(GameManager.Instance.PrimaryPlayer, GameManager.Instance.SecondaryPlayer))
-            p.ActiveExtraSynergies.Add(index);
-        }
+        if (this.synergies[index].SynergyIsAvailable(GameManager.Instance.PrimaryPlayer, GameManager.Instance.SecondaryPlayer))
+          p.ActiveExtraSynergies.Add(index);
       }
     }
+  }
 
-}

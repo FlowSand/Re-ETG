@@ -8,18 +8,15 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class dfJumpButtonEvents : MonoBehaviour
+public class dfJumpButtonEvents : MonoBehaviour
+  {
+    public bool isMouseDown;
+
+    public void OnMouseDown(dfControl control, dfMouseEventArgs mouseEvent)
     {
-      public bool isMouseDown;
-
-      public void OnMouseDown(dfControl control, dfMouseEventArgs mouseEvent)
-      {
-        this.isMouseDown = true;
-      }
-
-      public void OnMouseUp(dfControl control, dfMouseEventArgs mouseEvent) => this.isMouseDown = false;
+      this.isMouseDown = true;
     }
 
-}
+    public void OnMouseUp(dfControl control, dfMouseEventArgs mouseEvent) => this.isMouseDown = false;
+  }
+

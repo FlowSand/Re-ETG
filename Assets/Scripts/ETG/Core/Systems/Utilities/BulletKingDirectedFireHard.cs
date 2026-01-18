@@ -6,10 +6,7 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public interface BulletKingDirectedFireHard
-    {
-    }
+public interface BulletKingDirectedFireHard
+  {
+  }
 
-}

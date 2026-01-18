@@ -6,18 +6,15 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum iTweenFSMType
-    {
-      all,
-      move,
-      rotate,
-      scale,
-      shake,
-      position,
-      value,
-      look,
-    }
+public enum iTweenFSMType
+  {
+    all,
+    move,
+    rotate,
+    scale,
+    shake,
+    position,
+    value,
+    look,
+  }
 
-}

@@ -8,15 +8,12 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IGunInheritable
-    {
-      void InheritData(Gun sourceGun);
+public interface IGunInheritable
+  {
+    void InheritData(Gun sourceGun);
 
-      void MidGameSerialize(List<object> data, int dataIndex);
+    void MidGameSerialize(List<object> data, int dataIndex);
 
-      void MidGameDeserialize(List<object> data, ref int dataIndex);
-    }
+    void MidGameDeserialize(List<object> data, ref int dataIndex);
+  }
 
-}

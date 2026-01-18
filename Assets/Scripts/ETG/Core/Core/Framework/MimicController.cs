@@ -6,18 +6,15 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class MimicController : BraveBehaviour
+public class MimicController : BraveBehaviour
+  {
+    public void Awake()
     {
-      public void Awake()
-      {
-        this.aiActor.enabled = false;
-        this.aiShooter.enabled = false;
-        this.behaviorSpeculator.enabled = false;
-      }
-
-      protected override void OnDestroy() => base.OnDestroy();
+      this.aiActor.enabled = false;
+      this.aiShooter.enabled = false;
+      this.behaviorSpeculator.enabled = false;
     }
 
-}
+    protected override void OnDestroy() => base.OnDestroy();
+  }
+

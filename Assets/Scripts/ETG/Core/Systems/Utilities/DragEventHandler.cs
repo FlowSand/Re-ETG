@@ -6,9 +6,6 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [dfEventCategory("Drag and Drop")]
-    public delegate void DragEventHandler(dfControl control, dfDragEventArgs dragEvent);
+[dfEventCategory("Drag and Drop")]
+public delegate void DragEventHandler(dfControl control, dfDragEventArgs dragEvent);
 
-}

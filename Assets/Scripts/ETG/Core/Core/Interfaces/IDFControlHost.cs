@@ -8,17 +8,14 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IDFControlHost
-    {
-      T AddControl<T>() where T : dfControl;
+public interface IDFControlHost
+  {
+    T AddControl<T>() where T : dfControl;
 
-      dfControl AddControl(System.Type controlType);
+    dfControl AddControl(System.Type controlType);
 
-      void AddControl(dfControl child);
+    void AddControl(dfControl child);
 
-      dfControl AddPrefab(GameObject prefab);
-    }
+    dfControl AddPrefab(GameObject prefab);
+  }
 
-}

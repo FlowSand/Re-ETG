@@ -8,18 +8,15 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class NormalDistributionDecoratorAttribute : PropertyAttribute
+public class NormalDistributionDecoratorAttribute : PropertyAttribute
+  {
+    public string MeanProperty;
+    public string StdDevProperty;
+
+    public NormalDistributionDecoratorAttribute(string meanPropertyName, string devPropertyName)
     {
-      public string MeanProperty;
-      public string StdDevProperty;
-
-      public NormalDistributionDecoratorAttribute(string meanPropertyName, string devPropertyName)
-      {
-        this.MeanProperty = meanPropertyName;
-        this.StdDevProperty = devPropertyName;
-      }
+      this.MeanProperty = meanPropertyName;
+      this.StdDevProperty = devPropertyName;
     }
+  }
 
-}

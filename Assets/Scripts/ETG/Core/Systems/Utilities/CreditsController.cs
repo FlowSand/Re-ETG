@@ -11,48 +11,45 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class CreditsController : MonoBehaviour
+public class CreditsController : MonoBehaviour
+  {
+    public dfScrollPanel creditsPanel;
+    public List<int> scrollThresholds;
+    public List<float> scrollDelays;
+    public float maxScrollSpeed = 20f;
+    private int m_currentThreshold;
+
+    private void Start()
     {
-      public dfScrollPanel creditsPanel;
-      public List<int> scrollThresholds;
-      public List<float> scrollDelays;
-      public float maxScrollSpeed = 20f;
-      private int m_currentThreshold;
-
-      private void Start()
-      {
-        GameManager.Instance.ClearActiveGameData(false, false);
-        Object.Destroy((Object) GameManager.Instance.DungeonMusicController);
-        this.StartCoroutine(this.ScrollToNextThreshold());
-      }
-
-      [DebuggerHidden]
-      private IEnumerator ScrollToNextThreshold()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CreditsController__ScrollToNextThresholdc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      [DebuggerHidden]
-      private IEnumerator WaitForNextThreshold()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new CreditsController__WaitForNextThresholdc__Iterator1()
-        {
-          _this = this
-        };
-      }
-
-      private void GoToMainMenu()
-      {
-        Cursor.visible = true;
-        GameManager.Instance.LoadCharacterSelect();
-      }
+      GameManager.Instance.ClearActiveGameData(false, false);
+      Object.Destroy((Object) GameManager.Instance.DungeonMusicController);
+      this.StartCoroutine(this.ScrollToNextThreshold());
     }
 
-}
+    [DebuggerHidden]
+    private IEnumerator ScrollToNextThreshold()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new CreditsController__ScrollToNextThresholdc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    [DebuggerHidden]
+    private IEnumerator WaitForNextThreshold()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new CreditsController__WaitForNextThresholdc__Iterator1()
+      {
+        _this = this
+      };
+    }
+
+    private void GoToMainMenu()
+    {
+      Cursor.visible = true;
+      GameManager.Instance.LoadCharacterSelect();
+    }
+  }
+

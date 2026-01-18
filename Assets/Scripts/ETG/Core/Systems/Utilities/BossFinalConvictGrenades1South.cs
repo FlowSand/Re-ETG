@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class BossFinalConvictGrenades1South : BossFinalConvictGrenades1
+public class BossFinalConvictGrenades1South : BossFinalConvictGrenades1
+  {
+    public BossFinalConvictGrenades1South()
+      : base(-150f, -30f)
     {
-      public BossFinalConvictGrenades1South()
-        : base(-150f, -30f)
-      {
-      }
     }
+  }
 
-}

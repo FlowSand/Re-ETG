@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfControlOrientation
-    {
-      Horizontal,
-      Vertical,
-    }
+public enum dfControlOrientation
+  {
+    Horizontal,
+    Vertical,
+  }
 
-}

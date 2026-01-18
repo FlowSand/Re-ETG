@@ -9,14 +9,11 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public class AkEventCallbackData : ScriptableObject
-    {
-      public List<int> callbackFlags = new List<int>();
-      public List<string> callbackFunc = new List<string>();
-      public List<GameObject> callbackGameObj = new List<GameObject>();
-      public int uFlags;
-    }
+public class AkEventCallbackData : ScriptableObject
+  {
+    public List<int> callbackFlags = new List<int>();
+    public List<string> callbackFunc = new List<string>();
+    public List<GameObject> callbackGameObj = new List<GameObject>();
+    public int uFlags;
+  }
 
-}

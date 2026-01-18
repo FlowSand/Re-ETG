@@ -6,15 +6,12 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkActionOnEventType
-    {
-      AkActionOnEventType_Stop,
-      AkActionOnEventType_Pause,
-      AkActionOnEventType_Resume,
-      AkActionOnEventType_Break,
-      AkActionOnEventType_ReleaseEnvelope,
-    }
+public enum AkActionOnEventType
+  {
+    AkActionOnEventType_Stop,
+    AkActionOnEventType_Pause,
+    AkActionOnEventType_Resume,
+    AkActionOnEventType_Break,
+    AkActionOnEventType_ReleaseEnvelope,
+  }
 
-}

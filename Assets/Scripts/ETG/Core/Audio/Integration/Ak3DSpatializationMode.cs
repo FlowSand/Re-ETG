@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum Ak3DSpatializationMode
-    {
-      AK_SpatializationMode_None,
-      AK_SpatializationMode_PositionOnly,
-      AK_SpatializationMode_PositionAndOrientation,
-    }
+public enum Ak3DSpatializationMode
+  {
+    AK_SpatializationMode_None,
+    AK_SpatializationMode_PositionOnly,
+    AK_SpatializationMode_PositionAndOrientation,
+  }
 
-}

@@ -11,46 +11,43 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public abstract class ChallengeModifier : MonoBehaviour
+  public abstract class ChallengeModifier : MonoBehaviour
+  {
+[SerializeField]
+    public string DisplayName;
+[SerializeField]
+    public string AlternateLanguageDisplayName;
+[SerializeField]
+    public string AtlasSpriteName;
+[SerializeField]
+    public bool ValidInBossChambers = true;
+[SerializeField]
+    public List<ChallengeModifier> MutuallyExclusive;
+[NonSerialized]
+    public dfSprite IconSprite;
+[NonSerialized]
+    public dfLabel IconLabel;
+[NonSerialized]
+    public bool IconShattered;
+
+    public void ShatterIcon(dfAnimationClip ChallengeBurstClip)
     {
-      [SerializeField]
-      public string DisplayName;
-      [SerializeField]
-      public string AlternateLanguageDisplayName;
-      [SerializeField]
-      public string AtlasSpriteName;
-      [SerializeField]
-      public bool ValidInBossChambers = true;
-      [SerializeField]
-      public List<ChallengeModifier> MutuallyExclusive;
-      [NonSerialized]
-      public dfSprite IconSprite;
-      [NonSerialized]
-      public dfLabel IconLabel;
-      [NonSerialized]
-      public bool IconShattered;
-
-      public void ShatterIcon(dfAnimationClip ChallengeBurstClip)
-      {
-        if (this.IconShattered || !(bool) (UnityEngine.Object) this.IconSprite)
-          return;
-        this.IconShattered = true;
-        dfSpriteAnimation dfSpriteAnimation = this.IconSprite.gameObject.AddComponent<dfSpriteAnimation>();
-        dfSpriteAnimation.Target = new dfComponentMemberInfo();
-        dfComponentMemberInfo target = dfSpriteAnimation.Target;
-        target.Component = (Component) this.IconSprite;
-        target.MemberName = "SpriteName";
-        dfSpriteAnimation.Clip = ChallengeBurstClip;
-        dfSpriteAnimation.Length = 0.2f;
-        dfSpriteAnimation.LoopType = dfTweenLoopType.Once;
-        dfSpriteAnimation.Play();
-        UnityEngine.Object.Destroy((UnityEngine.Object) this.IconLabel.gameObject, 0.2f);
-        UnityEngine.Object.Destroy((UnityEngine.Object) this.IconSprite.gameObject, 0.2f);
-      }
-
-      public virtual bool IsValid(RoomHandler room) => true;
+      if (this.IconShattered || !(bool) (UnityEngine.Object) this.IconSprite)
+        return;
+      this.IconShattered = true;
+      dfSpriteAnimation dfSpriteAnimation = this.IconSprite.gameObject.AddComponent<dfSpriteAnimation>();
+      dfSpriteAnimation.Target = new dfComponentMemberInfo();
+      dfComponentMemberInfo target = dfSpriteAnimation.Target;
+      target.Component = (Component) this.IconSprite;
+      target.MemberName = "SpriteName";
+      dfSpriteAnimation.Clip = ChallengeBurstClip;
+      dfSpriteAnimation.Length = 0.2f;
+      dfSpriteAnimation.LoopType = dfTweenLoopType.Once;
+      dfSpriteAnimation.Play();
+      UnityEngine.Object.Destroy((UnityEngine.Object) this.IconLabel.gameObject, 0.2f);
+      UnityEngine.Object.Destroy((UnityEngine.Object) this.IconSprite.gameObject, 0.2f);
     }
 
-}
+    public virtual bool IsValid(RoomHandler room) => true;
+  }
+

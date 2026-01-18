@@ -8,16 +8,13 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class PassiveGooperSynergy
-    {
-      public CustomSynergyType RequiredSynergy;
-      public GoopDefinition overrideGoopType;
-      public DamageTypeModifier AdditionalDamageModifier;
-      [NonSerialized]
-      public bool m_processed;
-    }
+[Serializable]
+public class PassiveGooperSynergy
+  {
+    public CustomSynergyType RequiredSynergy;
+    public GoopDefinition overrideGoopType;
+    public DamageTypeModifier AdditionalDamageModifier;
+    [NonSerialized]
+    public bool m_processed;
+  }
 
-}

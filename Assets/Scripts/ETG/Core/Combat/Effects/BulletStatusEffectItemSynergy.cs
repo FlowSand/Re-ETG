@@ -8,14 +8,11 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Effects
-{
-    [Serializable]
-    public class BulletStatusEffectItemSynergy
-    {
-      [LongNumericEnum]
-      public CustomSynergyType RequiredSynergy;
-      public float ChanceMultiplier = 1f;
-    }
+[Serializable]
+public class BulletStatusEffectItemSynergy
+  {
+    [LongNumericEnum]
+    public CustomSynergyType RequiredSynergy;
+    public float ChanceMultiplier = 1f;
+  }
 
-}

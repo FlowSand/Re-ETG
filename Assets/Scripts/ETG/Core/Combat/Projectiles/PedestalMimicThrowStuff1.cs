@@ -10,73 +10,70 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Projectiles
-{
-    public class PedestalMimicThrowStuff1 : Script
+public class PedestalMimicThrowStuff1 : Script
+  {
+    private static readonly string[] BulletNames = new string[3]
     {
-      private static readonly string[] BulletNames = new string[3]
+      "boot",
+      "gun",
+      "sponge"
+    };
+    private const float HomingSpeed = 12f;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new PedestalMimicThrowStuff1__Topc__Iterator0()
       {
-        "boot",
-        "gun",
-        "sponge"
+        _this = this
       };
-      private const float HomingSpeed = 12f;
+    }
+
+    public class AcceleratingBullet : Bullet
+    {
+      public AcceleratingBullet()
+        : base("default")
+      {
+      }
 
       [DebuggerHidden]
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PedestalMimicThrowStuff1__Topc__Iterator0()
+        return (IEnumerator) new PedestalMimicThrowStuff1.AcceleratingBullet__Topc__Iterator0()
+        {
+          _this = this
+        };
+      }
+    }
+
+    public class HomingShot : Bullet
+    {
+      public HomingShot(string bulletName) : base(bulletName)
+      {
+      }
+
+      [DebuggerHidden]
+      protected override IEnumerator Top()
+      {
+        // ISSUE: object of a compiler-generated type is created
+        return (IEnumerator) new PedestalMimicThrowStuff1.HomingShot__Topc__Iterator0()
         {
           _this = this
         };
       }
 
-      public class AcceleratingBullet : Bullet
+      public override void OnBulletDestruction(
+        Bullet.DestroyType destroyType,
+        SpeculativeRigidbody hitRigidbody,
+        bool preventSpawningProjectiles)
       {
-        public AcceleratingBullet()
-          : base("default")
-        {
-        }
-
-        [DebuggerHidden]
-        protected override IEnumerator Top()
-        {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new PedestalMimicThrowStuff1.AcceleratingBullet__Topc__Iterator0()
-          {
-            _this = this
-          };
-        }
-      }
-
-      public class HomingShot : Bullet
-      {
-        public HomingShot(string bulletName) : base(bulletName)
-        {
-        }
-
-        [DebuggerHidden]
-        protected override IEnumerator Top()
-        {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new PedestalMimicThrowStuff1.HomingShot__Topc__Iterator0()
-          {
-            _this = this
-          };
-        }
-
-        public override void OnBulletDestruction(
-          Bullet.DestroyType destroyType,
-          SpeculativeRigidbody hitRigidbody,
-          bool preventSpawningProjectiles)
-        {
-          if (preventSpawningProjectiles)
-            return;
-          for (int index = 0; index < 8; ++index)
-            this.Fire(new Brave.BulletScript.Direction((float) (index * 45)), new Brave.BulletScript.Speed(8f), (Bullet) new SpeedChangingBullet(10f, 120, 600));
-        }
+        if (preventSpawningProjectiles)
+          return;
+        for (int index = 0; index < 8; ++index)
+          this.Fire(new Brave.BulletScript.Direction((float) (index * 45)), new Brave.BulletScript.Speed(8f), (Bullet) new SpeedChangingBullet(10f, 120, 600));
       }
     }
+  }
 
-}

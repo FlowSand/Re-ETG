@@ -11,24 +11,21 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/BossFinalRobot/Uzi1")]
-    public class BossFinalRobotUzi1 : Script
+[InspectorDropdownName("Bosses/BossFinalRobot/Uzi1")]
+public class BossFinalRobotUzi1 : Script
+  {
+    private const float NumBullets = 70f;
+    private float NarrowAngle = 60f;
+    private float NarrowAngleChance = 0.5f;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      private const float NumBullets = 70f;
-      private float NarrowAngle = 60f;
-      private float NarrowAngleChance = 0.5f;
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new BossFinalRobotUzi1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalRobotUzi1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

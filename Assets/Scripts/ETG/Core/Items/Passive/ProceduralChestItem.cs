@@ -8,13 +8,10 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Items.Passive
-{
-    [Serializable]
-    public class ProceduralChestItem
-    {
-      public PickupObject item;
-      public float chance;
-    }
+[Serializable]
+public class ProceduralChestItem
+  {
+    public PickupObject item;
+    public float chance;
+  }
 
-}

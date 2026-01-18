@@ -11,64 +11,61 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Dungeon.Interactables
-{
-    [RequireComponent(typeof (GenericIntroDoer))]
-    public class BashelliskIntroDoer : SpecificIntroDoer
+[RequireComponent(typeof (GenericIntroDoer))]
+public class BashelliskIntroDoer : SpecificIntroDoer
+  {
+    private BashelliskIntroDoer.State m_state;
+    private BashelliskHeadController m_head;
+
+    private void Start() => this.m_head = this.GetComponent<BashelliskHeadController>();
+
+    private void Update()
     {
-      private BashelliskIntroDoer.State m_state;
-      private BashelliskHeadController m_head;
-
-      private void Start() => this.m_head = this.GetComponent<BashelliskHeadController>();
-
-      private void Update()
-      {
-      }
-
-      protected override void OnDestroy() => base.OnDestroy();
-
-      public override void PlayerWalkedIn(PlayerController player, List<tk2dSpriteAnimator> animators)
-      {
-        int num = (int) AkSoundEngine.PostEvent("Play_BOSS_bashellisk_move_02", this.gameObject);
-        this.m_head.aiAnimator.LockFacingDirection = true;
-        this.m_head.aiAnimator.FacingDirection = -90f;
-        this.m_head.aiAnimator.Update();
-        animators.Add(this.m_head.spriteAnimator);
-        this.GetComponent<GenericIntroDoer>().SkipFinalizeAnimation = true;
-        this.StartCoroutine(this.PlayIntro());
-      }
-
-      public override void StartIntro(List<tk2dSpriteAnimator> animators)
-      {
-      }
-
-      public override void EndIntro()
-      {
-        this.StopAllCoroutines();
-        this.m_head.specRigidbody.Reinitialize();
-        this.m_head.ReinitMovementDirection = true;
-      }
-
-      public override bool IsIntroFinished => this.m_state == BashelliskIntroDoer.State.Finished;
-
-      public override void OnCleanup() => this.behaviorSpeculator.enabled = true;
-
-      [DebuggerHidden]
-      private IEnumerator PlayIntro()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BashelliskIntroDoer__PlayIntroc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      private enum State
-      {
-        Idle,
-        Playing,
-        Finished,
-      }
     }
 
-}
+    protected override void OnDestroy() => base.OnDestroy();
+
+    public override void PlayerWalkedIn(PlayerController player, List<tk2dSpriteAnimator> animators)
+    {
+      int num = (int) AkSoundEngine.PostEvent("Play_BOSS_bashellisk_move_02", this.gameObject);
+      this.m_head.aiAnimator.LockFacingDirection = true;
+      this.m_head.aiAnimator.FacingDirection = -90f;
+      this.m_head.aiAnimator.Update();
+      animators.Add(this.m_head.spriteAnimator);
+      this.GetComponent<GenericIntroDoer>().SkipFinalizeAnimation = true;
+      this.StartCoroutine(this.PlayIntro());
+    }
+
+    public override void StartIntro(List<tk2dSpriteAnimator> animators)
+    {
+    }
+
+    public override void EndIntro()
+    {
+      this.StopAllCoroutines();
+      this.m_head.specRigidbody.Reinitialize();
+      this.m_head.ReinitMovementDirection = true;
+    }
+
+    public override bool IsIntroFinished => this.m_state == BashelliskIntroDoer.State.Finished;
+
+    public override void OnCleanup() => this.behaviorSpeculator.enabled = true;
+
+    [DebuggerHidden]
+    private IEnumerator PlayIntro()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new BashelliskIntroDoer__PlayIntroc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    private enum State
+    {
+      Idle,
+      Playing,
+      Finished,
+    }
+  }
+

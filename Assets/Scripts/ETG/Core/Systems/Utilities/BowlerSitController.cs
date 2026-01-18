@@ -8,10 +8,7 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class BowlerSitController : MonoBehaviour
-    {
-    }
+public class BowlerSitController : MonoBehaviour
+  {
+  }
 
-}

@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkDynamicSequenceType
-    {
-      DynamicSequenceType_SampleAccurate,
-      DynamicSequenceType_NormalTransition,
-    }
+public enum AkDynamicSequenceType
+  {
+    DynamicSequenceType_SampleAccurate,
+    DynamicSequenceType_NormalTransition,
+  }
 
-}

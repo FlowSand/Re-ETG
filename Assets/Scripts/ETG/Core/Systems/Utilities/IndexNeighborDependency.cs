@@ -9,13 +9,10 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class IndexNeighborDependency
-    {
-      public DungeonData.Direction neighborDirection;
-      public int neighborIndex = -1;
-    }
+[Serializable]
+public class IndexNeighborDependency
+  {
+    public DungeonData.Direction neighborDirection;
+    public int neighborIndex = -1;
+  }
 
-}

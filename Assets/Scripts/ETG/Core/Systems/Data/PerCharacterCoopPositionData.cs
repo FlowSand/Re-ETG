@@ -9,13 +9,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    [Serializable]
-    public struct PerCharacterCoopPositionData
-    {
-      public bool flipCoopCultist;
-      public Vector3 percentOffset;
-    }
+[Serializable]
+public struct PerCharacterCoopPositionData
+  {
+    public bool flipCoopCultist;
+    public Vector3 percentOffset;
+  }
 
-}

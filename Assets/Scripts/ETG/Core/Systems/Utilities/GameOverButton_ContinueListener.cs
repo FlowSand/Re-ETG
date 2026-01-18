@@ -8,15 +8,12 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class GameOverButton_ContinueListener : MonoBehaviour
+public class GameOverButton_ContinueListener : MonoBehaviour
+  {
+    private void OnClick(dfControl control, dfMouseEventArgs mouseEvent)
     {
-      private void OnClick(dfControl control, dfMouseEventArgs mouseEvent)
-      {
-        Object.Destroy((Object) GameManager.Instance);
-        GameManager.Instance.LoadMainMenu();
-      }
+      Object.Destroy((Object) GameManager.Instance);
+      GameManager.Instance.LoadMainMenu();
     }
+  }
 
-}

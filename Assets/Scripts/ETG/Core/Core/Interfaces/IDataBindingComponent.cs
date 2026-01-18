@@ -6,15 +6,12 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IDataBindingComponent
-    {
-      bool IsBound { get; }
+public interface IDataBindingComponent
+  {
+    bool IsBound { get; }
 
-      void Bind();
+    void Bind();
 
-      void Unbind();
-    }
+    void Unbind();
+  }
 
-}

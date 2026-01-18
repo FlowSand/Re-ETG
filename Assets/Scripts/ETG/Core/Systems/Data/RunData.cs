@@ -8,14 +8,11 @@ using FullSerializer;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    public class RunData
-    {
-      [fsProperty]
-      public bool SpawnAngryToadie;
-      [fsProperty]
-      public int[] AgdInjectionRunCounts;
-    }
+public class RunData
+  {
+    [fsProperty]
+    public bool SpawnAngryToadie;
+    [fsProperty]
+    public int[] AgdInjectionRunCounts;
+  }
 
-}

@@ -9,19 +9,16 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class DungeonAutoLoader : MonoBehaviour
+public class DungeonAutoLoader : MonoBehaviour
+  {
+    public void Awake()
     {
-      public void Awake()
+      if ((bool) (Object) GameManager.Instance.DungeonToAutoLoad)
       {
-        if ((bool) (Object) GameManager.Instance.DungeonToAutoLoad)
-        {
-          Object.Instantiate<Dungeon>(GameManager.Instance.DungeonToAutoLoad);
-          GameManager.Instance.DungeonToAutoLoad = (Dungeon) null;
-        }
-        Object.Destroy((Object) this.gameObject);
+        Object.Instantiate<Dungeon>(GameManager.Instance.DungeonToAutoLoad);
+        GameManager.Instance.DungeonToAutoLoad = (Dungeon) null;
       }
+      Object.Destroy((Object) this.gameObject);
     }
+  }
 
-}

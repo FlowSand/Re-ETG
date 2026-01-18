@@ -9,18 +9,15 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    public class SecretRoomExitData
+public class SecretRoomExitData
+  {
+    public GameObject colliderObject;
+    public DungeonData.Direction exitDirection;
+
+    public SecretRoomExitData(GameObject g, DungeonData.Direction d)
     {
-      public GameObject colliderObject;
-      public DungeonData.Direction exitDirection;
-
-      public SecretRoomExitData(GameObject g, DungeonData.Direction d)
-      {
-        this.colliderObject = g;
-        this.exitDirection = d;
-      }
+      this.colliderObject = g;
+      this.exitDirection = d;
     }
+  }
 
-}

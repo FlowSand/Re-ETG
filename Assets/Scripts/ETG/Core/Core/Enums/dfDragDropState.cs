@@ -6,16 +6,13 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfDragDropState
-    {
-      None,
-      Dragging,
-      Dropped,
-      Denied,
-      Cancelled,
-      CancelledNoTarget,
-    }
+public enum dfDragDropState
+  {
+    None,
+    Dragging,
+    Dropped,
+    Denied,
+    Cancelled,
+    CancelledNoTarget,
+  }
 
-}

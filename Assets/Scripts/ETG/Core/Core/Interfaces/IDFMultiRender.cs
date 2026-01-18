@@ -6,11 +6,8 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IDFMultiRender
-    {
-      dfList<dfRenderData> RenderMultiple();
-    }
+public interface IDFMultiRender
+  {
+    dfList<dfRenderData> RenderMultiple();
+  }
 
-}

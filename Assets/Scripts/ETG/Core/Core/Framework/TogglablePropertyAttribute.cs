@@ -8,18 +8,15 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class TogglablePropertyAttribute : PropertyAttribute
+public class TogglablePropertyAttribute : PropertyAttribute
+  {
+    public string TogglePropertyName;
+    public string Label;
+
+    public TogglablePropertyAttribute(string togglePropertyName, string label = null)
     {
-      public string TogglePropertyName;
-      public string Label;
-
-      public TogglablePropertyAttribute(string togglePropertyName, string label = null)
-      {
-        this.TogglePropertyName = togglePropertyName;
-        this.Label = label;
-      }
+      this.TogglePropertyName = togglePropertyName;
+      this.Label = label;
     }
+  }
 
-}

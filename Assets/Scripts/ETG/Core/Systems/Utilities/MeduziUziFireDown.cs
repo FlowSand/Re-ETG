@@ -6,11 +6,8 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class MeduziUziFireDown : MeduziUziFire1
-    {
-      protected override string UnityAnimationName => "MeduziFireDown";
-    }
+public class MeduziUziFireDown : MeduziUziFire1
+  {
+    protected override string UnityAnimationName => "MeduziFireDown";
+  }
 
-}

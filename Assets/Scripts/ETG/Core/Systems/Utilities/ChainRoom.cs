@@ -8,15 +8,12 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class ChainRoom
-    {
-      public PrototypeDungeonRoom prototypeRoom;
-      public float weight = 0.1f;
-      public bool limitedCopies;
-      public int maxCopies = 1;
-    }
+[Serializable]
+public class ChainRoom
+  {
+    public PrototypeDungeonRoom prototypeRoom;
+    public float weight = 0.1f;
+    public bool limitedCopies;
+    public int maxCopies = 1;
+  }
 
-}

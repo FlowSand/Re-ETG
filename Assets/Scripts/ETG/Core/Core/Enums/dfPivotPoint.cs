@@ -6,19 +6,16 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfPivotPoint
-    {
-      TopLeft,
-      TopCenter,
-      TopRight,
-      MiddleLeft,
-      MiddleCenter,
-      MiddleRight,
-      BottomLeft,
-      BottomCenter,
-      BottomRight,
-    }
+public enum dfPivotPoint
+  {
+    TopLeft,
+    TopCenter,
+    TopRight,
+    MiddleLeft,
+    MiddleCenter,
+    MiddleRight,
+    BottomLeft,
+    BottomCenter,
+    BottomRight,
+  }
 
-}

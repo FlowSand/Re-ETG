@@ -11,27 +11,24 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/BulletKing/CrazySpin1")]
-    public class BulletKingCrazySpin1 : Script
+[InspectorDropdownName("Bosses/BulletKing/CrazySpin1")]
+public class BulletKingCrazySpin1 : Script
+  {
+    private const int NumWaves = 29;
+    private const int NumBulletsPerWave = 6;
+    private const float AngleDeltaEachWave = 37f;
+    private const int NumBulletsFinalWave = 64 /*0x40*/;
+
+    protected bool IsHard => this is BulletKingCrazySpinHard1;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      private const int NumWaves = 29;
-      private const int NumBulletsPerWave = 6;
-      private const float AngleDeltaEachWave = 37f;
-      private const int NumBulletsFinalWave = 64 /*0x40*/;
-
-      protected bool IsHard => this is BulletKingCrazySpinHard1;
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new BulletKingCrazySpin1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BulletKingCrazySpin1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

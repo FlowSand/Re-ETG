@@ -6,11 +6,8 @@
 
 #nullable disable
 
-namespace ETG.Core.Items.Active
-{
-    public class BoomerangActiveItem : PlayerItem
-    {
-      protected override void DoEffect(PlayerController user) => base.DoEffect(user);
-    }
+public class BoomerangActiveItem : PlayerItem
+  {
+    protected override void DoEffect(PlayerController user) => base.DoEffect(user);
+  }
 
-}

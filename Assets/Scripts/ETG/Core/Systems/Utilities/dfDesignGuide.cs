@@ -8,13 +8,10 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class dfDesignGuide
-    {
-      public dfControlOrientation orientation;
-      public int position;
-    }
+[Serializable]
+public class dfDesignGuide
+  {
+    public dfControlOrientation orientation;
+    public int position;
+  }
 
-}

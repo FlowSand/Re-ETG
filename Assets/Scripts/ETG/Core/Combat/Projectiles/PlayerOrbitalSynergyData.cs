@@ -8,19 +8,16 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Projectiles
-{
-    [Serializable]
-    public struct PlayerOrbitalSynergyData
-    {
-      [LongNumericEnum]
-      public CustomSynergyType SynergyToCheck;
-      public bool EngagesFiring;
-      public float ShootCooldownMultiplier;
-      public int AdditionalShots;
-      public Projectile OverrideProjectile;
-      public bool HasOverrideAnimations;
-      public string OverrideIdleAnimation;
-    }
+[Serializable]
+public struct PlayerOrbitalSynergyData
+  {
+    [LongNumericEnum]
+    public CustomSynergyType SynergyToCheck;
+    public bool EngagesFiring;
+    public float ShootCooldownMultiplier;
+    public int AdditionalShots;
+    public Projectile OverrideProjectile;
+    public bool HasOverrideAnimations;
+    public string OverrideIdleAnimation;
+  }
 
-}

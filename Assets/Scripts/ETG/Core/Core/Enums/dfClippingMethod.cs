@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfClippingMethod
-    {
-      Software,
-      Shader,
-    }
+public enum dfClippingMethod
+  {
+    Software,
+    Shader,
+  }
 
-}

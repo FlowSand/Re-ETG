@@ -6,12 +6,9 @@
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public enum AkPannerType
-    {
-      Ak2D,
-      Ak3D,
-    }
+public enum AkPannerType
+  {
+    Ak2D,
+    Ak3D,
+  }
 
-}

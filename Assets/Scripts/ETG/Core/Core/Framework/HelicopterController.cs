@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class HelicopterController : BraveBehaviour
+public class HelicopterController : BraveBehaviour
+  {
+    public void Start()
     {
-      public void Start()
-      {
-        this.specRigidbody.AddCollisionLayerIgnoreOverride(CollisionMask.LayerToMask(CollisionLayer.PlayerCollider, CollisionLayer.PlayerHitBox));
-      }
+      this.specRigidbody.AddCollisionLayerIgnoreOverride(CollisionMask.LayerToMask(CollisionLayer.PlayerCollider, CollisionLayer.PlayerHitBox));
     }
+  }
 
-}

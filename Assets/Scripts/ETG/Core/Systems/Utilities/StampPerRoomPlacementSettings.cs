@@ -8,13 +8,10 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class StampPerRoomPlacementSettings
-    {
-      public int roomSubType;
-      public float roomRelativeWeight;
-    }
+[Serializable]
+public class StampPerRoomPlacementSettings
+  {
+    public int roomSubType;
+    public float roomRelativeWeight;
+  }
 
-}

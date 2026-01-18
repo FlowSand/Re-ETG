@@ -6,17 +6,14 @@
 
 #nullable disable
 
-namespace ETG.Core.Items.Active
-{
-    public class ArcaneGunpowderItem : PlayerItem
+public class ArcaneGunpowderItem : PlayerItem
+  {
+    public override bool CanBeUsed(PlayerController user) => false;
+
+    protected override void DoEffect(PlayerController user)
     {
-      public override bool CanBeUsed(PlayerController user) => false;
-
-      protected override void DoEffect(PlayerController user)
-      {
-      }
-
-      protected override void OnDestroy() => base.OnDestroy();
     }
 
-}
+    protected override void OnDestroy() => base.OnDestroy();
+  }
+

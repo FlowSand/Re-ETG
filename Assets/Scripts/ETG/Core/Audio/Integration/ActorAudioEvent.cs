@@ -8,13 +8,10 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    [Serializable]
-    public class ActorAudioEvent
-    {
-      public string eventTag;
-      public string eventName;
-    }
+[Serializable]
+public class ActorAudioEvent
+  {
+    public string eventTag;
+    public string eventName;
+  }
 
-}

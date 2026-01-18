@@ -11,42 +11,39 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class PoopulonSpinFire1 : Script
+public class PoopulonSpinFire1 : Script
+  {
+    private const int NumBullets = 100;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      private const int NumBullets = 100;
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new PoopulonSpinFire1__Topc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+    public class RotatingBullet : Bullet
+    {
+      private Vector2 m_origin;
+
+      public RotatingBullet(Vector2 origin)
+        : base()
+      {
+        this.m_origin = origin;
+      }
 
       [DebuggerHidden]
       protected override IEnumerator Top()
       {
         // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new PoopulonSpinFire1__Topc__Iterator0()
+        return (IEnumerator) new PoopulonSpinFire1.RotatingBullet__Topc__Iterator0()
         {
           _this = this
         };
       }
-
-      public class RotatingBullet : Bullet
-      {
-        private Vector2 m_origin;
-
-        public RotatingBullet(Vector2 origin)
-          : base()
-        {
-          this.m_origin = origin;
-        }
-
-        [DebuggerHidden]
-        protected override IEnumerator Top()
-        {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new PoopulonSpinFire1.RotatingBullet__Topc__Iterator0()
-          {
-            _this = this
-          };
-        }
-      }
     }
+  }
 
-}

@@ -6,16 +6,13 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfMarkupTokenType
-    {
-      Invalid,
-      Text,
-      Whitespace,
-      Newline,
-      StartTag,
-      EndTag,
-    }
+public enum dfMarkupTokenType
+  {
+    Invalid,
+    Text,
+    Whitespace,
+    Newline,
+    StartTag,
+    EndTag,
+  }
 
-}

@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Management
-{
-    public class DebugConsoleManager : MonoBehaviour
-    {
-      public GameObject[] chests;
-      public GameObject[] pedestals;
-      public GameObject memoryTester;
-    }
+public class DebugConsoleManager : MonoBehaviour
+  {
+    public GameObject[] chests;
+    public GameObject[] pedestals;
+    public GameObject memoryTester;
+  }
 
-}

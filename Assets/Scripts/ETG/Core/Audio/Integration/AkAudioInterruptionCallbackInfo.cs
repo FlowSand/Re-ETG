@@ -8,61 +8,58 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public class AkAudioInterruptionCallbackInfo : IDisposable
+public class AkAudioInterruptionCallbackInfo : IDisposable
+  {
+    private IntPtr swigCPtr;
+    protected bool swigCMemOwn;
+
+    internal AkAudioInterruptionCallbackInfo(IntPtr cPtr, bool cMemoryOwn)
     {
-      private IntPtr swigCPtr;
-      protected bool swigCMemOwn;
+      this.swigCMemOwn = cMemoryOwn;
+      this.swigCPtr = cPtr;
+    }
 
-      internal AkAudioInterruptionCallbackInfo(IntPtr cPtr, bool cMemoryOwn)
+    public AkAudioInterruptionCallbackInfo()
+      : this(AkSoundEnginePINVOKE.CSharp_new_AkAudioInterruptionCallbackInfo(), true)
+    {
+    }
+
+    internal static IntPtr getCPtr(AkAudioInterruptionCallbackInfo obj)
+    {
+      return obj == null ? IntPtr.Zero : obj.swigCPtr;
+    }
+
+    internal virtual void setCPtr(IntPtr cPtr)
+    {
+      this.Dispose();
+      this.swigCPtr = cPtr;
+    }
+
+    ~AkAudioInterruptionCallbackInfo() => this.Dispose();
+
+    public virtual void Dispose()
+    {
+      lock ((object) this)
       {
-        this.swigCMemOwn = cMemoryOwn;
-        this.swigCPtr = cPtr;
-      }
-
-      public AkAudioInterruptionCallbackInfo()
-        : this(AkSoundEnginePINVOKE.CSharp_new_AkAudioInterruptionCallbackInfo(), true)
-      {
-      }
-
-      internal static IntPtr getCPtr(AkAudioInterruptionCallbackInfo obj)
-      {
-        return obj == null ? IntPtr.Zero : obj.swigCPtr;
-      }
-
-      internal virtual void setCPtr(IntPtr cPtr)
-      {
-        this.Dispose();
-        this.swigCPtr = cPtr;
-      }
-
-      ~AkAudioInterruptionCallbackInfo() => this.Dispose();
-
-      public virtual void Dispose()
-      {
-        lock ((object) this)
+        if (this.swigCPtr != IntPtr.Zero)
         {
-          if (this.swigCPtr != IntPtr.Zero)
+          if (this.swigCMemOwn)
           {
-            if (this.swigCMemOwn)
-            {
-              this.swigCMemOwn = false;
-              AkSoundEnginePINVOKE.CSharp_delete_AkAudioInterruptionCallbackInfo(this.swigCPtr);
-            }
-            this.swigCPtr = IntPtr.Zero;
+            this.swigCMemOwn = false;
+            AkSoundEnginePINVOKE.CSharp_delete_AkAudioInterruptionCallbackInfo(this.swigCPtr);
           }
-          GC.SuppressFinalize((object) this);
+          this.swigCPtr = IntPtr.Zero;
         }
-      }
-
-      public bool bEnterInterruption
-      {
-        get
-        {
-          return AkSoundEnginePINVOKE.CSharp_AkAudioInterruptionCallbackInfo_bEnterInterruption_get(this.swigCPtr);
-        }
+        GC.SuppressFinalize((object) this);
       }
     }
 
-}
+    public bool bEnterInterruption
+    {
+      get
+      {
+        return AkSoundEnginePINVOKE.CSharp_AkAudioInterruptionCallbackInfo_bEnterInterruption_get(this.swigCPtr);
+      }
+    }
+  }
+

@@ -11,49 +11,46 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class TombstoneCrossAttack1 : Script
+public class TombstoneCrossAttack1 : Script
+  {
+    private const int BulletSpeed = 10;
+    private const float GapDist = 0.7f;
+
+    protected override IEnumerator Top()
     {
-      private const int BulletSpeed = 10;
-      private const float GapDist = 0.7f;
-
-      protected override IEnumerator Top()
-      {
-        float aimDirection = this.GetAimDirection((double) Random.value >= 0.25 ? 0.0f : 1f, 10f);
-        this.Fire(new Brave.BulletScript.Direction(aimDirection), new Brave.BulletScript.Speed(10f), (Bullet) new TombstoneCrossAttack1.CrossBullet(new Vector2(0.7f, 0.0f), 0, 20));
-        this.Fire(new Brave.BulletScript.Direction(aimDirection), new Brave.BulletScript.Speed(10f), (Bullet) new TombstoneCrossAttack1.CrossBullet(new Vector2(0.0f, 0.0f), 0, 20));
-        this.Fire(new Brave.BulletScript.Direction(aimDirection), new Brave.BulletScript.Speed(10f), (Bullet) new TombstoneCrossAttack1.CrossBullet(new Vector2(-0.7f, 0.0f), 0, 20));
-        this.Fire(new Brave.BulletScript.Direction(aimDirection), new Brave.BulletScript.Speed(10f), (Bullet) new TombstoneCrossAttack1.CrossBullet(new Vector2(-1.4f, 0.0f), 0, 20));
-        this.Fire(new Brave.BulletScript.Direction(aimDirection), new Brave.BulletScript.Speed(10f), (Bullet) new TombstoneCrossAttack1.CrossBullet(new Vector2(0.0f, 0.7f), 18, 15));
-        this.Fire(new Brave.BulletScript.Direction(aimDirection), new Brave.BulletScript.Speed(10f), (Bullet) new TombstoneCrossAttack1.CrossBullet(new Vector2(0.0f, -0.7f), 18, 15));
-        return (IEnumerator) null;
-      }
-
-      public class CrossBullet : Bullet
-      {
-        private Vector2 m_offset;
-        private int m_setupDelay;
-        private int m_setupTime;
-
-        public CrossBullet(Vector2 offset, int setupDelay, int setupTime)
-          : base()
-        {
-          this.m_offset = offset;
-          this.m_setupDelay = setupDelay;
-          this.m_setupTime = setupTime;
-        }
-
-        [DebuggerHidden]
-        protected override IEnumerator Top()
-        {
-          // ISSUE: object of a compiler-generated type is created
-          return (IEnumerator) new TombstoneCrossAttack1.CrossBullet__Topc__Iterator0()
-          {
-            _this = this
-          };
-        }
-      }
+      float aimDirection = this.GetAimDirection((double) Random.value >= 0.25 ? 0.0f : 1f, 10f);
+      this.Fire(new Brave.BulletScript.Direction(aimDirection), new Brave.BulletScript.Speed(10f), (Bullet) new TombstoneCrossAttack1.CrossBullet(new Vector2(0.7f, 0.0f), 0, 20));
+      this.Fire(new Brave.BulletScript.Direction(aimDirection), new Brave.BulletScript.Speed(10f), (Bullet) new TombstoneCrossAttack1.CrossBullet(new Vector2(0.0f, 0.0f), 0, 20));
+      this.Fire(new Brave.BulletScript.Direction(aimDirection), new Brave.BulletScript.Speed(10f), (Bullet) new TombstoneCrossAttack1.CrossBullet(new Vector2(-0.7f, 0.0f), 0, 20));
+      this.Fire(new Brave.BulletScript.Direction(aimDirection), new Brave.BulletScript.Speed(10f), (Bullet) new TombstoneCrossAttack1.CrossBullet(new Vector2(-1.4f, 0.0f), 0, 20));
+      this.Fire(new Brave.BulletScript.Direction(aimDirection), new Brave.BulletScript.Speed(10f), (Bullet) new TombstoneCrossAttack1.CrossBullet(new Vector2(0.0f, 0.7f), 18, 15));
+      this.Fire(new Brave.BulletScript.Direction(aimDirection), new Brave.BulletScript.Speed(10f), (Bullet) new TombstoneCrossAttack1.CrossBullet(new Vector2(0.0f, -0.7f), 18, 15));
+      return (IEnumerator) null;
     }
 
-}
+    public class CrossBullet : Bullet
+    {
+      private Vector2 m_offset;
+      private int m_setupDelay;
+      private int m_setupTime;
+
+      public CrossBullet(Vector2 offset, int setupDelay, int setupTime)
+        : base()
+      {
+        this.m_offset = offset;
+        this.m_setupDelay = setupDelay;
+        this.m_setupTime = setupTime;
+      }
+
+      [DebuggerHidden]
+      protected override IEnumerator Top()
+      {
+        // ISSUE: object of a compiler-generated type is created
+        return (IEnumerator) new TombstoneCrossAttack1.CrossBullet__Topc__Iterator0()
+        {
+          _this = this
+        };
+      }
+    }
+  }
+

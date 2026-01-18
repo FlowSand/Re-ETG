@@ -8,22 +8,19 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [AddComponentMenu("Daikon Forge/Examples/General/Platform-based Visibility")]
-    public class PlatformVisibility : MonoBehaviour
+[AddComponentMenu("Daikon Forge/Examples/General/Platform-based Visibility")]
+public class PlatformVisibility : MonoBehaviour
+  {
+    public bool HideOnWeb;
+    public bool HideOnMobile;
+    public bool HideInEditor;
+
+    private void Start()
     {
-      public bool HideOnWeb;
-      public bool HideOnMobile;
-      public bool HideInEditor;
-
-      private void Start()
-      {
-        dfControl component = this.GetComponent<dfControl>();
-        if ((Object) component == (Object) null || !this.HideInEditor || !Application.isEditor)
-          return;
-        component.Hide();
-      }
+      dfControl component = this.GetComponent<dfControl>();
+      if ((Object) component == (Object) null || !this.HideInEditor || !Application.isEditor)
+        return;
+      component.Hide();
     }
+  }
 
-}

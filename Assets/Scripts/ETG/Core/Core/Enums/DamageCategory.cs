@@ -6,16 +6,13 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum DamageCategory
-    {
-      Normal,
-      DamageOverTime,
-      Collision,
-      Environment,
-      BlackBullet,
-      Unstoppable,
-    }
+public enum DamageCategory
+  {
+    Normal,
+    DamageOverTime,
+    Collision,
+    Environment,
+    BlackBullet,
+    Unstoppable,
+  }
 
-}

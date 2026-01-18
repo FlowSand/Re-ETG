@@ -11,37 +11,34 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Management
-{
-    public class IntroSequenceManager : MonoBehaviour
+public class IntroSequenceManager : MonoBehaviour
+  {
+    public List<IntroSequenceElement> elements;
+    public dfControl postVideoPanel;
+    public string nextSceneName;
+    private AsyncOperation async;
+
+    [DebuggerHidden]
+    private IEnumerator Start()
     {
-      public List<IntroSequenceElement> elements;
-      public dfControl postVideoPanel;
-      public string nextSceneName;
-      private AsyncOperation async;
-
-      [DebuggerHidden]
-      private IEnumerator Start()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new IntroSequenceManager__Startc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new IntroSequenceManager__Startc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      private void Update() => BraveCameraUtility.MaintainCameraAspect(Camera.main);
-
-      [DebuggerHidden]
-      private IEnumerator HandleElement(int index)
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new IntroSequenceManager__HandleElementc__Iterator1()
-        {
-          index = index,
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
 
-}
+    private void Update() => BraveCameraUtility.MaintainCameraAspect(Camera.main);
+
+    [DebuggerHidden]
+    private IEnumerator HandleElement(int index)
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new IntroSequenceManager__HandleElementc__Iterator1()
+      {
+        index = index,
+        _this = this
+      };
+    }
+  }
+

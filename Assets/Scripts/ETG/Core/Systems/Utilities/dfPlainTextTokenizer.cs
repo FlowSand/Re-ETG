@@ -6,86 +6,83 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class dfPlainTextTokenizer
+public class dfPlainTextTokenizer
+  {
+    private static dfPlainTextTokenizer singleton;
+
+    public static dfList<dfMarkupToken> Tokenize(string source)
     {
-      private static dfPlainTextTokenizer singleton;
+      if (dfPlainTextTokenizer.singleton == null)
+        dfPlainTextTokenizer.singleton = new dfPlainTextTokenizer();
+      return dfPlainTextTokenizer.singleton.tokenize(source);
+    }
 
-      public static dfList<dfMarkupToken> Tokenize(string source)
+    private dfList<dfMarkupToken> tokenize(string source)
+    {
+      dfList<dfMarkupToken> dfList = dfList<dfMarkupToken>.Obtain();
+      dfList.EnsureCapacity(this.estimateTokenCount(source));
+      dfList.AutoReleaseItems = true;
+      int num = 0;
+      int startIndex = 0;
+      int length = source.Length;
+      while (num < length)
       {
-        if (dfPlainTextTokenizer.singleton == null)
-          dfPlainTextTokenizer.singleton = new dfPlainTextTokenizer();
-        return dfPlainTextTokenizer.singleton.tokenize(source);
-      }
-
-      private dfList<dfMarkupToken> tokenize(string source)
-      {
-        dfList<dfMarkupToken> dfList = dfList<dfMarkupToken>.Obtain();
-        dfList.EnsureCapacity(this.estimateTokenCount(source));
-        dfList.AutoReleaseItems = true;
-        int num = 0;
-        int startIndex = 0;
-        int length = source.Length;
-        while (num < length)
+        if (source[num] == '\r')
         {
-          if (source[num] == '\r')
+          ++num;
+          startIndex = num;
+        }
+        else
+        {
+          while (num < length && !char.IsWhiteSpace(source[num]))
+            ++num;
+          if (num > startIndex)
           {
+            dfList.Add(dfMarkupToken.Obtain(source, dfMarkupTokenType.Text, startIndex, num - 1));
+            startIndex = num;
+          }
+          if (num < length && source[num] == '\n')
+          {
+            dfList.Add(dfMarkupToken.Obtain(source, dfMarkupTokenType.Newline, num, num));
             ++num;
             startIndex = num;
           }
-          else
-          {
-            while (num < length && !char.IsWhiteSpace(source[num]))
-              ++num;
-            if (num > startIndex)
-            {
-              dfList.Add(dfMarkupToken.Obtain(source, dfMarkupTokenType.Text, startIndex, num - 1));
-              startIndex = num;
-            }
-            if (num < length && source[num] == '\n')
-            {
-              dfList.Add(dfMarkupToken.Obtain(source, dfMarkupTokenType.Newline, num, num));
-              ++num;
-              startIndex = num;
-            }
-            while (num < length && source[num] != '\n' && source[num] != '\r' && char.IsWhiteSpace(source[num]))
-              ++num;
-            if (num > startIndex)
-            {
-              dfList.Add(dfMarkupToken.Obtain(source, dfMarkupTokenType.Whitespace, startIndex, num - 1));
-              startIndex = num;
-            }
-          }
-        }
-        return dfList;
-      }
-
-      private int estimateTokenCount(string source)
-      {
-        if (string.IsNullOrEmpty(source))
-          return 0;
-        int num = 1;
-        bool flag1 = char.IsWhiteSpace(source[0]);
-        for (int index = 1; index < source.Length; ++index)
-        {
-          char c = source[index];
-          if (char.IsControl(c))
-          {
+          while (num < length && source[num] != '\n' && source[num] != '\r' && char.IsWhiteSpace(source[num]))
             ++num;
-          }
-          else
+          if (num > startIndex)
           {
-            bool flag2 = char.IsWhiteSpace(c);
-            if (flag2 != flag1)
-            {
-              ++num;
-              flag1 = flag2;
-            }
+            dfList.Add(dfMarkupToken.Obtain(source, dfMarkupTokenType.Whitespace, startIndex, num - 1));
+            startIndex = num;
           }
         }
-        return num;
       }
+      return dfList;
     }
 
-}
+    private int estimateTokenCount(string source)
+    {
+      if (string.IsNullOrEmpty(source))
+        return 0;
+      int num = 1;
+      bool flag1 = char.IsWhiteSpace(source[0]);
+      for (int index = 1; index < source.Length; ++index)
+      {
+        char c = source[index];
+        if (char.IsControl(c))
+        {
+          ++num;
+        }
+        else
+        {
+          bool flag2 = char.IsWhiteSpace(c);
+          if (flag2 != flag1)
+          {
+            ++num;
+            flag1 = flag2;
+          }
+        }
+      }
+      return num;
+    }
+  }
+

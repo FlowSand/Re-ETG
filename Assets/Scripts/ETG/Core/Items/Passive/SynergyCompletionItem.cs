@@ -6,10 +6,7 @@
 
 #nullable disable
 
-namespace ETG.Core.Items.Passive
-{
-    public class SynergyCompletionItem : PassiveItem
-    {
-    }
+public class SynergyCompletionItem : PassiveItem
+  {
+  }
 
-}

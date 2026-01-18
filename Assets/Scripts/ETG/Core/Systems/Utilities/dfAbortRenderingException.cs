@@ -8,10 +8,7 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class dfAbortRenderingException : Exception
-    {
-    }
+public class dfAbortRenderingException : Exception
+  {
+  }
 
-}

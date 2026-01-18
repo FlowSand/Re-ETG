@@ -8,18 +8,15 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    [Serializable]
-    public struct ShortcutDefinition
-    {
-      public string targetLevelName;
-      [LongEnum]
-      public GungeonFlags requiredFlag;
-      public string sherpaTextKey;
-      public string elevatorFloorSpriteName;
-      public bool IsBossRush;
-      public bool IsSuperBossRush;
-    }
+[Serializable]
+public struct ShortcutDefinition
+  {
+    public string targetLevelName;
+    [LongEnum]
+    public GungeonFlags requiredFlag;
+    public string sherpaTextKey;
+    public string elevatorFloorSpriteName;
+    public bool IsBossRush;
+    public bool IsSuperBossRush;
+  }
 
-}

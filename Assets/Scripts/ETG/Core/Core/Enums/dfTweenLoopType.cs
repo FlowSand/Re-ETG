@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum dfTweenLoopType
-    {
-      Once,
-      Loop,
-      PingPong,
-      LoopSection,
-    }
+public enum dfTweenLoopType
+  {
+    Once,
+    Loop,
+    PingPong,
+    LoopSection,
+  }
 
-}

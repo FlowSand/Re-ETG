@@ -6,14 +6,11 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Enums
-{
-    public enum Opulence
-    {
-      PLAIN,
-      FINE,
-      ORNATE,
-      OPULENT,
-    }
+public enum Opulence
+  {
+    PLAIN,
+    FINE,
+    ORNATE,
+    OPULENT,
+  }
 
-}

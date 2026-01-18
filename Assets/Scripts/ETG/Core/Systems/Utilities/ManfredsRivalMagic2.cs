@@ -10,23 +10,20 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("ManfredsRival/Magic2")]
-    public class ManfredsRivalMagic2 : ManfredsRivalMagic1
+[InspectorDropdownName("ManfredsRival/Magic2")]
+public class ManfredsRivalMagic2 : ManfredsRivalMagic1
+  {
+    private const int NumTimes = 3;
+    private const int NumBulletsMainWave = 16 /*0x10*/;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      private const int NumTimes = 3;
-      private const int NumBulletsMainWave = 16 /*0x10*/;
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new ManfredsRivalMagic2__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new ManfredsRivalMagic2__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

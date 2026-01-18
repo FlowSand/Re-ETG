@@ -8,16 +8,13 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public class NoBlankChecker : BraveBehaviour
+public class NoBlankChecker : BraveBehaviour
+  {
+    public void Update()
     {
-      public void Update()
-      {
-        if (!((Object) GameManager.Instance.BestActivePlayer != (Object) null) || GameManager.Instance.BestActivePlayer.Blanks != 0)
-          return;
-        GameManager.BroadcastRoomTalkDoerFsmEvent("hasNoBlanks");
-      }
+      if (!((Object) GameManager.Instance.BestActivePlayer != (Object) null) || GameManager.Instance.BestActivePlayer.Blanks != 0)
+        return;
+      GameManager.BroadcastRoomTalkDoerFsmEvent("hasNoBlanks");
     }
+  }
 
-}

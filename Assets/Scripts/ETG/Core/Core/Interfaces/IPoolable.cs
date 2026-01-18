@@ -6,11 +6,8 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IPoolable
-    {
-      void Release();
-    }
+public interface IPoolable
+  {
+    void Release();
+  }
 
-}

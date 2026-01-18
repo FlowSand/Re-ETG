@@ -9,83 +9,62 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Projectiles
-{
-    public class ExoticSynergyProcessor : MonoBehaviour
+public class ExoticSynergyProcessor : MonoBehaviour
+  {
+    [LongNumericEnum]
+    public CustomSynergyType RequiredSynergy;
+    public bool SnapsToAngleMultiple;
+    public float AngleMultiple = 90f;
+    public bool HasChanceToGainAmmo;
+    public float ChanceToGainAmmo;
+    public bool SetsFlying;
+    public bool SetsGoopReloadFree;
+    private Gun m_gun;
+    private PlayerController m_cachedPlayer;
+
+    public void Awake()
     {
-      [LongNumericEnum]
-      public CustomSynergyType RequiredSynergy;
-      public bool SnapsToAngleMultiple;
-      public float AngleMultiple = 90f;
-      public bool HasChanceToGainAmmo;
-      public float ChanceToGainAmmo;
-      public bool SetsFlying;
-      public bool SetsGoopReloadFree;
-      private Gun m_gun;
-      private PlayerController m_cachedPlayer;
+      this.m_gun = this.GetComponent<Gun>();
+      if (!this.HasChanceToGainAmmo)
+        return;
+      this.m_gun.PostProcessProjectile += new Action<Projectile>(this.HandleGainAmmo);
+    }
 
-      public void Awake()
-      {
-        this.m_gun = this.GetComponent<Gun>();
-        if (!this.HasChanceToGainAmmo)
-          return;
-        this.m_gun.PostProcessProjectile += new Action<Projectile>(this.HandleGainAmmo);
-      }
+    private void HandleGainAmmo(Projectile obj)
+    {
+      if (!(bool) (UnityEngine.Object) this.m_gun || !this.m_gun.OwnerHasSynergy(this.RequiredSynergy) || (double) UnityEngine.Random.value >= (double) this.ChanceToGainAmmo)
+        return;
+      this.m_gun.GainAmmo(1);
+    }
 
-      private void HandleGainAmmo(Projectile obj)
+    public void Update()
+    {
+      if (this.SnapsToAngleMultiple && (bool) (UnityEngine.Object) this.m_gun)
       {
-        if (!(bool) (UnityEngine.Object) this.m_gun || !this.m_gun.OwnerHasSynergy(this.RequiredSynergy) || (double) UnityEngine.Random.value >= (double) this.ChanceToGainAmmo)
-          return;
-        this.m_gun.GainAmmo(1);
-      }
-
-      public void Update()
-      {
-        if (this.SnapsToAngleMultiple && (bool) (UnityEngine.Object) this.m_gun)
+        if (this.m_gun.OwnerHasSynergy(this.RequiredSynergy))
         {
-          if (this.m_gun.OwnerHasSynergy(this.RequiredSynergy))
-          {
-            this.m_gun.preventRotation = true;
-            this.m_gun.OverrideAngleSnap = new float?(this.AngleMultiple);
-          }
-          else
-          {
-            this.m_gun.preventRotation = false;
-            this.m_gun.OverrideAngleSnap = new float?();
-          }
-        }
-        if (this.SetsGoopReloadFree && (bool) (UnityEngine.Object) this.m_gun)
-          this.m_gun.GoopReloadsFree = this.m_gun.OwnerHasSynergy(this.RequiredSynergy);
-        if (!this.SetsFlying)
-          return;
-        if ((bool) (UnityEngine.Object) this.m_gun && this.m_gun.OwnerHasSynergy(this.RequiredSynergy))
-        {
-          if ((bool) (UnityEngine.Object) this.m_cachedPlayer)
-            return;
-          this.m_cachedPlayer = this.m_gun.CurrentOwner as PlayerController;
-          this.m_cachedPlayer.SetIsFlying(true, "synergy flight");
-          this.m_cachedPlayer.AdditionalCanDodgeRollWhileFlying.AddOverride("synergy flight");
+          this.m_gun.preventRotation = true;
+          this.m_gun.OverrideAngleSnap = new float?(this.AngleMultiple);
         }
         else
         {
-          if (!(bool) (UnityEngine.Object) this.m_cachedPlayer)
-            return;
-          this.m_cachedPlayer.AdditionalCanDodgeRollWhileFlying.RemoveOverride("synergy flight");
-          this.m_cachedPlayer.SetIsFlying(false, "synergy flight");
-          this.m_cachedPlayer = (PlayerController) null;
+          this.m_gun.preventRotation = false;
+          this.m_gun.OverrideAngleSnap = new float?();
         }
       }
-
-      private void OnDisable()
+      if (this.SetsGoopReloadFree && (bool) (UnityEngine.Object) this.m_gun)
+        this.m_gun.GoopReloadsFree = this.m_gun.OwnerHasSynergy(this.RequiredSynergy);
+      if (!this.SetsFlying)
+        return;
+      if ((bool) (UnityEngine.Object) this.m_gun && this.m_gun.OwnerHasSynergy(this.RequiredSynergy))
       {
-        if (!(bool) (UnityEngine.Object) this.m_cachedPlayer)
+        if ((bool) (UnityEngine.Object) this.m_cachedPlayer)
           return;
-        this.m_cachedPlayer.AdditionalCanDodgeRollWhileFlying.RemoveOverride("synergy flight");
-        this.m_cachedPlayer.SetIsFlying(false, "synergy flight");
-        this.m_cachedPlayer = (PlayerController) null;
+        this.m_cachedPlayer = this.m_gun.CurrentOwner as PlayerController;
+        this.m_cachedPlayer.SetIsFlying(true, "synergy flight");
+        this.m_cachedPlayer.AdditionalCanDodgeRollWhileFlying.AddOverride("synergy flight");
       }
-
-      private void OnDestroy()
+      else
       {
         if (!(bool) (UnityEngine.Object) this.m_cachedPlayer)
           return;
@@ -95,4 +74,22 @@ namespace ETG.Core.Combat.Projectiles
       }
     }
 
-}
+    private void OnDisable()
+    {
+      if (!(bool) (UnityEngine.Object) this.m_cachedPlayer)
+        return;
+      this.m_cachedPlayer.AdditionalCanDodgeRollWhileFlying.RemoveOverride("synergy flight");
+      this.m_cachedPlayer.SetIsFlying(false, "synergy flight");
+      this.m_cachedPlayer = (PlayerController) null;
+    }
+
+    private void OnDestroy()
+    {
+      if (!(bool) (UnityEngine.Object) this.m_cachedPlayer)
+        return;
+      this.m_cachedPlayer.AdditionalCanDodgeRollWhileFlying.RemoveOverride("synergy flight");
+      this.m_cachedPlayer.SetIsFlying(false, "synergy flight");
+      this.m_cachedPlayer = (PlayerController) null;
+    }
+  }
+

@@ -8,17 +8,14 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [Serializable]
-    public class IntroSequenceElement
-    {
-      public dfControl panel;
-      public dfControl[] additionalElements;
-      public bool waitsForInput;
-      public float hangTime;
-      public float fadeInTime;
-      public float fadeOutTime;
-    }
+[Serializable]
+public class IntroSequenceElement
+  {
+    public dfControl panel;
+    public dfControl[] additionalElements;
+    public bool waitsForInput;
+    public float hangTime;
+    public float fadeInTime;
+    public float fadeOutTime;
+  }
 
-}

@@ -8,13 +8,10 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public class AkGameObjPositionData
-    {
-      public Vector3 forward;
-      public Vector3 position;
-      public Vector3 up;
-    }
+public class AkGameObjPositionData
+  {
+    public Vector3 forward;
+    public Vector3 position;
+    public Vector3 up;
+  }
 
-}

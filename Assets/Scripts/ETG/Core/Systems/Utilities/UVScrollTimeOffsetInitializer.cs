@@ -8,18 +8,15 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class UVScrollTimeOffsetInitializer : MonoBehaviour
+public class UVScrollTimeOffsetInitializer : MonoBehaviour
+  {
+    public int NumberFrames;
+    public float TimePerFrame;
+
+    public void OnSpawned()
     {
-      public int NumberFrames;
-      public float TimePerFrame;
-
-      public void OnSpawned()
-      {
-        float num = UnityEngine.Time.realtimeSinceStartup % ((float) this.NumberFrames * this.TimePerFrame);
-        this.GetComponent<MeshRenderer>().material.SetFloat("_TimeOffset", num);
-      }
+      float num = UnityEngine.Time.realtimeSinceStartup % ((float) this.NumberFrames * this.TimePerFrame);
+      this.GetComponent<MeshRenderer>().material.SetFloat("_TimeOffset", num);
     }
+  }
 
-}

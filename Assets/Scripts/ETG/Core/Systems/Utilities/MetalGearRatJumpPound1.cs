@@ -11,25 +11,22 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/MetalGearRat/JumpPound1")]
-    public class MetalGearRatJumpPound1 : Script
+[InspectorDropdownName("Bosses/MetalGearRat/JumpPound1")]
+public class MetalGearRatJumpPound1 : Script
+  {
+    private const int NumWaves = 3;
+    private const int NumBullets = 43;
+    private const float EllipseA = 6f;
+    private const float EllipseB = 2f;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      private const int NumWaves = 3;
-      private const int NumBullets = 43;
-      private const float EllipseA = 6f;
-      private const float EllipseB = 2f;
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new MetalGearRatJumpPound1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new MetalGearRatJumpPound1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
+  }
 
-}

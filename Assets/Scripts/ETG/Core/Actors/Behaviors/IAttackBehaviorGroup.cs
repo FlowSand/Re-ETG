@@ -6,13 +6,10 @@
 
 #nullable disable
 
-namespace ETG.Core.Actors.Behaviors
-{
-    public interface IAttackBehaviorGroup
-    {
-      int Count { get; }
+public interface IAttackBehaviorGroup
+  {
+    int Count { get; }
 
-      AttackBehaviorBase GetAttackBehavior(int index);
-    }
+    AttackBehaviorBase GetAttackBehavior(int index);
+  }
 
-}

@@ -6,11 +6,8 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface ILevelLoadedListener
-    {
-      void BraveOnLevelWasLoaded();
-    }
+public interface ILevelLoadedListener
+  {
+    void BraveOnLevelWasLoaded();
+  }
 
-}

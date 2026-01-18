@@ -9,67 +9,64 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Core.Framework
-{
-    public abstract class EphemeralObject : ClusteredTimeInvariantMonoBehaviour
+  public abstract class EphemeralObject : ClusteredTimeInvariantMonoBehaviour
+  {
+    public EphemeralObject.EphemeralPriority Priority = EphemeralObject.EphemeralPriority.Middling;
+    private float m_destructionTimer;
+    private bool m_isRegistered;
+    private const float c_destroyTime = 1f;
+
+    public virtual void Start() => this.OnSpawned();
+
+    public virtual void OnSpawned()
     {
-      public EphemeralObject.EphemeralPriority Priority = EphemeralObject.EphemeralPriority.Middling;
-      private float m_destructionTimer;
-      private bool m_isRegistered;
-      private const float c_destroyTime = 1f;
-
-      public virtual void Start() => this.OnSpawned();
-
-      public virtual void OnSpawned()
-      {
-        if (this.m_isRegistered)
-          return;
-        SpawnManager.RegisterEphemeralObject(this);
-        this.m_isRegistered = true;
-      }
-
-      protected override void OnDestroy()
-      {
-        this.OnDespawned();
-        base.OnDestroy();
-      }
-
-      public virtual void OnDespawned()
-      {
-        if (!this.m_isRegistered)
-          return;
-        if (SpawnManager.HasInstance)
-          SpawnManager.DeregisterEphemeralObject(this);
-        this.m_isRegistered = false;
-      }
-
-      public void TriggerDestruction(bool forceImmediate = false)
-      {
-        SpawnManager.DeregisterEphemeralObject(this);
-        if (this.gameObject.activeInHierarchy && !forceImmediate)
-          this.StartCoroutine(this.DestroyCR());
-        else
-          SpawnManager.Despawn(this.gameObject);
-      }
-
-      [DebuggerHidden]
-      private IEnumerator DestroyCR()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new EphemeralObject__DestroyCRc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      public enum EphemeralPriority
-      {
-        Critical,
-        Important,
-        Middling,
-        Minor,
-        Ephemeral,
-      }
+      if (this.m_isRegistered)
+        return;
+      SpawnManager.RegisterEphemeralObject(this);
+      this.m_isRegistered = true;
     }
 
-}
+    protected override void OnDestroy()
+    {
+      this.OnDespawned();
+      base.OnDestroy();
+    }
+
+    public virtual void OnDespawned()
+    {
+      if (!this.m_isRegistered)
+        return;
+      if (SpawnManager.HasInstance)
+        SpawnManager.DeregisterEphemeralObject(this);
+      this.m_isRegistered = false;
+    }
+
+    public void TriggerDestruction(bool forceImmediate = false)
+    {
+      SpawnManager.DeregisterEphemeralObject(this);
+      if (this.gameObject.activeInHierarchy && !forceImmediate)
+        this.StartCoroutine(this.DestroyCR());
+      else
+        SpawnManager.Despawn(this.gameObject);
+    }
+
+[DebuggerHidden]
+    private IEnumerator DestroyCR()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new EphemeralObject__DestroyCRc__Iterator0()
+      {
+        _this = this
+      };
+    }
+
+public enum EphemeralPriority
+    {
+      Critical,
+      Important,
+      Middling,
+      Minor,
+      Ephemeral,
+    }
+  }
+

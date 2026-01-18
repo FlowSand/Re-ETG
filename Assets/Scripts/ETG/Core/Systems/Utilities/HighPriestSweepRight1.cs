@@ -8,15 +8,12 @@ using FullInspector;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/HighPriest/SweepRight1")]
-    public class HighPriestSweepRight1 : HighPriestSweepAttacks1
+[InspectorDropdownName("Bosses/HighPriest/SweepRight1")]
+public class HighPriestSweepRight1 : HighPriestSweepAttacks1
+  {
+    public HighPriestSweepRight1()
+      : base(false, true)
     {
-      public HighPriestSweepRight1()
-        : base(false, true)
-      {
-      }
     }
+  }
 
-}

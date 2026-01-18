@@ -9,14 +9,11 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Data
-{
-    [Serializable]
-    public class PrototypeIndexOverrideData
-    {
-      public List<int> indices;
+[Serializable]
+public class PrototypeIndexOverrideData
+  {
+    public List<int> indices;
 
-      public PrototypeIndexOverrideData() => this.indices = new List<int>();
-    }
+    public PrototypeIndexOverrideData() => this.indices = new List<int>();
+  }
 
-}

@@ -6,9 +6,6 @@
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [dfEventCategory("Focus")]
-    public delegate void FocusEventHandler(dfControl control, dfFocusEventArgs args);
+[dfEventCategory("Focus")]
+public delegate void FocusEventHandler(dfControl control, dfFocusEventArgs args);
 
-}

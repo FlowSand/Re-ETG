@@ -11,32 +11,29 @@ using System.Diagnostics;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    [InspectorDropdownName("Bosses/Infinilich/Sweep1")]
-    public class InfinilichSweep1 : Script
+[InspectorDropdownName("Bosses/Infinilich/Sweep1")]
+public class InfinilichSweep1 : Script
+  {
+    private bool m_isFinished;
+
+    [DebuggerHidden]
+    protected override IEnumerator Top()
     {
-      private bool m_isFinished;
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new InfinilichSweep1__Topc__Iterator0()
       {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichSweep1__Topc__Iterator0()
-        {
-          _this = this
-        };
-      }
-
-      [DebuggerHidden]
-      private IEnumerator VerticalAttacks()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new InfinilichSweep1__VerticalAttacksc__Iterator1()
-        {
-          _this = this
-        };
-      }
+        _this = this
+      };
     }
 
-}
+    [DebuggerHidden]
+    private IEnumerator VerticalAttacks()
+    {
+      // ISSUE: object of a compiler-generated type is created
+      return (IEnumerator) new InfinilichSweep1__VerticalAttacksc__Iterator1()
+      {
+        _this = this
+      };
+    }
+  }
+

@@ -6,11 +6,8 @@
 
 #nullable disable
 
-namespace ETG.Core.Core.Interfaces
-{
-    public interface IRendersText
-    {
-      void UpdateFontInfo();
-    }
+public interface IRendersText
+  {
+    void UpdateFontInfo();
+  }
 
-}

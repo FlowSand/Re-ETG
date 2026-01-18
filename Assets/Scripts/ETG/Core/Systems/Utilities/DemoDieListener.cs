@@ -8,16 +8,13 @@ using UnityEngine;
 
 #nullable disable
 
-namespace ETG.Core.Systems.Utilities
-{
-    public class DemoDieListener : MonoBehaviour
+public class DemoDieListener : MonoBehaviour
+  {
+    private void OnClick(dfControl control, dfMouseEventArgs mouseEvent)
     {
-      private void OnClick(dfControl control, dfMouseEventArgs mouseEvent)
-      {
-        dfGUIManager.PopModal();
-        GameManager.Instance.PrimaryPlayer.healthHaver.Die(Vector2.zero);
-        this.transform.parent.gameObject.SetActive(false);
-      }
+      dfGUIManager.PopModal();
+      GameManager.Instance.PrimaryPlayer.healthHaver.Die(Vector2.zero);
+      this.transform.parent.gameObject.SetActive(false);
     }
+  }
 
-}

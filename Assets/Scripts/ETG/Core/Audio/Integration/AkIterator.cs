@@ -8,88 +8,85 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Audio.Integration
-{
-    public class AkIterator : IDisposable
+public class AkIterator : IDisposable
+  {
+    private IntPtr swigCPtr;
+    protected bool swigCMemOwn;
+
+    internal AkIterator(IntPtr cPtr, bool cMemoryOwn)
     {
-      private IntPtr swigCPtr;
-      protected bool swigCMemOwn;
+      this.swigCMemOwn = cMemoryOwn;
+      this.swigCPtr = cPtr;
+    }
 
-      internal AkIterator(IntPtr cPtr, bool cMemoryOwn)
+    public AkIterator()
+      : this(AkSoundEnginePINVOKE.CSharp_new_AkIterator(), true)
+    {
+    }
+
+    internal static IntPtr getCPtr(AkIterator obj) => obj == null ? IntPtr.Zero : obj.swigCPtr;
+
+    internal virtual void setCPtr(IntPtr cPtr)
+    {
+      this.Dispose();
+      this.swigCPtr = cPtr;
+    }
+
+    ~AkIterator() => this.Dispose();
+
+    public virtual void Dispose()
+    {
+      lock ((object) this)
       {
-        this.swigCMemOwn = cMemoryOwn;
-        this.swigCPtr = cPtr;
-      }
-
-      public AkIterator()
-        : this(AkSoundEnginePINVOKE.CSharp_new_AkIterator(), true)
-      {
-      }
-
-      internal static IntPtr getCPtr(AkIterator obj) => obj == null ? IntPtr.Zero : obj.swigCPtr;
-
-      internal virtual void setCPtr(IntPtr cPtr)
-      {
-        this.Dispose();
-        this.swigCPtr = cPtr;
-      }
-
-      ~AkIterator() => this.Dispose();
-
-      public virtual void Dispose()
-      {
-        lock ((object) this)
+        if (this.swigCPtr != IntPtr.Zero)
         {
-          if (this.swigCPtr != IntPtr.Zero)
+          if (this.swigCMemOwn)
           {
-            if (this.swigCMemOwn)
-            {
-              this.swigCMemOwn = false;
-              AkSoundEnginePINVOKE.CSharp_delete_AkIterator(this.swigCPtr);
-            }
-            this.swigCPtr = IntPtr.Zero;
+            this.swigCMemOwn = false;
+            AkSoundEnginePINVOKE.CSharp_delete_AkIterator(this.swigCPtr);
           }
-          GC.SuppressFinalize((object) this);
+          this.swigCPtr = IntPtr.Zero;
         }
-      }
-
-      public AkPlaylistItem pItem
-      {
-        set
-        {
-          AkSoundEnginePINVOKE.CSharp_AkIterator_pItem_set(this.swigCPtr, AkPlaylistItem.getCPtr(value));
-        }
-        get
-        {
-          IntPtr cPtr = AkSoundEnginePINVOKE.CSharp_AkIterator_pItem_get(this.swigCPtr);
-          return !(cPtr == IntPtr.Zero) ? new AkPlaylistItem(cPtr, false) : (AkPlaylistItem) null;
-        }
-      }
-
-      public AkIterator NextIter()
-      {
-        return new AkIterator(AkSoundEnginePINVOKE.CSharp_AkIterator_NextIter(this.swigCPtr), false);
-      }
-
-      public AkIterator PrevIter()
-      {
-        return new AkIterator(AkSoundEnginePINVOKE.CSharp_AkIterator_PrevIter(this.swigCPtr), false);
-      }
-
-      public AkPlaylistItem GetItem()
-      {
-        return new AkPlaylistItem(AkSoundEnginePINVOKE.CSharp_AkIterator_GetItem(this.swigCPtr), false);
-      }
-
-      public bool IsEqualTo(AkIterator in_rOp)
-      {
-        return AkSoundEnginePINVOKE.CSharp_AkIterator_IsEqualTo(this.swigCPtr, AkIterator.getCPtr(in_rOp));
-      }
-
-      public bool IsDifferentFrom(AkIterator in_rOp)
-      {
-        return AkSoundEnginePINVOKE.CSharp_AkIterator_IsDifferentFrom(this.swigCPtr, AkIterator.getCPtr(in_rOp));
+        GC.SuppressFinalize((object) this);
       }
     }
 
-}
+    public AkPlaylistItem pItem
+    {
+      set
+      {
+        AkSoundEnginePINVOKE.CSharp_AkIterator_pItem_set(this.swigCPtr, AkPlaylistItem.getCPtr(value));
+      }
+      get
+      {
+        IntPtr cPtr = AkSoundEnginePINVOKE.CSharp_AkIterator_pItem_get(this.swigCPtr);
+        return !(cPtr == IntPtr.Zero) ? new AkPlaylistItem(cPtr, false) : (AkPlaylistItem) null;
+      }
+    }
+
+    public AkIterator NextIter()
+    {
+      return new AkIterator(AkSoundEnginePINVOKE.CSharp_AkIterator_NextIter(this.swigCPtr), false);
+    }
+
+    public AkIterator PrevIter()
+    {
+      return new AkIterator(AkSoundEnginePINVOKE.CSharp_AkIterator_PrevIter(this.swigCPtr), false);
+    }
+
+    public AkPlaylistItem GetItem()
+    {
+      return new AkPlaylistItem(AkSoundEnginePINVOKE.CSharp_AkIterator_GetItem(this.swigCPtr), false);
+    }
+
+    public bool IsEqualTo(AkIterator in_rOp)
+    {
+      return AkSoundEnginePINVOKE.CSharp_AkIterator_IsEqualTo(this.swigCPtr, AkIterator.getCPtr(in_rOp));
+    }
+
+    public bool IsDifferentFrom(AkIterator in_rOp)
+    {
+      return AkSoundEnginePINVOKE.CSharp_AkIterator_IsDifferentFrom(this.swigCPtr, AkIterator.getCPtr(in_rOp));
+    }
+  }
+

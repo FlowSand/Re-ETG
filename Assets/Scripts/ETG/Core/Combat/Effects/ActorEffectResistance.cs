@@ -8,13 +8,10 @@ using System;
 
 #nullable disable
 
-namespace ETG.Core.Combat.Effects
-{
-    [Serializable]
-    public struct ActorEffectResistance
-    {
-      public EffectResistanceType resistType;
-      public float resistAmount;
-    }
+[Serializable]
+public struct ActorEffectResistance
+  {
+    public EffectResistanceType resistType;
+    public float resistAmount;
+  }
 
-}
