@@ -3,13 +3,13 @@ using UnityEngine;
 #nullable disable
 
 public class PausableMonoBehaviour : MonoBehaviour
-  {
-    public virtual void OnPauseGame()
     {
-    }
+        public virtual void OnPauseGame()
+        {
+        }
 
-    public virtual void OnResumeGame()
-    {
+        public virtual void OnResumeGame()
+        {
+        }
     }
-  }
 

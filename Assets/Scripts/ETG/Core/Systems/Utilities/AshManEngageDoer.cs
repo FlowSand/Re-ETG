@@ -1,72 +1,74 @@
-using Dungeonator;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+
 using UnityEngine;
+
+using Dungeonator;
 
 #nullable disable
 
 public class AshManEngageDoer : CustomEngageDoer
-  {
-    public float FromStatueChance = 0.5f;
-    public string BreakablePrefix = "Forge_Ash_Bullet";
-    public float MinSpawnDelay = 2f;
-    public float MaxSpawnDelay = 6f;
-    private bool m_isFinished;
-    private bool m_brokeEarly;
-
-    public void Awake()
     {
-      if ((double) Random.value > (double) this.FromStatueChance)
-      {
-        this.m_isFinished = true;
-      }
-      else
-      {
-        this.aiActor.HasDonePlayerEnterCheck = true;
-        this.aiActor.CollisionDamage = 0.0f;
-      }
+        public float FromStatueChance = 0.5f;
+        public string BreakablePrefix = "Forge_Ash_Bullet";
+        public float MinSpawnDelay = 2f;
+        public float MaxSpawnDelay = 6f;
+        private bool m_isFinished;
+        private bool m_brokeEarly;
+
+        public void Awake()
+        {
+            if ((double) Random.value > (double) this.FromStatueChance)
+            {
+                this.m_isFinished = true;
+            }
+            else
+            {
+                this.aiActor.HasDonePlayerEnterCheck = true;
+                this.aiActor.CollisionDamage = 0.0f;
+            }
+        }
+
+        public override void StartIntro()
+        {
+            if (this.m_isFinished)
+                return;
+            List<MinorBreakable> list = new List<MinorBreakable>();
+            RoomHandler parentRoom = this.aiActor.ParentRoom;
+            List<MinorBreakable> allMinorBreakables = StaticReferenceManager.AllMinorBreakables;
+            DungeonData data = GameManager.Instance.Dungeon.data;
+            for (int index = 0; index < allMinorBreakables.Count; ++index)
+            {
+                MinorBreakable minorBreakable = allMinorBreakables[index];
+                if (minorBreakable.name.StartsWith(this.BreakablePrefix) && data.GetAbsoluteRoomFromPosition(minorBreakable.transform.position.IntXY(VectorConversions.Floor)) == parentRoom)
+                    list.Add(minorBreakable);
+            }
+            if (list.Count == 0)
+            {
+                this.m_isFinished = true;
+                this.aiActor.invisibleUntilAwaken = false;
+                this.aiActor.ToggleRenderers(true);
+                this.aiAnimator.PlayDefaultAwakenedState();
+                this.aiActor.State = AIActor.ActorState.Normal;
+            }
+            else
+                this.StartCoroutine(this.DoIntro(BraveUtility.RandomElement<MinorBreakable>(list)));
+        }
+
+        [DebuggerHidden]
+        private IEnumerator DoIntro(MinorBreakable breakable)
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new AshManEngageDoer__DoIntroc__Iterator0()
+            {
+                breakable = breakable,
+                _this = this
+            };
+        }
+
+        public override bool IsFinished => this.m_isFinished;
+
+        private void OnBreak() => this.m_brokeEarly = true;
     }
-
-    public override void StartIntro()
-    {
-      if (this.m_isFinished)
-        return;
-      List<MinorBreakable> list = new List<MinorBreakable>();
-      RoomHandler parentRoom = this.aiActor.ParentRoom;
-      List<MinorBreakable> allMinorBreakables = StaticReferenceManager.AllMinorBreakables;
-      DungeonData data = GameManager.Instance.Dungeon.data;
-      for (int index = 0; index < allMinorBreakables.Count; ++index)
-      {
-        MinorBreakable minorBreakable = allMinorBreakables[index];
-        if (minorBreakable.name.StartsWith(this.BreakablePrefix) && data.GetAbsoluteRoomFromPosition(minorBreakable.transform.position.IntXY(VectorConversions.Floor)) == parentRoom)
-          list.Add(minorBreakable);
-      }
-      if (list.Count == 0)
-      {
-        this.m_isFinished = true;
-        this.aiActor.invisibleUntilAwaken = false;
-        this.aiActor.ToggleRenderers(true);
-        this.aiAnimator.PlayDefaultAwakenedState();
-        this.aiActor.State = AIActor.ActorState.Normal;
-      }
-      else
-        this.StartCoroutine(this.DoIntro(BraveUtility.RandomElement<MinorBreakable>(list)));
-    }
-
-    [DebuggerHidden]
-    private IEnumerator DoIntro(MinorBreakable breakable)
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new AshManEngageDoer__DoIntroc__Iterator0()
-      {
-        breakable = breakable,
-        _this = this
-      };
-    }
-
-    public override bool IsFinished => this.m_isFinished;
-
-    private void OnBreak() => this.m_brokeEarly = true;
-  }
 

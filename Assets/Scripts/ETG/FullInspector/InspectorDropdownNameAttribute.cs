@@ -3,11 +3,11 @@ using System;
 #nullable disable
 namespace FullInspector
 {
-  [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface)]
-  public sealed class InspectorDropdownNameAttribute : Attribute
-  {
-    public string DisplayName;
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Interface)]
+    public sealed class InspectorDropdownNameAttribute : Attribute
+    {
+        public string DisplayName;
 
-    public InspectorDropdownNameAttribute(string displayName) => this.DisplayName = displayName;
-  }
+        public InspectorDropdownNameAttribute(string displayName) => this.DisplayName = displayName;
+    }
 }

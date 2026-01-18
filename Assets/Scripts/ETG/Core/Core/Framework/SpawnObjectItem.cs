@@ -1,9 +1,9 @@
 #nullable disable
 
 public class SpawnObjectItem : BraveBehaviour
-  {
-    public PlayerController SpawningPlayer;
+    {
+        public PlayerController SpawningPlayer;
 
-    protected override void OnDestroy() => base.OnDestroy();
-  }
+        protected override void OnDestroy() => base.OnDestroy();
+    }
 

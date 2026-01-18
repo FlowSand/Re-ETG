@@ -1,38 +1,39 @@
 using System;
+
 using UnityEngine;
 
 #nullable disable
 
 public class BlankPersonalityItem : PassiveItem
-  {
-    [Range(0.0f, 100f)]
-    public float ReturnAmmoToAllGunsPercentage = 5f;
-
-    public override void Pickup(PlayerController player)
     {
-      base.Pickup(player);
-      this.m_owner = player;
-      player.OnReceivedDamage += new Action<PlayerController>(this.HandleDamageReceived);
-    }
+        [Range(0.0f, 100f)]
+        public float ReturnAmmoToAllGunsPercentage = 5f;
 
-    private void HandleDamageReceived(PlayerController source)
-    {
-      source.ForceBlank();
-      if ((double) this.ReturnAmmoToAllGunsPercentage <= 0.0 || source.inventory == null || source.inventory.AllGuns == null)
-        return;
-      for (int index = 0; index < source.inventory.AllGuns.Count; ++index)
-      {
-        Gun allGun = source.inventory.AllGuns[index];
-        if (!allGun.InfiniteAmmo && allGun.CanGainAmmo)
-          allGun.GainAmmo(Mathf.CeilToInt((float) allGun.AdjustedMaxAmmo * 0.01f * this.ReturnAmmoToAllGunsPercentage));
-      }
-    }
+        public override void Pickup(PlayerController player)
+        {
+            base.Pickup(player);
+            this.m_owner = player;
+            player.OnReceivedDamage += new Action<PlayerController>(this.HandleDamageReceived);
+        }
 
-    protected override void DisableEffect(PlayerController disablingPlayer)
-    {
-      if ((bool) (UnityEngine.Object) disablingPlayer)
-        disablingPlayer.OnReceivedDamage -= new Action<PlayerController>(this.HandleDamageReceived);
-      base.DisableEffect(disablingPlayer);
+        private void HandleDamageReceived(PlayerController source)
+        {
+            source.ForceBlank();
+            if ((double) this.ReturnAmmoToAllGunsPercentage <= 0.0 || source.inventory == null || source.inventory.AllGuns == null)
+                return;
+            for (int index = 0; index < source.inventory.AllGuns.Count; ++index)
+            {
+                Gun allGun = source.inventory.AllGuns[index];
+                if (!allGun.InfiniteAmmo && allGun.CanGainAmmo)
+                    allGun.GainAmmo(Mathf.CeilToInt((float) allGun.AdjustedMaxAmmo * 0.01f * this.ReturnAmmoToAllGunsPercentage));
+            }
+        }
+
+        protected override void DisableEffect(PlayerController disablingPlayer)
+        {
+            if ((bool) (UnityEngine.Object) disablingPlayer)
+                disablingPlayer.OnReceivedDamage -= new Action<PlayerController>(this.HandleDamageReceived);
+            base.DisableEffect(disablingPlayer);
+        }
     }
-  }
 

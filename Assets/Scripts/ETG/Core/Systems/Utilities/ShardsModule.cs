@@ -1,77 +1,78 @@
 using System;
+
 using UnityEngine;
 
 #nullable disable
 
 [Serializable]
 public class ShardsModule
-  {
-    public MinorBreakable.BreakStyle breakStyle;
-    [ShowInInspectorIf("breakStyle", 4, true)]
-    public Vector2 direction;
-    [ShowInInspectorIf("breakStyle", 4, true)]
-    public float minAngle;
-    [ShowInInspectorIf("breakStyle", 4, true)]
-    public float maxAngle;
-    [ShowInInspectorIf("breakStyle", 4, true)]
-    public float verticalSpeed;
-    [ShowInInspectorIf("breakStyle", 4, true)]
-    public float minMagnitude;
-    [ShowInInspectorIf("breakStyle", 4, true)]
-    public float maxMagnitude;
-    public ShardCluster[] shardClusters;
-    public float heightOffGround = 0.1f;
-
-    public void HandleShardSpawns(Vector2 spawnPos, Vector2 sourceVelocity)
     {
-      MinorBreakable.BreakStyle breakStyle = this.breakStyle;
-      if (sourceVelocity == Vector2.zero && this.breakStyle != MinorBreakable.BreakStyle.CUSTOM)
-        breakStyle = MinorBreakable.BreakStyle.BURST;
-      float verticalSpeed = 1.5f;
-      switch (breakStyle)
-      {
-        case MinorBreakable.BreakStyle.CONE:
-          this.SpawnShards(spawnPos, sourceVelocity, -45f, 45f, verticalSpeed, sourceVelocity.magnitude * 0.5f, sourceVelocity.magnitude * 1.5f);
-          break;
-        case MinorBreakable.BreakStyle.BURST:
-          this.SpawnShards(spawnPos, Vector2.right, -180f, 180f, verticalSpeed, 1f, 2f);
-          break;
-        case MinorBreakable.BreakStyle.JET:
-          this.SpawnShards(spawnPos, sourceVelocity, -15f, 15f, verticalSpeed, sourceVelocity.magnitude * 0.5f, sourceVelocity.magnitude * 1.5f);
-          break;
-        case MinorBreakable.BreakStyle.CUSTOM:
-          this.SpawnShards(spawnPos, this.direction, this.minAngle, this.maxAngle, this.verticalSpeed, this.minMagnitude, this.maxMagnitude);
-          break;
-      }
-    }
+        public MinorBreakable.BreakStyle breakStyle;
+        [ShowInInspectorIf("breakStyle", 4, true)]
+        public Vector2 direction;
+        [ShowInInspectorIf("breakStyle", 4, true)]
+        public float minAngle;
+        [ShowInInspectorIf("breakStyle", 4, true)]
+        public float maxAngle;
+        [ShowInInspectorIf("breakStyle", 4, true)]
+        public float verticalSpeed;
+        [ShowInInspectorIf("breakStyle", 4, true)]
+        public float minMagnitude;
+        [ShowInInspectorIf("breakStyle", 4, true)]
+        public float maxMagnitude;
+        public ShardCluster[] shardClusters;
+        public float heightOffGround = 0.1f;
 
-    private void SpawnShards(
-      Vector2 spawnPos,
-      Vector2 direction,
-      float minAngle,
-      float maxAngle,
-      float verticalSpeed,
-      float minMagnitude,
-      float maxMagnitude)
-    {
-      Vector3 position = (Vector3) spawnPos;
-      if (this.shardClusters == null || this.shardClusters.Length <= 0)
-        return;
-      int iterator = UnityEngine.Random.Range(0, 10);
-      for (int index1 = 0; index1 < this.shardClusters.Length; ++index1)
-      {
-        ShardCluster shardCluster = this.shardClusters[index1];
-        int num1 = UnityEngine.Random.Range(shardCluster.minFromCluster, shardCluster.maxFromCluster + 1);
-        int num2 = UnityEngine.Random.Range(0, shardCluster.clusterObjects.Length);
-        for (int index2 = 0; index2 < num1; ++index2)
+        public void HandleShardSpawns(Vector2 spawnPos, Vector2 sourceVelocity)
         {
-          float discrepancyRandom = BraveMathCollege.GetLowDiscrepancyRandom(iterator);
-          ++iterator;
-          Vector3 a = Quaternion.Euler(0.0f, 0.0f, Mathf.Lerp(minAngle, maxAngle, discrepancyRandom)) * (direction.normalized * UnityEngine.Random.Range(minMagnitude, maxMagnitude)).ToVector3ZUp(verticalSpeed);
-          int index3 = (num2 + index2) % shardCluster.clusterObjects.Length;
-          SpawnManager.SpawnDebris(shardCluster.clusterObjects[index3].gameObject, position, Quaternion.identity).GetComponent<DebrisObject>().Trigger(Vector3.Scale(a, shardCluster.forceAxialMultiplier) * shardCluster.forceMultiplier, this.heightOffGround, shardCluster.rotationMultiplier);
+            MinorBreakable.BreakStyle breakStyle = this.breakStyle;
+            if (sourceVelocity == Vector2.zero && this.breakStyle != MinorBreakable.BreakStyle.CUSTOM)
+                breakStyle = MinorBreakable.BreakStyle.BURST;
+            float verticalSpeed = 1.5f;
+            switch (breakStyle)
+            {
+                case MinorBreakable.BreakStyle.CONE:
+                    this.SpawnShards(spawnPos, sourceVelocity, -45f, 45f, verticalSpeed, sourceVelocity.magnitude * 0.5f, sourceVelocity.magnitude * 1.5f);
+                    break;
+                case MinorBreakable.BreakStyle.BURST:
+                    this.SpawnShards(spawnPos, Vector2.right, -180f, 180f, verticalSpeed, 1f, 2f);
+                    break;
+                case MinorBreakable.BreakStyle.JET:
+                    this.SpawnShards(spawnPos, sourceVelocity, -15f, 15f, verticalSpeed, sourceVelocity.magnitude * 0.5f, sourceVelocity.magnitude * 1.5f);
+                    break;
+                case MinorBreakable.BreakStyle.CUSTOM:
+                    this.SpawnShards(spawnPos, this.direction, this.minAngle, this.maxAngle, this.verticalSpeed, this.minMagnitude, this.maxMagnitude);
+                    break;
+            }
         }
-      }
+
+        private void SpawnShards(
+            Vector2 spawnPos,
+            Vector2 direction,
+            float minAngle,
+            float maxAngle,
+            float verticalSpeed,
+            float minMagnitude,
+            float maxMagnitude)
+        {
+            Vector3 position = (Vector3) spawnPos;
+            if (this.shardClusters == null || this.shardClusters.Length <= 0)
+                return;
+            int iterator = UnityEngine.Random.Range(0, 10);
+            for (int index1 = 0; index1 < this.shardClusters.Length; ++index1)
+            {
+                ShardCluster shardCluster = this.shardClusters[index1];
+                int num1 = UnityEngine.Random.Range(shardCluster.minFromCluster, shardCluster.maxFromCluster + 1);
+                int num2 = UnityEngine.Random.Range(0, shardCluster.clusterObjects.Length);
+                for (int index2 = 0; index2 < num1; ++index2)
+                {
+                    float discrepancyRandom = BraveMathCollege.GetLowDiscrepancyRandom(iterator);
+                    ++iterator;
+                    Vector3 a = Quaternion.Euler(0.0f, 0.0f, Mathf.Lerp(minAngle, maxAngle, discrepancyRandom)) * (direction.normalized * UnityEngine.Random.Range(minMagnitude, maxMagnitude)).ToVector3ZUp(verticalSpeed);
+                    int index3 = (num2 + index2) % shardCluster.clusterObjects.Length;
+                    SpawnManager.SpawnDebris(shardCluster.clusterObjects[index3].gameObject, position, Quaternion.identity).GetComponent<DebrisObject>().Trigger(Vector3.Scale(a, shardCluster.forceAxialMultiplier) * shardCluster.forceMultiplier, this.heightOffGround, shardCluster.rotationMultiplier);
+                }
+            }
+        }
     }
-  }
 

@@ -3,9 +3,9 @@ using UnityEngine;
 #nullable disable
 
 public class CheckAnimationAttribute : PropertyAttribute
-  {
-    public string animator;
+    {
+        public string animator;
 
-    public CheckAnimationAttribute(string animator = null) => this.animator = animator;
-  }
+        public CheckAnimationAttribute(string animator = null) => this.animator = animator;
+    }
 

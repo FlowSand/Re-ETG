@@ -4,65 +4,65 @@ using System.Collections.Generic;
 #nullable disable
 
 public class ReturnAmmoOnMissedShotItem : PassiveItem, ILevelLoadedListener
-  {
-    public float ChanceToRegainAmmoOnMiss = 0.25f;
-    public bool UsesZombieBulletsSynergy;
-    public float SynergyChance = 0.5f;
-    private PlayerController m_player;
-    private Dictionary<float, int> m_slicesFired = new Dictionary<float, int>();
-
-    public override void Pickup(PlayerController player)
     {
-      if (this.m_pickedUp)
-        return;
-      this.m_player = player;
-      base.Pickup(player);
-      player.PostProcessProjectile += new Action<Projectile, float>(this.PostProcessProjectile);
-    }
+        public float ChanceToRegainAmmoOnMiss = 0.25f;
+        public bool UsesZombieBulletsSynergy;
+        public float SynergyChance = 0.5f;
+        private PlayerController m_player;
+        private Dictionary<float, int> m_slicesFired = new Dictionary<float, int>();
 
-    public void BraveOnLevelWasLoaded() => this.m_slicesFired.Clear();
+        public override void Pickup(PlayerController player)
+        {
+            if (this.m_pickedUp)
+                return;
+            this.m_player = player;
+            base.Pickup(player);
+            player.PostProcessProjectile += new Action<Projectile, float>(this.PostProcessProjectile);
+        }
 
-    private void PostProcessProjectile(Projectile obj, float effectChanceScalar)
-    {
-      if ((double) obj.PlayerProjectileSourceGameTimeslice == -1.0)
-        return;
-      if (this.m_slicesFired.ContainsKey(obj.PlayerProjectileSourceGameTimeslice))
-        this.m_slicesFired[obj.PlayerProjectileSourceGameTimeslice] = this.m_slicesFired[obj.PlayerProjectileSourceGameTimeslice] + 1;
-      else
-        this.m_slicesFired.Add(obj.PlayerProjectileSourceGameTimeslice, 1);
-      obj.OnDestruction += new Action<Projectile>(this.HandleProjectileDestruction);
-    }
+        public void BraveOnLevelWasLoaded() => this.m_slicesFired.Clear();
 
-    private void HandleProjectileDestruction(Projectile source)
-    {
-      if ((double) source.PlayerProjectileSourceGameTimeslice == -1.0 || !this.m_slicesFired.ContainsKey(source.PlayerProjectileSourceGameTimeslice) || !(bool) (UnityEngine.Object) this.m_player || !(bool) (UnityEngine.Object) source || !(bool) (UnityEngine.Object) source.PossibleSourceGun || source.PossibleSourceGun.InfiniteAmmo || source.HasImpactedEnemy)
-        return;
-      this.m_slicesFired[source.PlayerProjectileSourceGameTimeslice] = this.m_slicesFired[source.PlayerProjectileSourceGameTimeslice] - 1;
-      if (this.m_slicesFired[source.PlayerProjectileSourceGameTimeslice] != 0)
-        return;
-      float num = this.ChanceToRegainAmmoOnMiss;
-      if ((bool) (UnityEngine.Object) this.Owner && this.Owner.HasActiveBonusSynergy(CustomSynergyType.ZOMBIE_AMMO))
-        num = this.SynergyChance;
-      if ((double) UnityEngine.Random.value >= (double) num)
-        return;
-      source.PossibleSourceGun.GainAmmo(1);
-    }
+        private void PostProcessProjectile(Projectile obj, float effectChanceScalar)
+        {
+            if ((double) obj.PlayerProjectileSourceGameTimeslice == -1.0)
+                return;
+            if (this.m_slicesFired.ContainsKey(obj.PlayerProjectileSourceGameTimeslice))
+                this.m_slicesFired[obj.PlayerProjectileSourceGameTimeslice] = this.m_slicesFired[obj.PlayerProjectileSourceGameTimeslice] + 1;
+            else
+                this.m_slicesFired.Add(obj.PlayerProjectileSourceGameTimeslice, 1);
+            obj.OnDestruction += new Action<Projectile>(this.HandleProjectileDestruction);
+        }
 
-    public override DebrisObject Drop(PlayerController player)
-    {
-      DebrisObject debrisObject = base.Drop(player);
-      this.m_player = (PlayerController) null;
-      debrisObject.GetComponent<ReturnAmmoOnMissedShotItem>().m_pickedUpThisRun = true;
-      player.PostProcessProjectile -= new Action<Projectile, float>(this.PostProcessProjectile);
-      return debrisObject;
-    }
+        private void HandleProjectileDestruction(Projectile source)
+        {
+            if ((double) source.PlayerProjectileSourceGameTimeslice == -1.0 || !this.m_slicesFired.ContainsKey(source.PlayerProjectileSourceGameTimeslice) || !(bool) (UnityEngine.Object) this.m_player || !(bool) (UnityEngine.Object) source || !(bool) (UnityEngine.Object) source.PossibleSourceGun || source.PossibleSourceGun.InfiniteAmmo || source.HasImpactedEnemy)
+                return;
+            this.m_slicesFired[source.PlayerProjectileSourceGameTimeslice] = this.m_slicesFired[source.PlayerProjectileSourceGameTimeslice] - 1;
+            if (this.m_slicesFired[source.PlayerProjectileSourceGameTimeslice] != 0)
+                return;
+            float num = this.ChanceToRegainAmmoOnMiss;
+            if ((bool) (UnityEngine.Object) this.Owner && this.Owner.HasActiveBonusSynergy(CustomSynergyType.ZOMBIE_AMMO))
+                num = this.SynergyChance;
+            if ((double) UnityEngine.Random.value >= (double) num)
+                return;
+            source.PossibleSourceGun.GainAmmo(1);
+        }
 
-    protected override void OnDestroy()
-    {
-      base.OnDestroy();
-      if (!(bool) (UnityEngine.Object) this.m_player)
-        return;
-      this.m_player.PostProcessProjectile -= new Action<Projectile, float>(this.PostProcessProjectile);
+        public override DebrisObject Drop(PlayerController player)
+        {
+            DebrisObject debrisObject = base.Drop(player);
+            this.m_player = (PlayerController) null;
+            debrisObject.GetComponent<ReturnAmmoOnMissedShotItem>().m_pickedUpThisRun = true;
+            player.PostProcessProjectile -= new Action<Projectile, float>(this.PostProcessProjectile);
+            return debrisObject;
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            if (!(bool) (UnityEngine.Object) this.m_player)
+                return;
+            this.m_player.PostProcessProjectile -= new Action<Projectile, float>(this.PostProcessProjectile);
+        }
     }
-  }
 

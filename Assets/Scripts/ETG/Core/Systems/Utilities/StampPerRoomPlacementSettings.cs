@@ -4,8 +4,8 @@ using System;
 
 [Serializable]
 public class StampPerRoomPlacementSettings
-  {
-    public int roomSubType;
-    public float roomRelativeWeight;
-  }
+    {
+        public int roomSubType;
+        public float roomRelativeWeight;
+    }
 

@@ -1,10 +1,10 @@
 #nullable disable
 namespace FullInspector
 {
-  public interface IInspectedMemberFilter
-  {
-    bool IsInterested(InspectedProperty property);
+    public interface IInspectedMemberFilter
+    {
+        bool IsInterested(InspectedProperty property);
 
-    bool IsInterested(InspectedMethod method);
-  }
+        bool IsInterested(InspectedMethod method);
+    }
 }

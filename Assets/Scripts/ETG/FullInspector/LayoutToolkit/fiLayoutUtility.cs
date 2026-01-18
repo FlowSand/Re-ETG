@@ -1,21 +1,21 @@
 #nullable disable
 namespace FullInspector.LayoutToolkit
 {
-  public static class fiLayoutUtility
-  {
-    public static fiLayout Margin(float margin, fiLayout layout)
+    public static class fiLayoutUtility
     {
-      return (fiLayout) new fiHorizontalLayout()
-      {
-        margin,
-        (fiLayout) new fiVerticalLayout()
+        public static fiLayout Margin(float margin, fiLayout layout)
         {
-          margin,
-          layout,
-          margin
-        },
-        margin
-      };
+            return (fiLayout) new fiHorizontalLayout()
+            {
+                margin,
+                (fiLayout) new fiVerticalLayout()
+                {
+                    margin,
+                    layout,
+                    margin
+                },
+                margin
+            };
+        }
     }
-  }
 }

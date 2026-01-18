@@ -1,11 +1,11 @@
 #nullable disable
 namespace FullInspector
 {
-  public enum CommentType
-  {
-    None,
-    Info,
-    Warning,
-    Error,
-  }
+    public enum CommentType
+    {
+        None,
+        Info,
+        Warning,
+        Error,
+    }
 }

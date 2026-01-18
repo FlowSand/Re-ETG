@@ -1,20 +1,20 @@
 #nullable disable
 namespace InControl.NativeProfile
 {
-  public class KonamiDancePadMacProfile : Xbox360DriverMacProfile
-  {
-    public KonamiDancePadMacProfile()
+    public class KonamiDancePadMacProfile : Xbox360DriverMacProfile
     {
-      this.Name = "Konami Dance Pad";
-      this.Meta = "Konami Dance Pad on Mac";
-      this.Matchers = new NativeInputDeviceMatcher[1]
-      {
-        new NativeInputDeviceMatcher()
+        public KonamiDancePadMacProfile()
         {
-          VendorID = new ushort?((ushort) 4779),
-          ProductID = new ushort?((ushort) 4)
+            this.Name = "Konami Dance Pad";
+            this.Meta = "Konami Dance Pad on Mac";
+            this.Matchers = new NativeInputDeviceMatcher[1]
+            {
+                new NativeInputDeviceMatcher()
+                {
+                    VendorID = new ushort?((ushort) 4779),
+                    ProductID = new ushort?((ushort) 4)
+                }
+            };
         }
-      };
     }
-  }
 }

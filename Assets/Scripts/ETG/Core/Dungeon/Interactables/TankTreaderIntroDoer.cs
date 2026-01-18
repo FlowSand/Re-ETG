@@ -1,80 +1,81 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+
 using UnityEngine;
 
 #nullable disable
 
 [RequireComponent(typeof (GenericIntroDoer))]
 public class TankTreaderIntroDoer : SpecificIntroDoer
-  {
-    public BodyPartController mainGun;
-    public AIAnimator guy;
-    public tk2dSpriteAnimator hatch;
-    private bool m_finished;
-    private ParticleSystem[] m_exhaustParticleSystems;
-
-    protected override void OnDestroy() => base.OnDestroy();
-
-    public override void PlayerWalkedIn(PlayerController player, List<tk2dSpriteAnimator> animators)
     {
-      this.mainGun.enabled = false;
-      this.mainGun.aiAnimator.LockFacingDirection = true;
-      this.mainGun.aiAnimator.FacingDirection = -90f;
-      this.mainGun.aiAnimator.Update();
-      this.aiAnimator.LockFacingDirection = true;
-      this.aiAnimator.FacingDirection = -90f;
-      this.aiAnimator.Update();
-      this.m_exhaustParticleSystems = this.GetComponentsInChildren<ParticleSystem>();
-      foreach (ParticleSystem exhaustParticleSystem in this.m_exhaustParticleSystems)
-      {
-        BraveUtility.EnableEmission(exhaustParticleSystem, false);
-        exhaustParticleSystem.Clear();
-        exhaustParticleSystem.GetComponent<Renderer>().enabled = false;
-      }
-    }
+        public BodyPartController mainGun;
+        public AIAnimator guy;
+        public tk2dSpriteAnimator hatch;
+        private bool m_finished;
+        private ParticleSystem[] m_exhaustParticleSystems;
 
-    public override void StartIntro(List<tk2dSpriteAnimator> animators)
-    {
-      animators.Add(this.guy.spriteAnimator);
-      animators.Add(this.hatch);
-      this.StartCoroutine(this.DoIntro());
-      int num = (int) AkSoundEngine.PostEvent("Play_BOSS_tank_idle_01", this.gameObject);
-    }
+        protected override void OnDestroy() => base.OnDestroy();
 
-    public override void OnCleanup()
-    {
-      this.mainGun.enabled = true;
-      this.mainGun.aiAnimator.LockFacingDirection = false;
-      this.guy.EndAnimationIf("intro");
-      this.hatch.Play("hatch_closed");
-      foreach (Behaviour componentsInChild in this.GetComponentsInChildren<TankTreaderMiniTurretController>())
-        componentsInChild.enabled = true;
-      foreach (ParticleSystem exhaustParticleSystem in this.m_exhaustParticleSystems)
-      {
-        BraveUtility.EnableEmission(exhaustParticleSystem, true);
-        exhaustParticleSystem.GetComponent<Renderer>().enabled = true;
-      }
-    }
+        public override void PlayerWalkedIn(PlayerController player, List<tk2dSpriteAnimator> animators)
+        {
+            this.mainGun.enabled = false;
+            this.mainGun.aiAnimator.LockFacingDirection = true;
+            this.mainGun.aiAnimator.FacingDirection = -90f;
+            this.mainGun.aiAnimator.Update();
+            this.aiAnimator.LockFacingDirection = true;
+            this.aiAnimator.FacingDirection = -90f;
+            this.aiAnimator.Update();
+            this.m_exhaustParticleSystems = this.GetComponentsInChildren<ParticleSystem>();
+            foreach (ParticleSystem exhaustParticleSystem in this.m_exhaustParticleSystems)
+            {
+                BraveUtility.EnableEmission(exhaustParticleSystem, false);
+                exhaustParticleSystem.Clear();
+                exhaustParticleSystem.GetComponent<Renderer>().enabled = false;
+            }
+        }
 
-    public override bool IsIntroFinished => this.m_finished;
+        public override void StartIntro(List<tk2dSpriteAnimator> animators)
+        {
+            animators.Add(this.guy.spriteAnimator);
+            animators.Add(this.hatch);
+            this.StartCoroutine(this.DoIntro());
+            int num = (int) AkSoundEngine.PostEvent("Play_BOSS_tank_idle_01", this.gameObject);
+        }
 
-    public override void OnBossCard()
-    {
-    }
+        public override void OnCleanup()
+        {
+            this.mainGun.enabled = true;
+            this.mainGun.aiAnimator.LockFacingDirection = false;
+            this.guy.EndAnimationIf("intro");
+            this.hatch.Play("hatch_closed");
+            foreach (Behaviour componentsInChild in this.GetComponentsInChildren<TankTreaderMiniTurretController>())
+                componentsInChild.enabled = true;
+            foreach (ParticleSystem exhaustParticleSystem in this.m_exhaustParticleSystems)
+            {
+                BraveUtility.EnableEmission(exhaustParticleSystem, true);
+                exhaustParticleSystem.GetComponent<Renderer>().enabled = true;
+            }
+        }
 
-    public override void EndIntro()
-    {
-    }
+        public override bool IsIntroFinished => this.m_finished;
 
-    [DebuggerHidden]
-    private IEnumerator DoIntro()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new TankTreaderIntroDoer__DoIntroc__Iterator0()
-      {
-        _this = this
-      };
+        public override void OnBossCard()
+        {
+        }
+
+        public override void EndIntro()
+        {
+        }
+
+        [DebuggerHidden]
+        private IEnumerator DoIntro()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new TankTreaderIntroDoer__DoIntroc__Iterator0()
+            {
+                _this = this
+            };
+        }
     }
-  }
 

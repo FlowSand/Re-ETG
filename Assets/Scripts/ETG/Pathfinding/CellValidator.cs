@@ -1,5 +1,5 @@
 #nullable disable
 namespace Pathfinding
 {
-  public delegate bool CellValidator(IntVector2 cell);
+    public delegate bool CellValidator(IntVector2 cell);
 }

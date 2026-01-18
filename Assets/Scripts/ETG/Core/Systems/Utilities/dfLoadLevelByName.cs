@@ -1,4 +1,5 @@
 using System;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,14 +8,14 @@ using UnityEngine.SceneManagement;
 [AddComponentMenu("Daikon Forge/Examples/General/Load Level On Click")]
 [Serializable]
 public class dfLoadLevelByName : MonoBehaviour
-  {
-    public string LevelName;
-
-    private void OnClick()
     {
-      if (string.IsNullOrEmpty(this.LevelName))
-        return;
-      SceneManager.LoadScene(this.LevelName);
+        public string LevelName;
+
+        private void OnClick()
+        {
+            if (string.IsNullOrEmpty(this.LevelName))
+                return;
+            SceneManager.LoadScene(this.LevelName);
+        }
     }
-  }
 

@@ -1,7 +1,7 @@
 #nullable disable
 namespace FullInspector
 {
-  public interface IGraphMetadataItemNotPersistent
-  {
-  }
+    public interface IGraphMetadataItemNotPersistent
+    {
+    }
 }

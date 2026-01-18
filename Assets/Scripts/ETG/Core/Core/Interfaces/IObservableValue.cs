@@ -1,9 +1,9 @@
 #nullable disable
 
 public interface IObservableValue
-  {
-    object Value { get; }
+    {
+        object Value { get; }
 
-    bool HasChanged { get; }
-  }
+        bool HasChanged { get; }
+    }
 

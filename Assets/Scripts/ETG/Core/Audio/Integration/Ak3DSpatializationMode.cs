@@ -1,9 +1,9 @@
 #nullable disable
 
 public enum Ak3DSpatializationMode
-  {
-    AK_SpatializationMode_None,
-    AK_SpatializationMode_PositionOnly,
-    AK_SpatializationMode_PositionAndOrientation,
-  }
+    {
+        AK_SpatializationMode_None,
+        AK_SpatializationMode_PositionOnly,
+        AK_SpatializationMode_PositionAndOrientation,
+    }
 

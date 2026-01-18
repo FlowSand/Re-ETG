@@ -1,10 +1,10 @@
 #nullable disable
 
 public enum dfMarkupTextAlign
-  {
-    Left,
-    Right,
-    Center,
-    Justify,
-  }
+    {
+        Left,
+        Right,
+        Center,
+        Justify,
+    }
 

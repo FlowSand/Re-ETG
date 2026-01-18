@@ -3,55 +3,55 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [ActionCategory("2D Toolkit/TextMesh")]
-  [HutongGames.PlayMaker.Tooltip("Get the number of drawn characters of a TextMesh. \nNOTE: The Game Object must have a tk2dTextMesh attached.")]
-  public class Tk2dTextMeshGetNumDrawnCharacters : FsmStateAction
-  {
-    [CheckForComponent(typeof (tk2dTextMesh))]
-    [HutongGames.PlayMaker.Tooltip("The Game Object to work with. NOTE: The Game Object must have a tk2dTextMesh component attached.")]
-    [RequiredField]
-    public FsmOwnerDefault gameObject;
-    [UIHint(UIHint.Variable)]
-    [RequiredField]
-    [HutongGames.PlayMaker.Tooltip("The number of drawn characters")]
-    public FsmInt numDrawnCharacters;
-    [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
-    [ActionSection("")]
-    public bool everyframe;
-    private tk2dTextMesh _textMesh;
-
-    private void _getTextMesh()
+    [ActionCategory("2D Toolkit/TextMesh")]
+    [HutongGames.PlayMaker.Tooltip("Get the number of drawn characters of a TextMesh. \nNOTE: The Game Object must have a tk2dTextMesh attached.")]
+    public class Tk2dTextMeshGetNumDrawnCharacters : FsmStateAction
     {
-      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-      if ((Object) ownerDefaultTarget == (Object) null)
-        return;
-      this._textMesh = ownerDefaultTarget.GetComponent<tk2dTextMesh>();
-    }
+        [CheckForComponent(typeof (tk2dTextMesh))]
+        [HutongGames.PlayMaker.Tooltip("The Game Object to work with. NOTE: The Game Object must have a tk2dTextMesh component attached.")]
+        [RequiredField]
+        public FsmOwnerDefault gameObject;
+        [UIHint(UIHint.Variable)]
+        [RequiredField]
+        [HutongGames.PlayMaker.Tooltip("The number of drawn characters")]
+        public FsmInt numDrawnCharacters;
+        [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
+        [ActionSection("")]
+        public bool everyframe;
+        private tk2dTextMesh _textMesh;
 
-    public override void Reset()
-    {
-      this.gameObject = (FsmOwnerDefault) null;
-      this.numDrawnCharacters = (FsmInt) null;
-      this.everyframe = false;
-    }
+        private void _getTextMesh()
+        {
+            GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+            if ((Object) ownerDefaultTarget == (Object) null)
+                return;
+            this._textMesh = ownerDefaultTarget.GetComponent<tk2dTextMesh>();
+        }
 
-    public override void OnEnter()
-    {
-      this._getTextMesh();
-      this.DoGetNumDrawnCharacters();
-      if (this.everyframe)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            this.gameObject = (FsmOwnerDefault) null;
+            this.numDrawnCharacters = (FsmInt) null;
+            this.everyframe = false;
+        }
 
-    public override void OnUpdate() => this.DoGetNumDrawnCharacters();
+        public override void OnEnter()
+        {
+            this._getTextMesh();
+            this.DoGetNumDrawnCharacters();
+            if (this.everyframe)
+                return;
+            this.Finish();
+        }
 
-    private void DoGetNumDrawnCharacters()
-    {
-      if ((Object) this._textMesh == (Object) null)
-        this.LogWarning("Missing tk2dTextMesh component");
-      else
-        this.numDrawnCharacters.Value = this._textMesh.NumDrawnCharacters();
+        public override void OnUpdate() => this.DoGetNumDrawnCharacters();
+
+        private void DoGetNumDrawnCharacters()
+        {
+            if ((Object) this._textMesh == (Object) null)
+                this.LogWarning("Missing tk2dTextMesh component");
+            else
+                this.numDrawnCharacters.Value = this._textMesh.NumDrawnCharacters();
+        }
     }
-  }
 }

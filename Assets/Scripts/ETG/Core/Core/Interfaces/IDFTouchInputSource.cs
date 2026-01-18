@@ -3,13 +3,13 @@ using System.Collections.Generic;
 #nullable disable
 
 public interface IDFTouchInputSource
-  {
-    int TouchCount { get; }
+    {
+        int TouchCount { get; }
 
-    IList<dfTouchInfo> Touches { get; }
+        IList<dfTouchInfo> Touches { get; }
 
-    void Update();
+        void Update();
 
-    dfTouchInfo GetTouch(int index);
-  }
+        dfTouchInfo GetTouch(int index);
+    }
 

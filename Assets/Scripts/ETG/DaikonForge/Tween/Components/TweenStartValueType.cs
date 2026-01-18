@@ -1,9 +1,9 @@
 #nullable disable
 namespace DaikonForge.Tween.Components
 {
-  public enum TweenStartValueType
-  {
-    Absolute,
-    SyncOnRun,
-  }
+    public enum TweenStartValueType
+    {
+        Absolute,
+        SyncOnRun,
+    }
 }

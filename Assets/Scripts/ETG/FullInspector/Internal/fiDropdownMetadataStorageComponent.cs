@@ -3,9 +3,9 @@ using UnityEngine;
 #nullable disable
 namespace FullInspector.Internal
 {
-  [AddComponentMenu("")]
-  public class fiDropdownMetadataStorageComponent : 
-    fiBaseStorageComponent<fiDropdownGraphMetadataSerializer>
-  {
-  }
+    [AddComponentMenu("")]
+    public class fiDropdownMetadataStorageComponent : 
+        fiBaseStorageComponent<fiDropdownGraphMetadataSerializer>
+    {
+    }
 }

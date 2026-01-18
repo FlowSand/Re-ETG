@@ -3,60 +3,60 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [ActionCategory(ActionCategory.Convert)]
-  [HutongGames.PlayMaker.Tooltip("Converts a Float value to an Integer value.")]
-  public class ConvertFloatToInt : FsmStateAction
-  {
-    [HutongGames.PlayMaker.Tooltip("The Float variable to convert to an integer.")]
-    [UIHint(UIHint.Variable)]
-    [RequiredField]
-    public FsmFloat floatVariable;
-    [HutongGames.PlayMaker.Tooltip("Store the result in an Integer variable.")]
-    [UIHint(UIHint.Variable)]
-    [RequiredField]
-    public FsmInt intVariable;
-    public ConvertFloatToInt.FloatRounding rounding;
-    public bool everyFrame;
-
-    public override void Reset()
+    [ActionCategory(ActionCategory.Convert)]
+    [HutongGames.PlayMaker.Tooltip("Converts a Float value to an Integer value.")]
+    public class ConvertFloatToInt : FsmStateAction
     {
-      this.floatVariable = (FsmFloat) null;
-      this.intVariable = (FsmInt) null;
-      this.rounding = ConvertFloatToInt.FloatRounding.Nearest;
-      this.everyFrame = false;
-    }
+        [HutongGames.PlayMaker.Tooltip("The Float variable to convert to an integer.")]
+        [UIHint(UIHint.Variable)]
+        [RequiredField]
+        public FsmFloat floatVariable;
+        [HutongGames.PlayMaker.Tooltip("Store the result in an Integer variable.")]
+        [UIHint(UIHint.Variable)]
+        [RequiredField]
+        public FsmInt intVariable;
+        public ConvertFloatToInt.FloatRounding rounding;
+        public bool everyFrame;
 
-    public override void OnEnter()
-    {
-      this.DoConvertFloatToInt();
-      if (this.everyFrame)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            this.floatVariable = (FsmFloat) null;
+            this.intVariable = (FsmInt) null;
+            this.rounding = ConvertFloatToInt.FloatRounding.Nearest;
+            this.everyFrame = false;
+        }
 
-    public override void OnUpdate() => this.DoConvertFloatToInt();
+        public override void OnEnter()
+        {
+            this.DoConvertFloatToInt();
+            if (this.everyFrame)
+                return;
+            this.Finish();
+        }
 
-    private void DoConvertFloatToInt()
-    {
-      switch (this.rounding)
-      {
-        case ConvertFloatToInt.FloatRounding.RoundDown:
-          this.intVariable.Value = Mathf.FloorToInt(this.floatVariable.Value);
-          break;
-        case ConvertFloatToInt.FloatRounding.RoundUp:
-          this.intVariable.Value = Mathf.CeilToInt(this.floatVariable.Value);
-          break;
-        case ConvertFloatToInt.FloatRounding.Nearest:
-          this.intVariable.Value = Mathf.RoundToInt(this.floatVariable.Value);
-          break;
-      }
-    }
+        public override void OnUpdate() => this.DoConvertFloatToInt();
 
-    public enum FloatRounding
-    {
-      RoundDown,
-      RoundUp,
-      Nearest,
+        private void DoConvertFloatToInt()
+        {
+            switch (this.rounding)
+            {
+                case ConvertFloatToInt.FloatRounding.RoundDown:
+                    this.intVariable.Value = Mathf.FloorToInt(this.floatVariable.Value);
+                    break;
+                case ConvertFloatToInt.FloatRounding.RoundUp:
+                    this.intVariable.Value = Mathf.CeilToInt(this.floatVariable.Value);
+                    break;
+                case ConvertFloatToInt.FloatRounding.Nearest:
+                    this.intVariable.Value = Mathf.RoundToInt(this.floatVariable.Value);
+                    break;
+            }
+        }
+
+        public enum FloatRounding
+        {
+            RoundDown,
+            RoundUp,
+            Nearest,
+        }
     }
-  }
 }

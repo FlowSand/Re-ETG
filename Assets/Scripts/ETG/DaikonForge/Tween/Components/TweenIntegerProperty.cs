@@ -3,8 +3,8 @@ using UnityEngine;
 #nullable disable
 namespace DaikonForge.Tween.Components
 {
-  [AddComponentMenu("Daikon Forge/Tween/Named Integer")]
-  public class TweenIntegerProperty : TweenPropertyComponent<int>
-  {
-  }
+    [AddComponentMenu("Daikon Forge/Tween/Named Integer")]
+    public class TweenIntegerProperty : TweenPropertyComponent<int>
+    {
+    }
 }

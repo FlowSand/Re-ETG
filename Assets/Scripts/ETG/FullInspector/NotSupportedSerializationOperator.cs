@@ -3,16 +3,16 @@ using System;
 #nullable disable
 namespace FullInspector
 {
-  public class NotSupportedSerializationOperator : ISerializationOperator
-  {
-    public UnityEngine.Object RetrieveObjectReference(int storageId)
+    public class NotSupportedSerializationOperator : ISerializationOperator
     {
-      throw new NotSupportedException("UnityEngine.Object references are not supported with this serialization operator");
-    }
+        public UnityEngine.Object RetrieveObjectReference(int storageId)
+        {
+            throw new NotSupportedException("UnityEngine.Object references are not supported with this serialization operator");
+        }
 
-    public int StoreObjectReference(UnityEngine.Object obj)
-    {
-      throw new NotSupportedException($"UnityEngine.Object references are not supported with this serialization operator (obj={(object) obj})");
+        public int StoreObjectReference(UnityEngine.Object obj)
+        {
+            throw new NotSupportedException($"UnityEngine.Object references are not supported with this serialization operator (obj={(object) obj})");
+        }
     }
-  }
 }

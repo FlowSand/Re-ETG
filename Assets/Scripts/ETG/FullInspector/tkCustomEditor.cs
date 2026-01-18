@@ -1,8 +1,8 @@
 #nullable disable
 namespace FullInspector
 {
-  public interface tkCustomEditor
-  {
-    tkControlEditor GetEditor();
-  }
+    public interface tkCustomEditor
+    {
+        tkControlEditor GetEditor();
+    }
 }

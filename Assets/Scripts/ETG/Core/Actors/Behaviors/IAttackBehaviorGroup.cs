@@ -1,9 +1,9 @@
 #nullable disable
 
 public interface IAttackBehaviorGroup
-  {
-    int Count { get; }
+    {
+        int Count { get; }
 
-    AttackBehaviorBase GetAttackBehavior(int index);
-  }
+        AttackBehaviorBase GetAttackBehavior(int index);
+    }
 

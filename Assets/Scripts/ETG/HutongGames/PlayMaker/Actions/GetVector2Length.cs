@@ -1,41 +1,41 @@
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [ActionCategory(ActionCategory.Vector2)]
-  [Tooltip("Get Vector2 Length.")]
-  public class GetVector2Length : FsmStateAction
-  {
-    [Tooltip("The Vector2 to get the length from")]
-    public FsmVector2 vector2;
-    [RequiredField]
-    [Tooltip("The Vector2 the length")]
-    [UIHint(UIHint.Variable)]
-    public FsmFloat storeLength;
-    [Tooltip("Repeat every frame")]
-    public bool everyFrame;
-
-    public override void Reset()
+    [ActionCategory(ActionCategory.Vector2)]
+    [Tooltip("Get Vector2 Length.")]
+    public class GetVector2Length : FsmStateAction
     {
-      this.vector2 = (FsmVector2) null;
-      this.storeLength = (FsmFloat) null;
-      this.everyFrame = false;
-    }
+        [Tooltip("The Vector2 to get the length from")]
+        public FsmVector2 vector2;
+        [RequiredField]
+        [Tooltip("The Vector2 the length")]
+        [UIHint(UIHint.Variable)]
+        public FsmFloat storeLength;
+        [Tooltip("Repeat every frame")]
+        public bool everyFrame;
 
-    public override void OnEnter()
-    {
-      this.DoVectorLength();
-      if (this.everyFrame)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            this.vector2 = (FsmVector2) null;
+            this.storeLength = (FsmFloat) null;
+            this.everyFrame = false;
+        }
 
-    public override void OnUpdate() => this.DoVectorLength();
+        public override void OnEnter()
+        {
+            this.DoVectorLength();
+            if (this.everyFrame)
+                return;
+            this.Finish();
+        }
 
-    private void DoVectorLength()
-    {
-      if (this.vector2 == null || this.storeLength == null)
-        return;
-      this.storeLength.Value = this.vector2.Value.magnitude;
+        public override void OnUpdate() => this.DoVectorLength();
+
+        private void DoVectorLength()
+        {
+            if (this.vector2 == null || this.storeLength == null)
+                return;
+            this.storeLength.Value = this.vector2.Value.magnitude;
+        }
     }
-  }
 }

@@ -1,9 +1,9 @@
 #nullable disable
 namespace XInputDotNetPure
 {
-  public enum ButtonState
-  {
-    Pressed,
-    Released,
-  }
+    public enum ButtonState
+    {
+        Pressed,
+        Released,
+    }
 }

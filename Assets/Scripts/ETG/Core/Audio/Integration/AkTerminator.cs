@@ -6,6 +6,6 @@ using UnityEngine;
 [ExecuteInEditMode]
 [DisallowMultipleComponent]
 public class AkTerminator : MonoBehaviour
-  {
-  }
+    {
+    }
 

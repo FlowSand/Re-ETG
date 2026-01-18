@@ -1,9 +1,9 @@
 #nullable disable
 
 public enum MultiPositionTypeLabel
-  {
-    Simple_Mode,
-    Large_Mode,
-    MultiPosition_Mode,
-  }
+    {
+        Simple_Mode,
+        Large_Mode,
+        MultiPosition_Mode,
+    }
 

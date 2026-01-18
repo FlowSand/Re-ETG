@@ -3,37 +3,37 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [ActionCategory(ActionCategory.GUILayout)]
-  [HutongGames.PlayMaker.Tooltip("GUILayout Text Field. Optionally send an event if the text has been edited.")]
-  public class GUILayoutTextField : GUILayoutAction
-  {
-    [UIHint(UIHint.Variable)]
-    public FsmString text;
-    public FsmInt maxLength;
-    public FsmString style;
-    public FsmEvent changedEvent;
-
-    public override void Reset()
+    [ActionCategory(ActionCategory.GUILayout)]
+    [HutongGames.PlayMaker.Tooltip("GUILayout Text Field. Optionally send an event if the text has been edited.")]
+    public class GUILayoutTextField : GUILayoutAction
     {
-      base.Reset();
-      this.text = (FsmString) null;
-      this.maxLength = (FsmInt) 25;
-      this.style = (FsmString) "TextField";
-      this.changedEvent = (FsmEvent) null;
-    }
+        [UIHint(UIHint.Variable)]
+        public FsmString text;
+        public FsmInt maxLength;
+        public FsmString style;
+        public FsmEvent changedEvent;
 
-    public override void OnGUI()
-    {
-      bool changed = GUI.changed;
-      GUI.changed = false;
-      this.text.Value = GUILayout.TextField(this.text.Value, this.maxLength.Value, (GUIStyle) this.style.Value, this.LayoutOptions);
-      if (GUI.changed)
-      {
-        this.Fsm.Event(this.changedEvent);
-        GUIUtility.ExitGUI();
-      }
-      else
-        GUI.changed = changed;
+        public override void Reset()
+        {
+            base.Reset();
+            this.text = (FsmString) null;
+            this.maxLength = (FsmInt) 25;
+            this.style = (FsmString) "TextField";
+            this.changedEvent = (FsmEvent) null;
+        }
+
+        public override void OnGUI()
+        {
+            bool changed = GUI.changed;
+            GUI.changed = false;
+            this.text.Value = GUILayout.TextField(this.text.Value, this.maxLength.Value, (GUIStyle) this.style.Value, this.LayoutOptions);
+            if (GUI.changed)
+            {
+                this.Fsm.Event(this.changedEvent);
+                GUIUtility.ExitGUI();
+            }
+            else
+                GUI.changed = changed;
+        }
     }
-  }
 }

@@ -3,21 +3,21 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [ActionCategory(ActionCategory.GUILayout)]
-  [HutongGames.PlayMaker.Tooltip("Begin a centered GUILayout block. The block is centered inside a parent GUILayout Area. So to place the block in the center of the screen, first use a GULayout Area the size of the whole screen (the default setting). NOTE: Block must end with a corresponding GUILayoutEndCentered.")]
-  public class GUILayoutBeginCentered : FsmStateAction
-  {
-    public override void Reset()
+    [ActionCategory(ActionCategory.GUILayout)]
+    [HutongGames.PlayMaker.Tooltip("Begin a centered GUILayout block. The block is centered inside a parent GUILayout Area. So to place the block in the center of the screen, first use a GULayout Area the size of the whole screen (the default setting). NOTE: Block must end with a corresponding GUILayoutEndCentered.")]
+    public class GUILayoutBeginCentered : FsmStateAction
     {
-    }
+        public override void Reset()
+        {
+        }
 
-    public override void OnGUI()
-    {
-      GUILayout.BeginVertical();
-      GUILayout.FlexibleSpace();
-      GUILayout.BeginHorizontal();
-      GUILayout.FlexibleSpace();
-      GUILayout.BeginVertical();
+        public override void OnGUI()
+        {
+            GUILayout.BeginVertical();
+            GUILayout.FlexibleSpace();
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            GUILayout.BeginVertical();
+        }
     }
-  }
 }

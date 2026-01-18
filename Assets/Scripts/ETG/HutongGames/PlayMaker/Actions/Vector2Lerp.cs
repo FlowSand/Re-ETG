@@ -3,51 +3,51 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Linearly interpolates between 2 vectors.")]
-  [ActionCategory(ActionCategory.Vector2)]
-  public class Vector2Lerp : FsmStateAction
-  {
-    [RequiredField]
-    [HutongGames.PlayMaker.Tooltip("First Vector.")]
-    public FsmVector2 fromVector;
-    [RequiredField]
-    [HutongGames.PlayMaker.Tooltip("Second Vector.")]
-    public FsmVector2 toVector;
-    [HutongGames.PlayMaker.Tooltip("Interpolate between From Vector and ToVector by this amount. Value is clamped to 0-1 range. 0 = From Vector; 1 = To Vector; 0.5 = half way between.")]
-    [RequiredField]
-    public FsmFloat amount;
-    [UIHint(UIHint.Variable)]
-    [RequiredField]
-    [HutongGames.PlayMaker.Tooltip("Store the result in this vector variable.")]
-    public FsmVector2 storeResult;
-    [HutongGames.PlayMaker.Tooltip("Repeat every frame. Useful if any of the values are changing.")]
-    public bool everyFrame;
-
-    public override void Reset()
+    [HutongGames.PlayMaker.Tooltip("Linearly interpolates between 2 vectors.")]
+    [ActionCategory(ActionCategory.Vector2)]
+    public class Vector2Lerp : FsmStateAction
     {
-      FsmVector2 fsmVector2_1 = new FsmVector2();
-      fsmVector2_1.UseVariable = true;
-      this.fromVector = fsmVector2_1;
-      FsmVector2 fsmVector2_2 = new FsmVector2();
-      fsmVector2_2.UseVariable = true;
-      this.toVector = fsmVector2_2;
-      this.storeResult = (FsmVector2) null;
-      this.everyFrame = true;
-    }
+        [RequiredField]
+        [HutongGames.PlayMaker.Tooltip("First Vector.")]
+        public FsmVector2 fromVector;
+        [RequiredField]
+        [HutongGames.PlayMaker.Tooltip("Second Vector.")]
+        public FsmVector2 toVector;
+        [HutongGames.PlayMaker.Tooltip("Interpolate between From Vector and ToVector by this amount. Value is clamped to 0-1 range. 0 = From Vector; 1 = To Vector; 0.5 = half way between.")]
+        [RequiredField]
+        public FsmFloat amount;
+        [UIHint(UIHint.Variable)]
+        [RequiredField]
+        [HutongGames.PlayMaker.Tooltip("Store the result in this vector variable.")]
+        public FsmVector2 storeResult;
+        [HutongGames.PlayMaker.Tooltip("Repeat every frame. Useful if any of the values are changing.")]
+        public bool everyFrame;
 
-    public override void OnEnter()
-    {
-      this.DoVector2Lerp();
-      if (this.everyFrame)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            FsmVector2 fsmVector2_1 = new FsmVector2();
+            fsmVector2_1.UseVariable = true;
+            this.fromVector = fsmVector2_1;
+            FsmVector2 fsmVector2_2 = new FsmVector2();
+            fsmVector2_2.UseVariable = true;
+            this.toVector = fsmVector2_2;
+            this.storeResult = (FsmVector2) null;
+            this.everyFrame = true;
+        }
 
-    public override void OnUpdate() => this.DoVector2Lerp();
+        public override void OnEnter()
+        {
+            this.DoVector2Lerp();
+            if (this.everyFrame)
+                return;
+            this.Finish();
+        }
 
-    private void DoVector2Lerp()
-    {
-      this.storeResult.Value = Vector2.Lerp(this.fromVector.Value, this.toVector.Value, this.amount.Value);
+        public override void OnUpdate() => this.DoVector2Lerp();
+
+        private void DoVector2Lerp()
+        {
+            this.storeResult.Value = Vector2.Lerp(this.fromVector.Value, this.toVector.Value, this.amount.Value);
+        }
     }
-  }
 }

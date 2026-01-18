@@ -1,9 +1,9 @@
 #nullable disable
 
 public enum dfMobileKeyboardTrigger
-  {
-    Manual,
-    ShowOnFocus,
-    ShowOnClick,
-  }
+    {
+        Manual,
+        ShowOnFocus,
+        ShowOnClick,
+    }
 

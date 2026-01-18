@@ -2,74 +2,75 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+
 using UnityEngine;
 
 #nullable disable
 
 public class BunkerBossDeathController : BraveBehaviour
-  {
-    public List<GameObject> explosionVfx;
-    public float explosionMidDelay = 0.3f;
-    public int explosionCount = 10;
-    public List<GameObject> debrisObjects;
-    public float debrisMidDelay;
-    public int debrisCount;
-    public int debrisMinForce = 5;
-    public int debrisMaxForce = 5;
-    public float debrisAngleVariance = 15f;
-    public string deathAnimation;
-    public float deathAnimationDelay;
-    public List<GameObject> dustVfx;
-    public float dustTime = 1f;
-    public float dustMidDelay = 0.05f;
-    public Vector2 dustOffset;
-    public Vector2 dustDimensions;
-    public float shakeMidDelay = 0.1f;
-    public string flagAnimation;
-
-    public void Start()
     {
-      this.healthHaver.ManualDeathHandling = true;
-      this.healthHaver.OnPreDeath += new Action<Vector2>(this.OnBossDeath);
-    }
+        public List<GameObject> explosionVfx;
+        public float explosionMidDelay = 0.3f;
+        public int explosionCount = 10;
+        public List<GameObject> debrisObjects;
+        public float debrisMidDelay;
+        public int debrisCount;
+        public int debrisMinForce = 5;
+        public int debrisMaxForce = 5;
+        public float debrisAngleVariance = 15f;
+        public string deathAnimation;
+        public float deathAnimationDelay;
+        public List<GameObject> dustVfx;
+        public float dustTime = 1f;
+        public float dustMidDelay = 0.05f;
+        public Vector2 dustOffset;
+        public Vector2 dustDimensions;
+        public float shakeMidDelay = 0.1f;
+        public string flagAnimation;
 
-    protected override void OnDestroy() => base.OnDestroy();
+        public void Start()
+        {
+            this.healthHaver.ManualDeathHandling = true;
+            this.healthHaver.OnPreDeath += new Action<Vector2>(this.OnBossDeath);
+        }
 
-    private void OnBossDeath(Vector2 dir)
-    {
-      this.StartCoroutine(this.OnDeathExplosionsCR());
-      this.StartCoroutine(this.OnDeathDebrisCR());
-      this.StartCoroutine(this.OnDeathAnimationCR());
-    }
+        protected override void OnDestroy() => base.OnDestroy();
 
-    [DebuggerHidden]
-    private IEnumerator OnDeathExplosionsCR()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new BunkerBossDeathController__OnDeathExplosionsCRc__Iterator0()
-      {
-        _this = this
-      };
-    }
+        private void OnBossDeath(Vector2 dir)
+        {
+            this.StartCoroutine(this.OnDeathExplosionsCR());
+            this.StartCoroutine(this.OnDeathDebrisCR());
+            this.StartCoroutine(this.OnDeathAnimationCR());
+        }
 
-    [DebuggerHidden]
-    private IEnumerator OnDeathDebrisCR()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new BunkerBossDeathController__OnDeathDebrisCRc__Iterator1()
-      {
-        _this = this
-      };
-    }
+        [DebuggerHidden]
+        private IEnumerator OnDeathExplosionsCR()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new BunkerBossDeathController__OnDeathExplosionsCRc__Iterator0()
+            {
+                _this = this
+            };
+        }
 
-    [DebuggerHidden]
-    private IEnumerator OnDeathAnimationCR()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new BunkerBossDeathController__OnDeathAnimationCRc__Iterator2()
-      {
-        _this = this
-      };
+        [DebuggerHidden]
+        private IEnumerator OnDeathDebrisCR()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new BunkerBossDeathController__OnDeathDebrisCRc__Iterator1()
+            {
+                _this = this
+            };
+        }
+
+        [DebuggerHidden]
+        private IEnumerator OnDeathAnimationCR()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new BunkerBossDeathController__OnDeathAnimationCRc__Iterator2()
+            {
+                _this = this
+            };
+        }
     }
-  }
 

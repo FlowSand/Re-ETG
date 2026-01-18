@@ -1,12 +1,12 @@
 #nullable disable
 namespace Dungeonator
 {
-  public enum DiagonalWallType
-  {
-    NONE,
-    NORTHEAST,
-    SOUTHEAST,
-    SOUTHWEST,
-    NORTHWEST,
-  }
+    public enum DiagonalWallType
+    {
+        NONE,
+        NORTHEAST,
+        SOUTHEAST,
+        SOUTHWEST,
+        NORTHWEST,
+    }
 }

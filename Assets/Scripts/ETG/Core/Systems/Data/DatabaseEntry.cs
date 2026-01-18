@@ -1,38 +1,39 @@
 using System;
+
 using UnityEngine;
 
 #nullable disable
 
 [Serializable]
 public class DatabaseEntry
-  {
-    public string myGuid;
-    public string unityGuid;
-    public string path;
-    [NonSerialized]
-    private UnityEngine.Object loadedPrefab;
-
-    public string name
     {
-      get => this.path.Substring(this.path.LastIndexOf('/') + 1).Replace(".prefab", string.Empty);
-    }
+        public string myGuid;
+        public string unityGuid;
+        public string path;
+        [NonSerialized]
+        private UnityEngine.Object loadedPrefab;
 
-    public bool HasLoadedPrefab => (bool) this.loadedPrefab;
-
-    public T GetPrefab<T>() where T : UnityEngine.Object
-    {
-      if (!(bool) this.loadedPrefab)
-      {
-        if (!this.path.StartsWith("Assets/Resources/"))
+        public string name
         {
-          Debug.LogErrorFormat("Trying to instantate an object that doesn't live in Resources! {0} {1} {2}", (object) this.myGuid, (object) this.unityGuid, (object) this.path);
-          return (T) null;
+            get => this.path.Substring(this.path.LastIndexOf('/') + 1).Replace(".prefab", string.Empty);
         }
-        this.loadedPrefab = (UnityEngine.Object) BraveResources.Load<T>(this.path.Replace("Assets/Resources/", string.Empty).Replace(".prefab", string.Empty));
-      }
-      return this.loadedPrefab as T;
-    }
 
-    public void DropReference() => this.loadedPrefab = (UnityEngine.Object) null;
-  }
+        public bool HasLoadedPrefab => (bool) this.loadedPrefab;
+
+        public T GetPrefab<T>() where T : UnityEngine.Object
+        {
+            if (!(bool) this.loadedPrefab)
+            {
+                if (!this.path.StartsWith("Assets/Resources/"))
+                {
+                    Debug.LogErrorFormat("Trying to instantate an object that doesn't live in Resources! {0} {1} {2}", (object) this.myGuid, (object) this.unityGuid, (object) this.path);
+                    return (T) null;
+                }
+                this.loadedPrefab = (UnityEngine.Object) BraveResources.Load<T>(this.path.Replace("Assets/Resources/", string.Empty).Replace(".prefab", string.Empty));
+            }
+            return this.loadedPrefab as T;
+        }
+
+        public void DropReference() => this.loadedPrefab = (UnityEngine.Object) null;
+    }
 

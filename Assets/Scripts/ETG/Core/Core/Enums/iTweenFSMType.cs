@@ -1,14 +1,14 @@
 #nullable disable
 
 public enum iTweenFSMType
-  {
-    all,
-    move,
-    rotate,
-    scale,
-    shake,
-    position,
-    value,
-    look,
-  }
+    {
+        all,
+        move,
+        rotate,
+        scale,
+        shake,
+        position,
+        value,
+        look,
+    }
 

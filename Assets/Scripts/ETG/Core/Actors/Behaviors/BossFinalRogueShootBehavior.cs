@@ -1,101 +1,102 @@
-using FullInspector;
 using System.Collections.Generic;
+
+using FullInspector;
 using UnityEngine;
 
 #nullable disable
 
 [InspectorDropdownName("Bosses/BossFinalRogue/ShootBehavior")]
 public class BossFinalRogueShootBehavior : BasicAttackBehavior
-  {
-    public bool SuppressBaseGuns;
-    public List<BossFinalRogueGunController> Guns;
-    public bool CheckPlayerInArea;
-    [InspectorShowIf("CheckPlayerInArea")]
-    public ShootBehavior.FiringAreaStyle playerArea;
-    [InspectorShowIf("CheckPlayerInArea")]
-    public float playerAreaSetupTime;
-    public bool EndIfAnyGunsFinish;
-    private BossFinalRogueController m_ship;
-    private float m_checkPlayerInAreaTimer;
-
-    public override void Start()
     {
-      base.Start();
-      this.m_ship = this.m_aiActor.GetComponent<BossFinalRogueController>();
-    }
+        public bool SuppressBaseGuns;
+        public List<BossFinalRogueGunController> Guns;
+        public bool CheckPlayerInArea;
+        [InspectorShowIf("CheckPlayerInArea")]
+        public ShootBehavior.FiringAreaStyle playerArea;
+        [InspectorShowIf("CheckPlayerInArea")]
+        public float playerAreaSetupTime;
+        public bool EndIfAnyGunsFinish;
+        private BossFinalRogueController m_ship;
+        private float m_checkPlayerInAreaTimer;
 
-    public override void Upkeep()
-    {
-      base.Upkeep();
-      if (this.CheckPlayerInArea && BasicAttackBehavior.DrawDebugFiringArea && (bool) (Object) this.m_aiActor.TargetRigidbody)
-        this.playerArea.DrawDebugLines(this.GetOrigin(this.playerArea.targetAreaOrigin), this.m_aiActor.TargetRigidbody.GetUnitCenter(ColliderType.HitBox), this.m_aiActor);
-      if (!this.CheckPlayerInArea)
-        return;
-      this.DecrementTimer(ref this.m_checkPlayerInAreaTimer);
-    }
-
-    public override BehaviorResult Update()
-    {
-      int num = (int) base.Update();
-      BehaviorResult behaviorResult = base.Update();
-      if (behaviorResult != BehaviorResult.Continue)
-        return behaviorResult;
-      if (!this.IsReady())
-        return BehaviorResult.Continue;
-      for (int index = 0; index < this.Guns.Count; ++index)
-        this.Guns[index].Fire();
-      for (int index = 0; index < this.Guns.Count; ++index)
-      {
-        if (!this.Guns[index].IsFinished)
+        public override void Start()
         {
-          if (this.SuppressBaseGuns)
-            this.m_ship.SuppressBaseGuns = true;
-          if (this.CheckPlayerInArea)
-            this.m_checkPlayerInAreaTimer = this.playerAreaSetupTime;
-          this.m_updateEveryFrame = true;
-          return BehaviorResult.RunContinuousInClass;
+            base.Start();
+            this.m_ship = this.m_aiActor.GetComponent<BossFinalRogueController>();
         }
-      }
-      this.UpdateCooldowns();
-      return BehaviorResult.SkipRemainingClassBehaviors;
-    }
 
-    public override ContinuousBehaviorResult ContinuousUpdate()
-    {
-      if (this.CheckPlayerInArea && (double) this.m_checkPlayerInAreaTimer <= 0.0 && !this.TargetStillInFiringArea())
-        return ContinuousBehaviorResult.Finished;
-      if (this.EndIfAnyGunsFinish)
-      {
-        for (int index = 0; index < this.Guns.Count; ++index)
+        public override void Upkeep()
         {
-          if (this.Guns[index].IsFinished)
+            base.Upkeep();
+            if (this.CheckPlayerInArea && BasicAttackBehavior.DrawDebugFiringArea && (bool) (Object) this.m_aiActor.TargetRigidbody)
+                this.playerArea.DrawDebugLines(this.GetOrigin(this.playerArea.targetAreaOrigin), this.m_aiActor.TargetRigidbody.GetUnitCenter(ColliderType.HitBox), this.m_aiActor);
+            if (!this.CheckPlayerInArea)
+                return;
+            this.DecrementTimer(ref this.m_checkPlayerInAreaTimer);
+        }
+
+        public override BehaviorResult Update()
+        {
+            int num = (int) base.Update();
+            BehaviorResult behaviorResult = base.Update();
+            if (behaviorResult != BehaviorResult.Continue)
+                return behaviorResult;
+            if (!this.IsReady())
+                return BehaviorResult.Continue;
+            for (int index = 0; index < this.Guns.Count; ++index)
+                this.Guns[index].Fire();
+            for (int index = 0; index < this.Guns.Count; ++index)
+            {
+                if (!this.Guns[index].IsFinished)
+                {
+                    if (this.SuppressBaseGuns)
+                        this.m_ship.SuppressBaseGuns = true;
+                    if (this.CheckPlayerInArea)
+                        this.m_checkPlayerInAreaTimer = this.playerAreaSetupTime;
+                    this.m_updateEveryFrame = true;
+                    return BehaviorResult.RunContinuousInClass;
+                }
+            }
+            this.UpdateCooldowns();
+            return BehaviorResult.SkipRemainingClassBehaviors;
+        }
+
+        public override ContinuousBehaviorResult ContinuousUpdate()
+        {
+            if (this.CheckPlayerInArea && (double) this.m_checkPlayerInAreaTimer <= 0.0 && !this.TargetStillInFiringArea())
+                return ContinuousBehaviorResult.Finished;
+            if (this.EndIfAnyGunsFinish)
+            {
+                for (int index = 0; index < this.Guns.Count; ++index)
+                {
+                    if (this.Guns[index].IsFinished)
+                        return ContinuousBehaviorResult.Finished;
+                }
+                return ContinuousBehaviorResult.Continue;
+            }
+            for (int index = 0; index < this.Guns.Count; ++index)
+            {
+                if (!this.Guns[index].IsFinished)
+                    return ContinuousBehaviorResult.Continue;
+            }
             return ContinuousBehaviorResult.Finished;
         }
-        return ContinuousBehaviorResult.Continue;
-      }
-      for (int index = 0; index < this.Guns.Count; ++index)
-      {
-        if (!this.Guns[index].IsFinished)
-          return ContinuousBehaviorResult.Continue;
-      }
-      return ContinuousBehaviorResult.Finished;
-    }
 
-    public override void EndContinuousUpdate()
-    {
-      if (this.SuppressBaseGuns)
-        this.m_ship.SuppressBaseGuns = false;
-      for (int index = 0; index < this.Guns.Count; ++index)
-        this.Guns[index].CeaseFire();
-      this.m_updateEveryFrame = false;
-      this.UpdateCooldowns();
-    }
+        public override void EndContinuousUpdate()
+        {
+            if (this.SuppressBaseGuns)
+                this.m_ship.SuppressBaseGuns = false;
+            for (int index = 0; index < this.Guns.Count; ++index)
+                this.Guns[index].CeaseFire();
+            this.m_updateEveryFrame = false;
+            this.UpdateCooldowns();
+        }
 
-    protected bool TargetStillInFiringArea()
-    {
-      if (this.playerArea == null)
-        return true;
-      return (bool) (Object) this.m_aiActor.TargetRigidbody && this.playerArea.TargetInFiringArea(this.GetOrigin(this.playerArea.targetAreaOrigin), this.m_aiActor.TargetRigidbody.GetUnitCenter(ColliderType.HitBox));
+        protected bool TargetStillInFiringArea()
+        {
+            if (this.playerArea == null)
+                return true;
+            return (bool) (Object) this.m_aiActor.TargetRigidbody && this.playerArea.TargetInFiringArea(this.GetOrigin(this.playerArea.targetAreaOrigin), this.m_aiActor.TargetRigidbody.GetUnitCenter(ColliderType.HitBox));
+        }
     }
-  }
 

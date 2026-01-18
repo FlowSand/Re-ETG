@@ -1,36 +1,37 @@
-using Dungeonator;
 using UnityEngine;
+
+using Dungeonator;
 
 #nullable disable
 
 public class SpawnItemOnGunDepletion : MonoBehaviour
-  {
-    public bool IsSynergyContingent;
-    public CustomSynergyType SynergyToCheck;
-    public bool UsesSpecificItem;
-    [PickupIdentifier]
-    public int SpecificItemId;
-    protected Gun m_gun;
-
-    private void Start() => this.m_gun = this.GetComponent<Gun>();
-
-    private void Update()
     {
-      if (!this.enabled || !(bool) (Object) this.m_gun || this.m_gun.ammo > 0 || !(this.m_gun.CurrentOwner is PlayerController))
-        return;
-      PlayerController currentOwner = this.m_gun.CurrentOwner as PlayerController;
-      if (this.IsSynergyContingent && !currentOwner.HasActiveBonusSynergy(this.SynergyToCheck))
-        return;
-      if (this.UsesSpecificItem)
-        LootEngine.TryGivePrefabToPlayer(PickupObjectDatabase.GetById(this.SpecificItemId).gameObject, currentOwner);
-      else if ((bool) (Object) currentOwner && currentOwner.CurrentRoom != null)
-      {
-        Chest chest = GameManager.Instance.RewardManager.SpawnTotallyRandomChest(currentOwner.CurrentRoom.GetBestRewardLocation(IntVector2.One * 3, RoomHandler.RewardLocationStyle.PlayerCenter));
-        if ((bool) (Object) chest)
-          chest.IsLocked = false;
-      }
-      currentOwner.inventory.RemoveGunFromInventory(this.m_gun);
-      Object.Destroy((Object) this.m_gun.gameObject);
+        public bool IsSynergyContingent;
+        public CustomSynergyType SynergyToCheck;
+        public bool UsesSpecificItem;
+        [PickupIdentifier]
+        public int SpecificItemId;
+        protected Gun m_gun;
+
+        private void Start() => this.m_gun = this.GetComponent<Gun>();
+
+        private void Update()
+        {
+            if (!this.enabled || !(bool) (Object) this.m_gun || this.m_gun.ammo > 0 || !(this.m_gun.CurrentOwner is PlayerController))
+                return;
+            PlayerController currentOwner = this.m_gun.CurrentOwner as PlayerController;
+            if (this.IsSynergyContingent && !currentOwner.HasActiveBonusSynergy(this.SynergyToCheck))
+                return;
+            if (this.UsesSpecificItem)
+                LootEngine.TryGivePrefabToPlayer(PickupObjectDatabase.GetById(this.SpecificItemId).gameObject, currentOwner);
+            else if ((bool) (Object) currentOwner && currentOwner.CurrentRoom != null)
+            {
+                Chest chest = GameManager.Instance.RewardManager.SpawnTotallyRandomChest(currentOwner.CurrentRoom.GetBestRewardLocation(IntVector2.One * 3, RoomHandler.RewardLocationStyle.PlayerCenter));
+                if ((bool) (Object) chest)
+                    chest.IsLocked = false;
+            }
+            currentOwner.inventory.RemoveGunFromInventory(this.m_gun);
+            Object.Destroy((Object) this.m_gun.gameObject);
+        }
     }
-  }
 

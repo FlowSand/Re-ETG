@@ -6,162 +6,162 @@ using System.Reflection;
 #nullable disable
 namespace FullSerializer.Internal
 {
-  public class fsDictionaryConverter : fsConverter
-  {
-    public override bool CanProcess(Type type) => typeof (IDictionary).IsAssignableFrom(type);
-
-    public override object CreateInstance(fsData data, Type storageType)
+    public class fsDictionaryConverter : fsConverter
     {
-      return fsMetaType.Get(storageType).CreateInstance();
-    }
+        public override bool CanProcess(Type type) => typeof (IDictionary).IsAssignableFrom(type);
 
-    public override fsResult TryDeserialize(fsData data, ref object instance_, Type storageType)
-    {
-      IDictionary dictionary = (IDictionary) instance_;
-      fsResult fsResult1 = fsResult.Success;
-      Type keyStorageType;
-      Type valueStorageType;
-      fsDictionaryConverter.GetKeyValueTypes(dictionary.GetType(), out keyStorageType, out valueStorageType);
-      if (data.IsList)
-      {
-        List<fsData> asList = data.AsList;
-        for (int index = 0; index < asList.Count; ++index)
+        public override object CreateInstance(fsData data, Type storageType)
         {
-          fsData data1 = asList[index];
-          fsResult fsResult2;
-          if ((fsResult2 = fsResult1 + this.CheckType(data1, fsDataType.Object)).Failed)
-            return fsResult2;
-          fsData subitem1;
-          fsResult fsResult3;
-          if ((fsResult3 = fsResult2 + this.CheckKey(data1, "Key", out subitem1)).Failed)
-            return fsResult3;
-          fsData subitem2;
-          fsResult fsResult4;
-          if ((fsResult4 = fsResult3 + this.CheckKey(data1, "Value", out subitem2)).Failed)
-            return fsResult4;
-          object result1 = (object) null;
-          object result2 = (object) null;
-          fsResult fsResult5;
-          if ((fsResult5 = fsResult4 + this.Serializer.TryDeserialize(subitem1, keyStorageType, ref result1)).Failed)
-            return fsResult5;
-          if ((fsResult1 = fsResult5 + this.Serializer.TryDeserialize(subitem2, valueStorageType, ref result2)).Failed)
+            return fsMetaType.Get(storageType).CreateInstance();
+        }
+
+        public override fsResult TryDeserialize(fsData data, ref object instance_, Type storageType)
+        {
+            IDictionary dictionary = (IDictionary) instance_;
+            fsResult fsResult1 = fsResult.Success;
+            Type keyStorageType;
+            Type valueStorageType;
+            fsDictionaryConverter.GetKeyValueTypes(dictionary.GetType(), out keyStorageType, out valueStorageType);
+            if (data.IsList)
+            {
+                List<fsData> asList = data.AsList;
+                for (int index = 0; index < asList.Count; ++index)
+                {
+                    fsData data1 = asList[index];
+                    fsResult fsResult2;
+                    if ((fsResult2 = fsResult1 + this.CheckType(data1, fsDataType.Object)).Failed)
+                        return fsResult2;
+                    fsData subitem1;
+                    fsResult fsResult3;
+                    if ((fsResult3 = fsResult2 + this.CheckKey(data1, "Key", out subitem1)).Failed)
+                        return fsResult3;
+                    fsData subitem2;
+                    fsResult fsResult4;
+                    if ((fsResult4 = fsResult3 + this.CheckKey(data1, "Value", out subitem2)).Failed)
+                        return fsResult4;
+                    object result1 = (object) null;
+                    object result2 = (object) null;
+                    fsResult fsResult5;
+                    if ((fsResult5 = fsResult4 + this.Serializer.TryDeserialize(subitem1, keyStorageType, ref result1)).Failed)
+                        return fsResult5;
+                    if ((fsResult1 = fsResult5 + this.Serializer.TryDeserialize(subitem2, valueStorageType, ref result2)).Failed)
+                        return fsResult1;
+                    this.AddItemToDictionary(dictionary, result1, result2);
+                }
+            }
+            else if (data.IsDictionary)
+            {
+                foreach (KeyValuePair<string, fsData> keyValuePair in data.AsDictionary)
+                {
+                    if (!fsSerializer.IsReservedKeyword(keyValuePair.Key))
+                    {
+                        fsData data2 = new fsData(keyValuePair.Key);
+                        fsData data3 = keyValuePair.Value;
+                        object result3 = (object) null;
+                        object result4 = (object) null;
+                        if ((fsResult1 += this.Serializer.TryDeserialize(data2, keyStorageType, ref result3)).Failed || (fsResult1 += this.Serializer.TryDeserialize(data3, valueStorageType, ref result4)).Failed)
+                            return fsResult1;
+                        this.AddItemToDictionary(dictionary, result3, result4);
+                    }
+                }
+            }
+            else
+                return this.FailExpectedType(data, fsDataType.Array, fsDataType.Object);
             return fsResult1;
-          this.AddItemToDictionary(dictionary, result1, result2);
         }
-      }
-      else if (data.IsDictionary)
-      {
-        foreach (KeyValuePair<string, fsData> keyValuePair in data.AsDictionary)
-        {
-          if (!fsSerializer.IsReservedKeyword(keyValuePair.Key))
-          {
-            fsData data2 = new fsData(keyValuePair.Key);
-            fsData data3 = keyValuePair.Value;
-            object result3 = (object) null;
-            object result4 = (object) null;
-            if ((fsResult1 += this.Serializer.TryDeserialize(data2, keyStorageType, ref result3)).Failed || (fsResult1 += this.Serializer.TryDeserialize(data3, valueStorageType, ref result4)).Failed)
-              return fsResult1;
-            this.AddItemToDictionary(dictionary, result3, result4);
-          }
-        }
-      }
-      else
-        return this.FailExpectedType(data, fsDataType.Array, fsDataType.Object);
-      return fsResult1;
-    }
 
-    public override fsResult TrySerialize(object instance_, out fsData serialized, Type storageType)
-    {
-      serialized = fsData.Null;
-      fsResult fsResult1 = fsResult.Success;
-      IDictionary dictionary = (IDictionary) instance_;
-      Type keyStorageType;
-      Type valueStorageType;
-      fsDictionaryConverter.GetKeyValueTypes(dictionary.GetType(), out keyStorageType, out valueStorageType);
-      IDictionaryEnumerator enumerator = dictionary.GetEnumerator();
-      bool flag = true;
-      List<fsData> fsDataList1 = new List<fsData>(dictionary.Count);
-      List<fsData> fsDataList2 = new List<fsData>(dictionary.Count);
-      while (enumerator.MoveNext())
-      {
-        fsData data1;
-        fsResult fsResult2;
-        if ((fsResult2 = fsResult1 + this.Serializer.TrySerialize(keyStorageType, enumerator.Key, out data1)).Failed)
-          return fsResult2;
-        fsData data2;
-        if ((fsResult1 = fsResult2 + this.Serializer.TrySerialize(valueStorageType, enumerator.Value, out data2)).Failed)
-          return fsResult1;
-        fsDataList1.Add(data1);
-        fsDataList2.Add(data2);
-        flag &= data1.IsString;
-      }
-      if (flag)
-      {
-        serialized = fsData.CreateDictionary();
-        Dictionary<string, fsData> asDictionary = serialized.AsDictionary;
-        for (int index = 0; index < fsDataList1.Count; ++index)
+        public override fsResult TrySerialize(object instance_, out fsData serialized, Type storageType)
         {
-          fsData fsData1 = fsDataList1[index];
-          fsData fsData2 = fsDataList2[index];
-          asDictionary[fsData1.AsString] = fsData2;
+            serialized = fsData.Null;
+            fsResult fsResult1 = fsResult.Success;
+            IDictionary dictionary = (IDictionary) instance_;
+            Type keyStorageType;
+            Type valueStorageType;
+            fsDictionaryConverter.GetKeyValueTypes(dictionary.GetType(), out keyStorageType, out valueStorageType);
+            IDictionaryEnumerator enumerator = dictionary.GetEnumerator();
+            bool flag = true;
+            List<fsData> fsDataList1 = new List<fsData>(dictionary.Count);
+            List<fsData> fsDataList2 = new List<fsData>(dictionary.Count);
+            while (enumerator.MoveNext())
+            {
+                fsData data1;
+                fsResult fsResult2;
+                if ((fsResult2 = fsResult1 + this.Serializer.TrySerialize(keyStorageType, enumerator.Key, out data1)).Failed)
+                    return fsResult2;
+                fsData data2;
+                if ((fsResult1 = fsResult2 + this.Serializer.TrySerialize(valueStorageType, enumerator.Value, out data2)).Failed)
+                    return fsResult1;
+                fsDataList1.Add(data1);
+                fsDataList2.Add(data2);
+                flag &= data1.IsString;
+            }
+            if (flag)
+            {
+                serialized = fsData.CreateDictionary();
+                Dictionary<string, fsData> asDictionary = serialized.AsDictionary;
+                for (int index = 0; index < fsDataList1.Count; ++index)
+                {
+                    fsData fsData1 = fsDataList1[index];
+                    fsData fsData2 = fsDataList2[index];
+                    asDictionary[fsData1.AsString] = fsData2;
+                }
+            }
+            else
+            {
+                serialized = fsData.CreateList(fsDataList1.Count);
+                List<fsData> asList = serialized.AsList;
+                for (int index = 0; index < fsDataList1.Count; ++index)
+                {
+                    fsData fsData3 = fsDataList1[index];
+                    fsData fsData4 = fsDataList2[index];
+                    asList.Add(new fsData(new Dictionary<string, fsData>()
+                    {
+                        ["Key"] = fsData3,
+                        ["Value"] = fsData4
+                    }));
+                }
+            }
+            return fsResult1;
         }
-      }
-      else
-      {
-        serialized = fsData.CreateList(fsDataList1.Count);
-        List<fsData> asList = serialized.AsList;
-        for (int index = 0; index < fsDataList1.Count; ++index)
+
+        private fsResult AddItemToDictionary(IDictionary dictionary, object key, object value)
         {
-          fsData fsData3 = fsDataList1[index];
-          fsData fsData4 = fsDataList2[index];
-          asList.Add(new fsData(new Dictionary<string, fsData>()
-          {
-            ["Key"] = fsData3,
-            ["Value"] = fsData4
-          }));
+            if (key == null || value == null)
+            {
+                Type type = fsReflectionUtility.GetInterface(dictionary.GetType(), typeof (ICollection<>));
+                if (type == null)
+                    return fsResult.Warn(dictionary.GetType().ToString() + " does not extend ICollection");
+                object instance = Activator.CreateInstance(type.GetGenericArguments()[0], key, value);
+                MethodInfo flattenedMethod = type.GetFlattenedMethod("Add");
+                if (key == null)
+                    return fsResult.Fail("Null entry in dictionary.");
+                flattenedMethod.Invoke((object) dictionary, new object[1]
+                {
+                    instance
+                });
+                return fsResult.Success;
+            }
+            dictionary[key] = value;
+            return fsResult.Success;
         }
-      }
-      return fsResult1;
-    }
 
-    private fsResult AddItemToDictionary(IDictionary dictionary, object key, object value)
-    {
-      if (key == null || value == null)
-      {
-        Type type = fsReflectionUtility.GetInterface(dictionary.GetType(), typeof (ICollection<>));
-        if (type == null)
-          return fsResult.Warn(dictionary.GetType().ToString() + " does not extend ICollection");
-        object instance = Activator.CreateInstance(type.GetGenericArguments()[0], key, value);
-        MethodInfo flattenedMethod = type.GetFlattenedMethod("Add");
-        if (key == null)
-          return fsResult.Fail("Null entry in dictionary.");
-        flattenedMethod.Invoke((object) dictionary, new object[1]
+        private static void GetKeyValueTypes(
+            Type dictionaryType,
+            out Type keyStorageType,
+            out Type valueStorageType)
         {
-          instance
-        });
-        return fsResult.Success;
-      }
-      dictionary[key] = value;
-      return fsResult.Success;
+            Type type = fsReflectionUtility.GetInterface(dictionaryType, typeof (IDictionary<,>));
+            if (type != null)
+            {
+                Type[] genericArguments = type.GetGenericArguments();
+                keyStorageType = genericArguments[0];
+                valueStorageType = genericArguments[1];
+            }
+            else
+            {
+                keyStorageType = typeof (object);
+                valueStorageType = typeof (object);
+            }
+        }
     }
-
-    private static void GetKeyValueTypes(
-      Type dictionaryType,
-      out Type keyStorageType,
-      out Type valueStorageType)
-    {
-      Type type = fsReflectionUtility.GetInterface(dictionaryType, typeof (IDictionary<,>));
-      if (type != null)
-      {
-        Type[] genericArguments = type.GetGenericArguments();
-        keyStorageType = genericArguments[0];
-        valueStorageType = genericArguments[1];
-      }
-      else
-      {
-        keyStorageType = typeof (object);
-        valueStorageType = typeof (object);
-      }
-    }
-  }
 }

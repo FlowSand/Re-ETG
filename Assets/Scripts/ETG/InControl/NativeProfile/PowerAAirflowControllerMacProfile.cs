@@ -1,20 +1,20 @@
 #nullable disable
 namespace InControl.NativeProfile
 {
-  public class PowerAAirflowControllerMacProfile : Xbox360DriverMacProfile
-  {
-    public PowerAAirflowControllerMacProfile()
+    public class PowerAAirflowControllerMacProfile : Xbox360DriverMacProfile
     {
-      this.Name = "PowerA Airflow Controller";
-      this.Meta = "PowerA Airflow Controller on Mac";
-      this.Matchers = new NativeInputDeviceMatcher[1]
-      {
-        new NativeInputDeviceMatcher()
+        public PowerAAirflowControllerMacProfile()
         {
-          VendorID = new ushort?((ushort) 5604),
-          ProductID = new ushort?((ushort) 16138)
+            this.Name = "PowerA Airflow Controller";
+            this.Meta = "PowerA Airflow Controller on Mac";
+            this.Matchers = new NativeInputDeviceMatcher[1]
+            {
+                new NativeInputDeviceMatcher()
+                {
+                    VendorID = new ushort?((ushort) 5604),
+                    ProductID = new ushort?((ushort) 16138)
+                }
+            };
         }
-      };
     }
-  }
 }

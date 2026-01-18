@@ -1,518 +1,519 @@
 using System.Collections.Generic;
+
 using UnityEngine;
 
 #nullable disable
 
 public class BraveBehaviour : MonoBehaviour
-  {
-    private BraveCache m_cachedCache;
-    private static List<BraveBehaviour> s_braveBehaviours = new List<BraveBehaviour>();
-
-    public void RegenerateCache()
     {
-      this.GetComponents<BraveBehaviour>(BraveBehaviour.s_braveBehaviours);
-      this.m_cachedCache = new BraveCache();
-      this.m_cachedCache.name = this.gameObject.name;
-      for (int index = 0; index < BraveBehaviour.s_braveBehaviours.Count; ++index)
-        BraveBehaviour.s_braveBehaviours[index].m_cachedCache = this.m_cachedCache;
-      BraveBehaviour.s_braveBehaviours.Clear();
-    }
+        private BraveCache m_cachedCache;
+        private static List<BraveBehaviour> s_braveBehaviours = new List<BraveBehaviour>();
 
-    protected virtual void OnDestroy() => this.m_cachedCache = (BraveCache) null;
-
-    public new Transform transform
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasTransform)
+        public void RegenerateCache()
         {
-          cache.transform = this.GetComponent<Transform>();
-          cache.hasTransform = true;
+            this.GetComponents<BraveBehaviour>(BraveBehaviour.s_braveBehaviours);
+            this.m_cachedCache = new BraveCache();
+            this.m_cachedCache.name = this.gameObject.name;
+            for (int index = 0; index < BraveBehaviour.s_braveBehaviours.Count; ++index)
+                BraveBehaviour.s_braveBehaviours[index].m_cachedCache = this.m_cachedCache;
+            BraveBehaviour.s_braveBehaviours.Clear();
         }
-        return cache.transform;
-      }
-    }
 
-    public Renderer renderer
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasRenderer)
+        protected virtual void OnDestroy() => this.m_cachedCache = (BraveCache) null;
+
+        public new Transform transform
         {
-          cache.renderer = this.GetComponent<Renderer>();
-          cache.hasRenderer = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasTransform)
+                {
+                    cache.transform = this.GetComponent<Transform>();
+                    cache.hasTransform = true;
+                }
+                return cache.transform;
+            }
         }
-        return cache.renderer;
-      }
-      set
-      {
-        BraveCache cache = this.GetCache();
-        cache.renderer = value;
-        cache.hasRenderer = true;
-      }
-    }
 
-    public Animation unityAnimation
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasUnityAnimation)
+        public Renderer renderer
         {
-          cache.unityAnimation = this.GetComponent<Animation>();
-          cache.hasUnityAnimation = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasRenderer)
+                {
+                    cache.renderer = this.GetComponent<Renderer>();
+                    cache.hasRenderer = true;
+                }
+                return cache.renderer;
+            }
+            set
+            {
+                BraveCache cache = this.GetCache();
+                cache.renderer = value;
+                cache.hasRenderer = true;
+            }
         }
-        return cache.unityAnimation;
-      }
-    }
 
-    public ParticleSystem particleSystem
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasParticleSystem)
+        public Animation unityAnimation
         {
-          cache.particleSystem = this.GetComponent<ParticleSystem>();
-          cache.hasParticleSystem = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasUnityAnimation)
+                {
+                    cache.unityAnimation = this.GetComponent<Animation>();
+                    cache.hasUnityAnimation = true;
+                }
+                return cache.unityAnimation;
+            }
         }
-        return cache.particleSystem;
-      }
-    }
 
-    public DungeonPlaceableBehaviour dungeonPlaceable
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasDungeonPlaceable)
+        public ParticleSystem particleSystem
         {
-          cache.dungeonPlaceable = this.GetComponent<DungeonPlaceableBehaviour>();
-          cache.hasDungeonPlaceable = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasParticleSystem)
+                {
+                    cache.particleSystem = this.GetComponent<ParticleSystem>();
+                    cache.hasParticleSystem = true;
+                }
+                return cache.particleSystem;
+            }
         }
-        return cache.dungeonPlaceable;
-      }
-    }
 
-    public AIActor aiActor
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasAiActor)
+        public DungeonPlaceableBehaviour dungeonPlaceable
         {
-          cache.aiActor = this.GetComponent<AIActor>();
-          cache.hasAiActor = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasDungeonPlaceable)
+                {
+                    cache.dungeonPlaceable = this.GetComponent<DungeonPlaceableBehaviour>();
+                    cache.hasDungeonPlaceable = true;
+                }
+                return cache.dungeonPlaceable;
+            }
         }
-        return cache.aiActor;
-      }
-      set
-      {
-        BraveCache cache = this.GetCache();
-        cache.aiActor = value;
-        cache.hasAiActor = true;
-      }
-    }
 
-    public AIShooter aiShooter
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasAiShooter)
+        public AIActor aiActor
         {
-          cache.aiShooter = this.GetComponent<AIShooter>();
-          cache.hasAiShooter = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasAiActor)
+                {
+                    cache.aiActor = this.GetComponent<AIActor>();
+                    cache.hasAiActor = true;
+                }
+                return cache.aiActor;
+            }
+            set
+            {
+                BraveCache cache = this.GetCache();
+                cache.aiActor = value;
+                cache.hasAiActor = true;
+            }
         }
-        return cache.aiShooter;
-      }
-    }
 
-    public AIBulletBank bulletBank
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasBulletBank)
+        public AIShooter aiShooter
         {
-          cache.bulletBank = this.GetComponent<AIBulletBank>();
-          cache.hasBulletBank = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasAiShooter)
+                {
+                    cache.aiShooter = this.GetComponent<AIShooter>();
+                    cache.hasAiShooter = true;
+                }
+                return cache.aiShooter;
+            }
         }
-        return cache.bulletBank;
-      }
-    }
 
-    public HealthHaver healthHaver
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasHealthHaver)
+        public AIBulletBank bulletBank
         {
-          cache.healthHaver = this.GetComponent<HealthHaver>();
-          cache.hasHealthHaver = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasBulletBank)
+                {
+                    cache.bulletBank = this.GetComponent<AIBulletBank>();
+                    cache.hasBulletBank = true;
+                }
+                return cache.bulletBank;
+            }
         }
-        return cache.healthHaver;
-      }
-      set
-      {
-        BraveCache cache = this.GetCache();
-        cache.healthHaver = value;
-        cache.hasHealthHaver = true;
-      }
-    }
 
-    public KnockbackDoer knockbackDoer
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasKnockbackDoer)
+        public HealthHaver healthHaver
         {
-          cache.knockbackDoer = this.GetComponent<KnockbackDoer>();
-          cache.hasKnockbackDoer = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasHealthHaver)
+                {
+                    cache.healthHaver = this.GetComponent<HealthHaver>();
+                    cache.hasHealthHaver = true;
+                }
+                return cache.healthHaver;
+            }
+            set
+            {
+                BraveCache cache = this.GetCache();
+                cache.healthHaver = value;
+                cache.hasHealthHaver = true;
+            }
         }
-        return cache.knockbackDoer;
-      }
-    }
 
-    public HitEffectHandler hitEffectHandler
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasHitEffectHandler)
+        public KnockbackDoer knockbackDoer
         {
-          cache.hitEffectHandler = this.GetComponent<HitEffectHandler>();
-          cache.hasHitEffectHandler = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasKnockbackDoer)
+                {
+                    cache.knockbackDoer = this.GetComponent<KnockbackDoer>();
+                    cache.hasKnockbackDoer = true;
+                }
+                return cache.knockbackDoer;
+            }
         }
-        return cache.hitEffectHandler;
-      }
-    }
 
-    public AIAnimator aiAnimator
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasAiAnimator)
+        public HitEffectHandler hitEffectHandler
         {
-          cache.aiAnimator = this.GetComponent<AIAnimator>();
-          cache.hasAiAnimator = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasHitEffectHandler)
+                {
+                    cache.hitEffectHandler = this.GetComponent<HitEffectHandler>();
+                    cache.hasHitEffectHandler = true;
+                }
+                return cache.hitEffectHandler;
+            }
         }
-        return cache.aiAnimator;
-      }
-      set
-      {
-        BraveCache cache = this.GetCache();
-        cache.aiAnimator = value;
-        cache.hasAiAnimator = true;
-      }
-    }
 
-    public BehaviorSpeculator behaviorSpeculator
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasBehaviorSpeculator)
+        public AIAnimator aiAnimator
         {
-          cache.behaviorSpeculator = this.GetComponent<BehaviorSpeculator>();
-          cache.hasBehaviorSpeculator = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasAiAnimator)
+                {
+                    cache.aiAnimator = this.GetComponent<AIAnimator>();
+                    cache.hasAiAnimator = true;
+                }
+                return cache.aiAnimator;
+            }
+            set
+            {
+                BraveCache cache = this.GetCache();
+                cache.aiAnimator = value;
+                cache.hasAiAnimator = true;
+            }
         }
-        return cache.behaviorSpeculator;
-      }
-    }
 
-    public GameActor gameActor
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasGameActor)
+        public BehaviorSpeculator behaviorSpeculator
         {
-          cache.gameActor = this.GetComponent<GameActor>();
-          cache.hasGameActor = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasBehaviorSpeculator)
+                {
+                    cache.behaviorSpeculator = this.GetComponent<BehaviorSpeculator>();
+                    cache.hasBehaviorSpeculator = true;
+                }
+                return cache.behaviorSpeculator;
+            }
         }
-        return cache.gameActor;
-      }
-      set
-      {
-        BraveCache cache = this.GetCache();
-        cache.gameActor = value;
-        cache.hasGameActor = true;
-      }
-    }
 
-    public MinorBreakable minorBreakable
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasMinorBreakable)
+        public GameActor gameActor
         {
-          cache.minorBreakable = this.GetComponent<MinorBreakable>();
-          cache.hasMinorBreakable = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasGameActor)
+                {
+                    cache.gameActor = this.GetComponent<GameActor>();
+                    cache.hasGameActor = true;
+                }
+                return cache.gameActor;
+            }
+            set
+            {
+                BraveCache cache = this.GetCache();
+                cache.gameActor = value;
+                cache.hasGameActor = true;
+            }
         }
-        return cache.minorBreakable;
-      }
-    }
 
-    public MajorBreakable majorBreakable
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasMajorBreakable)
+        public MinorBreakable minorBreakable
         {
-          cache.majorBreakable = this.GetComponent<MajorBreakable>();
-          cache.hasMajorBreakable = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasMinorBreakable)
+                {
+                    cache.minorBreakable = this.GetComponent<MinorBreakable>();
+                    cache.hasMinorBreakable = true;
+                }
+                return cache.minorBreakable;
+            }
         }
-        return cache.majorBreakable;
-      }
-      set
-      {
-        BraveCache cache = this.GetCache();
-        cache.majorBreakable = value;
-        cache.hasMajorBreakable = true;
-      }
-    }
 
-    public Projectile projectile
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasProjectile)
+        public MajorBreakable majorBreakable
         {
-          cache.projectile = this.GetComponent<Projectile>();
-          cache.hasProjectile = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasMajorBreakable)
+                {
+                    cache.majorBreakable = this.GetComponent<MajorBreakable>();
+                    cache.hasMajorBreakable = true;
+                }
+                return cache.majorBreakable;
+            }
+            set
+            {
+                BraveCache cache = this.GetCache();
+                cache.majorBreakable = value;
+                cache.hasMajorBreakable = true;
+            }
         }
-        return cache.projectile;
-      }
-    }
 
-    public ObjectVisibilityManager visibilityManager
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasVisibilityManager)
+        public Projectile projectile
         {
-          cache.visibilityManager = this.GetComponent<ObjectVisibilityManager>();
-          cache.hasVisibilityManager = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasProjectile)
+                {
+                    cache.projectile = this.GetComponent<Projectile>();
+                    cache.hasProjectile = true;
+                }
+                return cache.projectile;
+            }
         }
-        return cache.visibilityManager;
-      }
-    }
 
-    public TalkDoerLite talkDoer
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasTalkDoer)
+        public ObjectVisibilityManager visibilityManager
         {
-          cache.talkDoer = this.GetComponent<TalkDoerLite>();
-          cache.hasTalkDoer = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasVisibilityManager)
+                {
+                    cache.visibilityManager = this.GetComponent<ObjectVisibilityManager>();
+                    cache.hasVisibilityManager = true;
+                }
+                return cache.visibilityManager;
+            }
         }
-        return cache.talkDoer;
-      }
-    }
 
-    public UltraFortunesFavor ultraFortunesFavor
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasUltraFortunesFavor)
+        public TalkDoerLite talkDoer
         {
-          cache.ultraFortunesFavor = this.GetComponent<UltraFortunesFavor>();
-          cache.hasUltraFortunesFavor = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasTalkDoer)
+                {
+                    cache.talkDoer = this.GetComponent<TalkDoerLite>();
+                    cache.hasTalkDoer = true;
+                }
+                return cache.talkDoer;
+            }
         }
-        return cache.ultraFortunesFavor;
-      }
-    }
 
-    public DebrisObject debris
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasDebris)
+        public UltraFortunesFavor ultraFortunesFavor
         {
-          cache.debris = this.GetComponent<DebrisObject>();
-          cache.hasDebris = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasUltraFortunesFavor)
+                {
+                    cache.ultraFortunesFavor = this.GetComponent<UltraFortunesFavor>();
+                    cache.hasUltraFortunesFavor = true;
+                }
+                return cache.ultraFortunesFavor;
+            }
         }
-        return cache.debris;
-      }
-    }
 
-    public EncounterTrackable encounterTrackable
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasEncounterTrackable)
+        public DebrisObject debris
         {
-          cache.encounterTrackable = this.GetComponent<EncounterTrackable>();
-          cache.hasEncounterTrackable = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasDebris)
+                {
+                    cache.debris = this.GetComponent<DebrisObject>();
+                    cache.hasDebris = true;
+                }
+                return cache.debris;
+            }
         }
-        return cache.encounterTrackable;
-      }
-      set
-      {
-        BraveCache cache = this.GetCache();
-        cache.encounterTrackable = value;
-        cache.hasEncounterTrackable = true;
-      }
-    }
 
-    public SpeculativeRigidbody specRigidbody
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasSpecRigidbody)
+        public EncounterTrackable encounterTrackable
         {
-          cache.specRigidbody = this.GetComponent<SpeculativeRigidbody>();
-          cache.hasSpecRigidbody = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasEncounterTrackable)
+                {
+                    cache.encounterTrackable = this.GetComponent<EncounterTrackable>();
+                    cache.hasEncounterTrackable = true;
+                }
+                return cache.encounterTrackable;
+            }
+            set
+            {
+                BraveCache cache = this.GetCache();
+                cache.encounterTrackable = value;
+                cache.hasEncounterTrackable = true;
+            }
         }
-        return cache.specRigidbody;
-      }
-      set
-      {
-        BraveCache cache = this.GetCache();
-        cache.specRigidbody = value;
-        cache.hasSpecRigidbody = true;
-      }
-    }
 
-    public tk2dBaseSprite sprite
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasSprite)
+        public SpeculativeRigidbody specRigidbody
         {
-          cache.sprite = this.GetComponent<tk2dBaseSprite>();
-          cache.hasSprite = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasSpecRigidbody)
+                {
+                    cache.specRigidbody = this.GetComponent<SpeculativeRigidbody>();
+                    cache.hasSpecRigidbody = true;
+                }
+                return cache.specRigidbody;
+            }
+            set
+            {
+                BraveCache cache = this.GetCache();
+                cache.specRigidbody = value;
+                cache.hasSpecRigidbody = true;
+            }
         }
-        return cache.sprite;
-      }
-      set
-      {
-        BraveCache cache = this.GetCache();
-        cache.sprite = value;
-        cache.hasSprite = true;
-      }
-    }
 
-    public tk2dSpriteAnimator spriteAnimator
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasSpriteAnimator)
+        public tk2dBaseSprite sprite
         {
-          cache.spriteAnimator = this.GetComponent<tk2dSpriteAnimator>();
-          cache.hasSpriteAnimator = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasSprite)
+                {
+                    cache.sprite = this.GetComponent<tk2dBaseSprite>();
+                    cache.hasSprite = true;
+                }
+                return cache.sprite;
+            }
+            set
+            {
+                BraveCache cache = this.GetCache();
+                cache.sprite = value;
+                cache.hasSprite = true;
+            }
         }
-        return cache.spriteAnimator;
-      }
-      set
-      {
-        BraveCache cache = this.GetCache();
-        cache.spriteAnimator = value;
-        cache.hasSpriteAnimator = true;
-      }
-    }
 
-    public PlayMakerFSM playmakerFsm
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasPlaymakerFsm)
+        public tk2dSpriteAnimator spriteAnimator
         {
-          cache.playmakerFsm = this.GetComponent<PlayMakerFSM>();
-          cache.hasPlaymakerFsm = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasSpriteAnimator)
+                {
+                    cache.spriteAnimator = this.GetComponent<tk2dSpriteAnimator>();
+                    cache.hasSpriteAnimator = true;
+                }
+                return cache.spriteAnimator;
+            }
+            set
+            {
+                BraveCache cache = this.GetCache();
+                cache.spriteAnimator = value;
+                cache.hasSpriteAnimator = true;
+            }
         }
-        return cache.playmakerFsm;
-      }
-    }
 
-    public PlayMakerFSM[] playmakerFsms
-    {
-      get
-      {
-        BraveCache cache = this.GetCache();
-        if (!cache.hasPlaymakerFsms)
+        public PlayMakerFSM playmakerFsm
         {
-          cache.playmakerFsms = this.GetComponents<PlayMakerFSM>();
-          cache.hasPlaymakerFsms = true;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasPlaymakerFsm)
+                {
+                    cache.playmakerFsm = this.GetComponent<PlayMakerFSM>();
+                    cache.hasPlaymakerFsm = true;
+                }
+                return cache.playmakerFsm;
+            }
         }
-        return cache.playmakerFsms;
-      }
-    }
 
-    public void SendPlaymakerEvent(string eventName)
-    {
-      PlayMakerFSM[] playmakerFsms = this.playmakerFsms;
-      for (int index = 0; index < playmakerFsms.Length; ++index)
-      {
-        if (playmakerFsms[index].enabled)
-          playmakerFsms[index].SendEvent(eventName);
-      }
-    }
-
-    public PlayMakerFSM GetDungeonFSM()
-    {
-      PlayMakerFSM[] playmakerFsms = this.playmakerFsms;
-      for (int index = 0; index < playmakerFsms.Length; ++index)
-      {
-        if (playmakerFsms[index].FsmName.Contains("Dungeon"))
-          return playmakerFsms[index];
-      }
-      return this.playmakerFsm;
-    }
-
-    public PlayMakerFSM GetFoyerFSM()
-    {
-      PlayMakerFSM[] playmakerFsms = this.playmakerFsms;
-      for (int index = 0; index < playmakerFsms.Length; ++index)
-      {
-        if (playmakerFsms[index].FsmName.Contains("Foyer"))
-          return playmakerFsms[index];
-      }
-      return this.playmakerFsm;
-    }
-
-    private BraveCache GetCache()
-    {
-      if (this.m_cachedCache == null)
-      {
-        if (BraveBehaviour.s_braveBehaviours == null)
-          BraveBehaviour.s_braveBehaviours = new List<BraveBehaviour>();
-        BraveBehaviour.s_braveBehaviours.Clear();
-        this.GetComponents<BraveBehaviour>(BraveBehaviour.s_braveBehaviours);
-        for (int index = 0; index < BraveBehaviour.s_braveBehaviours.Count; ++index)
+        public PlayMakerFSM[] playmakerFsms
         {
-          if (BraveBehaviour.s_braveBehaviours[index].m_cachedCache != null)
-            this.m_cachedCache = BraveBehaviour.s_braveBehaviours[index].m_cachedCache;
+            get
+            {
+                BraveCache cache = this.GetCache();
+                if (!cache.hasPlaymakerFsms)
+                {
+                    cache.playmakerFsms = this.GetComponents<PlayMakerFSM>();
+                    cache.hasPlaymakerFsms = true;
+                }
+                return cache.playmakerFsms;
+            }
         }
-        if (this.m_cachedCache == null)
+
+        public void SendPlaymakerEvent(string eventName)
         {
-          this.m_cachedCache = new BraveCache();
-          this.m_cachedCache.name = this.gameObject.name;
-          for (int index = 0; index < BraveBehaviour.s_braveBehaviours.Count; ++index)
-            BraveBehaviour.s_braveBehaviours[index].m_cachedCache = this.m_cachedCache;
+            PlayMakerFSM[] playmakerFsms = this.playmakerFsms;
+            for (int index = 0; index < playmakerFsms.Length; ++index)
+            {
+                if (playmakerFsms[index].enabled)
+                    playmakerFsms[index].SendEvent(eventName);
+            }
         }
-        BraveBehaviour.s_braveBehaviours.Clear();
-      }
-      return this.m_cachedCache;
+
+        public PlayMakerFSM GetDungeonFSM()
+        {
+            PlayMakerFSM[] playmakerFsms = this.playmakerFsms;
+            for (int index = 0; index < playmakerFsms.Length; ++index)
+            {
+                if (playmakerFsms[index].FsmName.Contains("Dungeon"))
+                    return playmakerFsms[index];
+            }
+            return this.playmakerFsm;
+        }
+
+        public PlayMakerFSM GetFoyerFSM()
+        {
+            PlayMakerFSM[] playmakerFsms = this.playmakerFsms;
+            for (int index = 0; index < playmakerFsms.Length; ++index)
+            {
+                if (playmakerFsms[index].FsmName.Contains("Foyer"))
+                    return playmakerFsms[index];
+            }
+            return this.playmakerFsm;
+        }
+
+        private BraveCache GetCache()
+        {
+            if (this.m_cachedCache == null)
+            {
+                if (BraveBehaviour.s_braveBehaviours == null)
+                    BraveBehaviour.s_braveBehaviours = new List<BraveBehaviour>();
+                BraveBehaviour.s_braveBehaviours.Clear();
+                this.GetComponents<BraveBehaviour>(BraveBehaviour.s_braveBehaviours);
+                for (int index = 0; index < BraveBehaviour.s_braveBehaviours.Count; ++index)
+                {
+                    if (BraveBehaviour.s_braveBehaviours[index].m_cachedCache != null)
+                        this.m_cachedCache = BraveBehaviour.s_braveBehaviours[index].m_cachedCache;
+                }
+                if (this.m_cachedCache == null)
+                {
+                    this.m_cachedCache = new BraveCache();
+                    this.m_cachedCache.name = this.gameObject.name;
+                    for (int index = 0; index < BraveBehaviour.s_braveBehaviours.Count; ++index)
+                        BraveBehaviour.s_braveBehaviours[index].m_cachedCache = this.m_cachedCache;
+                }
+                BraveBehaviour.s_braveBehaviours.Clear();
+            }
+            return this.m_cachedCache;
+        }
     }
-  }
 

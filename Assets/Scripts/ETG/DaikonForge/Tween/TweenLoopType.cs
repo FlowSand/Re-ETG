@@ -1,10 +1,10 @@
 #nullable disable
 namespace DaikonForge.Tween
 {
-  public enum TweenLoopType
-  {
-    None,
-    Loop,
-    Pingpong,
-  }
+    public enum TweenLoopType
+    {
+        None,
+        Loop,
+        Pingpong,
+    }
 }

@@ -1,10 +1,10 @@
 #nullable disable
 
-  public static class dfMouseButtonsExtensions
-  {
-    public static bool IsSet(this dfMouseButtons value, dfMouseButtons flag)
+    public static class dfMouseButtonsExtensions
     {
-      return flag == (value & flag);
+        public static bool IsSet(this dfMouseButtons value, dfMouseButtons flag)
+        {
+            return flag == (value & flag);
+        }
     }
-  }
 

@@ -1,7 +1,7 @@
 #nullable disable
 namespace FullInspector
 {
-  public abstract class fiInspectorOnly
-  {
-  }
+    public abstract class fiInspectorOnly
+    {
+    }
 }

@@ -1,51 +1,53 @@
-using Brave.BulletScript;
-using FullInspector;
 using System.Collections;
 using System.Diagnostics;
+
+using FullInspector;
+
+using Brave.BulletScript;
 
 #nullable disable
 
 [InspectorDropdownName("BubbleLizard/Bubble1")]
 public class BubbleLizardBubble1 : Script
-  {
-    private const float WaftXPeriod = 3f;
-    private const float WaftXMagnitude = 1f;
-    private const float WaftYPeriod = 1f;
-    private const float WaftYMagnitude = 0.25f;
-    private const int BubbleLifeTime = 960;
-
-    protected override IEnumerator Top()
     {
-      this.Fire(new Brave.BulletScript.Direction(), new Brave.BulletScript.Speed(2f), (Bullet) new BubbleLizardBubble1.BubbleBullet());
-      return (IEnumerator) null;
-    }
+        private const float WaftXPeriod = 3f;
+        private const float WaftXMagnitude = 1f;
+        private const float WaftYPeriod = 1f;
+        private const float WaftYMagnitude = 0.25f;
+        private const int BubbleLifeTime = 960;
 
-    public class BubbleBullet : Bullet
-    {
-      public BubbleBullet()
-        : base("bubble")
-      {
-      }
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BubbleLizardBubble1.BubbleBullet__Topc__Iterator0()
+        protected override IEnumerator Top()
         {
-          _this = this
-        };
-      }
+            this.Fire(new Brave.BulletScript.Direction(), new Brave.BulletScript.Speed(2f), (Bullet) new BubbleLizardBubble1.BubbleBullet());
+            return (IEnumerator) null;
+        }
 
-      public override void OnBulletDestruction(
-        Bullet.DestroyType destroyType,
-        SpeculativeRigidbody hitRigidbody,
-        bool preventSpawningProjectiles)
-      {
-        if (preventSpawningProjectiles)
-          return;
-        this.Fire(new Brave.BulletScript.Direction(this.GetAimDirection(1f, 14f)), new Brave.BulletScript.Speed(14f), (Bullet) null);
-      }
+        public class BubbleBullet : Bullet
+        {
+            public BubbleBullet()
+                : base("bubble")
+            {
+            }
+
+            [DebuggerHidden]
+            protected override IEnumerator Top()
+            {
+                // ISSUE: object of a compiler-generated type is created
+                return (IEnumerator) new BubbleLizardBubble1.BubbleBullet__Topc__Iterator0()
+                {
+                    _this = this
+                };
+            }
+
+            public override void OnBulletDestruction(
+                Bullet.DestroyType destroyType,
+                SpeculativeRigidbody hitRigidbody,
+                bool preventSpawningProjectiles)
+            {
+                if (preventSpawningProjectiles)
+                    return;
+                this.Fire(new Brave.BulletScript.Direction(this.GetAimDirection(1f, 14f)), new Brave.BulletScript.Speed(14f), (Bullet) null);
+            }
+        }
     }
-  }
 

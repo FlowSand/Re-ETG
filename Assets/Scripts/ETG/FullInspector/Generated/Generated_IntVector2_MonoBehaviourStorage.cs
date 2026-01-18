@@ -4,9 +4,9 @@ using UnityEngine;
 #nullable disable
 namespace FullInspector.Generated
 {
-  [AddComponentMenu("")]
-  public class Generated_IntVector2_MonoBehaviourStorage : 
-    fiPropertyDrawerMonoBehaviorContainer<IntVector2>
-  {
-  }
+    [AddComponentMenu("")]
+    public class Generated_IntVector2_MonoBehaviourStorage : 
+        fiPropertyDrawerMonoBehaviorContainer<IntVector2>
+    {
+    }
 }

@@ -3,81 +3,81 @@ using XInputDotNetPure;
 #nullable disable
 namespace InControl
 {
-  public class XInputDevice : InputDevice
-  {
-    private const float LowerDeadZone = 0.2f;
-    private const float UpperDeadZone = 0.9f;
-    private XInputDeviceManager owner;
-    private GamePadState state;
-
-    public XInputDevice(int deviceIndex, XInputDeviceManager owner)
-      : base("XInput Controller")
+    public class XInputDevice : InputDevice
     {
-      this.owner = owner;
-      this.DeviceIndex = deviceIndex;
-      this.SortOrder = deviceIndex;
-      this.Meta = "XInput Device #" + (object) deviceIndex;
-      this.DeviceClass = InputDeviceClass.Controller;
-      this.DeviceStyle = InputDeviceStyle.XboxOne;
-      this.AddControl(InputControlType.LeftStickLeft, "Left Stick Left", 0.2f, 0.9f);
-      this.AddControl(InputControlType.LeftStickRight, "Left Stick Right", 0.2f, 0.9f);
-      this.AddControl(InputControlType.LeftStickUp, "Left Stick Up", 0.2f, 0.9f);
-      this.AddControl(InputControlType.LeftStickDown, "Left Stick Down", 0.2f, 0.9f);
-      this.AddControl(InputControlType.RightStickLeft, "Right Stick Left", 0.2f, 0.9f);
-      this.AddControl(InputControlType.RightStickRight, "Right Stick Right", 0.2f, 0.9f);
-      this.AddControl(InputControlType.RightStickUp, "Right Stick Up", 0.2f, 0.9f);
-      this.AddControl(InputControlType.RightStickDown, "Right Stick Down", 0.2f, 0.9f);
-      this.AddControl(InputControlType.LeftTrigger, "Left Trigger", 0.2f, 0.9f);
-      this.AddControl(InputControlType.RightTrigger, "Right Trigger", 0.2f, 0.9f);
-      this.AddControl(InputControlType.DPadUp, "DPad Up", 0.2f, 0.9f);
-      this.AddControl(InputControlType.DPadDown, "DPad Down", 0.2f, 0.9f);
-      this.AddControl(InputControlType.DPadLeft, "DPad Left", 0.2f, 0.9f);
-      this.AddControl(InputControlType.DPadRight, "DPad Right", 0.2f, 0.9f);
-      this.AddControl(InputControlType.Action1, "A");
-      this.AddControl(InputControlType.Action2, "B");
-      this.AddControl(InputControlType.Action3, "X");
-      this.AddControl(InputControlType.Action4, "Y");
-      this.AddControl(InputControlType.LeftBumper, "Left Bumper");
-      this.AddControl(InputControlType.RightBumper, "Right Bumper");
-      this.AddControl(InputControlType.LeftStickButton, "Left Stick Button");
-      this.AddControl(InputControlType.RightStickButton, "Right Stick Button");
-      this.AddControl(InputControlType.Start, "Start");
-      this.AddControl(InputControlType.Back, "Back");
+        private const float LowerDeadZone = 0.2f;
+        private const float UpperDeadZone = 0.9f;
+        private XInputDeviceManager owner;
+        private GamePadState state;
+
+        public XInputDevice(int deviceIndex, XInputDeviceManager owner)
+            : base("XInput Controller")
+        {
+            this.owner = owner;
+            this.DeviceIndex = deviceIndex;
+            this.SortOrder = deviceIndex;
+            this.Meta = "XInput Device #" + (object) deviceIndex;
+            this.DeviceClass = InputDeviceClass.Controller;
+            this.DeviceStyle = InputDeviceStyle.XboxOne;
+            this.AddControl(InputControlType.LeftStickLeft, "Left Stick Left", 0.2f, 0.9f);
+            this.AddControl(InputControlType.LeftStickRight, "Left Stick Right", 0.2f, 0.9f);
+            this.AddControl(InputControlType.LeftStickUp, "Left Stick Up", 0.2f, 0.9f);
+            this.AddControl(InputControlType.LeftStickDown, "Left Stick Down", 0.2f, 0.9f);
+            this.AddControl(InputControlType.RightStickLeft, "Right Stick Left", 0.2f, 0.9f);
+            this.AddControl(InputControlType.RightStickRight, "Right Stick Right", 0.2f, 0.9f);
+            this.AddControl(InputControlType.RightStickUp, "Right Stick Up", 0.2f, 0.9f);
+            this.AddControl(InputControlType.RightStickDown, "Right Stick Down", 0.2f, 0.9f);
+            this.AddControl(InputControlType.LeftTrigger, "Left Trigger", 0.2f, 0.9f);
+            this.AddControl(InputControlType.RightTrigger, "Right Trigger", 0.2f, 0.9f);
+            this.AddControl(InputControlType.DPadUp, "DPad Up", 0.2f, 0.9f);
+            this.AddControl(InputControlType.DPadDown, "DPad Down", 0.2f, 0.9f);
+            this.AddControl(InputControlType.DPadLeft, "DPad Left", 0.2f, 0.9f);
+            this.AddControl(InputControlType.DPadRight, "DPad Right", 0.2f, 0.9f);
+            this.AddControl(InputControlType.Action1, "A");
+            this.AddControl(InputControlType.Action2, "B");
+            this.AddControl(InputControlType.Action3, "X");
+            this.AddControl(InputControlType.Action4, "Y");
+            this.AddControl(InputControlType.LeftBumper, "Left Bumper");
+            this.AddControl(InputControlType.RightBumper, "Right Bumper");
+            this.AddControl(InputControlType.LeftStickButton, "Left Stick Button");
+            this.AddControl(InputControlType.RightStickButton, "Right Stick Button");
+            this.AddControl(InputControlType.Start, "Start");
+            this.AddControl(InputControlType.Back, "Back");
+        }
+
+        public int DeviceIndex { get; private set; }
+
+        public override void Update(ulong updateTick, float deltaTime)
+        {
+            this.GetState();
+            this.UpdateLeftStickWithValue(this.state.ThumbSticks.Left.Vector, updateTick, deltaTime);
+            this.UpdateRightStickWithValue(this.state.ThumbSticks.Right.Vector, updateTick, deltaTime);
+            this.UpdateWithValue(InputControlType.LeftTrigger, this.state.Triggers.Left, updateTick, deltaTime);
+            this.UpdateWithValue(InputControlType.RightTrigger, this.state.Triggers.Right, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.DPadUp, this.state.DPad.Up == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.DPadDown, this.state.DPad.Down == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.DPadLeft, this.state.DPad.Left == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.DPadRight, this.state.DPad.Right == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.Action1, this.state.Buttons.A == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.Action2, this.state.Buttons.B == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.Action3, this.state.Buttons.X == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.Action4, this.state.Buttons.Y == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.LeftBumper, this.state.Buttons.LeftShoulder == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.RightBumper, this.state.Buttons.RightShoulder == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.LeftStickButton, this.state.Buttons.LeftStick == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.RightStickButton, this.state.Buttons.RightStick == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.Start, this.state.Buttons.Start == ButtonState.Pressed, updateTick, deltaTime);
+            this.UpdateWithState(InputControlType.Back, this.state.Buttons.Back == ButtonState.Pressed, updateTick, deltaTime);
+            this.Commit(updateTick, deltaTime);
+        }
+
+        public override void Vibrate(float leftMotor, float rightMotor)
+        {
+            GamePad.SetVibration((PlayerIndex) this.DeviceIndex, leftMotor, rightMotor);
+        }
+
+        internal void GetState() => this.state = this.owner.GetState(this.DeviceIndex);
+
+        public bool IsConnected => this.state.IsConnected;
     }
-
-    public int DeviceIndex { get; private set; }
-
-    public override void Update(ulong updateTick, float deltaTime)
-    {
-      this.GetState();
-      this.UpdateLeftStickWithValue(this.state.ThumbSticks.Left.Vector, updateTick, deltaTime);
-      this.UpdateRightStickWithValue(this.state.ThumbSticks.Right.Vector, updateTick, deltaTime);
-      this.UpdateWithValue(InputControlType.LeftTrigger, this.state.Triggers.Left, updateTick, deltaTime);
-      this.UpdateWithValue(InputControlType.RightTrigger, this.state.Triggers.Right, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.DPadUp, this.state.DPad.Up == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.DPadDown, this.state.DPad.Down == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.DPadLeft, this.state.DPad.Left == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.DPadRight, this.state.DPad.Right == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.Action1, this.state.Buttons.A == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.Action2, this.state.Buttons.B == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.Action3, this.state.Buttons.X == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.Action4, this.state.Buttons.Y == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.LeftBumper, this.state.Buttons.LeftShoulder == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.RightBumper, this.state.Buttons.RightShoulder == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.LeftStickButton, this.state.Buttons.LeftStick == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.RightStickButton, this.state.Buttons.RightStick == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.Start, this.state.Buttons.Start == ButtonState.Pressed, updateTick, deltaTime);
-      this.UpdateWithState(InputControlType.Back, this.state.Buttons.Back == ButtonState.Pressed, updateTick, deltaTime);
-      this.Commit(updateTick, deltaTime);
-    }
-
-    public override void Vibrate(float leftMotor, float rightMotor)
-    {
-      GamePad.SetVibration((PlayerIndex) this.DeviceIndex, leftMotor, rightMotor);
-    }
-
-    internal void GetState() => this.state = this.owner.GetState(this.DeviceIndex);
-
-    public bool IsConnected => this.state.IsConnected;
-  }
 }

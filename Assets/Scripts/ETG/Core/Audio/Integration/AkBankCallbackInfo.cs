@@ -3,66 +3,66 @@ using System;
 #nullable disable
 
 public class AkBankCallbackInfo : IDisposable
-  {
-    private IntPtr swigCPtr;
-    protected bool swigCMemOwn;
-
-    internal AkBankCallbackInfo(IntPtr cPtr, bool cMemoryOwn)
     {
-      this.swigCMemOwn = cMemoryOwn;
-      this.swigCPtr = cPtr;
-    }
+        private IntPtr swigCPtr;
+        protected bool swigCMemOwn;
 
-    public AkBankCallbackInfo()
-      : this(AkSoundEnginePINVOKE.CSharp_new_AkBankCallbackInfo(), true)
-    {
-    }
-
-    internal static IntPtr getCPtr(AkBankCallbackInfo obj)
-    {
-      return obj == null ? IntPtr.Zero : obj.swigCPtr;
-    }
-
-    internal virtual void setCPtr(IntPtr cPtr)
-    {
-      this.Dispose();
-      this.swigCPtr = cPtr;
-    }
-
-    ~AkBankCallbackInfo() => this.Dispose();
-
-    public virtual void Dispose()
-    {
-      lock ((object) this)
-      {
-        if (this.swigCPtr != IntPtr.Zero)
+        internal AkBankCallbackInfo(IntPtr cPtr, bool cMemoryOwn)
         {
-          if (this.swigCMemOwn)
-          {
-            this.swigCMemOwn = false;
-            AkSoundEnginePINVOKE.CSharp_delete_AkBankCallbackInfo(this.swigCPtr);
-          }
-          this.swigCPtr = IntPtr.Zero;
+            this.swigCMemOwn = cMemoryOwn;
+            this.swigCPtr = cPtr;
         }
-        GC.SuppressFinalize((object) this);
-      }
-    }
 
-    public uint bankID => AkSoundEnginePINVOKE.CSharp_AkBankCallbackInfo_bankID_get(this.swigCPtr);
+        public AkBankCallbackInfo()
+            : this(AkSoundEnginePINVOKE.CSharp_new_AkBankCallbackInfo(), true)
+        {
+        }
 
-    public IntPtr inMemoryBankPtr
-    {
-      get => AkSoundEnginePINVOKE.CSharp_AkBankCallbackInfo_inMemoryBankPtr_get(this.swigCPtr);
-    }
+        internal static IntPtr getCPtr(AkBankCallbackInfo obj)
+        {
+            return obj == null ? IntPtr.Zero : obj.swigCPtr;
+        }
 
-    public AKRESULT loadResult
-    {
-      get => (AKRESULT) AkSoundEnginePINVOKE.CSharp_AkBankCallbackInfo_loadResult_get(this.swigCPtr);
-    }
+        internal virtual void setCPtr(IntPtr cPtr)
+        {
+            this.Dispose();
+            this.swigCPtr = cPtr;
+        }
 
-    public int memPoolId
-    {
-      get => AkSoundEnginePINVOKE.CSharp_AkBankCallbackInfo_memPoolId_get(this.swigCPtr);
+        ~AkBankCallbackInfo() => this.Dispose();
+
+        public virtual void Dispose()
+        {
+            lock ((object) this)
+            {
+                if (this.swigCPtr != IntPtr.Zero)
+                {
+                    if (this.swigCMemOwn)
+                    {
+                        this.swigCMemOwn = false;
+                        AkSoundEnginePINVOKE.CSharp_delete_AkBankCallbackInfo(this.swigCPtr);
+                    }
+                    this.swigCPtr = IntPtr.Zero;
+                }
+                GC.SuppressFinalize((object) this);
+            }
+        }
+
+        public uint bankID => AkSoundEnginePINVOKE.CSharp_AkBankCallbackInfo_bankID_get(this.swigCPtr);
+
+        public IntPtr inMemoryBankPtr
+        {
+            get => AkSoundEnginePINVOKE.CSharp_AkBankCallbackInfo_inMemoryBankPtr_get(this.swigCPtr);
+        }
+
+        public AKRESULT loadResult
+        {
+            get => (AKRESULT) AkSoundEnginePINVOKE.CSharp_AkBankCallbackInfo_loadResult_get(this.swigCPtr);
+        }
+
+        public int memPoolId
+        {
+            get => AkSoundEnginePINVOKE.CSharp_AkBankCallbackInfo_memPoolId_get(this.swigCPtr);
+        }
     }
-  }
 

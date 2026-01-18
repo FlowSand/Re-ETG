@@ -1,20 +1,20 @@
 #nullable disable
 namespace InControl.NativeProfile
 {
-  public class MadCatzSSF4FightStickTEMacProfile : Xbox360DriverMacProfile
-  {
-    public MadCatzSSF4FightStickTEMacProfile()
+    public class MadCatzSSF4FightStickTEMacProfile : Xbox360DriverMacProfile
     {
-      this.Name = "Mad Catz SSF4 Fight Stick TE";
-      this.Meta = "Mad Catz SSF4 Fight Stick TE on Mac";
-      this.Matchers = new NativeInputDeviceMatcher[1]
-      {
-        new NativeInputDeviceMatcher()
+        public MadCatzSSF4FightStickTEMacProfile()
         {
-          VendorID = new ushort?((ushort) 1848),
-          ProductID = new ushort?((ushort) 63288)
+            this.Name = "Mad Catz SSF4 Fight Stick TE";
+            this.Meta = "Mad Catz SSF4 Fight Stick TE on Mac";
+            this.Matchers = new NativeInputDeviceMatcher[1]
+            {
+                new NativeInputDeviceMatcher()
+                {
+                    VendorID = new ushort?((ushort) 1848),
+                    ProductID = new ushort?((ushort) 63288)
+                }
+            };
         }
-      };
     }
-  }
 }

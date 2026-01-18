@@ -1,20 +1,20 @@
 #nullable disable
 namespace InControl.NativeProfile
 {
-  public class PDPTronControllerMacProfile : Xbox360DriverMacProfile
-  {
-    public PDPTronControllerMacProfile()
+    public class PDPTronControllerMacProfile : Xbox360DriverMacProfile
     {
-      this.Name = "PDP Tron Controller";
-      this.Meta = "PDP Tron Controller on Mac";
-      this.Matchers = new NativeInputDeviceMatcher[1]
-      {
-        new NativeInputDeviceMatcher()
+        public PDPTronControllerMacProfile()
         {
-          VendorID = new ushort?((ushort) 7085),
-          ProductID = new ushort?((ushort) 63747)
+            this.Name = "PDP Tron Controller";
+            this.Meta = "PDP Tron Controller on Mac";
+            this.Matchers = new NativeInputDeviceMatcher[1]
+            {
+                new NativeInputDeviceMatcher()
+                {
+                    VendorID = new ushort?((ushort) 7085),
+                    ProductID = new ushort?((ushort) 63747)
+                }
+            };
         }
-      };
     }
-  }
 }

@@ -3,74 +3,74 @@ using UnityEngine;
 #nullable disable
 
 public class CollisionTriggerEvent : BraveBehaviour
-  {
-    public bool onTriggerEnter;
-    public bool onTriggerCollision;
-    public bool onTriggerExit;
-    public float delay;
-    public string animationName;
-    public bool destroyAfterAnimation;
-    public VFXPool vfx;
-    public Vector2 vfxOffset;
-    private bool m_triggered;
-    private float m_timer;
-
-    public void Start()
     {
-      if (this.onTriggerEnter)
-        this.specRigidbody.OnEnterTrigger += new SpeculativeRigidbody.OnTriggerDelegate(this.OnTrigger);
-      if (this.onTriggerCollision)
-        this.specRigidbody.OnTriggerCollision += new SpeculativeRigidbody.OnTriggerDelegate(this.OnTrigger);
-      if (!this.onTriggerExit)
-        return;
-      this.specRigidbody.OnExitTrigger += new SpeculativeRigidbody.OnTriggerExitDelegate(this.OnTriggerSimple);
-    }
+        public bool onTriggerEnter;
+        public bool onTriggerCollision;
+        public bool onTriggerExit;
+        public float delay;
+        public string animationName;
+        public bool destroyAfterAnimation;
+        public VFXPool vfx;
+        public Vector2 vfxOffset;
+        private bool m_triggered;
+        private float m_timer;
 
-    public void Update()
-    {
-      if (!this.m_triggered)
-        return;
-      this.m_timer -= BraveTime.DeltaTime;
-      if ((double) this.m_timer > 0.0)
-        return;
-      this.DoEventStuff();
-    }
+        public void Start()
+        {
+            if (this.onTriggerEnter)
+                this.specRigidbody.OnEnterTrigger += new SpeculativeRigidbody.OnTriggerDelegate(this.OnTrigger);
+            if (this.onTriggerCollision)
+                this.specRigidbody.OnTriggerCollision += new SpeculativeRigidbody.OnTriggerDelegate(this.OnTrigger);
+            if (!this.onTriggerExit)
+                return;
+            this.specRigidbody.OnExitTrigger += new SpeculativeRigidbody.OnTriggerExitDelegate(this.OnTriggerSimple);
+        }
 
-    private void OnTrigger(
-      SpeculativeRigidbody specRigidbody,
-      SpeculativeRigidbody sourceSpecRigidbody,
-      CollisionData collisionData)
-    {
-      this.OnTriggerSimple(specRigidbody, sourceSpecRigidbody);
-    }
+        public void Update()
+        {
+            if (!this.m_triggered)
+                return;
+            this.m_timer -= BraveTime.DeltaTime;
+            if ((double) this.m_timer > 0.0)
+                return;
+            this.DoEventStuff();
+        }
 
-    private void OnTriggerSimple(
-      SpeculativeRigidbody specRigidbody,
-      SpeculativeRigidbody sourceSpecRigidbody)
-    {
-      if ((double) this.delay <= 0.0)
-      {
-        this.DoEventStuff();
-      }
-      else
-      {
-        this.m_triggered = true;
-        this.m_timer = this.delay;
-      }
-    }
+        private void OnTrigger(
+            SpeculativeRigidbody specRigidbody,
+            SpeculativeRigidbody sourceSpecRigidbody,
+            CollisionData collisionData)
+        {
+            this.OnTriggerSimple(specRigidbody, sourceSpecRigidbody);
+        }
 
-    private void DoEventStuff()
-    {
-      if (!string.IsNullOrEmpty(this.animationName) && (bool) (Object) this.spriteAnimator)
-      {
-        this.spriteAnimator.Play(this.animationName);
-        if (this.destroyAfterAnimation)
-          this.gameObject.AddComponent<SpriteAnimatorKiller>();
-      }
-      this.vfx.SpawnAtLocalPosition((Vector3) this.vfxOffset, 0.0f, this.transform, new Vector2?(Vector2.zero), new Vector2?(Vector2.zero));
-      Object.Destroy((Object) this);
-    }
+        private void OnTriggerSimple(
+            SpeculativeRigidbody specRigidbody,
+            SpeculativeRigidbody sourceSpecRigidbody)
+        {
+            if ((double) this.delay <= 0.0)
+            {
+                this.DoEventStuff();
+            }
+            else
+            {
+                this.m_triggered = true;
+                this.m_timer = this.delay;
+            }
+        }
 
-    protected override void OnDestroy() => base.OnDestroy();
-  }
+        private void DoEventStuff()
+        {
+            if (!string.IsNullOrEmpty(this.animationName) && (bool) (Object) this.spriteAnimator)
+            {
+                this.spriteAnimator.Play(this.animationName);
+                if (this.destroyAfterAnimation)
+                    this.gameObject.AddComponent<SpriteAnimatorKiller>();
+            }
+            this.vfx.SpawnAtLocalPosition((Vector3) this.vfxOffset, 0.0f, this.transform, new Vector2?(Vector2.zero), new Vector2?(Vector2.zero));
+            Object.Destroy((Object) this);
+        }
+
+        protected override void OnDestroy() => base.OnDestroy();
+    }
 

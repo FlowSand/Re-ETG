@@ -1,14 +1,14 @@
 #nullable disable
 namespace Dungeonator
 {
-  public interface IPriorityQueue<T>
-  {
-    int Push(T item);
+    public interface IPriorityQueue<T>
+    {
+        int Push(T item);
 
-    T Pop();
+        T Pop();
 
-    T Peek();
+        T Peek();
 
-    void Update(int i);
-  }
+        void Update(int i);
+    }
 }

@@ -3,67 +3,67 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [ActionCategory("2D Toolkit/TextMesh")]
-  [HutongGames.PlayMaker.Tooltip("Set the maximum characters number of a TextMesh. \nChanges will not be updated if commit is OFF. This is so you can change multiple parameters without reconstructing the mesh repeatedly.\n Use tk2dtextMeshCommit or set commit to true on your last change for that mesh. \nNOTE: The Game Object must have a tk2dTextMesh attached.")]
-  public class Tk2dTextMeshSetMaxChars : FsmStateAction
-  {
-    [HutongGames.PlayMaker.Tooltip("The Game Object to work with. NOTE: The Game Object must have a tk2dTextMesh component attached.")]
-    [RequiredField]
-    [CheckForComponent(typeof (tk2dTextMesh))]
-    public FsmOwnerDefault gameObject;
-    [HutongGames.PlayMaker.Tooltip("The max number of characters")]
-    [UIHint(UIHint.FsmInt)]
-    public FsmInt maxChars;
-    [HutongGames.PlayMaker.Tooltip("Commit changes")]
-    [UIHint(UIHint.FsmString)]
-    public FsmBool commit;
-    [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
-    [ActionSection("")]
-    public bool everyframe;
-    private tk2dTextMesh _textMesh;
-
-    private void _getTextMesh()
+    [ActionCategory("2D Toolkit/TextMesh")]
+    [HutongGames.PlayMaker.Tooltip("Set the maximum characters number of a TextMesh. \nChanges will not be updated if commit is OFF. This is so you can change multiple parameters without reconstructing the mesh repeatedly.\n Use tk2dtextMeshCommit or set commit to true on your last change for that mesh. \nNOTE: The Game Object must have a tk2dTextMesh attached.")]
+    public class Tk2dTextMeshSetMaxChars : FsmStateAction
     {
-      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-      if ((Object) ownerDefaultTarget == (Object) null)
-        return;
-      this._textMesh = ownerDefaultTarget.GetComponent<tk2dTextMesh>();
-    }
+        [HutongGames.PlayMaker.Tooltip("The Game Object to work with. NOTE: The Game Object must have a tk2dTextMesh component attached.")]
+        [RequiredField]
+        [CheckForComponent(typeof (tk2dTextMesh))]
+        public FsmOwnerDefault gameObject;
+        [HutongGames.PlayMaker.Tooltip("The max number of characters")]
+        [UIHint(UIHint.FsmInt)]
+        public FsmInt maxChars;
+        [HutongGames.PlayMaker.Tooltip("Commit changes")]
+        [UIHint(UIHint.FsmString)]
+        public FsmBool commit;
+        [HutongGames.PlayMaker.Tooltip("Repeat every frame.")]
+        [ActionSection("")]
+        public bool everyframe;
+        private tk2dTextMesh _textMesh;
 
-    public override void Reset()
-    {
-      this.gameObject = (FsmOwnerDefault) null;
-      this.maxChars = (FsmInt) 30;
-      this.commit = (FsmBool) true;
-      this.everyframe = false;
-    }
+        private void _getTextMesh()
+        {
+            GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+            if ((Object) ownerDefaultTarget == (Object) null)
+                return;
+            this._textMesh = ownerDefaultTarget.GetComponent<tk2dTextMesh>();
+        }
 
-    public override void OnEnter()
-    {
-      this._getTextMesh();
-      this.DoSetMaxChars();
-      if (this.everyframe)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            this.gameObject = (FsmOwnerDefault) null;
+            this.maxChars = (FsmInt) 30;
+            this.commit = (FsmBool) true;
+            this.everyframe = false;
+        }
 
-    public override void OnUpdate() => this.DoSetMaxChars();
+        public override void OnEnter()
+        {
+            this._getTextMesh();
+            this.DoSetMaxChars();
+            if (this.everyframe)
+                return;
+            this.Finish();
+        }
 
-    private void DoSetMaxChars()
-    {
-      if ((Object) this._textMesh == (Object) null)
-      {
-        this.LogWarning("Missing tk2dTextMesh component: ");
-      }
-      else
-      {
-        if (this._textMesh.maxChars == this.maxChars.Value)
-          return;
-        this._textMesh.maxChars = this.maxChars.Value;
-        if (!this.commit.Value)
-          return;
-        this._textMesh.Commit();
-      }
+        public override void OnUpdate() => this.DoSetMaxChars();
+
+        private void DoSetMaxChars()
+        {
+            if ((Object) this._textMesh == (Object) null)
+            {
+                this.LogWarning("Missing tk2dTextMesh component: ");
+            }
+            else
+            {
+                if (this._textMesh.maxChars == this.maxChars.Value)
+                    return;
+                this._textMesh.maxChars = this.maxChars.Value;
+                if (!this.commit.Value)
+                    return;
+                this._textMesh.Commit();
+            }
+        }
     }
-  }
 }

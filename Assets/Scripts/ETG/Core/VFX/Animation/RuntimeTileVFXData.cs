@@ -1,8 +1,8 @@
 #nullable disable
 
 public struct RuntimeTileVFXData
-  {
-    public bool vfxHasEverBeenInstantiated;
-    public float cooldownRemaining;
-  }
+    {
+        public bool vfxHasEverBeenInstantiated;
+        public float cooldownRemaining;
+    }
 

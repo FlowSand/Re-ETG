@@ -3,7 +3,7 @@ using Dungeonator;
 #nullable disable
 
 public interface IDungeonGenerator
-  {
-    DungeonData GenerateDungeonLayout();
-  }
+    {
+        DungeonData GenerateDungeonLayout();
+    }
 

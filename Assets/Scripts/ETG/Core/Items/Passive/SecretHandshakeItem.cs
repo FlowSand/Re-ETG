@@ -1,34 +1,34 @@
 #nullable disable
 
 public class SecretHandshakeItem : PassiveItem
-  {
-    public static int NumActive;
-
-    private void Awake()
     {
-    }
+        public static int NumActive;
 
-    public override void Pickup(PlayerController player)
-    {
-      if (this.m_pickedUp)
-        return;
-      ++SecretHandshakeItem.NumActive;
-      base.Pickup(player);
-    }
+        private void Awake()
+        {
+        }
 
-    public override DebrisObject Drop(PlayerController player)
-    {
-      DebrisObject debrisObject = base.Drop(player);
-      --SecretHandshakeItem.NumActive;
-      debrisObject.GetComponent<SecretHandshakeItem>().m_pickedUpThisRun = true;
-      return debrisObject;
-    }
+        public override void Pickup(PlayerController player)
+        {
+            if (this.m_pickedUp)
+                return;
+            ++SecretHandshakeItem.NumActive;
+            base.Pickup(player);
+        }
 
-    protected override void OnDestroy()
-    {
-      if (this.m_pickedUp)
-        --SecretHandshakeItem.NumActive;
-      base.OnDestroy();
+        public override DebrisObject Drop(PlayerController player)
+        {
+            DebrisObject debrisObject = base.Drop(player);
+            --SecretHandshakeItem.NumActive;
+            debrisObject.GetComponent<SecretHandshakeItem>().m_pickedUpThisRun = true;
+            return debrisObject;
+        }
+
+        protected override void OnDestroy()
+        {
+            if (this.m_pickedUp)
+                --SecretHandshakeItem.NumActive;
+            base.OnDestroy();
+        }
     }
-  }
 

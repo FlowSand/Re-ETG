@@ -1,14 +1,14 @@
 #nullable disable
 namespace FullSerializer
 {
-  public enum fsDataType
-  {
-    Array,
-    Object,
-    Double,
-    Int64,
-    Boolean,
-    String,
-    Null,
-  }
+    public enum fsDataType
+    {
+        Array,
+        Object,
+        Double,
+        Int64,
+        Boolean,
+        String,
+        Null,
+    }
 }

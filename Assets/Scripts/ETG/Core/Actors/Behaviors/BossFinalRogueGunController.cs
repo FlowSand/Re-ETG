@@ -1,53 +1,54 @@
-using FullInspector;
 using System;
+
+using FullInspector;
 using UnityEngine;
 
 #nullable disable
 
-  public abstract class BossFinalRogueGunController : BaseBehavior<FullSerializerSerializer>
-  {
-    public BossFinalRogueController ship;
-    public BossFinalRogueGunController.FireType fireType = BossFinalRogueGunController.FireType.Triggered;
-[InspectorShowIf("IsTimed")]
-    public float initialDelay;
-[InspectorShowIf("IsTimed")]
-    public float delay;
-    private float m_shotTimer;
-
-    public bool IsTimed() => this.fireType == BossFinalRogueGunController.FireType.Timed;
-
-    public virtual void Start()
+    public abstract class BossFinalRogueGunController : BaseBehavior<FullSerializerSerializer>
     {
-      if (this.fireType == BossFinalRogueGunController.FireType.Timed)
-        this.m_shotTimer = this.initialDelay;
-      this.ship.healthHaver.OnPreDeath += new Action<Vector2>(this.OnPreDeath);
-    }
+        public BossFinalRogueController ship;
+        public BossFinalRogueGunController.FireType fireType = BossFinalRogueGunController.FireType.Triggered;
+[InspectorShowIf("IsTimed")]
+        public float initialDelay;
+[InspectorShowIf("IsTimed")]
+        public float delay;
+        private float m_shotTimer;
 
-    public virtual void Update()
-    {
-      if (!this.ship.aiActor.enabled || !this.ship.behaviorSpeculator.enabled || this.fireType != BossFinalRogueGunController.FireType.Timed || !this.IsFinished)
-        return;
-      this.m_shotTimer -= BraveTime.DeltaTime;
-      if ((double) this.m_shotTimer > 0.0)
-        return;
-      this.Fire();
-      this.m_shotTimer = this.delay;
-    }
+        public bool IsTimed() => this.fireType == BossFinalRogueGunController.FireType.Timed;
 
-    protected override void OnDestroy() => base.OnDestroy();
+        public virtual void Start()
+        {
+            if (this.fireType == BossFinalRogueGunController.FireType.Timed)
+                this.m_shotTimer = this.initialDelay;
+            this.ship.healthHaver.OnPreDeath += new Action<Vector2>(this.OnPreDeath);
+        }
 
-    private void OnPreDeath(Vector2 deathDir) => this.CeaseFire();
+        public virtual void Update()
+        {
+            if (!this.ship.aiActor.enabled || !this.ship.behaviorSpeculator.enabled || this.fireType != BossFinalRogueGunController.FireType.Timed || !this.IsFinished)
+                return;
+            this.m_shotTimer -= BraveTime.DeltaTime;
+            if ((double) this.m_shotTimer > 0.0)
+                return;
+            this.Fire();
+            this.m_shotTimer = this.delay;
+        }
 
-    public abstract void Fire();
+        protected override void OnDestroy() => base.OnDestroy();
 
-    public abstract bool IsFinished { get; }
+        private void OnPreDeath(Vector2 deathDir) => this.CeaseFire();
 
-    public abstract void CeaseFire();
+        public abstract void Fire();
+
+        public abstract bool IsFinished { get; }
+
+        public abstract void CeaseFire();
 
 public enum FireType
-    {
-      Triggered = 10, // 0x0000000A
-      Timed = 20, // 0x00000014
+        {
+            Triggered = 10, // 0x0000000A
+            Timed = 20, // 0x00000014
+        }
     }
-  }
 

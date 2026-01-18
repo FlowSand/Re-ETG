@@ -1,8 +1,8 @@
 #nullable disable
 
 public enum dfPlayDirection
-  {
-    Forward,
-    Reverse,
-  }
+    {
+        Forward,
+        Reverse,
+    }
 

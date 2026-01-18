@@ -3,46 +3,46 @@ using UnityEngine;
 #nullable disable
 namespace DaikonForge.Tween.Interpolation
 {
-  public class EulerInterpolator : Interpolator<Vector3>
-  {
-    protected static EulerInterpolator singleton;
-
-    public static Interpolator<Vector3> Default
+    public class EulerInterpolator : Interpolator<Vector3>
     {
-      get
-      {
-        if (EulerInterpolator.singleton == null)
-          EulerInterpolator.singleton = new EulerInterpolator();
-        return (Interpolator<Vector3>) EulerInterpolator.singleton;
-      }
-    }
+        protected static EulerInterpolator singleton;
 
-    public override Vector3 Add(Vector3 lhs, Vector3 rhs) => lhs + rhs;
+        public static Interpolator<Vector3> Default
+        {
+            get
+            {
+                if (EulerInterpolator.singleton == null)
+                    EulerInterpolator.singleton = new EulerInterpolator();
+                return (Interpolator<Vector3>) EulerInterpolator.singleton;
+            }
+        }
 
-    public override Vector3 Interpolate(Vector3 startValue, Vector3 endValue, float time)
-    {
-      return new Vector3(EulerInterpolator.clerp(startValue.x, endValue.x, time), EulerInterpolator.clerp(startValue.y, endValue.y, time), EulerInterpolator.clerp(startValue.z, endValue.z, time));
-    }
+        public override Vector3 Add(Vector3 lhs, Vector3 rhs) => lhs + rhs;
 
-    private static float clerp(float start, float end, float time)
-    {
-      float num1 = 0.0f;
-      float num2 = 360f;
-      float num3 = Mathf.Abs((float) (((double) num2 - (double) num1) / 2.0));
-      float num4;
-      if ((double) end - (double) start < -(double) num3)
-      {
-        float num5 = (num2 - start + end) * time;
-        num4 = start + num5;
-      }
-      else if ((double) end - (double) start > (double) num3)
-      {
-        float num6 = (float) -((double) num2 - (double) end + (double) start) * time;
-        num4 = start + num6;
-      }
-      else
-        num4 = start + (end - start) * time;
-      return num4;
+        public override Vector3 Interpolate(Vector3 startValue, Vector3 endValue, float time)
+        {
+            return new Vector3(EulerInterpolator.clerp(startValue.x, endValue.x, time), EulerInterpolator.clerp(startValue.y, endValue.y, time), EulerInterpolator.clerp(startValue.z, endValue.z, time));
+        }
+
+        private static float clerp(float start, float end, float time)
+        {
+            float num1 = 0.0f;
+            float num2 = 360f;
+            float num3 = Mathf.Abs((float) (((double) num2 - (double) num1) / 2.0));
+            float num4;
+            if ((double) end - (double) start < -(double) num3)
+            {
+                float num5 = (num2 - start + end) * time;
+                num4 = start + num5;
+            }
+            else if ((double) end - (double) start > (double) num3)
+            {
+                float num6 = (float) -((double) num2 - (double) end + (double) start) * time;
+                num4 = start + num6;
+            }
+            else
+                num4 = start + (end - start) * time;
+            return num4;
+        }
     }
-  }
 }

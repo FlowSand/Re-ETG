@@ -1,210 +1,212 @@
-using Dungeonator;
-using HutongGames.PlayMaker;
 using System.Collections;
 using System.Diagnostics;
+
+using HutongGames.PlayMaker;
 using UnityEngine;
+
+using Dungeonator;
 
 #nullable disable
 
 public class BulletPastRoomController : MonoBehaviour
-  {
-    public BulletPastRoomController.BulletRoomCategory RoomIdentifier;
-    public WarpPointHandler EntranceWarp;
-    public WarpPointHandler ExitWarp;
-    private TalkDoerLite OldBulletTalkDoer;
-    public SpeculativeRigidbody OldBulletTalkTrigger;
-    public TalkDoerLite AgunimPreDeathTalker;
-    public TalkDoerLite AgunimPostDeathTalker;
-    public tk2dSpriteAnimator AgunimFloorChunk;
-    public ScreenShakeSettings AgunimPostDeathShake;
-    public SpeculativeRigidbody AgunimFlightCollider;
-    public SpeculativeRigidbody ThroneRoomDoor;
-    public SpeculativeRigidbody ThroneRoomDoorTrigger;
-    public VFXPool ThroneRoomDoorVfx;
-    public ScreenShakeSettings ThroneRoomDoorShake;
-    private IntVector2 m_agunimFloorBasePosition;
-    private BulletPastRoomController RoomB;
-    private BulletPastRoomController RoomC;
-    private BulletPastRoomController RoomD;
-    public GameObject BulletmanEndingQuad;
-    public Texture2D[] BulletmanEndingFrames;
-    private bool m_readyForTests;
-    private float m_timeHovering;
-
-    [DebuggerHidden]
-    private IEnumerator Start()
     {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new BulletPastRoomController__Startc__Iterator0()
-      {
-        _this = this
-      };
-    }
+        public BulletPastRoomController.BulletRoomCategory RoomIdentifier;
+        public WarpPointHandler EntranceWarp;
+        public WarpPointHandler ExitWarp;
+        private TalkDoerLite OldBulletTalkDoer;
+        public SpeculativeRigidbody OldBulletTalkTrigger;
+        public TalkDoerLite AgunimPreDeathTalker;
+        public TalkDoerLite AgunimPostDeathTalker;
+        public tk2dSpriteAnimator AgunimFloorChunk;
+        public ScreenShakeSettings AgunimPostDeathShake;
+        public SpeculativeRigidbody AgunimFlightCollider;
+        public SpeculativeRigidbody ThroneRoomDoor;
+        public SpeculativeRigidbody ThroneRoomDoorTrigger;
+        public VFXPool ThroneRoomDoorVfx;
+        public ScreenShakeSettings ThroneRoomDoorShake;
+        private IntVector2 m_agunimFloorBasePosition;
+        private BulletPastRoomController RoomB;
+        private BulletPastRoomController RoomC;
+        private BulletPastRoomController RoomD;
+        public GameObject BulletmanEndingQuad;
+        public Texture2D[] BulletmanEndingFrames;
+        private bool m_readyForTests;
+        private float m_timeHovering;
 
-    private void HandleFlightCollider(
-      SpeculativeRigidbody specRigidbody,
-      SpeculativeRigidbody sourceSpecRigidbody,
-      CollisionData collisionData)
-    {
-      if (GameManager.Instance.IsLoadingLevel)
-        return;
-      PlayerController component = specRigidbody.GetComponent<PlayerController>();
-      if (!(bool) (Object) component || !component.IsFlying || GameManager.Instance.IsLoadingLevel)
-        return;
-      this.m_timeHovering += BraveTime.DeltaTime;
-      if ((double) this.m_timeHovering <= 0.5)
-        return;
-      component.ForceFall();
-    }
+        [DebuggerHidden]
+        private IEnumerator Start()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new BulletPastRoomController__Startc__Iterator0()
+            {
+                _this = this
+            };
+        }
 
-    private void PitfallIntoGunonRoom() => this.StartCoroutine(this.DoGunonPitfall());
+        private void HandleFlightCollider(
+            SpeculativeRigidbody specRigidbody,
+            SpeculativeRigidbody sourceSpecRigidbody,
+            CollisionData collisionData)
+        {
+            if (GameManager.Instance.IsLoadingLevel)
+                return;
+            PlayerController component = specRigidbody.GetComponent<PlayerController>();
+            if (!(bool) (Object) component || !component.IsFlying || GameManager.Instance.IsLoadingLevel)
+                return;
+            this.m_timeHovering += BraveTime.DeltaTime;
+            if ((double) this.m_timeHovering <= 0.5)
+                return;
+            component.ForceFall();
+        }
 
-    [DebuggerHidden]
-    private IEnumerator DoGunonPitfall()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      // ISSUE: variable of a compiler-generated type
-      BulletPastRoomController__DoGunonPitfallc__Iterator1 pitfallCIterator1 = new BulletPastRoomController__DoGunonPitfallc__Iterator1();
-      return (IEnumerator) pitfallCIterator1;
-    }
+        private void PitfallIntoGunonRoom() => this.StartCoroutine(this.DoGunonPitfall());
 
-    private void PlayerEntered(PlayerController p)
-    {
-      this.transform.position.GetAbsoluteRoom()?.SealRoom();
-    }
+        [DebuggerHidden]
+        private IEnumerator DoGunonPitfall()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            // ISSUE: variable of a compiler-generated type
+            BulletPastRoomController__DoGunonPitfallc__Iterator1 pitfallCIterator1 = new BulletPastRoomController__DoGunonPitfallc__Iterator1();
+            return (IEnumerator) pitfallCIterator1;
+        }
 
-    private void WalkedByOldBullet(
-      SpeculativeRigidbody specrigidbody,
-      SpeculativeRigidbody sourcespecrigidbody,
-      CollisionData collisiondata)
-    {
-      if (!(bool) (Object) this.OldBulletTalkDoer)
-        return;
-      FsmBool fsmBool = this.OldBulletTalkDoer.playmakerFsm.FsmVariables.FindFsmBool("giftGiven");
-      if (fsmBool == null || fsmBool.Value)
-        return;
-      this.OldBulletTalkDoer.playmakerFsm.SendEvent("playerInteract");
-    }
+        private void PlayerEntered(PlayerController p)
+        {
+            this.transform.position.GetAbsoluteRoom()?.SealRoom();
+        }
 
-    private void EnteredThroneDoorTrigger(
-      SpeculativeRigidbody specrigidbody,
-      SpeculativeRigidbody sourcespecrigidbody,
-      CollisionData collisiondata)
-    {
-      if ((bool) (Object) this.ThroneRoomDoor)
-        this.StartCoroutine(this.MoveThroneRoomDoor());
-      this.ThroneRoomDoorTrigger.OnEnterTrigger -= new SpeculativeRigidbody.OnTriggerDelegate(this.EnteredThroneDoorTrigger);
-    }
+        private void WalkedByOldBullet(
+            SpeculativeRigidbody specrigidbody,
+            SpeculativeRigidbody sourcespecrigidbody,
+            CollisionData collisiondata)
+        {
+            if (!(bool) (Object) this.OldBulletTalkDoer)
+                return;
+            FsmBool fsmBool = this.OldBulletTalkDoer.playmakerFsm.FsmVariables.FindFsmBool("giftGiven");
+            if (fsmBool == null || fsmBool.Value)
+                return;
+            this.OldBulletTalkDoer.playmakerFsm.SendEvent("playerInteract");
+        }
 
-    private void HandleRoomBCleared()
-    {
-      if ((bool) (Object) this.ThroneRoomDoorTrigger)
-        this.ThroneRoomDoorTrigger.enabled = true;
-      this.ExitWarp.DISABLED_TEMPORARILY = false;
-    }
+        private void EnteredThroneDoorTrigger(
+            SpeculativeRigidbody specrigidbody,
+            SpeculativeRigidbody sourcespecrigidbody,
+            CollisionData collisiondata)
+        {
+            if ((bool) (Object) this.ThroneRoomDoor)
+                this.StartCoroutine(this.MoveThroneRoomDoor());
+            this.ThroneRoomDoorTrigger.OnEnterTrigger -= new SpeculativeRigidbody.OnTriggerDelegate(this.EnteredThroneDoorTrigger);
+        }
 
-    [DebuggerHidden]
-    private IEnumerator MoveThroneRoomDoor()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new BulletPastRoomController__MoveThroneRoomDoorc__Iterator2()
-      {
-        _this = this
-      };
-    }
+        private void HandleRoomBCleared()
+        {
+            if ((bool) (Object) this.ThroneRoomDoorTrigger)
+                this.ThroneRoomDoorTrigger.enabled = true;
+            this.ExitWarp.DISABLED_TEMPORARILY = false;
+        }
 
-    private void Update()
-    {
-      if (Dungeon.IsGenerating || this.RoomIdentifier != BulletPastRoomController.BulletRoomCategory.ROOM_A || !this.m_readyForTests || !this.ExitWarp.DISABLED_TEMPORARILY || !((Object) GameManager.Instance.PrimaryPlayer.CurrentGun != (Object) null))
-        return;
-      UnityEngine.Debug.LogError((object) GameManager.Instance.PrimaryPlayer.CurrentGun);
-      this.ExitWarp.DISABLED_TEMPORARILY = false;
-    }
+        [DebuggerHidden]
+        private IEnumerator MoveThroneRoomDoor()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new BulletPastRoomController__MoveThroneRoomDoorc__Iterator2()
+            {
+                _this = this
+            };
+        }
 
-    [DebuggerHidden]
-    public IEnumerator HandleAgunimIntro(Transform bossTransform)
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new BulletPastRoomController__HandleAgunimIntroc__Iterator3()
-      {
-        bossTransform = bossTransform,
-        _this = this
-      };
-    }
+        private void Update()
+        {
+            if (Dungeon.IsGenerating || this.RoomIdentifier != BulletPastRoomController.BulletRoomCategory.ROOM_A || !this.m_readyForTests || !this.ExitWarp.DISABLED_TEMPORARILY || !((Object) GameManager.Instance.PrimaryPlayer.CurrentGun != (Object) null))
+                return;
+            UnityEngine.Debug.LogError((object) GameManager.Instance.PrimaryPlayer.CurrentGun);
+            this.ExitWarp.DISABLED_TEMPORARILY = false;
+        }
 
-    public void OnGanonDeath(Transform bossTransform)
-    {
-      this.StartCoroutine(this.HandleGanonDeath(bossTransform));
-    }
+        [DebuggerHidden]
+        public IEnumerator HandleAgunimIntro(Transform bossTransform)
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new BulletPastRoomController__HandleAgunimIntroc__Iterator3()
+            {
+                bossTransform = bossTransform,
+                _this = this
+            };
+        }
 
-    [DebuggerHidden]
-    public IEnumerator HandleGanonDeath(Transform bossTransform)
-    {
-      // ISSUE: object of a compiler-generated type is created
-      // ISSUE: variable of a compiler-generated type
-      BulletPastRoomController__HandleGanonDeathc__Iterator4 ganonDeathCIterator4 = new BulletPastRoomController__HandleGanonDeathc__Iterator4();
-      return (IEnumerator) ganonDeathCIterator4;
-    }
+        public void OnGanonDeath(Transform bossTransform)
+        {
+            this.StartCoroutine(this.HandleGanonDeath(bossTransform));
+        }
 
-    [DebuggerHidden]
-    public IEnumerator HandleAgunimDeath(Transform bossTransform)
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new BulletPastRoomController__HandleAgunimDeathc__Iterator5()
-      {
-        bossTransform = bossTransform,
-        _this = this
-      };
-    }
+        [DebuggerHidden]
+        public IEnumerator HandleGanonDeath(Transform bossTransform)
+        {
+            // ISSUE: object of a compiler-generated type is created
+            // ISSUE: variable of a compiler-generated type
+            BulletPastRoomController__HandleGanonDeathc__Iterator4 ganonDeathCIterator4 = new BulletPastRoomController__HandleGanonDeathc__Iterator4();
+            return (IEnumerator) ganonDeathCIterator4;
+        }
 
-    public void TriggerAgumimFloorBreak()
-    {
-      if (!((Object) this.AgunimFloorChunk != (Object) null))
-        return;
-      this.AgunimFloorChunk.transform.localPosition = new Vector3(9.75f, 10.625f, 12.375f);
-      this.AgunimFloorChunk.PlayAndDisableRenderer("agunim_lair_burst");
-      for (int x = 0; x < 4; ++x)
-      {
-        for (int y = 0; y < 4; ++y)
-          GameManager.Instance.Dungeon.data[this.m_agunimFloorBasePosition + new IntVector2(x, y)].fallingPrevented = false;
-      }
-    }
+        [DebuggerHidden]
+        public IEnumerator HandleAgunimDeath(Transform bossTransform)
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new BulletPastRoomController__HandleAgunimDeathc__Iterator5()
+            {
+                bossTransform = bossTransform,
+                _this = this
+            };
+        }
 
-    public void TriggerBulletmanEnding()
-    {
-      if (this.RoomIdentifier != BulletPastRoomController.BulletRoomCategory.ROOM_D)
-        return;
-      GameStatsManager.Instance.SetCharacterSpecificFlag(CharacterSpecificGungeonFlags.KILLED_PAST, true);
-      this.StartCoroutine(this.TriggerBulletmanEnding_CR());
-    }
+        public void TriggerAgumimFloorBreak()
+        {
+            if (!((Object) this.AgunimFloorChunk != (Object) null))
+                return;
+            this.AgunimFloorChunk.transform.localPosition = new Vector3(9.75f, 10.625f, 12.375f);
+            this.AgunimFloorChunk.PlayAndDisableRenderer("agunim_lair_burst");
+            for (int x = 0; x < 4; ++x)
+            {
+                for (int y = 0; y < 4; ++y)
+                    GameManager.Instance.Dungeon.data[this.m_agunimFloorBasePosition + new IntVector2(x, y)].fallingPrevented = false;
+            }
+        }
 
-    [DebuggerHidden]
-    public IEnumerator TriggerBulletmanEnding_CR()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new BulletPastRoomController__TriggerBulletmanEnding_CRc__Iterator6()
-      {
-        _this = this
-      };
-    }
+        public void TriggerBulletmanEnding()
+        {
+            if (this.RoomIdentifier != BulletPastRoomController.BulletRoomCategory.ROOM_D)
+                return;
+            GameStatsManager.Instance.SetCharacterSpecificFlag(CharacterSpecificGungeonFlags.KILLED_PAST, true);
+            this.StartCoroutine(this.TriggerBulletmanEnding_CR());
+        }
 
-    [DebuggerHidden]
-    private IEnumerator AnimateBulletmanEnding(tk2dSpriteFromTexture sft)
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new BulletPastRoomController__AnimateBulletmanEndingc__Iterator7()
-      {
-        sft = sft,
-        _this = this
-      };
-    }
+        [DebuggerHidden]
+        public IEnumerator TriggerBulletmanEnding_CR()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new BulletPastRoomController__TriggerBulletmanEnding_CRc__Iterator6()
+            {
+                _this = this
+            };
+        }
 
-    public enum BulletRoomCategory
-    {
-      ROOM_A,
-      ROOM_B,
-      ROOM_C,
-      ROOM_D,
+        [DebuggerHidden]
+        private IEnumerator AnimateBulletmanEnding(tk2dSpriteFromTexture sft)
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new BulletPastRoomController__AnimateBulletmanEndingc__Iterator7()
+            {
+                sft = sft,
+                _this = this
+            };
+        }
+
+        public enum BulletRoomCategory
+        {
+            ROOM_A,
+            ROOM_B,
+            ROOM_C,
+            ROOM_D,
+        }
     }
-  }
 

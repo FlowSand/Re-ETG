@@ -1,11 +1,11 @@
 #nullable disable
 namespace XInputDotNetPure
 {
-  public enum PlayerIndex
-  {
-    One,
-    Two,
-    Three,
-    Four,
-  }
+    public enum PlayerIndex
+    {
+        One,
+        Two,
+        Three,
+        Four,
+    }
 }

@@ -1,27 +1,27 @@
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [Tooltip("Set the value of a Game Object Variable in another All FSM. Accept null reference")]
-  [ActionCategory(ActionCategory.StateMachine)]
-  public class SetAllFsmGameObject : FsmStateAction
-  {
-    [RequiredField]
-    public FsmOwnerDefault gameObject;
-    public bool everyFrame;
-
-    public override void Reset()
+    [Tooltip("Set the value of a Game Object Variable in another All FSM. Accept null reference")]
+    [ActionCategory(ActionCategory.StateMachine)]
+    public class SetAllFsmGameObject : FsmStateAction
     {
-    }
+        [RequiredField]
+        public FsmOwnerDefault gameObject;
+        public bool everyFrame;
 
-    public override void OnEnter()
-    {
-      if (this.everyFrame)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+        }
 
-    private void DoSetFsmGameObject()
-    {
+        public override void OnEnter()
+        {
+            if (this.everyFrame)
+                return;
+            this.Finish();
+        }
+
+        private void DoSetFsmGameObject()
+        {
+        }
     }
-  }
 }

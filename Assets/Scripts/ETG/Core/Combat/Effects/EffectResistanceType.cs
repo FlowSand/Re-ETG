@@ -1,11 +1,11 @@
 #nullable disable
 
 public enum EffectResistanceType
-  {
-    None,
-    Fire,
-    Poison,
-    Freeze,
-    Charm,
-  }
+    {
+        None,
+        Fire,
+        Poison,
+        Freeze,
+        Charm,
+    }
 

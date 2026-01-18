@@ -5,86 +5,86 @@ using System.Collections.Generic;
 
 [Serializable]
 public class WeightedRoomCollection
-  {
-    [TrimElementTags]
-    public List<WeightedRoom> elements;
-
-    public WeightedRoomCollection() => this.elements = new List<WeightedRoom>();
-
-    public void Add(WeightedRoom w) => this.elements.Add(w);
-
-    public WeightedRoom SelectByWeight()
     {
-      List<WeightedRoom> weightedRoomList = new List<WeightedRoom>();
-      float num1 = 0.0f;
-      for (int index1 = 0; index1 < this.elements.Count; ++index1)
-      {
-        WeightedRoom element = this.elements[index1];
-        bool flag = true;
-        for (int index2 = 0; index2 < element.additionalPrerequisites.Length; ++index2)
-        {
-          if (!element.additionalPrerequisites[index2].CheckConditionsFulfilled())
-          {
-            flag = false;
-            break;
-          }
-        }
-        if (!((UnityEngine.Object) element.room != (UnityEngine.Object) null) || element.room.CheckPrerequisites())
-        {
-          if (flag)
-          {
-            weightedRoomList.Add(element);
-            num1 += element.weight;
-          }
-        }
-      }
-      if (weightedRoomList.Count == 0)
-        return (WeightedRoom) null;
-      float num2 = BraveRandom.GenerationRandomValue() * num1;
-      float num3 = 0.0f;
-      for (int index = 0; index < weightedRoomList.Count; ++index)
-      {
-        num3 += weightedRoomList[index].weight;
-        if ((double) num3 > (double) num2)
-          return weightedRoomList[index];
-      }
-      return weightedRoomList[weightedRoomList.Count - 1];
-    }
+        [TrimElementTags]
+        public List<WeightedRoom> elements;
 
-    public WeightedRoom SelectByWeightWithoutDuplicates(List<PrototypeDungeonRoom> extant)
-    {
-      List<WeightedRoom> weightedRoomList = new List<WeightedRoom>();
-      float num1 = 0.0f;
-      for (int index1 = 0; index1 < this.elements.Count; ++index1)
-      {
-        WeightedRoom element = this.elements[index1];
-        if (!extant.Contains(element.room))
+        public WeightedRoomCollection() => this.elements = new List<WeightedRoom>();
+
+        public void Add(WeightedRoom w) => this.elements.Add(w);
+
+        public WeightedRoom SelectByWeight()
         {
-          bool flag = true;
-          for (int index2 = 0; index2 < element.additionalPrerequisites.Length; ++index2)
-          {
-            if (!element.additionalPrerequisites[index2].CheckConditionsFulfilled())
+            List<WeightedRoom> weightedRoomList = new List<WeightedRoom>();
+            float num1 = 0.0f;
+            for (int index1 = 0; index1 < this.elements.Count; ++index1)
             {
-              flag = false;
-              break;
+                WeightedRoom element = this.elements[index1];
+                bool flag = true;
+                for (int index2 = 0; index2 < element.additionalPrerequisites.Length; ++index2)
+                {
+                    if (!element.additionalPrerequisites[index2].CheckConditionsFulfilled())
+                    {
+                        flag = false;
+                        break;
+                    }
+                }
+                if (!((UnityEngine.Object) element.room != (UnityEngine.Object) null) || element.room.CheckPrerequisites())
+                {
+                    if (flag)
+                    {
+                        weightedRoomList.Add(element);
+                        num1 += element.weight;
+                    }
+                }
             }
-          }
-          if (flag)
-          {
-            weightedRoomList.Add(element);
-            num1 += element.weight;
-          }
+            if (weightedRoomList.Count == 0)
+                return (WeightedRoom) null;
+            float num2 = BraveRandom.GenerationRandomValue() * num1;
+            float num3 = 0.0f;
+            for (int index = 0; index < weightedRoomList.Count; ++index)
+            {
+                num3 += weightedRoomList[index].weight;
+                if ((double) num3 > (double) num2)
+                    return weightedRoomList[index];
+            }
+            return weightedRoomList[weightedRoomList.Count - 1];
         }
-      }
-      float num2 = BraveRandom.GenerationRandomValue() * num1;
-      float num3 = 0.0f;
-      for (int index = 0; index < weightedRoomList.Count; ++index)
-      {
-        num3 += weightedRoomList[index].weight;
-        if ((double) num3 > (double) num2)
-          return weightedRoomList[index];
-      }
-      return weightedRoomList[weightedRoomList.Count - 1];
+
+        public WeightedRoom SelectByWeightWithoutDuplicates(List<PrototypeDungeonRoom> extant)
+        {
+            List<WeightedRoom> weightedRoomList = new List<WeightedRoom>();
+            float num1 = 0.0f;
+            for (int index1 = 0; index1 < this.elements.Count; ++index1)
+            {
+                WeightedRoom element = this.elements[index1];
+                if (!extant.Contains(element.room))
+                {
+                    bool flag = true;
+                    for (int index2 = 0; index2 < element.additionalPrerequisites.Length; ++index2)
+                    {
+                        if (!element.additionalPrerequisites[index2].CheckConditionsFulfilled())
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        weightedRoomList.Add(element);
+                        num1 += element.weight;
+                    }
+                }
+            }
+            float num2 = BraveRandom.GenerationRandomValue() * num1;
+            float num3 = 0.0f;
+            for (int index = 0; index < weightedRoomList.Count; ++index)
+            {
+                num3 += weightedRoomList[index].weight;
+                if ((double) num3 > (double) num2)
+                    return weightedRoomList[index];
+            }
+            return weightedRoomList[weightedRoomList.Count - 1];
+        }
     }
-  }
 

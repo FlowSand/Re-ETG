@@ -3,62 +3,62 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [ActionCategory(ActionCategory.Animator)]
-  [HutongGames.PlayMaker.Tooltip("Get the right foot bottom height.")]
-  public class GetAnimatorRightFootBottomHeight : FsmStateAction
-  {
-    [RequiredField]
-    [HutongGames.PlayMaker.Tooltip("The Target. An Animator component is required")]
-    [CheckForComponent(typeof (Animator))]
-    public FsmOwnerDefault gameObject;
-    [ActionSection("Result")]
-    [HutongGames.PlayMaker.Tooltip("The right foot bottom height.")]
-    [UIHint(UIHint.Variable)]
-    [RequiredField]
-    public FsmFloat rightFootHeight;
-    [HutongGames.PlayMaker.Tooltip("Repeat every frame during LateUpdate. Useful when value is subject to change over time.")]
-    public bool everyFrame;
-    private Animator _animator;
-
-    public override void Reset()
+    [ActionCategory(ActionCategory.Animator)]
+    [HutongGames.PlayMaker.Tooltip("Get the right foot bottom height.")]
+    public class GetAnimatorRightFootBottomHeight : FsmStateAction
     {
-      base.Reset();
-      this.gameObject = (FsmOwnerDefault) null;
-      this.rightFootHeight = (FsmFloat) null;
-      this.everyFrame = false;
-    }
+        [RequiredField]
+        [HutongGames.PlayMaker.Tooltip("The Target. An Animator component is required")]
+        [CheckForComponent(typeof (Animator))]
+        public FsmOwnerDefault gameObject;
+        [ActionSection("Result")]
+        [HutongGames.PlayMaker.Tooltip("The right foot bottom height.")]
+        [UIHint(UIHint.Variable)]
+        [RequiredField]
+        public FsmFloat rightFootHeight;
+        [HutongGames.PlayMaker.Tooltip("Repeat every frame during LateUpdate. Useful when value is subject to change over time.")]
+        public bool everyFrame;
+        private Animator _animator;
 
-    public override void OnEnter()
-    {
-      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-      if ((Object) ownerDefaultTarget == (Object) null)
-      {
-        this.Finish();
-      }
-      else
-      {
-        this._animator = ownerDefaultTarget.GetComponent<Animator>();
-        if ((Object) this._animator == (Object) null)
+        public override void Reset()
         {
-          this.Finish();
+            base.Reset();
+            this.gameObject = (FsmOwnerDefault) null;
+            this.rightFootHeight = (FsmFloat) null;
+            this.everyFrame = false;
         }
-        else
+
+        public override void OnEnter()
         {
-          this._getRightFootBottonHeight();
-          if (this.everyFrame)
-            return;
-          this.Finish();
+            GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+            if ((Object) ownerDefaultTarget == (Object) null)
+            {
+                this.Finish();
+            }
+            else
+            {
+                this._animator = ownerDefaultTarget.GetComponent<Animator>();
+                if ((Object) this._animator == (Object) null)
+                {
+                    this.Finish();
+                }
+                else
+                {
+                    this._getRightFootBottonHeight();
+                    if (this.everyFrame)
+                        return;
+                    this.Finish();
+                }
+            }
         }
-      }
-    }
 
-    public override void OnLateUpdate() => this._getRightFootBottonHeight();
+        public override void OnLateUpdate() => this._getRightFootBottonHeight();
 
-    private void _getRightFootBottonHeight()
-    {
-      if (!((Object) this._animator != (Object) null))
-        return;
-      this.rightFootHeight.Value = this._animator.rightFeetBottomHeight;
+        private void _getRightFootBottonHeight()
+        {
+            if (!((Object) this._animator != (Object) null))
+                return;
+            this.rightFootHeight.Value = this._animator.rightFeetBottomHeight;
+        }
     }
-  }
 }

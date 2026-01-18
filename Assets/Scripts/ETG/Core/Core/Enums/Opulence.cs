@@ -1,10 +1,10 @@
 #nullable disable
 
 public enum Opulence
-  {
-    PLAIN,
-    FINE,
-    ORNATE,
-    OPULENT,
-  }
+    {
+        PLAIN,
+        FINE,
+        ORNATE,
+        OPULENT,
+    }
 

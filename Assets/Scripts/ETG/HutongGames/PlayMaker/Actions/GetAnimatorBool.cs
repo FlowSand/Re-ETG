@@ -3,66 +3,66 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Gets the value of a bool parameter")]
-  [ActionCategory(ActionCategory.Animator)]
-  public class GetAnimatorBool : FsmStateActionAnimatorBase
-  {
-    [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
-    [CheckForComponent(typeof (Animator))]
-    [RequiredField]
-    public FsmOwnerDefault gameObject;
-    [HutongGames.PlayMaker.Tooltip("The animator parameter")]
-    [UIHint(UIHint.AnimatorBool)]
-    [RequiredField]
-    public FsmString parameter;
-    [UIHint(UIHint.Variable)]
-    [HutongGames.PlayMaker.Tooltip("The bool value of the animator parameter")]
-    [ActionSection("Results")]
-    [RequiredField]
-    public FsmBool result;
-    private Animator _animator;
-    private int _paramID;
-
-    public override void Reset()
+    [HutongGames.PlayMaker.Tooltip("Gets the value of a bool parameter")]
+    [ActionCategory(ActionCategory.Animator)]
+    public class GetAnimatorBool : FsmStateActionAnimatorBase
     {
-      base.Reset();
-      this.gameObject = (FsmOwnerDefault) null;
-      this.parameter = (FsmString) null;
-      this.result = (FsmBool) null;
-    }
+        [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
+        [CheckForComponent(typeof (Animator))]
+        [RequiredField]
+        public FsmOwnerDefault gameObject;
+        [HutongGames.PlayMaker.Tooltip("The animator parameter")]
+        [UIHint(UIHint.AnimatorBool)]
+        [RequiredField]
+        public FsmString parameter;
+        [UIHint(UIHint.Variable)]
+        [HutongGames.PlayMaker.Tooltip("The bool value of the animator parameter")]
+        [ActionSection("Results")]
+        [RequiredField]
+        public FsmBool result;
+        private Animator _animator;
+        private int _paramID;
 
-    public override void OnEnter()
-    {
-      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-      if ((Object) ownerDefaultTarget == (Object) null)
-      {
-        this.Finish();
-      }
-      else
-      {
-        this._animator = ownerDefaultTarget.GetComponent<Animator>();
-        if ((Object) this._animator == (Object) null)
+        public override void Reset()
         {
-          this.Finish();
+            base.Reset();
+            this.gameObject = (FsmOwnerDefault) null;
+            this.parameter = (FsmString) null;
+            this.result = (FsmBool) null;
         }
-        else
+
+        public override void OnEnter()
         {
-          this._paramID = Animator.StringToHash(this.parameter.Value);
-          this.GetParameter();
-          if (this.everyFrame)
-            return;
-          this.Finish();
+            GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+            if ((Object) ownerDefaultTarget == (Object) null)
+            {
+                this.Finish();
+            }
+            else
+            {
+                this._animator = ownerDefaultTarget.GetComponent<Animator>();
+                if ((Object) this._animator == (Object) null)
+                {
+                    this.Finish();
+                }
+                else
+                {
+                    this._paramID = Animator.StringToHash(this.parameter.Value);
+                    this.GetParameter();
+                    if (this.everyFrame)
+                        return;
+                    this.Finish();
+                }
+            }
         }
-      }
-    }
 
-    public override void OnActionUpdate() => this.GetParameter();
+        public override void OnActionUpdate() => this.GetParameter();
 
-    private void GetParameter()
-    {
-      if (!((Object) this._animator != (Object) null))
-        return;
-      this.result.Value = this._animator.GetBool(this._paramID);
+        private void GetParameter()
+        {
+            if (!((Object) this._animator != (Object) null))
+                return;
+            this.result.Value = this._animator.GetBool(this._paramID);
+        }
     }
-  }
 }

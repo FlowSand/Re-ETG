@@ -1,5 +1,5 @@
 #nullable disable
 namespace DaikonForge.Tween.Components
 {
-  public delegate void TweenComponentNotification(TweenPlayableComponent sender);
+    public delegate void TweenComponentNotification(TweenPlayableComponent sender);
 }

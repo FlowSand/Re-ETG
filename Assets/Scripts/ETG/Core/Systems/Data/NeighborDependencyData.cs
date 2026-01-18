@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 [Serializable]
 public class NeighborDependencyData
-  {
-    public List<IndexNeighborDependency> neighborDependencies;
-
-    public NeighborDependencyData(List<IndexNeighborDependency> bcs)
     {
-      this.neighborDependencies = bcs;
+        public List<IndexNeighborDependency> neighborDependencies;
+
+        public NeighborDependencyData(List<IndexNeighborDependency> bcs)
+        {
+            this.neighborDependencies = bcs;
+        }
     }
-  }
 

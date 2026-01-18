@@ -1,9 +1,9 @@
 #nullable disable
 
 public enum AkChannelConfigType
-  {
-    AK_ChannelConfigType_Anonymous,
-    AK_ChannelConfigType_Standard,
-    AK_ChannelConfigType_Ambisonic,
-  }
+    {
+        AK_ChannelConfigType_Anonymous,
+        AK_ChannelConfigType_Standard,
+        AK_ChannelConfigType_Ambisonic,
+    }
 

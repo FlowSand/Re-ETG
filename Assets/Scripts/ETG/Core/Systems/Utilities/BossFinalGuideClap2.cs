@@ -1,86 +1,88 @@
-using Brave.BulletScript;
-using FullInspector;
 using System.Collections;
 using System.Diagnostics;
+
+using FullInspector;
 using UnityEngine;
+
+using Brave.BulletScript;
 
 #nullable disable
 
 [InspectorDropdownName("Bosses/BossFinalGuide/Clap2")]
 public class BossFinalGuideClap2 : Script
-  {
-    private const int SetupTime = 40;
-    private const int HoldTime = 90;
-    private const float FireSpeed = 8f;
-
-    [DebuggerHidden]
-    protected override IEnumerator Top()
     {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new BossFinalGuideClap2__Topc__Iterator0()
-      {
-        _this = this
-      };
-    }
+        private const int SetupTime = 40;
+        private const int HoldTime = 90;
+        private const float FireSpeed = 8f;
 
-    private void FireLine(Vector2 spawn, Vector2 start, float direction)
-    {
-      this.FireLine(spawn, start, start, 1, direction);
-    }
-
-    private void FireLine(
-      Vector2 start,
-      Vector2 end,
-      int numBullets,
-      float direction,
-      float timeMultiplier = 1f,
-      bool lerpSpeed = false)
-    {
-      this.FireLine(start, start, end, numBullets, direction, timeMultiplier, lerpSpeed);
-    }
-
-    private void FireLine(
-      Vector2 spawnPoint,
-      Vector2 start,
-      Vector2 end,
-      int numBullets,
-      float direction,
-      float timeMultiplier = 1f,
-      bool lerpSpeed = false)
-    {
-      Vector2 vector2 = (end - start) / (float) Mathf.Max(1, numBullets - 1);
-      float num = 0.6666667f * timeMultiplier;
-      for (int index = 0; index < numBullets; ++index)
-      {
-        Vector2 a = numBullets != 1 ? start + vector2 * (float) index : end;
-        float speed = Vector2.Distance(a, spawnPoint) / num;
-        this.Fire(new Offset(spawnPoint, transform: string.Empty), new Brave.BulletScript.Direction((a - spawnPoint).ToAngle()), new Brave.BulletScript.Speed(speed), (Bullet) new BossFinalGuideClap2.WingBullet(direction, !lerpSpeed ? 1f : (float) index / (float) numBullets, timeMultiplier));
-      }
-    }
-
-    public class WingBullet : Bullet
-    {
-      private float m_direction;
-      private float m_speedT;
-      private float m_timeMultiplier;
-
-      public WingBullet(float direction, float speedT, float timeMultiplier)
-        : base()
-      {
-        this.m_direction = direction;
-        this.m_speedT = speedT;
-        this.m_timeMultiplier = timeMultiplier;
-      }
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossFinalGuideClap2.WingBullet__Topc__Iterator0()
+        [DebuggerHidden]
+        protected override IEnumerator Top()
         {
-          _this = this
-        };
-      }
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new BossFinalGuideClap2__Topc__Iterator0()
+            {
+                _this = this
+            };
+        }
+
+        private void FireLine(Vector2 spawn, Vector2 start, float direction)
+        {
+            this.FireLine(spawn, start, start, 1, direction);
+        }
+
+        private void FireLine(
+            Vector2 start,
+            Vector2 end,
+            int numBullets,
+            float direction,
+            float timeMultiplier = 1f,
+            bool lerpSpeed = false)
+        {
+            this.FireLine(start, start, end, numBullets, direction, timeMultiplier, lerpSpeed);
+        }
+
+        private void FireLine(
+            Vector2 spawnPoint,
+            Vector2 start,
+            Vector2 end,
+            int numBullets,
+            float direction,
+            float timeMultiplier = 1f,
+            bool lerpSpeed = false)
+        {
+            Vector2 vector2 = (end - start) / (float) Mathf.Max(1, numBullets - 1);
+            float num = 0.6666667f * timeMultiplier;
+            for (int index = 0; index < numBullets; ++index)
+            {
+                Vector2 a = numBullets != 1 ? start + vector2 * (float) index : end;
+                float speed = Vector2.Distance(a, spawnPoint) / num;
+                this.Fire(new Offset(spawnPoint, transform: string.Empty), new Brave.BulletScript.Direction((a - spawnPoint).ToAngle()), new Brave.BulletScript.Speed(speed), (Bullet) new BossFinalGuideClap2.WingBullet(direction, !lerpSpeed ? 1f : (float) index / (float) numBullets, timeMultiplier));
+            }
+        }
+
+        public class WingBullet : Bullet
+        {
+            private float m_direction;
+            private float m_speedT;
+            private float m_timeMultiplier;
+
+            public WingBullet(float direction, float speedT, float timeMultiplier)
+                : base()
+            {
+                this.m_direction = direction;
+                this.m_speedT = speedT;
+                this.m_timeMultiplier = timeMultiplier;
+            }
+
+            [DebuggerHidden]
+            protected override IEnumerator Top()
+            {
+                // ISSUE: object of a compiler-generated type is created
+                return (IEnumerator) new BossFinalGuideClap2.WingBullet__Topc__Iterator0()
+                {
+                    _this = this
+                };
+            }
+        }
     }
-  }
 

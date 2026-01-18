@@ -1,8 +1,8 @@
 #nullable disable
 namespace FullInspector.Internal
 {
-  public class tkFoldoutMetadataProvider : 
-    fiPersistentEditorStorageMetadataProvider<tkFoldoutMetadata, tkFoldoutGraphMetadataSerializer>
-  {
-  }
+    public class tkFoldoutMetadataProvider : 
+        fiPersistentEditorStorageMetadataProvider<tkFoldoutMetadata, tkFoldoutGraphMetadataSerializer>
+    {
+    }
 }

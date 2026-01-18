@@ -1,10 +1,10 @@
 #nullable disable
 namespace Brave.BulletScript
 {
-  public enum SpeedType
-  {
-    Absolute,
-    Relative,
-    Sequence,
-  }
+    public enum SpeedType
+    {
+        Absolute,
+        Relative,
+        Sequence,
+    }
 }

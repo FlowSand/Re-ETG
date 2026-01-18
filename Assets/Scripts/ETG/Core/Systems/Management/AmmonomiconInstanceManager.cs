@@ -1,97 +1,98 @@
 using System.Collections;
 using System.Diagnostics;
+
 using UnityEngine;
 
 #nullable disable
 
 public class AmmonomiconInstanceManager : MonoBehaviour
-  {
-    public AmmonomiconBookmarkController[] bookmarks;
-    private int m_currentlySelectedBookmark;
-    private dfGUIManager m_manager;
-
-    public int CurrentlySelectedTabIndex
     {
-      get => this.m_currentlySelectedBookmark;
-      set => this.m_currentlySelectedBookmark = value;
-    }
+        public AmmonomiconBookmarkController[] bookmarks;
+        private int m_currentlySelectedBookmark;
+        private dfGUIManager m_manager;
 
-    public dfGUIManager GuiManager
-    {
-      get
-      {
-        if ((Object) this.m_manager == (Object) null)
-          this.m_manager = this.GetComponent<dfGUIManager>();
-        return this.m_manager;
-      }
-    }
-
-    public bool BookmarkHasFocus
-    {
-      get
-      {
-        for (int index = 0; index < this.bookmarks.Length; ++index)
+        public int CurrentlySelectedTabIndex
         {
-          if (this.bookmarks[index].IsFocused)
-            return true;
+            get => this.m_currentlySelectedBookmark;
+            set => this.m_currentlySelectedBookmark = value;
         }
-        return false;
-      }
-    }
 
-    public void Open()
-    {
-      this.m_currentlySelectedBookmark = 0;
-      this.StartCoroutine(this.HandleOpenAmmonomicon());
-    }
+        public dfGUIManager GuiManager
+        {
+            get
+            {
+                if ((Object) this.m_manager == (Object) null)
+                    this.m_manager = this.GetComponent<dfGUIManager>();
+                return this.m_manager;
+            }
+        }
 
-    public void Close()
-    {
-      for (int index = 0; index < this.bookmarks.Length; ++index)
-        this.bookmarks[index].Disable();
-    }
+        public bool BookmarkHasFocus
+        {
+            get
+            {
+                for (int index = 0; index < this.bookmarks.Length; ++index)
+                {
+                    if (this.bookmarks[index].IsFocused)
+                        return true;
+                }
+                return false;
+            }
+        }
 
-    public void LateUpdate()
-    {
-      if (!((Object) dfGUIManager.ActiveControl == (Object) null) || this.bookmarks == null || !((Object) this.bookmarks[this.m_currentlySelectedBookmark] != (Object) null))
-        return;
-      this.bookmarks[this.m_currentlySelectedBookmark].ForceFocus();
-    }
+        public void Open()
+        {
+            this.m_currentlySelectedBookmark = 0;
+            this.StartCoroutine(this.HandleOpenAmmonomicon());
+        }
 
-    public void OpenDeath()
-    {
-      this.m_currentlySelectedBookmark = this.bookmarks.Length - 1;
-      this.StartCoroutine(this.HandleOpenAmmonomiconDeath());
-    }
+        public void Close()
+        {
+            for (int index = 0; index < this.bookmarks.Length; ++index)
+                this.bookmarks[index].Disable();
+        }
 
-    [DebuggerHidden]
-    public IEnumerator InvariantWait(float t)
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new AmmonomiconInstanceManager__InvariantWaitc__Iterator0()
-      {
-        t = t
-      };
-    }
+        public void LateUpdate()
+        {
+            if (!((Object) dfGUIManager.ActiveControl == (Object) null) || this.bookmarks == null || !((Object) this.bookmarks[this.m_currentlySelectedBookmark] != (Object) null))
+                return;
+            this.bookmarks[this.m_currentlySelectedBookmark].ForceFocus();
+        }
 
-    [DebuggerHidden]
-    public IEnumerator HandleOpenAmmonomiconDeath()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new AmmonomiconInstanceManager__HandleOpenAmmonomiconDeathc__Iterator1()
-      {
-        _this = this
-      };
-    }
+        public void OpenDeath()
+        {
+            this.m_currentlySelectedBookmark = this.bookmarks.Length - 1;
+            this.StartCoroutine(this.HandleOpenAmmonomiconDeath());
+        }
 
-    [DebuggerHidden]
-    public IEnumerator HandleOpenAmmonomicon()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new AmmonomiconInstanceManager__HandleOpenAmmonomiconc__Iterator2()
-      {
-        _this = this
-      };
+        [DebuggerHidden]
+        public IEnumerator InvariantWait(float t)
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new AmmonomiconInstanceManager__InvariantWaitc__Iterator0()
+            {
+                t = t
+            };
+        }
+
+        [DebuggerHidden]
+        public IEnumerator HandleOpenAmmonomiconDeath()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new AmmonomiconInstanceManager__HandleOpenAmmonomiconDeathc__Iterator1()
+            {
+                _this = this
+            };
+        }
+
+        [DebuggerHidden]
+        public IEnumerator HandleOpenAmmonomicon()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new AmmonomiconInstanceManager__HandleOpenAmmonomiconc__Iterator2()
+            {
+                _this = this
+            };
+        }
     }
-  }
 

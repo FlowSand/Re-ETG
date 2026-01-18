@@ -4,123 +4,123 @@ using UnityEngine;
 
 [AddComponentMenu("Daikon Forge/Examples/Sprites/Sprite Properties")]
 public class SpriteProperties : MonoBehaviour
-  {
-    public Texture2D blankTexture;
-    public dfSprite sprite;
-
-    private void Awake()
     {
-      if ((Object) this.sprite == (Object) null)
-        this.sprite = this.GetComponent<dfSprite>();
-      this.ShowBorders = true;
-      this.useGUILayout = false;
-    }
+        public Texture2D blankTexture;
+        public dfSprite sprite;
 
-    private void Start()
-    {
-    }
+        private void Awake()
+        {
+            if ((Object) this.sprite == (Object) null)
+                this.sprite = this.GetComponent<dfSprite>();
+            this.ShowBorders = true;
+            this.useGUILayout = false;
+        }
 
-    private void OnGUI()
-    {
-      if (!this.ShowBorders || (Object) this.blankTexture == (Object) null)
-        return;
-      Rect screenRect = this.sprite.GetScreenRect();
-      RectOffset border = this.sprite.SpriteInfo.border;
-      float x = screenRect.x;
-      float y = screenRect.y;
-      float width = screenRect.width;
-      float height = screenRect.height;
-      int num1 = border.left;
-      int num2 = border.right;
-      int num3 = border.top;
-      int num4 = border.bottom;
-      if (this.sprite.Flip.IsSet(dfSpriteFlip.FlipHorizontal))
-      {
-        num1 = border.right;
-        num2 = border.left;
-      }
-      if (this.sprite.Flip.IsSet(dfSpriteFlip.FlipVertical))
-      {
-        num3 = border.bottom;
-        num4 = border.top;
-      }
-      GUI.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-      GUI.DrawTexture(new Rect(x - 10f, y + (float) num3, width + 20f, 1f), (Texture) this.blankTexture);
-      GUI.DrawTexture(new Rect(x - 10f, y + height - (float) num4, width + 20f, 1f), (Texture) this.blankTexture);
-      GUI.DrawTexture(new Rect(x + (float) num1, y - 10f, 1f, height + 20f), (Texture) this.blankTexture);
-      GUI.DrawTexture(new Rect(x + width - (float) num2, y - 10f, 1f, height + 20f), (Texture) this.blankTexture);
-    }
+        private void Start()
+        {
+        }
 
-    public bool ShowBorders { get; set; }
+        private void OnGUI()
+        {
+            if (!this.ShowBorders || (Object) this.blankTexture == (Object) null)
+                return;
+            Rect screenRect = this.sprite.GetScreenRect();
+            RectOffset border = this.sprite.SpriteInfo.border;
+            float x = screenRect.x;
+            float y = screenRect.y;
+            float width = screenRect.width;
+            float height = screenRect.height;
+            int num1 = border.left;
+            int num2 = border.right;
+            int num3 = border.top;
+            int num4 = border.bottom;
+            if (this.sprite.Flip.IsSet(dfSpriteFlip.FlipHorizontal))
+            {
+                num1 = border.right;
+                num2 = border.left;
+            }
+            if (this.sprite.Flip.IsSet(dfSpriteFlip.FlipVertical))
+            {
+                num3 = border.bottom;
+                num4 = border.top;
+            }
+            GUI.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+            GUI.DrawTexture(new Rect(x - 10f, y + (float) num3, width + 20f, 1f), (Texture) this.blankTexture);
+            GUI.DrawTexture(new Rect(x - 10f, y + height - (float) num4, width + 20f, 1f), (Texture) this.blankTexture);
+            GUI.DrawTexture(new Rect(x + (float) num1, y - 10f, 1f, height + 20f), (Texture) this.blankTexture);
+            GUI.DrawTexture(new Rect(x + width - (float) num2, y - 10f, 1f, height + 20f), (Texture) this.blankTexture);
+        }
 
-    public float PatternScaleX
-    {
-      get => ((dfTiledSprite) this.sprite).TileScale.x;
-      set
-      {
-        dfTiledSprite sprite = this.sprite as dfTiledSprite;
-        sprite.TileScale = new Vector2(value, sprite.TileScale.y);
-      }
-    }
+        public bool ShowBorders { get; set; }
 
-    public float PatternScaleY
-    {
-      get => ((dfTiledSprite) this.sprite).TileScale.y;
-      set
-      {
-        dfTiledSprite sprite = this.sprite as dfTiledSprite;
-        sprite.TileScale = new Vector2(sprite.TileScale.x, value);
-      }
-    }
+        public float PatternScaleX
+        {
+            get => ((dfTiledSprite) this.sprite).TileScale.x;
+            set
+            {
+                dfTiledSprite sprite = this.sprite as dfTiledSprite;
+                sprite.TileScale = new Vector2(value, sprite.TileScale.y);
+            }
+        }
 
-    public float PatternOffsetX
-    {
-      get => ((dfTiledSprite) this.sprite).TileScroll.x;
-      set
-      {
-        dfTiledSprite sprite = this.sprite as dfTiledSprite;
-        sprite.TileScroll = new Vector2(value, sprite.TileScroll.y);
-      }
-    }
+        public float PatternScaleY
+        {
+            get => ((dfTiledSprite) this.sprite).TileScale.y;
+            set
+            {
+                dfTiledSprite sprite = this.sprite as dfTiledSprite;
+                sprite.TileScale = new Vector2(sprite.TileScale.x, value);
+            }
+        }
 
-    public float PatternOffsetY
-    {
-      get => ((dfTiledSprite) this.sprite).TileScroll.y;
-      set
-      {
-        dfTiledSprite sprite = this.sprite as dfTiledSprite;
-        sprite.TileScroll = new Vector2(sprite.TileScroll.x, value);
-      }
-    }
+        public float PatternOffsetX
+        {
+            get => ((dfTiledSprite) this.sprite).TileScroll.x;
+            set
+            {
+                dfTiledSprite sprite = this.sprite as dfTiledSprite;
+                sprite.TileScroll = new Vector2(value, sprite.TileScroll.y);
+            }
+        }
 
-    public int FillOrigin
-    {
-      get => (int) ((dfRadialSprite) this.sprite).FillOrigin;
-      set => ((dfRadialSprite) this.sprite).FillOrigin = (dfPivotPoint) value;
-    }
+        public float PatternOffsetY
+        {
+            get => ((dfTiledSprite) this.sprite).TileScroll.y;
+            set
+            {
+                dfTiledSprite sprite = this.sprite as dfTiledSprite;
+                sprite.TileScroll = new Vector2(sprite.TileScroll.x, value);
+            }
+        }
 
-    public bool FillVertical
-    {
-      get => this.sprite.FillDirection == dfFillDirection.Vertical;
-      set
-      {
-        if (value)
-          this.sprite.FillDirection = dfFillDirection.Vertical;
-        else
-          this.sprite.FillDirection = dfFillDirection.Horizontal;
-      }
-    }
+        public int FillOrigin
+        {
+            get => (int) ((dfRadialSprite) this.sprite).FillOrigin;
+            set => ((dfRadialSprite) this.sprite).FillOrigin = (dfPivotPoint) value;
+        }
 
-    public bool FlipHorizontal
-    {
-      get => this.sprite.Flip.IsSet(dfSpriteFlip.FlipHorizontal);
-      set => this.sprite.Flip = this.sprite.Flip.SetFlag(dfSpriteFlip.FlipHorizontal, value);
-    }
+        public bool FillVertical
+        {
+            get => this.sprite.FillDirection == dfFillDirection.Vertical;
+            set
+            {
+                if (value)
+                    this.sprite.FillDirection = dfFillDirection.Vertical;
+                else
+                    this.sprite.FillDirection = dfFillDirection.Horizontal;
+            }
+        }
 
-    public bool FlipVertical
-    {
-      get => this.sprite.Flip.IsSet(dfSpriteFlip.FlipVertical);
-      set => this.sprite.Flip = this.sprite.Flip.SetFlag(dfSpriteFlip.FlipVertical, value);
+        public bool FlipHorizontal
+        {
+            get => this.sprite.Flip.IsSet(dfSpriteFlip.FlipHorizontal);
+            set => this.sprite.Flip = this.sprite.Flip.SetFlag(dfSpriteFlip.FlipHorizontal, value);
+        }
+
+        public bool FlipVertical
+        {
+            get => this.sprite.Flip.IsSet(dfSpriteFlip.FlipVertical);
+            set => this.sprite.Flip = this.sprite.Flip.SetFlag(dfSpriteFlip.FlipVertical, value);
+        }
     }
-  }
 

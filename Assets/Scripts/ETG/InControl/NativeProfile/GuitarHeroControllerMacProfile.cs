@@ -1,20 +1,20 @@
 #nullable disable
 namespace InControl.NativeProfile
 {
-  public class GuitarHeroControllerMacProfile : Xbox360DriverMacProfile
-  {
-    public GuitarHeroControllerMacProfile()
+    public class GuitarHeroControllerMacProfile : Xbox360DriverMacProfile
     {
-      this.Name = "Guitar Hero Controller";
-      this.Meta = "Guitar Hero Controller on Mac";
-      this.Matchers = new NativeInputDeviceMatcher[1]
-      {
-        new NativeInputDeviceMatcher()
+        public GuitarHeroControllerMacProfile()
         {
-          VendorID = new ushort?((ushort) 5168),
-          ProductID = new ushort?((ushort) 18248)
+            this.Name = "Guitar Hero Controller";
+            this.Meta = "Guitar Hero Controller on Mac";
+            this.Matchers = new NativeInputDeviceMatcher[1]
+            {
+                new NativeInputDeviceMatcher()
+                {
+                    VendorID = new ushort?((ushort) 5168),
+                    ProductID = new ushort?((ushort) 18248)
+                }
+            };
         }
-      };
     }
-  }
 }

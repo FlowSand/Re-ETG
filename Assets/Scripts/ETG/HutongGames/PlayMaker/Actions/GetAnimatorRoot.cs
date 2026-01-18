@@ -3,74 +3,74 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Gets the avatar body mass center position and rotation.Optionally accept a GameObject to get the body transform. \nThe position and rotation are local to the gameobject")]
-  [ActionCategory(ActionCategory.Animator)]
-  public class GetAnimatorRoot : FsmStateActionAnimatorBase
-  {
-    [RequiredField]
-    [CheckForComponent(typeof (Animator))]
-    [HutongGames.PlayMaker.Tooltip("The target.")]
-    public FsmOwnerDefault gameObject;
-    [UIHint(UIHint.Variable)]
-    [HutongGames.PlayMaker.Tooltip("The avatar body mass center")]
-    [ActionSection("Results")]
-    public FsmVector3 rootPosition;
-    [HutongGames.PlayMaker.Tooltip("The avatar body mass center")]
-    [UIHint(UIHint.Variable)]
-    public FsmQuaternion rootRotation;
-    [HutongGames.PlayMaker.Tooltip("If set, apply the body mass center position and rotation to this gameObject")]
-    public FsmGameObject bodyGameObject;
-    private Animator _animator;
-    private Transform _transform;
-
-    public override void Reset()
+    [HutongGames.PlayMaker.Tooltip("Gets the avatar body mass center position and rotation.Optionally accept a GameObject to get the body transform. \nThe position and rotation are local to the gameobject")]
+    [ActionCategory(ActionCategory.Animator)]
+    public class GetAnimatorRoot : FsmStateActionAnimatorBase
     {
-      base.Reset();
-      this.gameObject = (FsmOwnerDefault) null;
-      this.rootPosition = (FsmVector3) null;
-      this.rootRotation = (FsmQuaternion) null;
-      this.bodyGameObject = (FsmGameObject) null;
-    }
+        [RequiredField]
+        [CheckForComponent(typeof (Animator))]
+        [HutongGames.PlayMaker.Tooltip("The target.")]
+        public FsmOwnerDefault gameObject;
+        [UIHint(UIHint.Variable)]
+        [HutongGames.PlayMaker.Tooltip("The avatar body mass center")]
+        [ActionSection("Results")]
+        public FsmVector3 rootPosition;
+        [HutongGames.PlayMaker.Tooltip("The avatar body mass center")]
+        [UIHint(UIHint.Variable)]
+        public FsmQuaternion rootRotation;
+        [HutongGames.PlayMaker.Tooltip("If set, apply the body mass center position and rotation to this gameObject")]
+        public FsmGameObject bodyGameObject;
+        private Animator _animator;
+        private Transform _transform;
 
-    public override void OnEnter()
-    {
-      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-      if ((Object) ownerDefaultTarget == (Object) null)
-      {
-        this.Finish();
-      }
-      else
-      {
-        this._animator = ownerDefaultTarget.GetComponent<Animator>();
-        if ((Object) this._animator == (Object) null)
+        public override void Reset()
         {
-          this.Finish();
+            base.Reset();
+            this.gameObject = (FsmOwnerDefault) null;
+            this.rootPosition = (FsmVector3) null;
+            this.rootRotation = (FsmQuaternion) null;
+            this.bodyGameObject = (FsmGameObject) null;
         }
-        else
+
+        public override void OnEnter()
         {
-          GameObject gameObject = this.bodyGameObject.Value;
-          if ((Object) gameObject != (Object) null)
-            this._transform = gameObject.transform;
-          this.DoGetBodyPosition();
-          if (this.everyFrame)
-            return;
-          this.Finish();
+            GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+            if ((Object) ownerDefaultTarget == (Object) null)
+            {
+                this.Finish();
+            }
+            else
+            {
+                this._animator = ownerDefaultTarget.GetComponent<Animator>();
+                if ((Object) this._animator == (Object) null)
+                {
+                    this.Finish();
+                }
+                else
+                {
+                    GameObject gameObject = this.bodyGameObject.Value;
+                    if ((Object) gameObject != (Object) null)
+                        this._transform = gameObject.transform;
+                    this.DoGetBodyPosition();
+                    if (this.everyFrame)
+                        return;
+                    this.Finish();
+                }
+            }
         }
-      }
-    }
 
-    public override void OnActionUpdate() => this.DoGetBodyPosition();
+        public override void OnActionUpdate() => this.DoGetBodyPosition();
 
-    private void DoGetBodyPosition()
-    {
-      if ((Object) this._animator == (Object) null)
-        return;
-      this.rootPosition.Value = this._animator.rootPosition;
-      this.rootRotation.Value = this._animator.rootRotation;
-      if (!((Object) this._transform != (Object) null))
-        return;
-      this._transform.position = this._animator.rootPosition;
-      this._transform.rotation = this._animator.rootRotation;
+        private void DoGetBodyPosition()
+        {
+            if ((Object) this._animator == (Object) null)
+                return;
+            this.rootPosition.Value = this._animator.rootPosition;
+            this.rootRotation.Value = this._animator.rootRotation;
+            if (!((Object) this._transform != (Object) null))
+                return;
+            this._transform.position = this._animator.rootPosition;
+            this._transform.rotation = this._animator.rootRotation;
+        }
     }
-  }
 }

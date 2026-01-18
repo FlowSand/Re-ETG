@@ -1,9 +1,9 @@
 #nullable disable
 namespace DaikonForge.Tween
 {
-  public enum TweenGroupMode
-  {
-    Sequential,
-    Concurrent,
-  }
+    public enum TweenGroupMode
+    {
+        Sequential,
+        Concurrent,
+    }
 }

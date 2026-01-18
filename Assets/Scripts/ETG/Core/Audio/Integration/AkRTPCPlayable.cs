@@ -1,52 +1,54 @@
-using AK.Wwise;
 using System;
+
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+
+using AK.Wwise;
 
 #nullable disable
 
 [Serializable]
 public class AkRTPCPlayable : PlayableAsset, ITimelineClipAsset
-  {
-    public bool overrideTrackObject;
-    private TimelineClip owningClip;
-    private RTPC RTPC;
-    public ExposedReference<GameObject> RTPCObject;
-    public bool setRTPCGlobally;
-    public AkRTPCPlayableBehaviour template = new AkRTPCPlayableBehaviour();
-
-    public RTPC Parameter
     {
-      get => this.RTPC;
-      set => this.RTPC = value;
-    }
+        public bool overrideTrackObject;
+        private TimelineClip owningClip;
+        private RTPC RTPC;
+        public ExposedReference<GameObject> RTPCObject;
+        public bool setRTPCGlobally;
+        public AkRTPCPlayableBehaviour template = new AkRTPCPlayableBehaviour();
 
-    public TimelineClip OwningClip
-    {
-      get => this.owningClip;
-      set => this.owningClip = value;
-    }
+        public RTPC Parameter
+        {
+            get => this.RTPC;
+            set => this.RTPC = value;
+        }
 
-    public ClipCaps clipCaps => ClipCaps.None;
+        public TimelineClip OwningClip
+        {
+            get => this.owningClip;
+            set => this.owningClip = value;
+        }
 
-    public override Playable CreatePlayable(PlayableGraph graph, GameObject go)
-    {
-      ScriptPlayable<AkRTPCPlayableBehaviour> playable = ScriptPlayable<AkRTPCPlayableBehaviour>.Create(graph, this.template);
-      AkRTPCPlayableBehaviour behaviour = playable.GetBehaviour();
-      this.InitializeBehavior(graph, ref behaviour, go);
-      return (Playable) playable;
-    }
+        public ClipCaps clipCaps => ClipCaps.None;
 
-    public void InitializeBehavior(
-      PlayableGraph graph,
-      ref AkRTPCPlayableBehaviour b,
-      GameObject owner)
-    {
-      b.overrideTrackObject = this.overrideTrackObject;
-      b.setRTPCGlobally = this.setRTPCGlobally;
-      b.rtpcObject = !this.overrideTrackObject ? owner : this.RTPCObject.Resolve(graph.GetResolver());
-      b.parameter = this.RTPC;
+        public override Playable CreatePlayable(PlayableGraph graph, GameObject go)
+        {
+            ScriptPlayable<AkRTPCPlayableBehaviour> playable = ScriptPlayable<AkRTPCPlayableBehaviour>.Create(graph, this.template);
+            AkRTPCPlayableBehaviour behaviour = playable.GetBehaviour();
+            this.InitializeBehavior(graph, ref behaviour, go);
+            return (Playable) playable;
+        }
+
+        public void InitializeBehavior(
+            PlayableGraph graph,
+            ref AkRTPCPlayableBehaviour b,
+            GameObject owner)
+        {
+            b.overrideTrackObject = this.overrideTrackObject;
+            b.setRTPCGlobally = this.setRTPCGlobally;
+            b.rtpcObject = !this.overrideTrackObject ? owner : this.RTPCObject.Resolve(graph.GetResolver());
+            b.parameter = this.RTPC;
+        }
     }
-  }
 

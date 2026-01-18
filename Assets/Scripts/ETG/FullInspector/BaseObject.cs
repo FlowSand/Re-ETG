@@ -1,83 +1,84 @@
-using FullInspector.Internal;
 using System.Collections.Generic;
+
+using FullInspector.Internal;
 using UnityEngine;
 
 #nullable disable
 namespace FullInspector
 {
-  public abstract class BaseObject : 
-    fiValueProxyEditor,
-    fiIValueProxyAPI,
-    ISerializedObject,
-    ISerializationCallbackReceiver
-  {
-    [SerializeField]
-    [NotSerialized]
-    [HideInInspector]
-    private List<Object> _objectReferences;
-    [SerializeField]
-    [HideInInspector]
-    [NotSerialized]
-    private List<string> _serializedStateKeys;
-    [SerializeField]
-    [HideInInspector]
-    [NotSerialized]
-    private List<string> _serializedStateValues;
-
-    List<Object> ISerializedObject.SerializedObjectReferences
+    public abstract class BaseObject : 
+        fiValueProxyEditor,
+        fiIValueProxyAPI,
+        ISerializedObject,
+        ISerializationCallbackReceiver
     {
-      get => this._objectReferences;
-      set => this._objectReferences = value;
-    }
+        [SerializeField]
+        [NotSerialized]
+        [HideInInspector]
+        private List<Object> _objectReferences;
+        [SerializeField]
+        [HideInInspector]
+        [NotSerialized]
+        private List<string> _serializedStateKeys;
+        [SerializeField]
+        [HideInInspector]
+        [NotSerialized]
+        private List<string> _serializedStateValues;
 
-    List<string> ISerializedObject.SerializedStateKeys
-    {
-      get => this._serializedStateKeys;
-      set => this._serializedStateKeys = value;
-    }
+        List<Object> ISerializedObject.SerializedObjectReferences
+        {
+            get => this._objectReferences;
+            set => this._objectReferences = value;
+        }
 
-    List<string> ISerializedObject.SerializedStateValues
-    {
-      get => this._serializedStateValues;
-      set => this._serializedStateValues = value;
-    }
+        List<string> ISerializedObject.SerializedStateKeys
+        {
+            get => this._serializedStateKeys;
+            set => this._serializedStateKeys = value;
+        }
 
-    bool ISerializedObject.IsRestored { get; set; }
+        List<string> ISerializedObject.SerializedStateValues
+        {
+            get => this._serializedStateValues;
+            set => this._serializedStateValues = value;
+        }
 
-    void ISerializedObject.RestoreState()
-    {
-      fiISerializedObjectUtility.RestoreState<FullSerializerSerializer>((ISerializedObject) this);
-    }
+        bool ISerializedObject.IsRestored { get; set; }
 
-    void ISerializedObject.SaveState()
-    {
-      fiISerializedObjectUtility.SaveState<FullSerializerSerializer>((ISerializedObject) this);
-    }
+        void ISerializedObject.RestoreState()
+        {
+            fiISerializedObjectUtility.RestoreState<FullSerializerSerializer>((ISerializedObject) this);
+        }
 
-    void ISerializationCallbackReceiver.OnAfterDeserialize()
-    {
-      fiISerializedObjectUtility.RestoreState<FullSerializerSerializer>((ISerializedObject) this);
-    }
+        void ISerializedObject.SaveState()
+        {
+            fiISerializedObjectUtility.SaveState<FullSerializerSerializer>((ISerializedObject) this);
+        }
 
-    void ISerializationCallbackReceiver.OnBeforeSerialize()
-    {
-      fiISerializedObjectUtility.SaveState<FullSerializerSerializer>((ISerializedObject) this);
-    }
+        void ISerializationCallbackReceiver.OnAfterDeserialize()
+        {
+            fiISerializedObjectUtility.RestoreState<FullSerializerSerializer>((ISerializedObject) this);
+        }
 
-    object fiIValueProxyAPI.Value
-    {
-      get => (object) this;
-      set
-      {
-      }
-    }
+        void ISerializationCallbackReceiver.OnBeforeSerialize()
+        {
+            fiISerializedObjectUtility.SaveState<FullSerializerSerializer>((ISerializedObject) this);
+        }
 
-    void fiIValueProxyAPI.SaveState()
-    {
-    }
+        object fiIValueProxyAPI.Value
+        {
+            get => (object) this;
+            set
+            {
+            }
+        }
 
-    void fiIValueProxyAPI.LoadState()
-    {
+        void fiIValueProxyAPI.SaveState()
+        {
+        }
+
+        void fiIValueProxyAPI.LoadState()
+        {
+        }
     }
-  }
 }

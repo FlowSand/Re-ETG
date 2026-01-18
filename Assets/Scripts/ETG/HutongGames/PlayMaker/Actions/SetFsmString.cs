@@ -3,71 +3,71 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Set the value of a String Variable in another FSM.")]
-  [ActionCategory(ActionCategory.StateMachine)]
-  [ActionTarget(typeof (PlayMakerFSM), "gameObject,fsmName", false)]
-  public class SetFsmString : FsmStateAction
-  {
-    [RequiredField]
-    [HutongGames.PlayMaker.Tooltip("The GameObject that owns the FSM.")]
-    public FsmOwnerDefault gameObject;
-    [HutongGames.PlayMaker.Tooltip("Optional name of FSM on Game Object.")]
-    [UIHint(UIHint.FsmName)]
-    public FsmString fsmName;
-    [HutongGames.PlayMaker.Tooltip("The name of the FSM variable.")]
-    [UIHint(UIHint.FsmString)]
-    [RequiredField]
-    public FsmString variableName;
-    [HutongGames.PlayMaker.Tooltip("Set the value of the variable.")]
-    public FsmString setValue;
-    [HutongGames.PlayMaker.Tooltip("Repeat every frame. Useful if the value is changing.")]
-    public bool everyFrame;
-    private GameObject goLastFrame;
-    private string fsmNameLastFrame;
-    private PlayMakerFSM fsm;
-
-    public override void Reset()
+    [HutongGames.PlayMaker.Tooltip("Set the value of a String Variable in another FSM.")]
+    [ActionCategory(ActionCategory.StateMachine)]
+    [ActionTarget(typeof (PlayMakerFSM), "gameObject,fsmName", false)]
+    public class SetFsmString : FsmStateAction
     {
-      this.gameObject = (FsmOwnerDefault) null;
-      this.fsmName = (FsmString) string.Empty;
-      this.setValue = (FsmString) null;
-    }
+        [RequiredField]
+        [HutongGames.PlayMaker.Tooltip("The GameObject that owns the FSM.")]
+        public FsmOwnerDefault gameObject;
+        [HutongGames.PlayMaker.Tooltip("Optional name of FSM on Game Object.")]
+        [UIHint(UIHint.FsmName)]
+        public FsmString fsmName;
+        [HutongGames.PlayMaker.Tooltip("The name of the FSM variable.")]
+        [UIHint(UIHint.FsmString)]
+        [RequiredField]
+        public FsmString variableName;
+        [HutongGames.PlayMaker.Tooltip("Set the value of the variable.")]
+        public FsmString setValue;
+        [HutongGames.PlayMaker.Tooltip("Repeat every frame. Useful if the value is changing.")]
+        public bool everyFrame;
+        private GameObject goLastFrame;
+        private string fsmNameLastFrame;
+        private PlayMakerFSM fsm;
 
-    public override void OnEnter()
-    {
-      this.DoSetFsmString();
-      if (this.everyFrame)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            this.gameObject = (FsmOwnerDefault) null;
+            this.fsmName = (FsmString) string.Empty;
+            this.setValue = (FsmString) null;
+        }
 
-    private void DoSetFsmString()
-    {
-      if (this.setValue == null)
-        return;
-      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-      if ((Object) ownerDefaultTarget == (Object) null)
-        return;
-      if ((Object) ownerDefaultTarget != (Object) this.goLastFrame || this.fsmName.Value != this.fsmNameLastFrame)
-      {
-        this.goLastFrame = ownerDefaultTarget;
-        this.fsmNameLastFrame = this.fsmName.Value;
-        this.fsm = ActionHelpers.GetGameObjectFsm(ownerDefaultTarget, this.fsmName.Value);
-      }
-      if ((Object) this.fsm == (Object) null)
-      {
-        this.LogWarning("Could not find FSM: " + this.fsmName.Value);
-      }
-      else
-      {
-        FsmString fsmString = this.fsm.FsmVariables.GetFsmString(this.variableName.Value);
-        if (fsmString != null)
-          fsmString.Value = this.setValue.Value;
-        else
-          this.LogWarning("Could not find variable: " + this.variableName.Value);
-      }
-    }
+        public override void OnEnter()
+        {
+            this.DoSetFsmString();
+            if (this.everyFrame)
+                return;
+            this.Finish();
+        }
 
-    public override void OnUpdate() => this.DoSetFsmString();
-  }
+        private void DoSetFsmString()
+        {
+            if (this.setValue == null)
+                return;
+            GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+            if ((Object) ownerDefaultTarget == (Object) null)
+                return;
+            if ((Object) ownerDefaultTarget != (Object) this.goLastFrame || this.fsmName.Value != this.fsmNameLastFrame)
+            {
+                this.goLastFrame = ownerDefaultTarget;
+                this.fsmNameLastFrame = this.fsmName.Value;
+                this.fsm = ActionHelpers.GetGameObjectFsm(ownerDefaultTarget, this.fsmName.Value);
+            }
+            if ((Object) this.fsm == (Object) null)
+            {
+                this.LogWarning("Could not find FSM: " + this.fsmName.Value);
+            }
+            else
+            {
+                FsmString fsmString = this.fsm.FsmVariables.GetFsmString(this.variableName.Value);
+                if (fsmString != null)
+                    fsmString.Value = this.setValue.Value;
+                else
+                    this.LogWarning("Could not find variable: " + this.variableName.Value);
+            }
+        }
+
+        public override void OnUpdate() => this.DoSetFsmString();
+    }
 }

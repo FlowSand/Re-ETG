@@ -1,6 +1,6 @@
 #nullable disable
 
-  public abstract class TargetBehaviorBase : BehaviorBase
-  {
-  }
+    public abstract class TargetBehaviorBase : BehaviorBase
+    {
+    }
 

@@ -1,10 +1,10 @@
 #nullable disable
 namespace InControl
 {
-  public enum DragAxis
-  {
-    Both,
-    Horizontal,
-    Vertical,
-  }
+    public enum DragAxis
+    {
+        Both,
+        Horizontal,
+        Vertical,
+    }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 #nullable disable
 namespace InControl
 {
-  public class ICadePluginPath : ScriptableObject
-  {
-  }
+    public class ICadePluginPath : ScriptableObject
+    {
+    }
 }

@@ -1,11 +1,11 @@
 #nullable disable
 namespace InControl
 {
-  public enum TouchType
-  {
-    Direct,
-    Indirect,
-    Stylus,
-    Mouse,
-  }
+    public enum TouchType
+    {
+        Direct,
+        Indirect,
+        Stylus,
+        Mouse,
+    }
 }

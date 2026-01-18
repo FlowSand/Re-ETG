@@ -1,59 +1,59 @@
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [ActionCategory(ActionCategory.Logic)]
-  [Tooltip("Compares 2 Strings and sends Events based on the result.")]
-  public class StringCompare : FsmStateAction
-  {
-    [UIHint(UIHint.Variable)]
-    [RequiredField]
-    public FsmString stringVariable;
-    public FsmString compareTo;
-    public FsmEvent equalEvent;
-    public FsmEvent notEqualEvent;
-    [UIHint(UIHint.Variable)]
-    [Tooltip("Store the true/false result in a bool variable.")]
-    public FsmBool storeResult;
-    [Tooltip("Repeat every frame. Useful if any of the strings are changing over time.")]
-    public bool everyFrame;
-
-    public override void Reset()
+    [ActionCategory(ActionCategory.Logic)]
+    [Tooltip("Compares 2 Strings and sends Events based on the result.")]
+    public class StringCompare : FsmStateAction
     {
-      this.stringVariable = (FsmString) null;
-      this.compareTo = (FsmString) string.Empty;
-      this.equalEvent = (FsmEvent) null;
-      this.notEqualEvent = (FsmEvent) null;
-      this.storeResult = (FsmBool) null;
-      this.everyFrame = false;
-    }
+        [UIHint(UIHint.Variable)]
+        [RequiredField]
+        public FsmString stringVariable;
+        public FsmString compareTo;
+        public FsmEvent equalEvent;
+        public FsmEvent notEqualEvent;
+        [UIHint(UIHint.Variable)]
+        [Tooltip("Store the true/false result in a bool variable.")]
+        public FsmBool storeResult;
+        [Tooltip("Repeat every frame. Useful if any of the strings are changing over time.")]
+        public bool everyFrame;
 
-    public override void OnEnter()
-    {
-      this.DoStringCompare();
-      if (this.everyFrame)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            this.stringVariable = (FsmString) null;
+            this.compareTo = (FsmString) string.Empty;
+            this.equalEvent = (FsmEvent) null;
+            this.notEqualEvent = (FsmEvent) null;
+            this.storeResult = (FsmBool) null;
+            this.everyFrame = false;
+        }
 
-    public override void OnUpdate() => this.DoStringCompare();
+        public override void OnEnter()
+        {
+            this.DoStringCompare();
+            if (this.everyFrame)
+                return;
+            this.Finish();
+        }
 
-    private void DoStringCompare()
-    {
-      if (this.stringVariable == null || this.compareTo == null)
-        return;
-      bool flag = this.stringVariable.Value == this.compareTo.Value;
-      if (this.storeResult != null)
-        this.storeResult.Value = flag;
-      if (flag && this.equalEvent != null)
-      {
-        this.Fsm.Event(this.equalEvent);
-      }
-      else
-      {
-        if (flag || this.notEqualEvent == null)
-          return;
-        this.Fsm.Event(this.notEqualEvent);
-      }
+        public override void OnUpdate() => this.DoStringCompare();
+
+        private void DoStringCompare()
+        {
+            if (this.stringVariable == null || this.compareTo == null)
+                return;
+            bool flag = this.stringVariable.Value == this.compareTo.Value;
+            if (this.storeResult != null)
+                this.storeResult.Value = flag;
+            if (flag && this.equalEvent != null)
+            {
+                this.Fsm.Event(this.equalEvent);
+            }
+            else
+            {
+                if (flag || this.notEqualEvent == null)
+                    return;
+                this.Fsm.Event(this.notEqualEvent);
+            }
+        }
     }
-  }
 }

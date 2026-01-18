@@ -3,33 +3,33 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Controls whether physics affects the Game Object.")]
-  [ActionCategory(ActionCategory.Physics)]
-  public class SetIsKinematic : ComponentAction<Rigidbody>
-  {
-    [CheckForComponent(typeof (Rigidbody))]
-    [RequiredField]
-    public FsmOwnerDefault gameObject;
-    [RequiredField]
-    public FsmBool isKinematic;
-
-    public override void Reset()
+    [HutongGames.PlayMaker.Tooltip("Controls whether physics affects the Game Object.")]
+    [ActionCategory(ActionCategory.Physics)]
+    public class SetIsKinematic : ComponentAction<Rigidbody>
     {
-      this.gameObject = (FsmOwnerDefault) null;
-      this.isKinematic = (FsmBool) false;
-    }
+        [CheckForComponent(typeof (Rigidbody))]
+        [RequiredField]
+        public FsmOwnerDefault gameObject;
+        [RequiredField]
+        public FsmBool isKinematic;
 
-    public override void OnEnter()
-    {
-      this.DoSetIsKinematic();
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            this.gameObject = (FsmOwnerDefault) null;
+            this.isKinematic = (FsmBool) false;
+        }
 
-    private void DoSetIsKinematic()
-    {
-      if (!this.UpdateCache(this.Fsm.GetOwnerDefaultTarget(this.gameObject)))
-        return;
-      this.rigidbody.isKinematic = this.isKinematic.Value;
+        public override void OnEnter()
+        {
+            this.DoSetIsKinematic();
+            this.Finish();
+        }
+
+        private void DoSetIsKinematic()
+        {
+            if (!this.UpdateCache(this.Fsm.GetOwnerDefaultTarget(this.gameObject)))
+                return;
+            this.rigidbody.isKinematic = this.isKinematic.Value;
+        }
     }
-  }
 }

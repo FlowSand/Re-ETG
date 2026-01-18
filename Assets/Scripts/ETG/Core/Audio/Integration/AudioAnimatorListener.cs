@@ -3,32 +3,32 @@ using System;
 #nullable disable
 
 public class AudioAnimatorListener : BraveBehaviour
-  {
-    public ActorAudioEvent[] animationAudioEvents;
-
-    private void Start()
     {
-      this.spriteAnimator.AnimationEventTriggered += new Action<tk2dSpriteAnimator, tk2dSpriteAnimationClip, int>(this.HandleAnimationEvent);
-      if (this.spriteAnimator.CurrentClip == null)
-        return;
-      this.HandleAnimationEvent(this.spriteAnimator, this.spriteAnimator.CurrentClip, 0);
-    }
+        public ActorAudioEvent[] animationAudioEvents;
 
-    protected void HandleAnimationEvent(
-      tk2dSpriteAnimator animator,
-      tk2dSpriteAnimationClip clip,
-      int frameNo)
-    {
-      tk2dSpriteAnimationFrame frame = clip.GetFrame(frameNo);
-      for (int index = 0; index < this.animationAudioEvents.Length; ++index)
-      {
-        if (this.animationAudioEvents[index].eventTag == frame.eventInfo)
+        private void Start()
         {
-          int num = (int) AkSoundEngine.PostEvent(this.animationAudioEvents[index].eventName, this.gameObject);
+            this.spriteAnimator.AnimationEventTriggered += new Action<tk2dSpriteAnimator, tk2dSpriteAnimationClip, int>(this.HandleAnimationEvent);
+            if (this.spriteAnimator.CurrentClip == null)
+                return;
+            this.HandleAnimationEvent(this.spriteAnimator, this.spriteAnimator.CurrentClip, 0);
         }
-      }
-    }
 
-    protected override void OnDestroy() => base.OnDestroy();
-  }
+        protected void HandleAnimationEvent(
+            tk2dSpriteAnimator animator,
+            tk2dSpriteAnimationClip clip,
+            int frameNo)
+        {
+            tk2dSpriteAnimationFrame frame = clip.GetFrame(frameNo);
+            for (int index = 0; index < this.animationAudioEvents.Length; ++index)
+            {
+                if (this.animationAudioEvents[index].eventTag == frame.eventInfo)
+                {
+                    int num = (int) AkSoundEngine.PostEvent(this.animationAudioEvents[index].eventName, this.gameObject);
+                }
+            }
+        }
+
+        protected override void OnDestroy() => base.OnDestroy();
+    }
 

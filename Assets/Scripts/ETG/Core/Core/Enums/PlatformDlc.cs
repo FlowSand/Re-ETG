@@ -1,8 +1,8 @@
 #nullable disable
 
 public enum PlatformDlc
-  {
-    EARLY_MTX_GUN,
-    EARLY_COBALT_HAMMER,
-  }
+    {
+        EARLY_MTX_GUN,
+        EARLY_COBALT_HAMMER,
+    }
 

@@ -1,10 +1,10 @@
 #nullable disable
 
 public enum TrackedMaximums
-  {
-    MOST_KEYS_HELD,
-    MOST_BLANKS_HELD,
-    MOST_ENEMIES_KILLED,
-    HIGHEST_CURSE_LEVEL,
-  }
+    {
+        MOST_KEYS_HELD,
+        MOST_BLANKS_HELD,
+        MOST_ENEMIES_KILLED,
+        HIGHEST_CURSE_LEVEL,
+    }
 

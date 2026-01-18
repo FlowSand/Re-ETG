@@ -4,9 +4,9 @@ using System;
 
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field)]
 public class dfHelpAttribute : Attribute
-  {
-    public dfHelpAttribute(string url) => this.HelpURL = url;
+    {
+        public dfHelpAttribute(string url) => this.HelpURL = url;
 
-    public string HelpURL { get; private set; }
-  }
+        public string HelpURL { get; private set; }
+    }
 

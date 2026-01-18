@@ -3,80 +3,80 @@ using System;
 #nullable disable
 
 public class AkPlaylist : AkPlaylistArray
-  {
-    private IntPtr swigCPtr;
-
-    internal AkPlaylist(IntPtr cPtr, bool cMemoryOwn)
-      : base(AkSoundEnginePINVOKE.CSharp_AkPlaylist_SWIGUpcast(cPtr), cMemoryOwn)
     {
-      this.swigCPtr = cPtr;
-    }
+        private IntPtr swigCPtr;
 
-    public AkPlaylist()
-      : this(AkSoundEnginePINVOKE.CSharp_new_AkPlaylist(), true)
-    {
-    }
-
-    internal static IntPtr getCPtr(AkPlaylist obj) => obj == null ? IntPtr.Zero : obj.swigCPtr;
-
-    internal override void setCPtr(IntPtr cPtr)
-    {
-      base.setCPtr(AkSoundEnginePINVOKE.CSharp_AkPlaylist_SWIGUpcast(cPtr));
-      this.swigCPtr = cPtr;
-    }
-
-    ~AkPlaylist() => this.Dispose();
-
-    public override void Dispose()
-    {
-      lock ((object) this)
-      {
-        if (this.swigCPtr != IntPtr.Zero)
+        internal AkPlaylist(IntPtr cPtr, bool cMemoryOwn)
+            : base(AkSoundEnginePINVOKE.CSharp_AkPlaylist_SWIGUpcast(cPtr), cMemoryOwn)
         {
-          if (this.swigCMemOwn)
-          {
-            this.swigCMemOwn = false;
-            AkSoundEnginePINVOKE.CSharp_delete_AkPlaylist(this.swigCPtr);
-          }
-          this.swigCPtr = IntPtr.Zero;
+            this.swigCPtr = cPtr;
         }
-        GC.SuppressFinalize((object) this);
-        base.Dispose();
-      }
-    }
 
-    public AKRESULT Enqueue(
-      uint in_audioNodeID,
-      int in_msDelay,
-      IntPtr in_pCustomInfo,
-      uint in_cExternals,
-      AkExternalSourceInfo in_pExternalSources)
-    {
-      return (AKRESULT) AkSoundEnginePINVOKE.CSharp_AkPlaylist_Enqueue__SWIG_0(this.swigCPtr, in_audioNodeID, in_msDelay, in_pCustomInfo, in_cExternals, AkExternalSourceInfo.getCPtr(in_pExternalSources));
-    }
+        public AkPlaylist()
+            : this(AkSoundEnginePINVOKE.CSharp_new_AkPlaylist(), true)
+        {
+        }
 
-    public AKRESULT Enqueue(
-      uint in_audioNodeID,
-      int in_msDelay,
-      IntPtr in_pCustomInfo,
-      uint in_cExternals)
-    {
-      return (AKRESULT) AkSoundEnginePINVOKE.CSharp_AkPlaylist_Enqueue__SWIG_1(this.swigCPtr, in_audioNodeID, in_msDelay, in_pCustomInfo, in_cExternals);
-    }
+        internal static IntPtr getCPtr(AkPlaylist obj) => obj == null ? IntPtr.Zero : obj.swigCPtr;
 
-    public AKRESULT Enqueue(uint in_audioNodeID, int in_msDelay, IntPtr in_pCustomInfo)
-    {
-      return (AKRESULT) AkSoundEnginePINVOKE.CSharp_AkPlaylist_Enqueue__SWIG_2(this.swigCPtr, in_audioNodeID, in_msDelay, in_pCustomInfo);
-    }
+        internal override void setCPtr(IntPtr cPtr)
+        {
+            base.setCPtr(AkSoundEnginePINVOKE.CSharp_AkPlaylist_SWIGUpcast(cPtr));
+            this.swigCPtr = cPtr;
+        }
 
-    public AKRESULT Enqueue(uint in_audioNodeID, int in_msDelay)
-    {
-      return (AKRESULT) AkSoundEnginePINVOKE.CSharp_AkPlaylist_Enqueue__SWIG_3(this.swigCPtr, in_audioNodeID, in_msDelay);
-    }
+        ~AkPlaylist() => this.Dispose();
 
-    public AKRESULT Enqueue(uint in_audioNodeID)
-    {
-      return (AKRESULT) AkSoundEnginePINVOKE.CSharp_AkPlaylist_Enqueue__SWIG_4(this.swigCPtr, in_audioNodeID);
+        public override void Dispose()
+        {
+            lock ((object) this)
+            {
+                if (this.swigCPtr != IntPtr.Zero)
+                {
+                    if (this.swigCMemOwn)
+                    {
+                        this.swigCMemOwn = false;
+                        AkSoundEnginePINVOKE.CSharp_delete_AkPlaylist(this.swigCPtr);
+                    }
+                    this.swigCPtr = IntPtr.Zero;
+                }
+                GC.SuppressFinalize((object) this);
+                base.Dispose();
+            }
+        }
+
+        public AKRESULT Enqueue(
+            uint in_audioNodeID,
+            int in_msDelay,
+            IntPtr in_pCustomInfo,
+            uint in_cExternals,
+            AkExternalSourceInfo in_pExternalSources)
+        {
+            return (AKRESULT) AkSoundEnginePINVOKE.CSharp_AkPlaylist_Enqueue__SWIG_0(this.swigCPtr, in_audioNodeID, in_msDelay, in_pCustomInfo, in_cExternals, AkExternalSourceInfo.getCPtr(in_pExternalSources));
+        }
+
+        public AKRESULT Enqueue(
+            uint in_audioNodeID,
+            int in_msDelay,
+            IntPtr in_pCustomInfo,
+            uint in_cExternals)
+        {
+            return (AKRESULT) AkSoundEnginePINVOKE.CSharp_AkPlaylist_Enqueue__SWIG_1(this.swigCPtr, in_audioNodeID, in_msDelay, in_pCustomInfo, in_cExternals);
+        }
+
+        public AKRESULT Enqueue(uint in_audioNodeID, int in_msDelay, IntPtr in_pCustomInfo)
+        {
+            return (AKRESULT) AkSoundEnginePINVOKE.CSharp_AkPlaylist_Enqueue__SWIG_2(this.swigCPtr, in_audioNodeID, in_msDelay, in_pCustomInfo);
+        }
+
+        public AKRESULT Enqueue(uint in_audioNodeID, int in_msDelay)
+        {
+            return (AKRESULT) AkSoundEnginePINVOKE.CSharp_AkPlaylist_Enqueue__SWIG_3(this.swigCPtr, in_audioNodeID, in_msDelay);
+        }
+
+        public AKRESULT Enqueue(uint in_audioNodeID)
+        {
+            return (AKRESULT) AkSoundEnginePINVOKE.CSharp_AkPlaylist_Enqueue__SWIG_4(this.swigCPtr, in_audioNodeID);
+        }
     }
-  }
 

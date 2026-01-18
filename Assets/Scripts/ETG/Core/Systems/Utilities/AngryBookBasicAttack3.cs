@@ -1,50 +1,52 @@
-using Brave.BulletScript;
-using FullInspector;
 using System.Collections;
 using System.Diagnostics;
+
+using FullInspector;
+
+using Brave.BulletScript;
 
 #nullable disable
 
 [InspectorDropdownName("AngryBook/BasicAttack3")]
 public class AngryBookBasicAttack3 : Script
-  {
-    public int LineBullets = 6;
-    public int EdgeBullets = 4;
-    public int CircleBullets = 6;
-    public int StemBullets = 6;
-    public const float Height = 2f;
-    public const float Width = 1.5f;
-    public const float CircleRadius = 0.5f;
-
-    [DebuggerHidden]
-    protected override IEnumerator Top()
     {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new AngryBookBasicAttack3__Topc__Iterator0()
-      {
-        _this = this
-      };
-    }
+        public int LineBullets = 6;
+        public int EdgeBullets = 4;
+        public int CircleBullets = 6;
+        public int StemBullets = 6;
+        public const float Height = 2f;
+        public const float Width = 1.5f;
+        public const float CircleRadius = 0.5f;
 
-    public class DefaultBullet : Bullet
-    {
-      public int spawnTime;
-
-      public DefaultBullet(int spawnTime)
-        : base()
-      {
-        this.spawnTime = spawnTime;
-      }
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new AngryBookBasicAttack3.DefaultBullet__Topc__Iterator0()
+        [DebuggerHidden]
+        protected override IEnumerator Top()
         {
-          _this = this
-        };
-      }
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new AngryBookBasicAttack3__Topc__Iterator0()
+            {
+                _this = this
+            };
+        }
+
+        public class DefaultBullet : Bullet
+        {
+            public int spawnTime;
+
+            public DefaultBullet(int spawnTime)
+                : base()
+            {
+                this.spawnTime = spawnTime;
+            }
+
+            [DebuggerHidden]
+            protected override IEnumerator Top()
+            {
+                // ISSUE: object of a compiler-generated type is created
+                return (IEnumerator) new AngryBookBasicAttack3.DefaultBullet__Topc__Iterator0()
+                {
+                    _this = this
+                };
+            }
+        }
     }
-  }
 

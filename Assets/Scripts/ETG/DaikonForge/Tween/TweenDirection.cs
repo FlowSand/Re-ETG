@@ -1,9 +1,9 @@
 #nullable disable
 namespace DaikonForge.Tween
 {
-  public enum TweenDirection
-  {
-    Forward,
-    Reverse,
-  }
+    public enum TweenDirection
+    {
+        Forward,
+        Reverse,
+    }
 }

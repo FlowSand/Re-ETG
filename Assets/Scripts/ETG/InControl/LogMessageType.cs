@@ -1,10 +1,10 @@
 #nullable disable
 namespace InControl
 {
-  public enum LogMessageType
-  {
-    Info,
-    Warning,
-    Error,
-  }
+    public enum LogMessageType
+    {
+        Info,
+        Warning,
+        Error,
+    }
 }

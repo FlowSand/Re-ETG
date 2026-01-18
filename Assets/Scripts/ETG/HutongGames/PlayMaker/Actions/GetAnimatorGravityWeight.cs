@@ -3,59 +3,59 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Returns The current gravity weight based on current animations that are played")]
-  [ActionCategory(ActionCategory.Animator)]
-  public class GetAnimatorGravityWeight : FsmStateActionAnimatorBase
-  {
-    [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
-    [CheckForComponent(typeof (Animator))]
-    [RequiredField]
-    public FsmOwnerDefault gameObject;
-    [HutongGames.PlayMaker.Tooltip("The current gravity weight based on current animations that are played")]
-    [UIHint(UIHint.Variable)]
-    [ActionSection("Results")]
-    public FsmFloat gravityWeight;
-    private Animator _animator;
-
-    public override void Reset()
+    [HutongGames.PlayMaker.Tooltip("Returns The current gravity weight based on current animations that are played")]
+    [ActionCategory(ActionCategory.Animator)]
+    public class GetAnimatorGravityWeight : FsmStateActionAnimatorBase
     {
-      base.Reset();
-      this.gameObject = (FsmOwnerDefault) null;
-      this.gravityWeight = (FsmFloat) null;
-      this.everyFrame = false;
-    }
+        [HutongGames.PlayMaker.Tooltip("The target. An Animator component is required")]
+        [CheckForComponent(typeof (Animator))]
+        [RequiredField]
+        public FsmOwnerDefault gameObject;
+        [HutongGames.PlayMaker.Tooltip("The current gravity weight based on current animations that are played")]
+        [UIHint(UIHint.Variable)]
+        [ActionSection("Results")]
+        public FsmFloat gravityWeight;
+        private Animator _animator;
 
-    public override void OnEnter()
-    {
-      GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-      if ((Object) ownerDefaultTarget == (Object) null)
-      {
-        this.Finish();
-      }
-      else
-      {
-        this._animator = ownerDefaultTarget.GetComponent<Animator>();
-        if ((Object) this._animator == (Object) null)
+        public override void Reset()
         {
-          this.Finish();
+            base.Reset();
+            this.gameObject = (FsmOwnerDefault) null;
+            this.gravityWeight = (FsmFloat) null;
+            this.everyFrame = false;
         }
-        else
+
+        public override void OnEnter()
         {
-          this.DoGetGravityWeight();
-          if (this.everyFrame)
-            return;
-          this.Finish();
+            GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+            if ((Object) ownerDefaultTarget == (Object) null)
+            {
+                this.Finish();
+            }
+            else
+            {
+                this._animator = ownerDefaultTarget.GetComponent<Animator>();
+                if ((Object) this._animator == (Object) null)
+                {
+                    this.Finish();
+                }
+                else
+                {
+                    this.DoGetGravityWeight();
+                    if (this.everyFrame)
+                        return;
+                    this.Finish();
+                }
+            }
         }
-      }
-    }
 
-    public override void OnActionUpdate() => this.DoGetGravityWeight();
+        public override void OnActionUpdate() => this.DoGetGravityWeight();
 
-    private void DoGetGravityWeight()
-    {
-      if ((Object) this._animator == (Object) null)
-        return;
-      this.gravityWeight.Value = this._animator.gravityWeight;
+        private void DoGetGravityWeight()
+        {
+            if ((Object) this._animator == (Object) null)
+                return;
+            this.gravityWeight.Value = this._animator.gravityWeight;
+        }
     }
-  }
 }

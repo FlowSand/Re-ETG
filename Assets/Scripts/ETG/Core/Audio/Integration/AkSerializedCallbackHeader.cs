@@ -3,76 +3,76 @@ using System;
 #nullable disable
 
 public class AkSerializedCallbackHeader : IDisposable
-  {
-    private IntPtr swigCPtr;
-    protected bool swigCMemOwn;
-
-    internal AkSerializedCallbackHeader(IntPtr cPtr, bool cMemoryOwn)
     {
-      this.swigCMemOwn = cMemoryOwn;
-      this.swigCPtr = cPtr;
-    }
+        private IntPtr swigCPtr;
+        protected bool swigCMemOwn;
 
-    public AkSerializedCallbackHeader()
-      : this(AkSoundEnginePINVOKE.CSharp_new_AkSerializedCallbackHeader(), true)
-    {
-    }
-
-    internal static IntPtr getCPtr(AkSerializedCallbackHeader obj)
-    {
-      return obj == null ? IntPtr.Zero : obj.swigCPtr;
-    }
-
-    internal virtual void setCPtr(IntPtr cPtr)
-    {
-      this.Dispose();
-      this.swigCPtr = cPtr;
-    }
-
-    ~AkSerializedCallbackHeader() => this.Dispose();
-
-    public virtual void Dispose()
-    {
-      lock ((object) this)
-      {
-        if (this.swigCPtr != IntPtr.Zero)
+        internal AkSerializedCallbackHeader(IntPtr cPtr, bool cMemoryOwn)
         {
-          if (this.swigCMemOwn)
-          {
-            this.swigCMemOwn = false;
-            AkSoundEnginePINVOKE.CSharp_delete_AkSerializedCallbackHeader(this.swigCPtr);
-          }
-          this.swigCPtr = IntPtr.Zero;
+            this.swigCMemOwn = cMemoryOwn;
+            this.swigCPtr = cPtr;
         }
-        GC.SuppressFinalize((object) this);
-      }
-    }
 
-    public IntPtr pPackage
-    {
-      get => AkSoundEnginePINVOKE.CSharp_AkSerializedCallbackHeader_pPackage_get(this.swigCPtr);
-    }
+        public AkSerializedCallbackHeader()
+            : this(AkSoundEnginePINVOKE.CSharp_new_AkSerializedCallbackHeader(), true)
+        {
+        }
 
-    public AkSerializedCallbackHeader pNext
-    {
-      get
-      {
-        IntPtr cPtr = AkSoundEnginePINVOKE.CSharp_AkSerializedCallbackHeader_pNext_get(this.swigCPtr);
-        return !(cPtr == IntPtr.Zero) ? new AkSerializedCallbackHeader(cPtr, false) : (AkSerializedCallbackHeader) null;
-      }
-    }
+        internal static IntPtr getCPtr(AkSerializedCallbackHeader obj)
+        {
+            return obj == null ? IntPtr.Zero : obj.swigCPtr;
+        }
 
-    public AkCallbackType eType
-    {
-      get
-      {
-        return (AkCallbackType) AkSoundEnginePINVOKE.CSharp_AkSerializedCallbackHeader_eType_get(this.swigCPtr);
-      }
-    }
+        internal virtual void setCPtr(IntPtr cPtr)
+        {
+            this.Dispose();
+            this.swigCPtr = cPtr;
+        }
 
-    public IntPtr GetData()
-    {
-      return AkSoundEnginePINVOKE.CSharp_AkSerializedCallbackHeader_GetData(this.swigCPtr);
+        ~AkSerializedCallbackHeader() => this.Dispose();
+
+        public virtual void Dispose()
+        {
+            lock ((object) this)
+            {
+                if (this.swigCPtr != IntPtr.Zero)
+                {
+                    if (this.swigCMemOwn)
+                    {
+                        this.swigCMemOwn = false;
+                        AkSoundEnginePINVOKE.CSharp_delete_AkSerializedCallbackHeader(this.swigCPtr);
+                    }
+                    this.swigCPtr = IntPtr.Zero;
+                }
+                GC.SuppressFinalize((object) this);
+            }
+        }
+
+        public IntPtr pPackage
+        {
+            get => AkSoundEnginePINVOKE.CSharp_AkSerializedCallbackHeader_pPackage_get(this.swigCPtr);
+        }
+
+        public AkSerializedCallbackHeader pNext
+        {
+            get
+            {
+                IntPtr cPtr = AkSoundEnginePINVOKE.CSharp_AkSerializedCallbackHeader_pNext_get(this.swigCPtr);
+                return !(cPtr == IntPtr.Zero) ? new AkSerializedCallbackHeader(cPtr, false) : (AkSerializedCallbackHeader) null;
+            }
+        }
+
+        public AkCallbackType eType
+        {
+            get
+            {
+                return (AkCallbackType) AkSoundEnginePINVOKE.CSharp_AkSerializedCallbackHeader_eType_get(this.swigCPtr);
+            }
+        }
+
+        public IntPtr GetData()
+        {
+            return AkSoundEnginePINVOKE.CSharp_AkSerializedCallbackHeader_GetData(this.swigCPtr);
+        }
     }
-  }
 

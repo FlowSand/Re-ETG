@@ -1,67 +1,68 @@
 using System;
+
 using UnityEngine;
 
 #nullable disable
 
 public class OnKillEnemyItem : PassiveItem
-  {
-    public OnKillEnemyItem.ActivationStyle activationStyle;
-    [ShowInInspectorIf("activationStyle", 0, false)]
-    public float chanceOfActivating = 1f;
-    [ShowInInspectorIf("activationStyle", 1, false)]
-    public int numEnemiesBeforeActivation = 3;
-    public int ammoToGain = 1;
-    public float healthToGain;
-    private int m_activations;
-
-    public override void Pickup(PlayerController player)
     {
-      if (this.m_pickedUp)
-        return;
-      base.Pickup(player);
-      player.OnKilledEnemy += new Action<PlayerController>(this.OnKilledEnemy);
-    }
+        public OnKillEnemyItem.ActivationStyle activationStyle;
+        [ShowInInspectorIf("activationStyle", 0, false)]
+        public float chanceOfActivating = 1f;
+        [ShowInInspectorIf("activationStyle", 1, false)]
+        public int numEnemiesBeforeActivation = 3;
+        public int ammoToGain = 1;
+        public float healthToGain;
+        private int m_activations;
 
-    public void OnKilledEnemy(PlayerController source)
-    {
-      ++this.m_activations;
-      if (this.activationStyle == OnKillEnemyItem.ActivationStyle.RANDOM_CHANCE)
-      {
-        if ((double) UnityEngine.Random.value >= (double) this.chanceOfActivating)
-          return;
-        this.DoEffect(source);
-      }
-      else
-      {
-        if (this.activationStyle != OnKillEnemyItem.ActivationStyle.EVERY_X_ENEMIES || this.m_activations % this.numEnemiesBeforeActivation != 0)
-          return;
-        this.DoEffect(source);
-      }
-    }
+        public override void Pickup(PlayerController player)
+        {
+            if (this.m_pickedUp)
+                return;
+            base.Pickup(player);
+            player.OnKilledEnemy += new Action<PlayerController>(this.OnKilledEnemy);
+        }
 
-    private void DoEffect(PlayerController source)
-    {
-      if (this.ammoToGain > 0 && (UnityEngine.Object) source.CurrentGun != (UnityEngine.Object) null)
-        source.CurrentGun.GainAmmo(Mathf.Max(1, (int) ((double) this.ammoToGain * 0.0099999997764825821 * (double) source.CurrentGun.AdjustedMaxAmmo)));
-      if ((double) this.healthToGain <= 0.0)
-        return;
-      source.healthHaver.ApplyHealing(this.healthToGain);
-    }
+        public void OnKilledEnemy(PlayerController source)
+        {
+            ++this.m_activations;
+            if (this.activationStyle == OnKillEnemyItem.ActivationStyle.RANDOM_CHANCE)
+            {
+                if ((double) UnityEngine.Random.value >= (double) this.chanceOfActivating)
+                    return;
+                this.DoEffect(source);
+            }
+            else
+            {
+                if (this.activationStyle != OnKillEnemyItem.ActivationStyle.EVERY_X_ENEMIES || this.m_activations % this.numEnemiesBeforeActivation != 0)
+                    return;
+                this.DoEffect(source);
+            }
+        }
 
-    public override DebrisObject Drop(PlayerController player)
-    {
-      DebrisObject debrisObject = base.Drop(player);
-      debrisObject.GetComponent<OnKillEnemyItem>().m_pickedUpThisRun = true;
-      player.OnKilledEnemy -= new Action<PlayerController>(this.OnKilledEnemy);
-      return debrisObject;
-    }
+        private void DoEffect(PlayerController source)
+        {
+            if (this.ammoToGain > 0 && (UnityEngine.Object) source.CurrentGun != (UnityEngine.Object) null)
+                source.CurrentGun.GainAmmo(Mathf.Max(1, (int) ((double) this.ammoToGain * 0.0099999997764825821 * (double) source.CurrentGun.AdjustedMaxAmmo)));
+            if ((double) this.healthToGain <= 0.0)
+                return;
+            source.healthHaver.ApplyHealing(this.healthToGain);
+        }
 
-    protected override void OnDestroy() => base.OnDestroy();
+        public override DebrisObject Drop(PlayerController player)
+        {
+            DebrisObject debrisObject = base.Drop(player);
+            debrisObject.GetComponent<OnKillEnemyItem>().m_pickedUpThisRun = true;
+            player.OnKilledEnemy -= new Action<PlayerController>(this.OnKilledEnemy);
+            return debrisObject;
+        }
 
-    public enum ActivationStyle
-    {
-      RANDOM_CHANCE,
-      EVERY_X_ENEMIES,
+        protected override void OnDestroy() => base.OnDestroy();
+
+        public enum ActivationStyle
+        {
+            RANDOM_CHANCE,
+            EVERY_X_ENEMIES,
+        }
     }
-  }
 

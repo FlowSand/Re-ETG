@@ -3,100 +3,100 @@ using System;
 #nullable disable
 
 public class AkEmitterSettings : IDisposable
-  {
-    private IntPtr swigCPtr;
-    protected bool swigCMemOwn;
-
-    internal AkEmitterSettings(IntPtr cPtr, bool cMemoryOwn)
     {
-      this.swigCMemOwn = cMemoryOwn;
-      this.swigCPtr = cPtr;
-    }
+        private IntPtr swigCPtr;
+        protected bool swigCMemOwn;
 
-    public AkEmitterSettings()
-      : this(AkSoundEnginePINVOKE.CSharp_new_AkEmitterSettings(), true)
-    {
-    }
-
-    internal static IntPtr getCPtr(AkEmitterSettings obj) => obj == null ? IntPtr.Zero : obj.swigCPtr;
-
-    internal virtual void setCPtr(IntPtr cPtr)
-    {
-      this.Dispose();
-      this.swigCPtr = cPtr;
-    }
-
-    ~AkEmitterSettings() => this.Dispose();
-
-    public virtual void Dispose()
-    {
-      lock ((object) this)
-      {
-        if (this.swigCPtr != IntPtr.Zero)
+        internal AkEmitterSettings(IntPtr cPtr, bool cMemoryOwn)
         {
-          if (this.swigCMemOwn)
-          {
-            this.swigCMemOwn = false;
-            AkSoundEnginePINVOKE.CSharp_delete_AkEmitterSettings(this.swigCPtr);
-          }
-          this.swigCPtr = IntPtr.Zero;
+            this.swigCMemOwn = cMemoryOwn;
+            this.swigCPtr = cPtr;
         }
-        GC.SuppressFinalize((object) this);
-      }
-    }
 
-    public uint reflectAuxBusID
-    {
-      set => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectAuxBusID_set(this.swigCPtr, value);
-      get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectAuxBusID_get(this.swigCPtr);
-    }
+        public AkEmitterSettings()
+            : this(AkSoundEnginePINVOKE.CSharp_new_AkEmitterSettings(), true)
+        {
+        }
 
-    public float reflectionMaxPathLength
-    {
-      set
-      {
-        AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectionMaxPathLength_set(this.swigCPtr, value);
-      }
-      get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectionMaxPathLength_get(this.swigCPtr);
-    }
+        internal static IntPtr getCPtr(AkEmitterSettings obj) => obj == null ? IntPtr.Zero : obj.swigCPtr;
 
-    public float reflectionsAuxBusGain
-    {
-      set
-      {
-        AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectionsAuxBusGain_set(this.swigCPtr, value);
-      }
-      get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectionsAuxBusGain_get(this.swigCPtr);
-    }
+        internal virtual void setCPtr(IntPtr cPtr)
+        {
+            this.Dispose();
+            this.swigCPtr = cPtr;
+        }
 
-    public uint reflectionsOrder
-    {
-      set => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectionsOrder_set(this.swigCPtr, value);
-      get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectionsOrder_get(this.swigCPtr);
-    }
+        ~AkEmitterSettings() => this.Dispose();
 
-    public uint reflectorFilterMask
-    {
-      set
-      {
-        AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectorFilterMask_set(this.swigCPtr, value);
-      }
-      get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectorFilterMask_get(this.swigCPtr);
-    }
+        public virtual void Dispose()
+        {
+            lock ((object) this)
+            {
+                if (this.swigCPtr != IntPtr.Zero)
+                {
+                    if (this.swigCMemOwn)
+                    {
+                        this.swigCMemOwn = false;
+                        AkSoundEnginePINVOKE.CSharp_delete_AkEmitterSettings(this.swigCPtr);
+                    }
+                    this.swigCPtr = IntPtr.Zero;
+                }
+                GC.SuppressFinalize((object) this);
+            }
+        }
 
-    public float roomReverbAuxBusGain
-    {
-      set
-      {
-        AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_roomReverbAuxBusGain_set(this.swigCPtr, value);
-      }
-      get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_roomReverbAuxBusGain_get(this.swigCPtr);
-    }
+        public uint reflectAuxBusID
+        {
+            set => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectAuxBusID_set(this.swigCPtr, value);
+            get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectAuxBusID_get(this.swigCPtr);
+        }
 
-    public byte useImageSources
-    {
-      set => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_useImageSources_set(this.swigCPtr, value);
-      get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_useImageSources_get(this.swigCPtr);
+        public float reflectionMaxPathLength
+        {
+            set
+            {
+                AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectionMaxPathLength_set(this.swigCPtr, value);
+            }
+            get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectionMaxPathLength_get(this.swigCPtr);
+        }
+
+        public float reflectionsAuxBusGain
+        {
+            set
+            {
+                AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectionsAuxBusGain_set(this.swigCPtr, value);
+            }
+            get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectionsAuxBusGain_get(this.swigCPtr);
+        }
+
+        public uint reflectionsOrder
+        {
+            set => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectionsOrder_set(this.swigCPtr, value);
+            get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectionsOrder_get(this.swigCPtr);
+        }
+
+        public uint reflectorFilterMask
+        {
+            set
+            {
+                AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectorFilterMask_set(this.swigCPtr, value);
+            }
+            get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_reflectorFilterMask_get(this.swigCPtr);
+        }
+
+        public float roomReverbAuxBusGain
+        {
+            set
+            {
+                AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_roomReverbAuxBusGain_set(this.swigCPtr, value);
+            }
+            get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_roomReverbAuxBusGain_get(this.swigCPtr);
+        }
+
+        public byte useImageSources
+        {
+            set => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_useImageSources_set(this.swigCPtr, value);
+            get => AkSoundEnginePINVOKE.CSharp_AkEmitterSettings_useImageSources_get(this.swigCPtr);
+        }
     }
-  }
 

@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 [Serializable]
 public class PrototypeIndexOverrideData
-  {
-    public List<int> indices;
+    {
+        public List<int> indices;
 
-    public PrototypeIndexOverrideData() => this.indices = new List<int>();
-  }
+        public PrototypeIndexOverrideData() => this.indices = new List<int>();
+    }
 

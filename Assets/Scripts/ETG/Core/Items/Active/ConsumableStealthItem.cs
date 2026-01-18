@@ -1,48 +1,49 @@
 using System;
 using System.Collections;
 using System.Diagnostics;
+
 using UnityEngine;
 
 #nullable disable
 
 public class ConsumableStealthItem : PlayerItem
-  {
-    public float Duration = 10f;
-    public GameObject poofVfx;
-
-    protected override void DoEffect(PlayerController user)
     {
-      base.DoEffect(user);
-      int num = (int) AkSoundEngine.PostEvent("Play_ENM_wizardred_appear_01", this.gameObject);
-      user.StartCoroutine(this.HandleStealth(user));
-    }
+        public float Duration = 10f;
+        public GameObject poofVfx;
 
-    [DebuggerHidden]
-    private IEnumerator HandleStealth(PlayerController user)
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new ConsumableStealthItem__HandleStealthc__Iterator0()
-      {
-        user = user,
-        _this = this
-      };
-    }
+        protected override void DoEffect(PlayerController user)
+        {
+            base.DoEffect(user);
+            int num = (int) AkSoundEngine.PostEvent("Play_ENM_wizardred_appear_01", this.gameObject);
+            user.StartCoroutine(this.HandleStealth(user));
+        }
 
-    private void BreakStealthOnSteal(PlayerController arg1, ShopItemController arg2)
-    {
-      this.BreakStealth(arg1);
-    }
+        [DebuggerHidden]
+        private IEnumerator HandleStealth(PlayerController user)
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new ConsumableStealthItem__HandleStealthc__Iterator0()
+            {
+                user = user,
+                _this = this
+            };
+        }
 
-    private void BreakStealth(PlayerController obj)
-    {
-      obj.PlayEffectOnActor(this.poofVfx, Vector3.zero, false, true);
-      obj.OnDidUnstealthyAction -= new Action<PlayerController>(this.BreakStealth);
-      obj.OnItemStolen -= new Action<PlayerController, ShopItemController>(this.BreakStealthOnSteal);
-      obj.specRigidbody.RemoveCollisionLayerIgnoreOverride(CollisionMask.LayerToMask(CollisionLayer.EnemyHitBox, CollisionLayer.EnemyCollider));
-      obj.ChangeSpecialShaderFlag(1, 0.0f);
-      obj.SetIsStealthed(false, "smoke");
-      obj.SetCapableOfStealing(false, nameof (ConsumableStealthItem));
-      int num = (int) AkSoundEngine.PostEvent("Play_ENM_wizardred_appear_01", this.gameObject);
+        private void BreakStealthOnSteal(PlayerController arg1, ShopItemController arg2)
+        {
+            this.BreakStealth(arg1);
+        }
+
+        private void BreakStealth(PlayerController obj)
+        {
+            obj.PlayEffectOnActor(this.poofVfx, Vector3.zero, false, true);
+            obj.OnDidUnstealthyAction -= new Action<PlayerController>(this.BreakStealth);
+            obj.OnItemStolen -= new Action<PlayerController, ShopItemController>(this.BreakStealthOnSteal);
+            obj.specRigidbody.RemoveCollisionLayerIgnoreOverride(CollisionMask.LayerToMask(CollisionLayer.EnemyHitBox, CollisionLayer.EnemyCollider));
+            obj.ChangeSpecialShaderFlag(1, 0.0f);
+            obj.SetIsStealthed(false, "smoke");
+            obj.SetCapableOfStealing(false, nameof (ConsumableStealthItem));
+            int num = (int) AkSoundEngine.PostEvent("Play_ENM_wizardred_appear_01", this.gameObject);
+        }
     }
-  }
 

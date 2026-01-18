@@ -1,11 +1,11 @@
 #nullable disable
 
 public enum GunHandedness
-  {
-    AutoDetect,
-    TwoHanded,
-    OneHanded,
-    HiddenOneHanded,
-    NoHanded,
-  }
+    {
+        AutoDetect,
+        TwoHanded,
+        OneHanded,
+        HiddenOneHanded,
+        NoHanded,
+    }
 

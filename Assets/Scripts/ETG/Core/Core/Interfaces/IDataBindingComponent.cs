@@ -1,11 +1,11 @@
 #nullable disable
 
 public interface IDataBindingComponent
-  {
-    bool IsBound { get; }
+    {
+        bool IsBound { get; }
 
-    void Bind();
+        void Bind();
 
-    void Unbind();
-  }
+        void Unbind();
+    }
 

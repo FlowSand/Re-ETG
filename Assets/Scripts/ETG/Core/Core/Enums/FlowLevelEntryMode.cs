@@ -1,8 +1,8 @@
 #nullable disable
 
 public enum FlowLevelEntryMode
-  {
-    NONE,
-    ALL_MIMICS,
-  }
+    {
+        NONE,
+        ALL_MIMICS,
+    }
 

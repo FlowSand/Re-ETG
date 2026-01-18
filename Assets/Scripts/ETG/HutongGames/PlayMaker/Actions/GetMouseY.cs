@@ -3,33 +3,33 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Gets the Y Position of the mouse and stores it in a Float Variable.")]
-  [ActionCategory(ActionCategory.Input)]
-  public class GetMouseY : FsmStateAction
-  {
-    [UIHint(UIHint.Variable)]
-    [RequiredField]
-    public FsmFloat storeResult;
-    public bool normalize;
-
-    public override void Reset()
+    [HutongGames.PlayMaker.Tooltip("Gets the Y Position of the mouse and stores it in a Float Variable.")]
+    [ActionCategory(ActionCategory.Input)]
+    public class GetMouseY : FsmStateAction
     {
-      this.storeResult = (FsmFloat) null;
-      this.normalize = true;
+        [UIHint(UIHint.Variable)]
+        [RequiredField]
+        public FsmFloat storeResult;
+        public bool normalize;
+
+        public override void Reset()
+        {
+            this.storeResult = (FsmFloat) null;
+            this.normalize = true;
+        }
+
+        public override void OnEnter() => this.DoGetMouseY();
+
+        public override void OnUpdate() => this.DoGetMouseY();
+
+        private void DoGetMouseY()
+        {
+            if (this.storeResult == null)
+                return;
+            float y = Input.mousePosition.y;
+            if (this.normalize)
+                y /= (float) Screen.height;
+            this.storeResult.Value = y;
+        }
     }
-
-    public override void OnEnter() => this.DoGetMouseY();
-
-    public override void OnUpdate() => this.DoGetMouseY();
-
-    private void DoGetMouseY()
-    {
-      if (this.storeResult == null)
-        return;
-      float y = Input.mousePosition.y;
-      if (this.normalize)
-        y /= (float) Screen.height;
-      this.storeResult.Value = y;
-    }
-  }
 }

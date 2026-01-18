@@ -1,8 +1,8 @@
 #nullable disable
 namespace FullInspector
 {
-  public struct fiGraphMetadataChild
-  {
-    public fiGraphMetadata Metadata;
-  }
+    public struct fiGraphMetadataChild
+    {
+        public fiGraphMetadata Metadata;
+    }
 }

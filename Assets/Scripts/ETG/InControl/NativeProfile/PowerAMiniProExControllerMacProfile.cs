@@ -1,30 +1,30 @@
 #nullable disable
 namespace InControl.NativeProfile
 {
-  public class PowerAMiniProExControllerMacProfile : Xbox360DriverMacProfile
-  {
-    public PowerAMiniProExControllerMacProfile()
+    public class PowerAMiniProExControllerMacProfile : Xbox360DriverMacProfile
     {
-      this.Name = "PowerA Mini Pro Ex Controller";
-      this.Meta = "PowerA Mini Pro Ex Controller on Mac";
-      this.Matchers = new NativeInputDeviceMatcher[3]
-      {
-        new NativeInputDeviceMatcher()
+        public PowerAMiniProExControllerMacProfile()
         {
-          VendorID = new ushort?((ushort) 5604),
-          ProductID = new ushort?((ushort) 16128)
-        },
-        new NativeInputDeviceMatcher()
-        {
-          VendorID = new ushort?((ushort) 9414),
-          ProductID = new ushort?((ushort) 21274)
-        },
-        new NativeInputDeviceMatcher()
-        {
-          VendorID = new ushort?((ushort) 9414),
-          ProductID = new ushort?((ushort) 21248)
+            this.Name = "PowerA Mini Pro Ex Controller";
+            this.Meta = "PowerA Mini Pro Ex Controller on Mac";
+            this.Matchers = new NativeInputDeviceMatcher[3]
+            {
+                new NativeInputDeviceMatcher()
+                {
+                    VendorID = new ushort?((ushort) 5604),
+                    ProductID = new ushort?((ushort) 16128)
+                },
+                new NativeInputDeviceMatcher()
+                {
+                    VendorID = new ushort?((ushort) 9414),
+                    ProductID = new ushort?((ushort) 21274)
+                },
+                new NativeInputDeviceMatcher()
+                {
+                    VendorID = new ushort?((ushort) 9414),
+                    ProductID = new ushort?((ushort) 21248)
+                }
+            };
         }
-      };
     }
-  }
 }

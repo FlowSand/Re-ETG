@@ -1,9 +1,9 @@
 #nullable disable
 
 public interface SingleSpawnableGunPlacedObject
-  {
-    void Initialize(Gun sourceGun);
+    {
+        void Initialize(Gun sourceGun);
 
-    void Deactivate();
-  }
+        void Deactivate();
+    }
 

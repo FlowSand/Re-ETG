@@ -1,8 +1,8 @@
 #nullable disable
 
 public enum WeaponType
-  {
-    AIShooterProjectile = 0,
-    BulletScript = 2,
-  }
+    {
+        AIShooterProjectile = 0,
+        BulletScript = 2,
+    }
 

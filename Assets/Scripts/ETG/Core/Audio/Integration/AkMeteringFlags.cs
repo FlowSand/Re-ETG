@@ -1,11 +1,11 @@
 #nullable disable
 
 public enum AkMeteringFlags
-  {
-    AK_NoMetering = 0,
-    AK_EnableBusMeter_Peak = 1,
-    AK_EnableBusMeter_TruePeak = 2,
-    AK_EnableBusMeter_RMS = 4,
-    AK_EnableBusMeter_KPower = 16, // 0x00000010
-  }
+    {
+        AK_NoMetering = 0,
+        AK_EnableBusMeter_Peak = 1,
+        AK_EnableBusMeter_TruePeak = 2,
+        AK_EnableBusMeter_RMS = 4,
+        AK_EnableBusMeter_KPower = 16, // 0x00000010
+    }
 

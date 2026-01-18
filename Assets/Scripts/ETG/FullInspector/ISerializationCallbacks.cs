@@ -1,14 +1,14 @@
 #nullable disable
 namespace FullInspector
 {
-  public interface ISerializationCallbacks
-  {
-    void OnBeforeSerialize();
+    public interface ISerializationCallbacks
+    {
+        void OnBeforeSerialize();
 
-    void OnAfterSerialize();
+        void OnAfterSerialize();
 
-    void OnBeforeDeserialize();
+        void OnBeforeDeserialize();
 
-    void OnAfterDeserialize();
-  }
+        void OnAfterDeserialize();
+    }
 }

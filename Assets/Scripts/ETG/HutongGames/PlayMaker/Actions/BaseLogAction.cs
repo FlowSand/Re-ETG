@@ -1,10 +1,10 @@
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  public abstract class BaseLogAction : FsmStateAction
-  {
-    public bool sendToUnityLog;
+    public abstract class BaseLogAction : FsmStateAction
+    {
+        public bool sendToUnityLog;
 
-    public override void Reset() => this.sendToUnityLog = false;
-  }
+        public override void Reset() => this.sendToUnityLog = false;
+    }
 }

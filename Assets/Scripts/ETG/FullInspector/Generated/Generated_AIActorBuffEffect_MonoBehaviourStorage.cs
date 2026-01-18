@@ -4,9 +4,9 @@ using UnityEngine;
 #nullable disable
 namespace FullInspector.Generated
 {
-  [AddComponentMenu("")]
-  public class Generated_AIActorBuffEffect_MonoBehaviourStorage : 
-    fiPropertyDrawerMonoBehaviorContainer<AIActorBuffEffect>
-  {
-  }
+    [AddComponentMenu("")]
+    public class Generated_AIActorBuffEffect_MonoBehaviourStorage : 
+        fiPropertyDrawerMonoBehaviorContainer<AIActorBuffEffect>
+    {
+    }
 }

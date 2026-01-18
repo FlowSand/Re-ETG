@@ -1,48 +1,49 @@
 using System.Collections;
 using System.Diagnostics;
+
 using UnityEngine;
 
 #nullable disable
 
 public class CharacterSelectFacecardIdleDoer : BraveBehaviour
-  {
-    public string appearAnimation = "_appear";
-    public string coreIdleAnimation;
-    public float idleMin = 4f;
-    public float idleMax = 10f;
-    public bool usesMultipleIdleAnimations;
-    public string[] multipleIdleAnimations;
-    public Texture2D EeveeTex;
-    protected int lastPhase = -1;
-
-    private void OnEnable()
     {
-      if ((bool) (Object) this.EeveeTex)
-      {
-        this.sprite.usesOverrideMaterial = true;
-        this.sprite.renderer.material.shader = Shader.Find("Brave/Internal/GlitchEevee");
-        this.sprite.renderer.sharedMaterial.SetTexture("_EeveeTex", (Texture) this.EeveeTex);
-      }
-      this.spriteAnimator.Play(this.appearAnimation);
-      this.StartCoroutine(this.HandleCoreIdle());
-    }
+        public string appearAnimation = "_appear";
+        public string coreIdleAnimation;
+        public float idleMin = 4f;
+        public float idleMax = 10f;
+        public bool usesMultipleIdleAnimations;
+        public string[] multipleIdleAnimations;
+        public Texture2D EeveeTex;
+        protected int lastPhase = -1;
 
-    private void OnDisable()
-    {
-      this.spriteAnimator.StopAndResetFrame();
-      this.StopAllCoroutines();
-    }
+        private void OnEnable()
+        {
+            if ((bool) (Object) this.EeveeTex)
+            {
+                this.sprite.usesOverrideMaterial = true;
+                this.sprite.renderer.material.shader = Shader.Find("Brave/Internal/GlitchEevee");
+                this.sprite.renderer.sharedMaterial.SetTexture("_EeveeTex", (Texture) this.EeveeTex);
+            }
+            this.spriteAnimator.Play(this.appearAnimation);
+            this.StartCoroutine(this.HandleCoreIdle());
+        }
 
-    [DebuggerHidden]
-    private IEnumerator HandleCoreIdle()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new CharacterSelectFacecardIdleDoer__HandleCoreIdlec__Iterator0()
-      {
-        _this = this
-      };
-    }
+        private void OnDisable()
+        {
+            this.spriteAnimator.StopAndResetFrame();
+            this.StopAllCoroutines();
+        }
 
-    protected override void OnDestroy() => base.OnDestroy();
-  }
+        [DebuggerHidden]
+        private IEnumerator HandleCoreIdle()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new CharacterSelectFacecardIdleDoer__HandleCoreIdlec__Iterator0()
+            {
+                _this = this
+            };
+        }
+
+        protected override void OnDestroy() => base.OnDestroy();
+    }
 

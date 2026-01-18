@@ -1,33 +1,35 @@
-using Brave.BulletScript;
 using System;
 using System.Collections;
+
 using UnityEngine;
+
+using Brave.BulletScript;
 
 #nullable disable
 
 public class CubulonSlam1 : Script
-  {
-    private const int NumBullets = 11;
-
-    protected override IEnumerator Top()
     {
-      this.FireLine(45f);
-      this.FireLine(135f);
-      this.FireLine(225f);
-      this.FireLine(315f);
-      return (IEnumerator) null;
-    }
+        private const int NumBullets = 11;
 
-    private void FireLine(float startingAngle)
-    {
-      float num1 = 9f;
-      for (int index = 0; index < 11; ++index)
-      {
-        float num2 = Mathf.Atan((float) (((double) index * (double) num1 - 45.0) / 45.0)) * 57.29578f;
-        float f = Mathf.Cos(num2 * ((float) Math.PI / 180f));
-        float num3 = (double) Mathf.Abs(f) >= 0.0001 ? 1f / f : 1f;
-        this.Fire(new Brave.BulletScript.Direction(num2 + startingAngle), new Brave.BulletScript.Speed(num3 * 9f), (Bullet) null);
-      }
+        protected override IEnumerator Top()
+        {
+            this.FireLine(45f);
+            this.FireLine(135f);
+            this.FireLine(225f);
+            this.FireLine(315f);
+            return (IEnumerator) null;
+        }
+
+        private void FireLine(float startingAngle)
+        {
+            float num1 = 9f;
+            for (int index = 0; index < 11; ++index)
+            {
+                float num2 = Mathf.Atan((float) (((double) index * (double) num1 - 45.0) / 45.0)) * 57.29578f;
+                float f = Mathf.Cos(num2 * ((float) Math.PI / 180f));
+                float num3 = (double) Mathf.Abs(f) >= 0.0001 ? 1f / f : 1f;
+                this.Fire(new Brave.BulletScript.Direction(num2 + startingAngle), new Brave.BulletScript.Speed(num3 * 9f), (Bullet) null);
+            }
+        }
     }
-  }
 

@@ -1,14 +1,15 @@
-using Dungeonator;
 using UnityEngine;
+
+using Dungeonator;
 
 #nullable disable
 
 public class LoopDungeonBootstrapper : MonoBehaviour
-  {
-    public SemioticDungeonGenSettings PatternSettings;
-
-    private void Start()
     {
+        public SemioticDungeonGenSettings PatternSettings;
+
+        private void Start()
+        {
+        }
     }
-  }
 

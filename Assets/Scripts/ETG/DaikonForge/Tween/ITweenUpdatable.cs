@@ -1,10 +1,10 @@
 #nullable disable
 namespace DaikonForge.Tween
 {
-  public interface ITweenUpdatable
-  {
-    TweenState State { get; }
+    public interface ITweenUpdatable
+    {
+        TweenState State { get; }
 
-    void Update();
-  }
+        void Update();
+    }
 }

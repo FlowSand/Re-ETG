@@ -4,7 +4,7 @@ using System;
 
 [Serializable]
 public struct ActorCompanionSettings
-  {
-    public bool WarpsToRandomPoint;
-  }
+    {
+        public bool WarpsToRandomPoint;
+    }
 

@@ -4,42 +4,42 @@ using UnityEngine;
 
 [AddComponentMenu("Daikon Forge/Examples/Color Picker/Drag and Drop")]
 public class ColorPickerDrag : MonoBehaviour
-  {
-    private Texture2D dragTexture;
-    private dfSlicedSprite control;
-    private bool isDragging;
-
-    public void Start() => this.control = this.GetComponent<dfSlicedSprite>();
-
-    private void OnGUI()
     {
-      if (!Application.isPlaying || !this.isDragging)
-        return;
-      if ((Object) this.dragTexture == (Object) null)
-      {
-        this.dragTexture = new Texture2D(2, 2);
-        this.dragTexture.SetPixel(0, 0, Color.white);
-        this.dragTexture.SetPixel(0, 1, Color.white);
-        this.dragTexture.SetPixel(1, 0, Color.white);
-        this.dragTexture.SetPixel(1, 1, Color.white);
-        this.dragTexture.Apply();
-      }
-      Vector3 mousePosition = Input.mousePosition;
-      Rect position = new Rect(mousePosition.x - 15f, (float) ((double) Screen.height - (double) mousePosition.y - 5.0), 30f, 15f);
-      Color color = GUI.color;
-      GUI.color = (Color) this.control.Color;
-      GUI.DrawTexture(position, (Texture) this.dragTexture);
-      GUI.color = color;
-    }
+        private Texture2D dragTexture;
+        private dfSlicedSprite control;
+        private bool isDragging;
 
-    public void OnDragStart(dfControl control, dfDragEventArgs dragEvent)
-    {
-      this.isDragging = true;
-      dragEvent.Data = (object) control.Color;
-      dragEvent.State = dfDragDropState.Dragging;
-      dragEvent.Use();
-    }
+        public void Start() => this.control = this.GetComponent<dfSlicedSprite>();
 
-    public void OnDragEnd(dfControl source, dfDragEventArgs args) => this.isDragging = false;
-  }
+        private void OnGUI()
+        {
+            if (!Application.isPlaying || !this.isDragging)
+                return;
+            if ((Object) this.dragTexture == (Object) null)
+            {
+                this.dragTexture = new Texture2D(2, 2);
+                this.dragTexture.SetPixel(0, 0, Color.white);
+                this.dragTexture.SetPixel(0, 1, Color.white);
+                this.dragTexture.SetPixel(1, 0, Color.white);
+                this.dragTexture.SetPixel(1, 1, Color.white);
+                this.dragTexture.Apply();
+            }
+            Vector3 mousePosition = Input.mousePosition;
+            Rect position = new Rect(mousePosition.x - 15f, (float) ((double) Screen.height - (double) mousePosition.y - 5.0), 30f, 15f);
+            Color color = GUI.color;
+            GUI.color = (Color) this.control.Color;
+            GUI.DrawTexture(position, (Texture) this.dragTexture);
+            GUI.color = color;
+        }
+
+        public void OnDragStart(dfControl control, dfDragEventArgs dragEvent)
+        {
+            this.isDragging = true;
+            dragEvent.Data = (object) control.Color;
+            dragEvent.State = dfDragDropState.Dragging;
+            dragEvent.Use();
+        }
+
+        public void OnDragEnd(dfControl source, dfDragEventArgs args) => this.isDragging = false;
+    }
 

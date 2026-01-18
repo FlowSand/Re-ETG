@@ -3,9 +3,9 @@ using UnityEngine;
 #nullable disable
 
 public class HelpBoxAttribute : PropertyAttribute
-  {
-    public string Message;
+    {
+        public string Message;
 
-    public HelpBoxAttribute(string message) => this.Message = message;
-  }
+        public HelpBoxAttribute(string message) => this.Message = message;
+    }
 

@@ -1,7 +1,7 @@
 #nullable disable
 namespace Dungeonator
 {
-  public class ReducedDungeonGraph
-  {
-  }
+    public class ReducedDungeonGraph
+    {
+    }
 }

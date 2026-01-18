@@ -1,98 +1,99 @@
 using System;
 using System.Collections;
 using System.Diagnostics;
+
 using UnityEngine;
 
 #nullable disable
 
 public class CharacterSelectIdleDoer : BraveBehaviour
-  {
-    public string coreIdleAnimation = "select_idle";
-    public string onSelectedAnimation;
-    public float idleMin = 4f;
-    public float idleMax = 10f;
-    public CharacterSelectIdlePhase[] phases;
-    public bool IsEevee;
-    public Texture2D EeveeTex;
-    public tk2dSpriteAnimation[] AnimationLibraries;
-    protected int lastPhase = -1;
-    protected float m_lastEeveeSwitchTime;
-
-    private void Update()
     {
-      if (!this.IsEevee)
-        return;
-      this.sprite.usesOverrideMaterial = true;
-      this.sprite.renderer.material.shader = Shader.Find("Brave/PlayerShaderEevee");
-      this.sprite.renderer.sharedMaterial.SetTexture("_EeveeTex", (Texture) this.EeveeTex);
-      this.m_lastEeveeSwitchTime += BraveTime.DeltaTime;
-      if ((double) this.m_lastEeveeSwitchTime <= 2.5)
-        return;
-      this.m_lastEeveeSwitchTime -= 2.5f;
-      this.spriteAnimator.Library = this.AnimationLibraries[UnityEngine.Random.Range(0, this.AnimationLibraries.Length)];
-      this.spriteAnimator.Play(this.coreIdleAnimation);
-    }
+        public string coreIdleAnimation = "select_idle";
+        public string onSelectedAnimation;
+        public float idleMin = 4f;
+        public float idleMax = 10f;
+        public CharacterSelectIdlePhase[] phases;
+        public bool IsEevee;
+        public Texture2D EeveeTex;
+        public tk2dSpriteAnimation[] AnimationLibraries;
+        protected int lastPhase = -1;
+        protected float m_lastEeveeSwitchTime;
 
-    private void OnEnable()
-    {
-      if (this.IsEevee)
-      {
-        this.sprite.usesOverrideMaterial = true;
-        this.sprite.renderer.material.shader = Shader.Find("Brave/PlayerShaderEevee");
-        this.sprite.renderer.sharedMaterial.SetTexture("_EeveeTex", (Texture) this.EeveeTex);
-      }
-      this.StartCoroutine(this.HandleCoreIdle());
-    }
+        private void Update()
+        {
+            if (!this.IsEevee)
+                return;
+            this.sprite.usesOverrideMaterial = true;
+            this.sprite.renderer.material.shader = Shader.Find("Brave/PlayerShaderEevee");
+            this.sprite.renderer.sharedMaterial.SetTexture("_EeveeTex", (Texture) this.EeveeTex);
+            this.m_lastEeveeSwitchTime += BraveTime.DeltaTime;
+            if ((double) this.m_lastEeveeSwitchTime <= 2.5)
+                return;
+            this.m_lastEeveeSwitchTime -= 2.5f;
+            this.spriteAnimator.Library = this.AnimationLibraries[UnityEngine.Random.Range(0, this.AnimationLibraries.Length)];
+            this.spriteAnimator.Play(this.coreIdleAnimation);
+        }
 
-    private void OnDisable()
-    {
-      this.spriteAnimator.StopAndResetFrame();
-      this.StopAllCoroutines();
-    }
+        private void OnEnable()
+        {
+            if (this.IsEevee)
+            {
+                this.sprite.usesOverrideMaterial = true;
+                this.sprite.renderer.material.shader = Shader.Find("Brave/PlayerShaderEevee");
+                this.sprite.renderer.sharedMaterial.SetTexture("_EeveeTex", (Texture) this.EeveeTex);
+            }
+            this.StartCoroutine(this.HandleCoreIdle());
+        }
 
-    [DebuggerHidden]
-    private IEnumerator HandleCoreIdle()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new CharacterSelectIdleDoer__HandleCoreIdlec__Iterator0()
-      {
-        _this = this
-      };
-    }
+        private void OnDisable()
+        {
+            this.spriteAnimator.StopAndResetFrame();
+            this.StopAllCoroutines();
+        }
 
-    private void DeactivateVFX(tk2dSpriteAnimator s, tk2dSpriteAnimationClip c)
-    {
-      s.AnimationCompleted -= new Action<tk2dSpriteAnimator, tk2dSpriteAnimationClip>(this.DeactivateVFX);
-      s.gameObject.SetActive(false);
-    }
+        [DebuggerHidden]
+        private IEnumerator HandleCoreIdle()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new CharacterSelectIdleDoer__HandleCoreIdlec__Iterator0()
+            {
+                _this = this
+            };
+        }
 
-    private void TriggerVFX(CharacterSelectIdlePhase phase)
-    {
-      phase.vfxSpriteAnimator.StopAndResetFrame();
-      phase.vfxSpriteAnimator.gameObject.SetActive(true);
-      phase.vfxSpriteAnimator.Play();
-      phase.vfxSpriteAnimator.AnimationCompleted += new Action<tk2dSpriteAnimator, tk2dSpriteAnimationClip>(this.DeactivateVFX);
-    }
+        private void DeactivateVFX(tk2dSpriteAnimator s, tk2dSpriteAnimationClip c)
+        {
+            s.AnimationCompleted -= new Action<tk2dSpriteAnimator, tk2dSpriteAnimationClip>(this.DeactivateVFX);
+            s.gameObject.SetActive(false);
+        }
 
-    private void TriggerEndVFX(CharacterSelectIdlePhase phase)
-    {
-      if (!((UnityEngine.Object) phase.endVFXSpriteAnimator != (UnityEngine.Object) null))
-        return;
-      phase.endVFXSpriteAnimator.StopAndResetFrame();
-      phase.endVFXSpriteAnimator.Play();
-    }
+        private void TriggerVFX(CharacterSelectIdlePhase phase)
+        {
+            phase.vfxSpriteAnimator.StopAndResetFrame();
+            phase.vfxSpriteAnimator.gameObject.SetActive(true);
+            phase.vfxSpriteAnimator.Play();
+            phase.vfxSpriteAnimator.AnimationCompleted += new Action<tk2dSpriteAnimator, tk2dSpriteAnimationClip>(this.DeactivateVFX);
+        }
 
-    [DebuggerHidden]
-    private IEnumerator HandlePhase(CharacterSelectIdlePhase phase)
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new CharacterSelectIdleDoer__HandlePhasec__Iterator1()
-      {
-        phase = phase,
-        _this = this
-      };
-    }
+        private void TriggerEndVFX(CharacterSelectIdlePhase phase)
+        {
+            if (!((UnityEngine.Object) phase.endVFXSpriteAnimator != (UnityEngine.Object) null))
+                return;
+            phase.endVFXSpriteAnimator.StopAndResetFrame();
+            phase.endVFXSpriteAnimator.Play();
+        }
 
-    protected override void OnDestroy() => base.OnDestroy();
-  }
+        [DebuggerHidden]
+        private IEnumerator HandlePhase(CharacterSelectIdlePhase phase)
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new CharacterSelectIdleDoer__HandlePhasec__Iterator1()
+            {
+                phase = phase,
+                _this = this
+            };
+        }
+
+        protected override void OnDestroy() => base.OnDestroy();
+    }
 

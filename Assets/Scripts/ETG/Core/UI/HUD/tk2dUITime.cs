@@ -2,24 +2,24 @@ using UnityEngine;
 
 #nullable disable
 
-  public static class tk2dUITime
-  {
-    private static double lastRealTime;
-    private static float _deltaTime = 0.0166666675f;
-
-    public static float deltaTime => tk2dUITime._deltaTime;
-
-    public static void Init()
+    public static class tk2dUITime
     {
-      tk2dUITime.lastRealTime = (double) UnityEngine.Time.realtimeSinceStartup;
-      tk2dUITime._deltaTime = UnityEngine.Time.maximumDeltaTime;
-    }
+        private static double lastRealTime;
+        private static float _deltaTime = 0.0166666675f;
 
-    public static void Update()
-    {
-      float realtimeSinceStartup = UnityEngine.Time.realtimeSinceStartup;
-      tk2dUITime._deltaTime = (double) UnityEngine.Time.timeScale >= 1.0 / 1000.0 ? BraveTime.DeltaTime / UnityEngine.Time.timeScale : Mathf.Min(0.06666667f, realtimeSinceStartup - (float) tk2dUITime.lastRealTime);
-      tk2dUITime.lastRealTime = (double) realtimeSinceStartup;
+        public static float deltaTime => tk2dUITime._deltaTime;
+
+        public static void Init()
+        {
+            tk2dUITime.lastRealTime = (double) UnityEngine.Time.realtimeSinceStartup;
+            tk2dUITime._deltaTime = UnityEngine.Time.maximumDeltaTime;
+        }
+
+        public static void Update()
+        {
+            float realtimeSinceStartup = UnityEngine.Time.realtimeSinceStartup;
+            tk2dUITime._deltaTime = (double) UnityEngine.Time.timeScale >= 1.0 / 1000.0 ? BraveTime.DeltaTime / UnityEngine.Time.timeScale : Mathf.Min(0.06666667f, realtimeSinceStartup - (float) tk2dUITime.lastRealTime);
+            tk2dUITime.lastRealTime = (double) realtimeSinceStartup;
+        }
     }
-  }
 

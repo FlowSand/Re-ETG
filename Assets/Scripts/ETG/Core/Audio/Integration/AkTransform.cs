@@ -3,106 +3,106 @@ using System;
 #nullable disable
 
 public class AkTransform : IDisposable
-  {
-    private IntPtr swigCPtr;
-    protected bool swigCMemOwn;
-
-    internal AkTransform(IntPtr cPtr, bool cMemoryOwn)
     {
-      this.swigCMemOwn = cMemoryOwn;
-      this.swigCPtr = cPtr;
-    }
+        private IntPtr swigCPtr;
+        protected bool swigCMemOwn;
 
-    public AkTransform()
-      : this(AkSoundEnginePINVOKE.CSharp_new_AkTransform(), true)
-    {
-    }
-
-    internal static IntPtr getCPtr(AkTransform obj) => obj == null ? IntPtr.Zero : obj.swigCPtr;
-
-    internal virtual void setCPtr(IntPtr cPtr)
-    {
-      this.Dispose();
-      this.swigCPtr = cPtr;
-    }
-
-    ~AkTransform() => this.Dispose();
-
-    public virtual void Dispose()
-    {
-      lock ((object) this)
-      {
-        if (this.swigCPtr != IntPtr.Zero)
+        internal AkTransform(IntPtr cPtr, bool cMemoryOwn)
         {
-          if (this.swigCMemOwn)
-          {
-            this.swigCMemOwn = false;
-            AkSoundEnginePINVOKE.CSharp_delete_AkTransform(this.swigCPtr);
-          }
-          this.swigCPtr = IntPtr.Zero;
+            this.swigCMemOwn = cMemoryOwn;
+            this.swigCPtr = cPtr;
         }
-        GC.SuppressFinalize((object) this);
-      }
-    }
 
-    public AkVector Position()
-    {
-      return new AkVector(AkSoundEnginePINVOKE.CSharp_AkTransform_Position(this.swigCPtr), false);
-    }
+        public AkTransform()
+            : this(AkSoundEnginePINVOKE.CSharp_new_AkTransform(), true)
+        {
+        }
 
-    public AkVector OrientationFront()
-    {
-      return new AkVector(AkSoundEnginePINVOKE.CSharp_AkTransform_OrientationFront(this.swigCPtr), false);
-    }
+        internal static IntPtr getCPtr(AkTransform obj) => obj == null ? IntPtr.Zero : obj.swigCPtr;
 
-    public AkVector OrientationTop()
-    {
-      return new AkVector(AkSoundEnginePINVOKE.CSharp_AkTransform_OrientationTop(this.swigCPtr), false);
-    }
+        internal virtual void setCPtr(IntPtr cPtr)
+        {
+            this.Dispose();
+            this.swigCPtr = cPtr;
+        }
 
-    public void Set(AkVector in_position, AkVector in_orientationFront, AkVector in_orientationTop)
-    {
-      AkSoundEnginePINVOKE.CSharp_AkTransform_Set__SWIG_0(this.swigCPtr, AkVector.getCPtr(in_position), AkVector.getCPtr(in_orientationFront), AkVector.getCPtr(in_orientationTop));
-    }
+        ~AkTransform() => this.Dispose();
 
-    public void Set(
-      float in_positionX,
-      float in_positionY,
-      float in_positionZ,
-      float in_orientFrontX,
-      float in_orientFrontY,
-      float in_orientFrontZ,
-      float in_orientTopX,
-      float in_orientTopY,
-      float in_orientTopZ)
-    {
-      AkSoundEnginePINVOKE.CSharp_AkTransform_Set__SWIG_1(this.swigCPtr, in_positionX, in_positionY, in_positionZ, in_orientFrontX, in_orientFrontY, in_orientFrontZ, in_orientTopX, in_orientTopY, in_orientTopZ);
-    }
+        public virtual void Dispose()
+        {
+            lock ((object) this)
+            {
+                if (this.swigCPtr != IntPtr.Zero)
+                {
+                    if (this.swigCMemOwn)
+                    {
+                        this.swigCMemOwn = false;
+                        AkSoundEnginePINVOKE.CSharp_delete_AkTransform(this.swigCPtr);
+                    }
+                    this.swigCPtr = IntPtr.Zero;
+                }
+                GC.SuppressFinalize((object) this);
+            }
+        }
 
-    public void SetPosition(AkVector in_position)
-    {
-      AkSoundEnginePINVOKE.CSharp_AkTransform_SetPosition__SWIG_0(this.swigCPtr, AkVector.getCPtr(in_position));
-    }
+        public AkVector Position()
+        {
+            return new AkVector(AkSoundEnginePINVOKE.CSharp_AkTransform_Position(this.swigCPtr), false);
+        }
 
-    public void SetPosition(float in_x, float in_y, float in_z)
-    {
-      AkSoundEnginePINVOKE.CSharp_AkTransform_SetPosition__SWIG_1(this.swigCPtr, in_x, in_y, in_z);
-    }
+        public AkVector OrientationFront()
+        {
+            return new AkVector(AkSoundEnginePINVOKE.CSharp_AkTransform_OrientationFront(this.swigCPtr), false);
+        }
 
-    public void SetOrientation(AkVector in_orientationFront, AkVector in_orientationTop)
-    {
-      AkSoundEnginePINVOKE.CSharp_AkTransform_SetOrientation__SWIG_0(this.swigCPtr, AkVector.getCPtr(in_orientationFront), AkVector.getCPtr(in_orientationTop));
-    }
+        public AkVector OrientationTop()
+        {
+            return new AkVector(AkSoundEnginePINVOKE.CSharp_AkTransform_OrientationTop(this.swigCPtr), false);
+        }
 
-    public void SetOrientation(
-      float in_orientFrontX,
-      float in_orientFrontY,
-      float in_orientFrontZ,
-      float in_orientTopX,
-      float in_orientTopY,
-      float in_orientTopZ)
-    {
-      AkSoundEnginePINVOKE.CSharp_AkTransform_SetOrientation__SWIG_1(this.swigCPtr, in_orientFrontX, in_orientFrontY, in_orientFrontZ, in_orientTopX, in_orientTopY, in_orientTopZ);
+        public void Set(AkVector in_position, AkVector in_orientationFront, AkVector in_orientationTop)
+        {
+            AkSoundEnginePINVOKE.CSharp_AkTransform_Set__SWIG_0(this.swigCPtr, AkVector.getCPtr(in_position), AkVector.getCPtr(in_orientationFront), AkVector.getCPtr(in_orientationTop));
+        }
+
+        public void Set(
+            float in_positionX,
+            float in_positionY,
+            float in_positionZ,
+            float in_orientFrontX,
+            float in_orientFrontY,
+            float in_orientFrontZ,
+            float in_orientTopX,
+            float in_orientTopY,
+            float in_orientTopZ)
+        {
+            AkSoundEnginePINVOKE.CSharp_AkTransform_Set__SWIG_1(this.swigCPtr, in_positionX, in_positionY, in_positionZ, in_orientFrontX, in_orientFrontY, in_orientFrontZ, in_orientTopX, in_orientTopY, in_orientTopZ);
+        }
+
+        public void SetPosition(AkVector in_position)
+        {
+            AkSoundEnginePINVOKE.CSharp_AkTransform_SetPosition__SWIG_0(this.swigCPtr, AkVector.getCPtr(in_position));
+        }
+
+        public void SetPosition(float in_x, float in_y, float in_z)
+        {
+            AkSoundEnginePINVOKE.CSharp_AkTransform_SetPosition__SWIG_1(this.swigCPtr, in_x, in_y, in_z);
+        }
+
+        public void SetOrientation(AkVector in_orientationFront, AkVector in_orientationTop)
+        {
+            AkSoundEnginePINVOKE.CSharp_AkTransform_SetOrientation__SWIG_0(this.swigCPtr, AkVector.getCPtr(in_orientationFront), AkVector.getCPtr(in_orientationTop));
+        }
+
+        public void SetOrientation(
+            float in_orientFrontX,
+            float in_orientFrontY,
+            float in_orientFrontZ,
+            float in_orientTopX,
+            float in_orientTopY,
+            float in_orientTopZ)
+        {
+            AkSoundEnginePINVOKE.CSharp_AkTransform_SetOrientation__SWIG_1(this.swigCPtr, in_orientFrontX, in_orientFrontY, in_orientFrontZ, in_orientTopX, in_orientTopY, in_orientTopZ);
+        }
     }
-  }
 

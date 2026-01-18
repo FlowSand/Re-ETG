@@ -3,32 +3,32 @@ using System;
 #nullable disable
 
 public class GunOverheatChallengeModifier : ChallengeModifier
-  {
-    public GoopDefinition Goop;
-    public float Radius = 3f;
-
-    private void Start()
     {
-      for (int index = 0; index < GameManager.Instance.AllPlayers.Length; ++index)
-        GameManager.Instance.AllPlayers[index].OnReloadedGun += new Action<PlayerController, Gun>(this.HandleGunReloaded);
-    }
+        public GoopDefinition Goop;
+        public float Radius = 3f;
 
-    private void HandleGunReloaded(PlayerController player, Gun playerGun)
-    {
-      if (playerGun.ClipShotsRemaining != 0)
-        return;
-      DeadlyDeadlyGoopManager.GetGoopManagerForGoopType(this.Goop).TimedAddGoopCircle(player.CenterPosition, this.Radius);
-    }
+        private void Start()
+        {
+            for (int index = 0; index < GameManager.Instance.AllPlayers.Length; ++index)
+                GameManager.Instance.AllPlayers[index].OnReloadedGun += new Action<PlayerController, Gun>(this.HandleGunReloaded);
+        }
 
-    public void ForceGoop(PlayerController player)
-    {
-      DeadlyDeadlyGoopManager.GetGoopManagerForGoopType(this.Goop).TimedAddGoopCircle(player.CenterPosition, this.Radius);
-    }
+        private void HandleGunReloaded(PlayerController player, Gun playerGun)
+        {
+            if (playerGun.ClipShotsRemaining != 0)
+                return;
+            DeadlyDeadlyGoopManager.GetGoopManagerForGoopType(this.Goop).TimedAddGoopCircle(player.CenterPosition, this.Radius);
+        }
 
-    private void OnDestroy()
-    {
-      for (int index = 0; index < GameManager.Instance.AllPlayers.Length; ++index)
-        GameManager.Instance.AllPlayers[index].OnReloadedGun -= new Action<PlayerController, Gun>(this.HandleGunReloaded);
+        public void ForceGoop(PlayerController player)
+        {
+            DeadlyDeadlyGoopManager.GetGoopManagerForGoopType(this.Goop).TimedAddGoopCircle(player.CenterPosition, this.Radius);
+        }
+
+        private void OnDestroy()
+        {
+            for (int index = 0; index < GameManager.Instance.AllPlayers.Length; ++index)
+                GameManager.Instance.AllPlayers[index].OnReloadedGun -= new Action<PlayerController, Gun>(this.HandleGunReloaded);
+        }
     }
-  }
 

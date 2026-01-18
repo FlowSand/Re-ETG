@@ -1,17 +1,17 @@
 #nullable disable
 namespace InControl
 {
-  public class UnityAnalogSource : InputControlSource
-  {
-    public int AnalogIndex;
-
-    public UnityAnalogSource(int analogIndex) => this.AnalogIndex = analogIndex;
-
-    public float GetValue(InputDevice inputDevice)
+    public class UnityAnalogSource : InputControlSource
     {
-      return (inputDevice as UnityInputDevice).ReadRawAnalogValue(this.AnalogIndex);
-    }
+        public int AnalogIndex;
 
-    public bool GetState(InputDevice inputDevice) => Utility.IsNotZero(this.GetValue(inputDevice));
-  }
+        public UnityAnalogSource(int analogIndex) => this.AnalogIndex = analogIndex;
+
+        public float GetValue(InputDevice inputDevice)
+        {
+            return (inputDevice as UnityInputDevice).ReadRawAnalogValue(this.AnalogIndex);
+        }
+
+        public bool GetState(InputDevice inputDevice) => Utility.IsNotZero(this.GetValue(inputDevice));
+    }
 }

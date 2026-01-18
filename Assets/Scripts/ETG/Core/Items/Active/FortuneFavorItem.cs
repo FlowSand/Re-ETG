@@ -1,35 +1,36 @@
 using System.Collections;
 using System.Diagnostics;
+
 using UnityEngine;
 
 #nullable disable
 
 public class FortuneFavorItem : PlayerItem
-  {
-    public float pushRadius = 4f;
-    public float secondRadius = 6f;
-    public float finalRadius = 8f;
-    public float pushStrength = 10f;
-    public float duration = 5f;
-    public GameObject sparkOctantVFX;
-
-    protected override void DoEffect(PlayerController user)
     {
-      this.StartCoroutine(this.HandleShield(user));
-      int num = (int) AkSoundEngine.PostEvent("Play_OBJ_fortune_shield_01", this.gameObject);
-    }
+        public float pushRadius = 4f;
+        public float secondRadius = 6f;
+        public float finalRadius = 8f;
+        public float pushStrength = 10f;
+        public float duration = 5f;
+        public GameObject sparkOctantVFX;
 
-    [DebuggerHidden]
-    private IEnumerator HandleShield(PlayerController user)
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new FortuneFavorItem__HandleShieldc__Iterator0()
-      {
-        user = user,
-        _this = this
-      };
-    }
+        protected override void DoEffect(PlayerController user)
+        {
+            this.StartCoroutine(this.HandleShield(user));
+            int num = (int) AkSoundEngine.PostEvent("Play_OBJ_fortune_shield_01", this.gameObject);
+        }
 
-    protected override void OnDestroy() => base.OnDestroy();
-  }
+        [DebuggerHidden]
+        private IEnumerator HandleShield(PlayerController user)
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new FortuneFavorItem__HandleShieldc__Iterator0()
+            {
+                user = user,
+                _this = this
+            };
+        }
+
+        protected override void OnDestroy() => base.OnDestroy();
+    }
 

@@ -1,11 +1,11 @@
 #nullable disable
 
 public interface IDFVirtualScrollingTile
-  {
-    int VirtualScrollItemIndex { get; set; }
+    {
+        int VirtualScrollItemIndex { get; set; }
 
-    void OnScrollPanelItemVirtualize(object backingListItem);
+        void OnScrollPanelItemVirtualize(object backingListItem);
 
-    dfPanel GetDfPanel();
-  }
+        dfPanel GetDfPanel();
+    }
 

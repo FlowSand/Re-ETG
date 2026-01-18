@@ -3,12 +3,12 @@ using System;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [Serializable]
-  public class MassiveSaveFlagEntry
-  {
-    public GungeonFlags RequiredFlag;
-    public bool RequiredFlagState = true;
-    public GungeonFlags CompletedFlag;
-    public string mode;
-  }
+    [Serializable]
+    public class MassiveSaveFlagEntry
+    {
+        public GungeonFlags RequiredFlag;
+        public bool RequiredFlagState = true;
+        public GungeonFlags CompletedFlag;
+        public string mode;
+    }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+
 using UnityEngine;
 
 #nullable disable
@@ -9,181 +10,181 @@ using UnityEngine;
 [AddComponentMenu("Daikon Forge/Tweens/Group")]
 [Serializable]
 public class dfTweenGroup : dfTweenPlayableBase
-  {
-    [SerializeField]
-    protected string groupName = string.Empty;
-    [SerializeField]
-    protected bool autoStart;
-    [SerializeField]
-    protected float delayBeforeStarting;
-    public List<dfTweenPlayableBase> Tweens = new List<dfTweenPlayableBase>();
-    public dfTweenGroup.TweenGroupMode Mode;
-
-    public event TweenNotification TweenStarted;
-
-    public event TweenNotification TweenStopped;
-
-    public event TweenNotification TweenReset;
-
-    public event TweenNotification TweenCompleted;
-
-    public float StartDelay
     {
-      get => this.delayBeforeStarting;
-      set => this.delayBeforeStarting = value;
-    }
+        [SerializeField]
+        protected string groupName = string.Empty;
+        [SerializeField]
+        protected bool autoStart;
+        [SerializeField]
+        protected float delayBeforeStarting;
+        public List<dfTweenPlayableBase> Tweens = new List<dfTweenPlayableBase>();
+        public dfTweenGroup.TweenGroupMode Mode;
 
-    public bool AutoStart
-    {
-      get => this.autoStart;
-      set => this.autoStart = value;
-    }
+        public event TweenNotification TweenStarted;
 
-    public override string TweenName
-    {
-      get => this.groupName;
-      set => this.groupName = value;
-    }
+        public event TweenNotification TweenStopped;
 
-    public override bool IsPlaying
-    {
-      get
-      {
-        for (int index = 0; index < this.Tweens.Count; ++index)
+        public event TweenNotification TweenReset;
+
+        public event TweenNotification TweenCompleted;
+
+        public float StartDelay
         {
-          if (!((UnityEngine.Object) this.Tweens[index] == (UnityEngine.Object) null) && this.Tweens[index].enabled && this.Tweens[index].IsPlaying)
-            return true;
+            get => this.delayBeforeStarting;
+            set => this.delayBeforeStarting = value;
         }
-        return false;
-      }
-    }
 
-    public void Start()
-    {
-      if (!this.AutoStart || this.IsPlaying)
-        return;
-      this.Play();
-    }
-
-    public void EnableTween(string TweenName)
-    {
-      for (int index = 0; index < this.Tweens.Count; ++index)
-      {
-        if (!((UnityEngine.Object) this.Tweens[index] == (UnityEngine.Object) null) && this.Tweens[index].TweenName == TweenName)
+        public bool AutoStart
         {
-          this.Tweens[index].enabled = true;
-          break;
+            get => this.autoStart;
+            set => this.autoStart = value;
         }
-      }
-    }
 
-    public void DisableTween(string TweenName)
-    {
-      for (int index = 0; index < this.Tweens.Count; ++index)
-      {
-        if (!((UnityEngine.Object) this.Tweens[index] == (UnityEngine.Object) null) && this.Tweens[index].name == TweenName)
+        public override string TweenName
         {
-          this.Tweens[index].enabled = false;
-          break;
+            get => this.groupName;
+            set => this.groupName = value;
         }
-      }
-    }
 
-    public override void Play()
-    {
-      if (this.IsPlaying)
-        this.Stop();
-      this.onStarted();
-      if (this.Mode == dfTweenGroup.TweenGroupMode.Concurrent)
-        this.StartCoroutine(this.runConcurrent());
-      else
-        this.StartCoroutine(this.runSequence());
-    }
+        public override bool IsPlaying
+        {
+            get
+            {
+                for (int index = 0; index < this.Tweens.Count; ++index)
+                {
+                    if (!((UnityEngine.Object) this.Tweens[index] == (UnityEngine.Object) null) && this.Tweens[index].enabled && this.Tweens[index].IsPlaying)
+                        return true;
+                }
+                return false;
+            }
+        }
 
-    public override void Stop()
-    {
-      if (!this.IsPlaying)
-        return;
-      this.StopAllCoroutines();
-      for (int index = 0; index < this.Tweens.Count; ++index)
-      {
-        if (!((UnityEngine.Object) this.Tweens[index] == (UnityEngine.Object) null))
-          this.Tweens[index].Stop();
-      }
-      this.onStopped();
-    }
+        public void Start()
+        {
+            if (!this.AutoStart || this.IsPlaying)
+                return;
+            this.Play();
+        }
 
-    public override void Reset()
-    {
-      if (!this.IsPlaying)
-        return;
-      this.StopAllCoroutines();
-      for (int index = 0; index < this.Tweens.Count; ++index)
-      {
-        if (!((UnityEngine.Object) this.Tweens[index] == (UnityEngine.Object) null))
-          this.Tweens[index].Reset();
-      }
-      this.onReset();
-    }
+        public void EnableTween(string TweenName)
+        {
+            for (int index = 0; index < this.Tweens.Count; ++index)
+            {
+                if (!((UnityEngine.Object) this.Tweens[index] == (UnityEngine.Object) null) && this.Tweens[index].TweenName == TweenName)
+                {
+                    this.Tweens[index].enabled = true;
+                    break;
+                }
+            }
+        }
 
-    [HideInInspector]
-    [DebuggerHidden]
-    private IEnumerator runSequence()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new dfTweenGroup__runSequencec__Iterator0()
-      {
-        _this = this
-      };
-    }
+        public void DisableTween(string TweenName)
+        {
+            for (int index = 0; index < this.Tweens.Count; ++index)
+            {
+                if (!((UnityEngine.Object) this.Tweens[index] == (UnityEngine.Object) null) && this.Tweens[index].name == TweenName)
+                {
+                    this.Tweens[index].enabled = false;
+                    break;
+                }
+            }
+        }
 
-    [DebuggerHidden]
-    [HideInInspector]
-    private IEnumerator runConcurrent()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new dfTweenGroup__runConcurrentc__Iterator1()
-      {
-        _this = this
-      };
-    }
+        public override void Play()
+        {
+            if (this.IsPlaying)
+                this.Stop();
+            this.onStarted();
+            if (this.Mode == dfTweenGroup.TweenGroupMode.Concurrent)
+                this.StartCoroutine(this.runConcurrent());
+            else
+                this.StartCoroutine(this.runSequence());
+        }
 
-    protected internal void onStarted()
-    {
-      this.SendMessage("TweenStarted", (object) this, SendMessageOptions.DontRequireReceiver);
-      if (this.TweenStarted == null)
-        return;
-      this.TweenStarted((dfTweenPlayableBase) this);
-    }
+        public override void Stop()
+        {
+            if (!this.IsPlaying)
+                return;
+            this.StopAllCoroutines();
+            for (int index = 0; index < this.Tweens.Count; ++index)
+            {
+                if (!((UnityEngine.Object) this.Tweens[index] == (UnityEngine.Object) null))
+                    this.Tweens[index].Stop();
+            }
+            this.onStopped();
+        }
 
-    protected internal void onStopped()
-    {
-      this.SendMessage("TweenStopped", (object) this, SendMessageOptions.DontRequireReceiver);
-      if (this.TweenStopped == null)
-        return;
-      this.TweenStopped((dfTweenPlayableBase) this);
-    }
+        public override void Reset()
+        {
+            if (!this.IsPlaying)
+                return;
+            this.StopAllCoroutines();
+            for (int index = 0; index < this.Tweens.Count; ++index)
+            {
+                if (!((UnityEngine.Object) this.Tweens[index] == (UnityEngine.Object) null))
+                    this.Tweens[index].Reset();
+            }
+            this.onReset();
+        }
 
-    protected internal void onReset()
-    {
-      this.SendMessage("TweenReset", (object) this, SendMessageOptions.DontRequireReceiver);
-      if (this.TweenReset == null)
-        return;
-      this.TweenReset((dfTweenPlayableBase) this);
-    }
+        [HideInInspector]
+        [DebuggerHidden]
+        private IEnumerator runSequence()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new dfTweenGroup__runSequencec__Iterator0()
+            {
+                _this = this
+            };
+        }
 
-    protected internal void onCompleted()
-    {
-      this.SendMessage("TweenCompleted", (object) this, SendMessageOptions.DontRequireReceiver);
-      if (this.TweenCompleted == null)
-        return;
-      this.TweenCompleted((dfTweenPlayableBase) this);
-    }
+        [DebuggerHidden]
+        [HideInInspector]
+        private IEnumerator runConcurrent()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new dfTweenGroup__runConcurrentc__Iterator1()
+            {
+                _this = this
+            };
+        }
 
-    public enum TweenGroupMode
-    {
-      Concurrent,
-      Sequence,
+        protected internal void onStarted()
+        {
+            this.SendMessage("TweenStarted", (object) this, SendMessageOptions.DontRequireReceiver);
+            if (this.TweenStarted == null)
+                return;
+            this.TweenStarted((dfTweenPlayableBase) this);
+        }
+
+        protected internal void onStopped()
+        {
+            this.SendMessage("TweenStopped", (object) this, SendMessageOptions.DontRequireReceiver);
+            if (this.TweenStopped == null)
+                return;
+            this.TweenStopped((dfTweenPlayableBase) this);
+        }
+
+        protected internal void onReset()
+        {
+            this.SendMessage("TweenReset", (object) this, SendMessageOptions.DontRequireReceiver);
+            if (this.TweenReset == null)
+                return;
+            this.TweenReset((dfTweenPlayableBase) this);
+        }
+
+        protected internal void onCompleted()
+        {
+            this.SendMessage("TweenCompleted", (object) this, SendMessageOptions.DontRequireReceiver);
+            if (this.TweenCompleted == null)
+                return;
+            this.TweenCompleted((dfTweenPlayableBase) this);
+        }
+
+        public enum TweenGroupMode
+        {
+            Concurrent,
+            Sequence,
+        }
     }
-  }
 

@@ -1,9 +1,9 @@
 #nullable disable
 
 internal class SubbeamData
-  {
-    public BeamController subbeam;
-    public float percent;
-    public float angle;
-  }
+    {
+        public BeamController subbeam;
+        public float percent;
+        public float angle;
+    }
 

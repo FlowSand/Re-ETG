@@ -4,9 +4,9 @@ using UnityEngine;
 
 [RequireComponent(typeof (GenericIntroDoer))]
 public class BossFinalRobotIntroDoer : SpecificIntroDoer
-  {
-    protected override void OnDestroy() => base.OnDestroy();
+    {
+        protected override void OnDestroy() => base.OnDestroy();
 
-    public override void EndIntro() => this.aiAnimator.StopVfx("torch_intro");
-  }
+        public override void EndIntro() => this.aiAnimator.StopVfx("torch_intro");
+    }
 

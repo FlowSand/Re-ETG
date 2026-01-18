@@ -1,20 +1,20 @@
 #nullable disable
 namespace InControl.NativeProfile
 {
-  public class RazerStrikeControllerMacProfile : Xbox360DriverMacProfile
-  {
-    public RazerStrikeControllerMacProfile()
+    public class RazerStrikeControllerMacProfile : Xbox360DriverMacProfile
     {
-      this.Name = "Razer Strike Controller";
-      this.Meta = "Razer Strike Controller on Mac";
-      this.Matchers = new NativeInputDeviceMatcher[1]
-      {
-        new NativeInputDeviceMatcher()
+        public RazerStrikeControllerMacProfile()
         {
-          VendorID = new ushort?((ushort) 5769),
-          ProductID = new ushort?((ushort) 1)
+            this.Name = "Razer Strike Controller";
+            this.Meta = "Razer Strike Controller on Mac";
+            this.Matchers = new NativeInputDeviceMatcher[1]
+            {
+                new NativeInputDeviceMatcher()
+                {
+                    VendorID = new ushort?((ushort) 5769),
+                    ProductID = new ushort?((ushort) 1)
+                }
+            };
         }
-      };
     }
-  }
 }

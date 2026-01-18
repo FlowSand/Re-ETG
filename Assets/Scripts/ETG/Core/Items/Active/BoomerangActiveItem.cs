@@ -1,7 +1,7 @@
 #nullable disable
 
 public class BoomerangActiveItem : PlayerItem
-  {
-    protected override void DoEffect(PlayerController user) => base.DoEffect(user);
-  }
+    {
+        protected override void DoEffect(PlayerController user) => base.DoEffect(user);
+    }
 

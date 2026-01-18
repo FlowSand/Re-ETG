@@ -1,20 +1,20 @@
 #nullable disable
 namespace InControl.NativeProfile
 {
-  public class PDPMarvelControllerMacProfile : Xbox360DriverMacProfile
-  {
-    public PDPMarvelControllerMacProfile()
+    public class PDPMarvelControllerMacProfile : Xbox360DriverMacProfile
     {
-      this.Name = "PDP Marvel Controller";
-      this.Meta = "PDP Marvel Controller on Mac";
-      this.Matchers = new NativeInputDeviceMatcher[1]
-      {
-        new NativeInputDeviceMatcher()
+        public PDPMarvelControllerMacProfile()
         {
-          VendorID = new ushort?((ushort) 3695),
-          ProductID = new ushort?((ushort) 327)
+            this.Name = "PDP Marvel Controller";
+            this.Meta = "PDP Marvel Controller on Mac";
+            this.Matchers = new NativeInputDeviceMatcher[1]
+            {
+                new NativeInputDeviceMatcher()
+                {
+                    VendorID = new ushort?((ushort) 3695),
+                    ProductID = new ushort?((ushort) 327)
+                }
+            };
         }
-      };
     }
-  }
 }

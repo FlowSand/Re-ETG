@@ -1,20 +1,20 @@
 #nullable disable
 namespace InControl.NativeProfile
 {
-  public class PDPTitanfall2XboxOneControllerMacProfile : XboxOneDriverMacProfile
-  {
-    public PDPTitanfall2XboxOneControllerMacProfile()
+    public class PDPTitanfall2XboxOneControllerMacProfile : XboxOneDriverMacProfile
     {
-      this.Name = "PDP Titanfall 2 Xbox One Controller";
-      this.Meta = "PDP Titanfall 2 Xbox One Controller on Mac";
-      this.Matchers = new NativeInputDeviceMatcher[1]
-      {
-        new NativeInputDeviceMatcher()
+        public PDPTitanfall2XboxOneControllerMacProfile()
         {
-          VendorID = new ushort?((ushort) 3695),
-          ProductID = new ushort?((ushort) 357)
+            this.Name = "PDP Titanfall 2 Xbox One Controller";
+            this.Meta = "PDP Titanfall 2 Xbox One Controller on Mac";
+            this.Matchers = new NativeInputDeviceMatcher[1]
+            {
+                new NativeInputDeviceMatcher()
+                {
+                    VendorID = new ushort?((ushort) 3695),
+                    ProductID = new ushort?((ushort) 357)
+                }
+            };
         }
-      };
     }
-  }
 }

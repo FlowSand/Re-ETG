@@ -1,10 +1,10 @@
 #nullable disable
 namespace InControl
 {
-  public interface InputControlSource
-  {
-    float GetValue(InputDevice inputDevice);
+    public interface InputControlSource
+    {
+        float GetValue(InputDevice inputDevice);
 
-    bool GetState(InputDevice inputDevice);
-  }
+        bool GetState(InputDevice inputDevice);
+    }
 }

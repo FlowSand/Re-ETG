@@ -1,5 +1,5 @@
 #nullable disable
 namespace DaikonForge.Editor
 {
-  public delegate bool InspectorConditionCallback(object target);
+    public delegate bool InspectorConditionCallback(object target);
 }

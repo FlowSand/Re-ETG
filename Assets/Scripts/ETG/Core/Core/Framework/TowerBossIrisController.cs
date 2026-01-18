@@ -1,81 +1,82 @@
 using System;
 using System.Collections;
 using System.Diagnostics;
+
 using UnityEngine;
 
 #nullable disable
 
 public class TowerBossIrisController : BraveBehaviour
-  {
-    public TowerBossController tower;
-    public bool fuseAlive = true;
-    public float openDuration = 10f;
-    private tk2dSprite m_sprite;
-
-    public bool IsOpen => this.healthHaver.IsVulnerable;
-
-    private void Start()
     {
-      this.m_sprite = this.GetComponentInChildren<tk2dSprite>();
-      this.m_sprite.IsPerpendicular = false;
-      this.healthHaver.persistsOnDeath = true;
-      this.healthHaver.IsVulnerable = false;
-      this.healthHaver.OnDamaged += new HealthHaver.OnDamagedEvent(this.Damaged);
-      this.healthHaver.OnDeath += new Action<Vector2>(this.Die);
-    }
+        public TowerBossController tower;
+        public bool fuseAlive = true;
+        public float openDuration = 10f;
+        private tk2dSprite m_sprite;
 
-    private void Update()
-    {
-    }
+        public bool IsOpen => this.healthHaver.IsVulnerable;
 
-    protected override void OnDestroy() => base.OnDestroy();
+        private void Start()
+        {
+            this.m_sprite = this.GetComponentInChildren<tk2dSprite>();
+            this.m_sprite.IsPerpendicular = false;
+            this.healthHaver.persistsOnDeath = true;
+            this.healthHaver.IsVulnerable = false;
+            this.healthHaver.OnDamaged += new HealthHaver.OnDamagedEvent(this.Damaged);
+            this.healthHaver.OnDeath += new Action<Vector2>(this.Die);
+        }
 
-    public void Open()
-    {
-      this.healthHaver.IsVulnerable = true;
-      this.spriteAnimator.Play("tower_boss_leftPanel_open");
-      this.StartCoroutine(this.TimedClose());
-    }
+        private void Update()
+        {
+        }
 
-    [DebuggerHidden]
-    private IEnumerator TimedClose()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new TowerBossIrisController__TimedClosec__Iterator0()
-      {
-        _this = this
-      };
-    }
+        protected override void OnDestroy() => base.OnDestroy();
 
-    public void Close()
-    {
-      this.healthHaver.IsVulnerable = false;
-      this.spriteAnimator.Play("tower_boss_rightPanel_open");
-    }
+        public void Open()
+        {
+            this.healthHaver.IsVulnerable = true;
+            this.spriteAnimator.Play("tower_boss_leftPanel_open");
+            this.StartCoroutine(this.TimedClose());
+        }
 
-    private void Damaged(
-      float resultValue,
-      float maxValue,
-      CoreDamageTypes damageTypes,
-      DamageCategory damageCategory,
-      Vector2 damageDirection)
-    {
-    }
+        [DebuggerHidden]
+        private IEnumerator TimedClose()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new TowerBossIrisController__TimedClosec__Iterator0()
+            {
+                _this = this
+            };
+        }
 
-    private void Die(Vector2 finalDamageDirection)
-    {
-      this.fuseAlive = false;
-      if (this.tower.currentPhase == TowerBossController.TowerBossPhase.PHASE_ONE)
-      {
-        this.tower.NotifyFuseDestruction(this);
-        this.healthHaver.FullHeal();
-        this.healthHaver.IsVulnerable = false;
-      }
-      else
-      {
-        this.tower.NotifyFuseDestruction(this);
-        this.healthHaver.IsVulnerable = false;
-      }
+        public void Close()
+        {
+            this.healthHaver.IsVulnerable = false;
+            this.spriteAnimator.Play("tower_boss_rightPanel_open");
+        }
+
+        private void Damaged(
+            float resultValue,
+            float maxValue,
+            CoreDamageTypes damageTypes,
+            DamageCategory damageCategory,
+            Vector2 damageDirection)
+        {
+        }
+
+        private void Die(Vector2 finalDamageDirection)
+        {
+            this.fuseAlive = false;
+            if (this.tower.currentPhase == TowerBossController.TowerBossPhase.PHASE_ONE)
+            {
+                this.tower.NotifyFuseDestruction(this);
+                this.healthHaver.FullHeal();
+                this.healthHaver.IsVulnerable = false;
+            }
+            else
+            {
+                this.tower.NotifyFuseDestruction(this);
+                this.healthHaver.IsVulnerable = false;
+            }
+        }
     }
-  }
 

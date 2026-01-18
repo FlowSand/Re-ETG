@@ -1,6 +1,6 @@
 #nullable disable
 
-  public abstract class OverrideBehaviorBase : BehaviorBase
-  {
-  }
+    public abstract class OverrideBehaviorBase : BehaviorBase
+    {
+    }
 

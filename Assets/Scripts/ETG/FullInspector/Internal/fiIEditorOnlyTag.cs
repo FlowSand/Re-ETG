@@ -1,7 +1,7 @@
 #nullable disable
 namespace FullInspector.Internal
 {
-  public interface fiIEditorOnlyTag
-  {
-  }
+    public interface fiIEditorOnlyTag
+    {
+    }
 }

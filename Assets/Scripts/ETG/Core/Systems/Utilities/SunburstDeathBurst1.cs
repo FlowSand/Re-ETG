@@ -1,39 +1,41 @@
-using Brave.BulletScript;
-using FullInspector;
 using System.Collections;
 using System.Diagnostics;
+
+using FullInspector;
+
+using Brave.BulletScript;
 
 #nullable disable
 
 [InspectorDropdownName("Sunburst/DeathBurst1")]
 public class SunburstDeathBurst1 : Script
-  {
-    [DebuggerHidden]
-    protected override IEnumerator Top()
     {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new SunburstDeathBurst1__Topc__Iterator0()
-      {
-        _this = this
-      };
-    }
-
-    public class BurstBullet : Bullet
-    {
-      public BurstBullet()
-        : base()
-      {
-      }
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new SunburstDeathBurst1.BurstBullet__Topc__Iterator0()
+        [DebuggerHidden]
+        protected override IEnumerator Top()
         {
-          _this = this
-        };
-      }
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new SunburstDeathBurst1__Topc__Iterator0()
+            {
+                _this = this
+            };
+        }
+
+        public class BurstBullet : Bullet
+        {
+            public BurstBullet()
+                : base()
+            {
+            }
+
+            [DebuggerHidden]
+            protected override IEnumerator Top()
+            {
+                // ISSUE: object of a compiler-generated type is created
+                return (IEnumerator) new SunburstDeathBurst1.BurstBullet__Topc__Iterator0()
+                {
+                    _this = this
+                };
+            }
+        }
     }
-  }
 

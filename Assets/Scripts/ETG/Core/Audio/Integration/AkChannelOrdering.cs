@@ -1,8 +1,8 @@
 #nullable disable
 
 public enum AkChannelOrdering
-  {
-    ChannelOrdering_Standard,
-    ChannelOrdering_RunTime,
-  }
+    {
+        ChannelOrdering_Standard,
+        ChannelOrdering_RunTime,
+    }
 

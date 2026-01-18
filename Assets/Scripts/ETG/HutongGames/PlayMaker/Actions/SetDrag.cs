@@ -3,41 +3,41 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [HelpUrl("http://hutonggames.com/playmakerforum/index.php?topic=4734.0")]
-  [HutongGames.PlayMaker.Tooltip("Sets the Drag of a Game Object's Rigid Body.")]
-  [ActionCategory(ActionCategory.Physics)]
-  public class SetDrag : ComponentAction<Rigidbody>
-  {
-    [CheckForComponent(typeof (Rigidbody))]
-    [RequiredField]
-    public FsmOwnerDefault gameObject;
-    [HasFloatSlider(0.0f, 10f)]
-    [RequiredField]
-    public FsmFloat drag;
-    [HutongGames.PlayMaker.Tooltip("Repeat every frame. Typically this would be set to True.")]
-    public bool everyFrame;
-
-    public override void Reset()
+    [HelpUrl("http://hutonggames.com/playmakerforum/index.php?topic=4734.0")]
+    [HutongGames.PlayMaker.Tooltip("Sets the Drag of a Game Object's Rigid Body.")]
+    [ActionCategory(ActionCategory.Physics)]
+    public class SetDrag : ComponentAction<Rigidbody>
     {
-      this.gameObject = (FsmOwnerDefault) null;
-      this.drag = (FsmFloat) 1f;
-    }
+        [CheckForComponent(typeof (Rigidbody))]
+        [RequiredField]
+        public FsmOwnerDefault gameObject;
+        [HasFloatSlider(0.0f, 10f)]
+        [RequiredField]
+        public FsmFloat drag;
+        [HutongGames.PlayMaker.Tooltip("Repeat every frame. Typically this would be set to True.")]
+        public bool everyFrame;
 
-    public override void OnEnter()
-    {
-      this.DoSetDrag();
-      if (this.everyFrame)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            this.gameObject = (FsmOwnerDefault) null;
+            this.drag = (FsmFloat) 1f;
+        }
 
-    public override void OnUpdate() => this.DoSetDrag();
+        public override void OnEnter()
+        {
+            this.DoSetDrag();
+            if (this.everyFrame)
+                return;
+            this.Finish();
+        }
 
-    private void DoSetDrag()
-    {
-      if (!this.UpdateCache(this.Fsm.GetOwnerDefaultTarget(this.gameObject)))
-        return;
-      this.rigidbody.drag = this.drag.Value;
+        public override void OnUpdate() => this.DoSetDrag();
+
+        private void DoSetDrag()
+        {
+            if (!this.UpdateCache(this.Fsm.GetOwnerDefaultTarget(this.gameObject)))
+                return;
+            this.rigidbody.drag = this.drag.Value;
+        }
     }
-  }
 }

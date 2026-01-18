@@ -1,8 +1,8 @@
 #nullable disable
 namespace FullInspector
 {
-  public interface IInspectorAttributeOrder
-  {
-    double Order { get; }
-  }
+    public interface IInspectorAttributeOrder
+    {
+        double Order { get; }
+    }
 }

@@ -1,17 +1,18 @@
-using Dungeonator;
 using UnityEngine;
+
+using Dungeonator;
 
 #nullable disable
 
 public class SecretRoomExitData
-  {
-    public GameObject colliderObject;
-    public DungeonData.Direction exitDirection;
-
-    public SecretRoomExitData(GameObject g, DungeonData.Direction d)
     {
-      this.colliderObject = g;
-      this.exitDirection = d;
+        public GameObject colliderObject;
+        public DungeonData.Direction exitDirection;
+
+        public SecretRoomExitData(GameObject g, DungeonData.Direction d)
+        {
+            this.colliderObject = g;
+            this.exitDirection = d;
+        }
     }
-  }
 

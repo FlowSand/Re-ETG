@@ -1,9 +1,9 @@
 #nullable disable
 
 public enum AkPreparationType
-  {
-    Preparation_Load,
-    Preparation_Unload,
-    Preparation_LoadAndDecode,
-  }
+    {
+        Preparation_Load,
+        Preparation_Unload,
+        Preparation_LoadAndDecode,
+    }
 

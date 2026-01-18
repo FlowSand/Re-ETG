@@ -4,52 +4,52 @@ using System.Reflection;
 #nullable disable
 namespace FullInspector
 {
-  public struct InspectedMember
-  {
-    private InspectedProperty _property;
-    private InspectedMethod _method;
-
-    public InspectedMember(InspectedProperty property)
+    public struct InspectedMember
     {
-      this._property = property;
-      this._method = (InspectedMethod) null;
+        private InspectedProperty _property;
+        private InspectedMethod _method;
+
+        public InspectedMember(InspectedProperty property)
+        {
+            this._property = property;
+            this._method = (InspectedMethod) null;
+        }
+
+        public InspectedMember(InspectedMethod method)
+        {
+            this._property = (InspectedProperty) null;
+            this._method = method;
+        }
+
+        public InspectedProperty Property
+        {
+            get
+            {
+                if (!this.IsProperty)
+                    throw new InvalidOperationException("Member is not a property");
+                return this._property;
+            }
+        }
+
+        public InspectedMethod Method
+        {
+            get
+            {
+                if (!this.IsMethod)
+                    throw new InvalidOperationException("Member is not a method");
+                return this._method;
+            }
+        }
+
+        public bool IsMethod => this._method != null;
+
+        public bool IsProperty => this._property != null;
+
+        public string Name => this.MemberInfo.Name;
+
+        public MemberInfo MemberInfo
+        {
+            get => this.IsMethod ? (MemberInfo) this._method.Method : this._property.MemberInfo;
+        }
     }
-
-    public InspectedMember(InspectedMethod method)
-    {
-      this._property = (InspectedProperty) null;
-      this._method = method;
-    }
-
-    public InspectedProperty Property
-    {
-      get
-      {
-        if (!this.IsProperty)
-          throw new InvalidOperationException("Member is not a property");
-        return this._property;
-      }
-    }
-
-    public InspectedMethod Method
-    {
-      get
-      {
-        if (!this.IsMethod)
-          throw new InvalidOperationException("Member is not a method");
-        return this._method;
-      }
-    }
-
-    public bool IsMethod => this._method != null;
-
-    public bool IsProperty => this._property != null;
-
-    public string Name => this.MemberInfo.Name;
-
-    public MemberInfo MemberInfo
-    {
-      get => this.IsMethod ? (MemberInfo) this._method.Method : this._property.MemberInfo;
-    }
-  }
 }

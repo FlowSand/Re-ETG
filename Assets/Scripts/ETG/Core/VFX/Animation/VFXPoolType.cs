@@ -1,11 +1,11 @@
 #nullable disable
 
 public enum VFXPoolType
-  {
-    None,
-    All,
-    SequentialGroups,
-    RandomGroups,
-    Single,
-  }
+    {
+        None,
+        All,
+        SequentialGroups,
+        RandomGroups,
+        Single,
+    }
 

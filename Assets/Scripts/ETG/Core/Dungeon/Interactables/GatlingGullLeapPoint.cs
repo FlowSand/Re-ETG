@@ -1,8 +1,8 @@
 #nullable disable
 
 public class GatlingGullLeapPoint : DungeonPlaceableBehaviour
-  {
-    public bool ForRockets;
-    public bool ForReposition;
-  }
+    {
+        public bool ForRockets;
+        public bool ForReposition;
+    }
 

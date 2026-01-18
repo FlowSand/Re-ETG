@@ -1,12 +1,12 @@
 #nullable disable
 
 public enum dfMarkupTokenType
-  {
-    Invalid,
-    Text,
-    Whitespace,
-    Newline,
-    StartTag,
-    EndTag,
-  }
+    {
+        Invalid,
+        Text,
+        Whitespace,
+        Newline,
+        StartTag,
+        EndTag,
+    }
 

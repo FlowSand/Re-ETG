@@ -1,7 +1,7 @@
 #nullable disable
 namespace FullInspector
 {
-  public abstract class BaseScriptableObject : BaseScriptableObject<FullSerializerSerializer>
-  {
-  }
+    public abstract class BaseScriptableObject : BaseScriptableObject<FullSerializerSerializer>
+    {
+    }
 }

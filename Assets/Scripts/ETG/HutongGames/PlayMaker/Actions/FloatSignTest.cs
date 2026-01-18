@@ -1,49 +1,49 @@
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [Tooltip("Sends Events based on the sign of a Float.")]
-  [ActionCategory(ActionCategory.Logic)]
-  public class FloatSignTest : FsmStateAction
-  {
-    [UIHint(UIHint.Variable)]
-    [Tooltip("The float variable to test.")]
-    [RequiredField]
-    public FsmFloat floatValue;
-    [Tooltip("Event to send if the float variable is positive.")]
-    public FsmEvent isPositive;
-    [Tooltip("Event to send if the float variable is negative.")]
-    public FsmEvent isNegative;
-    [Tooltip("Repeat every frame. Useful if the variable is changing and you're waiting for a particular result.")]
-    public bool everyFrame;
-
-    public override void Reset()
+    [Tooltip("Sends Events based on the sign of a Float.")]
+    [ActionCategory(ActionCategory.Logic)]
+    public class FloatSignTest : FsmStateAction
     {
-      this.floatValue = (FsmFloat) 0.0f;
-      this.isPositive = (FsmEvent) null;
-      this.isNegative = (FsmEvent) null;
-      this.everyFrame = false;
-    }
+        [UIHint(UIHint.Variable)]
+        [Tooltip("The float variable to test.")]
+        [RequiredField]
+        public FsmFloat floatValue;
+        [Tooltip("Event to send if the float variable is positive.")]
+        public FsmEvent isPositive;
+        [Tooltip("Event to send if the float variable is negative.")]
+        public FsmEvent isNegative;
+        [Tooltip("Repeat every frame. Useful if the variable is changing and you're waiting for a particular result.")]
+        public bool everyFrame;
 
-    public override void OnEnter()
-    {
-      this.DoSignTest();
-      if (this.everyFrame)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            this.floatValue = (FsmFloat) 0.0f;
+            this.isPositive = (FsmEvent) null;
+            this.isNegative = (FsmEvent) null;
+            this.everyFrame = false;
+        }
 
-    public override void OnUpdate() => this.DoSignTest();
+        public override void OnEnter()
+        {
+            this.DoSignTest();
+            if (this.everyFrame)
+                return;
+            this.Finish();
+        }
 
-    private void DoSignTest()
-    {
-      if (this.floatValue == null)
-        return;
-      this.Fsm.Event((double) this.floatValue.Value >= 0.0 ? this.isPositive : this.isNegative);
-    }
+        public override void OnUpdate() => this.DoSignTest();
 
-    public override string ErrorCheck()
-    {
-      return FsmEvent.IsNullOrEmpty(this.isPositive) && FsmEvent.IsNullOrEmpty(this.isNegative) ? "Action sends no events!" : string.Empty;
+        private void DoSignTest()
+        {
+            if (this.floatValue == null)
+                return;
+            this.Fsm.Event((double) this.floatValue.Value >= 0.0 ? this.isPositive : this.isNegative);
+        }
+
+        public override string ErrorCheck()
+        {
+            return FsmEvent.IsNullOrEmpty(this.isPositive) && FsmEvent.IsNullOrEmpty(this.isNegative) ? "Action sends no events!" : string.Empty;
+        }
     }
-  }
 }

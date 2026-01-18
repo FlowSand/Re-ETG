@@ -1,63 +1,64 @@
 using System;
 using System.Collections;
 using System.Diagnostics;
+
 using UnityEngine;
 
 #nullable disable
 
 public class CombineEvaporateEffect : MonoBehaviour
-  {
-    public GameObject ParticleSystemToSpawn;
-    public Shader FallbackShader;
-
-    private void Start()
     {
-      this.GetComponent<Projectile>().OnHitEnemy += new Action<Projectile, SpeculativeRigidbody, bool>(this.HandleHitEnemy);
-    }
+        public GameObject ParticleSystemToSpawn;
+        public Shader FallbackShader;
 
-    private void HandleHitEnemy(Projectile proj, SpeculativeRigidbody hitRigidbody, bool fatal)
-    {
-      if (!fatal)
-        return;
-      AIActor aiActor = hitRigidbody.aiActor;
-      if (!(bool) (UnityEngine.Object) aiActor || !aiActor.IsNormalEnemy || (bool) (UnityEngine.Object) aiActor.healthHaver && aiActor.healthHaver.IsBoss)
-        return;
-      GameManager.Instance.Dungeon.StartCoroutine(this.HandleEnemyDeath(aiActor, proj.LastVelocity));
-    }
+        private void Start()
+        {
+            this.GetComponent<Projectile>().OnHitEnemy += new Action<Projectile, SpeculativeRigidbody, bool>(this.HandleHitEnemy);
+        }
 
-    [DebuggerHidden]
-    private IEnumerator HandleEnemyDeath(AIActor target, Vector2 motionDirection)
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new CombineEvaporateEffect__HandleEnemyDeathc__Iterator0()
-      {
-        target = target,
-        motionDirection = motionDirection,
-        _this = this
-      };
-    }
+        private void HandleHitEnemy(Projectile proj, SpeculativeRigidbody hitRigidbody, bool fatal)
+        {
+            if (!fatal)
+                return;
+            AIActor aiActor = hitRigidbody.aiActor;
+            if (!(bool) (UnityEngine.Object) aiActor || !aiActor.IsNormalEnemy || (bool) (UnityEngine.Object) aiActor.healthHaver && aiActor.healthHaver.IsBoss)
+                return;
+            GameManager.Instance.Dungeon.StartCoroutine(this.HandleEnemyDeath(aiActor, proj.LastVelocity));
+        }
 
-    private Transform CreateEmptySprite(AIActor target)
-    {
-      GameObject gameObject1 = new GameObject("suck image");
-      gameObject1.layer = target.gameObject.layer;
-      tk2dSprite tk2dSprite = gameObject1.AddComponent<tk2dSprite>();
-      gameObject1.transform.parent = SpawnManager.Instance.VFX;
-      tk2dSprite.SetSprite(target.sprite.Collection, target.sprite.spriteId);
-      tk2dSprite.transform.position = target.sprite.transform.position;
-      GameObject gameObject2 = new GameObject("image parent");
-      gameObject2.transform.position = (Vector3) tk2dSprite.WorldCenter;
-      tk2dSprite.transform.parent = gameObject2.transform;
-      tk2dSprite.usesOverrideMaterial = true;
-      bool flag = false;
-      if ((UnityEngine.Object) target.optionalPalette != (UnityEngine.Object) null)
-      {
-        flag = true;
-        tk2dSprite.renderer.material.SetTexture("_PaletteTex", (Texture) target.optionalPalette);
-      }
-      if (!tk2dSprite.renderer.material.shader.name.Contains("ColorEmissive"))
-        ;
-      return gameObject2.transform;
+        [DebuggerHidden]
+        private IEnumerator HandleEnemyDeath(AIActor target, Vector2 motionDirection)
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new CombineEvaporateEffect__HandleEnemyDeathc__Iterator0()
+            {
+                target = target,
+                motionDirection = motionDirection,
+                _this = this
+            };
+        }
+
+        private Transform CreateEmptySprite(AIActor target)
+        {
+            GameObject gameObject1 = new GameObject("suck image");
+            gameObject1.layer = target.gameObject.layer;
+            tk2dSprite tk2dSprite = gameObject1.AddComponent<tk2dSprite>();
+            gameObject1.transform.parent = SpawnManager.Instance.VFX;
+            tk2dSprite.SetSprite(target.sprite.Collection, target.sprite.spriteId);
+            tk2dSprite.transform.position = target.sprite.transform.position;
+            GameObject gameObject2 = new GameObject("image parent");
+            gameObject2.transform.position = (Vector3) tk2dSprite.WorldCenter;
+            tk2dSprite.transform.parent = gameObject2.transform;
+            tk2dSprite.usesOverrideMaterial = true;
+            bool flag = false;
+            if ((UnityEngine.Object) target.optionalPalette != (UnityEngine.Object) null)
+            {
+                flag = true;
+                tk2dSprite.renderer.material.SetTexture("_PaletteTex", (Texture) target.optionalPalette);
+            }
+            if (!tk2dSprite.renderer.material.shader.name.Contains("ColorEmissive"))
+                ;
+            return gameObject2.transform;
+        }
     }
-  }
 

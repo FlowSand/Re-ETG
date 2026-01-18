@@ -3,12 +3,12 @@ using UnityEngine;
 #nullable disable
 namespace DaikonForge.Tween.Components
 {
-  public interface ITweenPropertyBase
-  {
-    GameObject Target { get; set; }
+    public interface ITweenPropertyBase
+    {
+        GameObject Target { get; set; }
 
-    string ComponentType { get; set; }
+        string ComponentType { get; set; }
 
-    string MemberName { get; set; }
-  }
+        string MemberName { get; set; }
+    }
 }

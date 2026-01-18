@@ -1,6 +1,6 @@
 #nullable disable
 
-  public abstract class RangedAttackBehavior : BasicAttackBehavior
-  {
-  }
+    public abstract class RangedAttackBehavior : BasicAttackBehavior
+    {
+    }
 

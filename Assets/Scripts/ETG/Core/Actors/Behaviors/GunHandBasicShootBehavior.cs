@@ -1,72 +1,73 @@
 using System.Collections.Generic;
+
 using UnityEngine;
 
 #nullable disable
 
 public class GunHandBasicShootBehavior : BasicAttackBehavior
-  {
-    public bool LineOfSight = true;
-    public bool FireAllGuns;
-    public List<GunHandController> GunHands;
-
-    public override void Start() => base.Start();
-
-    public override void Upkeep() => base.Upkeep();
-
-    public override BehaviorResult Update()
     {
-      int num = (int) base.Update();
-      BehaviorResult behaviorResult = base.Update();
-      if (behaviorResult != BehaviorResult.Continue)
-        return behaviorResult;
-      if (!this.IsReady())
-        return BehaviorResult.Continue;
-      bool flag = this.LineOfSight && !this.m_aiActor.HasLineOfSightToTarget;
-      if ((Object) this.m_aiActor.TargetRigidbody == (Object) null || flag)
-      {
-        for (int index = 0; index < this.GunHands.Count; ++index)
-        {
-          if ((bool) (Object) this.GunHands[index])
-            this.GunHands[index].CeaseAttack();
-        }
-        return BehaviorResult.Continue;
-      }
-      if (this.FireAllGuns)
-      {
-        for (int index = 0; index < this.GunHands.Count; ++index)
-        {
-          if ((bool) (Object) this.GunHands[index])
-            this.GunHands[index].StartFiring();
-        }
-        this.UpdateCooldowns();
-        return BehaviorResult.SkipRemainingClassBehaviors;
-      }
-      GunHandController gunHandController = BraveUtility.RandomElement<GunHandController>(this.GunHands);
-      if ((bool) (Object) gunHandController)
-        gunHandController.StartFiring();
-      this.UpdateCooldowns();
-      return BehaviorResult.SkipRemainingClassBehaviors;
-    }
+        public bool LineOfSight = true;
+        public bool FireAllGuns;
+        public List<GunHandController> GunHands;
 
-    public override bool IsReady()
-    {
-      if (!base.IsReady())
-        return false;
-      if (this.FireAllGuns)
-      {
-        for (int index = 0; index < this.GunHands.Count; ++index)
+        public override void Start() => base.Start();
+
+        public override void Upkeep() => base.Upkeep();
+
+        public override BehaviorResult Update()
         {
-          if (!this.GunHands[index].IsReady)
+            int num = (int) base.Update();
+            BehaviorResult behaviorResult = base.Update();
+            if (behaviorResult != BehaviorResult.Continue)
+                return behaviorResult;
+            if (!this.IsReady())
+                return BehaviorResult.Continue;
+            bool flag = this.LineOfSight && !this.m_aiActor.HasLineOfSightToTarget;
+            if ((Object) this.m_aiActor.TargetRigidbody == (Object) null || flag)
+            {
+                for (int index = 0; index < this.GunHands.Count; ++index)
+                {
+                    if ((bool) (Object) this.GunHands[index])
+                        this.GunHands[index].CeaseAttack();
+                }
+                return BehaviorResult.Continue;
+            }
+            if (this.FireAllGuns)
+            {
+                for (int index = 0; index < this.GunHands.Count; ++index)
+                {
+                    if ((bool) (Object) this.GunHands[index])
+                        this.GunHands[index].StartFiring();
+                }
+                this.UpdateCooldowns();
+                return BehaviorResult.SkipRemainingClassBehaviors;
+            }
+            GunHandController gunHandController = BraveUtility.RandomElement<GunHandController>(this.GunHands);
+            if ((bool) (Object) gunHandController)
+                gunHandController.StartFiring();
+            this.UpdateCooldowns();
+            return BehaviorResult.SkipRemainingClassBehaviors;
+        }
+
+        public override bool IsReady()
+        {
+            if (!base.IsReady())
+                return false;
+            if (this.FireAllGuns)
+            {
+                for (int index = 0; index < this.GunHands.Count; ++index)
+                {
+                    if (!this.GunHands[index].IsReady)
+                        return false;
+                }
+                return true;
+            }
+            for (int index = 0; index < this.GunHands.Count; ++index)
+            {
+                if (this.GunHands[index].IsReady)
+                    return true;
+            }
             return false;
         }
-        return true;
-      }
-      for (int index = 0; index < this.GunHands.Count; ++index)
-      {
-        if (this.GunHands[index].IsReady)
-          return true;
-      }
-      return false;
     }
-  }
 

@@ -3,73 +3,73 @@ using System.Collections.Generic;
 #nullable disable
 namespace Dungeonator
 {
-  public class SpiralPointLayoutHandler
-  {
-    public static Queue<IntVector2> spiralOffsets;
-    public static int nextElementIndex;
-    public static IntVector2 resultOffset;
-    public static int currentResultElementIndex = -1;
-    private SemioticLayoutManager canvas;
-    private SemioticLayoutManager otherCanvas;
-    private IntVector2 otherCanvasOffset;
-    private int currentElementIndex = -1;
-
-    public SpiralPointLayoutHandler(SemioticLayoutManager c1, SemioticLayoutManager c2, int id)
+    public class SpiralPointLayoutHandler
     {
-      this.canvas = c1;
-      this.otherCanvas = c2;
-      this.currentElementIndex = -1;
-    }
+        public static Queue<IntVector2> spiralOffsets;
+        public static int nextElementIndex;
+        public static IntVector2 resultOffset;
+        public static int currentResultElementIndex = -1;
+        private SemioticLayoutManager canvas;
+        private SemioticLayoutManager otherCanvas;
+        private IntVector2 otherCanvasOffset;
+        private int currentElementIndex = -1;
 
-    public void ThreadRun()
-    {
-      while (SpiralPointLayoutHandler.currentResultElementIndex == -1)
-      {
-        lock ((object) SpiralPointLayoutHandler.spiralOffsets)
+        public SpiralPointLayoutHandler(SemioticLayoutManager c1, SemioticLayoutManager c2, int id)
         {
-          if (SpiralPointLayoutHandler.spiralOffsets.Count > 0)
-          {
-            this.otherCanvasOffset = SpiralPointLayoutHandler.spiralOffsets.Dequeue();
-            this.currentElementIndex = SpiralPointLayoutHandler.nextElementIndex;
-            ++SpiralPointLayoutHandler.nextElementIndex;
-          }
-          else
+            this.canvas = c1;
+            this.otherCanvas = c2;
             this.currentElementIndex = -1;
         }
-        if (this.currentElementIndex < 0)
-          break;
-        this.CheckRectangleDecompositionCollisions();
-      }
-    }
 
-    public void CheckRectangleDecompositionCollisions()
-    {
-      bool flag = true;
-      for (int index1 = 0; index1 < this.otherCanvas.RectangleDecomposition.Count; ++index1)
-      {
-        Tuple<IntVector2, IntVector2> tuple1 = this.otherCanvas.RectangleDecomposition[index1];
-        for (int index2 = 0; index2 < this.canvas.RectangleDecomposition.Count; ++index2)
+        public void ThreadRun()
         {
-          Tuple<IntVector2, IntVector2> tuple2 = this.canvas.RectangleDecomposition[index2];
-          if (IntVector2.AABBOverlap(tuple1.First + this.otherCanvasOffset, tuple1.Second, tuple2.First, tuple2.Second))
-          {
-            flag = false;
-            break;
-          }
+            while (SpiralPointLayoutHandler.currentResultElementIndex == -1)
+            {
+                lock ((object) SpiralPointLayoutHandler.spiralOffsets)
+                {
+                    if (SpiralPointLayoutHandler.spiralOffsets.Count > 0)
+                    {
+                        this.otherCanvasOffset = SpiralPointLayoutHandler.spiralOffsets.Dequeue();
+                        this.currentElementIndex = SpiralPointLayoutHandler.nextElementIndex;
+                        ++SpiralPointLayoutHandler.nextElementIndex;
+                    }
+                    else
+                        this.currentElementIndex = -1;
+                }
+                if (this.currentElementIndex < 0)
+                    break;
+                this.CheckRectangleDecompositionCollisions();
+            }
         }
-        if (!flag)
-          break;
-      }
-      if (!flag)
-        return;
-      lock ((object) SpiralPointLayoutHandler.spiralOffsets)
-      {
-        if (SpiralPointLayoutHandler.currentResultElementIndex != -1 && this.currentElementIndex >= SpiralPointLayoutHandler.currentResultElementIndex)
-          return;
-        SpiralPointLayoutHandler.spiralOffsets.Clear();
-        SpiralPointLayoutHandler.currentResultElementIndex = this.currentElementIndex;
-        SpiralPointLayoutHandler.resultOffset = this.otherCanvasOffset;
-      }
+
+        public void CheckRectangleDecompositionCollisions()
+        {
+            bool flag = true;
+            for (int index1 = 0; index1 < this.otherCanvas.RectangleDecomposition.Count; ++index1)
+            {
+                Tuple<IntVector2, IntVector2> tuple1 = this.otherCanvas.RectangleDecomposition[index1];
+                for (int index2 = 0; index2 < this.canvas.RectangleDecomposition.Count; ++index2)
+                {
+                    Tuple<IntVector2, IntVector2> tuple2 = this.canvas.RectangleDecomposition[index2];
+                    if (IntVector2.AABBOverlap(tuple1.First + this.otherCanvasOffset, tuple1.Second, tuple2.First, tuple2.Second))
+                    {
+                        flag = false;
+                        break;
+                    }
+                }
+                if (!flag)
+                    break;
+            }
+            if (!flag)
+                return;
+            lock ((object) SpiralPointLayoutHandler.spiralOffsets)
+            {
+                if (SpiralPointLayoutHandler.currentResultElementIndex != -1 && this.currentElementIndex >= SpiralPointLayoutHandler.currentResultElementIndex)
+                    return;
+                SpiralPointLayoutHandler.spiralOffsets.Clear();
+                SpiralPointLayoutHandler.currentResultElementIndex = this.currentElementIndex;
+                SpiralPointLayoutHandler.resultOffset = this.otherCanvasOffset;
+            }
+        }
     }
-  }
 }

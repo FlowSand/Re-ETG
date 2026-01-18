@@ -1,8 +1,8 @@
 #nullable disable
 
 public enum AkBankContent
-  {
-    AkBankContent_StructureOnly,
-    AkBankContent_All,
-  }
+    {
+        AkBankContent_StructureOnly,
+        AkBankContent_All,
+    }
 

@@ -1,7 +1,7 @@
 #nullable disable
 namespace Brave.BulletScript
 {
-  public interface IFireParam
-  {
-  }
+    public interface IFireParam
+    {
+    }
 }

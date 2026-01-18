@@ -1,12 +1,12 @@
 #nullable disable
 namespace FullInspector.Internal
 {
-  public interface fiIValueProxyAPI
-  {
-    object Value { get; set; }
+    public interface fiIValueProxyAPI
+    {
+        object Value { get; set; }
 
-    void SaveState();
+        void SaveState();
 
-    void LoadState();
-  }
+        void LoadState();
+    }
 }

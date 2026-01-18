@@ -3,39 +3,39 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Sets the Color of a Light.")]
-  [ActionCategory(ActionCategory.Lights)]
-  public class SetLightColor : ComponentAction<Light>
-  {
-    [CheckForComponent(typeof (Light))]
-    [RequiredField]
-    public FsmOwnerDefault gameObject;
-    [RequiredField]
-    public FsmColor lightColor;
-    public bool everyFrame;
-
-    public override void Reset()
+    [HutongGames.PlayMaker.Tooltip("Sets the Color of a Light.")]
+    [ActionCategory(ActionCategory.Lights)]
+    public class SetLightColor : ComponentAction<Light>
     {
-      this.gameObject = (FsmOwnerDefault) null;
-      this.lightColor = (FsmColor) Color.white;
-      this.everyFrame = false;
-    }
+        [CheckForComponent(typeof (Light))]
+        [RequiredField]
+        public FsmOwnerDefault gameObject;
+        [RequiredField]
+        public FsmColor lightColor;
+        public bool everyFrame;
 
-    public override void OnEnter()
-    {
-      this.DoSetLightColor();
-      if (this.everyFrame)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            this.gameObject = (FsmOwnerDefault) null;
+            this.lightColor = (FsmColor) Color.white;
+            this.everyFrame = false;
+        }
 
-    public override void OnUpdate() => this.DoSetLightColor();
+        public override void OnEnter()
+        {
+            this.DoSetLightColor();
+            if (this.everyFrame)
+                return;
+            this.Finish();
+        }
 
-    private void DoSetLightColor()
-    {
-      if (!this.UpdateCache(this.Fsm.GetOwnerDefaultTarget(this.gameObject)))
-        return;
-      this.light.color = this.lightColor.Value;
+        public override void OnUpdate() => this.DoSetLightColor();
+
+        private void DoSetLightColor()
+        {
+            if (!this.UpdateCache(this.Fsm.GetOwnerDefaultTarget(this.gameObject)))
+                return;
+            this.light.color = this.lightColor.Value;
+        }
     }
-  }
 }

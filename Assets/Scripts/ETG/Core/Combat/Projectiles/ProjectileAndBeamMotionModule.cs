@@ -2,11 +2,11 @@ using UnityEngine;
 
 #nullable disable
 
-  public abstract class ProjectileAndBeamMotionModule : ProjectileMotionModule
-  {
-    public abstract Vector2 GetBoneOffset(
-      BasicBeamController.BeamBone bone,
-      BeamController sourceBeam,
-      bool inverted);
-  }
+    public abstract class ProjectileAndBeamMotionModule : ProjectileMotionModule
+    {
+        public abstract Vector2 GetBoneOffset(
+            BasicBeamController.BeamBone bone,
+            BeamController sourceBeam,
+            bool inverted);
+    }
 

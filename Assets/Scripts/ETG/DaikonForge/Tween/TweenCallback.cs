@@ -1,5 +1,5 @@
 #nullable disable
 namespace DaikonForge.Tween
 {
-  public delegate void TweenCallback(TweenBase sender);
+    public delegate void TweenCallback(TweenBase sender);
 }

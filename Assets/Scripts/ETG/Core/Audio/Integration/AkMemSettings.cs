@@ -3,58 +3,58 @@ using System;
 #nullable disable
 
 public class AkMemSettings : IDisposable
-  {
-    private IntPtr swigCPtr;
-    protected bool swigCMemOwn;
-
-    internal AkMemSettings(IntPtr cPtr, bool cMemoryOwn)
     {
-      this.swigCMemOwn = cMemoryOwn;
-      this.swigCPtr = cPtr;
-    }
+        private IntPtr swigCPtr;
+        protected bool swigCMemOwn;
 
-    public AkMemSettings()
-      : this(AkSoundEnginePINVOKE.CSharp_new_AkMemSettings(), true)
-    {
-    }
-
-    internal static IntPtr getCPtr(AkMemSettings obj) => obj == null ? IntPtr.Zero : obj.swigCPtr;
-
-    internal virtual void setCPtr(IntPtr cPtr)
-    {
-      this.Dispose();
-      this.swigCPtr = cPtr;
-    }
-
-    ~AkMemSettings() => this.Dispose();
-
-    public virtual void Dispose()
-    {
-      lock ((object) this)
-      {
-        if (this.swigCPtr != IntPtr.Zero)
+        internal AkMemSettings(IntPtr cPtr, bool cMemoryOwn)
         {
-          if (this.swigCMemOwn)
-          {
-            this.swigCMemOwn = false;
-            AkSoundEnginePINVOKE.CSharp_delete_AkMemSettings(this.swigCPtr);
-          }
-          this.swigCPtr = IntPtr.Zero;
+            this.swigCMemOwn = cMemoryOwn;
+            this.swigCPtr = cPtr;
         }
-        GC.SuppressFinalize((object) this);
-      }
-    }
 
-    public uint uMaxNumPools
-    {
-      set => AkSoundEnginePINVOKE.CSharp_AkMemSettings_uMaxNumPools_set(this.swigCPtr, value);
-      get => AkSoundEnginePINVOKE.CSharp_AkMemSettings_uMaxNumPools_get(this.swigCPtr);
-    }
+        public AkMemSettings()
+            : this(AkSoundEnginePINVOKE.CSharp_new_AkMemSettings(), true)
+        {
+        }
 
-    public uint uDebugFlags
-    {
-      set => AkSoundEnginePINVOKE.CSharp_AkMemSettings_uDebugFlags_set(this.swigCPtr, value);
-      get => AkSoundEnginePINVOKE.CSharp_AkMemSettings_uDebugFlags_get(this.swigCPtr);
+        internal static IntPtr getCPtr(AkMemSettings obj) => obj == null ? IntPtr.Zero : obj.swigCPtr;
+
+        internal virtual void setCPtr(IntPtr cPtr)
+        {
+            this.Dispose();
+            this.swigCPtr = cPtr;
+        }
+
+        ~AkMemSettings() => this.Dispose();
+
+        public virtual void Dispose()
+        {
+            lock ((object) this)
+            {
+                if (this.swigCPtr != IntPtr.Zero)
+                {
+                    if (this.swigCMemOwn)
+                    {
+                        this.swigCMemOwn = false;
+                        AkSoundEnginePINVOKE.CSharp_delete_AkMemSettings(this.swigCPtr);
+                    }
+                    this.swigCPtr = IntPtr.Zero;
+                }
+                GC.SuppressFinalize((object) this);
+            }
+        }
+
+        public uint uMaxNumPools
+        {
+            set => AkSoundEnginePINVOKE.CSharp_AkMemSettings_uMaxNumPools_set(this.swigCPtr, value);
+            get => AkSoundEnginePINVOKE.CSharp_AkMemSettings_uMaxNumPools_get(this.swigCPtr);
+        }
+
+        public uint uDebugFlags
+        {
+            set => AkSoundEnginePINVOKE.CSharp_AkMemSettings_uDebugFlags_set(this.swigCPtr, value);
+            get => AkSoundEnginePINVOKE.CSharp_AkMemSettings_uDebugFlags_get(this.swigCPtr);
+        }
     }
-  }
 

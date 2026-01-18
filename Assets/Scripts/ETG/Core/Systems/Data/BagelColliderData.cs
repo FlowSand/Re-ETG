@@ -4,9 +4,9 @@ using System;
 
 [Serializable]
 public class BagelColliderData
-  {
-    public BagelCollider[] bagelColliders;
+    {
+        public BagelCollider[] bagelColliders;
 
-    public BagelColliderData(BagelCollider[] bcs) => this.bagelColliders = bcs;
-  }
+        public BagelColliderData(BagelCollider[] bcs) => this.bagelColliders = bcs;
+    }
 

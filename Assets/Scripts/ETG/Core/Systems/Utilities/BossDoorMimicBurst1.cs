@@ -1,41 +1,43 @@
-using Brave.BulletScript;
-using FullInspector;
 using System.Collections;
 using System.Diagnostics;
+
+using FullInspector;
+
+using Brave.BulletScript;
 
 #nullable disable
 
 [InspectorDropdownName("Bosses/BossDoorMimic/Burst1")]
 public class BossDoorMimicBurst1 : Script
-  {
-    private const int NumBullets = 36;
-
-    [DebuggerHidden]
-    protected override IEnumerator Top()
     {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new BossDoorMimicBurst1__Topc__Iterator0()
-      {
-        _this = this
-      };
-    }
+        private const int NumBullets = 36;
 
-    public class SpinBullet : Bullet
-    {
-      public SpinBullet()
-        : base("teleport_burst")
-      {
-      }
-
-      [DebuggerHidden]
-      protected override IEnumerator Top()
-      {
-        // ISSUE: object of a compiler-generated type is created
-        return (IEnumerator) new BossDoorMimicBurst1.SpinBullet__Topc__Iterator0()
+        [DebuggerHidden]
+        protected override IEnumerator Top()
         {
-          _this = this
-        };
-      }
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new BossDoorMimicBurst1__Topc__Iterator0()
+            {
+                _this = this
+            };
+        }
+
+        public class SpinBullet : Bullet
+        {
+            public SpinBullet()
+                : base("teleport_burst")
+            {
+            }
+
+            [DebuggerHidden]
+            protected override IEnumerator Top()
+            {
+                // ISSUE: object of a compiler-generated type is created
+                return (IEnumerator) new BossDoorMimicBurst1.SpinBullet__Topc__Iterator0()
+                {
+                    _this = this
+                };
+            }
+        }
     }
-  }
 

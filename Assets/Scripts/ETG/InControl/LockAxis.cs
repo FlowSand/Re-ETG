@@ -1,10 +1,10 @@
 #nullable disable
 namespace InControl
 {
-  public enum LockAxis
-  {
-    None,
-    Horizontal,
-    Vertical,
-  }
+    public enum LockAxis
+    {
+        None,
+        Horizontal,
+        Vertical,
+    }
 }

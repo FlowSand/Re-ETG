@@ -4,8 +4,8 @@ using System;
 
 [Serializable]
 public struct BreakFrame
-  {
-    public float healthPercentage;
-    public string sprite;
-  }
+    {
+        public float healthPercentage;
+        public string sprite;
+    }
 

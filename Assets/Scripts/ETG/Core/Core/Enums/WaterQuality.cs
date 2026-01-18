@@ -1,9 +1,9 @@
 #nullable disable
 
 public enum WaterQuality
-  {
-    Low,
-    Medium,
-    High,
-  }
+    {
+        Low,
+        Medium,
+        High,
+    }
 

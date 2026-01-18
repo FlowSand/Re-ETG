@@ -1,7 +1,7 @@
 #nullable disable
 namespace FullInspector.Modules.SerializableDelegates
 {
-  public class BaseSerializedFunc : BaseSerializationDelegate
-  {
-  }
+    public class BaseSerializedFunc : BaseSerializationDelegate
+    {
+    }
 }

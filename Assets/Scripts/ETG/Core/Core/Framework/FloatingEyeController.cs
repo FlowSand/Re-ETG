@@ -1,67 +1,68 @@
-using Dungeonator;
 using UnityEngine;
+
+using Dungeonator;
 
 #nullable disable
 
 public class FloatingEyeController : BraveBehaviour
-  {
-    private BeholsterController m_beholster;
-    private bool m_beholsterKilled;
-
-    public void Awake()
     {
-      if ((bool) (UnityEngine.Object) this.aiAnimator)
-        this.aiAnimator.OnSpawnCompleted += new System.Action(this.OnSpawnCompleted);
-      this.aiActor.PreventAutoKillOnBossDeath = true;
-    }
+        private BeholsterController m_beholster;
+        private bool m_beholsterKilled;
 
-    public void Start()
-    {
-      this.m_beholster = UnityEngine.Object.FindObjectOfType<BeholsterController>();
-      if (!(bool) (UnityEngine.Object) this.m_beholster)
-        return;
-      this.m_beholster.healthHaver.OnDamaged += new HealthHaver.OnDamagedEvent(this.OnBeholsterDamaged);
-    }
+        public void Awake()
+        {
+            if ((bool) (UnityEngine.Object) this.aiAnimator)
+                this.aiAnimator.OnSpawnCompleted += new System.Action(this.OnSpawnCompleted);
+            this.aiActor.PreventAutoKillOnBossDeath = true;
+        }
 
-    protected override void OnDestroy()
-    {
-      if ((bool) (UnityEngine.Object) this.m_beholster)
-        this.m_beholster.healthHaver.OnDamaged -= new HealthHaver.OnDamagedEvent(this.OnBeholsterDamaged);
-      if ((bool) (UnityEngine.Object) this.aiAnimator)
-        this.aiAnimator.OnSpawnCompleted -= new System.Action(this.OnSpawnCompleted);
-      base.OnDestroy();
-    }
+        public void Start()
+        {
+            this.m_beholster = UnityEngine.Object.FindObjectOfType<BeholsterController>();
+            if (!(bool) (UnityEngine.Object) this.m_beholster)
+                return;
+            this.m_beholster.healthHaver.OnDamaged += new HealthHaver.OnDamagedEvent(this.OnBeholsterDamaged);
+        }
 
-    private void OnBeholsterDamaged(
-      float resultValue,
-      float maxValue,
-      CoreDamageTypes damageTypes,
-      DamageCategory damageCategory,
-      Vector2 damageDirection)
-    {
-      if ((double) resultValue > 0.0)
-        return;
-      this.m_beholsterKilled = true;
-      this.StartCrying();
-    }
+        protected override void OnDestroy()
+        {
+            if ((bool) (UnityEngine.Object) this.m_beholster)
+                this.m_beholster.healthHaver.OnDamaged -= new HealthHaver.OnDamagedEvent(this.OnBeholsterDamaged);
+            if ((bool) (UnityEngine.Object) this.aiAnimator)
+                this.aiAnimator.OnSpawnCompleted -= new System.Action(this.OnSpawnCompleted);
+            base.OnDestroy();
+        }
 
-    private void OnSpawnCompleted()
-    {
-      if ((bool) (UnityEngine.Object) this.aiActor)
-        this.aiActor.PathableTiles |= CellTypes.PIT;
-      if (!this.m_beholsterKilled && (!(bool) (UnityEngine.Object) this.m_beholster || !this.m_beholster.healthHaver.IsDead))
-        return;
-      this.StartCrying();
-    }
+        private void OnBeholsterDamaged(
+            float resultValue,
+            float maxValue,
+            CoreDamageTypes damageTypes,
+            DamageCategory damageCategory,
+            Vector2 damageDirection)
+        {
+            if ((double) resultValue > 0.0)
+                return;
+            this.m_beholsterKilled = true;
+            this.StartCrying();
+        }
 
-    private void StartCrying()
-    {
-      this.aiActor.ClearPath();
-      this.behaviorSpeculator.enabled = false;
-      this.aiShooter.enabled = false;
-      this.aiShooter.ToggleGunAndHandRenderers(false, "Cry");
-      this.aiActor.IgnoreForRoomClear = true;
-      this.aiAnimator.PlayUntilCancelled("cry");
+        private void OnSpawnCompleted()
+        {
+            if ((bool) (UnityEngine.Object) this.aiActor)
+                this.aiActor.PathableTiles |= CellTypes.PIT;
+            if (!this.m_beholsterKilled && (!(bool) (UnityEngine.Object) this.m_beholster || !this.m_beholster.healthHaver.IsDead))
+                return;
+            this.StartCrying();
+        }
+
+        private void StartCrying()
+        {
+            this.aiActor.ClearPath();
+            this.behaviorSpeculator.enabled = false;
+            this.aiShooter.enabled = false;
+            this.aiShooter.ToggleGunAndHandRenderers(false, "Cry");
+            this.aiActor.IgnoreForRoomClear = true;
+            this.aiAnimator.PlayUntilCancelled("cry");
+        }
     }
-  }
 

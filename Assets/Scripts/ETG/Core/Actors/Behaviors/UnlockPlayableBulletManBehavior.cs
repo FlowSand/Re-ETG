@@ -1,35 +1,36 @@
-using Dungeonator;
 using UnityEngine;
+
+using Dungeonator;
 
 #nullable disable
 
 public class UnlockPlayableBulletManBehavior : BehaviorBase
-  {
-    private float m_aloneElapsed;
-
-    public override void Start()
     {
-      base.Start();
-      if (!(bool) (Object) this.m_aiActor || !(bool) (Object) this.m_aiActor.sprite)
-        ;
-    }
+        private float m_aloneElapsed;
 
-    public override void Upkeep() => base.Upkeep();
-
-    public override BehaviorResult Update()
-    {
-      if (this.m_aiActor.ParentRoom.GetActiveEnemiesCount(RoomHandler.ActiveEnemyType.RoomClear) == 1)
-      {
-        this.m_aloneElapsed += BraveTime.DeltaTime;
-        if ((double) this.m_aloneElapsed > 3.0)
+        public override void Start()
         {
-          Object.Instantiate<GameObject>((GameObject) ResourceCache.Acquire("Global VFX/VFX_Teleport_Beam")).GetComponent<tk2dBaseSprite>().PlaceAtLocalPositionByAnchor((Vector3) (this.m_aiActor.specRigidbody.UnitBottomCenter + new Vector2(0.0f, -0.5f)), tk2dBaseSprite.Anchor.LowerCenter);
-          Debug.Log((object) "Setting a SEEN_SECRET_BULLETMAN flag!");
-          GameStatsManager.Instance.SetNextFlag(GungeonFlags.SECRET_BULLETMAN_SEEN_01, GungeonFlags.SECRET_BULLETMAN_SEEN_02, GungeonFlags.SECRET_BULLETMAN_SEEN_03, GungeonFlags.SECRET_BULLETMAN_SEEN_04, GungeonFlags.SECRET_BULLETMAN_SEEN_05);
-          Object.Destroy((Object) this.m_gameObject);
+            base.Start();
+            if (!(bool) (Object) this.m_aiActor || !(bool) (Object) this.m_aiActor.sprite)
+                ;
         }
-      }
-      return base.Update();
+
+        public override void Upkeep() => base.Upkeep();
+
+        public override BehaviorResult Update()
+        {
+            if (this.m_aiActor.ParentRoom.GetActiveEnemiesCount(RoomHandler.ActiveEnemyType.RoomClear) == 1)
+            {
+                this.m_aloneElapsed += BraveTime.DeltaTime;
+                if ((double) this.m_aloneElapsed > 3.0)
+                {
+                    Object.Instantiate<GameObject>((GameObject) ResourceCache.Acquire("Global VFX/VFX_Teleport_Beam")).GetComponent<tk2dBaseSprite>().PlaceAtLocalPositionByAnchor((Vector3) (this.m_aiActor.specRigidbody.UnitBottomCenter + new Vector2(0.0f, -0.5f)), tk2dBaseSprite.Anchor.LowerCenter);
+                    Debug.Log((object) "Setting a SEEN_SECRET_BULLETMAN flag!");
+                    GameStatsManager.Instance.SetNextFlag(GungeonFlags.SECRET_BULLETMAN_SEEN_01, GungeonFlags.SECRET_BULLETMAN_SEEN_02, GungeonFlags.SECRET_BULLETMAN_SEEN_03, GungeonFlags.SECRET_BULLETMAN_SEEN_04, GungeonFlags.SECRET_BULLETMAN_SEEN_05);
+                    Object.Destroy((Object) this.m_gameObject);
+                }
+            }
+            return base.Update();
+        }
     }
-  }
 

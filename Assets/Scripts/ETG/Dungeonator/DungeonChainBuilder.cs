@@ -1,7 +1,7 @@
 #nullable disable
 namespace Dungeonator
 {
-  public class DungeonChainBuilder
-  {
-  }
+    public class DungeonChainBuilder
+    {
+    }
 }

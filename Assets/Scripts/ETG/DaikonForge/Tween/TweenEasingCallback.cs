@@ -1,5 +1,5 @@
 #nullable disable
 namespace DaikonForge.Tween
 {
-  public delegate float TweenEasingCallback(float time);
+    public delegate float TweenEasingCallback(float time);
 }

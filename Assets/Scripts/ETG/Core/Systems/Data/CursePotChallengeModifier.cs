@@ -1,40 +1,41 @@
-using Dungeonator;
 using Pathfinding;
 using UnityEngine;
+
+using Dungeonator;
 
 #nullable disable
 
 public class CursePotChallengeModifier : ChallengeModifier
-  {
-    public DungeonPlaceable CursePot;
-    public int RoughAreaPerCursePot = 50;
-
-    private void Start()
     {
-      RoomHandler currentRoom = GameManager.Instance.PrimaryPlayer.CurrentRoom;
-      int num = Mathf.Max(1, currentRoom.CellsWithoutExits.Count / this.RoughAreaPerCursePot);
-      CellValidator cellValidator = (CellValidator) (pos =>
-      {
-        for (int index = 0; index < GameManager.Instance.AllPlayers.Length; ++index)
+        public DungeonPlaceable CursePot;
+        public int RoughAreaPerCursePot = 50;
+
+        private void Start()
         {
-          if ((double) Vector2.Distance(GameManager.Instance.AllPlayers[index].CenterPosition, pos.ToCenterVector2()) < 8.0)
-            return false;
+            RoomHandler currentRoom = GameManager.Instance.PrimaryPlayer.CurrentRoom;
+            int num = Mathf.Max(1, currentRoom.CellsWithoutExits.Count / this.RoughAreaPerCursePot);
+            CellValidator cellValidator = (CellValidator) (pos =>
+            {
+                for (int index = 0; index < GameManager.Instance.AllPlayers.Length; ++index)
+                {
+                    if ((double) Vector2.Distance(GameManager.Instance.AllPlayers[index].CenterPosition, pos.ToCenterVector2()) < 8.0)
+                        return false;
+                }
+                return true;
+            });
+            for (int index = 0; index < num; ++index)
+            {
+                IntVector2? randomAvailableCell = currentRoom.GetRandomAvailableCell(new IntVector2?(IntVector2.One), new CellTypes?(CellTypes.FLOOR), cellValidator: cellValidator);
+                if (randomAvailableCell.HasValue)
+                {
+                    CellData cellData = GameManager.Instance.Dungeon.data[randomAvailableCell.Value];
+                    if (cellData.parentRoom == currentRoom && cellData.type == CellType.FLOOR && !cellData.isOccupied && !cellData.containsTrap && !cellData.isOccludedByTopWall)
+                    {
+                        cellData.containsTrap = true;
+                        this.CursePot.InstantiateObject(currentRoom, cellData.position - currentRoom.area.basePosition);
+                    }
+                }
+            }
         }
-        return true;
-      });
-      for (int index = 0; index < num; ++index)
-      {
-        IntVector2? randomAvailableCell = currentRoom.GetRandomAvailableCell(new IntVector2?(IntVector2.One), new CellTypes?(CellTypes.FLOOR), cellValidator: cellValidator);
-        if (randomAvailableCell.HasValue)
-        {
-          CellData cellData = GameManager.Instance.Dungeon.data[randomAvailableCell.Value];
-          if (cellData.parentRoom == currentRoom && cellData.type == CellType.FLOOR && !cellData.isOccupied && !cellData.containsTrap && !cellData.isOccludedByTopWall)
-          {
-            cellData.containsTrap = true;
-            this.CursePot.InstantiateObject(currentRoom, cellData.position - currentRoom.area.basePosition);
-          }
-        }
-      }
     }
-  }
 

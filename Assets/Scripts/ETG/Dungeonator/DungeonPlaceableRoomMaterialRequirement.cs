@@ -3,12 +3,12 @@ using System;
 #nullable disable
 namespace Dungeonator
 {
-  [Serializable]
-  public class DungeonPlaceableRoomMaterialRequirement
-  {
-    public GlobalDungeonData.ValidTilesets TargetTileset = GlobalDungeonData.ValidTilesets.CASTLEGEON;
-    [PrettyDungeonMaterial("TargetTileset")]
-    public int RoomMaterial;
-    public bool RequireMaterial = true;
-  }
+    [Serializable]
+    public class DungeonPlaceableRoomMaterialRequirement
+    {
+        public GlobalDungeonData.ValidTilesets TargetTileset = GlobalDungeonData.ValidTilesets.CASTLEGEON;
+        [PrettyDungeonMaterial("TargetTileset")]
+        public int RoomMaterial;
+        public bool RequireMaterial = true;
+    }
 }

@@ -1,93 +1,95 @@
-using Dungeonator;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+
 using UnityEngine;
+
+using Dungeonator;
 
 #nullable disable
 
 public class TrapSpawnerController : BraveBehaviour
-  {
-    [Header("Spawn Info")]
-    public GameObject Trap;
-    public GameObject PoofVfx;
-    public List<Vector2> RoomPositionOffsets;
-    public List<float> SpawnDelays;
-    public Vector2 VfxOffset;
-    public float VfxLeadTime;
-    public float AdditionalTriggerDelayTime;
-    [Header("Spawn Triggers")]
-    public bool SpawnOnIntroFinished;
-    [Header("Destroy Triggers")]
-    public bool DestroyOnDeath;
-    private RoomHandler m_room;
-    private List<GameObject> m_traps = new List<GameObject>();
-
-    public void Start()
     {
-      this.m_room = this.GetComponent<AIActor>().ParentRoom;
-      if (this.SpawnOnIntroFinished)
-        this.GetComponent<GenericIntroDoer>().OnIntroFinished += new System.Action(this.OnIntroFinished);
-      if (!this.DestroyOnDeath)
-        return;
-      this.healthHaver.OnDeath += new Action<Vector2>(this.OnDeath);
-    }
+        [Header("Spawn Info")]
+        public GameObject Trap;
+        public GameObject PoofVfx;
+        public List<Vector2> RoomPositionOffsets;
+        public List<float> SpawnDelays;
+        public Vector2 VfxOffset;
+        public float VfxLeadTime;
+        public float AdditionalTriggerDelayTime;
+        [Header("Spawn Triggers")]
+        public bool SpawnOnIntroFinished;
+        [Header("Destroy Triggers")]
+        public bool DestroyOnDeath;
+        private RoomHandler m_room;
+        private List<GameObject> m_traps = new List<GameObject>();
 
-    protected override void OnDestroy() => base.OnDestroy();
+        public void Start()
+        {
+            this.m_room = this.GetComponent<AIActor>().ParentRoom;
+            if (this.SpawnOnIntroFinished)
+                this.GetComponent<GenericIntroDoer>().OnIntroFinished += new System.Action(this.OnIntroFinished);
+            if (!this.DestroyOnDeath)
+                return;
+            this.healthHaver.OnDeath += new Action<Vector2>(this.OnDeath);
+        }
 
-    private void OnIntroFinished()
-    {
-      if (!this.SpawnOnIntroFinished)
-        return;
-      this.StartCoroutine(this.SpawnTraps());
-    }
+        protected override void OnDestroy() => base.OnDestroy();
 
-    private void OnDeath(Vector2 vector2)
-    {
-      if (!this.DestroyOnDeath)
-        return;
-      this.DestroyTraps();
-    }
+        private void OnIntroFinished()
+        {
+            if (!this.SpawnOnIntroFinished)
+                return;
+            this.StartCoroutine(this.SpawnTraps());
+        }
 
-    [DebuggerHidden]
-    private IEnumerator SpawnTraps()
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new TrapSpawnerController__SpawnTrapsc__Iterator0()
-      {
-        _this = this
-      };
-    }
+        private void OnDeath(Vector2 vector2)
+        {
+            if (!this.DestroyOnDeath)
+                return;
+            this.DestroyTraps();
+        }
 
-    [DebuggerHidden]
-    private IEnumerator SpawnTrap(Vector2 pos)
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new TrapSpawnerController__SpawnTrapc__Iterator1()
-      {
-        pos = pos,
-        _this = this
-      };
-    }
+        [DebuggerHidden]
+        private IEnumerator SpawnTraps()
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new TrapSpawnerController__SpawnTrapsc__Iterator0()
+            {
+                _this = this
+            };
+        }
 
-    private void DestroyTraps()
-    {
-      if (!GameManager.HasInstance || GameManager.Instance.IsLoadingLevel || GameManager.IsReturningToBreach)
-        return;
-      for (int index = 0; index < this.m_traps.Count; ++index)
-        GameManager.Instance.StartCoroutine(this.DestroyTrap(this.m_traps[index]));
-    }
+        [DebuggerHidden]
+        private IEnumerator SpawnTrap(Vector2 pos)
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new TrapSpawnerController__SpawnTrapc__Iterator1()
+            {
+                pos = pos,
+                _this = this
+            };
+        }
 
-    [DebuggerHidden]
-    private IEnumerator DestroyTrap(GameObject trap)
-    {
-      // ISSUE: object of a compiler-generated type is created
-      return (IEnumerator) new TrapSpawnerController__DestroyTrapc__Iterator2()
-      {
-        trap = trap,
-        _this = this
-      };
+        private void DestroyTraps()
+        {
+            if (!GameManager.HasInstance || GameManager.Instance.IsLoadingLevel || GameManager.IsReturningToBreach)
+                return;
+            for (int index = 0; index < this.m_traps.Count; ++index)
+                GameManager.Instance.StartCoroutine(this.DestroyTrap(this.m_traps[index]));
+        }
+
+        [DebuggerHidden]
+        private IEnumerator DestroyTrap(GameObject trap)
+        {
+            // ISSUE: object of a compiler-generated type is created
+            return (IEnumerator) new TrapSpawnerController__DestroyTrapc__Iterator2()
+            {
+                trap = trap,
+                _this = this
+            };
+        }
     }
-  }
 

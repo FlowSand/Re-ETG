@@ -1,11 +1,11 @@
 #nullable disable
 namespace InControl
 {
-  public class TouchInputDevice : InputDevice
-  {
-    public TouchInputDevice()
-      : base("Touch Input Device", true)
+    public class TouchInputDevice : InputDevice
     {
+        public TouchInputDevice()
+            : base("Touch Input Device", true)
+        {
+        }
     }
-  }
 }

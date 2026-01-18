@@ -1,10 +1,10 @@
 #nullable disable
 
 public enum AdditionalHandState
-  {
-    None,
-    HidePrimary,
-    HideSecondary,
-    HideBoth,
-  }
+    {
+        None,
+        HidePrimary,
+        HideSecondary,
+        HideBoth,
+    }
 

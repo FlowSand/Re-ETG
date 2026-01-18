@@ -3,71 +3,71 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Spherically interpolates between from and to by t.")]
-  [ActionCategory(ActionCategory.Quaternion)]
-  public class QuaternionSlerp : QuaternionBaseAction
-  {
-    [HutongGames.PlayMaker.Tooltip("From Quaternion.")]
-    [RequiredField]
-    public FsmQuaternion fromQuaternion;
-    [HutongGames.PlayMaker.Tooltip("To Quaternion.")]
-    [RequiredField]
-    public FsmQuaternion toQuaternion;
-    [HasFloatSlider(0.0f, 1f)]
-    [HutongGames.PlayMaker.Tooltip("Interpolate between fromQuaternion and toQuaternion by this amount. Value is clamped to 0-1 range. 0 = fromQuaternion; 1 = toQuaternion; 0.5 = half way between.")]
-    [RequiredField]
-    public FsmFloat amount;
-    [HutongGames.PlayMaker.Tooltip("Store the result in this quaternion variable.")]
-    [UIHint(UIHint.Variable)]
-    [RequiredField]
-    public FsmQuaternion storeResult;
-
-    public override void Reset()
+    [HutongGames.PlayMaker.Tooltip("Spherically interpolates between from and to by t.")]
+    [ActionCategory(ActionCategory.Quaternion)]
+    public class QuaternionSlerp : QuaternionBaseAction
     {
-      FsmQuaternion fsmQuaternion1 = new FsmQuaternion();
-      fsmQuaternion1.UseVariable = true;
-      this.fromQuaternion = fsmQuaternion1;
-      FsmQuaternion fsmQuaternion2 = new FsmQuaternion();
-      fsmQuaternion2.UseVariable = true;
-      this.toQuaternion = fsmQuaternion2;
-      this.amount = (FsmFloat) 0.1f;
-      this.storeResult = (FsmQuaternion) null;
-      this.everyFrame = true;
-      this.everyFrameOption = QuaternionBaseAction.everyFrameOptions.Update;
-    }
+        [HutongGames.PlayMaker.Tooltip("From Quaternion.")]
+        [RequiredField]
+        public FsmQuaternion fromQuaternion;
+        [HutongGames.PlayMaker.Tooltip("To Quaternion.")]
+        [RequiredField]
+        public FsmQuaternion toQuaternion;
+        [HasFloatSlider(0.0f, 1f)]
+        [HutongGames.PlayMaker.Tooltip("Interpolate between fromQuaternion and toQuaternion by this amount. Value is clamped to 0-1 range. 0 = fromQuaternion; 1 = toQuaternion; 0.5 = half way between.")]
+        [RequiredField]
+        public FsmFloat amount;
+        [HutongGames.PlayMaker.Tooltip("Store the result in this quaternion variable.")]
+        [UIHint(UIHint.Variable)]
+        [RequiredField]
+        public FsmQuaternion storeResult;
 
-    public override void OnEnter()
-    {
-      this.DoQuatSlerp();
-      if (this.everyFrame)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            FsmQuaternion fsmQuaternion1 = new FsmQuaternion();
+            fsmQuaternion1.UseVariable = true;
+            this.fromQuaternion = fsmQuaternion1;
+            FsmQuaternion fsmQuaternion2 = new FsmQuaternion();
+            fsmQuaternion2.UseVariable = true;
+            this.toQuaternion = fsmQuaternion2;
+            this.amount = (FsmFloat) 0.1f;
+            this.storeResult = (FsmQuaternion) null;
+            this.everyFrame = true;
+            this.everyFrameOption = QuaternionBaseAction.everyFrameOptions.Update;
+        }
 
-    public override void OnUpdate()
-    {
-      if (this.everyFrameOption != QuaternionBaseAction.everyFrameOptions.Update)
-        return;
-      this.DoQuatSlerp();
-    }
+        public override void OnEnter()
+        {
+            this.DoQuatSlerp();
+            if (this.everyFrame)
+                return;
+            this.Finish();
+        }
 
-    public override void OnLateUpdate()
-    {
-      if (this.everyFrameOption != QuaternionBaseAction.everyFrameOptions.LateUpdate)
-        return;
-      this.DoQuatSlerp();
-    }
+        public override void OnUpdate()
+        {
+            if (this.everyFrameOption != QuaternionBaseAction.everyFrameOptions.Update)
+                return;
+            this.DoQuatSlerp();
+        }
 
-    public override void OnFixedUpdate()
-    {
-      if (this.everyFrameOption != QuaternionBaseAction.everyFrameOptions.FixedUpdate)
-        return;
-      this.DoQuatSlerp();
-    }
+        public override void OnLateUpdate()
+        {
+            if (this.everyFrameOption != QuaternionBaseAction.everyFrameOptions.LateUpdate)
+                return;
+            this.DoQuatSlerp();
+        }
 
-    private void DoQuatSlerp()
-    {
-      this.storeResult.Value = Quaternion.Slerp(this.fromQuaternion.Value, this.toQuaternion.Value, this.amount.Value);
+        public override void OnFixedUpdate()
+        {
+            if (this.everyFrameOption != QuaternionBaseAction.everyFrameOptions.FixedUpdate)
+                return;
+            this.DoQuatSlerp();
+        }
+
+        private void DoQuatSlerp()
+        {
+            this.storeResult.Value = Quaternion.Slerp(this.fromQuaternion.Value, this.toQuaternion.Value, this.amount.Value);
+        }
     }
-  }
 }

@@ -1,9 +1,9 @@
 #nullable disable
 
 public enum HitDirection
-  {
-    Unknown,
-    Forward,
-    Backward,
-  }
+    {
+        Unknown,
+        Forward,
+        Backward,
+    }
 

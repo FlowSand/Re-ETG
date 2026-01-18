@@ -1,57 +1,58 @@
 using System;
+
 using UnityEngine;
 
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Stop an iTween action.")]
-  [ActionCategory("iTween")]
-  public class iTweenStop : FsmStateAction
-  {
-    [RequiredField]
-    public FsmOwnerDefault gameObject;
-    public FsmString id;
-    public iTweenFSMType iTweenType;
-    public bool includeChildren;
-    public bool inScene;
-
-    public override void Reset()
+    [HutongGames.PlayMaker.Tooltip("Stop an iTween action.")]
+    [ActionCategory("iTween")]
+    public class iTweenStop : FsmStateAction
     {
-      FsmString fsmString = new FsmString();
-      fsmString.UseVariable = true;
-      this.id = fsmString;
-      this.iTweenType = iTweenFSMType.all;
-      this.includeChildren = false;
-      this.inScene = false;
-    }
+        [RequiredField]
+        public FsmOwnerDefault gameObject;
+        public FsmString id;
+        public iTweenFSMType iTweenType;
+        public bool includeChildren;
+        public bool inScene;
 
-    public override void OnEnter()
-    {
-      base.OnEnter();
-      this.DoiTween();
-      this.Finish();
-    }
-
-    private void DoiTween()
-    {
-      if (this.id.IsNone)
-      {
-        if (this.iTweenType == iTweenFSMType.all)
-          iTween.Stop();
-        else if (this.inScene)
+        public override void Reset()
         {
-          iTween.Stop(Enum.GetName(typeof (iTweenFSMType), (object) this.iTweenType));
+            FsmString fsmString = new FsmString();
+            fsmString.UseVariable = true;
+            this.id = fsmString;
+            this.iTweenType = iTweenFSMType.all;
+            this.includeChildren = false;
+            this.inScene = false;
         }
-        else
+
+        public override void OnEnter()
         {
-          GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
-          if ((UnityEngine.Object) ownerDefaultTarget == (UnityEngine.Object) null)
-            return;
-          iTween.Stop(ownerDefaultTarget, Enum.GetName(typeof (iTweenFSMType), (object) this.iTweenType), this.includeChildren);
+            base.OnEnter();
+            this.DoiTween();
+            this.Finish();
         }
-      }
-      else
-        iTween.StopByName(this.id.Value);
+
+        private void DoiTween()
+        {
+            if (this.id.IsNone)
+            {
+                if (this.iTweenType == iTweenFSMType.all)
+                    iTween.Stop();
+                else if (this.inScene)
+                {
+                    iTween.Stop(Enum.GetName(typeof (iTweenFSMType), (object) this.iTweenType));
+                }
+                else
+                {
+                    GameObject ownerDefaultTarget = this.Fsm.GetOwnerDefaultTarget(this.gameObject);
+                    if ((UnityEngine.Object) ownerDefaultTarget == (UnityEngine.Object) null)
+                        return;
+                    iTween.Stop(ownerDefaultTarget, Enum.GetName(typeof (iTweenFSMType), (object) this.iTweenType), this.includeChildren);
+                }
+            }
+            else
+                iTween.StopByName(this.id.Value);
+        }
     }
-  }
 }

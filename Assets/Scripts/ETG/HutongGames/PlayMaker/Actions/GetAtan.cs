@@ -3,45 +3,45 @@ using UnityEngine;
 #nullable disable
 namespace HutongGames.PlayMaker.Actions
 {
-  [HutongGames.PlayMaker.Tooltip("Get the Arc Tangent. You can get the result in degrees, simply check on the RadToDeg conversion")]
-  [ActionCategory(ActionCategory.Trigonometry)]
-  public class GetAtan : FsmStateAction
-  {
-    [RequiredField]
-    [HutongGames.PlayMaker.Tooltip("The value of the tan")]
-    public FsmFloat Value;
-    [UIHint(UIHint.Variable)]
-    [HutongGames.PlayMaker.Tooltip("The resulting angle. Note:If you want degrees, simply check RadToDeg")]
-    [RequiredField]
-    public FsmFloat angle;
-    [HutongGames.PlayMaker.Tooltip("Check on if you want the angle expressed in degrees.")]
-    public FsmBool RadToDeg;
-    public bool everyFrame;
-
-    public override void Reset()
+    [HutongGames.PlayMaker.Tooltip("Get the Arc Tangent. You can get the result in degrees, simply check on the RadToDeg conversion")]
+    [ActionCategory(ActionCategory.Trigonometry)]
+    public class GetAtan : FsmStateAction
     {
-      this.Value = (FsmFloat) null;
-      this.RadToDeg = (FsmBool) true;
-      this.everyFrame = false;
-      this.angle = (FsmFloat) null;
-    }
+        [RequiredField]
+        [HutongGames.PlayMaker.Tooltip("The value of the tan")]
+        public FsmFloat Value;
+        [UIHint(UIHint.Variable)]
+        [HutongGames.PlayMaker.Tooltip("The resulting angle. Note:If you want degrees, simply check RadToDeg")]
+        [RequiredField]
+        public FsmFloat angle;
+        [HutongGames.PlayMaker.Tooltip("Check on if you want the angle expressed in degrees.")]
+        public FsmBool RadToDeg;
+        public bool everyFrame;
 
-    public override void OnEnter()
-    {
-      this.DoATan();
-      if (this.everyFrame)
-        return;
-      this.Finish();
-    }
+        public override void Reset()
+        {
+            this.Value = (FsmFloat) null;
+            this.RadToDeg = (FsmBool) true;
+            this.everyFrame = false;
+            this.angle = (FsmFloat) null;
+        }
 
-    public override void OnUpdate() => this.DoATan();
+        public override void OnEnter()
+        {
+            this.DoATan();
+            if (this.everyFrame)
+                return;
+            this.Finish();
+        }
 
-    private void DoATan()
-    {
-      float num = Mathf.Atan(this.Value.Value);
-      if (this.RadToDeg.Value)
-        num *= 57.29578f;
-      this.angle.Value = num;
+        public override void OnUpdate() => this.DoATan();
+
+        private void DoATan()
+        {
+            float num = Mathf.Atan(this.Value.Value);
+            if (this.RadToDeg.Value)
+                num *= 57.29578f;
+            this.angle.Value = num;
+        }
     }
-  }
 }

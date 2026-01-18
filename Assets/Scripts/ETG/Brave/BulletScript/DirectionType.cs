@@ -1,11 +1,11 @@
 #nullable disable
 namespace Brave.BulletScript
 {
-  public enum DirectionType
-  {
-    Aim,
-    Absolute,
-    Relative,
-    Sequence,
-  }
+    public enum DirectionType
+    {
+        Aim,
+        Absolute,
+        Relative,
+        Sequence,
+    }
 }

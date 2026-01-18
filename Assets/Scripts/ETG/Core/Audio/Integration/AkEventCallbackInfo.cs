@@ -3,56 +3,56 @@ using System;
 #nullable disable
 
 public class AkEventCallbackInfo : AkCallbackInfo
-  {
-    private IntPtr swigCPtr;
-
-    internal AkEventCallbackInfo(IntPtr cPtr, bool cMemoryOwn)
-      : base(AkSoundEnginePINVOKE.CSharp_AkEventCallbackInfo_SWIGUpcast(cPtr), cMemoryOwn)
     {
-      this.swigCPtr = cPtr;
-    }
+        private IntPtr swigCPtr;
 
-    public AkEventCallbackInfo()
-      : this(AkSoundEnginePINVOKE.CSharp_new_AkEventCallbackInfo(), true)
-    {
-    }
-
-    internal static IntPtr getCPtr(AkEventCallbackInfo obj)
-    {
-      return obj == null ? IntPtr.Zero : obj.swigCPtr;
-    }
-
-    internal override void setCPtr(IntPtr cPtr)
-    {
-      base.setCPtr(AkSoundEnginePINVOKE.CSharp_AkEventCallbackInfo_SWIGUpcast(cPtr));
-      this.swigCPtr = cPtr;
-    }
-
-    ~AkEventCallbackInfo() => this.Dispose();
-
-    public override void Dispose()
-    {
-      lock ((object) this)
-      {
-        if (this.swigCPtr != IntPtr.Zero)
+        internal AkEventCallbackInfo(IntPtr cPtr, bool cMemoryOwn)
+            : base(AkSoundEnginePINVOKE.CSharp_AkEventCallbackInfo_SWIGUpcast(cPtr), cMemoryOwn)
         {
-          if (this.swigCMemOwn)
-          {
-            this.swigCMemOwn = false;
-            AkSoundEnginePINVOKE.CSharp_delete_AkEventCallbackInfo(this.swigCPtr);
-          }
-          this.swigCPtr = IntPtr.Zero;
+            this.swigCPtr = cPtr;
         }
-        GC.SuppressFinalize((object) this);
-        base.Dispose();
-      }
-    }
 
-    public uint playingID
-    {
-      get => AkSoundEnginePINVOKE.CSharp_AkEventCallbackInfo_playingID_get(this.swigCPtr);
-    }
+        public AkEventCallbackInfo()
+            : this(AkSoundEnginePINVOKE.CSharp_new_AkEventCallbackInfo(), true)
+        {
+        }
 
-    public uint eventID => AkSoundEnginePINVOKE.CSharp_AkEventCallbackInfo_eventID_get(this.swigCPtr);
-  }
+        internal static IntPtr getCPtr(AkEventCallbackInfo obj)
+        {
+            return obj == null ? IntPtr.Zero : obj.swigCPtr;
+        }
+
+        internal override void setCPtr(IntPtr cPtr)
+        {
+            base.setCPtr(AkSoundEnginePINVOKE.CSharp_AkEventCallbackInfo_SWIGUpcast(cPtr));
+            this.swigCPtr = cPtr;
+        }
+
+        ~AkEventCallbackInfo() => this.Dispose();
+
+        public override void Dispose()
+        {
+            lock ((object) this)
+            {
+                if (this.swigCPtr != IntPtr.Zero)
+                {
+                    if (this.swigCMemOwn)
+                    {
+                        this.swigCMemOwn = false;
+                        AkSoundEnginePINVOKE.CSharp_delete_AkEventCallbackInfo(this.swigCPtr);
+                    }
+                    this.swigCPtr = IntPtr.Zero;
+                }
+                GC.SuppressFinalize((object) this);
+                base.Dispose();
+            }
+        }
+
+        public uint playingID
+        {
+            get => AkSoundEnginePINVOKE.CSharp_AkEventCallbackInfo_playingID_get(this.swigCPtr);
+        }
+
+        public uint eventID => AkSoundEnginePINVOKE.CSharp_AkEventCallbackInfo_eventID_get(this.swigCPtr);
+    }
 

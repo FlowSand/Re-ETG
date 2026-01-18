@@ -1,11 +1,11 @@
 #nullable disable
 
 public enum dfMarkupVerticalAlign
-  {
-    Baseline,
-    Top,
-    Middle,
-    Bottom,
-    None,
-  }
+    {
+        Baseline,
+        Top,
+        Middle,
+        Bottom,
+        None,
+    }
 
