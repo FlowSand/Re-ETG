@@ -24,7 +24,12 @@
       "Bash(timeout /t 15)",
       "Bash(ping:*)",
       "Bash(test:*)",
-      "Bash(cut:*)"
+      "Bash(cut:*)",
+      "Bash(python3:*)",
+      "Bash(where /R \"D:\\\\Github\\\\Re-ETG\\\\Assets\\\\Scripts\" IntVector2.cs)",
+      "Bash(\"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\2020.3.45f1\\\\Editor\\\\Unity.exe\" -quit -batchmode -projectPath \".\" -logFile \"compile_test.log\" -executeMethod UnityEditor.EditorApplication.Exit)",
+      "Bash(\"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\2022.3.62f1\\\\Editor\\\\Unity.exe\" -quit -batchmode -projectPath \".\" -logFile -)",
+      "Bash(tee:*)"
     ]
   }
 }

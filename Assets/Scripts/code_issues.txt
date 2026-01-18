@@ -1,0 +1,10 @@
+Code Issues Report
+Total Issues: 2
+================================================================================
+
+1. FullInspector\Internal\fiRuntimeReflectionUtility.cs:64
+   [WITH_EXPRESSION] C# 9.0 with expression: return fieldInfo.FieldType == typeof (T) ? (T) fieldInfo.Get
+
+2. HutongGames\PlayMaker\Actions\SpecTriggerEvent.cs:49
+   [WITH_EXPRESSION] C# 9.0 with expression: empty += $"Trigger index {this.triggerIndices[index].Value} 
+
