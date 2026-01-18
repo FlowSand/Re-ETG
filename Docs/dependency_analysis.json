@@ -1,0 +1,1245 @@
+{
+  "metadata": {
+    "generator": "analyze_module_dependencies.py",
+    "total_modules": 22,
+    "total_files_scanned": 4009,
+    "circular_dependencies_found": 3
+  },
+  "modules": [
+    {
+      "name": "Dungeonator",
+      "path": "Assets/Scripts/ETG/Dungeonator",
+      "namespace": "Dungeonator",
+      "category": "external",
+      "file_count": 67,
+      "priority": "critical",
+      "description": "Procedural dungeon generation engine",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 98
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 35
+        },
+        {
+          "module": "HutongGames.PlayMaker",
+          "usage_count": 1
+        },
+        {
+          "module": "Pathfinding",
+          "usage_count": 2
+        },
+        {
+          "module": "tk2dRuntime",
+          "usage_count": 1
+        },
+        {
+          "module": "SimplexNoise",
+          "usage_count": 1
+        }
+      ],
+      "dependents": [
+        {
+          "module": "Pathfinding",
+          "usage_count": 2
+        },
+        {
+          "module": "tk2dRuntime",
+          "usage_count": 3
+        },
+        {
+          "module": "Core.Actors",
+          "usage_count": 56
+        },
+        {
+          "module": "Core.Combat",
+          "usage_count": 22
+        },
+        {
+          "module": "Core.Core",
+          "usage_count": 75
+        },
+        {
+          "module": "Core.Dungeon",
+          "usage_count": 82
+        },
+        {
+          "module": "Core.Items",
+          "usage_count": 41
+        },
+        {
+          "module": "Core.Systems",
+          "usage_count": 114
+        },
+        {
+          "module": "Core.UI",
+          "usage_count": 6
+        },
+        {
+          "module": "Core.VFX",
+          "usage_count": 3
+        },
+        {
+          "module": "HutongGames.PlayMaker",
+          "usage_count": 12
+        }
+      ]
+    },
+    {
+      "name": "InControl",
+      "path": "Assets/Scripts/ETG/InControl",
+      "namespace": "InControl",
+      "category": "external",
+      "file_count": 391,
+      "priority": "high",
+      "description": "Cross-platform input management system",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 89
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 51
+        },
+        {
+          "module": "XInputDotNetPure",
+          "usage_count": 2
+        }
+      ],
+      "dependents": [
+        {
+          "module": "Core.Core",
+          "usage_count": 1
+        },
+        {
+          "module": "Core.Systems",
+          "usage_count": 10
+        },
+        {
+          "module": "Core.UI",
+          "usage_count": 11
+        }
+      ]
+    },
+    {
+      "name": "FullInspector",
+      "path": "Assets/Scripts/ETG/FullInspector",
+      "namespace": "FullInspector",
+      "category": "external",
+      "file_count": 188,
+      "priority": "high",
+      "description": "Serialization and inspector framework",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 185
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 56
+        },
+        {
+          "module": "FullSerializer",
+          "usage_count": 34
+        }
+      ],
+      "dependents": [
+        {
+          "module": "Core.Actors",
+          "usage_count": 89
+        },
+        {
+          "module": "Core.Combat",
+          "usage_count": 30
+        },
+        {
+          "module": "Core.Systems",
+          "usage_count": 225
+        }
+      ]
+    },
+    {
+      "name": "Brave.BulletScript",
+      "path": "Assets/Scripts/ETG/Brave",
+      "namespace": "Brave.BulletScript",
+      "category": "external",
+      "file_count": 21,
+      "priority": "critical",
+      "description": "Bullet pattern scripting framework",
+      "dependencies": [
+        {
+          "module": "UnityEngine",
+          "usage_count": 10
+        },
+        {
+          "module": "System",
+          "usage_count": 14
+        }
+      ],
+      "dependents": [
+        {
+          "module": "Core.Combat",
+          "usage_count": 37
+        },
+        {
+          "module": "Core.Core",
+          "usage_count": 6
+        },
+        {
+          "module": "Core.Dungeon",
+          "usage_count": 1
+        },
+        {
+          "module": "Core.Systems",
+          "usage_count": 224
+        }
+      ]
+    },
+    {
+      "name": "Pathfinding",
+      "path": "Assets/Scripts/ETG/Pathfinding",
+      "namespace": "Pathfinding",
+      "category": "external",
+      "file_count": 4,
+      "priority": "high",
+      "description": "A* pathfinding library",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 3
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 2
+        },
+        {
+          "module": "Dungeonator",
+          "usage_count": 2
+        }
+      ],
+      "dependents": [
+        {
+          "module": "Dungeonator",
+          "usage_count": 2
+        },
+        {
+          "module": "Core.Actors",
+          "usage_count": 20
+        },
+        {
+          "module": "Core.Combat",
+          "usage_count": 3
+        },
+        {
+          "module": "Core.Core",
+          "usage_count": 3
+        },
+        {
+          "module": "Core.Dungeon",
+          "usage_count": 2
+        },
+        {
+          "module": "Core.Items",
+          "usage_count": 1
+        },
+        {
+          "module": "Core.Systems",
+          "usage_count": 6
+        },
+        {
+          "module": "HutongGames.PlayMaker",
+          "usage_count": 2
+        }
+      ]
+    },
+    {
+      "name": "tk2dRuntime",
+      "path": "Assets/Scripts/ETG/tk2dRuntime",
+      "namespace": "tk2dRuntime",
+      "category": "external",
+      "file_count": 14,
+      "priority": "medium",
+      "description": "2D sprite and tilemap toolkit",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 19
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 10
+        },
+        {
+          "module": "Dungeonator",
+          "usage_count": 3
+        }
+      ],
+      "dependents": [
+        {
+          "module": "Dungeonator",
+          "usage_count": 1
+        },
+        {
+          "module": "Core.Systems",
+          "usage_count": 10
+        },
+        {
+          "module": "Core.VFX",
+          "usage_count": 4
+        }
+      ]
+    },
+    {
+      "name": "HutongGames.PlayMaker",
+      "path": "Assets/Scripts/ETG/HutongGames",
+      "namespace": "HutongGames.PlayMaker",
+      "category": "external",
+      "file_count": 875,
+      "priority": "low",
+      "description": "Visual scripting system",
+      "dependencies": [
+        {
+          "module": "UnityEngine",
+          "usage_count": 677
+        },
+        {
+          "module": "System",
+          "usage_count": 118
+        },
+        {
+          "module": "Pathfinding",
+          "usage_count": 2
+        },
+        {
+          "module": "Dungeonator",
+          "usage_count": 12
+        }
+      ],
+      "dependents": [
+        {
+          "module": "Dungeonator",
+          "usage_count": 1
+        },
+        {
+          "module": "Core.Core",
+          "usage_count": 4
+        },
+        {
+          "module": "Core.Dungeon",
+          "usage_count": 9
+        },
+        {
+          "module": "Core.Systems",
+          "usage_count": 2
+        }
+      ]
+    },
+    {
+      "name": "DaikonForge",
+      "path": "Assets/Scripts/ETG/DaikonForge",
+      "namespace": "DaikonForge",
+      "category": "external",
+      "file_count": 61,
+      "priority": "low",
+      "description": "UI and tweening framework",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 44
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 40
+        }
+      ],
+      "dependents": [
+        {
+          "module": "Core.Systems",
+          "usage_count": 9
+        },
+        {
+          "module": "Core.VFX",
+          "usage_count": 1
+        }
+      ]
+    },
+    {
+      "name": "FullSerializer",
+      "path": "Assets/Scripts/ETG/FullSerializer",
+      "namespace": "FullSerializer",
+      "category": "external",
+      "file_count": 52,
+      "priority": "low",
+      "description": "JSON serialization library",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 102
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 8
+        }
+      ],
+      "dependents": [
+        {
+          "module": "FullInspector",
+          "usage_count": 34
+        },
+        {
+          "module": "Core.Systems",
+          "usage_count": 8
+        }
+      ]
+    },
+    {
+      "name": "XInputDotNetPure",
+      "path": "Assets/Scripts/ETG/XInputDotNetPure",
+      "namespace": "XInputDotNetPure",
+      "category": "external",
+      "file_count": 9,
+      "priority": "low",
+      "description": "Xbox controller support library",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 4
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 1
+        }
+      ],
+      "dependents": [
+        {
+          "module": "InControl",
+          "usage_count": 2
+        }
+      ]
+    },
+    {
+      "name": "SimplexNoise",
+      "path": "Assets/Scripts/ETG/SimplexNoise",
+      "namespace": "SimplexNoise",
+      "category": "external",
+      "file_count": 1,
+      "priority": "low",
+      "description": "Simplex noise generation",
+      "dependencies": [],
+      "dependents": [
+        {
+          "module": "Dungeonator",
+          "usage_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Kvant",
+      "path": "Assets/Scripts/ETG/Kvant",
+      "namespace": "Kvant",
+      "category": "external",
+      "file_count": 2,
+      "priority": "low",
+      "description": "GPU-accelerated visual effects",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 1
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 3
+        }
+      ],
+      "dependents": [
+        {
+          "module": "Core.Systems",
+          "usage_count": 1
+        }
+      ]
+    },
+    {
+      "name": "TestSimpleRNG",
+      "path": "Assets/Scripts/ETG/TestSimpleRNG",
+      "namespace": "TestSimpleRNG",
+      "category": "external",
+      "file_count": 1,
+      "priority": "low",
+      "description": "Random number generation utilities",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 1
+        }
+      ],
+      "dependents": [
+        {
+          "module": "Core.Systems",
+          "usage_count": 1
+        }
+      ]
+    },
+    {
+      "name": "Core.Systems",
+      "path": "Assets/Scripts/ETG/Core/Systems",
+      "namespace": "",
+      "category": "core_subsystem",
+      "file_count": 990,
+      "priority": "critical",
+      "description": "Game systems, data management, and utilities",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 1313
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 680
+        },
+        {
+          "module": "Dungeonator",
+          "usage_count": 114
+        },
+        {
+          "module": "Pathfinding",
+          "usage_count": 6
+        },
+        {
+          "module": "Brave.BulletScript",
+          "usage_count": 224
+        },
+        {
+          "module": "FullInspector",
+          "usage_count": 225
+        },
+        {
+          "module": "FullSerializer",
+          "usage_count": 8
+        },
+        {
+          "module": "InControl",
+          "usage_count": 10
+        },
+        {
+          "module": "tk2dRuntime",
+          "usage_count": 10
+        },
+        {
+          "module": "HutongGames.PlayMaker",
+          "usage_count": 2
+        },
+        {
+          "module": "TestSimpleRNG",
+          "usage_count": 1
+        },
+        {
+          "module": "DaikonForge",
+          "usage_count": 9
+        },
+        {
+          "module": "Kvant",
+          "usage_count": 1
+        }
+      ],
+      "dependents": []
+    },
+    {
+      "name": "Core.Core",
+      "path": "Assets/Scripts/ETG/Core/Core",
+      "namespace": "",
+      "category": "core_subsystem",
+      "file_count": 377,
+      "priority": "critical",
+      "description": "Framework foundation, enums, and interfaces",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 502
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 276
+        },
+        {
+          "module": "Dungeonator",
+          "usage_count": 75
+        },
+        {
+          "module": "Brave.BulletScript",
+          "usage_count": 6
+        },
+        {
+          "module": "HutongGames.PlayMaker",
+          "usage_count": 4
+        },
+        {
+          "module": "InControl",
+          "usage_count": 1
+        },
+        {
+          "module": "Pathfinding",
+          "usage_count": 3
+        }
+      ],
+      "dependents": []
+    },
+    {
+      "name": "Core.Actors",
+      "path": "Assets/Scripts/ETG/Core/Actors",
+      "namespace": "",
+      "category": "core_subsystem",
+      "file_count": 167,
+      "priority": "high",
+      "description": "Character and entity management system",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 165
+        },
+        {
+          "module": "FullInspector",
+          "usage_count": 89
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 154
+        },
+        {
+          "module": "Dungeonator",
+          "usage_count": 56
+        },
+        {
+          "module": "Pathfinding",
+          "usage_count": 20
+        }
+      ],
+      "dependents": []
+    },
+    {
+      "name": "Core.Combat",
+      "path": "Assets/Scripts/ETG/Core/Combat",
+      "namespace": "",
+      "category": "core_subsystem",
+      "file_count": 172,
+      "priority": "high",
+      "description": "Combat mechanics and projectile systems",
+      "dependencies": [
+        {
+          "module": "UnityEngine",
+          "usage_count": 141
+        },
+        {
+          "module": "System",
+          "usage_count": 233
+        },
+        {
+          "module": "Dungeonator",
+          "usage_count": 22
+        },
+        {
+          "module": "Pathfinding",
+          "usage_count": 3
+        },
+        {
+          "module": "FullInspector",
+          "usage_count": 30
+        },
+        {
+          "module": "Brave.BulletScript",
+          "usage_count": 37
+        }
+      ],
+      "dependents": []
+    },
+    {
+      "name": "Core.Items",
+      "path": "Assets/Scripts/ETG/Core/Items",
+      "namespace": "",
+      "category": "core_subsystem",
+      "file_count": 175,
+      "priority": "high",
+      "description": "Equipment, weapons, and pickup systems",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 234
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 134
+        },
+        {
+          "module": "Dungeonator",
+          "usage_count": 41
+        },
+        {
+          "module": "Pathfinding",
+          "usage_count": 1
+        }
+      ],
+      "dependents": []
+    },
+    {
+      "name": "Core.Dungeon",
+      "path": "Assets/Scripts/ETG/Core/Dungeon",
+      "namespace": "",
+      "category": "core_subsystem",
+      "file_count": 125,
+      "priority": "high",
+      "description": "Room management and interactable objects",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 244
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 118
+        },
+        {
+          "module": "Dungeonator",
+          "usage_count": 82
+        },
+        {
+          "module": "HutongGames.PlayMaker",
+          "usage_count": 9
+        },
+        {
+          "module": "Pathfinding",
+          "usage_count": 2
+        },
+        {
+          "module": "Brave.BulletScript",
+          "usage_count": 1
+        }
+      ],
+      "dependents": []
+    },
+    {
+      "name": "Core.Audio",
+      "path": "Assets/Scripts/ETG/Core/Audio",
+      "namespace": "",
+      "category": "core_subsystem",
+      "file_count": 150,
+      "priority": "medium",
+      "description": "Sound and music management",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 119
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 70
+        }
+      ],
+      "dependents": []
+    },
+    {
+      "name": "Core.UI",
+      "path": "Assets/Scripts/ETG/Core/UI",
+      "namespace": "",
+      "category": "core_subsystem",
+      "file_count": 100,
+      "priority": "medium",
+      "description": "User interface and HUD systems",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 110
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 96
+        },
+        {
+          "module": "InControl",
+          "usage_count": 11
+        },
+        {
+          "module": "Dungeonator",
+          "usage_count": 6
+        }
+      ],
+      "dependents": []
+    },
+    {
+      "name": "Core.VFX",
+      "path": "Assets/Scripts/ETG/Core/VFX",
+      "namespace": "",
+      "category": "core_subsystem",
+      "file_count": 67,
+      "priority": "low",
+      "description": "Visual effects and animation",
+      "dependencies": [
+        {
+          "module": "System",
+          "usage_count": 68
+        },
+        {
+          "module": "UnityEngine",
+          "usage_count": 58
+        },
+        {
+          "module": "Dungeonator",
+          "usage_count": 3
+        },
+        {
+          "module": "tk2dRuntime",
+          "usage_count": 4
+        },
+        {
+          "module": "DaikonForge",
+          "usage_count": 1
+        }
+      ],
+      "dependents": []
+    }
+  ],
+  "dependency_graph": {
+    "edges": [
+      {
+        "from": "Brave.BulletScript",
+        "to": "UnityEngine",
+        "weight": 10
+      },
+      {
+        "from": "Brave.BulletScript",
+        "to": "System",
+        "weight": 14
+      },
+      {
+        "from": "Dungeonator",
+        "to": "System",
+        "weight": 98
+      },
+      {
+        "from": "Dungeonator",
+        "to": "UnityEngine",
+        "weight": 35
+      },
+      {
+        "from": "Dungeonator",
+        "to": "HutongGames.PlayMaker",
+        "weight": 1
+      },
+      {
+        "from": "Dungeonator",
+        "to": "Pathfinding",
+        "weight": 2
+      },
+      {
+        "from": "Dungeonator",
+        "to": "tk2dRuntime",
+        "weight": 1
+      },
+      {
+        "from": "Dungeonator",
+        "to": "SimplexNoise",
+        "weight": 1
+      },
+      {
+        "from": "FullInspector",
+        "to": "System",
+        "weight": 185
+      },
+      {
+        "from": "FullInspector",
+        "to": "UnityEngine",
+        "weight": 56
+      },
+      {
+        "from": "FullInspector",
+        "to": "FullSerializer",
+        "weight": 34
+      },
+      {
+        "from": "FullSerializer",
+        "to": "System",
+        "weight": 102
+      },
+      {
+        "from": "FullSerializer",
+        "to": "UnityEngine",
+        "weight": 8
+      },
+      {
+        "from": "InControl",
+        "to": "System",
+        "weight": 89
+      },
+      {
+        "from": "InControl",
+        "to": "UnityEngine",
+        "weight": 51
+      },
+      {
+        "from": "InControl",
+        "to": "XInputDotNetPure",
+        "weight": 2
+      },
+      {
+        "from": "Kvant",
+        "to": "System",
+        "weight": 1
+      },
+      {
+        "from": "Kvant",
+        "to": "UnityEngine",
+        "weight": 3
+      },
+      {
+        "from": "Pathfinding",
+        "to": "System",
+        "weight": 3
+      },
+      {
+        "from": "Pathfinding",
+        "to": "UnityEngine",
+        "weight": 2
+      },
+      {
+        "from": "Pathfinding",
+        "to": "Dungeonator",
+        "weight": 2
+      },
+      {
+        "from": "TestSimpleRNG",
+        "to": "System",
+        "weight": 1
+      },
+      {
+        "from": "tk2dRuntime",
+        "to": "System",
+        "weight": 19
+      },
+      {
+        "from": "tk2dRuntime",
+        "to": "UnityEngine",
+        "weight": 10
+      },
+      {
+        "from": "tk2dRuntime",
+        "to": "Dungeonator",
+        "weight": 3
+      },
+      {
+        "from": "XInputDotNetPure",
+        "to": "System",
+        "weight": 4
+      },
+      {
+        "from": "XInputDotNetPure",
+        "to": "UnityEngine",
+        "weight": 1
+      },
+      {
+        "from": "Core.Actors",
+        "to": "System",
+        "weight": 165
+      },
+      {
+        "from": "Core.Actors",
+        "to": "FullInspector",
+        "weight": 89
+      },
+      {
+        "from": "Core.Actors",
+        "to": "UnityEngine",
+        "weight": 154
+      },
+      {
+        "from": "Core.Actors",
+        "to": "Dungeonator",
+        "weight": 56
+      },
+      {
+        "from": "Core.Actors",
+        "to": "Pathfinding",
+        "weight": 20
+      },
+      {
+        "from": "Core.Audio",
+        "to": "System",
+        "weight": 119
+      },
+      {
+        "from": "Core.Audio",
+        "to": "UnityEngine",
+        "weight": 70
+      },
+      {
+        "from": "Core.Combat",
+        "to": "UnityEngine",
+        "weight": 141
+      },
+      {
+        "from": "Core.Combat",
+        "to": "System",
+        "weight": 233
+      },
+      {
+        "from": "Core.Combat",
+        "to": "Dungeonator",
+        "weight": 22
+      },
+      {
+        "from": "Core.Combat",
+        "to": "Pathfinding",
+        "weight": 3
+      },
+      {
+        "from": "Core.Combat",
+        "to": "FullInspector",
+        "weight": 30
+      },
+      {
+        "from": "Core.Combat",
+        "to": "Brave.BulletScript",
+        "weight": 37
+      },
+      {
+        "from": "Core.Core",
+        "to": "System",
+        "weight": 502
+      },
+      {
+        "from": "Core.Core",
+        "to": "UnityEngine",
+        "weight": 276
+      },
+      {
+        "from": "Core.Core",
+        "to": "Dungeonator",
+        "weight": 75
+      },
+      {
+        "from": "Core.Core",
+        "to": "Brave.BulletScript",
+        "weight": 6
+      },
+      {
+        "from": "Core.Core",
+        "to": "HutongGames.PlayMaker",
+        "weight": 4
+      },
+      {
+        "from": "Core.Core",
+        "to": "InControl",
+        "weight": 1
+      },
+      {
+        "from": "Core.Core",
+        "to": "Pathfinding",
+        "weight": 3
+      },
+      {
+        "from": "Core.Dungeon",
+        "to": "System",
+        "weight": 244
+      },
+      {
+        "from": "Core.Dungeon",
+        "to": "UnityEngine",
+        "weight": 118
+      },
+      {
+        "from": "Core.Dungeon",
+        "to": "Dungeonator",
+        "weight": 82
+      },
+      {
+        "from": "Core.Dungeon",
+        "to": "HutongGames.PlayMaker",
+        "weight": 9
+      },
+      {
+        "from": "Core.Dungeon",
+        "to": "Pathfinding",
+        "weight": 2
+      },
+      {
+        "from": "Core.Dungeon",
+        "to": "Brave.BulletScript",
+        "weight": 1
+      },
+      {
+        "from": "Core.Items",
+        "to": "System",
+        "weight": 234
+      },
+      {
+        "from": "Core.Items",
+        "to": "UnityEngine",
+        "weight": 134
+      },
+      {
+        "from": "Core.Items",
+        "to": "Dungeonator",
+        "weight": 41
+      },
+      {
+        "from": "Core.Items",
+        "to": "Pathfinding",
+        "weight": 1
+      },
+      {
+        "from": "Core.Systems",
+        "to": "System",
+        "weight": 1313
+      },
+      {
+        "from": "Core.Systems",
+        "to": "UnityEngine",
+        "weight": 680
+      },
+      {
+        "from": "Core.Systems",
+        "to": "Dungeonator",
+        "weight": 114
+      },
+      {
+        "from": "Core.Systems",
+        "to": "Pathfinding",
+        "weight": 6
+      },
+      {
+        "from": "Core.Systems",
+        "to": "Brave.BulletScript",
+        "weight": 224
+      },
+      {
+        "from": "Core.Systems",
+        "to": "FullInspector",
+        "weight": 225
+      },
+      {
+        "from": "Core.Systems",
+        "to": "FullSerializer",
+        "weight": 8
+      },
+      {
+        "from": "Core.Systems",
+        "to": "InControl",
+        "weight": 10
+      },
+      {
+        "from": "Core.Systems",
+        "to": "tk2dRuntime",
+        "weight": 10
+      },
+      {
+        "from": "Core.Systems",
+        "to": "HutongGames.PlayMaker",
+        "weight": 2
+      },
+      {
+        "from": "Core.Systems",
+        "to": "TestSimpleRNG",
+        "weight": 1
+      },
+      {
+        "from": "Core.Systems",
+        "to": "DaikonForge",
+        "weight": 9
+      },
+      {
+        "from": "Core.Systems",
+        "to": "Kvant",
+        "weight": 1
+      },
+      {
+        "from": "Core.UI",
+        "to": "System",
+        "weight": 110
+      },
+      {
+        "from": "Core.UI",
+        "to": "UnityEngine",
+        "weight": 96
+      },
+      {
+        "from": "Core.UI",
+        "to": "InControl",
+        "weight": 11
+      },
+      {
+        "from": "Core.UI",
+        "to": "Dungeonator",
+        "weight": 6
+      },
+      {
+        "from": "Core.VFX",
+        "to": "System",
+        "weight": 68
+      },
+      {
+        "from": "Core.VFX",
+        "to": "UnityEngine",
+        "weight": 58
+      },
+      {
+        "from": "Core.VFX",
+        "to": "Dungeonator",
+        "weight": 3
+      },
+      {
+        "from": "Core.VFX",
+        "to": "tk2dRuntime",
+        "weight": 4
+      },
+      {
+        "from": "Core.VFX",
+        "to": "DaikonForge",
+        "weight": 1
+      },
+      {
+        "from": "DaikonForge",
+        "to": "System",
+        "weight": 44
+      },
+      {
+        "from": "DaikonForge",
+        "to": "UnityEngine",
+        "weight": 40
+      },
+      {
+        "from": "HutongGames.PlayMaker",
+        "to": "UnityEngine",
+        "weight": 677
+      },
+      {
+        "from": "HutongGames.PlayMaker",
+        "to": "System",
+        "weight": 118
+      },
+      {
+        "from": "HutongGames.PlayMaker",
+        "to": "Pathfinding",
+        "weight": 2
+      },
+      {
+        "from": "HutongGames.PlayMaker",
+        "to": "Dungeonator",
+        "weight": 12
+      }
+    ]
+  },
+  "circular_dependencies": [
+    {
+      "from": "Dungeonator",
+      "to": "HutongGames.PlayMaker"
+    },
+    {
+      "from": "Dungeonator",
+      "to": "Pathfinding"
+    },
+    {
+      "from": "Dungeonator",
+      "to": "tk2dRuntime"
+    }
+  ]
+}

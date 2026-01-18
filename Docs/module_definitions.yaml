@@ -1,0 +1,232 @@
+# Module Definitions for ETG Codebase
+# This file defines all identified modules, their locations, and categorization
+# Used by analyze_module_dependencies.py to generate dependency manifests
+
+modules:
+  # ==========================================
+  # External/Third-Party Modules
+  # ==========================================
+
+  - name: Dungeonator
+    path: Assets/Scripts/ETG/Dungeonator
+    category: external
+    namespace: Dungeonator
+    description: Procedural dungeon generation engine
+    priority: critical
+
+  - name: InControl
+    path: Assets/Scripts/ETG/InControl
+    category: external
+    namespace: InControl
+    description: Cross-platform input management system
+    priority: high
+
+  - name: FullInspector
+    path: Assets/Scripts/ETG/FullInspector
+    category: external
+    namespace: FullInspector
+    description: Serialization and inspector framework
+    priority: high
+
+  - name: Brave.BulletScript
+    path: Assets/Scripts/ETG/Brave
+    category: external
+    namespace: Brave.BulletScript
+    description: Bullet pattern scripting framework
+    priority: critical
+
+  - name: Pathfinding
+    path: Assets/Scripts/ETG/Pathfinding
+    category: external
+    namespace: Pathfinding
+    description: A* pathfinding library
+    priority: high
+
+  - name: tk2dRuntime
+    path: Assets/Scripts/ETG/tk2dRuntime
+    category: external
+    namespace: tk2dRuntime
+    description: 2D sprite and tilemap toolkit
+    priority: medium
+
+  - name: HutongGames.PlayMaker
+    path: Assets/Scripts/ETG/HutongGames
+    category: external
+    namespace: HutongGames.PlayMaker
+    description: Visual scripting system
+    priority: low
+
+  - name: DaikonForge
+    path: Assets/Scripts/ETG/DaikonForge
+    category: external
+    namespace: DaikonForge
+    description: UI and tweening framework
+    priority: low
+
+  - name: FullSerializer
+    path: Assets/Scripts/ETG/FullSerializer
+    category: external
+    namespace: FullSerializer
+    description: JSON serialization library
+    priority: low
+
+  - name: XInputDotNetPure
+    path: Assets/Scripts/ETG/XInputDotNetPure
+    category: external
+    namespace: XInputDotNetPure
+    description: Xbox controller support library
+    priority: low
+
+  - name: SimplexNoise
+    path: Assets/Scripts/ETG/SimplexNoise
+    category: external
+    namespace: SimplexNoise
+    description: Simplex noise generation
+    priority: low
+
+  - name: Kvant
+    path: Assets/Scripts/ETG/Kvant
+    category: external
+    namespace: Kvant
+    description: GPU-accelerated visual effects
+    priority: low
+
+  - name: TestSimpleRNG
+    path: Assets/Scripts/ETG/TestSimpleRNG
+    category: external
+    namespace: TestSimpleRNG
+    description: Random number generation utilities
+    priority: low
+
+  # ==========================================
+  # Core Module Subsystems
+  # ==========================================
+
+  - name: Core.Systems
+    path: Assets/Scripts/ETG/Core/Systems
+    category: core_subsystem
+    namespace: ""
+    description: Game systems, data management, and utilities
+    priority: critical
+    subsystems:
+      - Data
+      - Management
+      - Utilities
+
+  - name: Core.Core
+    path: Assets/Scripts/ETG/Core/Core
+    category: core_subsystem
+    namespace: ""
+    description: Framework foundation, enums, and interfaces
+    priority: critical
+    subsystems:
+      - Framework
+      - Enums
+      - Interfaces
+
+  - name: Core.Actors
+    path: Assets/Scripts/ETG/Core/Actors
+    category: core_subsystem
+    namespace: ""
+    description: Character and entity management system
+    priority: high
+    subsystems:
+      - Player
+      - Enemy
+      - Behaviors
+
+  - name: Core.Combat
+    path: Assets/Scripts/ETG/Core/Combat
+    category: core_subsystem
+    namespace: ""
+    description: Combat mechanics and projectile systems
+    priority: high
+    subsystems:
+      - Projectiles
+      - Damage
+      - Effects
+
+  - name: Core.Items
+    path: Assets/Scripts/ETG/Core/Items
+    category: core_subsystem
+    namespace: ""
+    description: Equipment, weapons, and pickup systems
+    priority: high
+    subsystems:
+      - Guns
+      - Active
+      - Passive
+      - Pickups
+
+  - name: Core.Dungeon
+    path: Assets/Scripts/ETG/Core/Dungeon
+    category: core_subsystem
+    namespace: ""
+    description: Room management and interactable objects
+    priority: high
+    subsystems:
+      - Generation
+      - Rooms
+      - Interactables
+
+  - name: Core.Audio
+    path: Assets/Scripts/ETG/Core/Audio
+    category: core_subsystem
+    namespace: ""
+    description: Sound and music management
+    priority: medium
+    subsystems:
+      - Integration
+
+  - name: Core.UI
+    path: Assets/Scripts/ETG/Core/UI
+    category: core_subsystem
+    namespace: ""
+    description: User interface and HUD systems
+    priority: medium
+    subsystems:
+      - HUD
+      - Ammonomicon
+
+  - name: Core.VFX
+    path: Assets/Scripts/ETG/Core/VFX
+    category: core_subsystem
+    namespace: ""
+    description: Visual effects and animation
+    priority: low
+    subsystems:
+      - Animation
+
+# ==========================================
+# Categorization Rules
+# ==========================================
+
+categories:
+  external:
+    description: Third-party libraries and frameworks
+    layer: foundation
+
+  core_subsystem:
+    description: Core game logic subsystems
+    layer: domain
+
+# ==========================================
+# Priority Levels
+# ==========================================
+
+priorities:
+  critical:
+    description: Essential modules depended on by many others
+    migration_impact: Very High
+
+  high:
+    description: Important modules with significant functionality
+    migration_impact: High
+
+  medium:
+    description: Supporting modules with moderate usage
+    migration_impact: Medium
+
+  low:
+    description: Utility or peripheral modules
+    migration_impact: Low
