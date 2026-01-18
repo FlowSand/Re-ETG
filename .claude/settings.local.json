@@ -29,7 +29,14 @@
       "Bash(where /R \"D:\\\\Github\\\\Re-ETG\\\\Assets\\\\Scripts\" IntVector2.cs)",
       "Bash(\"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\2020.3.45f1\\\\Editor\\\\Unity.exe\" -quit -batchmode -projectPath \".\" -logFile \"compile_test.log\" -executeMethod UnityEditor.EditorApplication.Exit)",
       "Bash(\"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\2022.3.62f1\\\\Editor\\\\Unity.exe\" -quit -batchmode -projectPath \".\" -logFile -)",
-      "Bash(tee:*)"
+      "Bash(tee:*)",
+      "Bash(for dir in \"D:/Github/Re-ETG/Assets/Scripts/ETG/Core\"/*)",
+      "Bash(for dir in \"D:\\\\Github\\\\Re-ETG\\\\Assets\\\\Scripts\\\\ETG\\\\Core\\\\Actors\" \"D:\\\\Github\\\\Re-ETG\\\\Assets\\\\Scripts\\\\ETG\\\\Core\\\\Combat\" \"D:\\\\Github\\\\Re-ETG\\\\Assets\\\\Scripts\\\\ETG\\\\Core\\\\Items\" \"D:\\\\Github\\\\Re-ETG\\\\Assets\\\\Scripts\\\\ETG\\\\Core\\\\Systems\" \"D:\\\\Github\\\\Re-ETG\\\\Assets\\\\Scripts\\\\ETG\\\\Core\\\\UI\" \"D:\\\\Github\\\\Re-ETG\\\\Assets\\\\Scripts\\\\ETG\\\\Core\\\\Dungeon\" \"D:\\\\Github\\\\Re-ETG\\\\Assets\\\\Scripts\\\\ETG\\\\Core\\\\VFX\")",
+      "Bash(for:*)",
+      "Bash(tree:*)",
+      "Bash(pip install:*)",
+      "Bash(sort:*)",
+      "Bash(git mv:*)"
     ]
   }
 }
