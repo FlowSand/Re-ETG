@@ -15,8 +15,8 @@ public class PortalGunPortalController : BraveBehaviour
         public Camera FacewallCamera;
         public MeshRenderer PortalRenderer;
         public Texture2D FacewallMaskTexture;
-        public int PixelWidth = 16 /*0x10*/;
-        public int PixelHeight = 32 /*0x20*/;
+        public int PixelWidth = 16;
+        public int PixelHeight = 32;
         private RenderTexture m_renderTarget;
         private bool m_doRender;
         private int cm_bg;

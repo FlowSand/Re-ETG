@@ -10,7 +10,7 @@ namespace HutongGames.PlayMaker.Actions
         [HutongGames.PlayMaker.Tooltip("The maximum amount of connections/players allowed.")]
         public FsmInt maximumConnections;
 
-        public override void Reset() => this.maximumConnections = (FsmInt) 32 /*0x20*/;
+        public override void Reset() => this.maximumConnections = (FsmInt) 32;
 
         public override void OnEnter()
         {

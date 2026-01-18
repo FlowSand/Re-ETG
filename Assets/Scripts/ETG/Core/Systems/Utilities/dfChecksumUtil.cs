@@ -4,7 +4,7 @@ using System;
 
 internal class dfChecksumUtil
     {
-        private static readonly uint[] crcTable = new uint[256 /*0x0100*/]
+        private static readonly uint[] crcTable = new uint[256]
         {
             0U,
             1996959894U,
@@ -269,7 +269,7 @@ internal class dfChecksumUtil
         {
             checksum = dfChecksumUtil.crcTable[(IntPtr) (uint) (((int) checksum ^ (int) (byte) (value & (uint) byte.MaxValue)) & (int) byte.MaxValue)] ^ checksum >> 8;
             checksum = dfChecksumUtil.crcTable[(IntPtr) (uint) (((int) checksum ^ (int) (byte) (value >> 8 & (uint) byte.MaxValue)) & (int) byte.MaxValue)] ^ checksum >> 8;
-            checksum = dfChecksumUtil.crcTable[(IntPtr) (uint) (((int) checksum ^ (int) (byte) (value >> 16 /*0x10*/ & (uint) byte.MaxValue)) & (int) byte.MaxValue)] ^ checksum >> 8;
+            checksum = dfChecksumUtil.crcTable[(IntPtr) (uint) (((int) checksum ^ (int) (byte) (value >> 16 & (uint) byte.MaxValue)) & (int) byte.MaxValue)] ^ checksum >> 8;
             checksum = dfChecksumUtil.crcTable[(IntPtr) (uint) (((int) checksum ^ (int) (byte) (value >> 24 & (uint) byte.MaxValue)) & (int) byte.MaxValue)] ^ checksum >> 8;
             return checksum;
         }

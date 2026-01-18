@@ -92,7 +92,7 @@ public class ContrastStretchEffect : MonoBehaviour
             {
                 if (!(bool) (Object) this.adaptRenderTex[index])
                 {
-                    this.adaptRenderTex[index] = new RenderTexture(1, 1, 32 /*0x20*/);
+                    this.adaptRenderTex[index] = new RenderTexture(1, 1, 32);
                     this.adaptRenderTex[index].hideFlags = HideFlags.HideAndDontSave;
                 }
             }

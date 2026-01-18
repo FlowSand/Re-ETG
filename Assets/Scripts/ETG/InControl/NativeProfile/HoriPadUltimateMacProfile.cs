@@ -12,7 +12,7 @@ namespace InControl.NativeProfile
                 new NativeInputDeviceMatcher()
                 {
                     VendorID = new ushort?((ushort) 3853),
-                    ProductID = new ushort?((ushort) 144 /*0x90*/)
+                    ProductID = new ushort?((ushort) 144)
                 }
             };
         }

@@ -13,7 +13,7 @@ using Brave.BulletScript;
         private const int NumShipRows = 3;
         private const int LifeTime = 900;
         private const int MinShootInterval = 120;
-        private const int MaxShootInterval = 240 /*0xF0*/;
+        private const int MaxShootInterval = 240;
         private Vector2 ShipPosMin = new Vector2(6f, -2f);
         private Vector2 ShipPosMax = new Vector2(16f, 2f);
 

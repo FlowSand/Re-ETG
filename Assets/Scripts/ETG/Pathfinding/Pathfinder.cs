@@ -307,7 +307,7 @@ namespace Pathfinding
             if (!clearance.HasValue)
                 clearance = new IntVector2?(IntVector2.One);
             if (!passableCellTypes.HasValue)
-                passableCellTypes = new CellTypes?((CellTypes) 2147483647 /*0x7FFFFFFF*/);
+                passableCellTypes = new CellTypes?((CellTypes) 2147483647);
             return this.NodeIsValid(pos.x, pos.y) && this.m_nodes[pos.x + pos.y * this.m_width].HasClearance(clearance.Value, passableCellTypes.Value, canPassOccupied) && this.m_nodes[pos.x + pos.y * this.m_width].IsPassable(passableCellTypes.Value, canPassOccupied, cellValidator);
         }
 

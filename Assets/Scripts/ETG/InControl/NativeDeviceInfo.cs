@@ -5,11 +5,11 @@ namespace InControl
 {
     public struct NativeDeviceInfo
     {
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128 /*0x80*/)]
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
         public string name;
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128 /*0x80*/)]
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
         public string location;
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64 /*0x40*/)]
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
         public string serialNumber;
         public ushort vendorID;
         public ushort productID;

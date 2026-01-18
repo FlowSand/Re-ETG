@@ -11,7 +11,7 @@ using Brave.BulletScript;
 [InspectorDropdownName("Bosses/BossDoorMimic/Puke1")]
 public class BossDoorMimicPuke1 : Script
     {
-        private const int NumPulseBullets = 32 /*0x20*/;
+        private const int NumPulseBullets = 32;
         private const float PulseBulletSpeed = 4.5f;
         private const int NumInitialSnakes = 8;
         private const int NumLateSnakes = 6;

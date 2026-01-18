@@ -30,7 +30,7 @@ public class MushroomGuyGiantWaft1 : Script
             for (int index = 0; index < 25; ++index)
             {
                 Bullet bullet = (Bullet) new SpeedChangingBullet((double) Random.value > 0.33000001311302185 ? "spore2" : "spore1", 10.2f, 75, 300);
-                this.Fire(new Brave.BulletScript.Direction(this.RandomAngle()), new Brave.BulletScript.Speed((float) Random.Range(2, 16 /*0x10*/)), bullet);
+                this.Fire(new Brave.BulletScript.Direction(this.RandomAngle()), new Brave.BulletScript.Speed((float) Random.Range(2, 16)), bullet);
                 bullet.Projectile.spriteAnimator.Play();
             }
             return (IEnumerator) null;

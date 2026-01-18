@@ -47,7 +47,7 @@ using UnityEngine;
             float num6 = (float) Screen.width / (float) Screen.height;
             float num7 = 0.0f;
             float num8 = 0.0f;
-            if (Screen.width % 16 /*0x10*/ == 0 && Screen.height % 9 == 0 && Screen.width / 16 /*0x10*/ == Screen.height / 9)
+            if (Screen.width % 16 == 0 && Screen.height % 9 == 0 && Screen.width / 16 == Screen.height / 9)
                 return new Rect(0.0f, 0.0f, 1f, 1f);
             if ((double) num6 > (double) BraveCameraUtility.ASPECT)
                 num7 = (float) (1.0 - (double) BraveCameraUtility.ASPECT / (double) num6);
@@ -66,7 +66,7 @@ using UnityEngine;
             float num1 = (float) Screen.width / (float) Screen.height;
             float num2 = 0.0f;
             float num3 = 0.0f;
-            if (Screen.width % 16 /*0x10*/ == 0 && Screen.height % 9 == 0 && Screen.width / 16 /*0x10*/ == Screen.height / 9)
+            if (Screen.width % 16 == 0 && Screen.height % 9 == 0 && Screen.width / 16 == Screen.height / 9)
                 return Vector2.one;
             if ((double) num1 > (double) BraveCameraUtility.ASPECT)
                 num2 = (float) (1.0 - (double) BraveCameraUtility.ASPECT / (double) num1);
@@ -84,7 +84,7 @@ using UnityEngine;
         public static IntVector2 GetTargetScreenResolution(IntVector2 inResolution)
         {
             float num1 = (float) inResolution.x / (float) inResolution.y;
-            if (inResolution.x % 16 /*0x10*/ == 0 && inResolution.y % 9 == 0 && inResolution.x / 16 /*0x10*/ == inResolution.y / 9)
+            if (inResolution.x % 16 == 0 && inResolution.y % 9 == 0 && inResolution.x / 16 == inResolution.y / 9)
                 return inResolution;
             if ((double) num1 > (double) BraveCameraUtility.ASPECT)
             {
@@ -120,7 +120,7 @@ using UnityEngine;
                 float num7 = 0.0f;
                 float num8 = 0.0f;
                 bool flag = false;
-                if (Screen.width % 16 /*0x10*/ == 0 && Screen.height % 9 == 0 && Screen.width / 16 /*0x10*/ == Screen.height / 9)
+                if (Screen.width % 16 == 0 && Screen.height % 9 == 0 && Screen.width / 16 == Screen.height / 9)
                 {
                     c.rect = new Rect(0.0f, 0.0f, 1f, 1f);
                     flag = true;
@@ -160,7 +160,7 @@ using UnityEngine;
                 float num7 = 0.0f;
                 float num8 = 0.0f;
                 bool flag = false;
-                if (Screen.width % 16 /*0x10*/ == 0 && Screen.height % 9 == 0 && Screen.width / 16 /*0x10*/ == Screen.height / 9)
+                if (Screen.width % 16 == 0 && Screen.height % 9 == 0 && Screen.width / 16 == Screen.height / 9)
                 {
                     c.rect = new Rect(0.0f, 0.0f, 1f, 1f);
                     flag = true;

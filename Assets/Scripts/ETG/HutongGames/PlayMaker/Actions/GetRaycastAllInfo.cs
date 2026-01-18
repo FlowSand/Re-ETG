@@ -6,20 +6,20 @@ namespace HutongGames.PlayMaker.Actions
     public class GetRaycastAllInfo : FsmStateAction
     {
         [Tooltip("Store the GameObjects hit in an array variable.")]
-        [ArrayEditor(VariableType.GameObject, "", 0, 0, 65536 /*0x010000*/)]
+        [ArrayEditor(VariableType.GameObject, "", 0, 0, 65536)]
         [UIHint(UIHint.Variable)]
         public FsmArray storeHitObjects;
         [UIHint(UIHint.Variable)]
-        [ArrayEditor(VariableType.Vector3, "", 0, 0, 65536 /*0x010000*/)]
+        [ArrayEditor(VariableType.Vector3, "", 0, 0, 65536)]
         [Tooltip("Get the world position of all ray hit point and store them in an array variable.")]
         public FsmArray points;
         [UIHint(UIHint.Variable)]
         [Tooltip("Get the normal at all hit points and store them in an array variable.")]
-        [ArrayEditor(VariableType.Vector3, "", 0, 0, 65536 /*0x010000*/)]
+        [ArrayEditor(VariableType.Vector3, "", 0, 0, 65536)]
         public FsmArray normals;
         [Tooltip("Get the distance along the ray to all hit points and store tjem in an array variable.")]
         [UIHint(UIHint.Variable)]
-        [ArrayEditor(VariableType.Float, "", 0, 0, 65536 /*0x010000*/)]
+        [ArrayEditor(VariableType.Float, "", 0, 0, 65536)]
         public FsmArray distances;
         [Tooltip("Repeat every frame. Warning, this could be affecting performances")]
         public bool everyFrame;

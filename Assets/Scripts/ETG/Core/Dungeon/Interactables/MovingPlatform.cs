@@ -38,7 +38,7 @@ public class MovingPlatform : DungeonPlaceableBehaviour, IDwarfDrawable, IPlaceC
         {
             tk2dSlicedSprite component = this.GetComponent<tk2dSlicedSprite>();
             if ((UnityEngine.Object) component != (UnityEngine.Object) null)
-                component.dimensions = new Vector2((float) (16 /*0x10*/ * this.Size.x), (float) (16 /*0x10*/ * this.Size.y));
+                component.dimensions = new Vector2((float) (16 * this.Size.x), (float) (16 * this.Size.y));
             PixelCollider pixelCollider = this.specRigidbody.PixelColliders.Find((Predicate<PixelCollider>) (c => c.CollisionLayer == CollisionLayer.MovingPlatform));
             if (pixelCollider == null)
             {
@@ -49,8 +49,8 @@ public class MovingPlatform : DungeonPlaceableBehaviour, IDwarfDrawable, IPlaceC
             pixelCollider.ColliderGenerationMode = PixelCollider.PixelColliderGeneration.Manual;
             pixelCollider.ManualOffsetX = 0;
             pixelCollider.ManualOffsetY = 0;
-            pixelCollider.ManualWidth = this.Size.x * 16 /*0x10*/;
-            pixelCollider.ManualHeight = this.Size.y * 16 /*0x10*/;
+            pixelCollider.ManualWidth = this.Size.x * 16;
+            pixelCollider.ManualHeight = this.Size.y * 16;
             pixelCollider.Regenerate(this.specRigidbody.transform);
             this.specRigidbody.Reinitialize();
             if (!((UnityEngine.Object) this.StencilQuad != (UnityEngine.Object) null))

@@ -22,7 +22,7 @@ public class dfRenderData : IDisposable
         public bool Glitchy;
 
         internal dfRenderData()
-            : this(32 /*0x20*/)
+            : this(32)
         {
         }
 

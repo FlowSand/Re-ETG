@@ -123,8 +123,8 @@ public class OcclusionLayer
             this.m_playerOneDead = !(bool) (Object) this.m_gameManagerCached.PrimaryPlayer || this.m_gameManagerCached.PrimaryPlayer.healthHaver.IsDead;
             if (this.m_gameManagerCached.CurrentGameType == GameManager.GameType.COOP_2_PLAYER)
                 this.m_playerTwoDead = !(bool) (Object) this.m_gameManagerCached.SecondaryPlayer || this.m_gameManagerCached.SecondaryPlayer.healthHaver.IsDead;
-            int num1 = this.m_pixelatorCached.CurrentMacroResolutionX / 16 /*0x10*/ + 4;
-            int num2 = this.m_pixelatorCached.CurrentMacroResolutionY / 16 /*0x10*/ + 4;
+            int num1 = this.m_pixelatorCached.CurrentMacroResolutionX / 16 + 4;
+            int num2 = this.m_pixelatorCached.CurrentMacroResolutionY / 16 + 4;
             int width = num1 * this.textureMultiplier;
             int height = num2 * this.textureMultiplier;
             if ((Object) this.m_occlusionTexture == (Object) null || this.m_occlusionTexture.width != width || this.m_occlusionTexture.height != height)

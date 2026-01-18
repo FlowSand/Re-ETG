@@ -12,7 +12,7 @@ namespace InControl
         public static float ScaleY = 0.05f;
         public static float ScaleZ = 0.05f;
         public static float JitterThreshold = 0.05f;
-        private static readonly int[] buttonTable = new int[16 /*0x10*/]
+        private static readonly int[] buttonTable = new int[16]
         {
             -1,
             0,

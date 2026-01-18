@@ -183,8 +183,8 @@ namespace Kvant
 
         private void UpdateColumnAndRowCounts()
         {
-            this._slices = Mathf.Clamp(this._slices, 4, 4096 /*0x1000*/);
-            this._stacks = Mathf.Clamp(this._stacks, 4, 4096 /*0x1000*/);
+            this._slices = Mathf.Clamp(this._slices, 4, 4096);
+            this._stacks = Mathf.Clamp(this._stacks, 4, 4096);
             int num = this._slices * (this._stacks + 1) * 6 / 65000 + 1;
             this._stacksPerSegment = num <= 1 ? this._stacks : this._stacks / num / 2 * 2;
             this._totalStacks = this._stacksPerSegment * num;

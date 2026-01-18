@@ -10,7 +10,7 @@ using Brave.BulletScript;
 [InspectorDropdownName("AngryBook/BlueWave1")]
 public class AngryBookBlueWave1 : Script
     {
-        public int NumBullets = 32 /*0x20*/;
+        public int NumBullets = 32;
 
         [DebuggerHidden]
         protected override IEnumerator Top()

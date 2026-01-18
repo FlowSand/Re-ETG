@@ -187,7 +187,7 @@ public class DashBehavior : BasicAttackBehavior
             {
                 if ((double) this.quantizeDirection <= 0.0)
                 {
-                    array = new float[16 /*0x10*/];
+                    array = new float[16];
                     for (int index = 0; index < array.Length; ++index)
                         array[index] = UnityEngine.Random.Range(0.0f, 360f);
                 }
@@ -203,7 +203,7 @@ public class DashBehavior : BasicAttackBehavior
             {
                 if ((double) this.quantizeDirection <= 0.0)
                 {
-                    array = new float[16 /*0x10*/];
+                    array = new float[16];
                     for (int index = 0; index < array.Length; ++index)
                         array[index] = UnityEngine.Random.Range(0.0f, 360f);
                 }

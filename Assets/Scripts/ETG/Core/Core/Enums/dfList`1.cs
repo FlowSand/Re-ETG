@@ -12,9 +12,9 @@ public class dfList<T> :
         IEnumerable<T>,
         IEnumerable
     {
-        private static Queue<object> pool = new Queue<object>(1024 /*0x0400*/);
-        private const int DEFAULT_CAPACITY = 128 /*0x80*/;
-        private T[] items = new T[128 /*0x80*/];
+        private static Queue<object> pool = new Queue<object>(1024);
+        private const int DEFAULT_CAPACITY = 128;
+        private T[] items = new T[128];
         private int count;
         private bool isElementTypeValueType;
         private bool isElementTypePoolable;
@@ -169,7 +169,7 @@ public class dfList<T> :
         {
             if (this.items.Length >= Size)
                 return;
-            Array.Resize<T>(ref this.items, Size / 128 /*0x80*/ * 128 /*0x80*/ + 128 /*0x80*/);
+            Array.Resize<T>(ref this.items, Size / 128 * 128 + 128);
         }
 
         public void AddRange(dfList<T> list)

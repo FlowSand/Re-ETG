@@ -11,7 +11,7 @@ public class AkUtilities
             private static byte s_hashSize;
             private static uint s_mask;
 
-            static ShortIDGenerator() => AkUtilities.ShortIDGenerator.HashSize = (byte) 32 /*0x20*/;
+            static ShortIDGenerator() => AkUtilities.ShortIDGenerator.HashSize = (byte) 32;
 
             public static byte HashSize
             {
@@ -29,7 +29,7 @@ public class AkUtilities
                 uint num = 2166136261;
                 for (int index = 0; index < bytes.Length; ++index)
                     num = num * 16777619U ^ (uint) bytes[index];
-                return AkUtilities.ShortIDGenerator.s_hashSize == (byte) 32 /*0x20*/ ? num : num >> (int) AkUtilities.ShortIDGenerator.s_hashSize ^ num & AkUtilities.ShortIDGenerator.s_mask;
+                return AkUtilities.ShortIDGenerator.s_hashSize == (byte) 32 ? num : num >> (int) AkUtilities.ShortIDGenerator.s_hashSize ^ num & AkUtilities.ShortIDGenerator.s_mask;
             }
         }
     }

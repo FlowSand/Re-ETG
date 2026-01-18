@@ -69,7 +69,7 @@ public class ResourcefulRatBossRoomController : MonoBehaviour
 
         public void EnablePitfalls(bool value)
         {
-            IntVector2 intVector2 = this.transform.position.GetAbsoluteRoom().area.basePosition + new IntVector2(16 /*0x10*/, 10);
+            IntVector2 intVector2 = this.transform.position.GetAbsoluteRoom().area.basePosition + new IntVector2(16, 10);
             for (int x = 0; x < 4; ++x)
             {
                 for (int y = 0; y < 4; ++y)

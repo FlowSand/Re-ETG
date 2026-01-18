@@ -110,7 +110,7 @@ namespace InControl
                 {
                     Handle = "DPad Up",
                     Target = InputControlType.DPadUp,
-                    Source = NativeInputDeviceProfile.Button(16 /*0x10*/)
+                    Source = NativeInputDeviceProfile.Button(16)
                 },
                 new InputControlMapping()
                 {

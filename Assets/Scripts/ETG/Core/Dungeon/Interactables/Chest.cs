@@ -754,7 +754,7 @@ public class Chest : DungeonPlaceableBehaviour, IPlaceConfigurable, IPlayerInter
 
         private void OnRigidbodyCollision(CollisionData rigidbodyCollision)
         {
-            if (this.ChestIdentifier != Chest.SpecialChestIdentifier.SECRET_RAINBOW || !(bool) (UnityEngine.Object) rigidbodyCollision.OtherRigidbody || !(bool) (UnityEngine.Object) rigidbodyCollision.OtherRigidbody.projectile || BraveUtility.EnumFlagsContains((uint) rigidbodyCollision.OtherRigidbody.projectile.damageTypes, 32U /*0x20*/) <= 0)
+            if (this.ChestIdentifier != Chest.SpecialChestIdentifier.SECRET_RAINBOW || !(bool) (UnityEngine.Object) rigidbodyCollision.OtherRigidbody || !(bool) (UnityEngine.Object) rigidbodyCollision.OtherRigidbody.projectile || BraveUtility.EnumFlagsContains((uint) rigidbodyCollision.OtherRigidbody.projectile.damageTypes, 32U) <= 0)
                 return;
             this.RevealSecretRainbow();
         }

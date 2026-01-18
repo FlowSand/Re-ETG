@@ -10,7 +10,7 @@ using System;
         {
             object[] objArray = new object[kilobytes];
             for (int index = 0; index < kilobytes; ++index)
-                objArray[index] = (object) new byte[1024 /*0x0400*/];
+                objArray[index] = (object) new byte[1024];
             GC.Collect();
         }
 

@@ -15,7 +15,7 @@ namespace InControl.NativeProfile
                 {
                     VendorID = new ushort?((ushort) 1411),
                     ProductID = new ushort?((ushort) 8288),
-                    VersionNumber = new uint?(256U /*0x0100*/)
+                    VersionNumber = new uint?(256U)
                 }
             };
             this.ButtonMappings = new InputControlMapping[8]

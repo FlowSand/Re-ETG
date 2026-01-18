@@ -109,7 +109,7 @@ namespace InControl.NativeProfile
                 {
                     Handle = "System",
                     Target = InputControlType.System,
-                    Source = NativeInputDeviceProfile.Button(16 /*0x10*/)
+                    Source = NativeInputDeviceProfile.Button(16)
                 },
                 new InputControlMapping()
                 {

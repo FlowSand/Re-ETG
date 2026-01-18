@@ -221,7 +221,7 @@ public class TallGrassPatch : MonoBehaviour
                     GameObject gameObject = SpawnManager.SpawnVFX(this.m_stripPrefab);
                     tk2dTiledSprite component = gameObject.GetComponent<tk2dTiledSprite>();
                     component.SetSprite(GameManager.Instance.Dungeon.tileIndices.dungeonCollection, indexForPosition);
-                    component.dimensions = new Vector2((float) (16 /*0x10*/ * num), 16f);
+                    component.dimensions = new Vector2((float) (16 * num), 16f);
                     gameObject.transform.position = new Vector3((float) cell.x, (float) cell.y, (float) cell.y);
                     this.m_tiledSpritePool.Add(component);
                     switch (indexForPosition)

@@ -104,7 +104,7 @@ public class HighPriestIntroDoer : SpecificIntroDoer
             {
                 if (!GameManager.HasInstance || GameManager.Instance.IsLoadingLevel || GameManager.IsReturningToBreach)
                     return;
-                this.m_minPlayerY = this.aiActor.ParentRoom.area.basePosition.y * 16 /*0x10*/ + 8;
+                this.m_minPlayerY = this.aiActor.ParentRoom.area.basePosition.y * 16 + 8;
                 for (int index = 0; index < GameManager.Instance.AllPlayers.Length; ++index)
                     GameManager.Instance.AllPlayers[index].specRigidbody.MovementRestrictor += new SpeculativeRigidbody.MovementRestrictorDelegate(this.PlayerMovementRestrictor);
             }

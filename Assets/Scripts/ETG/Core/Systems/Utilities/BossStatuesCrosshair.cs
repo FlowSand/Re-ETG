@@ -50,7 +50,7 @@ public class BossStatuesCrosshair : Script
         private void FirePulse()
         {
             float num = 4.5f;
-            for (int index = 0; index < 80 /*0x50*/; ++index)
+            for (int index = 0; index < 80; ++index)
                 this.Fire(new Brave.BulletScript.Direction(((float) index + 0.5f) * num), new Brave.BulletScript.Speed(BossStatuesCrosshair.Radius / ((float) BossStatuesCrosshair.PulseTravelTime / 60f)), new Bullet("defaultPulse", forceBlackBullet: true));
         }
 

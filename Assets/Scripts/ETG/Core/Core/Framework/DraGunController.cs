@@ -233,8 +233,8 @@ public class DraGunController : BraveBehaviour
             {
                 if (!GameManager.HasInstance || GameManager.Instance.IsLoadingLevel || GameManager.IsReturningToBreach)
                     return;
-                this.m_minPlayerY = (this.aiActor.ParentRoom.area.basePosition.y + DraGunRoomPlaceable.HallHeight) * 16 /*0x10*/ + 8;
-                this.m_maxPlayerY = (this.aiActor.ParentRoom.area.basePosition.y + this.aiActor.ParentRoom.area.dimensions.y - 1) * 16 /*0x10*/;
+                this.m_minPlayerY = (this.aiActor.ParentRoom.area.basePosition.y + DraGunRoomPlaceable.HallHeight) * 16 + 8;
+                this.m_maxPlayerY = (this.aiActor.ParentRoom.area.basePosition.y + this.aiActor.ParentRoom.area.dimensions.y - 1) * 16;
                 for (int index = 0; index < GameManager.Instance.AllPlayers.Length; ++index)
                     GameManager.Instance.AllPlayers[index].specRigidbody.MovementRestrictor += new SpeculativeRigidbody.MovementRestrictorDelegate(this.PlayerMovementRestrictor);
             }

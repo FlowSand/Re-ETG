@@ -3,10 +3,10 @@ namespace SimplexNoise
 {
     public class Noise
     {
-        public static byte[] perm = new byte[512 /*0x0200*/]
+        public static byte[] perm = new byte[512]
         {
             (byte) 151,
-            (byte) 160 /*0xA0*/,
+            (byte) 160,
             (byte) 137,
             (byte) 91,
             (byte) 90,
@@ -15,7 +15,7 @@ namespace SimplexNoise
             (byte) 13,
             (byte) 201,
             (byte) 95,
-            (byte) 96 /*0x60*/,
+            (byte) 96,
             (byte) 53,
             (byte) 194,
             (byte) 233,
@@ -30,7 +30,7 @@ namespace SimplexNoise
             (byte) 8,
             (byte) 99,
             (byte) 37,
-            (byte) 240 /*0xF0*/,
+            (byte) 240,
             (byte) 21,
             (byte) 10,
             (byte) 23,
@@ -52,7 +52,7 @@ namespace SimplexNoise
             (byte) 117,
             (byte) 35,
             (byte) 11,
-            (byte) 32 /*0x20*/,
+            (byte) 32,
             (byte) 57,
             (byte) 177,
             (byte) 33,
@@ -74,7 +74,7 @@ namespace SimplexNoise
             (byte) 71,
             (byte) 134,
             (byte) 139,
-            (byte) 48 /*0x30*/,
+            (byte) 48,
             (byte) 27,
             (byte) 166,
             (byte) 77,
@@ -103,17 +103,17 @@ namespace SimplexNoise
             (byte) 54,
             (byte) 65,
             (byte) 25,
-            (byte) 63 /*0x3F*/,
+            (byte) 63,
             (byte) 161,
             (byte) 1,
             (byte) 216,
-            (byte) 80 /*0x50*/,
+            (byte) 80,
             (byte) 73,
             (byte) 209,
             (byte) 76,
             (byte) 132,
             (byte) 187,
-            (byte) 208 /*0xD0*/,
+            (byte) 208,
             (byte) 89,
             (byte) 18,
             (byte) 169,
@@ -132,7 +132,7 @@ namespace SimplexNoise
             (byte) 173,
             (byte) 186,
             (byte) 3,
-            (byte) 64 /*0x40*/,
+            (byte) 64,
             (byte) 52,
             (byte) 217,
             (byte) 226,
@@ -154,7 +154,7 @@ namespace SimplexNoise
             (byte) 59,
             (byte) 227,
             (byte) 47,
-            (byte) 16 /*0x10*/,
+            (byte) 16,
             (byte) 58,
             (byte) 17,
             (byte) 182,
@@ -191,11 +191,11 @@ namespace SimplexNoise
             (byte) 110,
             (byte) 79,
             (byte) 113,
-            (byte) 224 /*0xE0*/,
+            (byte) 224,
             (byte) 232,
             (byte) 178,
             (byte) 185,
-            (byte) 112 /*0x70*/,
+            (byte) 112,
             (byte) 104,
             (byte) 218,
             (byte) 246,
@@ -207,7 +207,7 @@ namespace SimplexNoise
             (byte) 193,
             (byte) 238,
             (byte) 210,
-            (byte) 144 /*0x90*/,
+            (byte) 144,
             (byte) 12,
             (byte) 191,
             (byte) 179,
@@ -222,9 +222,9 @@ namespace SimplexNoise
             (byte) 239,
             (byte) 107,
             (byte) 49,
-            (byte) 192 /*0xC0*/,
+            (byte) 192,
             (byte) 214,
-            (byte) 31 /*0x1F*/,
+            (byte) 31,
             (byte) 181,
             (byte) 199,
             (byte) 106,
@@ -232,12 +232,12 @@ namespace SimplexNoise
             (byte) 184,
             (byte) 84,
             (byte) 204,
-            (byte) 176 /*0xB0*/,
+            (byte) 176,
             (byte) 115,
             (byte) 121,
             (byte) 50,
             (byte) 45,
-            (byte) 127 /*0x7F*/,
+            (byte) 127,
             (byte) 4,
             (byte) 150,
             (byte) 254,
@@ -253,7 +253,7 @@ namespace SimplexNoise
             (byte) 72,
             (byte) 243,
             (byte) 141,
-            (byte) 128 /*0x80*/,
+            (byte) 128,
             (byte) 195,
             (byte) 78,
             (byte) 66,
@@ -262,7 +262,7 @@ namespace SimplexNoise
             (byte) 156,
             (byte) 180,
             (byte) 151,
-            (byte) 160 /*0xA0*/,
+            (byte) 160,
             (byte) 137,
             (byte) 91,
             (byte) 90,
@@ -271,7 +271,7 @@ namespace SimplexNoise
             (byte) 13,
             (byte) 201,
             (byte) 95,
-            (byte) 96 /*0x60*/,
+            (byte) 96,
             (byte) 53,
             (byte) 194,
             (byte) 233,
@@ -286,7 +286,7 @@ namespace SimplexNoise
             (byte) 8,
             (byte) 99,
             (byte) 37,
-            (byte) 240 /*0xF0*/,
+            (byte) 240,
             (byte) 21,
             (byte) 10,
             (byte) 23,
@@ -308,7 +308,7 @@ namespace SimplexNoise
             (byte) 117,
             (byte) 35,
             (byte) 11,
-            (byte) 32 /*0x20*/,
+            (byte) 32,
             (byte) 57,
             (byte) 177,
             (byte) 33,
@@ -330,7 +330,7 @@ namespace SimplexNoise
             (byte) 71,
             (byte) 134,
             (byte) 139,
-            (byte) 48 /*0x30*/,
+            (byte) 48,
             (byte) 27,
             (byte) 166,
             (byte) 77,
@@ -359,17 +359,17 @@ namespace SimplexNoise
             (byte) 54,
             (byte) 65,
             (byte) 25,
-            (byte) 63 /*0x3F*/,
+            (byte) 63,
             (byte) 161,
             (byte) 1,
             (byte) 216,
-            (byte) 80 /*0x50*/,
+            (byte) 80,
             (byte) 73,
             (byte) 209,
             (byte) 76,
             (byte) 132,
             (byte) 187,
-            (byte) 208 /*0xD0*/,
+            (byte) 208,
             (byte) 89,
             (byte) 18,
             (byte) 169,
@@ -388,7 +388,7 @@ namespace SimplexNoise
             (byte) 173,
             (byte) 186,
             (byte) 3,
-            (byte) 64 /*0x40*/,
+            (byte) 64,
             (byte) 52,
             (byte) 217,
             (byte) 226,
@@ -410,7 +410,7 @@ namespace SimplexNoise
             (byte) 59,
             (byte) 227,
             (byte) 47,
-            (byte) 16 /*0x10*/,
+            (byte) 16,
             (byte) 58,
             (byte) 17,
             (byte) 182,
@@ -447,11 +447,11 @@ namespace SimplexNoise
             (byte) 110,
             (byte) 79,
             (byte) 113,
-            (byte) 224 /*0xE0*/,
+            (byte) 224,
             (byte) 232,
             (byte) 178,
             (byte) 185,
-            (byte) 112 /*0x70*/,
+            (byte) 112,
             (byte) 104,
             (byte) 218,
             (byte) 246,
@@ -463,7 +463,7 @@ namespace SimplexNoise
             (byte) 193,
             (byte) 238,
             (byte) 210,
-            (byte) 144 /*0x90*/,
+            (byte) 144,
             (byte) 12,
             (byte) 191,
             (byte) 179,
@@ -478,9 +478,9 @@ namespace SimplexNoise
             (byte) 239,
             (byte) 107,
             (byte) 49,
-            (byte) 192 /*0xC0*/,
+            (byte) 192,
             (byte) 214,
-            (byte) 31 /*0x1F*/,
+            (byte) 31,
             (byte) 181,
             (byte) 199,
             (byte) 106,
@@ -488,12 +488,12 @@ namespace SimplexNoise
             (byte) 184,
             (byte) 84,
             (byte) 204,
-            (byte) 176 /*0xB0*/,
+            (byte) 176,
             (byte) 115,
             (byte) 121,
             (byte) 50,
             (byte) 45,
-            (byte) 127 /*0x7F*/,
+            (byte) 127,
             (byte) 4,
             (byte) 150,
             (byte) 254,
@@ -509,7 +509,7 @@ namespace SimplexNoise
             (byte) 72,
             (byte) 243,
             (byte) 141,
-            (byte) 128 /*0x80*/,
+            (byte) 128,
             (byte) 195,
             (byte) 78,
             (byte) 66,
@@ -562,8 +562,8 @@ namespace SimplexNoise
             float y2 = (float) ((double) y1 - (double) num8 + 0.21132487058639526);
             float x5 = (float) ((double) x3 - 1.0 + 0.42264974117279053);
             float y3 = (float) ((double) y1 - 1.0 + 0.42264974117279053);
-            int num9 = num2 % 256 /*0x0100*/;
-            int index = num3 % 256 /*0x0100*/;
+            int num9 = num2 % 256;
+            int index = num3 % 256;
             float num10 = (float) (0.5 - (double) x3 * (double) x3 - (double) y1 * (double) y1);
             float num11;
             if ((double) num10 < 0.0)
@@ -688,9 +688,9 @@ namespace SimplexNoise
             float x10 = (float) ((double) x7 - 1.0 + 0.5);
             float y4 = (float) ((double) y1 - 1.0 + 0.5);
             float z4 = (float) ((double) z1 - 1.0 + 0.5);
-            int num12 = Noise.Mod(x4, 256 /*0x0100*/);
-            int num13 = Noise.Mod(x5, 256 /*0x0100*/);
-            int index = Noise.Mod(x6, 256 /*0x0100*/);
+            int num12 = Noise.Mod(x4, 256);
+            int num13 = Noise.Mod(x5, 256);
+            int index = Noise.Mod(x6, 256);
             float num14 = (float) (0.60000002384185791 - (double) x7 * (double) x7 - (double) y1 * (double) y1 - (double) z1 * (double) z1);
             float num15;
             if ((double) num14 < 0.0)
@@ -773,9 +773,9 @@ namespace SimplexNoise
 
         private static float grad(int hash, float x, float y, float z, float t)
         {
-            int num1 = hash & 31 /*0x1F*/;
+            int num1 = hash & 31;
             float num2 = num1 >= 24 ? y : x;
-            float num3 = num1 >= 16 /*0x10*/ ? z : y;
+            float num3 = num1 >= 16 ? z : y;
             float num4 = num1 >= 8 ? t : z;
             return (float) (((num1 & 1) == 0 ? (double) num2 : -(double) num2) + ((num1 & 2) == 0 ? (double) num3 : -(double) num3) + ((num1 & 4) == 0 ? (double) num4 : -(double) num4));
         }

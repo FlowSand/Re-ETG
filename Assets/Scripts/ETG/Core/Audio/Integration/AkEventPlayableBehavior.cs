@@ -33,7 +33,7 @@ public class AkEventPlayableBehavior : PlayableBehaviour
                     this.checkForFadeIn((float) playable.GetTime<Playable>());
                     this.checkForFadeOut(playable);
                 }
-                this.requiredActions |= 16U /*0x10*/;
+                this.requiredActions |= 16U;
             }
             else
             {
@@ -60,7 +60,7 @@ public class AkEventPlayableBehavior : PlayableBehaviour
             else
             {
                 if ((double) this.getProportionalTime(playable) > 0.05000000074505806)
-                    this.requiredActions |= 16U /*0x10*/;
+                    this.requiredActions |= 16U;
                 this.checkForFadeIn((float) playable.GetTime<Playable>());
                 this.checkForFadeOut(playable);
             }
@@ -133,7 +133,7 @@ public class AkEventPlayableBehavior : PlayableBehaviour
         {
             if (!this.fadeInRequired(currentClipTime))
                 return;
-            this.requiredActions |= 32U /*0x20*/;
+            this.requiredActions |= 32U;
         }
 
         private void checkForFadeInImmediate(float currentClipTime)
@@ -162,7 +162,7 @@ public class AkEventPlayableBehavior : PlayableBehaviour
         {
             if (this.eventTracker == null || this.eventTracker.fadeoutTriggered || !this.fadeOutRequired(playable))
                 return;
-            this.requiredActions |= 64U /*0x40*/;
+            this.requiredActions |= 64U;
         }
 
         protected void triggerFadeIn(float currentClipTime)

@@ -65,7 +65,7 @@ using UnityEngine;
             if (layer == -1)
                 layer = gameObject.layer;
             int physicsCollisionMask = 0;
-            for (int layer2 = 0; layer2 < 32 /*0x20*/; ++layer2)
+            for (int layer2 = 0; layer2 < 32; ++layer2)
                 physicsCollisionMask |= (!Physics.GetIgnoreLayerCollision(layer, layer2) ? 1 : 0) << layer2;
             return physicsCollisionMask;
         }

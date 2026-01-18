@@ -24,8 +24,8 @@ public class tk2dSpriteCollectionDefinition
         public bool customSpriteGeometry;
         public tk2dSpriteColliderIsland[] geometryIslands = new tk2dSpriteColliderIsland[0];
         public bool dice;
-        public int diceUnitX = 64 /*0x40*/;
-        public int diceUnitY = 64 /*0x40*/;
+        public int diceUnitX = 64;
+        public int diceUnitY = 64;
         public tk2dSpriteCollectionDefinition.DiceFilter diceFilter;
         public tk2dSpriteCollectionDefinition.Pad pad;
         public int extraPadding;

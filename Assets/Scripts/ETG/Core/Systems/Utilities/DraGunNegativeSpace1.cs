@@ -12,7 +12,7 @@ public class DraGunNegativeSpace1 : ScriptLite
     {
         private const int NumPlatforms = 10;
         private const int NumBullets = 19;
-        private const int RowDelay = 16 /*0x10*/;
+        private const int RowDelay = 16;
         private const float HalfRoomWidth = 17f;
         private const int PlatformRadius = 4;
         private static float[] PlatformAngles = new float[5]
@@ -96,7 +96,7 @@ public class DraGunNegativeSpace1 : ScriptLite
                     this.Fire(new Offset(x, 18f, transform: string.Empty), new Brave.BulletScript.Direction(-90f), new Brave.BulletScript.Speed(6f), (Bullet) new DraGunNegativeSpace1.WiggleBullet(suppressOffset));
                 }
                 this.m_rowHeight += this.m_verticalGap;
-                return this.Wait(16 /*0x10*/);
+                return this.Wait(16);
             }
             ++state;
             return this.Wait(120);

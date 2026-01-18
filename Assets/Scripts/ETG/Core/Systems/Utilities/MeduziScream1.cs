@@ -11,8 +11,8 @@ using Brave.BulletScript;
 [InspectorDropdownName("Bosses/Meduzi/Scream1")]
 public class MeduziScream1 : Script
     {
-        private const int NumWaves = 16 /*0x10*/;
-        private const int NumBulletsPerWave = 64 /*0x40*/;
+        private const int NumWaves = 16;
+        private const int NumBulletsPerWave = 64;
         private const int NumGaps = 3;
         private const int StepOpenTime = 14;
         private const int GapHalfWidth = 3;

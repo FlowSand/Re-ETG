@@ -48,15 +48,15 @@ public struct dfMarkupStyle
             },
             {
                 "maroon",
-                (Color) dfMarkupStyle.UIntToColor(8388608U /*0x800000*/)
+                (Color) dfMarkupStyle.UIntToColor(8388608U)
             },
             {
                 "navy",
-                (Color) dfMarkupStyle.UIntToColor(128U /*0x80*/)
+                (Color) dfMarkupStyle.UIntToColor(128U)
             },
             {
                 "olive",
-                (Color) dfMarkupStyle.UIntToColor(8421376U /*0x808000*/)
+                (Color) dfMarkupStyle.UIntToColor(8421376U)
             },
             {
                 "orange",
@@ -64,7 +64,7 @@ public struct dfMarkupStyle
             },
             {
                 "purple",
-                (Color) dfMarkupStyle.UIntToColor(8388736U /*0x800080*/)
+                (Color) dfMarkupStyle.UIntToColor(8388736U)
             },
             {
                 "red",
@@ -72,7 +72,7 @@ public struct dfMarkupStyle
             },
             {
                 "silver",
-                (Color) dfMarkupStyle.UIntToColor(12632256U /*0xC0C0C0*/)
+                (Color) dfMarkupStyle.UIntToColor(12632256U)
             },
             {
                 "teal",
@@ -236,7 +236,7 @@ public struct dfMarkupStyle
 
         private static Color32 UIntToColor(uint color)
         {
-            return new Color32((byte) (color >> 16 /*0x10*/), (byte) (color >> 8), (byte) (color >> 0), byte.MaxValue);
+            return new Color32((byte) (color >> 16), (byte) (color >> 8), (byte) (color >> 0), byte.MaxValue);
         }
     }
 

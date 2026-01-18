@@ -66,7 +66,7 @@ namespace InControl
             this.DeviceStyle = InputDeviceStyle.Unknown;
             this.Passive = false;
             this.ControlsByTarget = new InputControl[521];
-            this.controls = new List<InputControl>(32 /*0x20*/);
+            this.controls = new List<InputControl>(32);
             this.Controls = new ReadOnlyCollection<InputControl>((IList<InputControl>) this.controls);
             this.RemoveAliasControls();
         }

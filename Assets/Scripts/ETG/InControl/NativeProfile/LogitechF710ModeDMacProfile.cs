@@ -18,7 +18,7 @@ namespace InControl.NativeProfile
                     ProductID = new ushort?((ushort) 49689)
                 }
             };
-            this.ButtonMappings = new InputControlMapping[16 /*0x10*/]
+            this.ButtonMappings = new InputControlMapping[16]
             {
                 new InputControlMapping()
                 {

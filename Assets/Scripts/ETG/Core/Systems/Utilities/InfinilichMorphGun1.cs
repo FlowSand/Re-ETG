@@ -17,7 +17,7 @@ public class InfinilichMorphGun1 : Script
             new int[2]{ 2, 9 },
             new int[2]{ 3, 10 },
             new int[3]{ 4, 11, 15 },
-            new int[4]{ 5, 12, 16 /*0x10*/, 19 },
+            new int[4]{ 5, 12, 16, 19 },
             new int[5]{ 6, 13, 17, 20, 22 },
             new int[5]{ 7, 14, 18, 21, 23 }
         };
@@ -29,7 +29,7 @@ public class InfinilichMorphGun1 : Script
             new int[3]{ 3, 10, 15 },
             new int[4]{ 7, 14, 18, 21 },
             new int[5]{ 6, 13, 17, 20, 23 },
-            new int[5]{ 5, 12, 16 /*0x10*/, 19, 22 }
+            new int[5]{ 5, 12, 16, 19, 22 }
         };
         private float m_sign;
 

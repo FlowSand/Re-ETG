@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 internal class dfTempArray<T>
     {
-        private static List<T[]> cache = new List<T[]>(32 /*0x20*/);
+        private static List<T[]> cache = new List<T[]>(32);
 
         public static void Clear() => dfTempArray<T>.cache.Clear();
 
-        public static T[] Obtain(int length) => dfTempArray<T>.Obtain(length, 128 /*0x80*/);
+        public static T[] Obtain(int length) => dfTempArray<T>.Obtain(length, 128);
 
         public static T[] Obtain(int length, int maxCacheSize)
         {

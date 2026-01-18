@@ -5556,7 +5556,7 @@ public class PlayerController : GameActor, ILevelLoadedListener
                     }
                     else
                     {
-                        this.exceptionTracker = 208 /*0xD0*/;
+                        this.exceptionTracker = 208;
                         this.IsFiring = targetGun.ContinueAttack(this.m_CanAttack) && !targetGun.IsCharging;
                     }
                 }

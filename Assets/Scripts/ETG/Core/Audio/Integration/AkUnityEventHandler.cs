@@ -9,7 +9,7 @@ using UnityEngine;
         public const int AWAKE_TRIGGER_ID = 1151176110;
         public const int START_TRIGGER_ID = 1281810935;
         public const int DESTROY_TRIGGER_ID = -358577003;
-        public const int MAX_NB_TRIGGERS = 32 /*0x20*/;
+        public const int MAX_NB_TRIGGERS = 32;
         public static Dictionary<uint, string> triggerTypes = AkTriggerBase.GetAllDerivedTypes();
         private bool didDestroy;
         public List<int> triggerList = new List<int>()

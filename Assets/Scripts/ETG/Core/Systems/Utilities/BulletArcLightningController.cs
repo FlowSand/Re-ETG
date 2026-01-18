@@ -28,7 +28,7 @@ public class BulletArcLightningController : MonoBehaviour
             this.m_endAngle = endAngle;
             this.m_currentRadius = startRadius;
             this.m_line = this.gameObject.GetOrAddComponent<LineRenderer>();
-            this.m_linePoints = new Vector3[16 /*0x10*/];
+            this.m_linePoints = new Vector3[16];
             this.m_line.SetVertexCount(this.m_linePoints.Length);
             this.m_line.SetPositions(this.m_linePoints);
             this.m_line.SetWidth(1f, 1f);

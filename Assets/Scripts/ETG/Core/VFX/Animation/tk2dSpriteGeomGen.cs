@@ -298,8 +298,8 @@ using UnityEngine;
             }
             else
             {
-                numVertices = 16 /*0x10*/;
-                numIndices = !borderOnly ? 54 : 48 /*0x30*/;
+                numVertices = 16;
+                numIndices = !borderOnly ? 54 : 48;
             }
         }
 

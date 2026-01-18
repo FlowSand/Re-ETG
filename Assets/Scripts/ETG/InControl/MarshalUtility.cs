@@ -6,7 +6,7 @@ namespace InControl
 {
     public static class MarshalUtility
     {
-        private static int[] buffer = new int[32 /*0x20*/];
+        private static int[] buffer = new int[32];
 
         public static void Copy(IntPtr source, uint[] destination, int length)
         {

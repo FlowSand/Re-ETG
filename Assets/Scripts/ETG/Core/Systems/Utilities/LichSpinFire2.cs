@@ -11,7 +11,7 @@ using Brave.BulletScript;
 public class LichSpinFire2 : Script
     {
         private const int NumWaves = 6;
-        private const int NumBulletsPerWave = 48 /*0x30*/;
+        private const int NumBulletsPerWave = 48;
 
         [DebuggerHidden]
         protected override IEnumerator Top()

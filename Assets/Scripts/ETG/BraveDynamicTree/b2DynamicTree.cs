@@ -14,7 +14,7 @@ namespace BraveDynamicTree
         private int m_nodeCount;
         private int m_nodeCapacity;
         private int m_freeList;
-        private Stack<int> m_stack = new Stack<int>(256 /*0x0100*/);
+        private Stack<int> m_stack = new Stack<int>(256);
         public const int b2_nullNode = -1;
         private const float b2_aabbExtension = 0.1f;
         private const float b2_aabbMultiplier = 2f;
@@ -22,7 +22,7 @@ namespace BraveDynamicTree
         public b2DynamicTree()
         {
             this.m_root = -1;
-            this.m_nodeCapacity = 16 /*0x10*/;
+            this.m_nodeCapacity = 16;
             this.m_nodeCount = 0;
             this.m_nodes = new b2TreeNode[this.m_nodeCapacity];
             for (int index = 0; index < this.m_nodeCapacity - 1; ++index)

@@ -215,7 +215,7 @@ namespace InControl
             this.cachedTouches = new TouchPool();
             this.mouseTouch = new Touch();
             this.mouseTouch.fingerId = Touch.FingerID_Mouse;
-            this.activeTouches = new List<Touch>(32 /*0x20*/);
+            this.activeTouches = new List<Touch>(32);
             this.readOnlyActiveTouches = new ReadOnlyCollection<Touch>((IList<Touch>) this.activeTouches);
         }
 

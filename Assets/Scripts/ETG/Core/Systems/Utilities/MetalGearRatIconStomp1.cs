@@ -41,7 +41,7 @@ public class MetalGearRatIconStomp1 : Script
             3,
             8,
             13,
-            16 /*0x10*/,
+            16,
             21,
             36,
             39,
@@ -57,7 +57,7 @@ public class MetalGearRatIconStomp1 : Script
             8,
             7,
             11,
-            16 /*0x10*/
+            16
         };
         public int[] yOffsets2 = new int[9]
         {

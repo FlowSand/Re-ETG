@@ -69,7 +69,7 @@ public class BasicBeamController : BeamController
         [ShowInInspectorIf("collisionType", 1, true)]
         public int collisionLength = 320;
         [ShowInInspectorIf("collisionType", 1, true)]
-        public int collisionWidth = 64 /*0x40*/;
+        public int collisionWidth = 64;
         [Header("Particles")]
         public bool UsesDispersalParticles;
         [ShowInInspectorIf("UsesDispersalParticles", true)]
@@ -630,7 +630,7 @@ public class BasicBeamController : BeamController
                                 {
                                     hitRigidbody.majorBreakable.ApplyDamage(num2 * BraveTime.DeltaTime, this.Direction, false);
                                     Chest component = hitRigidbody.GetComponent<Chest>();
-                                    if ((bool) (UnityEngine.Object) component && BraveUtility.EnumFlagsContains((uint) this.projectile.damageTypes, 32U /*0x20*/) > 0 && component.ChestIdentifier == Chest.SpecialChestIdentifier.SECRET_RAINBOW)
+                                    if ((bool) (UnityEngine.Object) component && BraveUtility.EnumFlagsContains((uint) this.projectile.damageTypes, 32U) > 0 && component.ChestIdentifier == Chest.SpecialChestIdentifier.SECRET_RAINBOW)
                                         component.RevealSecretRainbow();
                                 }
                                 if ((bool) (UnityEngine.Object) hitRigidbody.gameActor)

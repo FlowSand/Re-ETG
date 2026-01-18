@@ -130,13 +130,13 @@ public class DemonWallController : BraveBehaviour
                 CellArea area = this.aiActor.ParentRoom.area;
                 if (intVector2.x < 0)
                 {
-                    if (playerSpecRigidbody.PixelColliders[0].MinX + pixelOffset.x < area.basePosition.x * 16 /*0x10*/)
+                    if (playerSpecRigidbody.PixelColliders[0].MinX + pixelOffset.x < area.basePosition.x * 16)
                     {
                         validLocation = false;
                         return;
                     }
                 }
-                else if (intVector2.x > 0 && playerSpecRigidbody.PixelColliders[0].MaxX + pixelOffset.x > (area.basePosition.x + area.dimensions.x) * 16 /*0x10*/ - 1)
+                else if (intVector2.x > 0 && playerSpecRigidbody.PixelColliders[0].MaxX + pixelOffset.x > (area.basePosition.x + area.dimensions.x) * 16 - 1)
                 {
                     validLocation = false;
                     return;

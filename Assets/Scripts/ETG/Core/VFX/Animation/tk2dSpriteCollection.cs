@@ -20,10 +20,10 @@ public class tk2dSpriteCollection : MonoBehaviour
         public bool managedSpriteCollection;
         public bool loadable;
         public tk2dSpriteCollection.AtlasFormat atlasFormat;
-        public int maxTextureSize = 2048 /*0x0800*/;
+        public int maxTextureSize = 2048;
         public bool forceTextureSize;
-        public int forcedTextureWidth = 2048 /*0x0800*/;
-        public int forcedTextureHeight = 2048 /*0x0800*/;
+        public int forcedTextureWidth = 2048;
+        public int forcedTextureHeight = 2048;
         public tk2dSpriteCollection.TextureCompression textureCompression;
         public int atlasWidth;
         public int atlasHeight;

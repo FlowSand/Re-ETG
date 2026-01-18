@@ -18,7 +18,7 @@ internal class dfRenderGroup : MonoBehaviour
         private MeshRenderer meshRenderer;
         private Camera renderCamera;
         private dfControl attachedControl;
-        private static dfRenderData masterBuffer = new dfRenderData(4096 /*0x1000*/);
+        private static dfRenderData masterBuffer = new dfRenderData(4096);
         private dfList<dfRenderData> drawCallBuffers = new dfList<dfRenderData>();
         private List<int> submeshes = new List<int>();
         private Stack<dfTriangleClippingRegion> clipStack = new Stack<dfTriangleClippingRegion>();

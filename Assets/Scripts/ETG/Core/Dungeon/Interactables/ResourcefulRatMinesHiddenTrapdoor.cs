@@ -116,11 +116,11 @@ public class ResourcefulRatMinesHiddenTrapdoor : DungeonPlaceableBehaviour, IPla
             if ((double) this.RevealPercentage >= 1.0)
                 return 1f;
             float num = 0.0f;
-            for (int index1 = 0; index1 < 64 /*0x40*/; ++index1)
+            for (int index1 = 0; index1 < 64; ++index1)
             {
-                for (int index2 = 0; index2 < 64 /*0x40*/; ++index2)
+                for (int index2 = 0; index2 < 64; ++index2)
                 {
-                    float r = this.m_blendTexColors[index2 * 64 /*0x40*/ + index1].r;
+                    float r = this.m_blendTexColors[index2 * 64 + index1].r;
                     num += Mathf.Max(r, this.RevealPercentage);
                 }
             }
@@ -134,16 +134,16 @@ public class ResourcefulRatMinesHiddenTrapdoor : DungeonPlaceableBehaviour, IPla
             {
                 for (int y = pxCenter.y - radius; y < pxCenter.y + radius; ++y)
                 {
-                    if (x > 0 && y > 0 && x < 64 /*0x40*/ && y < 64 /*0x40*/)
+                    if (x > 0 && y > 0 && x < 64 && y < 64)
                     {
-                        Color blendTexColor = this.m_blendTexColors[y * 64 /*0x40*/ + x];
+                        Color blendTexColor = this.m_blendTexColors[y * 64 + x];
                         float num1 = Vector2.Distance(pxCenter.ToVector2(), new Vector2((float) x, (float) y));
                         float num2 = Mathf.Clamp01(((float) radius - num1) / (float) radius);
                         float num3 = Mathf.Clamp01(blendTexColor.r + amt * num2);
                         if ((double) num3 != (double) blendTexColor.r)
                         {
                             blendTexColor.r = num3;
-                            this.m_blendTexColors[y * 64 /*0x40*/ + x] = blendTexColor;
+                            this.m_blendTexColors[y * 64 + x] = blendTexColor;
                             flag = true;
                             this.m_blendTexDirty = true;
                         }
@@ -158,9 +158,9 @@ public class ResourcefulRatMinesHiddenTrapdoor : DungeonPlaceableBehaviour, IPla
             if ((double) this.RevealPercentage >= 1.0)
                 return;
             Vector2 vector2 = this.transform.position.XY();
-            for (int index1 = 0; index1 < 16 /*0x10*/; ++index1)
+            for (int index1 = 0; index1 < 16; ++index1)
             {
-                for (int index2 = 0; index2 < 16 /*0x10*/; ++index2)
+                for (int index2 = 0; index2 < 16; ++index2)
                 {
                     IntVector2 intVector2_1 = ((new Vector2((float) index1 / 4f, (float) index2 / 4f) + vector2) / DeadlyDeadlyGoopManager.GOOP_GRID_SIZE).ToIntVector2(VectorConversions.Floor);
                     if (DeadlyDeadlyGoopManager.allGoopPositionMap.ContainsKey(intVector2_1) && !this.m_goopedSpots.Contains(intVector2_1))
@@ -170,7 +170,7 @@ public class ResourcefulRatMinesHiddenTrapdoor : DungeonPlaceableBehaviour, IPla
                         for (int x = intVector2_2.x; x < intVector2_2.x + 4; ++x)
                         {
                             for (int y = intVector2_2.y; y < intVector2_2.y + 4; ++y)
-                                this.m_blendTexColors[y * 64 /*0x40*/ + x] = new Color(1f, 1f, 1f, 1f);
+                                this.m_blendTexColors[y * 64 + x] = new Color(1f, 1f, 1f, 1f);
                         }
                         this.m_blendTexDirty = true;
                     }

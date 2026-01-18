@@ -161,7 +161,7 @@ public class dfLanguageManager : MonoBehaviour
         {
             values.Clear();
             bool flag = false;
-            StringBuilder stringBuilder = new StringBuilder(256 /*0x0100*/);
+            StringBuilder stringBuilder = new StringBuilder(256);
             for (; index < data.Length; ++index)
             {
                 char ch = data[index];

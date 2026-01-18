@@ -15,7 +15,7 @@ namespace InControl.NativeProfile
                 new NativeInputDeviceMatcher()
                 {
                     VendorID = new ushort?((ushort) 5426),
-                    ProductID = new ushort?((ushort) 2304 /*0x0900*/)
+                    ProductID = new ushort?((ushort) 2304)
                 }
             };
             this.ButtonMappings = new InputControlMapping[12]

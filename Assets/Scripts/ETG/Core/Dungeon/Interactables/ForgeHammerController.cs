@@ -221,8 +221,8 @@ public class ForgeHammerController : DungeonPlaceableBehaviour, IPlaceConfigurab
                     if (this.DoScreenShake)
                         GameManager.Instance.MainCameraController.DoScreenShake(this.ScreenShake, new Vector2?(this.specRigidbody.UnitCenter));
                     this.specRigidbody.enabled = true;
-                    this.specRigidbody.PixelColliders[0].ManualOffsetX = !this.m_attackIsLeft ? 59 : 16 /*0x10*/;
-                    this.specRigidbody.PixelColliders[1].ManualOffsetX = !this.m_attackIsLeft ? 59 : 16 /*0x10*/;
+                    this.specRigidbody.PixelColliders[0].ManualOffsetX = !this.m_attackIsLeft ? 59 : 16;
+                    this.specRigidbody.PixelColliders[1].ManualOffsetX = !this.m_attackIsLeft ? 59 : 16;
                     this.specRigidbody.ForceRegenerate();
                     this.specRigidbody.Reinitialize();
                     Exploder.DoRadialMinorBreakableBreak((Vector3) this.TargetAnimator.sprite.WorldCenter, 4f);

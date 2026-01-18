@@ -11,7 +11,7 @@ using UnityEngine;
 public class AkMemBankLoader : MonoBehaviour
     {
         private const int WaitMs = 50;
-        private const long AK_BANK_PLATFORM_DATA_ALIGNMENT = 16 /*0x10*/;
+        private const long AK_BANK_PLATFORM_DATA_ALIGNMENT = 16;
         private const long AK_BANK_PLATFORM_DATA_ALIGNMENT_MASK = 15;
         public string bankName = string.Empty;
         public bool isLocalizedBank;

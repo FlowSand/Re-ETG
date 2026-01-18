@@ -489,7 +489,7 @@ public class BraveOptionsMenuItem : MonoBehaviour
                     if (this.m_scalingModes == null)
                         this.m_scalingModes = new List<GameOptions.PreferredScalingMode>();
                     this.m_scalingModes.Clear();
-                    if (num2 == 16 /*0x10*/ && num3 == 9)
+                    if (num2 == 16 && num3 == 9)
                     {
                         if (width % 480 == 0 && height % 270 == 0)
                         {
@@ -654,7 +654,7 @@ public class BraveOptionsMenuItem : MonoBehaviour
                 int num1 = BraveMathCollege.GreatestCommonDivisor(width, height);
                 int num2 = width / num1;
                 int num3 = height / num1;
-                bool flag1 = num2 == 16 /*0x10*/ && num3 == 9;
+                bool flag1 = num2 == 16 && num3 == 9;
                 bool flag2 = (double) Mathf.Min((float) width / 480f, (float) height / 270f) % 1.0 == 0.0;
                 if (flag1 && flag2)
                 {
@@ -2091,43 +2091,43 @@ public class BraveOptionsMenuItem : MonoBehaviour
             private string _title;
             private int _borderWidth;
             private int _captionHeight;
-            private const int WS_BORDER = 8388608 /*0x800000*/;
-            private const int WS_CAPTION = 12582912 /*0xC00000*/;
-            private const int WS_CHILD = 1073741824 /*0x40000000*/;
-            private const int WS_CHILDWINDOW = 1073741824 /*0x40000000*/;
-            private const int WS_CLIPCHILDREN = 33554432 /*0x02000000*/;
-            private const int WS_CLIPSIBLINGS = 67108864 /*0x04000000*/;
-            private const int WS_DISABLED = 134217728 /*0x08000000*/;
-            private const int WS_DLGFRAME = 4194304 /*0x400000*/;
-            private const int WS_GROUP = 131072 /*0x020000*/;
-            private const int WS_HSCROLL = 1048576 /*0x100000*/;
-            private const int WS_ICONIC = 536870912 /*0x20000000*/;
-            private const int WS_MAXIMIZE = 16777216 /*0x01000000*/;
-            private const int WS_MAXIMIZEBOX = 65536 /*0x010000*/;
-            private const int WS_MINIMIZE = 536870912 /*0x20000000*/;
-            private const int WS_MINIMIZEBOX = 131072 /*0x020000*/;
+            private const int WS_BORDER = 8388608;
+            private const int WS_CAPTION = 12582912;
+            private const int WS_CHILD = 1073741824;
+            private const int WS_CHILDWINDOW = 1073741824;
+            private const int WS_CLIPCHILDREN = 33554432;
+            private const int WS_CLIPSIBLINGS = 67108864;
+            private const int WS_DISABLED = 134217728;
+            private const int WS_DLGFRAME = 4194304;
+            private const int WS_GROUP = 131072;
+            private const int WS_HSCROLL = 1048576;
+            private const int WS_ICONIC = 536870912;
+            private const int WS_MAXIMIZE = 16777216;
+            private const int WS_MAXIMIZEBOX = 65536;
+            private const int WS_MINIMIZE = 536870912;
+            private const int WS_MINIMIZEBOX = 131072;
             private const int WS_OVERLAPPED = 0;
-            private const int WS_OVERLAPPEDWINDOW = 13565952 /*0xCF0000*/;
-            private const int WS_POPUP = -2147483648 /*0x80000000*/;
-            private const int WS_POPUPWINDOW = -2138570752 /*0x80880000*/;
-            private const int WS_SIZEBOX = 262144 /*0x040000*/;
-            private const int WS_SYSMENU = 524288 /*0x080000*/;
-            private const int WS_TABSTOP = 65536 /*0x010000*/;
-            private const int WS_THICKFRAME = 262144 /*0x040000*/;
+            private const int WS_OVERLAPPEDWINDOW = 13565952;
+            private const int WS_POPUP = -2147483648;
+            private const int WS_POPUPWINDOW = -2138570752;
+            private const int WS_SIZEBOX = 262144;
+            private const int WS_SYSMENU = 524288;
+            private const int WS_TABSTOP = 65536;
+            private const int WS_THICKFRAME = 262144;
             private const int WS_TILED = 0;
-            private const int WS_TILEDWINDOW = 13565952 /*0xCF0000*/;
-            private const int WS_VISIBLE = 268435456 /*0x10000000*/;
-            private const int WS_VSCROLL = 2097152 /*0x200000*/;
+            private const int WS_TILEDWINDOW = 13565952;
+            private const int WS_VISIBLE = 268435456;
+            private const int WS_VSCROLL = 2097152;
             private const int WS_EX_DLGMODALFRAME = 1;
-            private const int WS_EX_CLIENTEDGE = 512 /*0x0200*/;
-            private const int WS_EX_STATICEDGE = 131072 /*0x020000*/;
-            private const int SWP_FRAMECHANGED = 32 /*0x20*/;
+            private const int WS_EX_CLIENTEDGE = 512;
+            private const int WS_EX_STATICEDGE = 131072;
+            private const int SWP_FRAMECHANGED = 32;
             private const int SWP_NOMOVE = 2;
             private const int SWP_NOSIZE = 1;
             private const int SWP_NOZORDER = 4;
-            private const int SWP_NOOWNERZORDER = 512 /*0x0200*/;
-            private const int SWP_SHOWWINDOW = 64 /*0x40*/;
-            private const int SWP_NOSENDCHANGING = 1024 /*0x0400*/;
+            private const int SWP_NOOWNERZORDER = 512;
+            private const int SWP_SHOWWINDOW = 64;
+            private const int SWP_NOSENDCHANGING = 1024;
             private const int GWL_STYLE = -16;
             private const int GWL_EXSTYLE = -20;
 
@@ -2216,7 +2216,7 @@ public class BraveOptionsMenuItem : MonoBehaviour
 
             private void UpdateWindowRect(IntPtr window, int x, int y, int width, int height)
             {
-                BraveOptionsMenuItem.WindowsResolutionManager.SetWindowPos(window, -2, x, y, width, height, 32 /*0x20*/);
+                BraveOptionsMenuItem.WindowsResolutionManager.SetWindowPos(window, -2, x, y, width, height, 32);
             }
 
             private bool UpdateDecorationSize(IntPtr window)
@@ -2239,16 +2239,16 @@ public class BraveOptionsMenuItem : MonoBehaviour
                 Position? position)
             {
                 int windowLongPtr = (int) BraveOptionsMenuItem.WindowsResolutionManager.GetWindowLongPtr(this.Window, -16);
-                if (targetDisplayMode == BraveOptionsMenuItem.WindowsResolutionManager.DisplayModes.Windowed && BraveOptionsMenuItem.WindowsResolutionManager.Flags.Contains(windowLongPtr, 8388608 /*0x800000*/))
+                if (targetDisplayMode == BraveOptionsMenuItem.WindowsResolutionManager.DisplayModes.Windowed && BraveOptionsMenuItem.WindowsResolutionManager.Flags.Contains(windowLongPtr, 8388608))
                     position = this.GetWindowPosition();
                 switch (targetDisplayMode)
                 {
                     case BraveOptionsMenuItem.WindowsResolutionManager.DisplayModes.Fullscreen:
                         return true;
                     case BraveOptionsMenuItem.WindowsResolutionManager.DisplayModes.Borderless:
-                        BraveOptionsMenuItem.WindowsResolutionManager.Flags.Unset<int>(ref windowLongPtr, 8388608 /*0x800000*/);
-                        BraveOptionsMenuItem.WindowsResolutionManager.Flags.Unset<int>(ref windowLongPtr, 262144 /*0x040000*/);
-                        BraveOptionsMenuItem.WindowsResolutionManager.Flags.Unset<int>(ref windowLongPtr, 12582912 /*0xC00000*/);
+                        BraveOptionsMenuItem.WindowsResolutionManager.Flags.Unset<int>(ref windowLongPtr, 8388608);
+                        BraveOptionsMenuItem.WindowsResolutionManager.Flags.Unset<int>(ref windowLongPtr, 262144);
+                        BraveOptionsMenuItem.WindowsResolutionManager.Flags.Unset<int>(ref windowLongPtr, 12582912);
                         BraveOptionsMenuItem.WindowsResolutionManager.SetWindowLongPtr(this.Window, -16, windowLongPtr);
                         if (!setPosition || !position.HasValue)
                             position = this.GetCenteredPosition(targetResolution, targetDisplayMode);
@@ -2257,9 +2257,9 @@ public class BraveOptionsMenuItem : MonoBehaviour
                         BraveOptionsMenuItem.WindowsResolutionManager.SetWindowLongPtr(this.Window, -16, windowLongPtr);
                         return true;
                     case BraveOptionsMenuItem.WindowsResolutionManager.DisplayModes.Windowed:
-                        BraveOptionsMenuItem.WindowsResolutionManager.Flags.Set<int>(ref windowLongPtr, 8388608 /*0x800000*/);
-                        BraveOptionsMenuItem.WindowsResolutionManager.Flags.Set<int>(ref windowLongPtr, 262144 /*0x040000*/);
-                        BraveOptionsMenuItem.WindowsResolutionManager.Flags.Set<int>(ref windowLongPtr, 12582912 /*0xC00000*/);
+                        BraveOptionsMenuItem.WindowsResolutionManager.Flags.Set<int>(ref windowLongPtr, 8388608);
+                        BraveOptionsMenuItem.WindowsResolutionManager.Flags.Set<int>(ref windowLongPtr, 262144);
+                        BraveOptionsMenuItem.WindowsResolutionManager.Flags.Set<int>(ref windowLongPtr, 12582912);
                         BraveOptionsMenuItem.WindowsResolutionManager.SetWindowLongPtr(this.Window, -16, windowLongPtr);
                         this.UpdateDecorationSize(this.Window);
                         if (!position.HasValue)
@@ -2305,8 +2305,8 @@ public class BraveOptionsMenuItem : MonoBehaviour
                 public BraveOptionsMenuItem.WindowsResolutionManager.RECT rcMonitor = new BraveOptionsMenuItem.WindowsResolutionManager.RECT();
                 public BraveOptionsMenuItem.WindowsResolutionManager.RECT rcWork = new BraveOptionsMenuItem.WindowsResolutionManager.RECT();
                 public int dwFlags;
-                [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32 /*0x20*/)]
-                public char[] szDevice = new char[32 /*0x20*/];
+                [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
+                public char[] szDevice = new char[32];
             }
 
             internal static class Flags

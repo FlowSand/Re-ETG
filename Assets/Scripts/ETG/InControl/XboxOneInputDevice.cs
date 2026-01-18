@@ -77,7 +77,7 @@ namespace InControl
 
         private void CacheAnalogAxisNames()
         {
-            this.analogAxisNameForId = new string[16 /*0x10*/];
+            this.analogAxisNameForId = new string[16];
             this.CacheAnalogAxisNameForId(0U);
             this.CacheAnalogAxisNameForId(1U);
             this.CacheAnalogAxisNameForId(3U);

@@ -102,7 +102,7 @@ namespace InControl
                     return 14;
                 case 15:
                     return 19;
-                case 16 /*0x10*/:
+                case 16:
                     return 20;
                 case 17:
                     return 21;
@@ -111,7 +111,7 @@ namespace InControl
                 case 19:
                     return 15;
                 case 20:
-                    return 16 /*0x10*/;
+                    return 16;
                 case 21:
                     return 17;
                 case 22:
@@ -132,9 +132,9 @@ namespace InControl
                     return 105;
                 case 30:
                     return 106;
-                case 31 /*0x1F*/:
+                case 31:
                     return 107;
-                case 32 /*0x20*/:
+                case 32:
                     return 108;
                 case 33:
                     return 109;
@@ -151,7 +151,7 @@ namespace InControl
                 case 39:
                     return (int) byte.MaxValue;
                 case 40:
-                    return 256 /*0x0100*/;
+                    return 256;
                 case 41:
                     return 257;
                 case 42:
@@ -166,7 +166,7 @@ namespace InControl
                     return 404;
                 case 47:
                     return 405;
-                case 48 /*0x30*/:
+                case 48:
                     return 406;
                 case 49:
                     return 407;
@@ -196,9 +196,9 @@ namespace InControl
                     return 419;
                 case 62:
                     return 500;
-                case 63 /*0x3F*/:
+                case 63:
                     return 501;
-                case 64 /*0x40*/:
+                case 64:
                     return 502;
                 case 65:
                     return 503;
@@ -217,9 +217,9 @@ namespace InControl
                 case 72:
                     return 510;
                 case 73:
-                    return 511 /*0x01FF*/;
+                    return 511;
                 case 74:
-                    return 512 /*0x0200*/;
+                    return 512;
                 case 75:
                     return 513;
                 case 76:
@@ -230,7 +230,7 @@ namespace InControl
                     return 516;
                 case 79:
                     return 517;
-                case 80 /*0x50*/:
+                case 80:
                     return 518;
                 case 81:
                     return 519;

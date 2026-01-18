@@ -187,7 +187,7 @@ namespace InControl
 
         public override int GetHashCode()
         {
-            return (17 * 31 /*0x1F*/ + this.includeData.GetHashCode()) * 31 /*0x1F*/ + this.excludeData.GetHashCode();
+            return (17 * 31 + this.includeData.GetHashCode()) * 31 + this.excludeData.GetHashCode();
         }
 
         internal void Load(BinaryReader reader, ushort dataFormatVersion, bool upgrade)

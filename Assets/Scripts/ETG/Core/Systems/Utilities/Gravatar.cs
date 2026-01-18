@@ -50,8 +50,8 @@ public class Gravatar : MonoBehaviour
             byte[] hash = new MD5CryptoServiceProvider().ComputeHash(new UTF8Encoding().GetBytes(strToEncrypt));
             string empty = string.Empty;
             for (int index = 0; index < hash.Length; ++index)
-                empty += Convert.ToString(hash[index], 16 /*0x10*/).PadLeft(2, '0');
-            return empty.PadLeft(32 /*0x20*/, '0');
+                empty += Convert.ToString(hash[index], 16).PadLeft(2, '0');
+            return empty.PadLeft(32, '0');
         }
     }
 

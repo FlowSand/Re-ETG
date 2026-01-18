@@ -1897,12 +1897,12 @@ public class GameManager : BraveBehaviour
                     {
                         if (SystemInfo.systemMemorySize > 3500)
                         {
-                            BraveMemory.EnsureHeapSize(204800 /*0x032000*/);
+                            BraveMemory.EnsureHeapSize(204800);
                             GameManager.m_hasEnsuredHeapSize = true;
                         }
                         else
                         {
-                            BraveMemory.EnsureHeapSize(102400 /*0x019000*/);
+                            BraveMemory.EnsureHeapSize(102400);
                             GameManager.m_hasEnsuredHeapSize = true;
                         }
                     }

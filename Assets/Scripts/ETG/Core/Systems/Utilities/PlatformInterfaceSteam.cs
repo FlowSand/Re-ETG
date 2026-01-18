@@ -156,7 +156,7 @@ public class PlatformInterfaceSteam : PlatformInterface
             new PlatformInterfaceSteam.AchievementData(Achievement.BEAT_METAL_GEAR_RAT, "Resourceful", "Take Revenge"),
             new PlatformInterfaceSteam.AchievementData(Achievement.COMPLETE_GAME_WITH_TURBO_MODE, "Sledge-Dog", "Complete Tonic's Challenge")
         };
-        private PlatformInterfaceSteam.StatData[] m_stats = new PlatformInterfaceSteam.StatData[16 /*0x10*/]
+        private PlatformInterfaceSteam.StatData[] m_stats = new PlatformInterfaceSteam.StatData[16]
         {
             new PlatformInterfaceSteam.StatData(PlatformStat.META_SPENT_AT_STORE),
             new PlatformInterfaceSteam.StatData(PlatformStat.FLOOR_ONE_CLEARS),

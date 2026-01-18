@@ -9,7 +9,7 @@ using Brave.BulletScript;
 [InspectorDropdownName("Bosses/GatlingGull/BigShot1")]
 public class GatlingGullBigShot1 : Script
     {
-        private const int NumDeathBullets = 32 /*0x20*/;
+        private const int NumDeathBullets = 32;
 
         protected override IEnumerator Top()
         {
@@ -33,7 +33,7 @@ public class GatlingGullBigShot1 : Script
                     return;
                 float num1 = this.RandomAngle();
                 float num2 = 11.25f;
-                for (int index = 0; index < 32 /*0x20*/; ++index)
+                for (int index = 0; index < 32; ++index)
                     this.Fire(new Brave.BulletScript.Direction(num1 + num2 * (float) index), new Brave.BulletScript.Speed(10f), (Bullet) null);
             }
         }

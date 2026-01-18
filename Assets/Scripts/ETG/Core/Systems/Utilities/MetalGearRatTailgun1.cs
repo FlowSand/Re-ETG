@@ -10,7 +10,7 @@ using Brave.BulletScript;
 [InspectorDropdownName("Bosses/MetalGearRat/Tailgun1")]
 public class MetalGearRatTailgun1 : Script
     {
-        private const int NumTargetBullets = 16 /*0x10*/;
+        private const int NumTargetBullets = 16;
         private const float TargetRadius = 3f;
         private const float TargetLegLength = 2.5f;
         public const int TargetTrackTime = 360;

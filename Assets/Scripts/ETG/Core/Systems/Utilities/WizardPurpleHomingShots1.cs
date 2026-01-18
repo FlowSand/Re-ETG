@@ -130,7 +130,7 @@ public class WizardPurpleHomingShots1 : Script
 
         public class RogueBullet : WizardPurpleHomingShots1.StoryBullet
         {
-            private const int ClampedLifetime = 80 /*0x50*/;
+            private const int ClampedLifetime = 80;
             private TeleportProjModifier m_teleportMod;
             private bool m_clampLifetime;
 

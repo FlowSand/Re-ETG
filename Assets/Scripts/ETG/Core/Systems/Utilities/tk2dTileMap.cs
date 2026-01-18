@@ -20,10 +20,10 @@ public class tk2dTileMap : MonoBehaviour, ISpriteCollectionForceBuild
         private tk2dSpriteCollectionData spriteCollection;
         [SerializeField]
         private int spriteCollectionKey;
-        public int width = 128 /*0x80*/;
-        public int height = 128 /*0x80*/;
-        public int partitionSizeX = 32 /*0x20*/;
-        public int partitionSizeY = 32 /*0x20*/;
+        public int width = 128;
+        public int height = 128;
+        public int partitionSizeX = 32;
+        public int partitionSizeY = 32;
         public bool isGungeonTilemap = true;
         [SerializeField]
         private Layer[] layers;

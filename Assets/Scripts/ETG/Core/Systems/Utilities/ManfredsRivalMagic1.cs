@@ -11,7 +11,7 @@ using Brave.BulletScript;
 public class ManfredsRivalMagic1 : Script
     {
         private const int NumTimes = 4;
-        private const int NumBulletsMainWave = 16 /*0x10*/;
+        private const int NumBulletsMainWave = 16;
 
         [DebuggerHidden]
         protected override IEnumerator Top()

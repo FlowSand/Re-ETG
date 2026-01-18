@@ -11,7 +11,7 @@ public class tk2dSpriteAttachPoint : MonoBehaviour
     {
         private tk2dBaseSprite sprite;
         public List<Transform> attachPoints = new List<Transform>();
-        private static bool[] attachPointUpdated = new bool[32 /*0x20*/];
+        private static bool[] attachPointUpdated = new bool[32];
         public bool deactivateUnusedAttachPoints;
         public bool disableEmissionOnUnusedParticleSystems;
         public bool ignorePosition;

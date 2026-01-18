@@ -482,7 +482,7 @@ namespace Dungeonator
                         flag = false;
                         BagelCollider bagelCollider = bagelColliders[0];
                         IntVector2 intVector2 = ((p.specRigidbody.PrimaryPixelCollider.UnitCenter - playerCellPosition.ToVector2()) * 16f).ToIntVector2(VectorConversions.Floor);
-                        if (intVector2.x >= 0 && intVector2.y >= 0 && intVector2.x < 16 /*0x10*/ && intVector2.y < 16 /*0x10*/ && bagelCollider[intVector2.x, bagelCollider.height - intVector2.y - 1])
+                        if (intVector2.x >= 0 && intVector2.y >= 0 && intVector2.x < 16 && intVector2.y < 16 && bagelCollider[intVector2.x, bagelCollider.height - intVector2.y - 1])
                             flag = true;
                     }
                 }
@@ -3615,7 +3615,7 @@ namespace Dungeonator
             if (!footprint.HasValue)
                 footprint = new IntVector2?(IntVector2.One);
             if (!passableCellTypes.HasValue)
-                passableCellTypes = new CellTypes?((CellTypes) 2147483647 /*0x7FFFFFFF*/);
+                passableCellTypes = new CellTypes?((CellTypes) 2147483647);
             Dungeon dungeon = GameManager.Instance.Dungeon;
             List<IntVector2> intVector2List = new List<IntVector2>();
             for (int x = this.area.basePosition.x; x < this.area.basePosition.x + this.area.dimensions.x; ++x)
@@ -3649,7 +3649,7 @@ namespace Dungeonator
             if (!footprint.HasValue)
                 footprint = new IntVector2?(IntVector2.One);
             if (!passableCellTypes.HasValue)
-                passableCellTypes = new CellTypes?((CellTypes) 2147483647 /*0x7FFFFFFF*/);
+                passableCellTypes = new CellTypes?((CellTypes) 2147483647);
             DungeonData data = GameManager.Instance.Dungeon.data;
             List<IntVector2> intVector2List = new List<IntVector2>();
             for (int x = this.area.basePosition.x; x < this.area.basePosition.x + this.area.dimensions.x; ++x)
@@ -3678,7 +3678,7 @@ namespace Dungeonator
             if (!footprint.HasValue)
                 footprint = new IntVector2?(IntVector2.One);
             if (!passableCellTypes.HasValue)
-                passableCellTypes = new CellTypes?((CellTypes) 2147483647 /*0x7FFFFFFF*/);
+                passableCellTypes = new CellTypes?((CellTypes) 2147483647);
             DungeonData data = GameManager.Instance.Dungeon.data;
             Vector2 vector2_1 = footprint.Value.ToVector2() / 2f;
             float num = float.MaxValue;
@@ -3718,7 +3718,7 @@ namespace Dungeonator
             if (!footprint.HasValue)
                 footprint = new IntVector2?(IntVector2.One);
             if (!passableCellTypes.HasValue)
-                passableCellTypes = new CellTypes?((CellTypes) 2147483647 /*0x7FFFFFFF*/);
+                passableCellTypes = new CellTypes?((CellTypes) 2147483647);
             DungeonData data = GameManager.Instance.Dungeon.data;
             List<Tuple<IntVector2, float>> tupleList = new List<Tuple<IntVector2, float>>();
             for (int x = this.area.basePosition.x; x < this.area.basePosition.x + this.area.dimensions.x; ++x)

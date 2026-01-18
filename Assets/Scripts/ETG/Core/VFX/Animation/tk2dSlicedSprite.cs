@@ -359,7 +359,7 @@ public class tk2dSlicedSprite : tk2dBaseSprite
 
         protected override int GetCurrentVertexCount()
         {
-            return this.TileStretchedSprites && this._spriteId != -1 && this._spriteId < this.collectionInst.spriteDefinitions.Length ? 4 : 16 /*0x10*/;
+            return this.TileStretchedSprites && this._spriteId != -1 && this._spriteId < this.collectionInst.spriteDefinitions.Length ? 4 : 16;
         }
 
         public override void ReshapeBounds(Vector3 dMin, Vector3 dMax)

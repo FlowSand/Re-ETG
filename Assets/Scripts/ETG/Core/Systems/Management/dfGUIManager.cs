@@ -63,9 +63,9 @@ public class dfGUIManager : MonoBehaviour, IDFControlHost, IComparable<dfGUIMana
         private bool abortRendering;
         private Vector2 cachedScreenSize;
         private Vector3[] corners = new Vector3[4];
-        private dfList<Rect> occluders = new dfList<Rect>(256 /*0x0100*/);
+        private dfList<Rect> occluders = new dfList<Rect>(256);
         private Stack<dfTriangleClippingRegion> clipStack = new Stack<dfTriangleClippingRegion>();
-        private static dfRenderData masterBuffer = new dfRenderData(4096 /*0x1000*/);
+        private static dfRenderData masterBuffer = new dfRenderData(4096);
         private dfList<dfRenderData> drawCallBuffers = new dfList<dfRenderData>();
         private dfList<dfRenderGroup> renderGroups = new dfList<dfRenderGroup>();
         private List<int> submeshes = new List<int>();

@@ -11,7 +11,7 @@ using Brave.BulletScript;
 public class TankTreaderHomingShot1 : Script
     {
         private const int AirTime = 75;
-        private const int NumDeathBullets = 16 /*0x10*/;
+        private const int NumDeathBullets = 16;
 
         protected override IEnumerator Top()
         {
@@ -45,7 +45,7 @@ public class TankTreaderHomingShot1 : Script
                     return;
                 float num1 = this.RandomAngle();
                 float num2 = 22.5f;
-                for (int index = 0; index < 16 /*0x10*/; ++index)
+                for (int index = 0; index < 16; ++index)
                     this.Fire(new Brave.BulletScript.Direction(num1 + num2 * (float) index), new Brave.BulletScript.Speed(10f), (Bullet) null);
                 int num3 = (int) AkSoundEngine.PostEvent("Play_WPN_golddoublebarrelshotgun_shot_01", this.Projectile.gameObject);
             }

@@ -19,7 +19,7 @@
         public static int SackKnightBoon = 580;
         public static int GoldJunk = 641;
         public static int Key = 67;
-        public static int Blank = 224 /*0xE0*/;
+        public static int Blank = 224;
         public static int GlassGuonStone = 565;
         public static int Map = 137;
         public static int SevenLeafClover = 289;

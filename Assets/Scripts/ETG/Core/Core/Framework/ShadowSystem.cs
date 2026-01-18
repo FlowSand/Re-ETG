@@ -39,7 +39,7 @@ public class ShadowSystem : BraveBehaviour
         [SerializeField]
         private Shader casterShader;
         [SerializeField]
-        private int shadowMapSize = 512 /*0x0200*/;
+        private int shadowMapSize = 512;
         [SerializeField]
         public bool CoronalLight;
         [SerializeField]
@@ -137,7 +137,7 @@ public class ShadowSystem : BraveBehaviour
         {
             ShadowSystem.DisabledLightsRequireBoost = false;
             this.shadowMapSize = Mathf.NextPowerOfTwo(this.shadowMapSize);
-            this.shadowMapSize = Mathf.Clamp(this.shadowMapSize, 8, 2048 /*0x0800*/);
+            this.shadowMapSize = Mathf.Clamp(this.shadowMapSize, 8, 2048);
             this._texTarget = !SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.ARGBHalf) ? new RenderTexture(this.ModifiedShadowMapSize, this.ModifiedShadowMapSize, 0, RenderTextureFormat.Default) : new RenderTexture(this.ModifiedShadowMapSize, this.ModifiedShadowMapSize, 0, RenderTextureFormat.ARGBHalf);
             this._texTarget.useMipMap = false;
             this._texTarget.autoGenerateMips = false;
@@ -246,7 +246,7 @@ public class ShadowSystem : BraveBehaviour
                         GameManager.Instance.SecondaryPlayer.sprite.gameObject.SetLayerRecursively(LayerMask.NameToLayer("PlayerAndProjectiles"));
                     }
                 }
-                RenderTexture source = this.PushRenderTexture(this.ModifiedShadowMapSize, this.ModifiedShadowMapSize, !this.RequiresCasterDepthBuffer() ? 0 : 16 /*0x10*/, this.IdealFormat);
+                RenderTexture source = this.PushRenderTexture(this.ModifiedShadowMapSize, this.ModifiedShadowMapSize, !this.RequiresCasterDepthBuffer() ? 0 : 16, this.IdealFormat);
                 source.filterMode = FilterMode.Point;
                 source.wrapMode = TextureWrapMode.Clamp;
                 this.shadowCamera.targetTexture = source;

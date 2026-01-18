@@ -530,7 +530,7 @@ public class PunchoutAIActor : PunchoutGameActor
         {
             public override string AnimName => "super";
 
-            public override int DamageFrame => 16 /*0x10*/;
+            public override int DamageFrame => 16;
 
             public override float Damage => 35f;
 
@@ -1080,7 +1080,7 @@ public class PunchoutAIActor : PunchoutGameActor
                             this.Actor.Opponent.Hit(true, 3f);
                             (this.Actor.Opponent as PunchoutPlayerController).Exhaust(new float?(1.45f));
                             break;
-                        case 16 /*0x10*/:
+                        case 16:
                             GameManager.Instance.PrimaryPlayer.DoVibration(0.727272749f, Vibration.Strength.Light);
                             break;
                         case 17:
@@ -1376,7 +1376,7 @@ public class PunchoutAIActor : PunchoutGameActor
             public override void Update()
             {
                 base.Update();
-                if (this.Actor.CurrentFrame < 16 /*0x10*/)
+                if (this.Actor.CurrentFrame < 16)
                     return;
                 this.Actor.Health = Mathf.Lerp(this.m_startingHealth, 100f, Mathf.Clamp01((float) (((double) this.Actor.CurrentFrameFloat - 16.0) / 8.0)));
             }
@@ -1386,7 +1386,7 @@ public class PunchoutAIActor : PunchoutGameActor
                 base.OnFrame(currentFrame);
                 switch (currentFrame)
                 {
-                    case 16 /*0x10*/:
+                    case 16:
                         this.ActorEnemy.DoHealSuck(new Vector3(!this.IsLeft ? -1f : 1f, 3.625f, -69f / 16f));
                         break;
                     case 17:

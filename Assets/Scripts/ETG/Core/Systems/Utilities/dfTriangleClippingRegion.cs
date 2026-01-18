@@ -8,7 +8,7 @@ using UnityEngine;
 internal class dfTriangleClippingRegion : IDisposable
     {
         private static Queue<dfTriangleClippingRegion> pool = new Queue<dfTriangleClippingRegion>();
-        private static dfList<Plane> intersectedPlanes = new dfList<Plane>(32 /*0x20*/);
+        private static dfList<Plane> intersectedPlanes = new dfList<Plane>(32);
         private dfList<Plane> planes;
 
         private dfTriangleClippingRegion() => this.planes = new dfList<Plane>();

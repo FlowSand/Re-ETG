@@ -34,7 +34,7 @@ public class tk2dTextMesh : MonoBehaviour, ISpriteCollectionForceBuild
         [SerializeField]
         private bool _kerning;
         [SerializeField]
-        private int _maxChars = 16 /*0x10*/;
+        private int _maxChars = 16;
         [SerializeField]
         private bool _inlineStyling;
         [SerializeField]

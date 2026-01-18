@@ -7,7 +7,7 @@ namespace HutongGames.PlayMaker.Actions
     {
         [Tooltip("Array of string to join into a single string.")]
         [UIHint(UIHint.Variable)]
-        [ArrayEditor(VariableType.String, "", 0, 0, 65536 /*0x010000*/)]
+        [ArrayEditor(VariableType.String, "", 0, 0, 65536)]
         public FsmArray stringArray;
         [Tooltip("Seperator to add between each string.")]
         public FsmString separator;

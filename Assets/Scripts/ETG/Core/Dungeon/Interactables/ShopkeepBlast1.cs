@@ -8,7 +8,7 @@ using Brave.BulletScript;
 
 public class ShopkeepBlast1 : Script
     {
-        private const int NumBulletsInBurst = 16 /*0x10*/;
+        private const int NumBulletsInBurst = 16;
 
         protected override IEnumerator Top()
         {
@@ -22,7 +22,7 @@ public class ShopkeepBlast1 : Script
         {
             float num1 = 22.5f;
             float num2 = Random.Range((float) (-(double) num1 / 2.0), num1 / 2f);
-            for (int index = 0; index < 16 /*0x10*/; ++index)
+            for (int index = 0; index < 16; ++index)
                 this.Fire(new Offset(transform), new Brave.BulletScript.Direction(num2 + (float) index * num1, Brave.BulletScript.DirectionType.Relative), new Brave.BulletScript.Speed(9f), new Bullet(suppressVfx: index > 0));
         }
 
@@ -62,7 +62,7 @@ public class ShopkeepBlast1 : Script
                     return;
                 float num1 = 22.5f;
                 float num2 = Random.Range((float) (-(double) num1 / 2.0), num1 / 2f);
-                for (int index = 0; index < 16 /*0x10*/; ++index)
+                for (int index = 0; index < 16; ++index)
                     this.Fire(new Brave.BulletScript.Direction(num2 + (float) index * num1, Brave.BulletScript.DirectionType.Relative), new Brave.BulletScript.Speed(9f), new Bullet(suppressVfx: true));
             }
         }

@@ -64,7 +64,7 @@ public class SpeedrunTimer : MonoBehaviour
                 int num2 = seconds / 60 % 60;
                 int num3 = seconds % 60;
                 int num4 = Mathf.FloorToInt((float) (1000.0 * ((double) sessionStatValue % 1.0)));
-                int num5 = 48 /*0x30*/;
+                int num5 = 48;
                 this.m_formattedTimeSpan[0] = (char) (num5 + num1 % 10);
                 this.m_formattedTimeSpan[1] = ':';
                 this.m_formattedTimeSpan[2] = (char) (num5 + num2 / 10 % 10);

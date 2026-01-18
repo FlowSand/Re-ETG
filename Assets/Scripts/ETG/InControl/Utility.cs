@@ -310,7 +310,7 @@ namespace InControl
             value |= value >> 2;
             value |= value >> 4;
             value |= value >> 8;
-            value |= value >> 16 /*0x10*/;
+            value |= value >> 16;
             ++value;
             return value;
         }

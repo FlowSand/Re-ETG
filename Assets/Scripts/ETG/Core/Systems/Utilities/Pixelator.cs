@@ -355,7 +355,7 @@ public class Pixelator : MonoBehaviour
                     break;
                 case GameOptions.GenericHighMedLowOption.HIGH:
                     this.m_gammaAdjustment = 0.0f;
-                    QualitySettings.pixelLightCount = 16 /*0x10*/;
+                    QualitySettings.pixelLightCount = 16;
                     break;
             }
         }
@@ -976,7 +976,7 @@ public class Pixelator : MonoBehaviour
             if (this.DoOcclusionLayer && !this.IsInIntro && !GameManager.Instance.IsSelectingCharacter)
             {
                 Vector3 vector1 = this.m_camera.transform.position + new Vector3(BraveCameraUtility.ASPECT * -this.m_camera.orthographicSize, -this.m_camera.orthographicSize, 0.0f);
-                Vector3 vector2 = vector1 + new Vector3((float) (this.CurrentMacroResolutionX / 16 /*0x10*/), (float) (this.CurrentMacroResolutionY / 16 /*0x10*/), 0.0f);
+                Vector3 vector2 = vector1 + new Vector3((float) (this.CurrentMacroResolutionX / 16), (float) (this.CurrentMacroResolutionY / 16), 0.0f);
                 IntVector2 intVector2 = vector1.IntXY();
                 if (this.generatedNewTexture && (UnityEngine.Object) targetVignetteMaterial != (UnityEngine.Object) null && (UnityEngine.Object) this.occluder.SourceOcclusionTexture != (UnityEngine.Object) null)
                     targetVignetteMaterial.SetTexture(this.m_occlusionMapID, (Texture) this.occluder.SourceOcclusionTexture);
@@ -993,9 +993,9 @@ public class Pixelator : MonoBehaviour
                 if (!((UnityEngine.Object) targetVignetteMaterial != (UnityEngine.Object) null))
                     return;
                 Vector2 vector2_1 = vector1.XY() - intVector2.ToVector2();
-                Vector2 vector2_2 = vector2.XY() - (intVector2 + new IntVector2(this.CurrentMacroResolutionX / 16 /*0x10*/, this.CurrentMacroResolutionY / 16 /*0x10*/)).ToVector2();
-                int num1 = this.CurrentMacroResolutionX / 16 /*0x10*/ + 4;
-                int num2 = this.CurrentMacroResolutionY / 16 /*0x10*/ + 4;
+                Vector2 vector2_2 = vector2.XY() - (intVector2 + new IntVector2(this.CurrentMacroResolutionX / 16, this.CurrentMacroResolutionY / 16)).ToVector2();
+                int num1 = this.CurrentMacroResolutionX / 16 + 4;
+                int num2 = this.CurrentMacroResolutionY / 16 + 4;
                 float num3 = 2f;
                 Vector4 vector4 = new Vector4((num3 + vector2_1.x) / (float) num1, (num3 + vector2_1.y) / (float) num2, (float) (1.0 - ((double) num3 - (double) vector2_2.x) / (double) num1), (float) (1.0 - ((double) num3 - (double) vector2_2.y) / (double) num2));
                 if (!((UnityEngine.Object) targetVignetteMaterial != (UnityEngine.Object) null))

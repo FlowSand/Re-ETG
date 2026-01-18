@@ -18,7 +18,7 @@ public class tk2dTextMeshData
         public int renderLayer;
         public Vector3 scale = Vector3.one;
         public bool kerning;
-        public int maxChars = 16 /*0x10*/;
+        public int maxChars = 16;
         public bool inlineStyling;
         public bool formatting;
         public int wordWrapWidth;

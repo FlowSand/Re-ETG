@@ -116,7 +116,7 @@ public class tk2dUIMask : MonoBehaviour
                 return;
             Gizmos.matrix = this.transform.localToWorldMatrix;
             Bounds bounds = sharedMesh.bounds;
-            Gizmos.color = (Color) new Color32((byte) 56, (byte) 146, (byte) 227, (byte) 96 /*0x60*/);
+            Gizmos.color = (Color) new Color32((byte) 56, (byte) 146, (byte) 227, (byte) 96);
             float f = (float) (-(double) this.depth * 1.0010000467300415);
             Vector3 center = new Vector3(bounds.center.x, bounds.center.y, f * 0.5f);
             Vector3 size = new Vector3(bounds.extents.x * 2f, bounds.extents.y * 2f, Mathf.Abs(f));

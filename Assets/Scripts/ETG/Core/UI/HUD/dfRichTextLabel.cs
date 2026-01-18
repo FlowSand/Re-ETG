@@ -17,9 +17,9 @@ public class dfRichTextLabel : dfControl, IDFMultiRender, IRendersText
         [SerializeField]
         protected string text = "Rich Text Label";
         [SerializeField]
-        protected int fontSize = 16 /*0x10*/;
+        protected int fontSize = 16;
         [SerializeField]
-        protected int lineheight = 16 /*0x10*/;
+        protected int lineheight = 16;
         [SerializeField]
         protected dfTextScaleMode textScaleMode;
         [SerializeField]
@@ -305,7 +305,7 @@ public class dfRichTextLabel : dfControl, IDFMultiRender, IRendersText
             if ((double) this.size.sqrMagnitude > 1.4012984643248171E-45)
                 return;
             this.Size = new Vector2(320f, 200f);
-            int num = 16 /*0x10*/;
+            int num = 16;
             this.LineHeight = num;
             this.FontSize = num;
         }

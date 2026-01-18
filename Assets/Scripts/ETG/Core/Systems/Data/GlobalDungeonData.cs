@@ -27,7 +27,7 @@ using UnityEngine;
         public static int borderLayerIndex = 12;
         public static int aboveBorderLayerIndex = 13;
         public static bool GUNGEON_EXPERIMENTAL = false;
-        public static readonly string[] TilesetPaths = new string[16 /*0x10*/]
+        public static readonly string[] TilesetPaths = new string[16]
         {
             "Assets\\Sprites\\Collections\\ENV_Tileset_Gungeon.prefab",
             "Assets\\Sprites\\Collections\\ENV_Tileset_Castle.prefab",

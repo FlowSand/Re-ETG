@@ -18,7 +18,7 @@ namespace InControl
                     ProductID = new ushort?((ushort) 9)
                 }
             };
-            this.ButtonMappings = new InputControlMapping[16 /*0x10*/]
+            this.ButtonMappings = new InputControlMapping[16]
             {
                 new InputControlMapping()
                 {
@@ -96,7 +96,7 @@ namespace InControl
                 {
                     Handle = "DPad Up",
                     Target = InputControlType.DPadUp,
-                    Source = NativeInputDeviceProfile.Button(16 /*0x10*/)
+                    Source = NativeInputDeviceProfile.Button(16)
                 },
                 new InputControlMapping()
                 {

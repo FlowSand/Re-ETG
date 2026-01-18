@@ -15,7 +15,7 @@ public class InfinilichNegativeSpacePie1 : Script
         private const float SafeDegrees = 45f;
         private const int NumBullets = 14;
         private const float RayLength = 22f;
-        private const int SetupTime = 80 /*0x50*/;
+        private const int SetupTime = 80;
         private const float SpinSpeed = 0.42f;
         private const int NumTransitions = 6;
         private const int MidTransitionTime = 35;

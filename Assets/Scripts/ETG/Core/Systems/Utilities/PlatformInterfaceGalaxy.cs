@@ -73,7 +73,7 @@ public class PlatformInterfaceGalaxy : PlatformInterface
             new PlatformInterfaceGalaxy.AchievementData(Achievement.BEAT_METAL_GEAR_RAT, "Resourceful", "Take Revenge"),
             new PlatformInterfaceGalaxy.AchievementData(Achievement.COMPLETE_GAME_WITH_TURBO_MODE, "Sledge-Dog", "Complete Tonic's Challenge")
         };
-        private PlatformInterfaceGalaxy.StatData[] m_stats = new PlatformInterfaceGalaxy.StatData[16 /*0x10*/]
+        private PlatformInterfaceGalaxy.StatData[] m_stats = new PlatformInterfaceGalaxy.StatData[16]
         {
             new PlatformInterfaceGalaxy.StatData(PlatformStat.META_SPENT_AT_STORE),
             new PlatformInterfaceGalaxy.StatData(PlatformStat.FLOOR_ONE_CLEARS),

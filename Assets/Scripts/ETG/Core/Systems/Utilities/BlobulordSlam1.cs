@@ -10,7 +10,7 @@ using Brave.BulletScript;
 [InspectorDropdownName("Bosses/Blobulord/Slam1")]
 public class BlobulordSlam1 : Script
     {
-        private const int NumBullets = 32 /*0x20*/;
+        private const int NumBullets = 32;
         private const int NumWaves = 4;
 
         [DebuggerHidden]

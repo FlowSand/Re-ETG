@@ -10,7 +10,7 @@ public class Water : MonoBehaviour
     {
         public Water.WaterMode m_WaterMode = Water.WaterMode.Refractive;
         public bool m_DisablePixelLights = true;
-        public int m_TextureSize = 256 /*0x0100*/;
+        public int m_TextureSize = 256;
         public float m_ClipPlaneOffset = 0.07f;
         public LayerMask m_ReflectLayers = (LayerMask) -1;
         public LayerMask m_RefractLayers = (LayerMask) -1;
@@ -185,7 +185,7 @@ public class Water : MonoBehaviour
                 {
                     if ((bool) (UnityEngine.Object) this.m_ReflectionTexture)
                         UnityEngine.Object.DestroyImmediate((UnityEngine.Object) this.m_ReflectionTexture);
-                    this.m_ReflectionTexture = new RenderTexture(this.m_TextureSize, this.m_TextureSize, 16 /*0x10*/);
+                    this.m_ReflectionTexture = new RenderTexture(this.m_TextureSize, this.m_TextureSize, 16);
                     this.m_ReflectionTexture.name = "__WaterReflection" + (object) this.GetInstanceID();
                     this.m_ReflectionTexture.isPowerOfTwo = true;
                     this.m_ReflectionTexture.hideFlags = HideFlags.DontSave;
@@ -214,7 +214,7 @@ public class Water : MonoBehaviour
             {
                 if ((bool) (UnityEngine.Object) this.m_RefractionTexture)
                     UnityEngine.Object.DestroyImmediate((UnityEngine.Object) this.m_RefractionTexture);
-                this.m_RefractionTexture = new RenderTexture(this.m_TextureSize, this.m_TextureSize, 16 /*0x10*/);
+                this.m_RefractionTexture = new RenderTexture(this.m_TextureSize, this.m_TextureSize, 16);
                 this.m_RefractionTexture.name = "__WaterRefraction" + (object) this.GetInstanceID();
                 this.m_RefractionTexture.isPowerOfTwo = true;
                 this.m_RefractionTexture.hideFlags = HideFlags.DontSave;

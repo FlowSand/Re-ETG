@@ -452,8 +452,8 @@ using Dungeonator;
                                     CollisionLayer = CollisionLayer.LowObstacle,
                                     ManualOffsetX = 0,
                                     ManualOffsetY = -16,
-                                    ManualWidth = 32 /*0x20*/,
-                                    ManualHeight = 16 /*0x10*/
+                                    ManualWidth = 32,
+                                    ManualHeight = 16
                                 });
                                 intVector2_1 = intVector2_3 + IntVector2.Up;
                                 intVector2_2 = new IntVector2(2, 1);
@@ -463,8 +463,8 @@ using Dungeonator;
                             {
                                 ColliderGenerationMode = PixelCollider.PixelColliderGeneration.Manual,
                                 CollisionLayer = CollisionLayer.HighObstacle,
-                                ManualWidth = 16 /*0x10*/ * intVector2_2.x,
-                                ManualHeight = 16 /*0x10*/ * intVector2_2.y + num2
+                                ManualWidth = 16 * intVector2_2.x,
+                                ManualHeight = 16 * intVector2_2.y + num2
                             });
                             speculativeRigidbody.ForceRegenerate();
                             secretRoomExitDataList.Add(new SecretRoomExitData(g, instanceUsedExit.exitDirection));

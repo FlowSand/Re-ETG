@@ -10,13 +10,13 @@ public class AkSoundEngineController
     {
         public static readonly string s_DefaultBasePath = Path.Combine("Audio", "GeneratedSoundBanks");
         public static string s_Language = "English(US)";
-        public static int s_DefaultPoolSize = 16384 /*0x4000*/;
-        public static int s_LowerPoolSize = 16384 /*0x4000*/;
-        public static int s_StreamingPoolSize = 2048 /*0x0800*/;
+        public static int s_DefaultPoolSize = 16384;
+        public static int s_LowerPoolSize = 16384;
+        public static int s_StreamingPoolSize = 2048;
         public static int s_PreparePoolSize = 0;
         public static float s_MemoryCutoffThreshold = 0.95f;
-        public static int s_MonitorPoolSize = 128 /*0x80*/;
-        public static int s_MonitorQueuePoolSize = 64 /*0x40*/;
+        public static int s_MonitorPoolSize = 128;
+        public static int s_MonitorQueuePoolSize = 64;
         public static int s_CallbackManagerBufferSize = 4;
         public static bool s_EngineLogging = true;
         public static int s_SpatialAudioPoolSize = 8194;
@@ -71,25 +71,25 @@ public class AkSoundEngineController
             AkDeviceSettings akDeviceSettings = new AkDeviceSettings();
             AkSoundEngine.GetDefaultDeviceSettings(akDeviceSettings);
             AkStreamMgrSettings in_pStmSettings = new AkStreamMgrSettings();
-            in_pStmSettings.uMemorySize = (uint) (akInitializer.streamingPoolSize * 1024 /*0x0400*/);
+            in_pStmSettings.uMemorySize = (uint) (akInitializer.streamingPoolSize * 1024);
             AkInitSettings akInitSettings = new AkInitSettings();
             AkSoundEngine.GetDefaultInitSettings(akInitSettings);
-            akInitSettings.uDefaultPoolSize = (uint) (akInitializer.defaultPoolSize * 1024 /*0x0400*/);
-            akInitSettings.uMonitorPoolSize = (uint) (akInitializer.monitorPoolSize * 1024 /*0x0400*/);
-            akInitSettings.uMonitorQueuePoolSize = (uint) (akInitializer.monitorQueuePoolSize * 1024 /*0x0400*/);
+            akInitSettings.uDefaultPoolSize = (uint) (akInitializer.defaultPoolSize * 1024);
+            akInitSettings.uMonitorPoolSize = (uint) (akInitializer.monitorPoolSize * 1024);
+            akInitSettings.uMonitorQueuePoolSize = (uint) (akInitializer.monitorQueuePoolSize * 1024);
             akInitSettings.szPluginDLLPath = Path.Combine(Application.dataPath, "Plugins" + (object) Path.DirectorySeparatorChar);
             AkPlatformInitSettings platformInitSettings = new AkPlatformInitSettings();
             AkSoundEngine.GetDefaultPlatformInitSettings(platformInitSettings);
-            platformInitSettings.uLEngineDefaultPoolSize = (uint) (akInitializer.lowerPoolSize * 1024 /*0x0400*/);
+            platformInitSettings.uLEngineDefaultPoolSize = (uint) (akInitializer.lowerPoolSize * 1024);
             platformInitSettings.fLEngineDefaultPoolRatioThreshold = akInitializer.memoryCutoffThreshold;
             AkMusicSettings akMusicSettings = new AkMusicSettings();
             AkSoundEngine.GetDefaultMusicSettings(akMusicSettings);
             AkSpatialAudioInitSettings in_pSpatialAudioSettings = new AkSpatialAudioInitSettings();
-            in_pSpatialAudioSettings.uPoolSize = (uint) (akInitializer.spatialAudioPoolSize * 1024 /*0x0400*/);
+            in_pSpatialAudioSettings.uPoolSize = (uint) (akInitializer.spatialAudioPoolSize * 1024);
             in_pSpatialAudioSettings.uMaxSoundPropagationDepth = akInitializer.maxSoundPropagationDepth;
             in_pSpatialAudioSettings.uDiffractionFlags = (uint) akInitializer.diffractionFlags;
             int num1 = (int) AkSoundEngine.SetGameName(Application.productName);
-            AKRESULT akresult1 = AkSoundEngine.Init(in_pMemSettings, in_pStmSettings, akDeviceSettings, akInitSettings, platformInitSettings, akMusicSettings, in_pSpatialAudioSettings, (uint) (akInitializer.preparePoolSize * 1024 /*0x0400*/));
+            AKRESULT akresult1 = AkSoundEngine.Init(in_pMemSettings, in_pStmSettings, akDeviceSettings, akInitSettings, platformInitSettings, akMusicSettings, in_pSpatialAudioSettings, (uint) (akInitializer.preparePoolSize * 1024));
             if (akresult1 != AKRESULT.AK_Success)
             {
                 Debug.LogError((object) ("WwiseUnity: Failed to initialize the sound engine. Abort. :" + akresult1.ToString()));
@@ -115,7 +115,7 @@ public class AkSoundEngineController
                     int num3 = (int) AkSoundEngine.SetCurrentLanguage(this.language);
                     int num4 = (int) AkSoundEngine.AddBasePath(Application.persistentDataPath + (object) Path.DirectorySeparatorChar);
                     int num5 = (int) AkSoundEngine.AddBasePath(decodedBankFullPath);
-                    if (AkCallbackManager.Init(akInitializer.callbackManagerBufferSize * 1024 /*0x0400*/) != AKRESULT.AK_Success)
+                    if (AkCallbackManager.Init(akInitializer.callbackManagerBufferSize * 1024) != AKRESULT.AK_Success)
                     {
                         Debug.LogError((object) "WwiseUnity: Failed to initialize Callback Manager. Terminate sound engine.");
                         AkSoundEngine.Term();

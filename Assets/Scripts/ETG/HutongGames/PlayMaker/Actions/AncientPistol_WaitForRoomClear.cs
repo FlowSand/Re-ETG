@@ -73,7 +73,7 @@ namespace HutongGames.PlayMaker.Actions
             }
             else
             {
-                this.m_pistolDoer.talkDoer.specRigidbody.Velocity = this.m_pistolDoer.talkDoer.GetPathVelocityContribution(this.m_lastPosition, 32 /*0x20*/);
+                this.m_pistolDoer.talkDoer.specRigidbody.Velocity = this.m_pistolDoer.talkDoer.GetPathVelocityContribution(this.m_lastPosition, 32);
                 this.m_lastPosition = this.m_pistolDoer.talkDoer.specRigidbody.UnitCenter;
             }
         }

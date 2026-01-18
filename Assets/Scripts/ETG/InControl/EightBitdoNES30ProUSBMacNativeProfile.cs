@@ -15,10 +15,10 @@ namespace InControl
                 new NativeInputDeviceMatcher()
                 {
                     VendorID = new ushort?((ushort) 8194),
-                    ProductID = new ushort?((ushort) 36864 /*0x9000*/)
+                    ProductID = new ushort?((ushort) 36864)
                 }
             };
-            this.ButtonMappings = new InputControlMapping[16 /*0x10*/]
+            this.ButtonMappings = new InputControlMapping[16]
             {
                 new InputControlMapping()
                 {
@@ -102,7 +102,7 @@ namespace InControl
                 {
                     Handle = "DPad Down",
                     Target = InputControlType.DPadDown,
-                    Source = NativeInputDeviceProfile.Button(16 /*0x10*/)
+                    Source = NativeInputDeviceProfile.Button(16)
                 },
                 new InputControlMapping()
                 {

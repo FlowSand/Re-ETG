@@ -12,7 +12,7 @@ using Brave.BulletScript;
 [InspectorDropdownName("Bosses/Blobulord/SplitAttack1")]
 public class BlobulordSplitAttack1 : Script
     {
-        private const int NumBullets = 32 /*0x20*/;
+        private const int NumBullets = 32;
         private const int TotalTime = 352;
         private const float BulletSpeed = 10f;
 

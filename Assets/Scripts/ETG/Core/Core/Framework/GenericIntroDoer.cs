@@ -668,10 +668,10 @@ public class GenericIntroDoer : TimeInvariantMonoBehaviour, IPlaceConfigurable
                 if (!GameManager.HasInstance || GameManager.Instance.IsLoadingLevel || GameManager.IsReturningToBreach)
                     return;
                 CellArea area = this.aiActor.ParentRoom.area;
-                this.m_minPlayerX = area.basePosition.x * 16 /*0x10*/;
-                this.m_minPlayerY = area.basePosition.y * 16 /*0x10*/ + 8;
-                this.m_maxPlayerX = (area.basePosition.x + area.dimensions.x) * 16 /*0x10*/;
-                this.m_maxPlayerY = (area.basePosition.y + area.dimensions.y - 1) * 16 /*0x10*/;
+                this.m_minPlayerX = area.basePosition.x * 16;
+                this.m_minPlayerY = area.basePosition.y * 16 + 8;
+                this.m_maxPlayerX = (area.basePosition.x + area.dimensions.x) * 16;
+                this.m_maxPlayerY = (area.basePosition.y + area.dimensions.y - 1) * 16;
                 for (int index = 0; index < GameManager.Instance.AllPlayers.Length; ++index)
                     GameManager.Instance.AllPlayers[index].specRigidbody.MovementRestrictor += new SpeculativeRigidbody.MovementRestrictorDelegate(this.PlayerMovementRestrictor);
             }

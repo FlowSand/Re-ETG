@@ -10,7 +10,7 @@ namespace FullSerializer
     {
         private int _start;
         private string _input;
-        private readonly StringBuilder _cachedStringBuilder = new StringBuilder(256 /*0x0100*/);
+        private readonly StringBuilder _cachedStringBuilder = new StringBuilder(256);
 
         private fsJsonParser(string input)
         {
@@ -98,7 +98,7 @@ namespace FullSerializer
         {
             uint singleChar = 0;
             if (c1 >= '0' && c1 <= '9')
-                singleChar = ((uint) c1 - 48U /*0x30*/) * multipliyer;
+                singleChar = ((uint) c1 - 48U) * multipliyer;
             else if (c1 >= 'A' && c1 <= 'F')
                 singleChar = (uint) ((int) c1 - 65 + 10) * multipliyer;
             else if (c1 >= 'a' && c1 <= 'f')
@@ -108,7 +108,7 @@ namespace FullSerializer
 
         private uint ParseUnicode(char c1, char c2, char c3, char c4)
         {
-            return this.ParseSingleChar(c1, 4096U /*0x1000*/) + this.ParseSingleChar(c2, 256U /*0x0100*/) + this.ParseSingleChar(c3, 16U /*0x10*/) + this.ParseSingleChar(c4, 1U);
+            return this.ParseSingleChar(c1, 4096U) + this.ParseSingleChar(c2, 256U) + this.ParseSingleChar(c3, 16U) + this.ParseSingleChar(c4, 1U);
         }
 
         private fsResult TryUnescapeChar(out char escaped)

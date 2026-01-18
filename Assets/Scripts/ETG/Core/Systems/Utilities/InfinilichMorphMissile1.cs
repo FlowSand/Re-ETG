@@ -21,7 +21,7 @@ public class InfinilichMorphMissile1 : Script
             7,
             15,
             24,
-            32 /*0x20*/,
+            32,
             35,
             37
         };
@@ -32,7 +32,7 @@ public class InfinilichMorphMissile1 : Script
             6,
             14,
             23,
-            31 /*0x1F*/,
+            31,
             34,
             36,
             37

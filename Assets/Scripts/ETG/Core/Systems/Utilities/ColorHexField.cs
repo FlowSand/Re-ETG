@@ -34,7 +34,7 @@ public class ColorHexField : MonoBehaviour
         private Color UIntToColor(uint color)
         {
             byte a = (byte) (color >> 24);
-            return (Color) new Color32((byte) (color >> 16 /*0x10*/), (byte) (color >> 8), (byte) (color >> 0), a);
+            return (Color) new Color32((byte) (color >> 16), (byte) (color >> 8), (byte) (color >> 0), a);
         }
     }
 

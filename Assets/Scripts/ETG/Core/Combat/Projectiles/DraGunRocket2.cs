@@ -42,8 +42,8 @@ public class DraGunRocket2 : Script
                 }
                 for (int index = 0; index < 5; ++index)
                 {
-                    this.Fire(new Offset(new Vector2(0.0f, -1f), transform: string.Empty), new Brave.BulletScript.Direction(180f), new Brave.BulletScript.Speed((float) (16 /*0x10*/ - index * 4)), (Bullet) new SpeedChangingBullet("default_novfx", 12f, 60));
-                    this.Fire(new Offset(new Vector2(0.0f, -1f), transform: string.Empty), new Brave.BulletScript.Direction(), new Brave.BulletScript.Speed((float) (16 /*0x10*/ - index * 4)), (Bullet) new SpeedChangingBullet("default_novfx", 12f, 60));
+                    this.Fire(new Offset(new Vector2(0.0f, -1f), transform: string.Empty), new Brave.BulletScript.Direction(180f), new Brave.BulletScript.Speed((float) (16 - index * 4)), (Bullet) new SpeedChangingBullet("default_novfx", 12f, 60));
+                    this.Fire(new Offset(new Vector2(0.0f, -1f), transform: string.Empty), new Brave.BulletScript.Direction(), new Brave.BulletScript.Speed((float) (16 - index * 4)), (Bullet) new SpeedChangingBullet("default_novfx", 12f, 60));
                 }
                 for (int index = 0; index < 12; ++index)
                     this.Fire(new Brave.BulletScript.Direction(index % 2 != 0 ? Random.Range(0.0f, 35f) : Random.Range(150f, 182f)), new Brave.BulletScript.Speed(Random.Range(4f, 12f)), (Bullet) new DraGunRocket2.ShrapnelBullet());

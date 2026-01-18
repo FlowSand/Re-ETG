@@ -91,7 +91,7 @@ namespace InControl
                     Source = UnityInputDeviceProfile.Button(10)
                 }
             };
-            this.AnalogMappings = new InputControlMapping[16 /*0x10*/]
+            this.AnalogMappings = new InputControlMapping[16]
             {
                 new InputControlMapping()
                 {

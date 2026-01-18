@@ -238,7 +238,7 @@ public class tk2dUITextInput : MonoBehaviour
             }
             if (this.text.EndsWith(" "))
             {
-                tk2dFontChar tk2dFontChar = !this.inputLabel.font.useDictionary ? this.inputLabel.font.chars[32 /*0x20*/] : this.inputLabel.font.charDict[32 /*0x20*/];
+                tk2dFontChar tk2dFontChar = !this.inputLabel.font.useDictionary ? this.inputLabel.font.chars[32] : this.inputLabel.font.charDict[32];
                 num2 += (float) ((double) tk2dFontChar.advance * (double) this.inputLabel.scale.x / 2.0);
             }
             this.cursor.transform.localPosition = new Vector3(this.inputLabel.transform.localPosition.x + (this.inputLabel.GetComponent<Renderer>().bounds.extents.x + num2) * num1, this.cursor.transform.localPosition.y, this.cursor.transform.localPosition.z);

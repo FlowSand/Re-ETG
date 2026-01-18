@@ -560,7 +560,7 @@ public class dfDynamicFont : dfFontBase
                     {
                         uint result = 0;
                         uint.TryParse(color2.Substring(1), NumberStyles.HexNumber, (IFormatProvider) null, out result);
-                        color1 = (Color) this.UIntToColor(result | 4278190080U /*0xFF000000*/);
+                        color1 = (Color) this.UIntToColor(result | 4278190080U);
                     }
                     else
                         color1 = dfMarkupStyle.ParseColor(color2, (Color) this.DefaultColor);
@@ -571,7 +571,7 @@ public class dfDynamicFont : dfFontBase
             private Color32 UIntToColor(uint color)
             {
                 byte a = (byte) (color >> 24);
-                return new Color32((byte) (color >> 16 /*0x10*/), (byte) (color >> 8), (byte) (color >> 0), a);
+                return new Color32((byte) (color >> 16), (byte) (color >> 8), (byte) (color >> 0), a);
             }
 
             private dfList<dfDynamicFont.LineRenderInfo> calculateLinebreaks()

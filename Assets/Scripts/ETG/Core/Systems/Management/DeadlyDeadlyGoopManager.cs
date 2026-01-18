@@ -316,7 +316,7 @@ public class DeadlyDeadlyGoopManager : MonoBehaviour
             this.m_uvMap.Add(191, new Vector2(0.375f, 0.0f));
             this.m_uvMap.Add(254, new Vector2(0.375f, 0.0f));
             this.m_uvMap.Add(124, new Vector2(0.5f, 0.0f));
-            this.m_uvMap.Add(31 /*0x1F*/, new Vector2(0.625f, 0.0f));
+            this.m_uvMap.Add(31, new Vector2(0.625f, 0.0f));
             this.m_uvMap.Add(241, new Vector2(0.75f, 0.0f));
             this.m_uvMap.Add(199, new Vector2(0.875f, 0.0f));
             this.m_uvMap.Add(14, new Vector2(0.0f, 0.125f));
@@ -335,10 +335,10 @@ public class DeadlyDeadlyGoopManager : MonoBehaviour
             this.m_uvMap.Add(195, new Vector2(0.875f, 0.25f));
             this.m_uvMap.Add(0, new Vector2(0.0f, 0.375f));
             this.m_uvMap.Add(131, new Vector2(0.125f, 0.375f));
-            this.m_uvMap.Add(224 /*0xE0*/, new Vector2(0.25f, 0.375f));
+            this.m_uvMap.Add(224, new Vector2(0.25f, 0.375f));
             this.m_uvMap.Add(227, new Vector2(0.375f, 0.375f));
             this.m_uvMap.Add(126, new Vector2(0.5f, 0.375f));
-            this.m_uvMap.Add(63 /*0x3F*/, new Vector2(0.625f, 0.375f));
+            this.m_uvMap.Add(63, new Vector2(0.625f, 0.375f));
             this.m_uvMap.Add(243, new Vector2(0.75f, 0.375f));
             this.m_uvMap.Add(231, new Vector2(0.875f, 0.375f));
             this.m_uvMap.Add(253, new Vector2(0.0f, 0.5f));
@@ -355,11 +355,11 @@ public class DeadlyDeadlyGoopManager : MonoBehaviour
             this.m_uvMap.Add(17, new Vector2(0.25f, 0.125f));
             this.m_uvMap.Add(51, new Vector2(0.25f, 0.125f));
             this.m_uvMap.Add(153, new Vector2(0.25f, 0.125f));
-            this.m_uvMap.Add(16 /*0x10*/, new Vector2(0.0f, 0.625f));
+            this.m_uvMap.Add(16, new Vector2(0.0f, 0.625f));
             this.m_uvMap.Add(4, new Vector2(0.125f, 0.625f));
-            this.m_uvMap.Add(64 /*0x40*/, new Vector2(0.25f, 0.625f));
+            this.m_uvMap.Add(64, new Vector2(0.25f, 0.625f));
             this.m_uvMap.Add(1, new Vector2(0.375f, 0.625f));
-            this.m_uvMap.Add(240 /*0xF0*/, new Vector2(0.5f, 0.625f));
+            this.m_uvMap.Add(240, new Vector2(0.5f, 0.625f));
             this.m_uvMap.Add(135, new Vector2(0.625f, 0.625f));
             this.m_uvMap.Add(120, new Vector2(0.75f, 0.625f));
             this.m_uvMap.Add(15, new Vector2(0.875f, 0.625f));

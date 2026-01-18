@@ -10,7 +10,7 @@ using Brave.BulletScript;
 [InspectorDropdownName("Bosses/BossFinalConvict/SpinFire1")]
 public class BossFinalConvictSpinFire1 : Script
     {
-        private const int NumBullets = 48 /*0x30*/;
+        private const int NumBullets = 48;
 
         [DebuggerHidden]
         protected override IEnumerator Top()

@@ -15,7 +15,7 @@ namespace InControl.Internal
         public CodeWriter()
         {
             this.indent = 0;
-            this.stringBuilder = new StringBuilder(4096 /*0x1000*/);
+            this.stringBuilder = new StringBuilder(4096);
         }
 
         public void IncreaseIndent() => ++this.indent;

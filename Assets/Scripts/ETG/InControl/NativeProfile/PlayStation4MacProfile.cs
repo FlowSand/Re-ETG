@@ -28,7 +28,7 @@ namespace InControl.NativeProfile
                     ProductID = new ushort?((ushort) 2976)
                 }
             };
-            this.ButtonMappings = new InputControlMapping[16 /*0x10*/]
+            this.ButtonMappings = new InputControlMapping[16]
             {
                 new InputControlMapping()
                 {
@@ -70,7 +70,7 @@ namespace InControl.NativeProfile
                 {
                     Handle = "DPad Left",
                     Target = InputControlType.DPadLeft,
-                    Source = NativeInputDeviceProfile.Button(16 /*0x10*/)
+                    Source = NativeInputDeviceProfile.Button(16)
                 },
                 new InputControlMapping()
                 {

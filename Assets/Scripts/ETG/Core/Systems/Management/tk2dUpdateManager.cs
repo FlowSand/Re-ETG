@@ -11,7 +11,7 @@ public class tk2dUpdateManager : MonoBehaviour
     {
         private static tk2dUpdateManager inst;
         [SerializeField]
-        private List<tk2dTextMesh> textMeshes = new List<tk2dTextMesh>(64 /*0x40*/);
+        private List<tk2dTextMesh> textMeshes = new List<tk2dTextMesh>(64);
 
         private static tk2dUpdateManager Instance
         {

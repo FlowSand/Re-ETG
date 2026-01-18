@@ -45,7 +45,7 @@ public class PhysicsEngine : MonoBehaviour
         public static CustomSampler csGetTiles;
         public static CustomSampler csCollideWithTilemapSingle;
         public tk2dTileMap TileMap;
-        public int PixelsPerUnit = 16 /*0x10*/;
+        public int PixelsPerUnit = 16;
         private const int c_warnIterations = 5;
         private const int c_maxIterations = 50;
         public PhysicsEngine.DebugDrawType DebugDraw;
@@ -395,7 +395,7 @@ public class PhysicsEngine : MonoBehaviour
                                 for (int index11 = 0; index11 < pixelColliders.Count; ++index11)
                                 {
                                     PixelCollider pixelCollider = pixelColliders[index11];
-                                    if (pixelCollider.Enabled && (pixelCollider.CollisionLayer == CollisionLayer.TileBlocker || (CollisionLayerMatrix.GetMask(pixelCollider.CollisionLayer) & 64 /*0x40*/) == 64 /*0x40*/))
+                                    if (pixelCollider.Enabled && (pixelCollider.CollisionLayer == CollisionLayer.TileBlocker || (CollisionLayerMatrix.GetMask(pixelCollider.CollisionLayer) & 64) == 64))
                                         this.CollideWithTilemap(rigidbody, pixelCollider, stepList, ref timeUsed, data, ref nearestCollision);
                                 }
                             }
@@ -761,7 +761,7 @@ public class PhysicsEngine : MonoBehaviour
             out RaycastResult result,
             bool collideWithTiles = true,
             bool collideWithRigidbodies = true,
-            int rayMask = 2147483647 /*0x7FFFFFFF*/,
+            int rayMask = 2147483647,
             CollisionLayer? sourceLayer = null,
             bool collideWithTriggers = false,
             Func<SpeculativeRigidbody, bool> rigidbodyExcluder = null,
@@ -788,7 +788,7 @@ public class PhysicsEngine : MonoBehaviour
             out RaycastResult result,
             bool collideWithTiles = true,
             bool collideWithRigidbodies = true,
-            int rayMask = 2147483647 /*0x7FFFFFFF*/,
+            int rayMask = 2147483647,
             CollisionLayer? sourceLayer = null,
             bool collideWithTriggers = false,
             Func<SpeculativeRigidbody, bool> rigidbodyExcluder = null,
@@ -804,7 +804,7 @@ public class PhysicsEngine : MonoBehaviour
             out RaycastResult result,
             bool collideWithTiles = true,
             bool collideWithRigidbodies = true,
-            int rayMask = 2147483647 /*0x7FFFFFFF*/,
+            int rayMask = 2147483647,
             CollisionLayer? sourceLayer = null,
             bool collideWithTriggers = false,
             Func<SpeculativeRigidbody, bool> rigidbodyExcluder = null,
@@ -821,7 +821,7 @@ public class PhysicsEngine : MonoBehaviour
             out SpeculativeRigidbody result,
             bool collideWithTiles = true,
             bool collideWithRigidbodies = true,
-            int rayMask = 2147483647 /*0x7FFFFFFF*/,
+            int rayMask = 2147483647,
             CollisionLayer? sourceLayer = null,
             bool collideWithTriggers = false,
             params SpeculativeRigidbody[] ignoreList)
@@ -834,7 +834,7 @@ public class PhysicsEngine : MonoBehaviour
             out SpeculativeRigidbody result,
             bool collideWithTiles = true,
             bool collideWithRigidbodies = true,
-            int rayMask = 2147483647 /*0x7FFFFFFF*/,
+            int rayMask = 2147483647,
             CollisionLayer? sourceLayer = null,
             bool collideWithTriggers = false,
             params SpeculativeRigidbody[] ignoreList)
@@ -897,7 +897,7 @@ public class PhysicsEngine : MonoBehaviour
             out List<PointcastResult> pointResults,
             bool collideWithTiles = true,
             bool collideWithRigidbodies = true,
-            int rayMask = 2147483647 /*0x7FFFFFFF*/,
+            int rayMask = 2147483647,
             CollisionLayer? sourceLayer = null,
             bool collideWithTriggers = false,
             Func<SpeculativeRigidbody, bool> rigidbodyExcluder = null,
@@ -1762,7 +1762,7 @@ public class PhysicsEngine : MonoBehaviour
                         IsTileCollider = true,
                         CollisionLayer = spriteDefinition.collisionLayer
                     };
-                    pixelCollider.RegenerateFromManual(tileMap.transform, new IntVector2(0, 0), new IntVector2(16 /*0x10*/, 16 /*0x10*/));
+                    pixelCollider.RegenerateFromManual(tileMap.transform, new IntVector2(0, 0), new IntVector2(16, 16));
                     pixelCollider.Position = pixelPosition;
                     pixelColliders.Add(pixelCollider);
                 }
@@ -1785,7 +1785,7 @@ public class PhysicsEngine : MonoBehaviour
                     IsTileCollider = true,
                     CollisionLayer = CollisionLayer.HighObstacle
                 };
-                pixelCollider.RegenerateFromManual(tileMap.transform, new IntVector2(0, 0), new IntVector2(16 /*0x10*/, 16 /*0x10*/));
+                pixelCollider.RegenerateFromManual(tileMap.transform, new IntVector2(0, 0), new IntVector2(16, 16));
                 pixelCollider.Position = pixelPosition;
                 pixelColliders.Add(pixelCollider);
             }
@@ -1798,7 +1798,7 @@ public class PhysicsEngine : MonoBehaviour
                         IsTileCollider = true,
                         CollisionLayer = CollisionLayer.EnemyBlocker
                     };
-                    pixelCollider1.RegenerateFromManual(tileMap.transform, new IntVector2(0, 0), new IntVector2(16 /*0x10*/, 28));
+                    pixelCollider1.RegenerateFromManual(tileMap.transform, new IntVector2(0, 0), new IntVector2(16, 28));
                     pixelCollider1.Position = pixelPosition + new IntVector2(0, -16);
                     pixelColliders.Add(pixelCollider1);
                     if (cellData1.diagonalWallType == DiagonalWallType.SOUTHEAST)
@@ -1809,15 +1809,15 @@ public class PhysicsEngine : MonoBehaviour
                             CollisionLayer = CollisionLayer.EnemyBulletBlocker
                         };
                         int y1 = 14;
-                        pixelCollider2.RegenerateFromLine(tileMap.transform, new IntVector2(1, y1 - 16 /*0x10*/), new IntVector2(16 /*0x10*/, y1 - 1));
-                        pixelCollider2.Position = pixelPosition + new IntVector2(0, y1 - 16 /*0x10*/);
+                        pixelCollider2.RegenerateFromLine(tileMap.transform, new IntVector2(1, y1 - 16), new IntVector2(16, y1 - 1));
+                        pixelCollider2.Position = pixelPosition + new IntVector2(0, y1 - 16);
                         pixelColliders.Add(pixelCollider2);
                         PixelCollider pixelCollider3 = new PixelCollider()
                         {
                             IsTileCollider = true,
                             CollisionLayer = CollisionLayer.EnemyBulletBlocker
                         };
-                        pixelCollider3.RegenerateFromManual(tileMap.transform, new IntVector2(1, y1 - 16 /*0x10*/), new IntVector2(16 /*0x10*/, y1));
+                        pixelCollider3.RegenerateFromManual(tileMap.transform, new IntVector2(1, y1 - 16), new IntVector2(16, y1));
                         pixelCollider3.Position = pixelPosition + new IntVector2(0, -16);
                         pixelColliders.Add(pixelCollider3);
                         PixelCollider pixelCollider4 = new PixelCollider()
@@ -1826,15 +1826,15 @@ public class PhysicsEngine : MonoBehaviour
                             CollisionLayer = CollisionLayer.HighObstacle
                         };
                         int y2 = 8;
-                        pixelCollider4.RegenerateFromLine(tileMap.transform, new IntVector2(1, y2 - 16 /*0x10*/), new IntVector2(16 /*0x10*/, y2 - 1));
-                        pixelCollider4.Position = pixelPosition + new IntVector2(0, y2 - 16 /*0x10*/);
+                        pixelCollider4.RegenerateFromLine(tileMap.transform, new IntVector2(1, y2 - 16), new IntVector2(16, y2 - 1));
+                        pixelCollider4.Position = pixelPosition + new IntVector2(0, y2 - 16);
                         pixelColliders.Add(pixelCollider4);
                         PixelCollider pixelCollider5 = new PixelCollider()
                         {
                             IsTileCollider = true,
                             CollisionLayer = CollisionLayer.HighObstacle
                         };
-                        pixelCollider5.RegenerateFromManual(tileMap.transform, new IntVector2(1, y2 - 16 /*0x10*/), new IntVector2(16 /*0x10*/, y2));
+                        pixelCollider5.RegenerateFromManual(tileMap.transform, new IntVector2(1, y2 - 16), new IntVector2(16, y2));
                         pixelCollider5.Position = pixelPosition + new IntVector2(0, -16);
                         pixelColliders.Add(pixelCollider5);
                     }
@@ -1846,15 +1846,15 @@ public class PhysicsEngine : MonoBehaviour
                             CollisionLayer = CollisionLayer.EnemyBulletBlocker
                         };
                         int y3 = 14;
-                        pixelCollider6.RegenerateFromLine(tileMap.transform, new IntVector2(0, y3 - 1), new IntVector2(15, y3 - 16 /*0x10*/));
-                        pixelCollider6.Position = pixelPosition + new IntVector2(0, y3 - 16 /*0x10*/);
+                        pixelCollider6.RegenerateFromLine(tileMap.transform, new IntVector2(0, y3 - 1), new IntVector2(15, y3 - 16));
+                        pixelCollider6.Position = pixelPosition + new IntVector2(0, y3 - 16);
                         pixelColliders.Add(pixelCollider6);
                         PixelCollider pixelCollider7 = new PixelCollider()
                         {
                             IsTileCollider = true,
                             CollisionLayer = CollisionLayer.EnemyBulletBlocker
                         };
-                        pixelCollider7.RegenerateFromManual(tileMap.transform, new IntVector2(1, y3 - 16 /*0x10*/), new IntVector2(16 /*0x10*/, y3));
+                        pixelCollider7.RegenerateFromManual(tileMap.transform, new IntVector2(1, y3 - 16), new IntVector2(16, y3));
                         pixelCollider7.Position = pixelPosition + new IntVector2(0, -16);
                         pixelColliders.Add(pixelCollider7);
                         PixelCollider pixelCollider8 = new PixelCollider()
@@ -1863,15 +1863,15 @@ public class PhysicsEngine : MonoBehaviour
                             CollisionLayer = CollisionLayer.HighObstacle
                         };
                         int y4 = 8;
-                        pixelCollider8.RegenerateFromLine(tileMap.transform, new IntVector2(0, y4 - 1), new IntVector2(15, y4 - 16 /*0x10*/));
-                        pixelCollider8.Position = pixelPosition + new IntVector2(0, y4 - 16 /*0x10*/);
+                        pixelCollider8.RegenerateFromLine(tileMap.transform, new IntVector2(0, y4 - 1), new IntVector2(15, y4 - 16));
+                        pixelCollider8.Position = pixelPosition + new IntVector2(0, y4 - 16);
                         pixelColliders.Add(pixelCollider8);
                         PixelCollider pixelCollider9 = new PixelCollider()
                         {
                             IsTileCollider = true,
                             CollisionLayer = CollisionLayer.HighObstacle
                         };
-                        pixelCollider9.RegenerateFromManual(tileMap.transform, new IntVector2(1, y4 - 16 /*0x10*/), new IntVector2(16 /*0x10*/, y4));
+                        pixelCollider9.RegenerateFromManual(tileMap.transform, new IntVector2(1, y4 - 16), new IntVector2(16, y4));
                         pixelCollider9.Position = pixelPosition + new IntVector2(0, -16);
                         pixelColliders.Add(pixelCollider9);
                     }
@@ -1883,7 +1883,7 @@ public class PhysicsEngine : MonoBehaviour
                         IsTileCollider = true,
                         CollisionLayer = CollisionLayer.EnemyBlocker
                     };
-                    pixelCollider10.RegenerateFromManual(tileMap.transform, new IntVector2(0, 0), new IntVector2(16 /*0x10*/, 12));
+                    pixelCollider10.RegenerateFromManual(tileMap.transform, new IntVector2(0, 0), new IntVector2(16, 12));
                     pixelCollider10.Position = pixelPosition;
                     pixelColliders.Add(pixelCollider10);
                     PixelCollider pixelCollider11 = new PixelCollider()
@@ -1891,7 +1891,7 @@ public class PhysicsEngine : MonoBehaviour
                         IsTileCollider = true,
                         CollisionLayer = CollisionLayer.EnemyBulletBlocker
                     };
-                    pixelCollider11.RegenerateFromManual(tileMap.transform, new IntVector2(0, 0), new IntVector2(16 /*0x10*/, 14));
+                    pixelCollider11.RegenerateFromManual(tileMap.transform, new IntVector2(0, 0), new IntVector2(16, 14));
                     pixelCollider11.Position = pixelPosition;
                     pixelColliders.Add(pixelCollider11);
                     PixelCollider pixelCollider12 = new PixelCollider()
@@ -1899,7 +1899,7 @@ public class PhysicsEngine : MonoBehaviour
                         IsTileCollider = true,
                         CollisionLayer = CollisionLayer.PlayerBlocker
                     };
-                    pixelCollider12.RegenerateFromManual(tileMap.transform, new IntVector2(0, 0), new IntVector2(16 /*0x10*/, 8));
+                    pixelCollider12.RegenerateFromManual(tileMap.transform, new IntVector2(0, 0), new IntVector2(16, 8));
                     pixelCollider12.Position = pixelPosition;
                     pixelColliders.Add(pixelCollider12);
                 }

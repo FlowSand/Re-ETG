@@ -22,7 +22,7 @@
             CollisionLayerMatrix.m_collisionMatrix[13] = 0;
             CollisionLayerMatrix.m_collisionMatrix[14] = 0;
             CollisionLayerMatrix.m_collisionMatrix[15] = CollisionMask.LayerToMask(CollisionLayer.Projectile);
-            CollisionLayerMatrix.m_collisionMatrix[16 /*0x10*/] = CollisionMask.LayerToMask(CollisionLayer.PlayerHitBox, CollisionLayer.EnemyHitBox);
+            CollisionLayerMatrix.m_collisionMatrix[16] = CollisionMask.LayerToMask(CollisionLayer.PlayerHitBox, CollisionLayer.EnemyHitBox);
         }
 
         public static int GetMask(CollisionLayer layer)

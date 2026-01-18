@@ -13,7 +13,7 @@ namespace tk2dRuntime.TileMap
         private static List<int> TilePrefabsY;
         private static List<int> TilePrefabsLayer;
         private static List<GameObject> TilePrefabsInstance;
-        private const int tileMask = 16777215 /*0xFFFFFF*/;
+        private const int tileMask = 16777215;
 
         public static bool InitDataStore(tk2dTileMap tileMap)
         {
@@ -678,7 +678,7 @@ namespace tk2dRuntime.TileMap
 
         public static int GetTileFromRawTile(int rawTile)
         {
-            return rawTile == -1 ? -1 : rawTile & 16777215 /*0xFFFFFF*/;
+            return rawTile == -1 ? -1 : rawTile & 16777215;
         }
 
         public static bool IsRawTileFlagSet(int rawTile, tk2dTileFlags flag)

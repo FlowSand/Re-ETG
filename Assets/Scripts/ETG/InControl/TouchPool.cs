@@ -22,7 +22,7 @@ namespace InControl
         }
 
         public TouchPool()
-            : this(16 /*0x10*/)
+            : this(16)
         {
         }
 

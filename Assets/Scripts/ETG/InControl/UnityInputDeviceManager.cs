@@ -46,7 +46,7 @@ namespace InControl
             this.joystickCount = this.joystickNames.Length;
             this.joystickHash = 527 + this.joystickCount;
             for (int index = 0; index < this.joystickCount; ++index)
-                this.joystickHash = this.joystickHash * 31 /*0x1F*/ + this.joystickNames[index].GetHashCode();
+                this.joystickHash = this.joystickHash * 31 + this.joystickNames[index].GetHashCode();
         }
 
         private bool JoystickInfoHasChanged

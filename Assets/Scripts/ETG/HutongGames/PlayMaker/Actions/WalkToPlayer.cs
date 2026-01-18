@@ -33,7 +33,7 @@ namespace HutongGames.PlayMaker.Actions
         public override void OnUpdate()
         {
             base.OnUpdate();
-            this.m_owner.specRigidbody.Velocity = this.m_owner.GetPathVelocityContribution(this.m_lastPosition, 32 /*0x20*/);
+            this.m_owner.specRigidbody.Velocity = this.m_owner.GetPathVelocityContribution(this.m_lastPosition, 32);
             if (this.m_owner.CurrentPath == null)
                 this.Finish();
             this.m_lastPosition = this.m_owner.specRigidbody.UnitCenter;

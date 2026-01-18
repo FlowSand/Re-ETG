@@ -32,7 +32,7 @@ namespace InControl
         protected static InputControlSource Button13 = UnityInputDeviceProfile.Button(13);
         protected static InputControlSource Button14 = UnityInputDeviceProfile.Button(14);
         protected static InputControlSource Button15 = UnityInputDeviceProfile.Button(15);
-        protected static InputControlSource Button16 = UnityInputDeviceProfile.Button(16 /*0x10*/);
+        protected static InputControlSource Button16 = UnityInputDeviceProfile.Button(16);
         protected static InputControlSource Button17 = UnityInputDeviceProfile.Button(17);
         protected static InputControlSource Button18 = UnityInputDeviceProfile.Button(18);
         protected static InputControlSource Button19 = UnityInputDeviceProfile.Button(19);
@@ -52,7 +52,7 @@ namespace InControl
         protected static InputControlSource Analog13 = UnityInputDeviceProfile.Analog(13);
         protected static InputControlSource Analog14 = UnityInputDeviceProfile.Analog(14);
         protected static InputControlSource Analog15 = UnityInputDeviceProfile.Analog(15);
-        protected static InputControlSource Analog16 = UnityInputDeviceProfile.Analog(16 /*0x10*/);
+        protected static InputControlSource Analog16 = UnityInputDeviceProfile.Analog(16);
         protected static InputControlSource Analog17 = UnityInputDeviceProfile.Analog(17);
         protected static InputControlSource Analog18 = UnityInputDeviceProfile.Analog(18);
         protected static InputControlSource Analog19 = UnityInputDeviceProfile.Analog(19);

@@ -23,7 +23,7 @@ namespace InControl
             this.detachedDevices = new List<NativeInputDevice>();
             this.systemDeviceProfiles = new List<NativeInputDeviceProfile>(NativeInputDeviceProfileList.Profiles.Length);
             this.customDeviceProfiles = new List<NativeInputDeviceProfile>();
-            this.deviceEvents = new uint[32 /*0x20*/];
+            this.deviceEvents = new uint[32];
             this.AddSystemDeviceProfiles();
             Native.Init(new NativeInputOptions()
             {
@@ -44,7 +44,7 @@ namespace InControl
             x |= x >> 2;
             x |= x >> 4;
             x |= x >> 8;
-            x |= x >> 16 /*0x10*/;
+            x |= x >> 16;
             return x + 1U;
         }
 
@@ -64,7 +64,7 @@ namespace InControl
             for (int index2 = 0; (long) index2 < (long) num3; ++index2)
             {
                 uint deviceEvent = this.deviceEvents[num2++];
-                StringBuilder stringBuilder = new StringBuilder(256 /*0x0100*/);
+                StringBuilder stringBuilder = new StringBuilder(256);
                 stringBuilder.Append($"Attached native device with handle {(object) deviceEvent}:\n");
                 NativeDeviceInfo deviceInfo;
                 if (Native.GetDeviceInfo(deviceEvent, out deviceInfo))

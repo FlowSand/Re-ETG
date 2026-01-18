@@ -8,7 +8,7 @@ public class DEMO_TouchVisualizer : MonoBehaviour
         public bool editorOnly;
         public bool showMouse;
         public bool showPlatformInfo;
-        public int iconSize = 32 /*0x20*/;
+        public int iconSize = 32;
         public Texture2D touchIcon;
         private IDFTouchInputSource input;
 

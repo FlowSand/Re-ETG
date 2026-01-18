@@ -60,7 +60,7 @@ public class KthuliberProjectileController : MonoBehaviour
             this.m_projectile.specRigidbody.PrimaryPixelCollider.ColliderGenerationMode = PixelCollider.PixelColliderGeneration.Circle;
             this.m_projectile.specRigidbody.PrimaryPixelCollider.ManualOffsetX = -8;
             this.m_projectile.specRigidbody.PrimaryPixelCollider.ManualOffsetY = -8;
-            this.m_projectile.specRigidbody.PrimaryPixelCollider.ManualDiameter = 16 /*0x10*/;
+            this.m_projectile.specRigidbody.PrimaryPixelCollider.ManualDiameter = 16;
             this.m_projectile.specRigidbody.PrimaryPixelCollider.Regenerate(this.m_projectile.transform);
             this.m_projectile.specRigidbody.Reinitialize();
             int count = -1;

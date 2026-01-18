@@ -29,7 +29,7 @@ namespace HutongGames.PlayMaker.Actions
                 return;
             if (this.m_talkDoer.CurrentPath != null)
             {
-                this.m_talkDoer.specRigidbody.Velocity = this.m_talkDoer.GetPathVelocityContribution(this.m_lastPosition, 32 /*0x20*/);
+                this.m_talkDoer.specRigidbody.Velocity = this.m_talkDoer.GetPathVelocityContribution(this.m_lastPosition, 32);
                 this.m_lastPosition = this.m_talkDoer.specRigidbody.UnitCenter;
             }
             else

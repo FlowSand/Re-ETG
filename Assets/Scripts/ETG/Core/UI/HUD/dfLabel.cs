@@ -68,7 +68,7 @@ public class dfLabel : dfControl, IDFMultiRender, IRendersText
         [SerializeField]
         protected RectOffset padding = new RectOffset();
         [SerializeField]
-        protected int tabSize = 48 /*0x30*/;
+        protected int tabSize = 48;
         [SerializeField]
         protected List<int> tabStops = new List<int>();
         private Vector2 startSize = Vector2.zero;
@@ -466,13 +466,13 @@ public class dfLabel : dfControl, IDFMultiRender, IRendersText
             {
                 dfFontBase = (dfFontBase) (ResourceCache.Acquire("Alternate Fonts/JackeyFont12_DF") as GameObject).GetComponent<dfFont>();
                 num1 = (float) Mathf.CeilToInt(this.m_defaultAssignedFontTextScale * Mathf.Max(1f, (float) this.m_defaultAssignedFont.FontSize / 14f));
-                this.padding = this.m_defaultAssignedFont.LineHeight >= 16 /*0x10*/ ? this.m_cachedPadding : new RectOffset(this.m_cachedPadding.left, this.m_cachedPadding.right, this.m_cachedPadding.top + (this.GetManager().FixedHeight <= 1000 ? 3 : 4) * 2, this.m_cachedPadding.bottom);
+                this.padding = this.m_defaultAssignedFont.LineHeight >= 16 ? this.m_cachedPadding : new RectOffset(this.m_cachedPadding.left, this.m_cachedPadding.right, this.m_cachedPadding.top + (this.GetManager().FixedHeight <= 1000 ? 3 : 4) * 2, this.m_cachedPadding.bottom);
             }
             else if (supportedLanguages == StringTableManager.GungeonSupportedLanguages.CHINESE && !this.MaintainJapaneseFont)
             {
                 dfFontBase = (dfFontBase) (ResourceCache.Acquire("Alternate Fonts/SimSun12_DF") as GameObject).GetComponent<dfFont>();
                 num1 = (float) Mathf.CeilToInt(this.m_defaultAssignedFontTextScale * Mathf.Max(1f, (float) this.m_defaultAssignedFont.FontSize / 14f));
-                this.padding = this.m_defaultAssignedFont.LineHeight >= 16 /*0x10*/ ? this.m_cachedPadding : new RectOffset(this.m_cachedPadding.left, this.m_cachedPadding.right, this.m_cachedPadding.top + (this.GetManager().FixedHeight <= 1000 ? 3 : 4) * 2, this.m_cachedPadding.bottom);
+                this.padding = this.m_defaultAssignedFont.LineHeight >= 16 ? this.m_cachedPadding : new RectOffset(this.m_cachedPadding.left, this.m_cachedPadding.right, this.m_cachedPadding.top + (this.GetManager().FixedHeight <= 1000 ? 3 : 4) * 2, this.m_cachedPadding.bottom);
             }
             else if (supportedLanguages == StringTableManager.GungeonSupportedLanguages.KOREAN && !this.MaintainKoreanFont)
             {
@@ -482,7 +482,7 @@ public class dfLabel : dfControl, IDFMultiRender, IRendersText
                 if ((double) num2 < 1.0)
                     num2 = (num3 - 1f) / num3;
                 num1 = (double) num2 <= 1.0 ? this.m_defaultAssignedFontTextScale * num2 : (float) Mathf.CeilToInt(this.m_defaultAssignedFontTextScale * num2);
-                this.padding = this.m_defaultAssignedFont.LineHeight >= 16 /*0x10*/ ? this.m_cachedPadding : new RectOffset(this.m_cachedPadding.left, this.m_cachedPadding.right, this.m_cachedPadding.top + (this.GetManager().FixedHeight <= 1000 ? 3 : 4) * 2, this.m_cachedPadding.bottom);
+                this.padding = this.m_defaultAssignedFont.LineHeight >= 16 ? this.m_cachedPadding : new RectOffset(this.m_cachedPadding.left, this.m_cachedPadding.right, this.m_cachedPadding.top + (this.GetManager().FixedHeight <= 1000 ? 3 : 4) * 2, this.m_cachedPadding.bottom);
             }
             else if (supportedLanguages == StringTableManager.GungeonSupportedLanguages.RUSSIAN && !this.MaintainRussianFont)
             {

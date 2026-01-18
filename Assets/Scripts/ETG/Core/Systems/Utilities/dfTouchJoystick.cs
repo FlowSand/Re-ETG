@@ -14,7 +14,7 @@ public class dfTouchJoystick : MonoBehaviour
         [SerializeField]
         public dfTouchJoystick.TouchJoystickType JoystickType;
         [SerializeField]
-        public int Radius = 80 /*0x50*/;
+        public int Radius = 80;
         [SerializeField]
         public float DeadzoneRadius = 0.25f;
         [SerializeField]

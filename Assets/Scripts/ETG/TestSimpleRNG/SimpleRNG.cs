@@ -22,7 +22,7 @@ namespace TestSimpleRNG
         public static void SetSeedFromSystemTime()
         {
             long fileTime = DateTime.Now.ToFileTime();
-            SimpleRNG.SetSeed((uint) (fileTime >> 16 /*0x10*/), (uint) (fileTime % 4294967296L /*0x0100000000*/));
+            SimpleRNG.SetSeed((uint) (fileTime >> 16), (uint) (fileTime % 4294967296L));
         }
 
         public static double GetUniform()
@@ -32,9 +32,9 @@ namespace TestSimpleRNG
 
         private static uint GetUint()
         {
-            SimpleRNG.m_z = (uint) (36969 * ((int) SimpleRNG.m_z & (int) ushort.MaxValue)) + (SimpleRNG.m_z >> 16 /*0x10*/);
-            SimpleRNG.m_w = (uint) (18000 * ((int) SimpleRNG.m_w & (int) ushort.MaxValue)) + (SimpleRNG.m_w >> 16 /*0x10*/);
-            return (SimpleRNG.m_z << 16 /*0x10*/) + SimpleRNG.m_w;
+            SimpleRNG.m_z = (uint) (36969 * ((int) SimpleRNG.m_z & (int) ushort.MaxValue)) + (SimpleRNG.m_z >> 16);
+            SimpleRNG.m_w = (uint) (18000 * ((int) SimpleRNG.m_w & (int) ushort.MaxValue)) + (SimpleRNG.m_w >> 16);
+            return (SimpleRNG.m_z << 16) + SimpleRNG.m_w;
         }
 
         public static double GetNormal()

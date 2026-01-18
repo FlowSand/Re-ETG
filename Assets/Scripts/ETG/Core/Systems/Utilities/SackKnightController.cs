@@ -99,7 +99,7 @@ public class SackKnightController : CompanionController
                     this.specRigidbody.PixelColliders[0].ManualOffsetX = 30;
                     this.specRigidbody.PixelColliders[0].ManualOffsetY = 3;
                     this.specRigidbody.PixelColliders[0].ManualWidth = 17;
-                    this.specRigidbody.PixelColliders[0].ManualHeight = 16 /*0x10*/;
+                    this.specRigidbody.PixelColliders[0].ManualHeight = 16;
                     this.specRigidbody.PixelColliders[1].ManualOffsetX = 30;
                     this.specRigidbody.PixelColliders[1].ManualOffsetY = 3;
                     this.specRigidbody.PixelColliders[1].ManualWidth = 17;

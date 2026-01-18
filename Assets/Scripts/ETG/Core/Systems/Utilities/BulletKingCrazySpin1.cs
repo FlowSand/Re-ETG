@@ -13,7 +13,7 @@ public class BulletKingCrazySpin1 : Script
         private const int NumWaves = 29;
         private const int NumBulletsPerWave = 6;
         private const float AngleDeltaEachWave = 37f;
-        private const int NumBulletsFinalWave = 64 /*0x40*/;
+        private const int NumBulletsFinalWave = 64;
 
         protected bool IsHard => this is BulletKingCrazySpinHard1;
 

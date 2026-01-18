@@ -309,7 +309,7 @@ public class PunchoutController : MonoBehaviour
                 GameUIRoot.Instance.HideCoreUI("punchout");
                 GameUIRoot.Instance.ToggleLowerPanels(false, source: string.Empty);
                 this.m_cameraCenterPos = GameManager.Instance.BestActivePlayer.specRigidbody.GetUnitCenter(ColliderType.HitBox) + new Vector2(0.0f, -25f);
-                this.transform.position = (Vector3) (this.m_cameraCenterPos - PhysicsEngine.PixelToUnit(new IntVector2(240 /*0xF0*/, 130)));
+                this.transform.position = (Vector3) (this.m_cameraCenterPos - PhysicsEngine.PixelToUnit(new IntVector2(240, 130)));
                 foreach (tk2dBaseSprite componentsInChild in this.GetComponentsInChildren<tk2dBaseSprite>())
                     componentsInChild.UpdateZDepth();
                 CameraController cameraController = GameManager.Instance.MainCameraController;

@@ -90,8 +90,8 @@ public class dfSlicedSprite : dfSprite
             new int[4],
             new int[4]
         };
-        private static Vector3[] verts = new Vector3[16 /*0x10*/];
-        private static Vector2[] uv = new Vector2[16 /*0x10*/];
+        private static Vector3[] verts = new Vector3[16];
+        private static Vector2[] uv = new Vector2[16];
 
         protected override void OnRebuildRenderData()
         {
@@ -347,7 +347,7 @@ public class dfSlicedSprite : dfSprite
 
         private static void rebuildColors(dfRenderData renderData, dfSprite.RenderOptions options)
         {
-            for (int index = 0; index < 16 /*0x10*/; ++index)
+            for (int index = 0; index < 16; ++index)
                 renderData.Colors.Add(options.color);
         }
     }

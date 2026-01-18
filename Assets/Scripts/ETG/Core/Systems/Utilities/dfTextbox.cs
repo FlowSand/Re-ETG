@@ -48,7 +48,7 @@ public class dfTextbox : dfInteractiveBase, IDFMultiRender, IRendersText
         [SerializeField]
         protected int cursorWidth = 1;
         [SerializeField]
-        protected int maxLength = 1024 /*0x0400*/;
+        protected int maxLength = 1024;
         [SerializeField]
         protected bool selectOnFocus;
         [SerializeField]

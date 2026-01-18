@@ -46,7 +46,7 @@ namespace HutongGames.PlayMaker.Actions
                 if (SendMessage._f__switch_map1 == null)
                 {
                     // ISSUE: reference to a compiler-generated field
-                    SendMessage._f__switch_map1 = new Dictionary<string, int>(16 /*0x10*/)
+                    SendMessage._f__switch_map1 = new Dictionary<string, int>(16)
                     {
                         {
                             "None",

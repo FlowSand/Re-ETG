@@ -55,7 +55,7 @@ public class SpellSlot : MonoBehaviour
 
         private void Update()
         {
-            if (!this.IsActionSlot || string.IsNullOrEmpty(this.Spell) || !Input.GetKeyDown((KeyCode) (this.slotNumber + 48 /*0x30*/)))
+            if (!this.IsActionSlot || string.IsNullOrEmpty(this.Spell) || !Input.GetKeyDown((KeyCode) (this.slotNumber + 48)))
                 return;
             this.castSpell();
         }

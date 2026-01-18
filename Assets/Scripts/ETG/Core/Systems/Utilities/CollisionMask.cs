@@ -3,7 +3,7 @@
     public static class CollisionMask
     {
         public const int None = 0;
-        public const int All = 2147483647 /*0x7FFFFFFF*/;
+        public const int All = 2147483647;
         public static readonly int StandardPlayerVisibilityMask = CollisionMask.LayerToMask(CollisionLayer.EnemyHitBox, CollisionLayer.EnemyCollider, CollisionLayer.HighObstacle, CollisionLayer.BulletBlocker);
         public static readonly int StandardEnemyVisibilityMask = CollisionMask.LayerToMask(CollisionLayer.PlayerHitBox, CollisionLayer.PlayerCollider, CollisionLayer.HighObstacle, CollisionLayer.BulletBlocker, CollisionLayer.EnemyBulletBlocker);
         public static readonly int BothEnemyVisibilityMask = CollisionMask.LayerToMask(CollisionLayer.EnemyHitBox, CollisionLayer.EnemyCollider, CollisionLayer.PlayerHitBox, CollisionLayer.PlayerCollider, CollisionLayer.HighObstacle, CollisionLayer.BulletBlocker, CollisionLayer.EnemyBulletBlocker);

@@ -9,7 +9,7 @@ using FullInspector;
 public class ManfredsRivalMagic2 : ManfredsRivalMagic1
     {
         private const int NumTimes = 3;
-        private const int NumBulletsMainWave = 16 /*0x10*/;
+        private const int NumBulletsMainWave = 16;
 
         [DebuggerHidden]
         protected override IEnumerator Top()

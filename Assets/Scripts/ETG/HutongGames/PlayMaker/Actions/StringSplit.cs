@@ -15,7 +15,7 @@ namespace HutongGames.PlayMaker.Actions
         [Tooltip("Optional characters used to trim each seperated string.")]
         public FsmString trimChars;
         [UIHint(UIHint.Variable)]
-        [ArrayEditor(VariableType.String, "", 0, 0, 65536 /*0x010000*/)]
+        [ArrayEditor(VariableType.String, "", 0, 0, 65536)]
         [Tooltip("Store the split strings in a String Array.")]
         public FsmArray stringArray;
 

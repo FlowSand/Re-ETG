@@ -61,7 +61,7 @@ public class DirectionalAnimation
                 new DirectionalAnimation.SingleAnimation("left", 157.5f, 202.5f, 180f, new int?(2)),
                 new DirectionalAnimation.SingleAnimation("back_left", 112.5f, 157.5f, 135f, new int?(1))
             },
-            new DirectionalAnimation.SingleAnimation[16 /*0x10*/]
+            new DirectionalAnimation.SingleAnimation[16]
             {
                 new DirectionalAnimation.SingleAnimation("north", 78.75f, 101.25f, 90f),
                 new DirectionalAnimation.SingleAnimation("north_northeast", 56.25f, 78.75f, 67.5f, new int?(15)),
@@ -80,7 +80,7 @@ public class DirectionalAnimation
                 new DirectionalAnimation.SingleAnimation("northwest", 123.75f, 146.25f, 135f, new int?(2)),
                 new DirectionalAnimation.SingleAnimation("north_northwest", 101.25f, 123.75f, 112.5f, new int?(1))
             },
-            new DirectionalAnimation.SingleAnimation[16 /*0x10*/]
+            new DirectionalAnimation.SingleAnimation[16]
             {
                 new DirectionalAnimation.SingleAnimation("north", 78.75f, 101.25f, 90f),
                 new DirectionalAnimation.SingleAnimation("north_northeast", 56.25f, 78.75f, 67.5f, new int?(15)),

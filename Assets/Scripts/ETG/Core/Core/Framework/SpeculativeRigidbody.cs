@@ -503,12 +503,12 @@ public class SpeculativeRigidbody : BraveBehaviour, ICollidableObject, ILevelLoa
             Gizmos.DrawLine(from, from + this.LastVelocity.normalized);
         }
 
-        public bool ContainsPoint(Vector2 point, int mask = 2147483647 /*0x7FFFFFFF*/, bool collideWithTriggers = false)
+        public bool ContainsPoint(Vector2 point, int mask = 2147483647, bool collideWithTriggers = false)
         {
             return this.ContainsPixel(PhysicsEngine.UnitToPixel(point), mask, collideWithTriggers);
         }
 
-        public bool ContainsPixel(IntVector2 pixel, int mask = 2147483647 /*0x7FFFFFFF*/, bool collideWithTriggers = false)
+        public bool ContainsPixel(IntVector2 pixel, int mask = 2147483647, bool collideWithTriggers = false)
         {
             for (int index = 0; index < this.GetPixelColliders().Count; ++index)
             {

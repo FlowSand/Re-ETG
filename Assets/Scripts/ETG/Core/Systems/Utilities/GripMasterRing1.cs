@@ -9,7 +9,7 @@ public class GripMasterRing1 : Script
         protected override IEnumerator Top()
         {
             float aimDirection = this.AimDirection;
-            int numBullets1 = 16 /*0x10*/;
+            int numBullets1 = 16;
             for (int i = 0; i < numBullets1; ++i)
                 this.Fire(new Brave.BulletScript.Direction(this.SubdivideCircle(aimDirection, numBullets1, i)), new Brave.BulletScript.Speed(9f), (Bullet) null);
             float sweepAngle = 135f;

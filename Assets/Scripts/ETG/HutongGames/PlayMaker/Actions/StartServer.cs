@@ -30,7 +30,7 @@ namespace HutongGames.PlayMaker.Actions
 
         public override void Reset()
         {
-            this.connections = (FsmInt) 32 /*0x20*/;
+            this.connections = (FsmInt) 32;
             this.listenPort = (FsmInt) 25001;
             this.incomingPassword = (FsmString) string.Empty;
             this.errorEvent = (FsmEvent) null;

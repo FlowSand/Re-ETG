@@ -189,20 +189,20 @@ using UnityEngine;
         {
             int num1 = 0;
             int num2;
-            if (c1 >= 48 /*0x30*/ && c1 <= 57)
-                num2 = num1 + (c1 - 48 /*0x30*/) * 16 /*0x10*/;
+            if (c1 >= 48 && c1 <= 57)
+                num2 = num1 + (c1 - 48) * 16;
             else if (c1 >= 97 && c1 <= 102)
             {
-                num2 = num1 + (10 + c1 - 97) * 16 /*0x10*/;
+                num2 = num1 + (10 + c1 - 97) * 16;
             }
             else
             {
                 if (c1 < 65 || c1 > 70)
                     return -1;
-                num2 = num1 + (10 + c1 - 65) * 16 /*0x10*/;
+                num2 = num1 + (10 + c1 - 65) * 16;
             }
-            if (c2 >= 48 /*0x30*/ && c2 <= 57)
-                return num2 + (c2 - 48 /*0x30*/);
+            if (c2 >= 48 && c2 <= 57)
+                return num2 + (c2 - 48);
             if (c2 >= 97 && c2 <= 102)
                 return num2 + (10 + c2 - 97);
             return c2 >= 65 && c2 <= 70 ? num2 + (10 + c2 - 65) : -1;
@@ -210,8 +210,8 @@ using UnityEngine;
 
         private static int GetCompactHexColorComponent(int c)
         {
-            if (c >= 48 /*0x30*/ && c <= 57)
-                return (c - 48 /*0x30*/) * 17;
+            if (c >= 48 && c <= 57)
+                return (c - 48) * 17;
             if (c >= 97 && c <= 102)
                 return (10 + c - 97) * 17;
             return c >= 65 && c <= 70 ? (10 + c - 65) * 17 : -1;
@@ -272,7 +272,7 @@ using UnityEngine;
 
         private static void SetGradientTexUFromStyleCommand(int arg)
         {
-            tk2dTextGeomGen.meshGradientTexU = (float) (arg - 48 /*0x30*/) / (tk2dTextGeomGen.curGradientCount <= 0 ? 1f : (float) tk2dTextGeomGen.curGradientCount);
+            tk2dTextGeomGen.meshGradientTexU = (float) (arg - 48) / (tk2dTextGeomGen.curGradientCount <= 0 ? 1f : (float) tk2dTextGeomGen.curGradientCount);
         }
 
         private static int HandleStyleCommand(string cmd)
@@ -297,7 +297,7 @@ using UnityEngine;
                     num2 = 1 + tk2dTextGeomGen.SetColorsFromStyleCommand(args, true, false);
                     break;
             }
-            if (num1 >= 48 /*0x30*/ && num1 <= 57)
+            if (num1 >= 48 && num1 <= 57)
             {
                 tk2dTextGeomGen.SetGradientTexUFromStyleCommand(num1);
                 num2 = 1;

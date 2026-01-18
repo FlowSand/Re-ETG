@@ -8,8 +8,8 @@ using UnityEngine;
 internal class dfClippingUtil
     {
         private static int[] inside = new int[3];
-        private static dfClippingUtil.ClipTriangle[] clipSource = dfClippingUtil.initClipBuffer(1024 /*0x0400*/);
-        private static dfClippingUtil.ClipTriangle[] clipDest = dfClippingUtil.initClipBuffer(1024 /*0x0400*/);
+        private static dfClippingUtil.ClipTriangle[] clipSource = dfClippingUtil.initClipBuffer(1024);
+        private static dfClippingUtil.ClipTriangle[] clipDest = dfClippingUtil.initClipBuffer(1024);
 
         public static void Clip(IList<Plane> planes, dfRenderData source, dfRenderData dest)
         {

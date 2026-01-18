@@ -25,7 +25,7 @@ namespace HutongGames.PlayMaker.Actions
         [UIHint(UIHint.Variable)]
         [HutongGames.PlayMaker.Tooltip("Set a bool variable to true if hit something, otherwise false.")]
         public FsmBool storeDidHit;
-        [ArrayEditor(VariableType.GameObject, "", 0, 0, 65536 /*0x010000*/)]
+        [ArrayEditor(VariableType.GameObject, "", 0, 0, 65536)]
         [UIHint(UIHint.Variable)]
         [HutongGames.PlayMaker.Tooltip("Store the GameObjects hit in an array variable.")]
         public FsmArray storeHitObjects;

@@ -17,7 +17,7 @@ public class GoopDefinition : ScriptableObject
         [ShowInInspectorIf("usesLifespan", false)]
         public float fadePeriod = 2f;
         [ShowInInspectorIf("usesLifespan", false)]
-        public Color32 fadeColor32 = new Color32((byte) 128 /*0x80*/, (byte) 128 /*0x80*/, (byte) 128 /*0x80*/, (byte) 0);
+        public Color32 fadeColor32 = new Color32((byte) 128, (byte) 128, (byte) 128, (byte) 0);
         [ShowInInspectorIf("usesLifespan", false)]
         public float lifespanRadialReduction = 3f;
         public bool damagesPlayers;
@@ -58,7 +58,7 @@ public class GoopDefinition : ScriptableObject
         public bool fireBurnsEnemies = true;
         [ShowInInspectorIf("CanBeIgnited", false)]
         public GameActorFireEffect fireEffect;
-        public Color32 igniteColor32 = new Color32(byte.MaxValue, (byte) 128 /*0x80*/, (byte) 128 /*0x80*/, byte.MaxValue);
+        public Color32 igniteColor32 = new Color32(byte.MaxValue, (byte) 128, (byte) 128, byte.MaxValue);
         public Color32 fireColor32 = new Color32(byte.MaxValue, (byte) 0, (byte) 0, byte.MaxValue);
         [ShowInInspectorIf("CanBeIgnited", false)]
         public bool UsesGreenFire;
@@ -71,8 +71,8 @@ public class GoopDefinition : ScriptableObject
         public bool CanBeFrozen;
         public float freezeLifespan = 10f;
         public float freezeSpreadTime = 0.1f;
-        public Color32 prefreezeColor32 = new Color32((byte) 238, (byte) 240 /*0xF0*/, byte.MaxValue, byte.MaxValue);
-        public Color32 frozenColor32 = new Color32((byte) 238, (byte) 240 /*0xF0*/, byte.MaxValue, byte.MaxValue);
+        public Color32 prefreezeColor32 = new Color32((byte) 238, (byte) 240, byte.MaxValue, byte.MaxValue);
+        public Color32 frozenColor32 = new Color32((byte) 238, (byte) 240, byte.MaxValue, byte.MaxValue);
         [Header("Status Effects")]
         public bool AppliesSpeedModifier;
         public bool AppliesSpeedModifierContinuously;

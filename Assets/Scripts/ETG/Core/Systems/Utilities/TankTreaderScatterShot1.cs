@@ -11,7 +11,7 @@ using Brave.BulletScript;
 public class TankTreaderScatterShot1 : Script
     {
         private const int AirTime = 30;
-        private const int NumDeathBullets = 16 /*0x10*/;
+        private const int NumDeathBullets = 16;
 
         protected override IEnumerator Top()
         {

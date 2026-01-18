@@ -67,18 +67,18 @@ public class WallMimicController : CustomEngageDoer, IPlaceConfigurable
                 this.specRigidbody.PixelColliders[index].Enabled = false;
             if (this.m_facingDirection == DungeonData.Direction.NORTH)
             {
-                this.specRigidbody.PixelColliders.Add(PixelCollider.CreateRectangle(CollisionLayer.LowObstacle, 38, 38, 32 /*0x20*/, 8));
-                this.specRigidbody.PixelColliders.Add(PixelCollider.CreateRectangle(CollisionLayer.HighObstacle, 38, 54, 32 /*0x20*/, 8));
+                this.specRigidbody.PixelColliders.Add(PixelCollider.CreateRectangle(CollisionLayer.LowObstacle, 38, 38, 32, 8));
+                this.specRigidbody.PixelColliders.Add(PixelCollider.CreateRectangle(CollisionLayer.HighObstacle, 38, 54, 32, 8));
             }
             else if (this.m_facingDirection == DungeonData.Direction.SOUTH)
             {
-                this.specRigidbody.PixelColliders.Add(PixelCollider.CreateRectangle(CollisionLayer.LowObstacle, 38, 38, 32 /*0x20*/, 16 /*0x10*/));
-                this.specRigidbody.PixelColliders.Add(PixelCollider.CreateRectangle(CollisionLayer.HighObstacle, 38, 54, 32 /*0x20*/, 16 /*0x10*/));
+                this.specRigidbody.PixelColliders.Add(PixelCollider.CreateRectangle(CollisionLayer.LowObstacle, 38, 38, 32, 16));
+                this.specRigidbody.PixelColliders.Add(PixelCollider.CreateRectangle(CollisionLayer.HighObstacle, 38, 54, 32, 16));
             }
             else if (this.m_facingDirection == DungeonData.Direction.WEST || this.m_facingDirection == DungeonData.Direction.EAST)
             {
-                this.specRigidbody.PixelColliders.Add(PixelCollider.CreateRectangle(CollisionLayer.LowObstacle, 46, 38, 16 /*0x10*/, 32 /*0x20*/));
-                this.specRigidbody.PixelColliders.Add(PixelCollider.CreateRectangle(CollisionLayer.HighObstacle, 46, 38, 16 /*0x10*/, 32 /*0x20*/));
+                this.specRigidbody.PixelColliders.Add(PixelCollider.CreateRectangle(CollisionLayer.LowObstacle, 46, 38, 16, 32));
+                this.specRigidbody.PixelColliders.Add(PixelCollider.CreateRectangle(CollisionLayer.HighObstacle, 46, 38, 16, 32));
             }
             this.specRigidbody.ForceRegenerate();
             this.aiActor.HasDonePlayerEnterCheck = true;

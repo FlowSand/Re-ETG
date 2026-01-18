@@ -371,7 +371,7 @@ using UnityEngine;
         public static byte[] StringToByteArray(string hex)
         {
             hex = hex.Replace(" ", string.Empty);
-            return Enumerable.Range(0, hex.Length).Where<int>((Func<int, bool>) (x => x % 2 == 0)).Select<int, byte>((Func<int, byte>) (x => Convert.ToByte(hex.Substring(x, 2), 16 /*0x10*/))).ToArray<byte>();
+            return Enumerable.Range(0, hex.Length).Where<int>((Func<int, bool>) (x => x % 2 == 0)).Select<int, byte>((Func<int, byte>) (x => Convert.ToByte(hex.Substring(x, 2), 16))).ToArray<byte>();
         }
 
         public static string GetTrackedStatEventString(TrackedStats stat)

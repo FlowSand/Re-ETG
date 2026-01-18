@@ -185,25 +185,25 @@ public class MeduziUnderwaterBehavior : BasicAttackBehavior
             CellArea area = this.m_aiActor.ParentRoom.area;
             if (intVector2.x < 0)
             {
-                if (specRigidbody.PixelColliders[0].MinX + pixelOffset.x >= area.basePosition.x * 16 /*0x10*/)
+                if (specRigidbody.PixelColliders[0].MinX + pixelOffset.x >= area.basePosition.x * 16)
                     return;
                 validLocation = false;
             }
             else if (intVector2.x > 0)
             {
-                if (specRigidbody.PixelColliders[0].MaxX + pixelOffset.x <= (area.basePosition.x + area.dimensions.x) * 16 /*0x10*/ - 1)
+                if (specRigidbody.PixelColliders[0].MaxX + pixelOffset.x <= (area.basePosition.x + area.dimensions.x) * 16 - 1)
                     return;
                 validLocation = false;
             }
             else if (intVector2.y < 0)
             {
-                if (specRigidbody.PixelColliders[0].MinY + pixelOffset.y >= area.basePosition.y * 16 /*0x10*/)
+                if (specRigidbody.PixelColliders[0].MinY + pixelOffset.y >= area.basePosition.y * 16)
                     return;
                 validLocation = false;
             }
             else
             {
-                if (intVector2.y <= 0 || specRigidbody.PixelColliders[0].MaxY + pixelOffset.y <= (area.basePosition.y + area.dimensions.y) * 16 /*0x10*/ - 1)
+                if (intVector2.y <= 0 || specRigidbody.PixelColliders[0].MaxY + pixelOffset.y <= (area.basePosition.y + area.dimensions.y) * 16 - 1)
                     return;
                 validLocation = false;
             }

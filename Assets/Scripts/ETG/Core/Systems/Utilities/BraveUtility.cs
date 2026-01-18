@@ -251,7 +251,7 @@ using UnityEngine;
 
         public static Vector2 QuantizeVector(Vector2 vec)
         {
-            int unitsPerUnit = !((UnityEngine.Object) PhysicsEngine.Instance == (UnityEngine.Object) null) ? PhysicsEngine.Instance.PixelsPerUnit : 16 /*0x10*/;
+            int unitsPerUnit = !((UnityEngine.Object) PhysicsEngine.Instance == (UnityEngine.Object) null) ? PhysicsEngine.Instance.PixelsPerUnit : 16;
             return BraveUtility.QuantizeVector(vec, (float) unitsPerUnit);
         }
 

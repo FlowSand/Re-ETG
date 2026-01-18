@@ -8,7 +8,7 @@ namespace HutongGames.PlayMaker.Actions
     public class DestroyObjects : FsmStateAction
     {
         [HutongGames.PlayMaker.Tooltip("The GameObjects to destroy.")]
-        [ArrayEditor(VariableType.GameObject, "", 0, 0, 65536 /*0x010000*/)]
+        [ArrayEditor(VariableType.GameObject, "", 0, 0, 65536)]
         [RequiredField]
         public FsmArray gameObjects;
         [HutongGames.PlayMaker.Tooltip("Optional delay before destroying the Game Objects.")]

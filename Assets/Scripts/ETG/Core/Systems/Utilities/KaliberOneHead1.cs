@@ -93,7 +93,7 @@ public class KaliberOneHead1 : Script
                         intVector2 = new IntVector2(60, 28);
                         break;
                     case 5:
-                        intVector2 = new IntVector2(58, 31 /*0x1F*/);
+                        intVector2 = new IntVector2(58, 31);
                         break;
                     case 6:
                         intVector2 = new IntVector2(60, 28);

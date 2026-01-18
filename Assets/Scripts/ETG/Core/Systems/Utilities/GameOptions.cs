@@ -198,7 +198,7 @@ public class GameOptions
         {
             if (this.m_DefaultRecommendedQuality.HasValue)
                 return this.m_DefaultRecommendedQuality.Value;
-            if (SystemInfo.graphicsMemorySize <= 512 /*0x0200*/ || SystemInfo.systemMemorySize <= 1536 /*0x0600*/)
+            if (SystemInfo.graphicsMemorySize <= 512 || SystemInfo.systemMemorySize <= 1536)
                 return GameOptions.GenericHighMedLowOption.LOW;
             string graphicsDeviceName = SystemInfo.graphicsDeviceName;
             if (!string.IsNullOrEmpty(graphicsDeviceName) && graphicsDeviceName.ToLowerInvariant().Contains("intel"))

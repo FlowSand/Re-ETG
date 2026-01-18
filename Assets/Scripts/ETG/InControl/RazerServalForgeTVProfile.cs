@@ -86,7 +86,7 @@ namespace InControl
                     Source = UnityInputDeviceProfile.Button12
                 }
             };
-            this.AnalogMappings = new InputControlMapping[16 /*0x10*/]
+            this.AnalogMappings = new InputControlMapping[16]
             {
                 UnityInputDeviceProfile.LeftStickLeftMapping(UnityInputDeviceProfile.Analog0),
                 UnityInputDeviceProfile.LeftStickRightMapping(UnityInputDeviceProfile.Analog0),

@@ -8,7 +8,7 @@ using Brave.BulletScript;
 public class MimicBlackMiniguns1 : Script
     {
         private const int NumBursts = 10;
-        private const int NumBulletsInBurst = 16 /*0x10*/;
+        private const int NumBulletsInBurst = 16;
 
         [DebuggerHidden]
         protected override IEnumerator Top()
@@ -24,7 +24,7 @@ public class MimicBlackMiniguns1 : Script
         {
             float num1 = this.RandomAngle();
             float num2 = 22.5f;
-            for (int index = 0; index < 16 /*0x10*/; ++index)
+            for (int index = 0; index < 16; ++index)
                 this.Fire(new Offset(transform), new Brave.BulletScript.Direction(num1 + (float) index * num2), new Brave.BulletScript.Speed(9f));
         }
 

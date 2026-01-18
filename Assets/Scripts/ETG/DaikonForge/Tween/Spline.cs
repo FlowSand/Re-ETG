@@ -85,7 +85,7 @@ namespace DaikonForge.Tween
             }
             if (this.ControlPoints.Count < 2)
                 return;
-            int num1 = 16 /*0x10*/;
+            int num1 = 16;
             int num2 = this.ControlPoints.Count + (!this.Wrap ? -1 : 0);
             float num3 = 1f / (float) num2;
             float num4 = num3 / (float) num1;

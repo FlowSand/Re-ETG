@@ -222,7 +222,7 @@ public class tk2dTiledSprite : tk2dBaseSprite
             this.renderer.material = this.collectionInst.spriteDefinitions[this.spriteId].materialInst;
         }
 
-        protected override int GetCurrentVertexCount() => 16 /*0x10*/;
+        protected override int GetCurrentVertexCount() => 16;
 
         public override void ReshapeBounds(Vector3 dMin, Vector3 dMax)
         {

@@ -10,8 +10,8 @@ namespace tk2dRuntime.TileMap
     {
         public int hash;
         public SpriteChannel spriteChannel;
-        private const int tileMask = 16777215 /*0xFFFFFF*/;
-        private const int flagMask = -16777216 /*0xFF000000*/;
+        private const int tileMask = 16777215;
+        private const int flagMask = -16777216;
         public int width;
         public int height;
         public int numColumns;
@@ -107,13 +107,13 @@ namespace tk2dRuntime.TileMap
         public int GetTile(int x, int y)
         {
             int num = 0;
-            return this.GetRawTileValue(x, y, ref num) && num != -1 ? num & 16777215 /*0xFFFFFF*/ : -1;
+            return this.GetRawTileValue(x, y, ref num) && num != -1 ? num & 16777215 : -1;
         }
 
         public tk2dTileFlags GetTileFlags(int x, int y)
         {
             int num = 0;
-            return this.GetRawTileValue(x, y, ref num) && num != -1 ? (tk2dTileFlags) (num & -16777216 /*0xFF000000*/) : tk2dTileFlags.None;
+            return this.GetRawTileValue(x, y, ref num) && num != -1 ? (tk2dTileFlags) (num & -16777216) : tk2dTileFlags.None;
         }
 
         public int GetRawTile(int x, int y)
