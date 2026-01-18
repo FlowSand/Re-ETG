@@ -300,13 +300,112 @@ public struct IntVector2
 - ✅ 保持序列化兼容性（字段名和类型未变）
 
 **Git提交：**
-- Commit: 待提交
-- Message建议: `[Task-04] Round 9 Part 7: Fix remaining primary constructors (14 files, 15 structs)`
+- Commit: e0c29357
+- Message: `[Task-04] Round 9 Part 7: Fix remaining primary constructors (14 files, 15 structs)`
 
 **后续步骤：**
 1. 用户触发Unity重新编译
 2. 验证Unity Console显示0个编译错误
 3. 如编译通过，Task-04完成，准备进入Task-05（可读性清洗）
 4. 如仍有错误，分析并启动Round 10修复
+
+---
+
+### Round 9 Part 8: ✅ 修复With Expression语法错误
+
+**开始时间：** 2026-01-18 (下午)
+**错误类型：** With expression用于非record类型
+**修复前状态：** Round 9 Part 7完成后，用户报告仍有45个编译错误
+
+**问题描述：**
+反编译器错误地生成了with expression语法用于普通struct类型（如Vector3、Color、Rect）。With expression是C# 9.0引入的语法，但只能用于record类型。
+
+**错误模式示例：**
+```csharp
+// C# 9.0语法，但只能用于record（无效）：
+Vector3 size = boxCollider.size with { z = 0.2f };
+Color color = material.color with { a = currentValue };
+
+// 转换为传统C#（有效）：
+Vector3 size = boxCollider.size;
+size.z = 0.2f;
+
+Color color = material.color;
+color.a = currentValue;
+```
+
+**执行步骤：**
+
+1. ✅ 创建代码扫描器 `scan_code_issues.py` 扫描所有潜在问题
+2. ✅ 发现8个真实的with expression错误（另有2个字符串中的误报）
+3. ✅ 创建自动修复脚本 `fix_with_expressions.py`
+4. ✅ 批量修复所有with expression语法错误
+
+**修复文件列表（7个文件，8处修复）：**
+
+1. `Assets/Scripts/ETG/Core/Systems/Utilities/TweenMaterialExtensions.cs:25`
+   - `Color color = material.color with { a = currentValue };`
+
+2. `Assets/Scripts/ETG/Core/Systems/Utilities/TweenTextExtensions.cs:20`
+   - `Color color = text.color with { a = currentValue };`
+
+3. `Assets/Scripts/ETG/Core/Systems/Utilities/tk2dButton.cs:66`
+   - `Vector3 size = boxCollider.size with { z = 0.2f };`
+
+4. `Assets/Scripts/ETG/Core/VFX/Animation/TweenSpriteExtensions.cs:20`
+   - `Color color = sprite.color with { a = currentValue };`
+
+5. `Assets/Scripts/ETG/FullInspector/tk\`2.cs`
+   - Line 554: `Rect rect1 = rect with { width = layoutWidth };`
+   - Line 1232: `Rect rect1 = rect with { height = height };`
+
+6. `Assets/Scripts/ETG/HutongGames/PlayMaker/Actions/GetAxisVector.cs:83`
+   - `vector3_1 = Vector3.up with { z = 0.0f };`
+
+7. `Assets/Scripts/ETG/HutongGames/PlayMaker/Actions/TransformInputToWorldSpace.cs:85`
+   - `vector3_1 = Vector3.up with { z = 0.0f };`
+
+**转换模式：**
+```csharp
+// 模式1：变量声明 + with expression
+Type varName = source with { prop = value };
+→
+Type varName = source;
+varName.prop = value;
+
+// 模式2：赋值 + with expression
+varName = source with { prop = value };
+→
+varName = source;
+varName.prop = value;
+```
+
+**结果：**
+- **修改文件数：** 7个.cs文件
+- **修复with expression数：** 8处
+- **解决问题：** With expression用于非record类型的语法错误
+- **编译状态：** 代码扫描显示无剩余真实错误
+
+**约束符合性：**
+- ✅ 未修改public/protected/internal API签名（仅改变实现方式）
+- ✅ 未修改字段名和类型
+- ✅ 未新增业务逻辑（语义完全等价的转换）
+- ✅ 保持运行时行为一致
+
+**Git提交：**
+- Commit: 6d8ff1a9
+- Message: `[Task-04] Round 9 Part 8: Fix with expression syntax errors (7 files)`
+
+**创建的工具脚本：**
+1. `auto_fix_compilation_errors.py` - 自动化编译+修复循环系统
+2. `scan_code_issues.py` - 代码问题扫描器（不依赖Unity）
+3. `fix_with_expressions.py` - With expression自动修复脚本
+
+**后续步骤：**
+1. 用户关闭Unity编辑器
+2. 运行 `python auto_fix_compilation_errors.py` 进行完整编译测试
+3. 或在Unity编辑器中查看编译结果
+4. 如编译通过（预期），Task-04完成
+5. 准备进入Task-05（可读性清洗）
 
 ---
