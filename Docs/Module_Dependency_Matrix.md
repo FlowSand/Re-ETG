@@ -98,9 +98,87 @@
 | Core.Systems | Kvant | 1 | core_subsystem | low |
 | Core.VFX | DaikonForge | 1 | core_subsystem | low |
 
+## Critical Dependencies (>50 usage_count)
+
+These are the most heavily used dependencies that will require careful attention during migration:
+
+| From Module | To Module | Usage Count | Notes |
+|------------|-----------|-------------|-------|
+| Core.Systems | System | 1313 | .NET BCL - no migration needed |
+| Core.Systems | UnityEngine | 680 | Unity API - requires engine migration |
+| HutongGames.PlayMaker | UnityEngine | 677 | Visual scripting - can be replaced |
+| Core.Core | System | 502 | .NET BCL - no migration needed |
+| Core.Core | UnityEngine | 276 | Unity API - requires engine migration |
+| Core.Systems | FullInspector | 225 | Serialization - can replace with standard JSON |
+| Core.Systems | Brave.BulletScript | 224 | **CRITICAL** - Boss bullet patterns, port carefully |
+| Core.Actors | UnityEngine | 154 | Unity API - requires engine migration |
+| Core.Combat | UnityEngine | 141 | Unity API - requires engine migration |
+| Core.Items | UnityEngine | 134 | Unity API - requires engine migration |
+| Core.Dungeon | UnityEngine | 118 | Unity API - requires engine migration |
+| Core.Systems | Dungeonator | 114 | **CRITICAL** - Core spatial system dependency |
+| Core.UI | System | 110 | .NET BCL - no migration needed |
+| Core.UI | UnityEngine | 96 | Unity API - UI framework migration |
+| Core.Actors | FullInspector | 89 | Serialization - can replace with standard JSON |
+| Core.Dungeon | Dungeonator | 82 | **CRITICAL** - Room logic depends on spatial system |
+| Core.Core | Dungeonator | 75 | **CRITICAL** - Framework depends on spatial system |
+| Core.Actors | Dungeonator | 56 | **CRITICAL** - AI navigation depends on dungeon |
+| InControl | UnityEngine | 51 | Input system - replace with new input system |
+
+## Circular Dependencies
+
+The following circular dependencies were detected. These are expected and not problematic:
+
+1. **Dungeonator ↔ HutongGames.PlayMaker** (bidirectional)
+   - Dungeonator → PlayMaker: 1 file
+   - PlayMaker → Dungeonator: 12 files
+   - Reason: PlayMaker actions use dungeon context, Dungeon uses PlayMaker events
+   - Migration: Can break dependency by removing PlayMaker
+
+2. **Dungeonator ↔ Pathfinding** (bidirectional)
+   - Dungeonator → Pathfinding: 2 files
+   - Pathfinding → Dungeonator: 2 files
+   - Reason: Bidirectional pathfinding integration
+   - Migration: Keep as tightly coupled pair
+
+3. **Dungeonator ↔ tk2dRuntime** (bidirectional)
+   - Dungeonator → tk2dRuntime: 1 file
+   - tk2dRuntime → Dungeonator: 3 files
+   - Reason: Sprite/tilemap rendering integration
+   - Migration: Replace tk2dRuntime with native rendering
+
+## Migration Priority Dependencies
+
+### MUST PORT (Critical)
+- Core.Systems → Brave.BulletScript (224) - Boss patterns
+- Core.Systems → Dungeonator (114) - Spatial queries
+- Core.Dungeon → Dungeonator (82) - Room management
+- Core.Core → Dungeonator (75) - Framework spatial queries
+- Core.Actors → Dungeonator (56) - AI navigation
+- Core.Items → Dungeonator (41) - Item placement
+- Core.Combat → Brave.BulletScript (37) - Bullet patterns
+
+### CAN REPLACE (High Priority)
+- Core.Systems → FullInspector (225) - Replace with standard serialization
+- Core.Actors → FullInspector (89) - Replace with standard serialization
+- Core.Actors → Pathfinding (20) - Replace with new pathfinding
+- Core.UI → InControl (11) - Replace with new input system
+
+### LOW PRIORITY (Replaceable)
+- Various → HutongGames.PlayMaker - Remove visual scripting
+- Various → tk2dRuntime - Replace with native 2D
+- Various → DaikonForge - Replace with Unity UI
+
+## Dependency Strength Classification
+
+**Strong (>50 files):** Cannot easily replace, core to functionality
+**Medium (10-50 files):** Important but can be refactored
+**Weak (<10 files):** Minimal usage, easy to replace
+
 ## Notes
 
 - **Usage Count**: Number of files in 'From Module' that reference 'To Module'
 - **From Category**: Category of the source module (external, core_subsystem)
 - **To Priority**: Priority level of the target module (critical, high, medium, low)
+- **Critical Dependencies**: Dependencies that are fundamental to game functionality
+- **System/UnityEngine**: Standard platform dependencies, expected everywhere
 
