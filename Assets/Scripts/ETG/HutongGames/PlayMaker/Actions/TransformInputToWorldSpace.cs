@@ -73,16 +73,15 @@ namespace HutongGames.PlayMaker.Actions
         switch (this.mapToPlane)
         {
           case TransformInputToWorldSpace.AxisPlane.XZ:
-            vector3_1 = transform.TransformDirection(Vector3.forward) with
-            {
-              y = 0.0f
-            };
+            vector3_1 = transform.TransformDirection(Vector3.forward);
+      vector3_1.y = 0.0f;
             vector3_1 = vector3_1.normalized;
             vector3_2 = new Vector3(vector3_1.z, 0.0f, -vector3_1.x);
             break;
           case TransformInputToWorldSpace.AxisPlane.XY:
           case TransformInputToWorldSpace.AxisPlane.YZ:
-            vector3_1 = Vector3.up with { z = 0.0f };
+            vector3_1 = Vector3.up;
+      vector3_1.z = 0.0f;
             vector3_1 = vector3_1.normalized;
             vector3_2 = transform.TransformDirection(Vector3.right);
             break;

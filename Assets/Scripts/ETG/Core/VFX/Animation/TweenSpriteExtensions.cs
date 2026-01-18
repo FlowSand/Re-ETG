@@ -17,7 +17,8 @@ namespace ETG.Core.VFX.Animation
       {
         return DaikonForge.Tween.Tween<float>.Obtain().SetStartValue(sprite.color.a).SetEndValue(sprite.color.a).SetDuration(1f).OnExecute((TweenAssignmentCallback<float>) (currentValue =>
         {
-          Color color = sprite.color with { a = currentValue };
+          Color color = sprite.color;
+          color.a = currentValue;
           sprite.color = color;
         }));
       }

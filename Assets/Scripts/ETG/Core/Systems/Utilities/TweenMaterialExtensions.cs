@@ -22,7 +22,8 @@ namespace ETG.Core.Systems.Utilities
       {
         return DaikonForge.Tween.Tween<float>.Obtain().SetStartValue(material.color.a).SetEndValue(material.color.a).SetDuration(1f).OnExecute((TweenAssignmentCallback<float>) (currentValue =>
         {
-          Color color = material.color with { a = currentValue };
+          Color color = material.color;
+          color.a = currentValue;
           material.color = color;
         }));
       }

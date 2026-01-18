@@ -63,7 +63,8 @@ namespace ETG.Core.Systems.Utilities
         if ((Object) this.GetComponent<Collider>() == (Object) null)
         {
           BoxCollider boxCollider = this.gameObject.AddComponent<BoxCollider>();
-          Vector3 size = boxCollider.size with { z = 0.2f };
+          Vector3 size = boxCollider.size;
+          size.z = 0.2f;
           boxCollider.size = size;
         }
         if (!((Object) this.buttonDownSound != (Object) null) && !((Object) this.buttonPressedSound != (Object) null) && !((Object) this.buttonUpSound != (Object) null) || !((Object) this.GetComponent<AudioSource>() == (Object) null))

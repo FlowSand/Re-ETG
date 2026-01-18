@@ -414,10 +414,8 @@ namespace FullInspector
         tkFoldoutMetadata metadata1 = this.GetMetadata(metadata);
         if (this.HierarchyMode.HasValue)
           fiLateBindings.fiEditorGUI.PushHierarchyMode(this.HierarchyMode.Value);
-        Rect rect1 = rect with
-        {
-          height = fiLateBindings.EditorGUIUtility.singleLineHeight
-        };
+        Rect rect1 = rect;
+      rect1.height = fiLateBindings.EditorGUIUtility.singleLineHeight;
         metadata1.IsExpanded = fiLateBindings.EditorGUI.Foldout(rect1, metadata1.IsExpanded, (GUIContent) this._label, true, this._foldoutStyle);
         if (metadata1.IsExpanded)
         {
@@ -551,7 +549,8 @@ namespace FullInspector
           if (sectionItem.Rule.ShouldShow(obj, context, metadata))
           {
             float layoutWidth = sectionItem.Layout_Width;
-            Rect rect1 = rect with { width = layoutWidth };
+            Rect rect1 = rect;
+      rect1.width = layoutWidth;
             if (!sectionItem.MatchParentHeight)
               rect1.height = sectionItem.Rule.GetHeight(obj, context, metadata);
             obj = sectionItem.Rule.Edit(rect1, obj, context, metadata);
@@ -1229,7 +1228,8 @@ namespace FullInspector
           if (sectionItem.Rule.ShouldShow(obj, context, metadata))
           {
             float height = sectionItem.Rule.GetHeight(obj, context, metadata);
-            Rect rect1 = rect with { height = height };
+            Rect rect1 = rect;
+      rect1.height = height;
             obj = sectionItem.Rule.Edit(rect1, obj, context, metadata);
             rect.y += height;
             rect.y += this._marginBetweenItems;
